@@ -1,0 +1,1753 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "styleId": "cinder_scout",
+      "sourceIndex": 0,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "cinder_scout-body-baseColor.png",
+        "normal": "cinder_scout-body-normal.png",
+        "metallicMap": "cinder_scout-body-metallic.png",
+        "occlusion": "cinder_scout-body-occlusion.png",
+        "emission": "cinder_scout-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 3.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "cinder_scout",
+      "sourceIndex": 0,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "cinder_scout-glove-baseColor.png",
+        "normal": "cinder_scout-glove-normal.png",
+        "metallicMap": "cinder_scout-glove-metallic.png",
+        "occlusion": "cinder_scout-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "slag_warden",
+      "sourceIndex": 1,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "slag_warden-body-baseColor.png",
+        "normal": "slag_warden-body-normal.png",
+        "metallicMap": "slag_warden-body-metallic.png",
+        "occlusion": "slag_warden-body-occlusion.png",
+        "emission": "slag_warden-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 3.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "slag_warden",
+      "sourceIndex": 1,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "slag_warden-glove-baseColor.png",
+        "normal": "slag_warden-glove-normal.png",
+        "metallicMap": "slag_warden-glove-metallic.png",
+        "occlusion": "slag_warden-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "ember_courier",
+      "sourceIndex": 2,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "ember_courier-body-baseColor.png",
+        "normal": "ember_courier-body-normal.png",
+        "metallicMap": "ember_courier-body-metallic.png",
+        "occlusion": "ember_courier-body-occlusion.png",
+        "emission": "ember_courier-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "ember_courier",
+      "sourceIndex": 2,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "ember_courier-glove-baseColor.png",
+        "normal": "ember_courier-glove-normal.png",
+        "metallicMap": "ember_courier-glove-metallic.png",
+        "occlusion": "ember_courier-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "kiln_duelist",
+      "sourceIndex": 3,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "kiln_duelist-body-baseColor.png",
+        "normal": "kiln_duelist-body-normal.png",
+        "metallicMap": "kiln_duelist-body-metallic.png",
+        "occlusion": "kiln_duelist-body-occlusion.png",
+        "emission": "kiln_duelist-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "kiln_duelist",
+      "sourceIndex": 3,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "kiln_duelist-glove-baseColor.png",
+        "normal": "kiln_duelist-glove-normal.png",
+        "metallicMap": "kiln_duelist-glove-metallic.png",
+        "occlusion": "kiln_duelist-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "glasswalker",
+      "sourceIndex": 4,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "glasswalker-body-baseColor.png",
+        "normal": "glasswalker-body-normal.png",
+        "metallicMap": "glasswalker-body-metallic.png",
+        "occlusion": "glasswalker-body-occlusion.png",
+        "emission": "glasswalker-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "glasswalker",
+      "sourceIndex": 4,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "glasswalker-glove-baseColor.png",
+        "normal": "glasswalker-glove-normal.png",
+        "metallicMap": "glasswalker-glove-metallic.png",
+        "occlusion": "glasswalker-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "tephra_diver",
+      "sourceIndex": 5,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "tephra_diver-body-baseColor.png",
+        "normal": "tephra_diver-body-normal.png",
+        "metallicMap": "tephra_diver-body-metallic.png",
+        "occlusion": "tephra_diver-body-occlusion.png",
+        "emission": "tephra_diver-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "tephra_diver",
+      "sourceIndex": 5,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "tephra_diver-glove-baseColor.png",
+        "normal": "tephra_diver-glove-normal.png",
+        "metallicMap": "tephra_diver-glove-metallic.png",
+        "occlusion": "tephra_diver-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "caldera_knight",
+      "sourceIndex": 6,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "caldera_knight-body-baseColor.png",
+        "normal": "caldera_knight-body-normal.png",
+        "metallicMap": "caldera_knight-body-metallic.png",
+        "occlusion": "caldera_knight-body-occlusion.png",
+        "emission": "caldera_knight-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "caldera_knight",
+      "sourceIndex": 6,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "caldera_knight-glove-baseColor.png",
+        "normal": "caldera_knight-glove-normal.png",
+        "metallicMap": "caldera_knight-glove-metallic.png",
+        "occlusion": "caldera_knight-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "soot_sparrow",
+      "sourceIndex": 7,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "soot_sparrow-body-baseColor.png",
+        "normal": "soot_sparrow-body-normal.png",
+        "metallicMap": "soot_sparrow-body-metallic.png",
+        "occlusion": "soot_sparrow-body-occlusion.png",
+        "emission": "soot_sparrow-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "soot_sparrow",
+      "sourceIndex": 7,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "soot_sparrow-glove-baseColor.png",
+        "normal": "soot_sparrow-glove-normal.png",
+        "metallicMap": "soot_sparrow-glove-metallic.png",
+        "occlusion": "soot_sparrow-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "pumice_monk",
+      "sourceIndex": 8,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "pumice_monk-body-baseColor.png",
+        "normal": "pumice_monk-body-normal.png",
+        "metallicMap": "pumice_monk-body-metallic.png",
+        "occlusion": "pumice_monk-body-occlusion.png",
+        "emission": "pumice_monk-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "pumice_monk",
+      "sourceIndex": 8,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "pumice_monk-glove-baseColor.png",
+        "normal": "pumice_monk-glove-normal.png",
+        "metallicMap": "pumice_monk-glove-metallic.png",
+        "occlusion": "pumice_monk-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "verdant_reclaimer",
+      "sourceIndex": 9,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "verdant_reclaimer-body-baseColor.png",
+        "normal": "verdant_reclaimer-body-normal.png",
+        "metallicMap": "verdant_reclaimer-body-metallic.png",
+        "occlusion": "verdant_reclaimer-body-occlusion.png",
+        "emission": "verdant_reclaimer-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "verdant_reclaimer",
+      "sourceIndex": 9,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "verdant_reclaimer-glove-baseColor.png",
+        "normal": "verdant_reclaimer-glove-normal.png",
+        "metallicMap": "verdant_reclaimer-glove-metallic.png",
+        "occlusion": "verdant_reclaimer-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "neon_smelter",
+      "sourceIndex": 10,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "neon_smelter-body-baseColor.png",
+        "normal": "neon_smelter-body-normal.png",
+        "metallicMap": "neon_smelter-body-metallic.png",
+        "occlusion": "neon_smelter-body-occlusion.png",
+        "emission": "neon_smelter-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "neon_smelter",
+      "sourceIndex": 10,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "neon_smelter-glove-baseColor.png",
+        "normal": "neon_smelter-glove-normal.png",
+        "metallicMap": "neon_smelter-glove-metallic.png",
+        "occlusion": "neon_smelter-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "frostline_surveyor",
+      "sourceIndex": 11,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "frostline_surveyor-body-baseColor.png",
+        "normal": "frostline_surveyor-body-normal.png",
+        "metallicMap": "frostline_surveyor-body-metallic.png",
+        "occlusion": "frostline_surveyor-body-occlusion.png",
+        "emission": "frostline_surveyor-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "frostline_surveyor",
+      "sourceIndex": 11,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "frostline_surveyor-glove-baseColor.png",
+        "normal": "frostline_surveyor-glove-normal.png",
+        "metallicMap": "frostline_surveyor-glove-metallic.png",
+        "occlusion": "frostline_surveyor-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "dune_signal",
+      "sourceIndex": 12,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "dune_signal-body-baseColor.png",
+        "normal": "dune_signal-body-normal.png",
+        "metallicMap": "dune_signal-body-metallic.png",
+        "occlusion": "dune_signal-body-occlusion.png",
+        "emission": "dune_signal-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.2,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "dune_signal",
+      "sourceIndex": 12,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "dune_signal-glove-baseColor.png",
+        "normal": "dune_signal-glove-normal.png",
+        "metallicMap": "dune_signal-glove-metallic.png",
+        "occlusion": "dune_signal-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "tidewrecker",
+      "sourceIndex": 13,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "tidewrecker-body-baseColor.png",
+        "normal": "tidewrecker-body-normal.png",
+        "metallicMap": "tidewrecker-body-metallic.png",
+        "occlusion": "tidewrecker-body-occlusion.png",
+        "emission": "tidewrecker-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "tidewrecker",
+      "sourceIndex": 13,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "tidewrecker-glove-baseColor.png",
+        "normal": "tidewrecker-glove-normal.png",
+        "metallicMap": "tidewrecker-glove-metallic.png",
+        "occlusion": "tidewrecker-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "circuit_jester",
+      "sourceIndex": 14,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "circuit_jester-body-baseColor.png",
+        "normal": "circuit_jester-body-normal.png",
+        "metallicMap": "circuit_jester-body-metallic.png",
+        "occlusion": "circuit_jester-body-occlusion.png",
+        "emission": "circuit_jester-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "circuit_jester",
+      "sourceIndex": 14,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "circuit_jester-glove-baseColor.png",
+        "normal": "circuit_jester-glove-normal.png",
+        "metallicMap": "circuit_jester-glove-metallic.png",
+        "occlusion": "circuit_jester-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "lantern_keeper",
+      "sourceIndex": 15,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "lantern_keeper-body-baseColor.png",
+        "normal": "lantern_keeper-body-normal.png",
+        "metallicMap": "lantern_keeper-body-metallic.png",
+        "occlusion": "lantern_keeper-body-occlusion.png",
+        "emission": "lantern_keeper-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "lantern_keeper",
+      "sourceIndex": 15,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "lantern_keeper-glove-baseColor.png",
+        "normal": "lantern_keeper-glove-normal.png",
+        "metallicMap": "lantern_keeper-glove-metallic.png",
+        "occlusion": "lantern_keeper-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "rivet_bruiser",
+      "sourceIndex": 16,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "rivet_bruiser-body-baseColor.png",
+        "normal": "rivet_bruiser-body-normal.png",
+        "metallicMap": "rivet_bruiser-body-metallic.png",
+        "occlusion": "rivet_bruiser-body-occlusion.png",
+        "emission": "rivet_bruiser-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "rivet_bruiser",
+      "sourceIndex": 16,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "rivet_bruiser-glove-baseColor.png",
+        "normal": "rivet_bruiser-glove-normal.png",
+        "metallicMap": "rivet_bruiser-glove-metallic.png",
+        "occlusion": "rivet_bruiser-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "aurora_medic",
+      "sourceIndex": 17,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "aurora_medic-body-baseColor.png",
+        "normal": "aurora_medic-body-normal.png",
+        "metallicMap": "aurora_medic-body-metallic.png",
+        "occlusion": "aurora_medic-body-occlusion.png",
+        "emission": "aurora_medic-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "aurora_medic",
+      "sourceIndex": 17,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "aurora_medic-glove-baseColor.png",
+        "normal": "aurora_medic-glove-normal.png",
+        "metallicMap": "aurora_medic-glove-metallic.png",
+        "occlusion": "aurora_medic-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "thunderhead",
+      "sourceIndex": 18,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "thunderhead-body-baseColor.png",
+        "normal": "thunderhead-body-normal.png",
+        "metallicMap": "thunderhead-body-metallic.png",
+        "occlusion": "thunderhead-body-occlusion.png",
+        "emission": "thunderhead-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "thunderhead",
+      "sourceIndex": 18,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "thunderhead-glove-baseColor.png",
+        "normal": "thunderhead-glove-normal.png",
+        "metallicMap": "thunderhead-glove-metallic.png",
+        "occlusion": "thunderhead-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "mirage_thief",
+      "sourceIndex": 19,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "mirage_thief-body-baseColor.png",
+        "normal": "mirage_thief-body-normal.png",
+        "metallicMap": "mirage_thief-body-metallic.png",
+        "occlusion": "mirage_thief-body-occlusion.png",
+        "emission": "mirage_thief-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "mirage_thief",
+      "sourceIndex": 19,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "mirage_thief-glove-baseColor.png",
+        "normal": "mirage_thief-glove-normal.png",
+        "metallicMap": "mirage_thief-glove-metallic.png",
+        "occlusion": "mirage_thief-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "koi_lancer",
+      "sourceIndex": 20,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "koi_lancer-body-baseColor.png",
+        "normal": "koi_lancer-body-normal.png",
+        "metallicMap": "koi_lancer-body-metallic.png",
+        "occlusion": "koi_lancer-body-occlusion.png",
+        "emission": "koi_lancer-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "koi_lancer",
+      "sourceIndex": 20,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "koi_lancer-glove-baseColor.png",
+        "normal": "koi_lancer-glove-normal.png",
+        "metallicMap": "koi_lancer-glove-metallic.png",
+        "occlusion": "koi_lancer-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "static_owl",
+      "sourceIndex": 21,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "static_owl-body-baseColor.png",
+        "normal": "static_owl-body-normal.png",
+        "metallicMap": "static_owl-body-metallic.png",
+        "occlusion": "static_owl-body-occlusion.png",
+        "emission": "static_owl-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "static_owl",
+      "sourceIndex": 21,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "static_owl-glove-baseColor.png",
+        "normal": "static_owl-glove-normal.png",
+        "metallicMap": "static_owl-glove-metallic.png",
+        "occlusion": "static_owl-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "magma_golem",
+      "sourceIndex": 22,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "magma_golem-body-baseColor.png",
+        "normal": "magma_golem-body-normal.png",
+        "metallicMap": "magma_golem-body-metallic.png",
+        "occlusion": "magma_golem-body-occlusion.png",
+        "emission": "magma_golem-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 3.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "magma_golem",
+      "sourceIndex": 22,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "magma_golem-glove-baseColor.png",
+        "normal": "magma_golem-glove-normal.png",
+        "metallicMap": "magma_golem-glove-metallic.png",
+        "occlusion": "magma_golem-glove-occlusion.png",
+        "emission": "magma_golem-glove-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 3.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "paper_crane",
+      "sourceIndex": 23,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.8,
+      "dielectricScale": 0.42,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "paper_crane-body-baseColor.png",
+        "normal": "paper_crane-body-normal.png",
+        "metallicMap": "paper_crane-body-metallic.png",
+        "occlusion": "paper_crane-body-occlusion.png",
+        "emission": "paper_crane-body-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "emissionEnergy": 2.6,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "paper_crane",
+      "sourceIndex": 23,
+      "materialIndex": 1,
+      "materialCount": 2,
+      "rawMapFactors": false,
+      "publishedNonmetal": false,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": false,
+        "baseColor": "paper_crane-glove-baseColor.png",
+        "normal": "paper_crane-glove-normal.png",
+        "metallicMap": "paper_crane-glove-metallic.png",
+        "occlusion": "paper_crane-glove-occlusion.png",
+        "emission": "",
+        "emissionColor": [
+          0,
+          0,
+          0
+        ],
+        "emissionEnergy": 1.0,
+        "normalScale": 1.0,
+        "occlusionStrength": 1,
+        "specularFactor": 1
+      }
+    },
+    {
+      "styleId": "pban",
+      "sourceIndex": 24,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "role": "explicit human-rejected published body atlas; nonmetal dry response with mirror/glass and metallic protection",
+      "rawMapFactors": false,
+      "roughnessFloor": 0.92,
+      "dielectricScale": 0.15,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": true,
+        "baseColor": "r5-albedo-7fe6568a072a90ba6c01f552.png",
+        "normal": "r5-normal-9fc5441b5589b9cc2131c0ed.png",
+        "metallicMap": "r5-metallic-7ceaeb4672c3bdb4e964a7ee.png",
+        "occlusion": "r5-occlusion-4936b6c6ea73ce841105ac23.png",
+        "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "normalScale": 1,
+        "occlusionStrength": 1,
+        "emissionEnergy": 4
+      },
+      "publishedNonmetal": true
+    },
+    {
+      "styleId": "claude",
+      "sourceIndex": 26,
+      "materialIndex": 0,
+      "materialCount": 2,
+      "role": "mixed_atlas",
+      "rawMapFactors": true,
+      "roughnessFloor": 0.84,
+      "dielectricScale": 0.35,
+      "expected": {
+        "color": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallic": 1,
+        "roughness": 1,
+        "doubleSided": true,
+        "baseColor": "claude-body-0-baseColor.png",
+        "normal": "claude-body-0-normal.png",
+        "metallicMap": "claude-body-0-metallic.png",
+        "occlusion": "claude-body-0-occlusion.png",
+        "emission": "claude-body-0-emission.png",
+        "emissionColor": [
+          1,
+          1,
+          1
+        ],
+        "normalScale": 1,
+        "occlusionStrength": 1
+      }
+    }
+  ]
+}

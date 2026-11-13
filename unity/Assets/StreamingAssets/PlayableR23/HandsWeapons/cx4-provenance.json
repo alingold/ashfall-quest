@@ -1,0 +1,93 @@
+{
+  "id": "cx4",
+  "file": "mx4_smg.glb",
+  "scale": 0.00113,
+  "anchor": [
+    42,
+    99.32258775,
+    0
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    8,
+    11
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.62
+  ],
+  "barrel_extension_start": -0.522377260389049,
+  "variant": "Downloaded MX4 visual adapted to existing CX4 archetype; authored short barrel extension reaches unchanged CX4 gameplay muzzle. Existing three-depth sights, recoil, cadence and ammunition retained.",
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.06723452415749999,
+    -0.022459999999999994
+  ],
+  "source": "[local development path]",
+  "source_sha256": "74ed5d56a4a48c308d91b54d0fe6d7911ce2e9d9b4cf15681e9d96124352abaa",
+  "output_sha256": "b743839aa2bce3b3cb0b624430f9c9cc5a847ddc9f940aa4a066840417ef0ed1",
+  "asset": {
+    "author": "TORI106 (https://sketchfab.com/TORI106)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/mx4-smg-b64aeb0128514250812cc694fef34063",
+    "title": "Mx4 SMG"
+  },
+  "magazine_center": [
+    -1.7463485197863338e-08,
+    -0.12042804992201052,
+    0.010780132485311018
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 6060,
+  "body_triangles": 5761,
+  "magazine_triangles": 299,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.038125786414793,
+    -0.26120611205811706,
+    -0.5223772603890491
+  ],
+  "bounds_max": [
+    0.027681346628556352,
+    0.11661403363780735,
+    0.4656818569281506
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 6060,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

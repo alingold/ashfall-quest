@@ -1,0 +1,25 @@
+{
+  "materials": [
+    {
+      "color": [
+        1,
+        0.72,
+        0.16,
+        1
+      ],
+      "metallic": 0.15,
+      "roughness": 0.5,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "UpCloseShaft",
+    "UpCloseArm-1",
+    "UpCloseArm1"
+  ]
+}

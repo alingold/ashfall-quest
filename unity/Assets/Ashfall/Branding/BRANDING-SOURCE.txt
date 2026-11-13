@@ -1,0 +1,132 @@
+# ASHFALL branding v1 — report
+
+**Result:** ASHFALL now has an original identity: the **Fissure A** symbol, a custom-drawn
+wordmark, four lockups in four colourways, every raster the game and store need, a UI theme
+(THEME.md) with measured contrast and colour-blind-checked team colours, and seven mock-ups of
+the restyled menus. Everything regenerates from vector sources with one command, and an
+automated check passes on the final files.
+
+## The chosen concept
+
+**Fissure A — the ember in the fault.** Two ash-white blades form a peak. The right blade
+carries the summit; the left stops at a fine fault line. Where an A's crossbar would be, an
+ember glows. It is the game's name made visual: rock, ash, and an ember still alive inside.
+
+Why it beat the other four directions (critique in `explore/NOTES.md`, sheet in `explore/concepts.png`):
+- **It reads at icon sizes.** It is a recognisable A and peak down to 16 px. At 48 px the
+  fissure is 2 px and the ember 7 px wide, with 2 px clearance.
+- **Symbol and word share one construction.** The wordmark's two A's *are* the symbol at text
+  weight, so the mark, the wordmark and the UI's diamond motif form one system.
+- **It works physically.** It is three islands with no enclosed counters, so it stencils in one
+  cut, stamps, and embroiders as two blades plus a diamond.
+- **It moves.** The ember ignites and sheds embers upward while ash falls: the title-moment
+  motif.
+- The rejected directions failed on specific grounds. The caldera ring reads as a power button.
+  The strata peak and plume-A are stock shapes or tropes. The falling ember breaks up at 48 px.
+
+**Palette.** Charcoal `#14161B` boards, ash-white `#ECE7DF` text, ember `#FF6A2B` and hot ember
+`#FFB15C` as the only accent, teal `#39C6B8` for information, and danger/success as functional
+colours. Body text measures 7.1–15.4:1 on every surface. Team colours: Ember/Glacier
+`#FF8A3D`/`#3E9BFF` by default, with Sulfur/Violet `#F2C230`/`#9A6BFF` as the alternate. Both
+pairs stay at least 47 ΔE apart under protan, deutan and tritan simulation.
+
+**Tagline (proposal):** "THE FRONTIER IS VERTICAL". It appears in the hero art and the title moment.
+
+## Deliverables
+
+| path | what | size |
+| --- | --- | --- |
+| `logo/ashfall-symbol-*.svg` | symbol × {color-dark, color-light, white, black} | 128 × 100 units |
+| `logo/ashfall-wordmark-*.svg` | wordmark × 4 | 693 × 100 |
+| `logo/ashfall-lockup-horizontal-*.svg` | symbol + wordmark × 4 | 973 × 160 |
+| `logo/ashfall-lockup-stacked-*.svg` | stacked × 4 | 693 × 390 |
+| `logo/CONSTRUCTION.md`, `construction.png`, `preview.png` | grid, proportions, clear space, minimum size, misuse; every-variant sheet | 1800 × 1040, 1680 × 1060 |
+| `export/logo-wordmark.png` | in-world title: white + ember on transparent → `StreamingAssets/PlayableR23/Branding/` | 2048 × 512 RGBA |
+| `export/logo-symbol.png` | symbol on transparent | 1024 × 1024 RGBA |
+| `export/app-icon-1024.png` | full-bleed icon, opaque; symbol inside a 0.335-width circle (round-mask safe) | 1024 × 1024 RGB |
+| `export/android-adaptive-foreground-432.png` | symbol within the 66 dp safe circle (farthest pixel 120.8 of 132 px) | 432 × 432 RGBA |
+| `export/android-adaptive-background-432.png` | charcoal + ember glow | 432 × 432 RGB |
+| `export/splash-logo.png` | stacked lockup on transparent. **Splash background: `#0B0C0F`** (token `void`) | 1024 × 640 RGBA |
+| `export/hero-2560x1440.png`, `hero-1920x1080.png` | store / title art: wordmark + tagline over a procedural volcanic scene (no photos) | as named, RGB |
+| `export/thumbnail-missing-256x320.png` | missing outfit/thumbnail card | 256 × 320 RGB |
+| `export/thumbnail-missing-map-1280x720.png` | missing map thumbnail (landscape; the slot crops it) | 1280 × 720 RGB |
+| `export/map-thumbnail-frame-1280x720(-selected).png` | 16:9 thumbnail frame overlay, normal + selected | 1280 × 720 RGBA |
+| `export/map-thumbnail-frame-slot-880x340(-selected).png` | same frame at the menu's actual 440 × 170 slot (×2) | 880 × 340 RGBA |
+| `THEME.md` | tokens, contrast tables, team palettes, type scale, spacing/stroke, header band, states, icons, title-moment motion, old-hex→token map, JSON tokens | — |
+| `mock/mock-front-menu.png`, `mock-pause-menu.png`, `mock-map-select.png`, `mock-outfit-select.png`, `mock-match-rules.png`, `mock-title-moment.png`, `mock-states.png` | restyle mock-ups using the real captions and the code's own coordinates | ~2040 × 1371 |
+| `explore/concepts.png`, `explore/NOTES.md`, `explore/svg/` | five directions, critique, all rejected SVGs kept (40 files) | 2820 × 1090 |
+
+The extra items beyond the brief are small and meant to be useful: the landscape missing-map
+card and the 440 × 170-slot frame, both needed because the map grid crops thumbnails to
+2.59:1, plus `mock-states.png`.
+
+## How the mock-ups stay honest
+They use only what `R23VrUi` draws today: flat quads, vertical gradients from per-vertex
+colours (`Quad()` already writes vertex colours, and the shader multiplies by `_Color`),
+45°-rotated quads for diamonds, textured quads for thumbnails, icons and the logo PNG, and the
+shipped font at its single weight with no letter spacing. Every interactive element sits at the
+coordinates in `R23VrUI*.cs`/`R24*Ui.cs`. The restyle adds non-interactive backdrops, header
+bands, frames and diamonds, and moves page headings up 16 px into the band.
+
+## Font and licences
+- **UI font:** `R23InventoryUI.ttf` = Open Sans SemiBold, © 2020 The Open Sans Project Authors,
+  SIL Open Font License 1.1 (licence file next to it, and recorded in the font's name table).
+  It also contains one merged Noto Sans Symbols 2 glyph (OFL). The family name was changed to
+  "Ashfall Inventory UI", which complies with the OFL. The mock-ups and the hero tagline embed
+  this file; nothing else typographic is used.
+- **Logo:** custom paths drawn in Python from a 45°-cut construction. No font outlines, stock
+  icons or third-party art. The hero scene and all textures are procedural.
+- **Map thumbnails in the mock** are the project's own Range/Valley/Cyber Bird images, read
+  only. Paintball's archive thumbnail is third-party, so the mock shows the missing-map card
+  instead.
+
+## How to regenerate
+```
+python tools\build.py
+```
+This runs from `authoring\branding-v1` in about 35 s. It writes `explore/`, `logo/`, `export/`,
+`mock/` and `THEME.md`, then runs `tools\validate.py`. Requirements: Python 3.13 with Pillow
+(12.0.0 was used; it is already installed globally, so no venv was needed) and Microsoft Edge,
+used headless as the rasteriser with a throw-away profile per call. Edit colours and motion in
+`tools/theme.py`, letterforms in `tools/glyphs.py`, and the symbol in `tools/marks.py`.
+
+**Validation on the final files:**
+- 56 SVGs: paths only, every subpath closed, no text, images or external references. All
+  artwork contours are simple, with no self-intersections or duplicate points.
+- 14 exports at exact sizes; transparent files have a transparent background, and opaque files
+  are saved without alpha.
+- The adaptive foreground stays inside the 66 dp circle.
+- All 23 text pairings meet their targets, and THEME.md's JSON equals the generator.
+- Directory size is 7 MB, and no Edge process is left running.
+
+## Integration notes for the code agent
+- Copy `export/logo-wordmark.png` to `StreamingAssets/PlayableR23/Branding/logo-wordmark.png`.
+- Use `export/app-icon-1024.png`, the two adaptive layers and `export/splash-logo.png` as the
+  sources under `Assets/Ashfall/Branding/`. The splash background is `#0B0C0F`.
+- THEME.md §9 maps each of the survey's inline hex colours to a token. §5–6 define the header
+  band and button/card states using the existing 6 mm `Button underline` quad.
+- Quad sort order comes from quad names. New backdrops must contain "backdrop" in their names.
+
+## Open questions and uncertainties
+1. **Trademark clearance** has not been done. A-shaped peak marks are common in games. Ours
+   differs by construction (open two-blade peak with a fault and a lit ember, no solid
+   silhouette, not red), but a professional search is needed before commercial release.
+2. **Headset checks** cannot be done off-engine:
+   - legibility of the new 17 px minimum captions;
+   - whether the subtle `panel-top`→`panel-bottom` vertex gradient bands on Quest (if it does,
+     flatten it to `panel`);
+   - whether the 2 px hairlines alias at 1.6 m;
+   - whether the title moment's ember count feels right.
+3. **Team set A's team 1 (`#FF8A3D`) equals the `primary` button colour.** This is fine in the
+   HUD, but a menu roster swatch beside START MATCH would look related. Use the diamond swatch
+   shape there, or switch to set B.
+4. **Store art:** only the two requested hero sizes were made. Meta's store asks for further
+   aspect ratios; `tools/exports.py` `hero()` can emit any size from the same scene.
+5. **Match-rules layout** (pre-existing): the explanation line at y = 228 sits close to the
+   first rule row at y = 258. It is legible in the mock, but worth checking in the headset.
+6. **Outfit mock** uses placeholder names and figures; the new original skins had no
+   thumbnails yet.
+7. The tagline is a proposal and the owner may replace it. The title moment falls back to
+   TextMesh if the PNG is absent.
+8. The general report-branding rule in the user's report guidelines (U of U ECE logo) was not
+   applied. This is the game's own identity, not a report.

@@ -1,0 +1,183 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using Ashfall.Integration.Playable;
+using Ashfall.Integration.Playable.Exclusion;
+using UnityEngine;
+
+namespace Ashfall.Editor.Playable
+{
+    // Uses the existing native Update/LateUpdate driver, real rig and independent
+    // triangle oracle. Coordinates below are relative to an isolated y=0 floor.
+    public static class R25RampCrouchNative
+    {
+        [Serializable] public sealed class Frame
+        {
+            public string scenario, phase;
+            public int frame;
+            public Vector3 eye, root, localHead;
+            public float dt, eyeHeight, crouch, clearance, signedPlane, radius, alpha;
+            public bool refused, fullyBlack, violation;
+        }
+        [Serializable] public sealed class Scenario
+        {
+            public string id;
+            public float angle, thickness, dt, speed, minimumHeight=999, minimumClearance=999;
+            public float maximumCrouch, finalCrouch, uphillCrouch, uphillHeight, blockedHeight=999, rootDrop;
+            public int frames, blackFrames, violations, refusedFrames;
+            public bool undersideWitness, passed;
+        }
+        [Serializable] public sealed class Receipt
+        {
+            public bool nativeExecuted=true, acceptancePassed=true;
+            public float minimumEyeHeight=R25RampCrouch.MinimumEyeHeight;
+            public List<Scenario> scenarios=new List<Scenario>();
+        }
+        static readonly Vector3 origin = new Vector3(3000,0,3000);
+
+        public static IEnumerator Run(R23PlayableLoop loop, string output)
+        {
+            bool movie=R23PlayableBuild.Argument("-ashfallRampMovie")=="true";
+            bool pilot=R23PlayableBuild.Argument("-ashfallRampPilot")=="true";
+            var receipt=new Receipt();var rig=loop.Rig;
+            float standing=1.7088f;
+            using(var frames=new StreamWriter(Path.Combine(output,"frames.jsonl")))
+            foreach(float thick in new[]{0f,.305f})
+            foreach(float angle in movie||pilot?new[]{45f}:new[]{45f,30f})
+            {
+                float length=3/Mathf.Tan(angle*Mathf.Deg2Rad);
+                Vector3 normal=new Vector3(0,Mathf.Cos(angle*Mathf.Deg2Rad),-Mathf.Sin(angle*Mathf.Deg2Rad));
+                var fixture=new GameObject("Straight ramp "+angle+" thickness "+thick);fixture.transform.position=origin;
+                var floor=GameObject.CreatePrimitive(PrimitiveType.Cube);floor.name="y=0 floor";
+                floor.transform.SetParent(fixture.transform,false);floor.transform.localPosition=new Vector3(0,-.1f,length*.5f);
+                floor.transform.localScale=new Vector3(20,.2f,20);SetMaterial(floor,new Color(.16f,.23f,.30f));
+                var ramp=new GameObject("actual ramp collision");ramp.transform.SetParent(fixture.transform,false);
+                var mesh=RampMesh(length,normal,thick);
+                ramp.AddComponent<MeshFilter>().sharedMesh=mesh;ramp.AddComponent<MeshRenderer>();
+                SetMaterial(ramp,new Color(1,.65f,.12f));ramp.AddComponent<MeshCollider>().sharedMesh=mesh;
+                Physics.SyncTransforms();
+                var geometry=new R25HeadclipGeometry();geometry.Add(ramp.GetComponent<MeshCollider>());geometry.Build();
+                string onlyPath=R23PlayableBuild.Argument("-ashfallRampPath");
+                foreach(string path in !string.IsNullOrEmpty(onlyPath)?new[]{onlyPath}:movie||pilot?new[]{"south-under"}:new[]{"south-under","east-under","west-under","north-up"})
+                foreach(float dt in movie||pilot?new[]{1f/30}:new[]{1f/72,1f/120,.05f})
+                foreach(float speed in movie||pilot?new[]{1.5f}:new[]{1f,3f})
+                {
+                    string id=(thick==0?"thin":"thick")+"-"+angle+"-"+path+"-"+dt.ToString("F4",System.Globalization.CultureInfo.InvariantCulture)+"-"+speed;
+                    var record=new Scenario{id=id,angle=angle,thickness=thick,dt=dt,speed=speed};receipt.scenarios.Add(record);
+                    Vector3 start=new Vector3(0,0,length+.65f),heading=Vector3.back;
+                    if(path=="north-up"){start=new Vector3(0,0,-.7f);heading=Vector3.forward;}
+                    if(path=="east-under"){start=new Vector3(-2.3f,0,length*.48f);heading=Vector3.right;}
+                    if(path=="west-under"){start=new Vector3(2.3f,0,length*.48f);heading=Vector3.left;}
+                    rig.SetSpawn(origin+start,origin+start+heading);
+                    rig.TrackingOrigin.localPosition=Vector3.zero;
+                    rig.Head.transform.localRotation=Quaternion.identity;
+                    rig.ApplySettings(loop.UI.Settings.With(walk:1));
+                    for(int j=0;j<20;j++)rig.HeadclipProbeStep(Vector2.zero,Vector3.up*standing,0,dt);
+                    Time.captureDeltaTime=dt;
+                    string folder=Path.Combine(output,id);if(movie||pilot)Directory.CreateDirectory(folder);
+                    R25RampCrouchVideo video=movie||pilot?new R25RampCrouchVideo(origin,length,normal,thick,rig.HeadCollision.EyeSafetyRadius):null;
+                    // Walk to the minimum, hold two seconds, lean 30 cm forward
+                    // and up, retreat, then show the ascending control.
+                    float approach=path=="south-under"?(length+1)/speed+1:2.5f/speed+1;
+                    float exit=approach;
+                    float duration=approach+2+2+exit+1;
+                    if(movie||pilot){approach=3;exit=3;duration=15;}
+                    if(path=="north-up")duration=(length+.5f)/speed+1;
+                    int count=Mathf.CeilToInt(duration/dt);Vector3 previous=rig.Head.transform.position;
+                    bool switched=false;float lastRootY=rig.transform.position.y;
+                    for(int i=0;i<count;i++)
+                    {
+                        float time=i*dt;string phase="approach";Vector2 move=Vector2.zero;Vector3 local=Vector3.up*standing;
+                        if(path=="north-up")
+                        {
+                            phase="uphill";
+                            if(rig.transform.position.z<origin.z+length-.25f)move.y=speed/Ashfall.Modules.Player.PlayerTuning.WalkSpeed;
+                        }
+                        else if(time<approach)
+                        {
+                            bool sidePath=path=="east-under"||path=="west-under";
+                            if(!sidePath||Vector3.Dot(rig.transform.position-origin-start,heading)<2.3f)
+                                move.y=speed/Ashfall.Modules.Player.PlayerTuning.WalkSpeed;
+                        }
+                        else if(time<approach+2)phase="blocked hold";
+                        else if(time<approach+4)
+                        {
+                            phase="lean";float lean=Mathf.Sin((time-approach-2)*Mathf.PI/2);
+                            local+=new Vector3(0,.3f*lean,.3f*lean);
+                        }
+                        else if(time<approach+4+exit)
+                        {phase="walking out";move.y=-speed/Ashfall.Modules.Player.PlayerTuning.WalkSpeed;}
+                        else if(movie||pilot)
+                        {
+                            phase="uphill control";
+                            if(!switched)
+                            {
+                                rig.SetSpawn(origin+new Vector3(0,0,-.7f),origin+Vector3.forward);
+                                rig.TrackingOrigin.localPosition=Vector3.zero;
+                                for(int j=0;j<20;j++)rig.HeadclipProbeStep(Vector2.zero,Vector3.up*standing,0,dt);
+                                previous=rig.Head.transform.position;switched=true;
+                            }
+                            if(rig.transform.position.z<origin.z+length-.3f)move.y=1.2f/Ashfall.Modules.Player.PlayerTuning.WalkSpeed;
+                        }
+                        else phase="returned";
+                        Vector3 before=rig.transform.position;
+                        rig.HeadclipProbeStep(move,local,0,dt);
+                        int index=i;string sampledPhase=phase;Vector3 sampledLocal=local;
+                        yield return new R25HeadclipNative.Audit{Run=delegate {
+                            rig.SmokeLateHeadCollision();rig.ViewFade.NativeProbeRenderGuard();
+                            Vector3 eye=rig.Head.transform.position;var distance=geometry.Eye(eye);
+                            float alpha=rig.ViewFade.Alpha;
+                            float signed=Vector3.Dot(eye-origin,normal);
+                            bool refused=rig.RampCrouchBlocked || move.sqrMagnitude>.00001f&&(rig.transform.position-before).sqrMagnitude<.0000001f;
+                            var f=new Frame{scenario=id,phase=sampledPhase,frame=index,eye=eye,root=rig.transform.position,localHead=sampledLocal,
+                                dt=dt,eyeHeight=eye.y-rig.transform.position.y,crouch=rig.RampCrouchOffset,clearance=distance.distance,
+                                signedPlane=signed,radius=rig.HeadCollision.EyeSafetyRadius,alpha=alpha,fullyBlack=rig.ViewFullyObstructed(),refused=refused};
+                            f.violation=alpha>.001f||distance.distance<f.radius-.0005f||geometry.Crosses(previous,eye)
+                                ||f.eyeHeight<R25RampCrouch.MinimumEyeHeight-.001f;
+                            frames.WriteLine(JsonUtility.ToJson(f));frames.Flush();
+                            record.frames++;if(alpha>.001f)record.blackFrames++;if(f.violation)record.violations++;if(refused)record.refusedFrames++;
+                            record.minimumHeight=Mathf.Min(record.minimumHeight,f.eyeHeight);record.minimumClearance=Mathf.Min(record.minimumClearance,f.clearance);
+                            record.maximumCrouch=Mathf.Max(record.maximumCrouch,f.crouch);
+                            if(sampledPhase=="blocked hold")record.blockedHeight=Mathf.Min(record.blockedHeight,f.eyeHeight);
+                            if(sampledPhase.StartsWith("uphill",StringComparison.Ordinal))
+                            {record.uphillCrouch=Mathf.Max(record.uphillCrouch,f.crouch);record.uphillHeight=Mathf.Max(record.uphillHeight,rig.transform.position.y);}
+                            else record.rootDrop=Mathf.Max(record.rootDrop,lastRootY-rig.transform.position.y);
+                            if(signed<-.12f&&Mathf.Abs(eye.x-origin.x)<1.3f&&eye.z>origin.z&&eye.z<origin.z+length&&f.crouch>.1f)record.undersideWitness=true;
+                            previous=eye;lastRootY=rig.transform.position.y;
+                            if(video!=null)video.Capture(rig,folder,index);
+                        }};
+                    }
+                    record.finalCrouch=rig.RampCrouchOffset;
+                    record.passed=record.violations==0&&record.finalCrouch<.002f&&record.uphillCrouch<.002f;
+                    if(path!="north-up")record.passed &= record.undersideWitness&&record.maximumCrouch>.1f;
+                    if(path=="south-under")record.passed &= Mathf.Abs(record.blockedHeight-.6f)<.005f&&record.refusedFrames>0;
+                    if(!record.passed)receipt.acceptancePassed=false;
+                    File.WriteAllText(Path.Combine(output,"partial-result.json"),JsonUtility.ToJson(receipt,true));
+                    if(video!=null)video.Dispose();
+                }
+                UnityEngine.Object.Destroy(fixture);UnityEngine.Object.Destroy(mesh);
+            }
+            File.WriteAllText(Path.Combine(output,"result.json"),JsonUtility.ToJson(receipt,true));
+        }
+        static Mesh RampMesh(float length,Vector3 normal,float thickness)
+        {
+            Vector3[] top={new Vector3(-1.5f,0,0),new Vector3(1.5f,0,0),new Vector3(1.5f,3,length),new Vector3(-1.5f,3,length)};
+            var vertices=new List<Vector3>(top);var triangles=new List<int>(new[]{0,2,1,0,3,2});
+            if(thickness>0)
+            {
+                foreach(var p in top)vertices.Add(p-normal*thickness);
+                triangles.AddRange(new[]{4,5,6,4,6,7});
+                for(int i=0;i<4;i++){int j=(i+1)%4;triangles.AddRange(new[]{i,j,j+4,i,j+4,i+4});}
+            }
+            var mesh=new Mesh();mesh.vertices=vertices.ToArray();mesh.triangles=triangles.ToArray();mesh.RecalculateNormals();mesh.RecalculateBounds();return mesh;
+        }
+        static void SetMaterial(GameObject node,Color color)
+        {
+            var mat=new Material(Shader.Find("Universal Render Pipeline/Unlit"));mat.color=color;mat.SetFloat("_Cull",0);
+            node.GetComponent<Renderer>().sharedMaterial=mat;
+        }
+    }
+}
+#endif

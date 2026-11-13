@@ -1,0 +1,120 @@
+{
+  "materials": [
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1
+      ],
+      "metallic": 0.22059628258212793,
+      "roughness": 0.4394825164620689,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "magnum-drum-finish.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.08627450980392157,
+        0.11372549019607843,
+        0.12549019607843137,
+        1
+      ],
+      "metallic": 0.25,
+      "roughness": 0.7,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.5490196078431373,
+        0.5882352941176471,
+        0.596078431372549,
+        1
+      ],
+      "metallic": 0.86,
+      "roughness": 0.29,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.12549019607843137,
+        0.15294117647058825,
+        0.16862745098039217,
+        1
+      ],
+      "metallic": 0.36,
+      "roughness": 0.57,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.7176470588235294,
+        0.5843137254901961,
+        0.2823529411764706,
+        1
+      ],
+      "metallic": 0.8,
+      "roughness": 0.35,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.6784313725490196,
+        0.5215686274509804,
+        0.27058823529411763,
+        1
+      ],
+      "metallic": 0.78,
+      "roughness": 0.38,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "DrumBody",
+    "DrumRecesses",
+    "LiveRound0",
+    "LiveRound0.Primer",
+    "DrumFlutes",
+    "LiveRound1",
+    "LiveRound1.Primer",
+    "LiveRound2",
+    "LiveRound2.Primer",
+    "LiveRound3",
+    "LiveRound3.Primer",
+    "LiveRound4",
+    "LiveRound4.Primer",
+    "LiveRound5",
+    "LiveRound5.Primer",
+    "LiveRound6",
+    "LiveRound6.Primer",
+    "DrumRims"
+  ]
+}

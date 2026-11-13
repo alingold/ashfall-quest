@@ -1,0 +1,54 @@
+Shader "Ashfall/R23LobbySky"
+{
+ SubShader {
+  Tags { "RenderPipeline"="UniversalPipeline" "Queue"="Background" "RenderType"="Background" "PreviewType"="Skybox" }
+  Pass {
+   Cull Off ZWrite Off
+   HLSLPROGRAM
+   #pragma vertex Vert
+   #pragma fragment Frag
+   #pragma target 3.0
+   #pragma multi_compile_instancing
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+   struct Attributes {float4 positionOS:POSITION;UNITY_VERTEX_INPUT_INSTANCE_ID};
+   struct Varyings {float4 positionCS:SV_POSITION;float3 direction:TEXCOORD0;UNITY_VERTEX_OUTPUT_STEREO};
+   Varyings Vert(Attributes a) {Varyings o;UNITY_SETUP_INSTANCE_ID(a);UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);o.positionCS=TransformObjectToHClip(a.positionOS.xyz);o.direction=a.positionOS.xyz;return o;}
+   float3 R23WorkingColor(float3 rgb) {
+    #ifdef UNITY_COLORSPACE_GAMMA
+    return LinearToSRGB(rgb);
+    #else
+    return rgb;
+    #endif
+   }
+   float3 R23SkyGradient(float y,float3 top,float3 horizon,float3 bottom) {
+    // Actual generated ProceduralSkyMaterial shader. Source_color endpoints
+    // have already been decoded to linear, including in Unity's Gamma project.
+    float v_angle=clamp(y,-1.0,1.0);
+    float3 sky=lerp(top,horizon,saturate(pow(1.0-v_angle,0.6/0.15)));
+    float3 ground=lerp(bottom,horizon,saturate(pow(1.0+v_angle,0.6/0.02)));
+    return lerp(ground,sky,step(0.0,v_angle));
+   }
+   half4 Frag(Varyings i):SV_Target {
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);float3 direction=normalize(i.direction);
+    float3 horizon=SRGBToLinear(float3(163,201,228)/255.0);
+    float3 top=SRGBToLinear(float3(36,110,182)/255.0),bottom=SRGBToLinear(float3(53,72,89)/255.0);
+    float3 skyColor=R23SkyGradient(direction.y,top,horizon,bottom);
+    // Source sun has no authored angular_distance override: Light3D default is
+    // 0 degrees, passed as radians to the sky. Do not invent a .5-degree disk.
+    Light sun=GetMainLight();float angle=dot(direction,sun.direction);
+    float size=1.0,limit=cos(radians(30.0));
+    if(direction.y>=0) {
+     if(angle>size)skyColor=sun.color;
+     else if(angle>limit) {
+      float c2=(size-angle)/(size-limit);
+      float halo=saturate(pow(saturate(1.0-c2),1.6/pow(0.15,1.4)));
+      skyColor=lerp(skyColor,sun.color,halo);
+     }
+    }
+    return half4(R23WorkingColor(skyColor),1);
+   }
+   ENDHLSL
+  }
+ }
+}

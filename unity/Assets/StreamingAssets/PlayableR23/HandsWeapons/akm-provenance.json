@@ -1,0 +1,102 @@
+{
+  "id": "akm",
+  "file": "ak47.glb",
+  "scale": 0.0011950294083797593,
+  "anchor": [
+    0,
+    65.49,
+    182.3776
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    5
+  ],
+  "bolt": [
+    18
+  ],
+  "omit": [
+    6
+  ],
+  "omission_reason": "Duplicate spare magazine staged outside the weapon for source reload animation; seated204-triangle magazine retained and reused by all game reload states. Original unchanged in evidence.",
+  "muzzle": [
+    0,
+    0.045,
+    -0.76
+  ],
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.03326247595479043,
+    -0.1929465954297204
+  ],
+  "source": "[local development path]",
+  "source_sha256": "7813a22f93f53e0ade74675fe58901252210d3e4938f566f16aa6493a5efc128",
+  "output_sha256": "e386743d16a91bf3b0cf633ec9b164ecd094d2de5a6cba0944bcacbd5e8aebdb",
+  "asset": {
+    "author": "wburton (https://sketchfab.com/wburton95)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/ak47-831519a097d84e079fd8bc4b15e5b57d",
+    "title": "Ak47"
+  },
+  "magazine_center": [
+    -1.8708992688409865e-15,
+    -0.08973449720466528,
+    -0.20337825553174663
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 3352,
+  "body_triangles": 2894,
+  "magazine_triangles": 204,
+  "moving_triangles": 50,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.03072181468240246,
+    -0.21866711221410556,
+    -0.7599946360570253
+  ],
+  "bounds_max": [
+    0.054458445814880276,
+    0.11037976110222497,
+    0.3612254546814111
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 204,
+  "visible_source_triangles": 3148,
+  "default_pose_skins_baked": 1,
+  "source_animations_not_used": 9,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.037732157312633685,
+    0.06181724503789047,
+    -0.2145395271919116
+  ]
+}

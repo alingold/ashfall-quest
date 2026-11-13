@@ -1,0 +1,23 @@
+{
+  "materials": [
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1
+      ],
+      "metallic": 0.22059628258212793,
+      "roughness": 0.4394825164620689,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "magnum-body-baseColor.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "Body"
+  ]
+}

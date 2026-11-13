@@ -1,0 +1,54 @@
+{
+  "source": "[local development path]",
+  "source_sha256": "2d430e02ef7e141cb85244b28f1d5d8aa39c10f12c92fdab977cf3786cc70c14",
+  "output_sha256": "53472b4af3564f1cf5baeaf641af723a654e90c918b822a84d44891a34653e9c",
+  "asset": {
+    "author": "Vlasov Daniil (https://sketchfab.com/dan741vlasov)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/1911-tactical-bf2c7f5687b349b0baf9a6f61e5bd655",
+    "title": "1911 tactical"
+  },
+  "uniform_scale": 0.13118539017718497,
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.02539749153830301,
+    -0.07306685115946648,
+    -0.139948312141748
+  ],
+  "magazine_center": [
+    -1.5413331507440134e-05,
+    -0.10205055949658826,
+    -0.03945997842274581
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "source_triangles": 3888,
+  "magazine_triangles": 106,
+  "slide_triangles": 1103,
+  "body_triangles": 2679,
+  "muzzle": [
+    0,
+    0.045,
+    -0.42
+  ],
+  "method": "Welded connected component8 magazine; component1 and elevated sight/slide fittings as slide. Every source triangle, UV, material/texture retained exactly once; no geometry invented."
+}

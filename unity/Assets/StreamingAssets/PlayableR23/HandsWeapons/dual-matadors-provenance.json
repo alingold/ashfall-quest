@@ -1,0 +1,93 @@
+{
+  "id": "matadors",
+  "file": "jolly_the_shotgun_low_poly_3d-coat_texture_test.glb",
+  "scale": 0.008950954552330734,
+  "anchor": [
+    0,
+    4,
+    -16
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.37
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "variant": "Compact Jolly source fits paired Matadors with original eight rounds per hand and occupied-hand upward flick. No fake detachable magazine. Coachgun was inspected but contains duplicate closed/open display guns; retained unused outside package. Runtime display0.6once.",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.009196181790677063,
+    -0.11821527283729175
+  ],
+  "source": "[local development path]",
+  "source_sha256": "714d7e93415bc6946a0d7e0c3c8dd0fcddb59c4599ed126521d03e56ccfea947",
+  "output_sha256": "25009b2a8e82f8e34d34d50eaa33f80d1c92da8124ab78f1c67792084e361a6d",
+  "asset": {
+    "author": "Csaba Baity (tsabszy) (https://sketchfab.com/tsabszy)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/jolly-the-shotgun-low-poly-3d-coat-texture-test-7cbc0a5c8e35414a8388b5a1b3a5d5c9",
+    "title": "Jolly the Shotgun, Low Poly 3d-Coat texture test"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 3146,
+  "body_triangles": 3146,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.04742461867611783,
+    -0.08850428068203912,
+    -0.3700000000000001
+  ],
+  "bounds_max": [
+    0.047424584530935975,
+    0.10689667840857515,
+    0.13356945432541653
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 3146,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

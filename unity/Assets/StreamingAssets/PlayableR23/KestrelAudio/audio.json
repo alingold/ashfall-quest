@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "cues": [
+    {
+      "kind": "charge",
+      "semantic": "enemy_charge",
+      "rate": 32000,
+      "files": [
+        "enemy_charge_00.wav",
+        "enemy_charge_01.wav"
+      ]
+    },
+    {
+      "kind": "fire",
+      "semantic": "enemy_fire",
+      "rate": 32000,
+      "files": [
+        "enemy_fire_00.wav",
+        "enemy_fire_01.wav",
+        "enemy_fire_02.wav"
+      ]
+    },
+    {
+      "kind": "hit",
+      "semantic": "impact_metal",
+      "rate": 48000,
+      "files": [
+        "impact_metal_00.wav",
+        "impact_metal_01.wav",
+        "impact_metal_02.wav"
+      ]
+    },
+    {
+      "kind": "death",
+      "semantic": "enemy_break",
+      "rate": 32000,
+      "files": [
+        "enemy_break_00.wav",
+        "enemy_break_01.wav",
+        "enemy_break_02.wav"
+      ]
+    }
+  ]
+}

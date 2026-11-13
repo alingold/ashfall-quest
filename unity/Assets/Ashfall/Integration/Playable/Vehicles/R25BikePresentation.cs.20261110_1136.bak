@@ -1,0 +1,96 @@
+#if UNITY_6000_0_OR_NEWER
+using System.Collections;
+using Ashfall.Integration.Playable.HandsWeapons;
+using UnityEngine;
+using Ashfall.Integration.Playable.Explosives;
+namespace Ashfall.Integration.Playable.Vehicles
+{
+    // Purely visual, no damage colliders. The unbanked handlebars/cowl are the VR reference.
+    public sealed class R25BikePresentation:MonoBehaviour
+    {
+        Transform chassis,cowl,smoke,burst;LineRenderer dust;TextMesh marker;
+        Material material,panelMaterial,glowMaterial;Renderer shell;
+        Transform[] pods=new Transform[2]; MaterialPropertyBlock tintBlock; int colourway;R24ItemAudio bank;AudioSource engine,rev,cue;
+        bool mountedWas,deadWas,boostWas;float burstUntil,lastSpeed;
+        public void Initialize()
+        {
+            tintBlock=new MaterialPropertyBlock();material=new Material(Shader.Find("Sprites/Default"));material.color=Color.white;
+            chassis=new GameObject("Visual bank").transform;chassis.SetParent(transform,false);
+            // Three shared surfaces; mesh groups replace dozens of primitive draws.
+            panelMaterial=R25ItemArtGeometry.Surface(new Color(.14f,.28f,.32f),.25f,.38f);
+            glowMaterial=R25ItemArtGeometry.Surface(new Color(.08f,.8f,1),0,.4f,true);
+            material.shader=Shader.Find("Universal Render Pipeline/Lit");material.SetColor("_BaseColor",new Color(.035f,.045f,.055f));material.SetFloat("_Metallic",.3f);material.SetFloat("_Smoothness",.28f);
+            colourway=0;foreach(char c in gameObject.name)colourway=(colourway*31+c)%3;
+            var frame=new R25ItemArtGeometry();
+            frame.Box(new Vector3(0,.02f,-.05f),new Vector3(.22f,.16f,1.65f),Vector3.zero);
+            frame.Box(new Vector3(0,.25f,-.2f),new Vector3(.42f,.12f,.65f),Vector3.zero);
+            for(int side=-1;side<=1;side+=2){
+                frame.Box(new Vector3(side*.26f,-.06f,-.1f),new Vector3(.055f,.08f,1.5f),new Vector3(0,side*7,0));
+                for(int i=0;i<5;i++)frame.Box(new Vector3(side*.24f,.10f,.28f+i*.07f),new Vector3(.11f,.024f,.025f),new Vector3(0,side*-20,-side*18));
+                frame.Box(new Vector3(side*.27f,-.09f,0),new Vector3(.3f,.055f,.09f),new Vector3(0,0,side*-18));
+            }
+            R25ItemArtGeometry.Attach(chassis,"Exposed spine saddle and intake louvers",frame,material);
+            var panels=new R25ItemArtGeometry();
+            panels.Cylinder(new Vector3(0,.13f,.65f),.30f,.72f,new Vector3(75,0,0),6,.35f);
+            for(int side=-1;side<=1;side+=2)panels.Box(new Vector3(side*.205f,.1f,.05f),new Vector3(.16f,.13f,.85f),new Vector3(-10,side*-12,side*-22));
+            panels.Box(new Vector3(0,.26f,-.72f),new Vector3(.045f,.29f,.4f),new Vector3(-30,0,0));
+            shell=R25ItemArtGeometry.Attach(chassis,"Raked nose fairings and tail blade",panels,panelMaterial).GetComponent<Renderer>();
+            var strips=new R25ItemArtGeometry();
+            for(int side=-1;side<=1;side+=2)strips.Box(new Vector3(side*.205f,.18f,.12f),new Vector3(.018f,.015f,.60f),new Vector3(-10,side*-12,0));
+            strips.Box(new Vector3(0,.30f,-.91f),new Vector3(.34f,.025f,.025f),Vector3.zero);
+            R25ItemArtGeometry.Attach(chassis,"Running strips and tail light",strips,glowMaterial);
+            for(int i=0;i<2;i++){
+                pods[i]=new GameObject("Gimballed repulsor "+i).transform;pods[i].SetParent(chassis,false);pods[i].localPosition=new Vector3(i==0?-.32f:.32f,-.17f,-.1f);
+                var housing=new R25ItemArtGeometry();housing.Cylinder(Vector3.zero,.145f,1.1f,new Vector3(90,0,0),12,.85f);
+                R25ItemArtGeometry.Attach(pods[i],"Armoured pod housing",housing,material);
+                var rings=new R25ItemArtGeometry();for(int j=-1;j<=1;j++)rings.Ring(new Vector3(0,0,j*.4f),.145f,.015f,new Vector3(90,0,0),16);
+                R25ItemArtGeometry.Attach(pods[i],"Repulsor coils",rings,glowMaterial);
+            }
+            cowl=new GameObject("Horizon stable instrument cowl").transform;cowl.SetParent(transform,false);
+            var dashboard=new R25ItemArtGeometry();dashboard.Box(new Vector3(0,.45f,.65f),new Vector3(.45f,.11f,.20f),new Vector3(-25,0,0));dashboard.Box(new Vector3(0,.55f,.55f),new Vector3(.85f,.05f,.07f),Vector3.zero);
+            R25ItemArtGeometry.Attach(cowl,"Handlebars and instrument panel",dashboard,material);
+            var instruments=new R25ItemArtGeometry();for(int i=-1;i<=1;i++)instruments.Box(new Vector3(i*.10f,.512f,.63f),new Vector3(.065f,.012f,.06f),new Vector3(-25,0,0));R25ItemArtGeometry.Attach(cowl,"Instrument readouts",instruments,glowMaterial);
+            smoke=Part(chassis,"Low health smoke",PrimitiveType.Sphere,new Vector3(0,.7f,-.7f),Vector3.one*.3f,new Color(.25f,.25f,.25f,.6f));
+            burst=Part(transform,"Destruction burst",PrimitiveType.Sphere,Vector3.zero,Vector3.one, new Color(1,.45f,.05f,.65f));burst.gameObject.SetActive(false);
+            marker=new GameObject("Handlebar grip marker").AddComponent<TextMesh>();marker.transform.SetParent(transform,false);marker.transform.localPosition=new Vector3(0,.85f,.55f);marker.font=Resources.Load<Font>("R23InventoryUI");marker.fontSize=48;marker.characterSize=.012f;marker.anchor=TextAnchor.MiddleCenter;marker.alignment=TextAlignment.Center;marker.color=Color.white;if(marker.font!=null)marker.GetComponent<MeshRenderer>().sharedMaterial=marker.font.material;
+            dust=new GameObject("Hover ground dust").AddComponent<LineRenderer>();dust.transform.SetParent(transform,false);dust.sharedMaterial=material;dust.positionCount=33;dust.startWidth=dust.endWidth=.035f;dust.startColor=dust.endColor=new Color(.6f,.65f,.6f,.3f);
+            bank=new R24ItemAudio();engine=bank.Voice(transform,"Engine idle",-22,30,true);rev=bank.Voice(transform,"Engine rev",-24,35,true);cue=bank.Voice(transform,"Bike cues",-15,30);StartCoroutine(Load());
+        }
+        IEnumerator Load(){foreach(string name in new[]{"engine-idle-loop","engine-rev-loop","boost","horn","skid","collision","enter","exit"})yield return bank.LoadOptional(name,"Expansion/Audio/vehicle/"+name+".wav");}
+        Transform Part(Transform parent,string label,PrimitiveType kind,Vector3 at,Vector3 size,Color color)
+        {
+            var go=GameObject.CreatePrimitive(kind);go.name=label;go.transform.SetParent(parent,false);go.transform.localPosition=at;go.transform.localScale=size;
+            var collider=go.GetComponent<Collider>();collider.enabled=false;Destroy(collider);
+            var renderer=go.GetComponent<Renderer>();renderer.sharedMaterial=material;var block=new MaterialPropertyBlock();block.SetColor("_Color",color);block.SetColor("_BaseColor",color);renderer.SetPropertyBlock(block);return go.transform;
+        }
+        public void Show(Vector3 at,float yaw,float speed,float lean,float health,bool mounted,int team,bool visible,string hint)
+        {
+            transform.SetPositionAndRotation(at,Quaternion.Euler(0,yaw,0));
+            bool dead=health<=0;
+            if(dead&&!deadWas){burstUntil=Time.unscaledTime+.35f;bank.Play(cue,"collision");}deadWas=dead;
+            bool draw=visible&&!dead;chassis.gameObject.SetActive(draw);cowl.gameObject.SetActive(draw);marker.gameObject.SetActive(draw&&!mounted);
+            // Handlebar is a direct child, so hide it separately from the banked chassis.
+            // All horizon-stable art is grouped under cowl; no transform enumerator per frame.
+            burst.gameObject.SetActive(visible&&Time.unscaledTime<burstUntil);burst.localScale=Vector3.one*(1+(Time.unscaledTime-(burstUntil-.35f))*4);
+            chassis.localRotation=Quaternion.Euler(0,0,Mathf.Clamp(lean,-12,12));
+            Color tint=team<0?(colourway==0?new Color(.16f,.39f,.43f):colourway==1?new Color(.65f,.24f,.075f):new Color(.34f,.26f,.52f)):Color.HSVToRGB((team*.27f)%1,.65f,.65f);
+            tintBlock.SetColor("_BaseColor",tint);shell.SetPropertyBlock(tintBlock);
+            float throttle=Mathf.Clamp01(Mathf.Abs(speed)/24);
+            glowMaterial.SetColor("_EmissionColor",new Color(.05f,.65f,.9f)*(1+throttle*3));
+            for(int i=0;i<2;i++)pods[i].localRotation=Quaternion.Euler(-throttle*8,Mathf.Clamp(lean,-12,12)*1.5f,Mathf.Sin(Time.unscaledTime*2+i)*2);
+            chassis.localPosition=new Vector3(0,Mathf.Sin(Time.unscaledTime*2)*.012f,0);
+            smoke.gameObject.SetActive(draw&&health<90);smoke.localPosition=new Vector3(Mathf.Sin(Time.unscaledTime*4)*.1f,.65f+Mathf.Repeat(Time.unscaledTime,.6f),-.7f);
+            marker.text=string.IsNullOrEmpty(hint)?"HOLD GRIP 0.4s":hint;var camera=Camera.main;if(camera!=null)marker.transform.rotation=Quaternion.LookRotation(marker.transform.position-camera.transform.position);
+            RaycastHit floor;bool ground=Physics.Raycast(at+Vector3.up*.1f,Vector3.down,out floor,2,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore);dust.enabled=draw&&ground;
+            if(ground)for(int k=0;k<33;k++){float a=k*Mathf.PI/16;dust.SetPosition(k,floor.point+floor.normal*.025f+new Vector3(Mathf.Cos(a),0,Mathf.Sin(a))*(.6f+speed*.015f));}
+            if(draw&&mounted){if(!engine.isPlaying)bank.Play(engine,"engine-idle-loop");if(!rev.isPlaying)bank.Play(rev,"engine-rev-loop");engine.pitch=(.7f+speed/24)*(health<90?.85f+.15f*Mathf.Sin(Time.unscaledTime*22):1);rev.pitch=.6f+speed/18;rev.volume=Mathf.Clamp01(speed/24)*.16f;}else{engine.Stop();rev.Stop();}
+            if(visible&&mounted!=mountedWas)bank.Play(cue,mounted?"enter":"exit");mountedWas=mounted;
+            bool boost=speed>18.1f;if(boost&&!boostWas&&draw)bank.Play(cue,"boost");boostWas=boost;
+            if(draw&&mounted&&lastSpeed-speed>3)bank.Play(cue,"collision");else if(draw&&mounted&&lastSpeed-speed>1)bank.Play(cue,"skid");lastSpeed=speed;
+            if(!visible)bank.Stop();
+        }
+        void OnDisable(){if(bank!=null)bank.Stop();}
+        void OnDestroy(){StopAllCoroutines();if(bank!=null)bank.Dispose();foreach(var f in GetComponentsInChildren<MeshFilter>(true))if(f.sharedMesh!=null&&f.sharedMesh.name!= "Cube"&&f.sharedMesh.name!="Sphere"&&f.sharedMesh.name!="Cylinder")Destroy(f.sharedMesh);if(material!=null)Destroy(material);if(panelMaterial!=null)Destroy(panelMaterial);if(glowMaterial!=null)Destroy(glowMaterial);}
+    }
+}
+#endif

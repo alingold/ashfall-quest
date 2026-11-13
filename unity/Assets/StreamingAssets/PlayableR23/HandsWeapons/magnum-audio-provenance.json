@@ -1,0 +1,26 @@
+{
+  "baseline": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "source": "res://assets/audio/reference097/shot_magnum_last_00.wav",
+  "source_sha256": "6f67cc43ba3f4dc403d6e719f0bcb4a7e5c0bbcadd90ff800795e05bfd1bce4c",
+  "bytes": 59756,
+  "routing": "Original reference_audio_099 -> reference0992 manifest -> weapons.magnum.shot",
+  "source_record": {
+    "file": "res://assets/audio/reference097/shot_magnum_last_00.wav",
+    "sha256": "6f67cc43ba3f4dc403d6e719f0bcb4a7e5c0bbcadd90ff800795e05bfd1bce4c",
+    "source": "recoil",
+    "master_start_seconds": 260.534,
+    "master_end_seconds": 261.156,
+    "raw_master_pcm_sha256": "9f562b85b0ee7709d5b3ac01963cc8faa54d3bfceb42a09ae6f8606a59642080",
+    "assigned_action": "magnum final discharge with recorded decay",
+    "duration_seconds": 0.622,
+    "mono": true,
+    "sample_rate": 48000,
+    "loop": false,
+    "gain_db": 2.4182751530694278,
+    "peak": 0.579986572265625,
+    "early250ms_rms": 0.14253754913806915,
+    "listening_approved": false,
+    "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+    "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+  }
+}

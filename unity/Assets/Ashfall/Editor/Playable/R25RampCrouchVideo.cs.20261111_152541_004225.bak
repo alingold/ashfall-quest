@@ -1,0 +1,68 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;
+using System.IO;
+using Ashfall.Integration.Playable;
+using UnityEngine;
+
+namespace Ashfall.Editor.Playable
+{
+    public sealed class R25RampCrouchVideo : IDisposable
+    {
+        readonly GameObject root;
+        readonly Camera side;
+        readonly Transform eye,ring;
+        readonly LineRenderer body;
+        public R25RampCrouchVideo(Vector3 origin,float length,Vector3 normal,float thickness,float radius)
+        {
+            root=new GameObject("Perpendicular ramp cross section");
+            Vector3 center=origin+new Vector3(0,1.5f,length*.5f);
+            side=new GameObject("Fixed camera looking west").AddComponent<Camera>();side.transform.SetParent(root.transform);
+            side.enabled=false;side.orthographic=true;side.orthographicSize=2.65f;side.nearClipPlane=.05f;side.farClipPlane=30;
+            side.cullingMask=1<<2;side.clearFlags=CameraClearFlags.SolidColor;side.backgroundColor=new Color(.035f,.05f,.075f);
+            side.transform.position=center+Vector3.right*12;side.transform.LookAt(center);
+            Line("Floor",new Color(.6f,.7f,.8f),.035f,new[]{origin+Vector3.back*3,origin+Vector3.forward*(length+3)});
+            Vector3 a=origin,b=origin+new Vector3(0,3,length);
+            Line("Actual top surface",new Color(1,.7f,.12f),.045f,new[]{a,b});
+            if(thickness>0)
+            {
+                Line("Actual bottom surface",new Color(1,.7f,.12f),.045f,new[]{a-normal*thickness,b-normal*thickness});
+                for(float t=0;t<=1;t+=.025f)Line("Slab fill",new Color(.75f,.44f,.06f),.09f,new[]{Vector3.Lerp(a,b,t),Vector3.Lerp(a,b,t)-normal*thickness});
+            }
+            var marker=GameObject.CreatePrimitive(PrimitiveType.Sphere);marker.name="Eye dot";marker.layer=2;
+            marker.transform.SetParent(root.transform);UnityEngine.Object.DestroyImmediate(marker.GetComponent<Collider>());
+            marker.transform.localScale=Vector3.one*.065f;eye=marker.transform;
+            var material=new Material(Resources.Load<Shader>("R23VrUi"));material.SetColor("_Color",new Color(1,.2f,.8f));material.renderQueue=4070;
+            marker.GetComponent<Renderer>().sharedMaterial=material;
+            Vector3[] points=new Vector3[65];for(int i=0;i<65;i++){float v=i*Mathf.PI*2/64;points[i]=new Vector3(0,Mathf.Cos(v)*radius,Mathf.Sin(v)*radius);}
+            var circle=Line("Protection sphere",new Color(1,.2f,.8f),.012f,points);circle.useWorldSpace=false;ring=circle.transform;
+            body=Line("Feet to eye",new Color(.5f,.85f,1),.035f,new[]{Vector3.zero,Vector3.up});
+        }
+        LineRenderer Line(string name,Color color,float width,Vector3[] positions)
+        {
+            var node=new GameObject(name);node.layer=2;node.transform.SetParent(root.transform);
+            var line=node.AddComponent<LineRenderer>();line.positionCount=positions.Length;line.SetPositions(positions);line.startWidth=line.endWidth=width;
+            var mat=new Material(Resources.Load<Shader>("R23VrUi"));mat.SetColor("_Color",color);mat.renderQueue=4060;line.sharedMaterial=mat;return line;
+        }
+        public void Capture(R23VRRig rig,string folder,int frame)
+        {
+            eye.position=rig.Head.transform.position;ring.position=eye.position;
+            body.SetPosition(0,rig.transform.position);body.SetPosition(1,eye.position);
+            int mask=rig.Head.cullingMask;rig.Head.cullingMask=mask&~(1<<2);
+            try { Render(rig.Head,Path.Combine(folder,"eye-"+frame.ToString("D4")+".png")); }
+            finally {rig.Head.cullingMask=mask;}
+            Render(side,Path.Combine(folder,"side-"+frame.ToString("D4")+".png"));
+        }
+        static void Render(Camera camera,string path)
+        {
+            var target=RenderTexture.GetTemporary(640,360,24);var old=camera.targetTexture;var active=RenderTexture.active;float aspect=camera.aspect;Texture2D pixels=null;
+            try
+            {
+                camera.targetTexture=target;camera.aspect=16f/9;camera.Render();RenderTexture.active=target;
+                pixels=new Texture2D(640,360,TextureFormat.RGB24,false);pixels.ReadPixels(new Rect(0,0,640,360),0,0);pixels.Apply();File.WriteAllBytes(path,pixels.EncodeToPNG());
+            }
+            finally {camera.targetTexture=old;camera.aspect=aspect;RenderTexture.active=active;RenderTexture.ReleaseTemporary(target);if(pixels!=null)UnityEngine.Object.Destroy(pixels);}
+        }
+        public void Dispose() { UnityEngine.Object.Destroy(root); }
+    }
+}
+#endif

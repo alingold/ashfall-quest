@@ -1,0 +1,148 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Expansion;
+using UnityEngine;
+
+namespace Ashfall.Integration.Playable
+{
+    // Exclusion glue for the local rig (features/exclusion.md):
+    //  A. head-hull overlap recovery (push-out, then recent clear position);
+    //  B. owner of the obstructed-view fade component;
+    //  C. walking body column + walking step-up limit.
+    // Everything here is local movement/presentation; nothing reaches the wire
+    // except through the ordinary head track the host already validates.
+    public sealed partial class R23VRRig
+    {
+        readonly R25HeadRecoveryPolicy headRecovery = new R25HeadRecoveryPolicy();
+        readonly R25BodyColumnRules bodyColumn = new R25BodyColumnRules();
+        R25ObstructedViewFade viewFade;
+        bool carrierWroteRoot;
+        float nextStepLog = float.NegativeInfinity;
+        // Recoveries longer than this (m) also clear velocity and support state.
+        const float LargeRecoveryDistance = 0.05f;
+
+        public int HeadRecoveries { get; private set; }
+        public int HeadRecoveryFailures { get; private set; }
+        public R25ObstructedViewFade ViewFade { get { return viewFade; } }
+        public bool ViewFullyObstructed() { return viewFade != null && viewFade.FullyFaded; }
+
+        void InitializeExclusion()
+        {
+            if (Head == null || viewFade != null) return;
+            viewFade = Head.gameObject.AddComponent<R25ObstructedViewFade>();
+            viewFade.Initialize(this, Head);
+        }
+
+        // teleport=true also forgets the recent-clear history (spawn, ghost move).
+        void RequestHeadRecovery(R25RecoveryReason reason, bool teleport)
+        {
+            if (teleport) { headRecovery.ClearHistory(); if (viewFade != null) viewFade.NotifyRootReset(); }
+            ClearGrapplePull();CancelVehicle();CancelTraversal();headRecovery.Request(reason);
+        }
+
+        // A. Runs once per Update after Advance. Records clear head positions on
+        // the normal path and recovers when a check was requested or the hull has
+        // failed its starting-clear test for several consecutive frames.
+        void TickHeadRecovery()
+        {
+            if (!R25Features.HeadOverlapRecovery || !UseSourceHeadHull || !Tracking || Head == null || HeadCollision == null || !HeadCollision.Ready) return;
+            bool carrier = CarrierActive || carrierWroteRoot;
+            Vector3 head = Head.transform.position;
+            bool clear = carrier || HeadCollision.HeadClear(head);
+            float now = Time.realtimeSinceStartup;
+#if UNITY_EDITOR
+            if (HeadclipProbeOwnsTracking) now = headclipProbeClock;
+#endif
+            var reason = headRecovery.Tick(F(head), clear, carrier, now);
+            if (reason == R25RecoveryReason.None) return;
+            if (Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety
+                && HeadClearanceBlocked && reason == R25RecoveryReason.Stuck)
+            {
+                // A physical lean blocked by the body/ledge stays opaque until
+                // the user returns. Do not turn that fallback into a vertical
+                // recovery push that fights real head height or sinks the feet.
+                headRecovery.Completed(false, now);
+                return;
+            }
+            Vector3 target;
+            string method = "push-out";
+            bool ok = HeadCollision.TryDepenetrate(head, headRecovery, out target);
+            if (!ok)
+            {
+                for (int age = 0; age < headRecovery.HistoryCount && !ok; age++)
+                {
+                    Float3 candidate;
+                    if (!headRecovery.TryFallback(F(head), age, out candidate) || !HeadCollision.HeadClear(U(candidate))) continue;
+                    target = U(candidate);
+                    ok = true;
+                    method = "recent-clear-" + age;
+                }
+            }
+            headRecovery.Completed(ok, now);
+            float distance = ok ? Vector3.Distance(head, target) : 0;
+            if (ok) ApplyHeadRecovery(target - head);
+            else HeadRecoveryFailures++;
+            int suppressed;
+            if (headRecovery.ShouldLog(now, out suppressed))
+                Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this, "R25 head recovery reason={0} result={1} method={2} distance={3:F3} head={4} history={5} suppressed={6}",
+                    reason, ok ? "recovered" : "failed", ok ? method : "none", distance, head.ToString("F3"), headRecovery.HistoryCount, suppressed);
+        }
+
+        void ApplyHeadRecovery(Vector3 offset)
+        {
+            ClearGrapplePull();CancelVehicle();CancelTraversal();
+            // Move the whole rig: raw tracked local poses and room-scale origin stay intact.
+            body.enabled = false;
+            transform.position += offset;
+            body.enabled = true;
+            // A tiny contact correction (e.g. a prop or bot nudging the head) keeps
+            // momentum, support and any climb grip. A real relocation starts fresh;
+            // climbing anchors are kept because the swept climb cannot re-enter.
+            if (offset.magnitude > LargeRecoveryDistance)
+            {
+                if (motor != null) motor.SetVelocity(new Float3());
+                grounded = false;
+                ceiling = false;
+            }
+            previousSourceHead = Head.transform.position;
+            haveSourceHead = true;
+            HeadRecoveries++;
+        }
+
+        // C. True for a supported thumbstick walk/run step only: never climbing,
+        // glide/flight, pad or carrier motion, ghost mode or a jump take-off.
+        bool ExclusionWalkFrame(bool otherMotionOwner, Vector3 requested)
+        {
+            return R25Features.WalkBodyColumn && UseSourceHeadHull && !otherMotionOwner && grounded && !SourceGhostMotion && requested.y <= 0
+                && (MenuLocomotion || Activities == null || !Activities.PadLaunchActive) && HeadCollision != null && HeadCollision.Ready
+                && bodyColumn.Walking(F(requested));
+        }
+
+        Vector3 WalkBodyColumn(Vector3 requested)
+        {
+            Vector3 allowed = HeadCollision.BodyColumnMotion(transform.position, Head.transform.position, requested, bodyColumn);
+            return new Vector3(allowed.x, requested.y, allowed.z);
+        }
+
+        // Walking may step up at most bodyColumn.StepHeight. A taller rise found
+        // under the eye during a walk step undoes this frame's walk instead (the
+        // previous position was supported), so the player is never popped on top
+        // of a table or railing and never loses the floor beneath them.
+        bool RefuseWalkStep(bool walked, float rise, Vector3 before)
+        {
+            if (!bodyColumn.RefuseStep(walked, rise)) return false;
+            body.enabled = false;
+            transform.position = before;
+            body.enabled = true;
+            float now = Time.realtimeSinceStartup;
+            if (now >= nextStepLog)
+            {
+                nextStepLog = now + 2;
+                Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this, "R25 walk step-up refused rise={0:F3} limit={1:F2}", rise, bodyColumn.StepHeight);
+            }
+            return true;
+        }
+    }
+}
+#endif

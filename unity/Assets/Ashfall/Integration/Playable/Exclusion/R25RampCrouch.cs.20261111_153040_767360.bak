@@ -1,0 +1,39 @@
+using System;
+
+namespace Ashfall.Integration.Playable.Exclusion
+{
+    // Heights and offsets are metres. Physics supplies the highest safe eye.
+    // Raw tracking remains unchanged; the rig applies the returned view offset.
+    public sealed class R25RampCrouch
+    {
+        public const float MinimumEyeHeight = .60f;
+        public const float ReturnSpeed = .8f;
+        public const float Reserve = .008f;
+
+        public float Offset { get; private set; }
+
+        public bool Fits(float safeHeight, float physicalHeight)
+        {
+            return !float.IsNaN(safeHeight) && !float.IsNaN(physicalHeight)
+                && safeHeight >= Math.Min(MinimumEyeHeight, physicalHeight) - .00001f;
+        }
+
+        public float Step(float physicalHeight, float safeHeight, float seconds)
+        {
+            if (float.IsNaN(physicalHeight) || float.IsInfinity(physicalHeight)
+                || float.IsNaN(safeHeight) || float.IsNaN(seconds) || seconds < 0)
+                throw new ArgumentOutOfRangeException("finite crouch sample required");
+            float needed = Math.Max(0, physicalHeight - safeHeight);
+            // Enter immediately when required for safety; release at a bounded
+            // rate. Continuous walking changes needed height continuously.
+            Offset = needed >= Offset ? needed : Math.Max(needed, Offset - ReturnSpeed * Math.Min(seconds, .1f));
+            // A sudden physical return/duck must never leave the virtual offset
+            // pushing the eye below the floor limit. Preserve a real low duck.
+            Offset = Math.Min(Offset, Math.Max(0, physicalHeight - MinimumEyeHeight));
+            return Offset;
+        }
+
+        public void Reset() { Offset = 0; }
+        public void RestrictReturn(float offset) { Offset = Math.Max(Offset, offset); }
+    }
+}

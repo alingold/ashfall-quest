@@ -1,0 +1,23 @@
+{
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-18.png",
+      "normal": "m1014-image-20.png",
+      "metallicMap": "m1014-metallic-6.png",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "Bolt.0"
+  ]
+}

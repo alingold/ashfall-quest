@@ -1,0 +1,1554 @@
+{
+  "frozenManifestSha256": "d4fb1053acfbaa7f3eb285879472bfdd136e09bf2f7e1f2dc6478f23d8f12bc7",
+  "inputs": {
+    "scripts/explosive_weapon.gd": "b6af6345f0d13b493f0543daad7412493833df85a5118c8cd1565f1fe8c778ae",
+    "scripts/explosive_projectile.gd": "a1b90bc9c398584ea39dae74617dbbc53e50f353897e8e8b5d7a910555985191",
+    "scripts/explosive_effect.gd": "f056a6f680bee60535dd992789a5f2b5a2f78a4d2b01f380ba226d270dc56f4a",
+    "scripts/explosive_finish_064.gd": "308fcb10890068fb338d732ab4c2ab07e889d6fb1ce041a85df2abeb2064d97a",
+    "scripts/downloaded_heavy_085.gd": "af8beb19c7d4f5c07cb082bbb8d6199ce1946f9e9e76d33914b4372e3230ccb1",
+    "scripts/smaw_tube_065.gd": "4cc4d4b71b5f77ba92395036eefe2468ef79ebb72df932a67e6af7c7b2e73f5d",
+    "scripts/revive_paddles.gd": "547822bd9bb3f80a8c509353d6713b14d9b3e4f0a16fbb6f4fa397fe5cacab6d",
+    "scripts/paddle_visual_089.gd": "835f88962ed648396560dd93d7228fc248d02b6b1343cad801c25b36c326d8df",
+    "scripts/field_item_models.gd": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b",
+    "scripts/paddle_lightning097.gd": "768f759ba3b35c7f3bad2230c916d3134764d9204dc1c4121daa2ad1f62731ab",
+    "scripts/revive_discharge_fx_091.gd": "e15a1b9d8a1e55d479c43229d615bf3d7ad83734ed2b48ef7bdc77e031bff9ef",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/sound_cues099.gd": "737a99d7652b3df08e11887a58d5e64466098d8c78950e5dcca835b7aa120da6",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "assets/ui/catalog094/weapon_27.png": "02b8e662d43c50045a78fab560024e8cb2882a59751b016a6a407e633e301460",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/weapon_rarity_r6.json": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428",
+    "assets/models/download_smaw/model.glb": "8ebd6dda8a9750e1a2bb9f1c473b519899e124950e2ead77e535cb55e419a5f9",
+    "assets/models/download_smaw/asset-provenance.json": "5036ba3de9be3a8fa1abc1ab2055e9f0eb22c124d60b7e788352bf3d872a2c85",
+    "assets/models/download_smaw/ATTRIBUTION.txt": "97ed440d0467743d5785b7b485e775c8b3d2a354c43ca492119c5bc9c4a39f44",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/audio/reference0992/ATTRIBUTION.txt": "8ccffe3987e09baf406b1c175d28ea599090497c3e909685b1579142c0c97b94",
+    "assets/audio/reference_r21/ATTRIBUTION.txt": "a2e737acd20f1b610b952f16f2186abb667e02374cde1ea84f0820f000548728",
+    "assets/audio/sfx/rocket_launch_00.wav": "39d3ab195a97082ca0e62f6b33d9d028b7e0fd18775f1e84c30904d4b86d1d68",
+    "assets/audio/sfx/rocket_flight_00.wav": "6e67f6efb419d3afebd8db87a317e2d2479b1c0b34cfd046c27462f508154f36",
+    "assets/audio/sfx/rocket_impact_00.wav": "737929b82fd417dfe694f5fa81a6be69b4aaa2b7caf6df186c2a7f85dc711a99",
+    "assets/audio/reference_r21/revive_charge_full.wav": "27ddb7aa453236c5477c7c7be0d2c59991f2ecbdc4e70d5826fd876741bb307f",
+    "assets/audio/reference0992/revive_ready_full0992.wav": "c08dea787b8dd20660d901bfea705026470349fec2e76b8208905033eedaf093",
+    "assets/audio/reference099/isolated_revive_discharge_00.wav": "7f751d2bdc98aa95fcc39519642b5284ed999cdc2c5f6cd86dfd3955a02c8a6e"
+  },
+  "assets": [
+    {
+      "name": "revive-paddle",
+      "vertices": 7023,
+      "triangles": 3384,
+      "surfaces": 27,
+      "parts": [
+        {
+          "part": "Housing",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Electrode",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            -9.797174393178825e-19,
+            -0.016
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Status",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            0.044,
+            0.014999999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Band",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            -6.123233995736766e-19,
+            -0.01
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Handle",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Support-1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.034,
+            -0.017999999999999995,
+            0.044
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Frame-1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.043,
+            0.008000000000000002,
+            0.035
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Button-1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            -0.031,
+            0.024000000000000004,
+            0.059
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Inset-1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            -0.031,
+            0.024000000000000004,
+            0.061
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Fastener",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            -0.037,
+            0.048,
+            0.014999999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Fastener",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            -0.037,
+            -0.048,
+            0.015000000000000003
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Support1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.034,
+            -0.017999999999999995,
+            0.044
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Frame1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.043,
+            0.008000000000000002,
+            0.035
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Button1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            0.031,
+            0.024000000000000004,
+            0.059
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Inset1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            0.031,
+            0.024000000000000004,
+            0.061
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Fastener",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            0.037,
+            0.048,
+            0.014999999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Fastener",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 144,
+          "sourcePosition": [
+            0.037,
+            -0.048,
+            0.015000000000000003
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib0",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.032,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib1",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.024,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib2",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.016,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib3",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            -0.008,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib4",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.0,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib5",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.008,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib6",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.016,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib7",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.024,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Rib8",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 108,
+          "sourcePosition": [
+            0.032,
+            -0.017999999999999995,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "Grommet",
+          "recipe": "R5 paddle_visual_089 +field_item_models exact authored primitive",
+          "triangles": 288,
+          "sourcePosition": [
+            0.0,
+            -0.03799999999999999,
+            0.078
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -1.2246467991473532e-16
+            ],
+            [
+              0.0,
+              1.2246467991473532e-16,
+              -1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              1.3,
+              1.3,
+              1.3
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "smaw-round",
+      "vertices": 993,
+      "triangles": 1280,
+      "surfaces": 11,
+      "parts": [
+        {
+          "part": "Body",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 96,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.005
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Ring",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 240,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.1
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Ring",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 240,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.015
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Ring",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 240,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            -0.085
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Nose",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 80,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            -0.16
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Fin0",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 12,
+          "sourcePosition": [
+            -0.034,
+            0.0,
+            0.1
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Fin1",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 12,
+          "sourcePosition": [
+            -2.0818995585505005e-18,
+            0.034,
+            0.1
+          ],
+          "sourceRotation": [
+            [
+              -6.123233995736766e-17,
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              6.123233995736766e-17,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Fin2",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 12,
+          "sourcePosition": [
+            0.034,
+            4.163799117101001e-18,
+            0.1
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              1.2246467991473532e-16,
+              0.0
+            ],
+            [
+              1.2246467991473532e-16,
+              -1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Fin3",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 12,
+          "sourcePosition": [
+            6.2456986756515014e-18,
+            -0.034,
+            0.1
+          ],
+          "sourceRotation": [
+            [
+              1.8369701987210297e-16,
+              -1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              -1.8369701987210297e-16,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Tail",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 96,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.1225
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "TailRing",
+          "recipe": "R5 explosive_finish_064.rocket; root RyPI baked once",
+          "triangles": 240,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.124
+          ],
+          "sourceRotation": [
+            [
+              -1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              -6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "smaw-arrow",
+      "vertices": 222,
+      "triangles": 288,
+      "surfaces": 3,
+      "parts": [
+        {
+          "part": "Stem",
+          "recipe": "R5 weapon._rod front-loading cue",
+          "triangles": 96,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.12
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Left",
+          "recipe": "R5 weapon._rod front-loading cue",
+          "triangles": 96,
+          "sourcePosition": [
+            -0.0125,
+            0.0,
+            0.22
+          ],
+          "sourceRotation": [
+            [
+              0.7191011235955054,
+              -0.5299989400031802,
+              -0.44943820224719105
+            ],
+            [
+              0.5299989400031802,
+              1.1102230246251565e-16,
+              0.8479983040050878
+            ],
+            [
+              -0.44943820224719105,
+              -0.8479983040050878,
+              0.28089887640449474
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Right",
+          "recipe": "R5 weapon._rod front-loading cue",
+          "triangles": 96,
+          "sourcePosition": [
+            0.0125,
+            0.0,
+            0.22
+          ],
+          "sourceRotation": [
+            [
+              0.7191011235955054,
+              0.5299989400031802,
+              0.44943820224719105
+            ],
+            [
+              -0.5299989400031802,
+              1.1102230246251565e-16,
+              0.8479983040050878
+            ],
+            [
+              0.44943820224719105,
+              -0.8479983040050878,
+              0.28089887640449474
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "smaw-plume",
+      "vertices": 522,
+      "triangles": 768,
+      "surfaces": 1,
+      "parts": [
+        {
+          "part": "Source unlit flight plume",
+          "recipe": "R5 explosive_projectile exact plume dimensions; rendered unlit by presenter",
+          "triangles": 768,
+          "sourcePosition": [
+            0,
+            0,
+            0.35
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    }
+  ],
+  "audio": {
+    "smaw-launch": "assets/audio/sfx/rocket_launch_00.wav",
+    "smaw-flight": "assets/audio/sfx/rocket_flight_00.wav",
+    "smaw-impact": "assets/audio/sfx/rocket_impact_00.wav",
+    "revive-charge": "assets/audio/reference_r21/revive_charge_full.wav",
+    "revive-ready": "assets/audio/reference0992/revive_ready_full0992.wav",
+    "revive-discharge": "assets/audio/reference099/isolated_revive_discharge_00.wav"
+  },
+  "limits": "CPU translation only; no native/GPU/headset evidence. Source filmic/PBR appearance not claimed pixel-identical."
+}

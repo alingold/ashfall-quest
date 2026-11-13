@@ -1,0 +1,172 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Expansion;
+using UnityEngine;
+namespace Ashfall.Integration.Playable
+{
+    public sealed partial class R23VRRig
+    {
+        readonly R25HeadClearance headClearance = new R25HeadClearance();
+        float nextClearanceLog;
+        int pushFrame = -1;
+        float pushUsed;
+        Vector3 physicalNeutral;
+        bool havePhysicalNeutral, physicalSupportHold;
+        readonly Vector3[] standableRoots = new Vector3[8];
+        int standableCount, standableNewest;
+        float nextStandableSample;
+        public int TrappedOpaqueRecoveries { get; private set; }
+        bool HoldPhysicalSupport
+        {
+            get { return Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety
+                && (physicalSupportHold || HeadClearanceBlocked || ViewFullyObstructed()); }
+        }
+        void ResetPhysicalClearance()
+        {
+            havePhysicalNeutral = false; physicalSupportHold = false;
+            standableCount = 0; nextStandableSample = 0;
+            headRecovery.ResetOpaque(); HeadClearanceBlocked = false;
+        }
+        void ObservePhysicalSupport()
+        {
+            if (!havePhysicalNeutral) { physicalNeutral = Head.transform.localPosition; havePhysicalNeutral = true; }
+            bool displaced = (Head.transform.localPosition - physicalNeutral).sqrMagnitude > .000025f;
+            if (!displaced && !HeadClearanceBlocked && !ViewFullyObstructed()) physicalSupportHold = false;
+            else if (displaced && grounded) physicalSupportHold = true;
+        }
+        void RecordStandable(float now)
+        {
+            RaycastHit floor;
+            if (CarrierActive || HeadClearanceBlocked || !grounded || !HeadCollision.HeadClear(Head.transform.position)
+                || !HeadCollision.Support(transform.position, Head.transform.position, out floor)
+                || Mathf.Abs(floor.point.y - transform.position.y) > .03f || now < nextStandableSample) return;
+            if (standableCount > 0 && Vector3.Distance(standableRoots[standableNewest], transform.position) < .1f) return;
+            if (standableCount > 0) standableNewest = (standableNewest + 1) % standableRoots.Length;
+            standableRoots[standableNewest] = transform.position;
+            standableCount = Mathf.Min(standableCount + 1, standableRoots.Length);
+            nextStandableSample = now + .25f;
+        }
+        bool RecoverTrappedOpaque(float now)
+        {
+            if (!Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety || CarrierActive) return false;
+            RecordStandable(now);
+            if (!headRecovery.TickOpaque(F(Head.transform.position), ViewFullyObstructed(), now)) return false;
+            Vector3 relative = Head.transform.position - transform.position;
+            for (int age = 0; age < standableCount; age++)
+            {
+                Vector3 root = standableRoots[(standableNewest - age + standableRoots.Length) % standableRoots.Length];
+                Vector3 eye = root + relative; RaycastHit floor;
+                if (Vector3.Distance(root, transform.position) > headRecovery.MaxFallbackDistance
+                    || !HeadCollision.HeadClear(eye) || !HeadCollision.Support(root, eye, out floor)
+                    || Mathf.Abs(floor.point.y - root.y) > .03f) continue;
+                // A relocation happens only behind the opaque view and never
+                // changes raw tracking or rotation. Validate the current pose.
+                ApplyHeadRecovery(root - transform.position);
+                HeadClearanceBlocked = false; grounded = true;
+                physicalNeutral = Head.transform.localPosition; physicalSupportHold = false;
+                viewFade.NotifyRootReset(); TrappedOpaqueRecoveries++;
+                Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this,
+                    "R25 head recovery reason=TrappedOpaque result=recovered root={0}", root.ToString("F3"));
+                return true;
+            }
+            Debug.LogFormat(LogType.Warning, LogOption.NoStacktrace, this,
+                "R25 head recovery reason=TrappedOpaque result=failed history={0}", standableCount);
+            return false;
+        }
+        public bool HeadClearanceBlocked { get; private set; }
+        void LogClearance(string reason, float amount)
+        {
+            if (amount < .0001f || Time.realtimeSinceStartup < nextClearanceLog) return;
+            nextClearanceLog = Time.realtimeSinceStartup + 1;
+            Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this,
+                "R25 head clearance reason={0} head={1} amount={2:F4}", reason, Head.transform.position.ToString("F3"), amount);
+        }
+        Vector3 VerifiedHeadMotion(Vector3 head, Vector3 requested, bool slide, bool standing, out bool hitCeiling)
+        {
+            if (!R25Features.HeadClearance) return HeadCollision.Sweep(head, requested, slide, out hitCeiling, standing);
+            if (Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety && !HeadCollision.HeadClear(head))
+                return HeadCollision.EscapeEyeMotion(head, requested, slide, out hitCeiling);
+            bool ceilingHit = false;
+            Float3 safe = headClearance.Move(F(head), F(requested), delegate(Float3 at, Float3 delta) {
+                bool hit; Vector3 result = HeadCollision.Sweep(U(at), U(delta), slide, out hit, standing, true);
+                ceilingHit |= hit; return F(result);
+            }, delegate(Float3 at) { return HeadCollision.HeadClear(U(at)); },
+                Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety ? 0 : R25HeadClearance.Skin);
+            hitCeiling = ceilingHit;
+            LogClearance("motion-refused", (U(safe)-requested).magnitude);
+            return U(safe);
+        }
+        bool ResolveVerifiedSupport(Vector3 feet, Vector3 eye, Vector3 velocity, float seconds, float maximumRise, bool drop, out Vector3 correction)
+        {
+            if (!R25Features.HeadClearance) return HeadCollision.ResolveSupport(feet, eye, velocity, seconds, maximumRise, drop, out correction);
+            correction = Vector3.zero;
+            RaycastHit floor;
+            if (!HeadCollision.Support(feet, eye, out floor)) return false;
+            float rise = floor.point.y-feet.y;
+            float allowance = .03f + (floor.normal.y < .999f ? Vector3.ProjectOnPlane(velocity,Vector3.up).magnitude*seconds*Mathf.Tan(65*Mathf.Deg2Rad) : 0);
+            if (rise > maximumRise+.005f || rise < -.27f || rise < -allowance && !drop || rise < -.01f && velocity.y > .05f) return false;
+            Float3 accepted;
+            bool ok = headClearance.Rise(F(eye), rise, delegate(Float3 at, Float3 delta) {
+                bool hit; return F(HeadCollision.Sweep(U(at), U(delta), false, out hit, false, true));
+            }, delegate(Float3 at) { return HeadCollision.HeadClear(U(at)); }, out accepted);
+            correction = U(accepted);
+            return ok;
+        }
+        void RefuseBlockedSupport(bool walked, Vector3 before)
+        {
+            if (!R25Features.HeadClearance || !walked) return;
+            RaycastHit floor;
+            if (!HeadCollision.Support(transform.position, Head.transform.position, out floor) || floor.point.y <= transform.position.y+.0001f) return;
+            LogClearance("support-refused", Vector3.Distance(before,transform.position));
+            body.enabled=false;transform.position=before;body.enabled=true;grounded=true;
+        }
+        void SynchronizeClearanceHead()
+        {
+            Vector3 desired=Head.transform.position;
+            HeadClearanceBlocked=false;
+            if (haveSourceHead)
+            {
+                bool hit;
+                Vector3 safe=VerifiedHeadMotion(previousSourceHead,desired-previousSourceHead,false,false,out hit);
+                Vector3 blocked=previousSourceHead+safe-desired;
+                if (pushFrame!=Time.frameCount) {pushFrame=Time.frameCount;pushUsed=0;}
+                Float3 push=headClearance.Push(F(blocked),R25HeadClearance.PushLimit-pushUsed,
+                    delegate(Float3 delta) { return F(HeadCollision.BodyColumnMotion(transform.position,previousSourceHead,U(delta),bodyColumn)); },
+                    delegate(Float3 delta) {
+                        RaycastHit floor;
+                        return !grounded || HeadCollision.Support(transform.position+U(delta),previousSourceHead+U(delta),out floor)
+                            && Mathf.Abs(floor.point.y-transform.position.y)<=.03f;
+                    });
+                body.enabled=false;transform.position+=U(push);body.enabled=true;
+                pushUsed+=R25HeadClearance.Length(push);
+                LogClearance("physical-push",R25HeadClearance.Length(push));
+                HeadClearanceBlocked=!HeadCollision.HeadClear(Head.transform.position)
+                    || Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety && (blocked+U(push)).sqrMagnitude>.000001f;
+                if (HeadClearanceBlocked) LogClearance("physical-fade",blocked.magnitude);
+                // A blocked body/ledge or vertical-only contact falls back to fade.
+                // Never change real head height, rotate the rig or teleport feet.
+            }
+            if ((!Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety || !HeadClearanceBlocked) && HeadCollision.HeadClear(Head.transform.position))
+            {
+                // Retain source feet recentering, but sweep the body at the old
+                // root and check support before moving it. Counter-move origin
+                // so accepted head/hands never move during this bookkeeping.
+                Vector3 rootEye=new Vector3(transform.position.x,Head.transform.position.y,transform.position.z);
+                Float3 recenter=headClearance.Push(F(Head.transform.position-rootEye),R25HeadClearance.PushLimit-pushUsed,
+                    delegate(Float3 delta) { return F(HeadCollision.BodyColumnMotion(transform.position,rootEye,U(delta),bodyColumn)); },
+                    delegate(Float3 delta) {
+                        RaycastHit floor;
+                        return !grounded || HeadCollision.Support(transform.position+U(delta),rootEye+U(delta),out floor)
+                            && Mathf.Abs(floor.point.y-transform.position.y)<=.03f;
+                    });
+                Vector3 origin=TrackingOrigin.position;
+                body.enabled=false;transform.position+=U(recenter);TrackingOrigin.position=origin;body.enabled=true;
+                artificialOriginOffset+=U(recenter);
+                pushUsed+=R25HeadClearance.Length(recenter);
+                previousSourceHead=Head.transform.position;haveSourceHead=true;
+            }
+        }
+    }
+}
+#endif

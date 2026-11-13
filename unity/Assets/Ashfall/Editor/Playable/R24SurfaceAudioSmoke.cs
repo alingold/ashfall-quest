@@ -1,0 +1,41 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;using System.Collections;using System.Collections.Generic;using System.IO;using System.Reflection;
+using Ashfall.Integration.Playable;using Ashfall.Integration.Playable.HandsWeapons;using Ashfall.Integration.Playable.AudioTraversal;using UnityEngine;
+namespace Ashfall.Editor.Playable
+{
+ public static class R24SurfaceAudioSmoke
+ {
+  [Serializable]sealed class Result{public bool success=false,nativeExecuted=false,cleanup=false,headsetAudibilityVerified=false,dspAdvanced=false;public string error="",actualShotSurface="",ownershipDiagnostics="";public int loadedClips=0,decodedSamples=0,impactEvents=0,climbContacts=0;public double dspBefore=0,dspAfter=0;public float passiveImpactRms=0,listenerVolume=0;public bool listenerPaused=false;public List<string> cases=new List<string>();}
+  const BindingFlags Flags=BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic;
+  static object Read(object o,string field){return o.GetType().GetField(field,Flags).GetValue(o);}
+  static void Need(bool value,string why){if(!value)throw new InvalidOperationException(why);}
+  static AudioSource LastVoice(R23TraversalAudio audio){var voices=(AudioSource[])Read(audio,"impacts");int cursor=(int)Read(audio,"impactCursor");return voices[(cursor+voices.Length-1)%voices.Length];}
+  public static IEnumerator Check(R23PlayableLoop loop,Action<string> note)
+  {
+   var result=new Result{nativeExecuted=true};var audio=loop.TraversalAudio;var gameplay=loop.Gameplay;bool oldPump=gameplay.ExternalInputPump;Vector3 left=loop.Rig.Left.position,right=loop.Rig.Right.position;Quaternion lq=loop.Rig.Left.rotation,rq=loop.Rig.Right.rotation;GameObject metal=null,concrete=null;
+   try{
+    float until=Time.realtimeSinceStartup+40;while(!audio.Ready&&audio.LoadFailure==null&&Time.realtimeSinceStartup<until)yield return null;Need(audio.Ready,"Actual26 traversal/climb/impact clips loaded: "+audio.LoadFailure);result.loadedClips=audio.LoadedClipCount;Need(result.loadedClips==26,"24direct-source+2source-export clips");
+    foreach(var clip in (List<AudioClip>)Read(audio,"resources")){Need(clip!=null&&clip.loadState==AudioDataLoadState.Loaded,"Actual decoded clip");var samples=new float[clip.samples*clip.channels];Need(clip.GetData(samples,0),"Actual decoded PCM available");bool nonzero=false;foreach(float v in samples){Need(!float.IsNaN(v)&&!float.IsInfinity(v),"Finite actual PCM");nonzero|=Mathf.Abs(v)>1e-6f;}Need(nonzero,"Source clip contains waveform, not silent substitute: "+clip.name);result.decodedSamples+=samples.Length;}
+    gameplay.ExternalInputPump=true;loop.SmokeUiUpdate();Need(!loop.Rig.GameplayBlocked&&!loop.Rig.Paused&&loop.Rig.Tracking&&loop.Rig.SessionFocused,"Actual Root admits playing audio");
+    string id=null;var ownedRows=new List<string>();foreach(string owned in gameplay.OwnedWeaponActionIds){var state=gameplay.ReadWeaponState(owned);string profile=gameplay.ResolveWeaponProfile(owned);ownedRows.Add(owned+"/"+profile+" loaded="+state.Loaded);if(profile=="cx4")id=owned;}
+    result.ownershipDiagnostics="Owned="+String.Join(",",ownedRows.ToArray())+" selected="+id+" health="+gameplay.Health+" paused="+Read(gameplay,"gameplayPaused")+" focused="+Read(gameplay,"hadFocus")+" rightTracked="+loop.Rig.RightInput.Tracked;note(result.ownershipDiagnostics);
+    bool equipped=id!=null&&gameplay.EquipOwned(id,1);note("Actual CX4 equip="+equipped+" active="+gameplay.ActiveWeaponActionId+" hasWeapon="+gameplay.HasWeapon);Need(equipped,"Actual source-owned CX4; no starter loadout replacement or fabricated grant");
+    loop.Rig.Right.SetPositionAndRotation(loop.Rig.Head.transform.position+Vector3.right*.25f-Vector3.up*.25f,Quaternion.identity);
+    var input=new R23HandsInputFrame{LeftTracked=true,RightTracked=true};gameplay.TickInput(.25f,input);gameplay.RefreshFeedbackPresentation();var before=gameplay.ReadWeaponState(id);int audioBefore=audio.ImpactSoundsPlayed;
+    Action<Vector3,Collider> received=delegate(Vector3 point,Collider collider){result.impactEvents++;result.actualShotSurface=collider==null?"null":collider.name;};gameplay.SurfaceImpact+=received;
+    try{input.RightTrigger=1;Need(gameplay.TickInput(.001f,input),"Actual finite CX4 discharge");}finally{gameplay.SurfaceImpact-=received;}
+    var after=gameplay.ReadWeaponState(id);Need(after.Shots==before.Shots+1&&after.Loaded==before.Loaded-1,"Exactly one real source round consumed");Need(result.impactEvents==1&&audio.ImpactSoundsPlayed==audioBefore+1,"Actual accepted map hit schedules one source impact through Root subscription");gameplay.HolsterCurrent();
+    var shotVoice=LastVoice(audio);Need(shotVoice.clip!=null&&shotVoice.clip.name.StartsWith("impact_",StringComparison.Ordinal),"Actual impact clip selected");result.dspBefore=UnityEngine.AudioSettings.dspTime;for(int frame=0;frame<4;frame++)yield return null;result.dspAfter=UnityEngine.AudioSettings.dspTime;result.dspAdvanced=result.dspAfter>result.dspBefore;
+    var output=new float[512];shotVoice.GetOutputData(output,0);double square=0;foreach(float sample in output)square+=sample*sample;result.passiveImpactRms=(float)Math.Sqrt(square/output.Length);result.listenerVolume=AudioListener.volume;result.listenerPaused=AudioListener.pause;note("Actual source shot/contact voice; passive DSP advanced="+result.dspAdvanced+" RMS="+result.passiveImpactRms+" (not headset audibility)");
+    metal=new GameObject("metal surface audio control");metal.transform.position=loop.Rig.Head.transform.position+Vector3.right*5;var metalCollider=metal.AddComponent<BoxCollider>();concrete=new GameObject("concrete surface audio control");concrete.transform.position=loop.Rig.Head.transform.position+Vector3.left*5;var concreteCollider=concrete.AddComponent<BoxCollider>();
+    foreach(var collider in new[]{metalCollider,concreteCollider}){int count=audio.ImpactSoundsPlayed;audio.PlayImpact(collider.transform.position,collider);var voice=LastVoice(audio);string expected=collider==metalCollider?"impact_metal":"impact_concrete";Need(audio.ImpactSoundsPlayed==count+1&&voice.clip.name.StartsWith(expected,StringComparison.Ordinal),"Source material clip route "+expected);Need(Vector3.Distance(voice.transform.position,collider.transform.position)<.0001f&&Mathf.Abs(voice.volume-.25118864f*loop.UI.Settings.SfxVolume)<.00001f&&voice.pitch>=.97f&&voice.pitch<=1.03f&&voice.minDistance==2&&voice.maxDistance==55,"Source positional/gain/pitch/distance binding");result.cases.Add(expected+" dispatch");}
+    var voices=(AudioSource[])Read(audio,"impacts");Need(voices.Length==8,"Bounded8source voices");for(int i=0;i<17;i++)audio.PlayImpact(metalCollider.transform.position,metalCollider);Need(ReferenceEquals(voices,Read(audio,"impacts")),"Impact pressure reuses bounded voice pool");
+    audio.ResetRound();foreach(var voice in voices)Need(!voice.isPlaying&&voice.clip==null,"Reset cancels all impact voices");
+    var motion=new R23TraversalSample{Enabled=true,HandAnchored=true,Climbing=true,VerticalSpeed=.3f};for(int i=0;i<5;i++)audio.Tick(motion,.1f);Need(audio.ClimbContactsPlayed==0,"No early climb cue");audio.Tick(motion,.05f);Need(audio.ClimbContactsPlayed==1,"Actual source climb voice at.55s active motion");var climb=(AudioSource)Read(audio,"climb");Need(climb.clip!=null&&climb.clip.name.StartsWith("climb_",StringComparison.Ordinal)&&Mathf.Abs(climb.volume-.05623413f*loop.UI.Settings.SfxVolume)<.00001f,"Existing actual source climb clip/gain");result.climbContacts=audio.ClimbContactsPlayed;
+    audio.Tick(new R23TraversalSample(),.02f);Need(!climb.isPlaying&&climb.clip==null,"Blocked motion cancels climb and impact transients");result.cases.Add("8voice pressure/reset and actual climb clock/source voice");result.success=true;
+   }
+   finally{audio.ResetRound();gameplay.HolsterCurrent();gameplay.ExternalInputPump=oldPump;loop.Rig.Left.SetPositionAndRotation(left,lq);loop.Rig.Right.SetPositionAndRotation(right,rq);if(metal!=null)UnityEngine.Object.Destroy(metal);if(concrete!=null)UnityEngine.Object.Destroy(concrete);result.cleanup=true;File.WriteAllText(Path.Combine(Path.GetDirectoryName(R23PlayableBuild.Argument("-ashfallVRSmoke")),"surface-audio-details.json"),JsonUtility.ToJson(result,true));}
+  }
+ }
+}
+#endif

@@ -1,0 +1,92 @@
+#if UNITY_6000_0_OR_NEWER
+using Unity.Networking.Transport.Relay;using Ashfall.Integration.Playable.Online;
+using System;using System.Collections.Generic;using System.Net;using System.Net.NetworkInformation;using System.Net.Sockets;
+using Ashfall.Modules.Networking;using Ashfall.Integration.Playable.UI;using Ashfall.Integration.Playable.Match;using UnityEngine;using Unity.Networking.Transport;
+namespace Ashfall.Integration.Playable.Networking
+{
+    // Idle by default. Only an explicit host/join action creates a UTP driver.
+    public sealed class R24LanPeer:IDisposable
+    {
+        // This identifies this Unity lobby wire/reference baseline, not Godot's
+        // ENet protocol or a claim of whole-game gameplay compatibility.
+        public const string LobbyContent="ba77ba1e066b29598d9f92a2d174b64c4d9b76e3e2b4ab21dfb286f04377d5b4"; // Unity lobby-v16 (2026-11-10 playtest round 2): grapple gun item + rules, web.state hand byte, grapple.pull/1, vehicle kinds (tank, helicopter) with turret/fire fields, vehicle.fire/1, shell projectile, style bound 139. v15 peers are refused. Fresh Session required after restart.
+        readonly UnityTransportAdapter transport;public readonly R24LanLobby Lobby;readonly HashSet<string> connections=new HashSet<string>(StringComparer.Ordinal);bool disposed;
+        public long MessagesIn{get{return transport.MessagesIn;}}public long MessagesOut{get{return transport.MessagesOut;}}
+        public bool Disposed{get{return disposed;}}
+        public bool DriverCreated{get{return transport.DriverCreated;}}
+        R24LanPeer(RelayServerData? relay=null){transport=new UnityTransportAdapter(8,128,relay);try{Lobby=new R24LanLobby(transport,transport.ClosePeer,delegate{return Guid.NewGuid().ToString("N");},LobbyContent);transport.Connected+=Connected;transport.Disconnected+=Disconnected;}catch{transport.Dispose();throw;}}
+        void Connected(string connection){connections.Add(connection);Lobby.TransportConnected(connection);}
+        void Disconnected(string connection){connections.Remove(connection);Lobby.TransportDisconnected(connection);}
+        public static R24LanPeer Host(string room,string name,string map,string mapHash,int teams=2,ushort port=R24LanLobby.DefaultPort,R24PlayableMatchRules sourceRules=null,Func<string,long,Ashfall.Modules.HealthStates.IHealthImageStore> healthStorage=null,int maximumReceiptKeys=4096,long residentStateBytes=67108864,RelayServerData? relay=null)
+        {var peer=new R24LanPeer(relay);try{peer.transport.Listen(relay.HasValue?(ushort)0:port);peer.Lobby.StartHost(room,name,map,mapHash,teams,sourceRules);peer.Lobby.BindHealthStorage(healthStorage??delegate(string session,long epoch){return new Ashfall.Modules.HealthStates.FileHealthImageStore(System.IO.Path.Combine(Application.persistentDataPath,"LanHealthReceipts-v1"),session,epoch,LobbyContent);},maximumReceiptKeys,residentStateBytes);return peer;}catch{peer.Dispose();throw;}}
+        public static R24LanPeer Join(string address,string name,double now,ushort port=R24LanLobby.DefaultPort)
+        {
+            IPAddress ip;if(!TryAddress(address,out ip))throw new ArgumentException("Enter a unicast host IPv4 address");
+            var peer=new R24LanPeer();try{string connection=peer.transport.Connect(NetworkEndpoint.Parse(ip.ToString(),port));peer.connections.Add(connection);peer.Lobby.StartClient(connection,name,now);return peer;}catch{peer.Dispose();throw;}
+        }
+        public static R24LanPeer JoinRelay(RelayServerData relay,string name,double now)
+        {
+            var peer=new R24LanPeer(relay);
+            try { string connection=peer.transport.ConnectRelay(relay.Endpoint); peer.connections.Add(connection); peer.Lobby.StartClient(connection,name,now); return peer; }
+            catch { peer.Dispose(); throw; }
+        }
+        public static bool IsAddress(string address){IPAddress ip;return TryAddress(address,out ip);}
+        static bool TryAddress(string address,out IPAddress ip)
+        {
+            ip=null;string[] fields=(address??"").Split('.');if(fields.Length!=4)return false;var bytes=new byte[4];
+            for(int i=0;i<4;i++)if(fields[i].Length<1||fields[i].Length>3||!Byte.TryParse(fields[i],System.Globalization.NumberStyles.None,System.Globalization.CultureInfo.InvariantCulture,out bytes[i]))return false;
+            ip=new IPAddress(bytes);return bytes[0]!=0&&bytes[0]<224&&!ip.Equals(IPAddress.Broadcast);
+        }
+        public void Tick(double now){if(disposed)throw new ObjectDisposedException("R24LanPeer");Lobby.Tick(now);}
+        public void Dispose(){if(disposed)return;disposed=true;transport.Connected-=Connected;transport.Disconnected-=Disconnected;try{if(Lobby!=null)Lobby.Dispose();}finally{try{if(transport.DriverCreated&&connections.Count>0){foreach(string connection in connections)transport.ClosePeer(connection);transport.Pump();}}finally{transport.Dispose();connections.Clear();}}}
+    }
+    [DefaultExecutionOrder(1300)]
+    public sealed partial class R24LanSession:MonoBehaviour
+    {
+        public long HealthStorageResidentBytes=67108864;public long HealthStorageDiskBytes=Ashfall.Modules.HealthStates.FileHealthImageStore.DefaultDiskBytes;public int HealthStorageImageBytes=Ashfall.Modules.HealthStates.FileHealthImageStore.DefaultImageBytes,HealthStorageReceiptKeys=4096,HealthStorageEpochs=128;
+        public long MessagesIn{get{return peer==null?0:peer.MessagesIn;}}public long MessagesOut{get{return peer==null?0:peer.MessagesOut;}}
+        R23PlayableLoop root;R24LanPeer peer;string addresses="",closedStorageFailure;public R24LanLobby Lobby{get{return peer==null?null:peer.Lobby;}}
+        public void Initialize(R23PlayableLoop root)
+        {if(this.root!=null||root==null||root.UI==null)throw new ArgumentException("Initialized Root/UI required");this.root=root;BindWorldItemMotion();BindVehicles();root.Gameplay.AcceptedRocketLaunch+=SendRocket;root.Gameplay.AcceptedBallisticVolley+=SendVolley;root.Gameplay.AcceptedMagazineLoad+=SendReload;root.Gameplay.AuthorizeWorldDrop=AllowWeaponDrop;root.UI.LanHostRequested+=Host;root.UI.LanJoinRequested+=Join;root.UI.LanLeaveRequested+=Leave;root.UI.LanMapRequested+=OpenSelectedMap;Publish();}
+        public void Host() { StartHost(null); }
+        void StartHost(RelayServerData? relay)
+        {
+            if(root==null||!root.Ready||!root.Map.IsLoaded){Error("Wait for the map to finish loading");return;}if(!relay.HasValue)Leave();closedStorageFailure=null;
+            try{int teams=root.UI.SelectedMatchRules==null?2:root.UI.SelectedMatchRules.Teams;peer=R24LanPeer.Host("ASHFALL FRIENDS","Host",root.Map.MapId,root.Map.ManifestSha256,teams,R24LanLobby.DefaultPort,root.UI.SelectedMatchRules==null?null:root.UI.SelectedMatchRules.WithMap(root.Map.MapId),delegate(string session,long epoch){return new Ashfall.Modules.HealthStates.FileHealthImageStore(System.IO.Path.Combine(Application.persistentDataPath,"LanHealthReceipts-v1"),session,epoch,R24LanPeer.LobbyContent,HealthStorageDiskBytes,HealthStorageImageBytes,HealthStorageEpochs);},HealthStorageReceiptKeys,HealthStorageResidentBytes,relay);peer.Lobby.BindRawTrackingWorldQuery(RawTrackingWorldClear);peer.Lobby.BindSpawnWorld(new RootSpawnWorld(this));peer.Lobby.BindZoneDamageQuery(RemoteZoneDamage);peer.Lobby.BindCombatWorld(CombatTrace);peer.Lobby.BindFoodGeometry(new RootFoodGeometry(this));peer.Lobby.BindProjectileWorld(new RootProjectileWorld(this));peer.Lobby.BindSupplyDropWorld(new RootSupplyDrop(this));peer.Lobby.BindVehicleRuntime();peer.Lobby.BindConstructionWorld(root.Activities);BindConstructionPresentation();BindExplosivePresentation();peer.Lobby.BindPodWorld(new RootPodWorld(this));peer.Lobby.Changed+=Publish;addresses=relay.HasValue?"Room code: "+online.Room.Code:Addresses();Publish();}catch(Exception e){Leave();Error("Cannot host LAN lobby: "+e.Message);}
+        }
+        public void Join(string address)
+        {if(!R24LanPeer.IsAddress(address)){Error("Enter the host's four-part IPv4 address");return;}Leave();closedStorageFailure=null;try{peer=R24LanPeer.Join(address,"Player",Time.realtimeSinceStartupAsDouble);BindConstructionPresentation();BindExplosivePresentation();peer.Lobby.Changed+=Publish;addresses=address+":"+R24LanLobby.DefaultPort;Publish();}catch(Exception e){Leave();Error("Cannot join LAN lobby: "+e.Message);}}
+        void Update(){PumpOnline();if(peer==null){SyncGrapplePull();SyncVehicles();return;}try{peer.Tick(Time.realtimeSinceStartupAsDouble);if(peer!=null&&peer.Lobby.State==R24LanLobbyState.Offline){string status=peer.Lobby.Status;bool wasOnline=OnlineActive;Close();if(wasOnline){online.Fail("The host left");status=online.Reason;}Error(status);}else{SyncHealth();SyncRoundCompletion();SyncMaps();SyncPresence();SyncMeleeExpansion();SyncLoot();SyncPodPresentation();SyncAmmo();SyncResources();SyncConstruction();SyncExplosives();SyncCatalog();SyncClaims();SyncFoodReset();SyncVehicles();SyncGrapplePull();}}catch(Exception e){bool wasOnline=OnlineActive;Close();if(wasOnline){online.Fail("The connection was lost. Please try again");Error(online.Reason);}else Error("LAN connection closed: "+e.Message);}}
+        bool Close()
+        {
+            if(peer!=null&&root!=null&&root.isActiveAndEnabled)return root.CloseLanMenuBoundary(ReleasePeer);
+            ReleasePeer();return false;
+        }
+        void ReleasePeer()
+        {
+            if(online!=null)online.Leave();
+            ClearGrapplePullPresentation();ClearVehiclesPresentation();ClearMeleePresentation();ClearImportedWorldItems();if(root!=null&&root.Consumables!=null){root.Consumables.SetSharedConsume(null);root.Consumables.SharedDrop=null;}if(root!=null&&root.Activities!=null){root.Activities.SharedPanelsProvider=delegate{return new Ashfall.Modules.Construction.PlacedPanel[0];};root.Activities.ReconcileNetworkConstruction();root.Activities.SharedBuildRequested=null;root.Activities.SharedPanelsProvider=null;}if(root!=null&&root.Explosives!=null){root.Explosives.SharedClaim=null;root.Explosives.SharedThrow=null;root.Explosives.SharedDrop=null;root.Explosives.SharedRocketVisual=null;root.Explosives.ClearSharedProjectiles();}if(root!=null&&root.Gameplay!=null)root.Gameplay.SharedProjectileAuthority=false;pendingClaims.Clear();grenadeAliases.Clear();pendingCatalog.Clear();appliedAmmo.Clear();appliedResources=null;supplyDropPending.Clear();pendingRevives.Clear();lootAliases.Clear();lootRequests.Clear();var retired=peer;peer=null;addresses="";
+            try{StopMapWork();ClearPodPresentation();ClearPresenceViews();presenceMembers=new R24LanMember[0];}
+            finally{if(retired!=null){retired.Lobby.Changed-=Publish;try{retired.Dispose();}finally{closedStorageFailure=retired.Lobby.HealthStorageFailure;}}}
+        }
+        public bool LeaveForHome(){bool shown=Close();Publish();return shown;}
+        public void Leave(){Close();Publish();}
+        void Error(string message){Present(message);}
+        void Publish(){presenceMembers=peer==null?new R24LanMember[0]:peer.Lobby.Members;Present(null);}
+        void Present(string message)
+        {
+            if(root==null||root.UI==null)return;
+            if(peer==null){root.UI.SetLanLobby(R24LanLobbyState.Offline,message??closedStorageFailure??"Not connected",null,new string[0],"");return;}
+            var lobby=peer.Lobby;var rows=new List<string>();foreach(var member in lobby.Members)rows.Add((member.Host?"HOST   ":"PLAYER   ")+member.Name+(member.Actor==lobby.OwnActor?"   (YOU)":""));
+            root.UI.SetLanLobby(lobby.State,message??lobby.Status,lobby.RoomName,rows.ToArray(),addresses);
+        }
+        static string Addresses()
+        {
+            var result=new List<string>();try{foreach(var network in NetworkInterface.GetAllNetworkInterfaces())if(network.OperationalStatus==OperationalStatus.Up)foreach(var entry in network.GetIPProperties().UnicastAddresses)if(entry.Address.AddressFamily==AddressFamily.InterNetwork&&!IPAddress.IsLoopback(entry.Address)&&!entry.Address.Equals(IPAddress.Any)&&result.Count<6)result.Add(entry.Address.ToString());}catch(NotImplementedException){}catch(PlatformNotSupportedException){}catch(NetworkInformationException){}
+            return result.Count==0?"Host IPv4: see this device's Wi-Fi settings":"Host IPv4: "+String.Join(" / ",result.ToArray())+"   UDP "+R24LanLobby.DefaultPort;
+        }
+        public void Shutdown(){UnbindWorldItemMotion();if(root!=null&&root.Gameplay!=null){root.Gameplay.AcceptedRocketLaunch-=SendRocket;root.Gameplay.AcceptedBallisticVolley-=SendVolley;root.Gameplay.AcceptedMagazineLoad-=SendReload;root.Gameplay.AuthorizeWorldDrop=null;}if(root!=null&&root.UI!=null){root.UI.LanHostRequested-=Host;root.UI.LanJoinRequested-=Join;root.UI.LanLeaveRequested-=Leave;root.UI.LanMapRequested-=OpenSelectedMap;}Close();root=null;}
+        void OnDestroy(){Shutdown();}
+    }
+}
+#endif

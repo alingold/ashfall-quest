@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "dune_signal",
+ "label": "Dune Signal",
+ "sourceIndex": 12,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "dune_signal-body-baseColor.png",
+   "normal": "dune_signal-body-normal.png",
+   "metallicMap": "dune_signal-body-metallic.png",
+   "occlusion": "dune_signal-body-occlusion.png",
+   "emission": "dune_signal-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "dune_signal-glove-baseColor.png",
+   "normal": "dune_signal-glove-normal.png",
+   "metallicMap": "dune_signal-glove-metallic.png",
+   "occlusion": "dune_signal-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

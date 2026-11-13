@@ -1,0 +1,107 @@
+{
+  "id": "awp",
+  "file": "awp__awm.glb",
+  "scale": 0.025773709412462407,
+  "anchor": [
+    -4.6821,
+    -6.568651199340822,
+    -34.0
+  ],
+  "target": [
+    0.0,
+    0.047,
+    0.025
+  ],
+  "mag": [
+    6
+  ],
+  "bolt": [
+    11,
+    73
+  ],
+  "bolt_home": [
+    0.072,
+    0.045,
+    -0.07
+  ],
+  "omit": [],
+  "omission_reason": "None:085restores the complete supplied scope, replacing authored housing only.",
+  "muzzle": [
+    0,
+    0.047,
+    -1.01
+  ],
+  "actual_bolt_contact": [
+    0.0630399158519418,
+    0.024400353813144173,
+    -0.02416335070427201
+  ],
+  "variant": "085 supplied AWP scope restored; functional zoom/compositor/damping/reload unchanged.",
+  "offset": [
+    -0.12067508484009024,
+    0.21629850724363303,
+    -0.8513061200237219
+  ],
+  "source": "[local development path]",
+  "source_sha256": "00811d30bacf5665caf6248ecb6e49e5a385f68704513828879cf0c71cd3d8c9",
+  "output_sha256": "2d6100a939a02e848732dd20fc3b1726ad67d2b8c5a43e8cf7e788506f2a3afb",
+  "asset": {
+    "author": "AvnisT (https://sketchfab.com/AvnisT)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/awp-awm-df073bbe7af947379d6869dad71b6ed3",
+    "title": "AWP | AWM"
+  },
+  "magazine_center": [
+    0.00024871757397594563,
+    -0.012802746729613956,
+    -0.10610827615717305
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "source_triangles": 21916,
+  "body_triangles": 20822,
+  "magazine_triangles": 680,
+  "moving_triangles": 414,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.0449106888871811,
+    -0.11178022854916714,
+    -1.01
+  ],
+  "bounds_max": [
+    0.0724885530622347,
+    0.14858837090239385,
+    0.3767260900906043
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 21916,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": false,
+  "moving_grip_center_model": [
+    0.04105880319786255,
+    0.03412989023122445,
+    -0.030792349571372335
+  ],
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ]
+}

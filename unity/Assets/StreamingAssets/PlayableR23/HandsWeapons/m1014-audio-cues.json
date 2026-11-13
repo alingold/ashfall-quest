@@ -1,0 +1,66 @@
+{
+  "cues": [
+    {
+      "weapon": "m1014",
+      "action": "shot",
+      "files": [
+        "m1014-audio-shot-0.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/reference097/shot_m1014_last_00.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "mag_eject",
+      "files": [
+        "m1014-audio-mag_eject-0.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "pouch",
+      "files": [
+        "m1014-audio-pouch-0.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/reference099/isolated_s85_pouch_00.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "mag_insert",
+      "files": [
+        "m1014-audio-mag_insert-0.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "bolt",
+      "files": [
+        "m1014-audio-bolt-0.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/reference099/isolated_s85_bolt_00.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "dry",
+      "files": [
+        "m1014-audio-dry-0.wav",
+        "m1014-audio-dry-1.wav"
+      ],
+      "sourceFiles": [
+        "res://assets/audio/sfx/dry_00.wav",
+        "res://assets/audio/sfx/dry_01.wav"
+      ]
+    }
+  ]
+}

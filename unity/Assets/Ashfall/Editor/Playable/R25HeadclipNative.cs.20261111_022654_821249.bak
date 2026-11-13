@@ -1,0 +1,694 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Reflection;
+using System.Text.RegularExpressions;
+using Ashfall.Integration.Playable;
+using Ashfall.Integration.Playable.UI;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.XR.Management;
+using UnityEngine;
+using UnityEngine.XR.Management;
+
+namespace Ashfall.Editor.Playable
+{
+    [InitializeOnLoad]
+    public static class R25HeadclipNative
+    {
+        const string Key = "Ashfall.Headclip2.Native";
+        static IEnumerator work;
+        static double began;
+        sealed class Audit { public Action Run; }
+        static Audit pending;
+        static R25HeadclipNative() { EditorApplication.playModeStateChanged += Changed; EditorApplication.update += Pump; }
+        public static void Run()
+        {
+            string path = R23PlayableBuild.Argument("-ashfallHeadclipOutput");
+            if (string.IsNullOrEmpty(path) || Directory.Exists(path)) throw new ArgumentException("Fresh -ashfallHeadclipOutput directory required");
+            if (!R25NetBot.Requested) throw new ArgumentException("-ashfallNetBot probe required for synthetic rig opt-in");
+            Directory.CreateDirectory(path);
+            SessionState.SetString(Key, Path.GetFullPath(path));
+            SessionState.SetBool(Key + ".baseline", R23PlayableBuild.Argument("-ashfallHeadclipBaseline") == "true");
+            var settings = AssetDatabase.LoadAssetAtPath<XRGeneralSettingsPerBuildTarget>("Assets/XR/XRGeneralSettingsPerBuildTarget.asset");
+            var xr = settings.SettingsForBuildTarget(UnityEditor.BuildTargetGroup.Standalone);
+            SessionState.SetBool(Key + ".xr", xr.InitManagerOnStart); xr.InitManagerOnStart = false;
+            EditorSceneManager.OpenScene(R23PlayableBuild.ScenePath, OpenSceneMode.Single);
+            EditorApplication.isPlaying = true;
+        }
+        static void Changed(PlayModeStateChange state)
+        {
+            string path = SessionState.GetString(Key, ""); if (path.Length == 0) return;
+            if (state == PlayModeStateChange.EnteredPlayMode)
+            {
+                began = EditorApplication.timeSinceStartup; work = new Probe(path).Run(); pending = null;
+                R25HeadclipNativeDriver.AdvanceFrame = Advance;
+                R25HeadclipNativeDriver.AuditFrame = AuditFrame;
+                new GameObject("Headclip native Update and LateUpdate driver").AddComponent<R25HeadclipNativeDriver>();
+            }
+            if (state == PlayModeStateChange.EnteredEditMode)
+            {
+                var settings = AssetDatabase.LoadAssetAtPath<XRGeneralSettingsPerBuildTarget>("Assets/XR/XRGeneralSettingsPerBuildTarget.asset");
+                settings.SettingsForBuildTarget(BuildTargetGroup.Standalone).InitManagerOnStart = SessionState.GetBool(Key + ".xr", true);
+                bool ok=false;string receipt=Path.Combine(path,"result.json");
+                if(File.Exists(receipt)){var result=JsonUtility.FromJson<Receipt>(File.ReadAllText(receipt));ok=result.nativeExecuted&&(SessionState.GetBool(Key+".baseline",false)||result.acceptancePassed);}
+                SessionState.EraseString(Key); work = null;EditorApplication.Exit(ok?0:2);
+            }
+        }
+        static void Pump()
+        {
+            if (work == null || !EditorApplication.isPlaying) return;
+            // Never let the netbot component open a LAN peer. Its sample method is
+            // reused directly; this harness does not test multiplayer.
+            foreach (var bot in UnityEngine.Object.FindObjectsByType<R25NetBot>())
+            { bot.StopAllCoroutines(); bot.enabled = false; }
+            try
+            {
+                if (EditorApplication.timeSinceStartup - began > 1800) throw new TimeoutException("Native headclip probe 30 minute bound");
+            }
+            catch (Exception e) { Abort(e); }
+        }
+        static void Advance()
+        {
+            if (work == null) return;
+            try
+            {
+                if (pending != null) throw new InvalidOperationException("A native frame missed its LateUpdate audit");
+                if (!work.MoveNext()) { work = null; EditorApplication.isPlaying = false; return; }
+                pending = work.Current as Audit;
+            }
+            catch (Exception e) { Abort(e); }
+        }
+        static void AuditFrame()
+        {
+            if (pending == null) return;
+            var audit = pending; pending = null;
+            try { audit.Run(); } catch (Exception e) { Abort(e); }
+        }
+        static void Abort(Exception e)
+        {
+            File.WriteAllText(Path.Combine(SessionState.GetString(Key, ""), "error.txt"), e.ToString());
+            Debug.LogException(e);
+            var disposable = work as IDisposable;
+            try { if (disposable != null) disposable.Dispose(); }
+            finally
+            {
+                work = null; pending = null; EditorApplication.isPlaying = false;
+            }
+        }
+        [Serializable] sealed class Frame
+        {
+            public string scenario="", phase="", eyeTriangle="", nearTriangle="", sweep="";
+            public int frame, recoveries, failedRecoveries, trappedRecoveries, trappedRecoveryFailures;
+            public Vector3 eye, root, requestedLocal;
+            public Quaternion rotation;
+            public float dt, eyeDistance, eyeSigned, nearDistance, nearSigned, alpha, stepMs, speed, insideDepth;
+            public bool authoredBackSide, eyeCrossed, nearCrossed, clear, blocked, fullyBlack, visibleViolation;
+            public bool carrierBlocked, physicalHold;
+        }
+        [Serializable] sealed class Scenario
+        {
+            public string id="", kind="", error="", image="";
+            public Vector3 site, startEye, endEye;
+            public int frames, violations, crossings, blackFrames, recoveryCount, trappedRecoveries, trappedRecoveryFailures;
+            public float maxClearBlackSeconds, protectedRootDrop, leanRootDrop, maximumWalkSupportGap, retreatHorizontal;
+            public bool startedClear, startedSupported, stuck;
+            public float endAlpha;
+            public bool endCarrierBlocked, endBlocked;
+            public float minimumEye=999, minimumNear=999, maxStepMs, meanStepMs, distance, reverseDistance, horizontalDistance, expectedDistance, speedLoss;
+        }
+        [Serializable] sealed class Receipt
+        {
+            public bool nativeExecuted, acceptancePassed, headsetVerified=false;
+            public string baseline="current shared checkout; no production collision changes", map="", error="";
+            public string manifestSha256="", sourceSha256="";
+            public float nearClip, sphereRadius;
+            public float eyeMinimum=.07f, rectangleMinimum=.03f, scanSpacing=1f;
+            public int triangles, slantedDownFaces, scanSamples, discoveredSites, loggedSites;
+            public int nativeGridQueries, nativeGridClearDisagreements, escapeQueries, escapeQueryFailures;
+            public float nativeGridMeanMs, nativeGridMaximumMs;
+            public int nativeSweepQueries, nativeSweepFailures, nativeSweepSkippedSides, nativeSweepSites;
+            public float nativeSweepMeanMs, nativeSweepMaximumMs, nativeSweepMinimumEye=999, nativeSweepMinimumRectangleBound=999;
+            public List<Scenario> scenarios=new List<Scenario>();
+        }
+        [Serializable] sealed class EscapeEvidence
+        { public string kind; public Vector3 start,requested,accepted; public bool passed; }
+        [Serializable] sealed class QueryEvidence
+        {
+            public string label="", triangle="", collider="";
+            public Vector3 point, normal;
+            public float side, meshDistance, domeDepth, sphereDepth;
+            public bool backfaces, domeClear, eyeClear, overlap, domePenetrates, spherePenetrates, sphereCast;
+        }
+        sealed class Probe
+        {
+            readonly string output;
+            readonly Receipt result=new Receipt();
+            R23PlayableLoop loop;
+            R25HeadclipGeometry geometry;
+            StreamWriter frames;
+            readonly List<GameObject> fixtures=new List<GameObject>();
+            readonly List<Mesh> meshes=new List<Mesh>();
+            readonly CultureInfo culture=CultureInfo.InvariantCulture;
+            public Probe(string path) { output=path; }
+            public IEnumerator Run()
+            {
+                float until=Time.realtimeSinceStartup+120;
+                while(Time.realtimeSinceStartup<until)
+                {loop=UnityEngine.Object.FindAnyObjectByType<R23PlayableLoop>();if(loop!=null&&(loop.Ready||loop.Failure!=null))break;yield return null;}
+                Need(loop!=null&&loop.Ready,"Ready real loop required: "+(loop==null?"missing":loop.Failure));
+                Need(!UnityEngine.XR.XRSettings.isDeviceActive,"XR must remain off");
+                loop.ManualSmoke=true;loop.ExternalProbePump=true;loop.Rig.enabled=false;
+                loop.Gameplay.ExternalInputPump=true;loop.Calibration.SuppressPersistence=true;
+                loop.Rig.Calibration=null; // Preserve supplied raw height for lean/duck controls.
+                loop.SelectMap("archive:afterlife-gods-alamo-hank",true);
+                until=Time.realtimeSinceStartup+120;
+                while((!loop.Ready||loop.Map.MapId!="archive:afterlife-gods-alamo-hank")&&loop.Failure==null&&Time.realtimeSinceStartup<until)yield return null;
+                Need(loop.Ready&&loop.Map.MapId=="archive:afterlife-gods-alamo-hank","Actual Afterlife load: "+loop.Failure);
+                loop.StartPlaying();until=Time.realtimeSinceStartup+120;
+                while((loop.Lobby.Visible||loop.SourceArchiveEntryPending)&&Time.realtimeSinceStartup<until){loop.SmokeUiUpdate();yield return null;}
+                Need(!loop.Lobby.Visible&&!loop.SourceArchiveEntryPending&&loop.SourceArchiveEntryFailure==null,"Actual source entry must finish before probe: "+loop.SourceArchiveEntryFailure);
+                result.nativeExecuted=true;result.map=loop.Map.MapId;
+                result.manifestSha256=loop.Map.ManifestSha256;result.sourceSha256=loop.Map.SourceSha256;
+                Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled = R23PlayableBuild.Argument("-ashfallHeadclipBaseline") != "true";
+                result.baseline=Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled?"full eye sphere + emergency render guard":"round-1 clearance, original dome and timed fade";
+                foreach(var camera in UnityEngine.Object.FindObjectsByType<Camera>())camera.enabled=false;
+                Application.targetFrameRate=-1;Time.captureDeltaTime=R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true"?1f/30:1f/72;
+                var rig=loop.Rig;rig.TrackingOrigin.localPosition=Vector3.zero;
+                rig.NetBotSample(Vector2.zero,1.7088f,Vector3.zero,Vector3.zero,Quaternion.identity,0,0,1f/72);
+                rig.HeadclipProbeOwnsTracking=true;rig.enabled=true;rig.GameplayBlocked=false;
+                if(R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true")rig.Head.aspect=16f/9;
+                result.nearClip=rig.Head.nearClipPlane;result.sphereRadius=rig.HeadCollision.EyeSafetyRadius;
+                rig.HeadCollision.CaptureSweepDiagnostics=R23PlayableBuild.Argument("-ashfallHeadclipTrace")=="true";
+                geometry=new R25HeadclipGeometry();
+                foreach(var collider in loop.Map.GetComponentsInChildren<MeshCollider>(false))
+                    if(collider.gameObject.layer!=22&&collider.gameObject.layer!=19)geometry.Add(collider);
+                geometry.Build();result.triangles=geometry.Triangles.Count;
+                List<Vector3> sites;
+                string scanInput=R23PlayableBuild.Argument("-ashfallHeadclipSites");
+                if(string.IsNullOrEmpty(scanInput))sites=geometry.OverhangSites(result.scanSpacing,out result.slantedDownFaces,out result.scanSamples);
+                else sites=JsonUtility.FromJson<Sites>(File.ReadAllText(scanInput)).sites;
+                result.discoveredSites=sites.Count;
+                File.WriteAllText(Path.Combine(output,"discovered-sites.json"),JsonUtility.ToJson(new Sites { sites=sites },true));
+                var logged=Logged();
+                string customLogged=R23PlayableBuild.Argument("-ashfallHeadclipCustomLogged");
+                if(!string.IsNullOrEmpty(customLogged))logged=JsonUtility.FromJson<Sites>(File.ReadAllText(customLogged)).sites;
+                if(R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true")logged=new List<Vector3>{new Vector3(15.5f,87,-46.9f),new Vector3(-4.2f,86f,51.2f)};
+                result.loggedSites=logged.Count;
+                QueryDiagnostics("logged-0",logged[0]);QueryDiagnostics("logged-21",logged[Mathf.Min(21,logged.Count-1)]);
+                frames=new StreamWriter(Path.Combine(output,"frames.jsonl"));frames.AutoFlush=true;
+                try
+                {
+                    if(R23PlayableBuild.Argument("-ashfallHeadclipGrid")=="true")
+                    {var audit=AuditSites(sites);while(audit.MoveNext())yield return audit.Current;}
+                    if(R23PlayableBuild.Argument("-ashfallHeadclipSweepAudit")=="true")
+                    {var audit=SweepSites(sites);while(audit.MoveNext())yield return audit.Current;}
+                    bool representative=R23PlayableBuild.Argument("-ashfallHeadclipRepresentative")=="true";
+                    for(int i=0;i<logged.Count;i++)
+                    {
+                        if(representative&&i!=0&&i!=21&&R23PlayableBuild.Argument("-ashfallHeadclipMovie")!="true")continue;
+                        var scenario=RunSite("logged-"+i,logged[i],i<3||i==21||i==logged.Count-1);
+                        while(scenario.MoveNext())yield return scenario.Current;
+                    }
+                    for(int i=0;i<sites.Count&&!representative&&R23PlayableBuild.Argument("-ashfallHeadclipLoggedOnly")!="true";i++)
+                    {
+                        var scenario=RunSite("scan-"+i,sites[i],false);
+                        while(scenario.MoveNext())yield return scenario.Current;
+                    }
+                    foreach(string fixture in new[]{"single-up","single-down","double-sided","box"})
+                    {
+                        Vector3 center=new Vector3(1500+fixtures.Count*30,100,-1500);
+                        CreateFixture(center,fixture);var old=geometry;geometry=new R25HeadclipGeometry();
+                        foreach(var c in fixtures[fixtures.Count-1].GetComponentsInChildren<MeshCollider>())geometry.Add(c);
+                        foreach(var c in fixtures[fixtures.Count-1].GetComponentsInChildren<BoxCollider>())geometry.AddBox(c);
+                        geometry.Build();var scenario=RunSite("fixture-"+fixture,center+new Vector3(0,1.7088f,-.8f),true);
+                        QueryDiagnostics("fixture-"+fixture,center+new Vector3(0,1.7088f,-.8f));
+                        while(scenario.MoveNext())yield return scenario.Current;geometry=old;
+                    }
+                    var controls=Controls();while(controls.MoveNext())yield return controls.Current;
+                }
+                finally
+                {
+                    frames.Dispose();frames=null;Time.captureDeltaTime=0;
+                    foreach(var fixture in fixtures)if(fixture!=null)UnityEngine.Object.Destroy(fixture);
+                    foreach(var mesh in meshes)if(mesh!=null)UnityEngine.Object.Destroy(mesh);
+                    rig.HeadclipProbeOwnsTracking=false;rig.enabled=false;
+                }
+                result.acceptancePassed=result.scenarios.Count>0&&result.nativeGridClearDisagreements==0&&result.nativeSweepFailures==0&&result.escapeQueryFailures==0;
+                foreach(var s in result.scenarios)if(s.violations>0||s.error.Length>0||s.stuck)result.acceptancePassed=false;
+                File.WriteAllText(Path.Combine(output,"result.json"),JsonUtility.ToJson(result,true));
+            }
+            [Serializable] sealed class Sites { public List<Vector3> sites; }
+            IEnumerator AuditSites(List<Vector3> sites)
+            {
+                // Dense map scan acceptance of the actual native clearance
+                // predicate. These are static contact probes, not motor frames.
+                using(var log=new StreamWriter(Path.Combine(output,"grid-disagreements.jsonl")))
+                for(int i=0;i<sites.Count;i++)
+                {
+                    var nearest=geometry.Eye(sites[i]);
+                    foreach(float sign in new[]{-1f,1f})
+                    {
+                        Vector3 point=nearest.point+nearest.normal*(.05f*sign);
+                        var clock=System.Diagnostics.Stopwatch.StartNew();bool clear=loop.Rig.HeadCollision.HeadClear(point);clock.Stop();
+                        float ms=(float)clock.Elapsed.TotalMilliseconds;result.nativeGridQueries++;result.nativeGridMeanMs+=ms;result.nativeGridMaximumMs=Mathf.Max(result.nativeGridMaximumMs,ms);
+                        if(clear){result.nativeGridClearDisagreements++;log.WriteLine(JsonUtility.ToJson(new QueryEvidence{label="grid-"+i,triangle=nearest.triangle,point=point,side=sign*.05f,eyeClear=true,meshDistance=geometry.Eye(point).distance}));}
+                    }
+                    if(i%1024==0){File.WriteAllText(Path.Combine(output,"partial-result.json"),JsonUtility.ToJson(result,true));yield return null;}
+                }
+                result.nativeGridMeanMs/=Mathf.Max(1,result.nativeGridQueries);
+            }
+            IEnumerator SweepSites(List<Vector3> sites)
+            {
+                // Continuous native sweeps at every sampled contact with a clear
+                // start side. The rectangle bound follows from the independent
+                // nearest-triangle distance and maximum near-corner reach.
+                var collision=loop.Rig.HeadCollision;var policy=new R25HeadClearance();
+                Func<Float3,Float3,Float3> sweep=delegate(Float3 at,Float3 delta){bool ceiling;return F(collision.Sweep(U(at),U(delta),false,out ceiling,false,true));};
+                Func<Float3,bool> clear=delegate(Float3 at){return collision.HeadClear(U(at));};
+                float cornerReach=0;foreach(var c in Corners(loop.Rig.Head))cornerReach=Mathf.Max(cornerReach,Vector3.Distance(c,loop.Rig.Head.transform.position));
+                using(var log=new StreamWriter(Path.Combine(output,"sweep-failures.jsonl")))
+                for(int i=0;i<sites.Count;i++)
+                {
+                    var face=geometry.Eye(sites[i]);bool tested=false;
+                    foreach(float sign in new[]{-1f,1f})
+                    {
+                        Vector3 start=face.point+face.normal*sign*(collision.EyeSafetyRadius+.04f);
+                        if(!collision.HeadClear(start)){result.nativeSweepSkippedSides++;continue;}
+                        tested=true;Vector3 inward=-face.normal*sign;
+                        Vector3 tangent=Vector3.Cross(face.normal,Mathf.Abs(face.normal.y)<.9f?Vector3.up:Vector3.right).normalized;
+                        var directions=new[]{inward,(inward+tangent*.6f).normalized,(inward-tangent*.6f).normalized};
+                        foreach(float speed in new[]{1f,3f})foreach(float dt in new[]{1f/72,1f/120,.05f})foreach(var direction in directions)
+                            SweepCertificate(i,start,direction*speed*dt,cornerReach,policy,sweep,clear,log);
+                        SweepCertificate(i,start,inward*.3f,cornerReach,policy,sweep,clear,log);
+                    }
+                    if(tested)result.nativeSweepSites++;
+                    if(i%256==0){File.WriteAllText(Path.Combine(output,"partial-result.json"),JsonUtility.ToJson(result,true));yield return null;}
+                }
+                result.nativeSweepMeanMs/=Mathf.Max(1,result.nativeSweepQueries);
+            }
+            void SweepCertificate(int site,Vector3 start,Vector3 requested,float reach,R25HeadClearance policy,
+                Func<Float3,Float3,Float3> sweep,Func<Float3,bool> clear,StreamWriter log)
+            {
+                var clock=System.Diagnostics.Stopwatch.StartNew();Vector3 accepted=U(policy.Move(F(start),F(requested),sweep,clear,0));clock.Stop();
+                float ms=(float)clock.Elapsed.TotalMilliseconds;result.nativeSweepQueries++;result.nativeSweepMeanMs+=ms;result.nativeSweepMaximumMs=Mathf.Max(result.nativeSweepMaximumMs,ms);
+                Vector3 end=start+accepted;var nearest=geometry.Eye(end);float bound=nearest.distance-reach;
+                result.nativeSweepMinimumEye=Mathf.Min(result.nativeSweepMinimumEye,nearest.distance);
+                result.nativeSweepMinimumRectangleBound=Mathf.Min(result.nativeSweepMinimumRectangleBound,bound);
+                if(nearest.distance<result.eyeMinimum||bound<result.rectangleMinimum||geometry.Crosses(start,end))
+                {result.nativeSweepFailures++;log.WriteLine(JsonUtility.ToJson(new QueryEvidence{label="sweep-"+site,point=end,triangle=nearest.triangle,meshDistance=nearest.distance}));}
+            }
+            static Float3 F(Vector3 p){return new Float3(p.x,p.y,p.z);}
+            static Vector3 U(Float3 p){return new Vector3(p.X,p.Y,p.Z);}
+            List<Vector3> Logged()
+            {
+                var list=new List<Vector3>();bool afterlife=false;
+                string path=Path.GetFullPath(Path.Combine(Application.dataPath,"../../maintenance/20261110-playtest/session-1/head-recovery-events.txt"));
+                foreach(string line in File.ReadAllLines(path))
+                {
+                    if(line.Contains(" START "))afterlife=line.Contains("archive:afterlife-gods-alamo-hank");
+                    if(!afterlife||!line.Contains("R25 head recovery"))continue;
+                    var match=Regex.Match(line,@"head=\(([-\d.]+),\s*([-\d.]+),\s*([-\d.]+)\)");
+                    if(match.Success)list.Add(new Vector3(float.Parse(match.Groups[1].Value,culture),float.Parse(match.Groups[2].Value,culture),float.Parse(match.Groups[3].Value,culture)));
+                }
+                return list;
+            }
+            void QueryDiagnostics(string label,Vector3 eye)
+            {
+                var collision=loop.Rig.HeadCollision;var nearest=geometry.Eye(eye);
+                var hull=(MeshCollider)typeof(Ashfall.Integration.Playable.Climbing.R23HeadCollision).GetField("hull",BindingFlags.Instance|BindingFlags.NonPublic).GetValue(collision);
+                var relevant=typeof(Ashfall.Integration.Playable.Climbing.R23HeadCollision).GetMethod("Relevant",BindingFlags.Instance|BindingFlags.NonPublic);
+                var node=new GameObject("diagnostic sphere");node.transform.SetParent(loop.Rig.transform,false);var sphere=node.AddComponent<SphereCollider>();sphere.radius=.12f;sphere.enabled=false;
+                bool oldBack=Physics.queriesHitBackfaces,oldFeature=Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled;
+                try
+                {
+                    using(var log=new StreamWriter(Path.Combine(output,"query-evidence.jsonl"),true))
+                    foreach(float side in new[]{-.14f,-.06f,-.005f,.005f,.06f,.14f})
+                    foreach(bool backfaces in new[]{false,true})
+                    {
+                        Vector3 at=nearest.point+nearest.normal*side;Physics.queriesHitBackfaces=backfaces;
+                        var evidence=new QueryEvidence{label=label,triangle=nearest.triangle,point=at,normal=nearest.normal,side=side,backfaces=backfaces,meshDistance=geometry.Eye(at).distance};
+                        Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled=false;evidence.domeClear=collision.HeadClear(at);
+                        Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled=true;evidence.eyeClear=collision.HeadClear(at);
+                        hull.enabled=true;sphere.enabled=true;Physics.SyncTransforms();
+                        foreach(var obstacle in Physics.OverlapSphere(at,.12f,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))
+                        {
+                            if(!(bool)relevant.Invoke(collision,new object[]{obstacle}))continue;
+                            evidence.overlap=true;evidence.collider+=obstacle.name+";";Vector3 away;float depth;
+                            if(Physics.ComputePenetration(hull,at,loop.Rig.transform.rotation,obstacle,obstacle.transform.position,obstacle.transform.rotation,out away,out depth))
+                            {evidence.domePenetrates=true;evidence.domeDepth=Mathf.Max(evidence.domeDepth,depth);}
+                            if(Physics.ComputePenetration(sphere,at,Quaternion.identity,obstacle,obstacle.transform.position,obstacle.transform.rotation,out away,out depth))
+                            {evidence.spherePenetrates=true;evidence.sphereDepth=Mathf.Max(evidence.sphereDepth,depth);}
+                        }
+                        float sign=side<0?-1:1;
+                        foreach(var hit in Physics.SphereCastAll(nearest.point+nearest.normal*sign*.4f,.12f,-nearest.normal*sign,.8f,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))
+                            if((bool)relevant.Invoke(collision,new object[]{hit.collider}))evidence.sphereCast=true;
+                        log.WriteLine(JsonUtility.ToJson(evidence));
+                        hull.enabled=false;sphere.enabled=false;
+                    }
+                }
+                finally{Physics.queriesHitBackfaces=oldBack;Ashfall.Integration.Playable.Climbing.R23HeadCollision.EyeSafetyEnabled=oldFeature;UnityEngine.Object.Destroy(node);}
+            }
+            IEnumerator RunSite(string id,Vector3 site,bool capture)
+            {
+                if(R23PlayableBuild.Argument("-ashfallHeadclipBobControls")=="true")yield break;
+                if(R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true")
+                {
+                    if(id.StartsWith("fixture-",StringComparison.Ordinal)&&id!="fixture-double-sided")yield break;
+                    if(R23PlayableBuild.Argument("-ashfallHeadclipMovieOnly")=="new"&&id!="logged-1")yield break;
+                    if(id.StartsWith("fixture-",StringComparison.Ordinal))site.z+=.8f;
+                    var movie=DrivePath(id+"-video",site,1f/30,1,id=="logged-1"||id.StartsWith("fixture-",StringComparison.Ordinal)?90:0,"video",false);
+                    while(movie.MoveNext())yield return movie.Current;
+                    yield break;
+                }
+                string only=R23PlayableBuild.Argument("-ashfallHeadclipOnly");
+                if(!string.IsNullOrEmpty(only)&&!id.StartsWith(only,StringComparison.Ordinal))yield break;
+                if(R23PlayableBuild.Argument("-ashfallHeadclipSupplement")=="true")
+                {
+                    foreach(string mode in new[]{"snap-turn","late-lean","look-down","carrier"})
+                    {var supplemental=DrivePath(id+"-"+mode,site,1f/72,0,0,mode,capture);while(supplemental.MoveNext())yield return supplemental.Current;}
+                    yield break;
+                }
+                // Both legs/directions, ordinary and diagonal, plus physical poses
+                // with no stick motion. Actual measured speeds are recorded.
+                foreach(float dt in new[]{1f/72,1f/120,.05f})
+                foreach(float speed in new[]{1f,3f})
+                foreach(float yaw in new[]{0f,45f,90f,180f,225f,270f})
+                {
+                    if(R23PlayableBuild.Argument("-ashfallHeadclipQuickCaptures")=="true"&&(dt!=1f/72||speed!=3||yaw!=0))continue;
+                    var scenario=DrivePath(id+"-"+dt.ToString("F3",culture)+"-"+speed+"-"+yaw,site,dt,speed,yaw,"walk",capture&&dt==1f/72&&speed==3&&yaw==0);
+                    while(scenario.MoveNext())yield return scenario.Current;
+                }
+                foreach(string kind in new[]{"lean-forward","lean-up","duck","turn","teleport","escape","trapped"})
+                {
+                    var scenario=DrivePath(id+"-"+kind,site,1f/72,0,0,kind,capture);
+                    while(scenario.MoveNext())yield return scenario.Current;
+                }
+            }
+            IEnumerator DrivePath(string id,Vector3 site,float dt,float speed,float yaw,string kind,bool capture,float eyeHeight=1.7088f)
+            {
+                var rig=loop.Rig;var record=new Scenario { id=id,kind=kind,site=site };result.scenarios.Add(record);
+                Vector3 heading=Quaternion.Euler(0,yaw,0)*Vector3.forward;
+                float approach=id.StartsWith("fixture-",StringComparison.Ordinal)?3f:1.5f;
+                Vector3 startEye=kind=="walk"||kind=="video"||kind=="escape"||kind=="trapped"?site-heading*approach:site;
+                R25HeadclipGeometry.Triangle floor;Vector3 foot;
+                if((kind=="walk"||kind=="video"||kind=="escape"||kind=="trapped")&&geometry.Floor(startEye+Vector3.up*.1f,3.5f,out floor,out foot))startEye.y=foot.y+eyeHeight;
+                Vector3 ownedDirection=Vector3.zero;
+                if(kind=="lean-forward"||kind=="lean-up"||kind=="late-lean"||kind=="carrier"||kind=="look-down")
+                {
+                    var face=geometry.Eye(site);Vector3 away=(site-face.point).normalized;
+                    if(away.sqrMagnitude<.1f)away=face.normal;
+                    ownedDirection=-away;
+                    startEye=face.point+away*(rig.HeadCollision.EyeSafetyRadius+.08f);
+                    Vector3 toward=Vector3.ProjectOnPlane(-away,Vector3.up);
+                    if(toward.sqrMagnitude>.0001f)heading=toward.normalized;
+                    if(kind=="lean-up"&&Mathf.Abs(face.normal.y)>.1f)
+                        startEye=face.point-Vector3.up*((rig.HeadCollision.EyeSafetyRadius+.08f)/Mathf.Abs(face.normal.y));
+                }
+                rig.TrackingOrigin.localPosition=Vector3.zero;
+                rig.SetSpawn(startEye-Vector3.up*eyeHeight,startEye-Vector3.up*eyeHeight+heading);
+                rig.Head.transform.localRotation=Quaternion.identity;
+                rig.ApplySettings(kind=="snap-turn"?loop.UI.Settings.With(walk:1,turning:R23Turning.Snap):loop.UI.Settings.With(walk:1));
+                // NetBotSample primes focus/tracking; this same Advance path is
+                // then driven by the editor-only synthetic sample bridge.
+                for(int i=0;i<Mathf.CeilToInt(.2f/dt);i++)rig.HeadclipProbeStep(Vector2.zero,new Vector3(0,eyeHeight,0),0,dt);
+                record.startEye=rig.Head.transform.position;
+                record.startedClear=rig.HeadCollision.HeadClear(record.startEye);record.startedSupported=rig.Supported;
+                Vector3 previous=record.startEye;Vector3[] previousNear=Corners(rig.Head);
+                int recoveryStart=rig.HeadRecoveries;
+                bool directionalWalk=kind=="walk"&&R23PlayableBuild.Argument("-ashfallHeadclipBobControls")!="true";
+                int approachFrames=kind=="walk"?Mathf.CeilToInt(3/(speed*dt)):0;
+                int n=kind=="trapped"?510:kind=="video"||kind=="escape"?420:kind=="walk"?(directionalWalk?approachFrames+Mathf.CeilToInt(3/dt):Mathf.CeilToInt(4/(speed*dt))):200;
+                var oldCarrier=rig.ReadCarrierMotion;Vector3 carrierStart=rig.transform.position,carrierTarget=carrierStart;
+                if(kind=="carrier")rig.ReadCarrierMotion=delegate{return new R23RigCarrierMotion{Target=carrierTarget,Flying=true};};
+                byte[] worstImage=null;float worst=999;bool haveVisibleWorst=false;
+                Vector3 previousRoot=rig.transform.position;float leanStartY=0,clearBlackSeconds=0;
+                R25HeadclipGeometry.Triangle crossedSurface=null;Vector3 crossedNormal=Vector3.zero;
+                int trappedStart=rig.TrappedOpaqueRecoveries;int trappedFailedStart=rig.TrappedOpaqueFailures;
+                bool walkFinished=false;Vector3 retreatAnchor=record.startEye;float forwardPeak=0;int previousRecovery=rig.HeadRecoveries;
+                for(int i=0;i<n;i++)
+                {
+                    Vector3 local=new Vector3(0,eyeHeight,0);float turn=0;Vector2 stick=Vector2.zero;
+                    bool reverse=directionalWalk?i>=approachFrames:i>=n*3/4;
+                    if(kind=="walk")stick=new Vector2(0,(reverse?-1:1)*Mathf.Clamp01(speed/Ashfall.Modules.Player.PlayerTuning.WalkSpeed));
+                    if(kind=="video"||kind=="escape"||kind=="trapped")
+                    {
+                        int back=kind=="trapped"?360:270;
+                        reverse=i>=back;
+                        if(i<120||reverse)stick=new Vector2(0,(reverse?-1:1)/Ashfall.Modules.Player.PlayerTuning.WalkSpeed);
+                        float lean=i>=120&&i<back?Mathf.Sin(Mathf.PI*(i-120)/149):0;
+                        if(kind=="trapped")lean=i<120?0:i<150?(i-120)/30f:i<330?1:i<360?(360-i)/30f:0;
+                        local.z+=.3f*lean;local.y+=.3f*lean;
+                    }
+                    if(id.StartsWith("control-",StringComparison.Ordinal)&&R23PlayableBuild.Argument("-ashfallHeadclipBobControls")=="true")
+                    {local.y+=.03f*Mathf.Sin(i*dt*Mathf.PI*2);local.z+=.02f*Mathf.Sin(i*dt*Mathf.PI*2);}
+                    float phase=i>=144?0:Mathf.Sin(Mathf.PI*i/143);
+                    if(kind=="lean-forward")local.z+=.3f*phase;
+                    if(kind=="lean-up")local.y+=.3f*phase;
+                    if(kind=="duck")local.y-=.6f*phase;
+                    if((kind=="turn"||kind=="snap-turn")&&i%36==0)turn=1;
+                    if(kind=="late-lean")local.z+=.3f*phase;
+                    if(kind=="look-down")rig.Head.transform.localRotation=Quaternion.Euler(70*phase,0,0);
+                    if(kind=="carrier")carrierTarget=carrierStart+ownedDirection*.4f*phase;
+                    if(kind=="teleport"&&i==0)rig.SetSpawn(site-Vector3.up*1.7088f,site-Vector3.up*1.7088f+heading);
+                    var clock=System.Diagnostics.Stopwatch.StartNew();
+                    rig.HeadclipProbeStep(stick,kind=="late-lean"?new Vector3(0,eyeHeight,0):local,turn,dt);
+                    if(kind=="late-lean"){rig.Head.transform.localPosition=local;rig.SmokeLateHeadCollision();}
+                    clock.Stop();
+                    // The frame driver executes this after real LateUpdate.
+                    yield return new Audit { Run=delegate {
+                    var lateClock=System.Diagnostics.Stopwatch.StartNew();
+                    rig.SmokeLateHeadCollision();rig.ViewFade.NativeProbeRenderGuard();lateClock.Stop();
+                    Vector3 eye=rig.Head.transform.position;Vector3[] near=Corners(rig.Head);
+                    var e=geometry.Eye(eye);var r=geometry.Rectangle(eye,near);
+                    bool crossed=geometry.Crosses(previous,eye),nearCrossed=false;
+                    for(int c=0;c<4;c++)nearCrossed|=geometry.Crosses(previousNear[c],near[c]);
+                    float actualAlpha=PresentedAlpha(rig);
+                    bool black=rig.ViewFade!=null&&rig.ViewFade.FullyFaded&&actualAlpha>=.999f;
+                    var f=new Frame { scenario=id,phase=reverse?"reverse":"approach",frame=i,dt=dt,eye=eye,rotation=rig.Head.transform.rotation,root=rig.transform.position,
+                        requestedLocal=local,eyeDistance=e.distance,eyeSigned=e.signed,nearDistance=r.distance,nearSigned=r.signed,
+                        eyeTriangle=e.triangle,nearTriangle=r.triangle,authoredBackSide=e.signed<0,eyeCrossed=crossed,nearCrossed=nearCrossed,
+                        clear=rig.HeadCollision.HeadClear(eye),blocked=rig.HeadClearanceBlocked,carrierBlocked=rig.ViewFade.CarrierPathBlocked,fullyBlack=black,
+                        alpha=actualAlpha,stepMs=(float)(clock.Elapsed.TotalMilliseconds+lateClock.Elapsed.TotalMilliseconds),
+                        speed=Vector3.ProjectOnPlane(eye-previous,Vector3.up).magnitude/dt,recoveries=rig.HeadRecoveries,failedRecoveries=rig.HeadRecoveryFailures,
+                        sweep=rig.HeadCollision.LastSweepDiagnostics };
+                    f.visibleViolation=!black&&(e.distance<result.eyeMinimum||r.distance<result.rectangleMinimum
+                        ||kind!="teleport"&&(crossed||nearCrossed));
+                    if(i==120)leanStartY=rig.transform.position.y;
+                    if((kind=="video"||kind=="escape"||kind=="trapped")&&i>=120&&i<(kind=="trapped"?360:270))
+                        record.leanRootDrop=Mathf.Max(record.leanRootDrop,leanStartY-rig.transform.position.y);
+                    if(rig.HeadclipPhysicalHold)record.protectedRootDrop=Mathf.Max(record.protectedRootDrop,previousRoot.y-rig.transform.position.y);
+                    bool returned=(local-Vector3.up*eyeHeight).sqrMagnitude<.000001f&&(kind!="carrier"||phase<.001f);
+                    clearBlackSeconds=returned&&f.clear&&black?clearBlackSeconds+dt:0;
+                    if(kind=="video")
+                    {
+                        if(crossed&&crossedSurface==null)
+                            foreach(var t in geometry.Triangles)if(R25HeadclipGeometry.SegmentTriangle(previous,eye,t))
+                            {crossedSurface=t;crossedNormal=Vector3.Dot(previous-t.a,t.normal)>=0?t.normal:-t.normal;break;}
+                        if(crossedSurface!=null)
+                        {
+                            float depth=-Vector3.Dot(eye-crossedSurface.a,crossedNormal);
+                            Vector3 projected=eye+crossedNormal*depth;
+                            if(depth>0&&(R25HeadclipGeometry.Closest(projected,crossedSurface)-projected).sqrMagnitude<.000001f)f.insideDepth=depth;
+                            else if(depth<=0)crossedSurface=null;
+                        }
+                    }
+                    record.maxClearBlackSeconds=Mathf.Max(record.maxClearBlackSeconds,clearBlackSeconds);
+                    f.trappedRecoveries=rig.TrappedOpaqueRecoveries;f.trappedRecoveryFailures=rig.TrappedOpaqueFailures;f.physicalHold=rig.HeadclipPhysicalHold;
+                    previousRoot=rig.transform.position;
+                    if(id.StartsWith("control-",StringComparison.Ordinal))
+                    {
+                        R25HeadclipGeometry.Triangle supportFace;Vector3 supportPoint;
+                        if(geometry.Floor(eye+Vector3.up*.015f,3.5f,out supportFace,out supportPoint))
+                            record.maximumWalkSupportGap=Mathf.Max(record.maximumWalkSupportGap,rig.transform.position.y-supportPoint.y);
+                    }
+                    if(kind=="video"&&R23PlayableBuild.Argument("-ashfallHeadclipNoCapture")!="true"&&(R23PlayableBuild.Argument("-ashfallHeadclipSampleOnly")!="true"||i==0||i==120||i==180||i==269||i==n-1))R25HeadclipVideo.Capture(rig,output,id,i,site,geometry);
+                    frames.WriteLine(JsonUtility.ToJson(f));record.frames++;if(f.visibleViolation)record.violations++;if(crossed||nearCrossed)record.crossings++;if(black)record.blackFrames++;
+                    record.minimumEye=Mathf.Min(record.minimumEye,e.distance);record.minimumNear=Mathf.Min(record.minimumNear,r.distance);
+                    record.meanStepMs+=f.stepMs;record.maxStepMs=Mathf.Max(record.maxStepMs,f.stepMs);
+                    record.distance+=(eye-previous).magnitude;if(reverse)record.reverseDistance+=(eye-previous).magnitude;
+                    record.horizontalDistance+=Vector3.ProjectOnPlane(eye-previous,Vector3.up).magnitude;
+                    if(capture&&(!black&&(!haveVisibleWorst||r.distance<worst)||black&&!haveVisibleWorst&&r.distance<worst))
+                    {
+                        haveVisibleWorst|=!black;worst=r.distance;worstImage=CaptureCurrent(rig);
+                        Need(Vector3.Distance(eye,rig.Head.transform.position)<.00001f,"Capture changed the audited eye pose");
+                    }
+                    previous=eye;previousNear=near;
+                    } };
+                }
+                record.endEye=rig.Head.transform.position;record.recoveryCount=rig.HeadRecoveries-recoveryStart;record.meanStepMs/=Mathf.Max(1,record.frames);
+                record.endAlpha=PresentedAlpha(rig);record.endCarrierBlocked=rig.ViewFade.CarrierPathBlocked;
+                record.endBlocked=rig.HeadClearanceBlocked;record.trappedRecoveries=rig.TrappedOpaqueRecoveries-trappedStart;record.trappedRecoveryFailures=rig.TrappedOpaqueFailures-trappedFailedStart;
+                if(Ashfall.Integration.Playable.Climbing.R23HeadCollision.FullEyeSafety)
+                {
+                    if(record.maxClearBlackSeconds>.5f)record.error="Opaque linger after clear eye";
+                    if(record.protectedRootDrop>.0001f)record.error="Root descended during physical protection";
+                    if((kind=="video"||kind=="escape"||kind=="trapped")&&(record.endAlpha>.001f||record.endBlocked||record.reverseDistance<.05f))
+                        record.error="Walk-away failed to restore view";
+                }
+                if(kind=="carrier"&&(record.endCarrierBlocked||record.endAlpha>.001f))record.error="Carrier view failed to release after returning to its clear start";
+                if(kind=="carrier"){rig.ReadCarrierMotion=oldCarrier;rig.ClearCarrierMotion();}
+                record.stuck=kind=="walk"&&record.startedClear&&record.startedSupported&&record.reverseDistance<.05f;
+                record.expectedDistance=n*speed*dt;record.speedLoss=record.expectedDistance>0?1-record.horizontalDistance/record.expectedDistance:0;
+                if(capture)
+                {
+                    record.image=id+"-worst.png";Need(worstImage!=null,"Native worst-frame image missing");File.WriteAllBytes(Path.Combine(output,record.image),worstImage);
+                }
+                File.WriteAllText(Path.Combine(output,"partial-result.json"),JsonUtility.ToJson(result,true));
+            }
+            IEnumerator RecoveryFixture()
+            {
+                if (R23PlayableBuild.Argument("-ashfallHeadclipBaseline")=="true") yield break;
+                var root=new GameObject("Trapped opaque recovery fixture");root.transform.position=new Vector3(2400,100,-1800);fixtures.Add(root);
+                ControlBox(root.transform,"recovery floor",new Vector3(0,-.1f,0),new Vector3(10,.2f,18),0);
+                ControlBox(root.transform,"small overhang",new Vector3(0,2.04f,2.1f),new Vector3(3,.1f,1.5f),0);
+                Physics.SyncTransforms();var old=geometry;geometry=new R25HeadclipGeometry();
+                foreach(var box in root.GetComponentsInChildren<BoxCollider>())geometry.AddBox(box);geometry.Build();
+                var scenario=DrivePath("recovery-flat-trapped",root.transform.position+new Vector3(0,1.7088f,-.5f),1f/30,1,0,"trapped",true);
+                while(scenario.MoveNext())yield return scenario.Current;
+                var record=result.scenarios[result.scenarios.Count-1];
+                if(record.trappedRecoveries<1)record.error="No timed standable recovery in deliberately held opaque fixture";
+                geometry=old;
+            }
+            void EscapeQueries()
+            {
+                if(R23PlayableBuild.Argument("-ashfallHeadclipBaseline")=="true")return;
+                using(var log=new StreamWriter(Path.Combine(output,"escape-queries.jsonl")))
+                foreach(string kind in new[]{"single-sided","double-sided","box"})
+                {
+                    var root=new GameObject("Escape contact "+kind);root.transform.position=new Vector3(2600+fixtures.Count*10,100,-1800);fixtures.Add(root);
+                    if(kind=="box")ControlBox(root.transform,"escape box",Vector3.zero,new Vector3(4,4,.2f),0);
+                    else
+                    {
+                        var mesh=new Mesh();meshes.Add(mesh);mesh.vertices=new[]{new Vector3(-2,-2,0),new Vector3(2,-2,0),new Vector3(2,2,0),new Vector3(-2,2,0)};
+                        mesh.triangles=kind=="single-sided"?new[]{0,1,2,0,2,3}:new[]{0,1,2,0,2,3,2,1,0,3,2,0};
+                        root.AddComponent<MeshCollider>().sharedMesh=mesh;
+                    }
+                    Physics.SyncTransforms();
+                    foreach(float sign in new[]{-1f,1f})
+                    {
+                        Vector3 at=root.transform.position+Vector3.forward*sign*(kind=="box"?.15f:.05f);
+                        foreach(Vector3 motion in new[]{Vector3.zero,Vector3.right*.01f,Vector3.left*.01f,Vector3.up*.01f,Vector3.down*.01f,Vector3.forward*sign*.01f,new Vector3(.01f,0,sign*.01f),Vector3.forward*(-sign*.01f)})
+                        {
+                            bool ceiling;Vector3 accepted=loop.Rig.HeadCollision.EscapeEyeMotion(at,motion,true,out ceiling);
+                            bool inward=Vector3.Dot(motion,Vector3.forward*sign)<0;
+                            Vector3 expected=inward?Vector3.zero:motion;
+                            bool passed=Vector3.Distance(accepted,expected)<.0001f;
+                            result.escapeQueries++;if(!passed)result.escapeQueryFailures++;
+                            log.WriteLine(JsonUtility.ToJson(new EscapeEvidence{kind=kind,start=at,requested=motion,accepted=accepted,passed=passed}));
+                        }
+                    }
+                    if(kind=="box")
+                    {
+                        ControlBox(root.transform,"farther corner wall",Vector3.zero,new Vector3(.2f,4,4),0);
+                        Physics.SyncTransforms();
+                        var oracle=new R25HeadclipGeometry();foreach(var box in root.GetComponentsInChildren<BoxCollider>())oracle.AddBox(box);oracle.Build();
+                        Vector3 at=root.transform.position+new Vector3(-.2f,0,-.15f);
+                        float clearance=oracle.Eye(at).distance;
+                        foreach(Vector3 motion in new[]{Vector3.zero,new Vector3(0,0,-.01f),new Vector3(.01f,0,-.01f),new Vector3(.04f,0,-.01f),new Vector3(.05f,0,0),Vector3.up*.01f,Vector3.down*.01f,new Vector3(.07f,0,-.01f),Vector3.forward*.01f})
+                        {
+                            bool ceiling;Vector3 accepted=loop.Rig.HeadCollision.EscapeEyeMotion(at,motion,true,out ceiling);
+                            bool nondecreasing=oracle.Eye(at+motion).distance>=clearance-.00002f;
+                            bool passed=nondecreasing?Vector3.Distance(accepted,motion)<.0001f:
+                                Vector3.Distance(accepted,motion)>.0001f&&oracle.Eye(at+accepted).distance>=clearance-.0001f;
+                            result.escapeQueries++;if(!passed)result.escapeQueryFailures++;
+                            log.WriteLine(JsonUtility.ToJson(new EscapeEvidence{kind="global-minimum-corner",start=at,requested=motion,accepted=accepted,passed=passed}));
+                        }
+                    }
+                }
+            }
+            IEnumerator Controls()
+            {
+                if(R23PlayableBuild.Argument("-ashfallHeadclipEscapeChecks")=="true")
+                {var fixture=RecoveryFixture();while(fixture.MoveNext())yield return fixture.Current;EscapeQueries();}
+                if(R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true")yield break;
+                if(!string.IsNullOrEmpty(R23PlayableBuild.Argument("-ashfallHeadclipOnly"))||R23PlayableBuild.Argument("-ashfallHeadclipSupplement")=="true")yield break;
+                foreach(string name in new[]{"flat","ramp20","stairs","low-ceiling","duck-beam"})
+                {
+                    Vector3 center=new Vector3(1900+fixtures.Count*30,100,-1500);
+                    var root=new GameObject("Headclip ordinary "+name);root.transform.position=center;fixtures.Add(root);
+                    ControlBox(root.transform,"control floor",new Vector3(0,-.1f,0),new Vector3(8,.2f,16),0);
+                    if(name=="ramp20")ControlBox(root.transform,"ordinary ramp",new Vector3(0,1,0),new Vector3(6,.15f,10),-20);
+                    if(name=="stairs")for(int i=0;i<8;i++)ControlBox(root.transform,"stair "+i,new Vector3(0,.075f*(i+1),-1.8f+i*.4f),new Vector3(6,.15f*(i+1),.4f),0);
+                    if(name=="low-ceiling"||name=="duck-beam")ControlBox(root.transform,"control ceiling",new Vector3(0,name=="duck-beam"?1.35f:2.1f,0),new Vector3(7,.1f,12),0);
+                    var old=geometry;geometry=new R25HeadclipGeometry();foreach(var box in root.GetComponentsInChildren<BoxCollider>())geometry.AddBox(box);geometry.Build();
+                    foreach(float speed in new[]{1f,3f})foreach(float dt in new[]{1f/72,1f/120,.05f})
+                    {
+                        float height=name=="duck-beam"?.95f:1.7088f;
+                        var scenario=DrivePath("control-"+name+"-"+speed+"-"+dt.ToString("F3",culture),center+Vector3.up*height,dt,speed,0,"walk",dt==1f/72&&speed==3,height);
+                        while(scenario.MoveNext())yield return scenario.Current;
+                    }
+                    geometry=old;
+                }
+            }
+            static void ControlBox(Transform root,string name,Vector3 point,Vector3 size,float pitch)
+            {
+                var node=GameObject.CreatePrimitive(PrimitiveType.Cube);node.name=name;node.transform.SetParent(root,false);
+                node.transform.localPosition=point;node.transform.localScale=size;node.transform.localRotation=Quaternion.Euler(pitch,0,0);
+            }
+            static Vector3[] Corners(Camera camera)
+            {
+                var corners=new Vector3[4];camera.CalculateFrustumCorners(new Rect(0,0,1,1),camera.nearClipPlane,Camera.MonoOrStereoscopicEye.Mono,corners);
+                for(int i=0;i<4;i++)corners[i]=camera.transform.TransformPoint(corners[i]);return corners;
+            }
+            static float PresentedAlpha(R23VRRig rig)
+            {
+                var renderer=rig.Head.transform.Find("R25 obstructed view fade").GetComponent<MeshRenderer>();
+                return renderer.enabled?renderer.sharedMaterial.GetColor("_Color").a:0;
+            }
+            void CreateFixture(Vector3 center,string kind)
+            {
+                var root=new GameObject("Headclip X "+kind);root.transform.position=center;fixtures.Add(root);
+                // A real approach starts on a ground plane, outside the crossed
+                // ramps, rather than suspended with its feet inside a ramp.
+                ControlBox(root.transform,"X approach ground",new Vector3(0,-.1f,0),new Vector3(12,.2f,14),0);
+                var shader=Shader.Find("Universal Render Pipeline/Lit");
+                foreach(float angle in new[]{-45f,45f})
+                {
+                    if(kind=="box")
+                    {
+                        var box=GameObject.CreatePrimitive(PrimitiveType.Cube);box.name="X convex ramp "+angle;box.transform.SetParent(root.transform,false);
+                        box.transform.localPosition=Vector3.up*2;box.transform.localRotation=Quaternion.Euler(angle,0,0);box.transform.localScale=new Vector3(4,.12f,8);
+                        box.GetComponent<Renderer>().sharedMaterial=new Material(shader){color=angle>0?Color.yellow:Color.cyan};
+                    }
+                    else
+                    {
+                        var node=new GameObject("X mesh ramp "+angle);node.transform.SetParent(root.transform,false);node.transform.localPosition=Vector3.up*(R23PlayableBuild.Argument("-ashfallHeadclipMovie")=="true"?1.9f:2f);node.transform.localRotation=Quaternion.Euler(angle,0,0);
+                        var mesh=new Mesh();meshes.Add(mesh);mesh.vertices=new[]{new Vector3(-2,0,-4),new Vector3(-2,0,4),new Vector3(2,0,4),new Vector3(2,0,-4)};
+                        mesh.triangles=kind=="single-down"?new[]{0,2,1,0,3,2}:kind=="double-sided"?new[]{0,1,2,0,2,3,0,2,1,0,3,2}:new[]{0,1,2,0,2,3};
+                        mesh.RecalculateNormals();mesh.RecalculateBounds();node.AddComponent<MeshCollider>().sharedMesh=mesh;node.AddComponent<MeshFilter>().sharedMesh=mesh;
+                        var material=new Material(shader){color=angle>0?Color.yellow:Color.cyan};material.SetFloat("_Cull",0);
+                        node.AddComponent<MeshRenderer>().sharedMaterial=material;
+                    }
+                }
+                Physics.SyncTransforms();
+            }
+            static byte[] CaptureCurrent(R23VRRig rig)
+            {
+                Camera camera=rig.Head;float aspect=camera.aspect;
+                int width=960,height=Mathf.Clamp(Mathf.RoundToInt(width/aspect),240,1600);
+                Matrix4x4 projection=camera.projectionMatrix;
+                var target=RenderTexture.GetTemporary(width,height,24);var old=camera.targetTexture;var active=RenderTexture.active;
+                Texture2D pixels=null;
+                try
+                {
+                    camera.targetTexture=target;camera.projectionMatrix=projection;camera.Render();RenderTexture.active=target;
+                    pixels=new Texture2D(width,height,TextureFormat.RGB24,false);pixels.ReadPixels(new Rect(0,0,width,height),0,0);
+                    pixels.Apply();return pixels.EncodeToPNG();
+                }
+                finally
+                {
+                    camera.targetTexture=old;camera.ResetProjectionMatrix();RenderTexture.active=active;
+                    RenderTexture.ReleaseTemporary(target);if(pixels!=null)UnityEngine.Object.Destroy(pixels);
+                }
+            }
+            static void Need(bool condition,string message){if(!condition)throw new InvalidOperationException(message);}
+        }
+    }
+}
+#endif

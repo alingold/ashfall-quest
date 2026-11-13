@@ -1,0 +1,127 @@
+#if UNITY_EDITOR
+using System;
+using System.IO;
+using System.Text;
+using UnityEngine;
+using Ashfall.Modules.Player;
+using Ashfall.Integration.Playable;
+using Ashfall.Integration.Playable.Calibration;
+
+namespace Ashfall.Editor.Playable
+{
+    public static partial class R26MoveVehicleSmoke
+    {
+        static StreamWriter locomotionFrames;
+        static float caseHeadHeight = 1.7f;
+        static string locomotionCase = "", locomotionPhase = "overhang";
+        static int locomotionFrame;
+        static readonly StringBuilder writes = new StringBuilder();
+
+        [Serializable] sealed class LocoFrame
+        {
+            public string scenario, phase, corrections;
+            public int frame;
+            public Vector3 root, eye, origin, rawHead;
+            public float crouch, standing, stickX, stickY, alpha;
+            public bool focused, paused, blocked;
+        }
+        static void LocomotionSample(R23VRRig rig, HandSample left, HandSample right, float dt, Vector3 head)
+        {
+            writes.Length = 0;
+            rig.LocomotionWrite = delegate(string owner, Vector3 root, Vector3 origin) {
+                writes.Append(owner).Append(":root=").Append(root.ToString("F6"))
+                    .Append(" origin=").Append(origin.ToString("F6")).Append(';');
+            };
+            rig.LocomotionProbeSample(left, right, dt, head);
+            locomotionFrames.WriteLine(JsonUtility.ToJson(new LocoFrame {
+                scenario = locomotionCase, phase = locomotionPhase, frame = locomotionFrame++,
+                root = rig.transform.position, eye = rig.Head.transform.position, origin = rig.TrackingOrigin.localPosition,
+                rawHead = head, crouch = rig.RampCrouchOffset, standing = rig.Calibration == null || rig.Calibration.Receipt == null ? 0 : rig.Calibration.Receipt.TrackedStandingEye,
+                stickX = left.StickX, stickY = left.StickY, focused = !rig.FixtureUnfocused, paused = rig.LocomotionProbePaused,
+                alpha = rig.ViewFade == null ? 0 : rig.ViewFade.Alpha, blocked = rig.HeadClearanceBlocked, corrections = writes.ToString()
+            }));
+            if ((locomotionCase.EndsWith("-30-10-30", StringComparison.Ordinal) || locomotionCase.StartsWith("wall-", StringComparison.Ordinal) && locomotionCase.EndsWith("-0", StringComparison.Ordinal))
+                && (locomotionFrame == 61 || locomotionFrame == 276 || locomotionFrame == 901))
+                Capture(rig.Head, Path.Combine(R23PlayableBuild.Argument("-ashfallR4Output"), locomotionCase + "-" + locomotionFrame + ".png"));
+        }
+
+        static void LocomotionMatrix()
+        {
+            string output = R23PlayableBuild.Argument("-ashfallR4Output"); Directory.CreateDirectory(output);
+            report = "Calibrated locomotion: standing receipt 1.71 m; production focus/pause callbacks and motor; synthetic tracking, native PhysX.\n";
+            RenderSettings.ambientLight = Color.gray;
+            var sun = new GameObject("Loco light").AddComponent<Light>(); sun.type = LightType.Directional;
+            sun.transform.rotation = Quaternion.Euler(40, -30, 0);
+            using (locomotionFrames = new StreamWriter(Path.Combine(output, "frames.jsonl")))
+            {
+                bool pilot = R23PlayableBuild.Argument("-ashfallLocoPilot") == "true";
+                foreach (float height in new[] { 1.71f, 1.5f, 1.3f, 1.1f })
+                {
+                    caseHeadHeight = height;
+                    foreach (float angle in pilot ? new[] { 30f } : new[] { 30f, 45f })
+                    foreach (float slope in pilot ? new[] { 10f } : new[] { 0f, 10f, 20f, -10f, -20f })
+                    foreach (float heading in pilot ? new[] { 30f } : new[] { 0f, 30f, 60f })
+                    {
+                        locomotionCase = "overhang-" + height + "-" + angle + "-" + slope + "-" + heading;
+                        locomotionPhase = "overhang"; locomotionFrame = 0;
+                        string line; int flags = OverhangCase(angle, slope, heading, 2000, out line);
+                        Need(flags == 0, locomotionCase + " flags=" + flags + " " + line);
+                    }
+                    foreach (float angle in new[] { 0f, 30f, 60f }) WallSequence(height, angle);
+                }
+            }
+            locomotionFrames = null;
+            UnityEngine.Object.DestroyImmediate(sun.gameObject);
+        }
+
+        static void WallSequence(float height, float angle)
+        {
+            locomotionCase = "wall-" + height + "-" + angle; locomotionFrame = 0;
+            var floor = Box("Loco floor", new Vector3(4000, -.25f, 0), new Vector3(80, .5f, 80));
+            var wall = Box("Mesh wall", new Vector3(4000.55f, 1.5f, 5), new Vector3(.3f, 3, 40));
+            UnityEngine.Object.DestroyImmediate(wall.GetComponent<BoxCollider>());
+            wall.AddComponent<MeshCollider>().sharedMesh = wall.GetComponent<MeshFilter>().sharedMesh;
+            var corner = Box("Wall corner", new Vector3(3995, 1.5f, 8), new Vector3(12, 3, .3f));
+            var rig = Rig(new Vector3(4000, 0, 0)); rig.FixtureRunsRecovery = true;
+            var calibration = rig.gameObject.AddComponent<R23VerticalCalibration>(); calibration.SuppressPersistence = true;
+            calibration.Initialize(rig.TrackingOrigin, rig.Head, rig.Body); rig.Calibration = calibration;
+            var left = Hand(new Vector3(-.2f, 1.1f, .3f)); var right = Hand(new Vector3(.2f, 1.1f, .3f));
+            for (int i = 0; i < 60; i++) Sample(rig, left, right, Dt, new Vector3(0, 1.71f, 0));
+            var stick = left; stick.StickX = Mathf.Cos(angle * Mathf.Deg2Rad); stick.StickY = Mathf.Sin(angle * Mathf.Deg2Rad);
+            locomotionPhase = "diagonal-wall";
+            for (int i = 0; i < 216; i++) Sample(rig, stick, right, Dt, new Vector3(0, height, 0));
+            locomotionPhase = "physical-wall-lean";
+            for (int i = 0; i < 144; i++) Sample(rig, left, right, Dt, new Vector3(.3f * Mathf.Sin(Mathf.PI * i / 143), height, 0));
+            locomotionPhase = "menu"; rig.FixtureUnfocused = true;
+            for (int i = 0; i < 72; i++) Sample(rig, left, right, Dt, new Vector3(0, height, 0));
+            rig.FixtureUnfocused = false; rig.LocomotionProbePaused = true; locomotionPhase = "paused";
+            for (int i = 0; i < 72; i++) Sample(rig, left, right, Dt, new Vector3(0, height, 0));
+            rig.LocomotionProbePaused = false; locomotionPhase = "resume-neutral";
+            for (int i = 0; i < 36; i++) Sample(rig, left, right, Dt, new Vector3(0, height, 0));
+            locomotionPhase = "retreat"; stick.StickX = -1; stick.StickY = -1;
+            Vector3 contact = rig.transform.position;
+            for (int i = 0; i < 144; i++) Sample(rig, stick, right, Dt, new Vector3(0, height, 0));
+            float retreat = Vector3.Distance(contact, rig.transform.position);
+            locomotionPhase = "released-settle";
+            for (int i = 0; i < 72; i++) Sample(rig, left, right, Dt, new Vector3(0, height, 0));
+            Vector3 stopped = rig.transform.position; float drift = 0, rise = 0;
+            locomotionPhase = "released-match";
+            for (int i = 0; i < 720; i++)
+            {
+                rig.FixtureUnfocused = i >= 200 && i < 270; rig.LocomotionProbePaused = i >= 400 && i < 470;
+                Sample(rig, left, right, Dt, new Vector3(0, height, 0));
+                drift = Mathf.Max(drift, Vector3.Distance(stopped, rig.transform.position));
+                rise = Mathf.Max(rise, rig.Head.transform.position.y - rig.transform.position.y - height - calibration.Receipt.BaseOriginY);
+            }
+            Need(retreat > 1 && drift < .0001f && rise < .02f, locomotionCase + " retreat=" + retreat + " neutral drift=" + drift + " menu rise=" + rise);
+            // Direct regression for a stale clear-side reference across a thin wall:
+            // a zero requested walk must never synthesize a 5 cm return velocity.
+            locomotionPhase = "crossed-wall-zero-request";
+            Vector3 returned = rig.LocomotionProbeCrossedWall(new Vector3(4000.2f, height, 0), new Vector3(4000.6f, height, 0));
+            Need(returned.sqrMagnitude < .00000001f, locomotionCase + " zero-request crossed-wall correction=" + returned);
+            UnityEngine.Object.DestroyImmediate(rig.gameObject); UnityEngine.Object.DestroyImmediate(corner);
+            UnityEngine.Object.DestroyImmediate(wall); UnityEngine.Object.DestroyImmediate(floor); Physics.SyncTransforms();
+        }
+    }
+}
+#endif

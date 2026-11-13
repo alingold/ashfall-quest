@@ -1,0 +1,108 @@
+{
+  "id": "fal",
+  "modelScale": 1.037875,
+  "reloadScale": 1.037875,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.76
+  ],
+  "magazineHome": [
+    -0.0002909407327395912,
+    -0.03597471000886576,
+    0.16448644208263535
+  ],
+  "chargingRest": [
+    -0.045,
+    0.064,
+    0.1
+  ],
+  "chargingMeshCenter": [
+    0.045152030885219574,
+    0.0030177230946719646,
+    0.05670422315597534
+  ],
+  "chargingGrip": [
+    0.00015203088521957564,
+    0.06701772309467197,
+    0.15670422315597535
+  ],
+  "offer": [
+    0,
+    -0.278,
+    0.16448644208263535
+  ],
+  "insert": [
+    0,
+    -0.18,
+    0.16448644208263535
+  ],
+  "chargingPull": 0.075,
+  "chargingMaximum": 0.09,
+  "offerRadius": 0.1,
+  "chargeRadius": 0.18,
+  "insertionTravel": 0.06,
+  "insertionAxis": "Y",
+  "supportPoint": [
+    0,
+    -0.025,
+    0.36
+  ],
+  "ammoFamily": "rifle",
+  "reserve": 2400,
+  "capacity": 15,
+  "mode": "semi",
+  "interval": 0.2,
+  "bodyDamage": 33.0,
+  "headDamage": 44.0,
+  "maximumRange": 180,
+  "sharedMagazineControls": true,
+  "hideSeatedMagazine": false,
+  "boltAfterEveryShot": false,
+  "sourceGLBTriangles": 2980,
+  "legacyProvenanceTriangles": 2980,
+  "sourceVisibleTriangles": 2980,
+  "rearSight": [
+    0,
+    0.11,
+    0.015
+  ],
+  "frontSight": [
+    0,
+    0.10952504799058765,
+    0.605
+  ],
+  "zeroDistance": 80,
+  "optic": "actual-model-irons",
+  "opticScale": 1,
+  "opticMountHeight": 0,
+  "slideCycleDistance": 0,
+  "slideCycleSeconds": 0,
+  "renderedHandOffset": [
+    0,
+    0,
+    0
+  ],
+  "renderedHandPitchDegrees": 0,
+  "notes": [
+    "Coordinates already Unity reflected once; model display scale is not baked.",
+    "All5 inherit catalog_firearm/base foregrip;1911 is not PX4 pistol.gd.",
+    "S85 uses actual original download_s85_m1_099 recipe, retains source omitted sling/debris exclusions and hides seated clip.",
+    "Rate confidence follows original one_star_050, not a new reference measurement."
+  ],
+  "primaryGrip": [
+    0.0,
+    -0.057,
+    -0.025
+  ],
+  "renderedHandOffsetPhysical": [
+    0,
+    0,
+    0
+  ]
+}

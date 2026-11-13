@@ -1,0 +1,19 @@
+using System;using System.Collections.Generic;using Ashfall.Core;using Ashfall.Modules.WeaponHandling;
+namespace Ashfall.Integration.Playable.HandsWeapons {
+ public sealed partial class R23RoundState {
+  readonly Dictionary<string,R24DualOwner> duals=new Dictionary<string,R24DualOwner>(StringComparer.Ordinal);readonly Dictionary<string,R24DualFeedback[]> dualFeedback=new Dictionary<string,R24DualFeedback[]>(StringComparer.Ordinal);
+  public static bool IsDualProfile(string profile){return profile=="uzis"||profile=="matadors";}
+  public R24DualOwner Dual{get{return ReadDualInstance(selectedAction);}}public R24DualStep LastDualStep{get;private set;}
+  public R24DualOwner ReadDualInstance(string action){R24DualOwner result;return action!=null&&duals.TryGetValue(action,out result)?result:null;}
+  public R24DualFeedback ReadDualFeedback(string action,int side){R24DualFeedback[] result;if(side<0||side>1||action==null||!dualFeedback.TryGetValue(action,out result))return null;return result[side];}
+  bool RegisterDual(string action,string instance,string profile,int stars,R23RarityStats stats){var d=new R24DualDefinition(profile,stars);duals.Add(action,new R24DualOwner(Command(),instance,d,reserves[d.AmmoFamily],this));dualFeedback.Add(action,new[]{new R24DualFeedback(profile),new R24DualFeedback(profile)});instances.Add(action,new R23WeaponInstanceInfo(action,instance,profile,stars,stats));instanceOrder.Add(action);usedActions.Add(action);usedNativeIds.Add(instance);return true;}
+  public bool EquipDual(int dominantHand,bool leftFree,bool rightFree){return !retiredRound&&Dual!=null&&Dual.TryEquip(leftFree,rightFree,dominantHand);}
+  HandlingSnapshot DualSnapshot(string action){var owner=ReadDualInstance(action);if(owner==null)throw new ArgumentException("Actual dual instance required");var a=owner.ReadHand(0);var b=owner.ReadHand(1);return new HandlingSnapshot{Loaded=owner.Loaded,Seated=owner.Loaded,Phase=owner.Loaded>0?ReloadPhase.Ready:ReloadPhase.NeedsMagazine,ClaimsSupport=owner.ClaimsBothHands,Supported=false,Shots=owner.TotalShots,TriggerReleaseRequired=a.RequiresTriggerRelease&&b.RequiresTriggerRelease,CooldownSeconds=Math.Max(a.Cooldown,b.Cooldown)};}
+  public void AdvanceDualPresentation(float dt,bool enabled){if(Dual==null||!enabled)return;ReadDualFeedback(selectedAction,0).Advance(dt);ReadDualFeedback(selectedAction,1).Advance(dt);}
+  public bool StepDual(R24DualFrame frame){if(float.IsNaN(frame.DeltaSeconds)||float.IsInfinity(frame.DeltaSeconds)||frame.DeltaSeconds<0||frame.DeltaSeconds>.25f)throw new ArgumentOutOfRangeException("frame.DeltaSeconds");LastDualStep=null;if(!sourceLoadout||Dual==null||retiredRound)return false;bool suspended=!frame.Enabled||frame.Paused||!frame.Focused||Health<=0;frame.Paused|=suspended;if(!suspended){now+=frame.DeltaSeconds;AdvanceLegacyPracticeTargets(frame.DeltaSeconds);}var command=Command();frame.Sequence=command.Tick;R24DualStep step;var result=Dual.Apply(command,frame,out step);if(!result.Accepted)return false;LastDualStep=step;pendingShot=false;if(step==null)return false;if(step.Dominant!=null)ReadDualFeedback(selectedAction,0).Accepted(step.Dominant);if(step.Other!=null)ReadDualFeedback(selectedAction,1).Accepted(step.Other);return step.Dominant!=null||step.Other!=null;}
+  void SuspendDual(string action){var owner=ReadDualInstance(action);if(owner==null)return;owner.Holster();ReadDualFeedback(action,0).Suspend();ReadDualFeedback(action,1).Suspend();LastDualStep=null;}
+  void RetireDuals(){foreach(var owner in duals.Values)owner.Retire();LastDualStep=null;}
+  void ClearDuals(){duals.Clear();dualFeedback.Clear();LastDualStep=null;}
+  void RetireDual(string action){var owner=ReadDualInstance(action);if(owner==null)return;owner.Retire();duals.Remove(action);dualFeedback.Remove(action);}
+ }
+}

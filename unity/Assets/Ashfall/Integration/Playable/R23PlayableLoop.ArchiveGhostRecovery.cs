@@ -1,0 +1,146 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Match;
+using Ashfall.Integration.Playable.TeamLaunch;
+using Ashfall.Integration.Playable.World;
+using UnityEngine;
+namespace Ashfall.Integration.Playable
+{
+    public sealed partial class R23PlayableLoop
+    {
+        readonly R24ArchiveRecoveryCatalog archiveRecoveryCatalog=new R24ArchiveRecoveryCatalog();
+        R24ArchiveRecoveryInfo archiveRecoveryInfo;R24LaunchMapInfo archiveRecoveryFrame;R24ArchiveSpawnPlan archiveSpawnPlan;
+        Coroutine archiveSpawnRoutine;string archiveRecoveryFailure;
+        readonly R24ArchiveWorldContext archiveWorldContext=new R24ArchiveWorldContext();
+        Transform archiveWorldGeometry;Matrix4x4 archiveWorldMatrix;
+        public bool ArchiveWorldReady{get{return ArchiveWorldContextCurrent&&archiveSpawnPlan!=null&&archiveSpawnPlan.Ready;}}
+        public long ArchiveWorldGeneration{get{return archiveWorldContext.Generation;}}
+        public string ArchiveWorldMapId{get{return archiveWorldContext.Active?archiveWorldContext.MapId:null;}}
+        public string ArchiveWorldFailure{get{return archiveWorldContext.Active?archiveRecoveryFailure??archiveRecoveryCatalog.Failure:null;}}
+        public R24ArchiveSpawnPlan ArchiveWorldPlan{get{return ArchiveWorldReady?archiveSpawnPlan:null;}}
+        public R24ArchiveRecoveryInfo ArchiveWorldInfo{get{return ArchiveWorldReady?archiveRecoveryInfo:null;}}
+        public bool ArchiveGhostRecoveryReady{get{return ArchiveWorldReady;}}
+        public string ArchiveGhostRecoveryFailure{get{return ArchiveWorldFailure;}}
+        public R24ArchiveSpawnPlan ArchiveGhostSpawnPlan{get{return ArchiveWorldPlan;}}
+        public R24ArchiveRecoveryInfo ArchiveGhostSourceInfo{get{return ArchiveWorldInfo;}}
+        bool ArchiveWorldContextCurrent{get{return archiveWorldContext.Active&&Ready&&Map!=null&&Map.IsLoaded&&!Map.IsLoading&&Map.MapId==archiveWorldContext.MapId&&archiveWorldGeometry!=null&&archiveWorldGeometry.parent==Map.transform&&archiveWorldGeometry.gameObject.activeSelf&&System.Object.ReferenceEquals(archiveWorldGeometry,archiveWorldContext.GeometryToken)&&Map.transform.localToWorldMatrix.Equals(archiveWorldMatrix)&&(ActualMatchRules!=null)==archiveWorldContext.Match&&(!archiveWorldContext.Match||MatchEpoch==archiveWorldContext.MatchEpoch);}}
+        Transform CurrentArchiveGeometry()
+        {if(Map==null)return null;for(int i=Map.transform.childCount-1;i>=0;i--){var child=Map.transform.GetChild(i);if(child.gameObject.activeSelf&&child.name==Map.Title)return child;}return null;}
+        void CancelArchiveWorldPlan()
+        {if(archiveSpawnRoutine!=null)StopCoroutine(archiveSpawnRoutine);archiveSpawnRoutine=null;archiveSpawnPlan=null;archiveRecoveryInfo=null;archiveRecoveryFrame=null;archiveRecoveryFailure=null;}
+        // Root calls on every update, including false during load/lobby. Menus,
+        // focus and actor life do not change the actual active-world identity.
+        public void PrepareArchiveWorld(bool actualWorldActive)
+        {
+            Transform geometry=Map==null?null:CurrentArchiveGeometry();
+            bool active=actualWorldActive&&Ready&&Map!=null&&Map.IsLoaded&&!Map.IsLoading&&Map.MapId.StartsWith("archive:",StringComparison.Ordinal)&&geometry!=null;
+            if(!active){if(archiveWorldContext.Update(false,null,null,null,false,0))CancelArchiveWorldPlan();archiveWorldGeometry=null;return;}
+            R24LaunchMapInfo frame=null;if(LaunchMapCatalog!=null&&LaunchMapCatalog.Ready)LaunchMapCatalog.TryRead(Map.MapId,out frame);
+            var matrix=Map.transform.localToWorldMatrix;bool moved=archiveWorldContext.Active&&!matrix.Equals(archiveWorldMatrix);
+            if(archiveWorldContext.Update(true,Map.MapId,geometry,frame,ActualMatchRules!=null,MatchEpoch,moved))CancelArchiveWorldPlan();
+            archiveWorldGeometry=geometry;archiveWorldMatrix=matrix;
+            if(!archiveRecoveryCatalog.Ready){if(!archiveRecoveryCatalog.Loading&&archiveRecoveryCatalog.Failure==null)StartCoroutine(archiveRecoveryCatalog.Load());return;}
+            if(frame==null||archiveSpawnPlan!=null||archiveRecoveryFailure!=null)return;
+            R24ArchiveRecoveryInfo info;if(!archiveRecoveryCatalog.TryRead(Map.MapId,out info)){archiveRecoveryFailure="Actual archive source metadata missing";return;}
+            if(info.SourceSha256!=frame.SourceSha256||info.ManifestSha256!=frame.ManifestSha256||info.CacheFingerprint!=frame.CacheFingerprint||info.AdapterSha256!=frame.AdapterSha256){archiveRecoveryFailure="Actual archive resource/catalog binding mismatch";return;}
+            archiveRecoveryInfo=info;archiveRecoveryFrame=frame;archiveSpawnPlan=new R24ArchiveSpawnPlan(info,new ArchiveRecoveryWorld(this,info,frame));
+            archiveSpawnRoutine=StartCoroutine(BuildArchiveWorldPlan(archiveSpawnPlan,ArchiveWorldGeneration,Map.MapId));
+        }
+        void PrepareArchiveGhostRecovery(){PrepareArchiveWorld(true);}
+        IEnumerator BuildArchiveWorldPlan(R24ArchiveSpawnPlan plan,long generation,string mapId)
+        {
+            var work=plan.Build();
+            try
+            {
+                while(ArchiveWorldContextCurrent&&ArchiveWorldGeneration==generation&&Map.MapId==mapId)
+                {
+                    bool moved;object current=null;try{moved=work.MoveNext();if(moved)current=work.Current;}catch(Exception error){archiveRecoveryFailure=error.ToString();yield break;}
+                    if(!moved){archiveRecoveryFailure=plan.Failure;yield break;}yield return current;
+                }
+            }
+            finally{var done=work as IDisposable;if(done!=null)done.Dispose();archiveSpawnRoutine=null;}
+        }
+        public bool TryArchiveSourceToWorld(Float3 source,out Vector3 world){world=Vector3.zero;if(!ArchiveWorldReady||!source.IsFinite)return false;world=ArchiveToWorld(source,archiveRecoveryFrame);return true;}
+        public bool TryArchiveWorldToSource(Vector3 world,out Float3 source){source=new Float3();if(!ArchiveWorldReady||!new Float3(world.x,world.y,world.z).IsFinite)return false;source=ArchiveFromWorld(world,archiveRecoveryFrame);return true;}
+        public bool ArchiveWorldFloor(Float3 from,float depth,out Float3 floor){floor=new Float3();return ArchiveWorldReady&&from.IsFinite&&!Single.IsNaN(depth)&&!Single.IsInfinity(depth)&&depth>0&&ArchiveFloor(from,depth,archiveRecoveryFrame,out floor);}
+        public bool ArchiveWorldRoom(Float3 floor){return ArchiveWorldReady&&floor.IsFinite&&ArchiveRoom(floor,false,archiveRecoveryInfo,archiveRecoveryFrame);}
+        public bool ArchiveWorldOutside(Float3 point){return !ArchiveWorldReady||ArchiveOutside(point,archiveRecoveryInfo,archiveRecoveryFrame);}
+        public bool ArchiveWorldHazard(Float3 point){return ArchiveWorldReady&&point.IsFinite&&ArchiveHazard(point,archiveRecoveryInfo,archiveRecoveryFrame);}
+        public bool ArchiveWorldSafeSpawn(Float3 point){return ArchiveWorldReady&&archiveSpawnPlan.Safe(point,false);}
+        Vector3 ArchiveToWorld(Float3 p,R24LaunchMapInfo frame){return Map.transform.TransformPoint(MatchV(frame.RepresentedOriginUnity)+new Vector3(p.X,p.Y,-p.Z));}
+        Float3 ArchiveFromWorld(Vector3 world,R24LaunchMapInfo frame){var p=Map.transform.InverseTransformPoint(world)-MatchV(frame.RepresentedOriginUnity);return new Float3(p.x,p.y,-p.z);}
+        bool ArchiveOutside(Float3 point,R24ArchiveRecoveryInfo info,R24LaunchMapInfo frame)
+        {
+            var world=ArchiveToWorld(point,frame);bool launch=TeamLaunch!=null&&TeamLaunch.Eligible;
+            bool exempt=launch&&(TeamLaunch.Staging(world)||TeamLaunch.AuthorizedFlight(world,MatchClock));
+            float ceiling=launch?TeamLaunch.Ceiling-Map.transform.TransformPoint(MatchV(frame.RepresentedOriginUnity)).y:float.NegativeInfinity;
+            // Literal R6 warmup_contains: ALL native validated sites, not the
+            // fallback map.WarmupSpawn. Actual match/results keep strict bounds.
+            if(ActualMatchRules==null&&archiveSpawnPlan!=null&&archiveSpawnPlan.ContainsWarmup(point))return false;
+            return info.Outside(point,ceiling,exempt);
+        }
+        bool ArchiveTerrain(Collider c){return GhostRecoveryTerrain(c)&&c.gameObject.layer!=R23PlayableMap.PlayerOnlyLayer;}
+        bool ArchiveFloor(Float3 from,float depth,R24LaunchMapInfo frame,out Float3 floor)
+        {
+            floor=new Float3();RaycastHit best=new RaycastHit();float nearest=float.PositiveInfinity;
+            foreach(var hit in Physics.RaycastAll(ArchiveToWorld(from,frame),Vector3.down,depth,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(ArchiveTerrain(hit.collider)&&hit.distance<nearest){best=hit;nearest=hit.distance;}
+            if(float.IsPositiveInfinity(nearest)||best.normal.y<=.7f)return false;floor=ArchiveFromWorld(best.point,frame);return true;
+        }
+        float ArchiveStandingClearance{get{return Mathf.Max(1.8288f,Calibration.Calibrated?Calibration.Receipt.TargetHeadTop:1.8288f)+.10f;}}
+        bool ArchiveCapsuleClear(Float3 point,float radius,R24LaunchMapInfo frame)
+        {
+            var world=ArchiveToWorld(point,frame);float height=ArchiveStandingClearance;
+            foreach(var c in Physics.OverlapCapsule(world+Vector3.up*(.02f+radius),world+Vector3.up*(height+.02f-radius),radius,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(ArchiveTerrain(c))return false;return true;
+        }
+        bool ArchiveHazard(Float3 point,R24ArchiveRecoveryInfo info,R24LaunchMapInfo frame)
+        {var at=ArchiveToWorld(point,frame);if(TeamLaunch!=null&&(TeamLaunch.Staging(at)||TeamLaunch.AuthorizedFlight(at,MatchClock)))return false;return info.Hazard(point);}
+        bool ArchiveRoom(Float3 floor,bool initial,R24ArchiveRecoveryInfo info,R24LaunchMapInfo frame)
+        {
+            if(initial&&info.PanelBlocks(floor,ArchiveStandingClearance))return false;
+            Float3 at;foreach(var offset in new[]{new Float3(.4f,0,0),new Float3(-.4f,0,0),new Float3(0,0,.4f),new Float3(0,0,-.4f)})
+                if(!ArchiveFloor(new Float3(floor.X+offset.X,floor.Y+.6f,floor.Z+offset.Z),1.2f,frame,out at)||Math.Abs(at.Y-floor.Y)>.3f)return false;
+            if(!ArchiveCapsuleClear(floor,.3f,frame))return false;
+            return !ArchiveHazard(new Float3(floor.X,floor.Y+.1f,floor.Z),info,frame)&&!ArchiveHazard(new Float3(floor.X,floor.Y+.9f,floor.Z),info,frame)&&!ArchiveHazard(new Float3(floor.X,floor.Y+1.7f,floor.Z),info,frame);
+        }
+        sealed class ArchiveRecoveryWorld:IR24ArchiveRecoveryWorld
+        {
+            readonly R23PlayableLoop owner;readonly R24ArchiveRecoveryInfo info;readonly R24LaunchMapInfo frame;
+            public ArchiveRecoveryWorld(R23PlayableLoop host,R24ArchiveRecoveryInfo data,R24LaunchMapInfo mapFrame){owner=host;info=data;frame=mapFrame;}
+            public bool Floor(Float3 from,float depth,out Float3 point){return owner.ArchiveFloor(from,depth,frame,out point);}
+            public bool Outside(Float3 point){return owner.ArchiveOutside(point,info,frame);}
+            public bool Room(Float3 floor,bool initial){return owner.ArchiveRoom(floor,initial,info,frame);}
+        }
+        void TryRecoverArchiveGhost()
+        {
+            if(!ArchiveGhostRecoveryReady)return;var info=archiveRecoveryInfo;var frame=archiveRecoveryFrame;var plan=archiveSpawnPlan;var actual=ArchiveFromWorld(Rig.transform.position,frame);
+            if(R24ArchiveMapPolicy.MagnumOnly(info.Id)&&actual.Y<plan.MagnumFallLevel){CommitArchiveGhostRecovery(plan.MagnumCenter,false);return;}
+            if(!ArchiveOutside(actual,info,frame))return;
+            var candidates=new List<Float3>(plan.Spawns);
+            if(Gameplay.LocalMatchHealth.Deaths==0){bool separated=false;foreach(var p in candidates)if(DistanceArchive(p,plan.SourceWarmup)>=144){separated=true;break;}if(!separated)foreach(var p in plan.Loot)candidates.Add(new Float3(p.X,p.Y-.48f,p.Z));}
+            bool zone=MatchZoneOwner!=null&&MatchZoneOwner.State!=null,zoneGrid=false;
+            if(zone)
+            {
+                var rect=MatchZoneOwner.State.Next;candidates.RemoveAll(delegate(Float3 p){return p.X<rect.X||p.X>=rect.MaxX||p.Z<rect.Z||p.Z>=rect.MaxZ;});
+                if(candidates.Count==0){zoneGrid=true;for(int z=0;z<7;z++)for(int x=0;x<7;x++)candidates.Add(new Float3((float)(rect.X+1+(rect.Size-2)*(x+.5)/7),100,(float)(rect.Z+1+(rect.Size-2)*(z+.5)/7)));}
+            }
+            int random=UnityEngine.Random.Range(0,Math.Max(1,candidates.Count));Float3 selected=plan.SourceSpawn;bool accepted=false;
+            for(int i=0;i<candidates.Count;i++)
+            {
+                var p=candidates[R24GhostRecoveryMath.SourceOrder(i,candidates.Count,random,1)];Float3 floor;
+                if(zoneGrid){float top=info.SolidMax.Y+5;if(!ArchiveFloor(new Float3(p.X,top,p.Z),top-info.SolidMin.Y+10,frame,out floor))continue;p=new Float3(floor.X,floor.Y+.12f,floor.Z);}
+                if(!plan.Safe(p,false)||!ArchiveCapsuleClear(p,.27f,frame))continue;selected=p;accepted=true;break;
+            }
+            CommitArchiveGhostRecovery(selected,!accepted);
+        }
+        static double DistanceArchive(Float3 a,Float3 b){return(double)(a.X-b.X)*(a.X-b.X)+(double)(a.Y-b.Y)*(a.Y-b.Y)+(double)(a.Z-b.Z)*(a.Z-b.Z);}
+        void CommitArchiveGhostRecovery(Float3 sourcePosition,bool fallback)
+        {
+            var from=Rig.transform.position;var selected=ArchiveToWorld(sourcePosition,archiveRecoveryFrame);if(!Rig.RelocateSourceGhost(selected))return;
+            Calibration.NotifyRootPoseReset();LastGhostRecoveryFrom=from;LastGhostRecoveryTo=selected;GhostRecoveryUsedSourceFallback=fallback;GhostRecoveryCount++;
+        }
+    }
+}
+#endif

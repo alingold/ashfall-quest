@@ -1,0 +1,2409 @@
+{
+  "baseline": "Actual ORIGINAL Opus R23, not mutable R24",
+  "inputs": {
+    "assets/models/download_magnum/model.glb": "939aa8d4cc019a42d8dadd3f70829712074b70e4fcf47597ed32262997700762",
+    "assets/models/download_magnum/asset-provenance.json": "2fffeae2ad452c369947c70353d393d62f2a0c15176d69058fbd901ad535aeaa",
+    "assets/models/download_magnum/ATTRIBUTION.txt": "7fc386fb46611336f7ffe0f9a906dc17321ce2fb8e3ddc75ed44e355c742ab0e",
+    "scripts/downloaded_magnum_model.gd": "25ab0fd6c19f71ecf4bac2cb71c13883c28190ed34f3618252e60cef57cb306b",
+    "scripts/magnum_finish_094.gd": "54ada06e43565ae2e525290943a38dfd8a16a3876a08d58ee7393119fd582595",
+    "scripts/revolver.gd": "85cfe42ef768f3f72dff4f384d59a650536002f992eac8f45133e7597dc294c8",
+    "scripts/handgun_finish_063.gd": "0e29d7cf48c4fa602f394cfb83e7467f097e599af8d123f5dc8e9598c03d4248",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/weapon_finish.gd": "ebd549b9e42f71c9c39b69fdef8cb6a784dc2f8b1d59727629d3f1a63458631d",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a"
+  },
+  "assets": [
+    {
+      "name": "magnum",
+      "vertices": 16146,
+      "triangles": 5382,
+      "surfaces": 1,
+      "parts": [
+        {
+          "part": "Body",
+          "recipe": "Exact entire fitted original R23 Body GLB primitive;5382triangles",
+          "triangles": 5382,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "magnum-cylinder",
+      "vertices": 2501,
+      "triangles": 2462,
+      "surfaces": 18,
+      "parts": [
+        {
+          "part": "DrumBody",
+          "recipe": "revolver._rod:21radial/rings1; fitted receiver crop finish",
+          "triangles": 126,
+          "sourcePosition": [
+            0,
+            0.035,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess0",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            0.027,
+            0.035,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound0",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            0.027,
+            0.035,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound0.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            0.027,
+            0.035,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute0",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            0.043,
+            0.035,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              6.123233995736766e-17,
+              1.0,
+              0.0
+            ],
+            [
+              -1.0,
+              6.123233995736766e-17,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess1",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.05610945002663681,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound1",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.05610945002663681,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound1.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.05610945002663681,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute1",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            0.026810061479925543,
+            0.06861875374612528,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              0.7818314824680298,
+              0.6234898018587335,
+              0.0
+            ],
+            [
+              -0.6234898018587335,
+              0.7818314824680298,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess2",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.06132305362890924,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound2",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.06132305362890924,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound2.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.06132305362890924,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute2",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            -0.009568400160121516,
+            0.07692190022381842,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              0.9749279121818236,
+              -0.2225209339563144,
+              0.0
+            ],
+            [
+              0.2225209339563144,
+              0.9749279121818236,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess3",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.046714860956174074,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound3",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.046714860956174074,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound3.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.046714860956174074,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute3",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            -0.03874166131980401,
+            0.05365700078205501,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              0.4338837391175582,
+              -0.9009688679024191,
+              0.0
+            ],
+            [
+              0.9009688679024191,
+              0.4338837391175582,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess4",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365316,
+            0.02328513904382594,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound4",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365316,
+            0.02328513904382594,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound4.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            -0.024326159433365316,
+            0.02328513904382594,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute4",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            -0.03874166131980402,
+            0.01634299921794501,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              -0.43388373911755806,
+              -0.9009688679024191,
+              0.0
+            ],
+            [
+              0.9009688679024191,
+              -0.43388373911755806,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess5",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820494,
+            0.008676946371090767,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound5",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820494,
+            0.008676946371090767,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound5.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            -0.006008065216820494,
+            0.008676946371090767,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute5",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            -0.009568400160121527,
+            -0.00692190022381841,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              -0.9749279121818236,
+              -0.2225209339563145,
+              0.0
+            ],
+            [
+              0.2225209339563145,
+              -0.9749279121818236,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRecess6",
+          "recipe": "revolver chamber recess",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0168342246501858,
+            0.013890549973363194,
+            -0.06
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound6",
+          "recipe": "revolver.cartridges live round visibility owner",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0168342246501858,
+            0.013890549973363194,
+            -0.058499999999999996
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "LiveRound6.Primer",
+          "recipe": "handgun_finish_063 nested primer, cartridge parent quaternion composed",
+          "triangles": 48,
+          "sourcePosition": [
+            0.0168342246501858,
+            0.013890549973363194,
+            -0.05475
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumFlute6",
+          "recipe": "handgun_finish_063 original eight-sided beveled extrusion",
+          "triangles": 32,
+          "sourcePosition": [
+            0.026810061479925533,
+            0.0013812462538747225,
+            -0.11
+          ],
+          "sourceRotation": [
+            [
+              -0.7818314824680299,
+              0.6234898018587334,
+              0.0
+            ],
+            [
+              -0.6234898018587334,
+              -0.7818314824680299,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRim-0.153",
+          "recipe": "handgun_finish_063 cylinder edge ring24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0,
+            0.035,
+            -0.153
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        },
+        {
+          "part": "DrumRim-0.066",
+          "recipe": "handgun_finish_063 cylinder edge ring24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0,
+            0.035,
+            -0.066
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              0.6
+            ],
+            [
+              0.0,
+              0.022463261278770706,
+              -0.044
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "magnum-offer",
+      "vertices": 4088,
+      "triangles": 6384,
+      "surfaces": 28,
+      "parts": [
+        {
+          "part": "OfferRound0.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            0.027,
+            0.0,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound0.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.027,
+            0.0,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound0.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.027,
+            0.0,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound0.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.027,
+            0.0,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound1.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.021109450026636806,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound1.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.021109450026636806,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound1.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.021109450026636806,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound1.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.016834224650185806,
+            0.021109450026636806,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound2.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.026323053628909236,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound2.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.026323053628909236,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound2.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.026323053628909236,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound2.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.006008065216820487,
+            0.026323053628909236,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound3.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.011714860956174073,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound3.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.011714860956174073,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound3.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.011714860956174073,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound3.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.024326159433365312,
+            0.011714860956174073,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound4.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365316,
+            -0.011714860956174066,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound4.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.024326159433365316,
+            -0.011714860956174066,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound4.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.024326159433365316,
+            -0.011714860956174066,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound4.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.024326159433365316,
+            -0.011714860956174066,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound5.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820494,
+            -0.026323053628909236,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound5.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.006008065216820494,
+            -0.026323053628909236,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound5.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.006008065216820494,
+            -0.026323053628909236,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound5.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            -0.006008065216820494,
+            -0.026323053628909236,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound6.Case",
+          "recipe": "revolver offered case",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0168342246501858,
+            -0.02110945002663681,
+            -0.0225
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound6.Tip",
+          "recipe": "revolver offered tip; original59646b steel, not drum texture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0168342246501858,
+            -0.02110945002663681,
+            -0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound6.Rim",
+          "recipe": "handgun_finish_063 offered case rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.0168342246501858,
+            -0.02110945002663681,
+            -0.002
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "part": "OfferRound6.TailRim",
+          "recipe": "handgun_finish_063 offered rear rim24x8",
+          "triangles": 384,
+          "sourcePosition": [
+            0.0168342246501858,
+            -0.02110945002663681,
+            -0.037
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": [
+            [
+              0.66,
+              0.66,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "bodyTextureEmbeddedSha256": "5caa2a3faffc9026b2d9256224e30ded5c061705136689c7829acd99aa42730b",
+  "drumCrop": {
+    "source": "embedded Body baseColor",
+    "rect": [
+      5,
+      8,
+      266,
+      240
+    ],
+    "method": "Lossless exact source pixel crop; no resampling"
+  },
+  "sourceBodyBoundsMin": [
+    -0.023827214528083278,
+    -0.08865936566434424,
+    -0.3919999999999999
+  ],
+  "sourceBodyBoundsMax": [
+    0.023827221624669093,
+    0.0946959434208044,
+    0.02918464780439485
+  ],
+  "outputs": {
+    "magnum-ATTRIBUTION.txt": "7fc386fb46611336f7ffe0f9a906dc17321ce2fb8e3ddc75ed44e355c742ab0e",
+    "magnum-body-baseColor.png": "5caa2a3faffc9026b2d9256224e30ded5c061705136689c7829acd99aa42730b",
+    "magnum-cylinder.json": "f620c80fba707555dd0a09c00412a440fc84d09497f648b0ee58814778979e6e",
+    "magnum-cylinder.meshbin": "16b12de880acd869ec36cb85ce9ce850eb91755cd58a940e07bf97cd1d3c6970",
+    "magnum-drum-finish.png": "1e317ee33e5a6ead126daa608d99e273cdb4f901792d46b49c83e36e384689dc",
+    "magnum-fit.json": "f6ae55e2f1f283e7a055a8225f5016cd9b55e9efd7d32050b50cedc25a0169ba",
+    "magnum-offer.json": "4dbdf5f29079904dbf6c45cfb7e061899132ebeaa198dde64301d3e48017a0b7",
+    "magnum-offer.meshbin": "47729a1616df38400c74e42bd047b1ce81b1061b4bab2b3d1a4f41ac30568dae",
+    "magnum.json": "2d9f0ea25773f3a80e13f33635ae763751966bd514a25a9fb654a9ab1420fd33",
+    "magnum.meshbin": "eb1e8b7d68b8a6d30839514aeffb093f250d8e569db5842c137e8ac9b779d960"
+  },
+  "officialPrimitiveReference": {
+    "url": "https://github.com/godotengine/godot/blob/master/scene/resources/3d/primitive_meshes.cpp",
+    "sha256": "c9ec1d7d201849e76ad35ecf613812e0888ddb40ef02806cb64b5377ae41b800"
+  },
+  "limits": "CPU recipe conversion/geometry validation only. No engine, GPU, Blender, device or runtime integration. Original downloaded six-shot drum/loader remain source-omitted; functional seven-chamber geometry retained. No separate source ejector. Overall .84 model scale left for owner."
+}

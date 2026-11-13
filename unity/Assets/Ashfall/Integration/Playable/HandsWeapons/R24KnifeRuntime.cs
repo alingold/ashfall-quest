@@ -1,0 +1,1 @@
+using Ashfall.Core;namespace Ashfall.Integration.Playable.HandsWeapons {public sealed class R24KnifeRuntime:R24MeleeRuntime {public const float Damage=35,MovementMultiplier=1.15f;public static readonly Float3 BladeBase=R24MeleeProfiles.Knife.Base,BladeTip=R24MeleeProfiles.Knife.Tip;public R24KnifeRuntime(string id):base(id,R24MeleeProfiles.Knife){}}}

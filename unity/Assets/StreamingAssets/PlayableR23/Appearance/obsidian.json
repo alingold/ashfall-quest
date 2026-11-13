@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "id": "obsidian",
+  "label": "OBSIDIAN",
+  "sourceIndex": 25,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 2,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "obsidian-body-0-baseColor.png",
+      "normal": "obsidian-body-0-normal.png",
+      "metallicMap": "obsidian-body-0-metallic.png",
+      "occlusion": "obsidian-body-0-occlusion.png",
+      "emission": "obsidian-body-0-emission.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "obsidian-body-1-baseColor.png",
+      "normal": "obsidian-body-1-normal.png",
+      "metallicMap": "obsidian-body-1-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "obsidian-glove-baseColor.png",
+      "normal": "obsidian-glove-normal.png",
+      "metallicMap": "obsidian-glove-metallic.png",
+      "occlusion": "obsidian-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

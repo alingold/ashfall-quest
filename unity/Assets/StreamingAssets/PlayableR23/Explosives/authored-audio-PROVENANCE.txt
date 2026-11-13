@@ -1,0 +1,8 @@
+ASHFALL ORIGINAL SOUND BANK
+51 mono PCM WAV assets, 32kHz / 16bit.
+Created for this project by deterministic procedural sound design. No third-party recordings, performances, copyrighted song excerpts, or external sample packs.
+Reproducible source: scripts/audio_bank.gd synthesize(kind,variant).
+Baker: tools/bake_audio.gd in workspace. Run Godot --headless --audio-driver Dummy --xr-mode off --path AshfallVR --script <absolute tools/bake_audio.gd>.
+Layers include filtered random excitation, damped resonant modes, timed mechanical transients, gas-body decay and discrete early reflections. Environmental loops use endpoint fades.
+These are designed synthetic assets, not live recordings of real firearms. Auditory realism and headset balance require later listening review; none was performed while the user rested.
+Numerical audit: reports/audio-bank-audit.json. Peak<=0.78 full scale before in-game gain. No clipped PCM samples.

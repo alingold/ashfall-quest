@@ -1,0 +1,51 @@
+{
+  "baseline": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "geometry": [
+    {
+      "name": "cx4",
+      "vertices": 18363,
+      "triangles": 6188
+    },
+    {
+      "name": "px4",
+      "vertices": 16200,
+      "triangles": 5400
+    }
+  ],
+  "sourceInputs": {
+    "scripts/catalog_firearm.gd": "63d33af1c8fe7c44a78fb41db8c7c66139c1339c7e4e5798dbd2e9b899a3ffdd",
+    "scripts/pistol.gd": "1b6561890a49743e77ded2ff35b7999c26e0d6567003bfc892cc4d97846bf190",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/downloaded_firearm_model.gd": "9b3f25e8b2f33e49cd51884188e745b251afcbe4a6912ce7b7f0b9d2c374b3e0",
+    "scripts/cx4_sight_r5.gd": "00b53adb1832c593cdece041a7f1e5290ee3ef8a72ca7b6fedc088207da8a1f2",
+    "scripts/authored_ring_dot_sight.gd": "3150aeb8695a2336cb3262103098d44665ba87bdf77944a66ebb1d769639115a",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/data/recoil_observed_067.json": "cb494da42fc7900d049d4104e1c680e775fff43e2fe4b84f4e6f1f5627b83930",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5"
+  },
+  "audio": [
+    {
+      "source": "res://assets/audio/reference097/shot_cx4_last_00.wav",
+      "file": "audio/cx4-shot-0.wav",
+      "sha256": "a24145be567c3d9b98285c4cbf8d2dfacb68054dd12b346d522958302b48becb"
+    },
+    {
+      "source": "res://assets/audio/reference099/cx4_mag_insert_00.wav",
+      "file": "audio/cx4-mag_insert-0.wav",
+      "sha256": "cc9d173388e238ec87e4592d430d2291ffa3e60782d13fa3b8650942f9fee392"
+    },
+    {
+      "source": "res://assets/audio/reference099/cx4_bolt_00.wav",
+      "file": "audio/cx4-bolt-0.wav",
+      "sha256": "113c22760fc30de7e0c46a81a3bc16d149bc656e73429b24b0a87ffedc8dab34"
+    },
+    {
+      "source": "res://assets/audio/reference097/shot_px4_last_00.wav",
+      "file": "audio/px4-shot-0.wav",
+      "sha256": "9e66c4c3d66091ff4a8aadfd1e95b7d63d0e7b5e2eae436a4357eb2a4e124ed0"
+    }
+  ],
+  "notes": "Full original fitted GLBs; no decimation or substitute rifle meshes. CX4 + source rod/charging bevel only. NumPy/Pillow, no engine/Blender."
+}

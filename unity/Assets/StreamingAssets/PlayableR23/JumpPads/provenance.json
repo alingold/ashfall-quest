@@ -1,0 +1,46 @@
+{
+  "baseline": "original preserved Opus R23 2026-11-03 ashfall-r23/source",
+  "inputs": {
+    "scripts/sandbox_map_091.gd": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7",
+    "scripts/world.gd": "52d05443eaf9ffe0f872ac46eba670da05e3a86c55d45e57aa980ce46ed029d5",
+    "assets/data/map_semantics_r14.json": "d2eec08d77b134b10b0a0095a16f2fe4feb82139299b38eac7c84582d7d8a0b2",
+    "assets/data/archive_semantics_r9.json": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a",
+    "scripts/map_semantics_r14.gd": "573b4b2628e81be3eb4d3655bc59e1719c31e4dbb17250195150e8dbc1d79447",
+    "scripts/archive_gameplay_r8.gd": "3ed0d1ea44f9c2126532155f824afcb355234dde0dc9c306e6f63734089c9ab0",
+    "scripts/archive_semantics_r8.gd": "857bbf458575af9407d4f969eb9b158683088dc1c89199c9ea57c5b91a9526e5",
+    "scripts/archive_semantics_r9.gd": "a24e26762d5f3b4f03c498116e47d25099166f5ba837a4c1a86289208b0197b2"
+  },
+  "maps": [
+    {
+      "mapId": "archive:battlefield-paintball-gods-pitdevil",
+      "sourceSha256": "1f2453276f150a5c04373ea92cb6c6e5f43707c0a7f1fc0dfe351b0a24573c0a",
+      "pads": 0,
+      "tilted": 0
+    },
+    {
+      "mapId": "archive:alfa-aglae-souza",
+      "sourceSha256": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994",
+      "pads": 115,
+      "tilted": 44
+    },
+    {
+      "mapId": "archive:classic-bigbox-vr",
+      "sourceSha256": "0179873e65c372825682725737bfcd34762132cf9d759342425fff0d2bb8079d",
+      "pads": 0,
+      "tilted": 0
+    },
+    {
+      "mapId": "range",
+      "sourceSha256": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7",
+      "pads": 0,
+      "tilted": 0
+    },
+    {
+      "mapId": "valley",
+      "sourceSha256": "52d05443eaf9ffe0f872ac46eba670da05e3a86c55d45e57aa980ce46ed029d5",
+      "pads": 0,
+      "tilted": 0
+    }
+  ],
+  "conversion": "Actual source rows only. Reflect local center/normal Z once, no campaign4800 offset. Preserve source order, radius and speed. Paintball has no native rows or legacy jump-pad material; no replacement pads invented."
+}

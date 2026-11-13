@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "cinder_scout",
+ "label": "Cinder Scout",
+ "sourceIndex": 0,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "cinder_scout-body-baseColor.png",
+   "normal": "cinder_scout-body-normal.png",
+   "metallicMap": "cinder_scout-body-metallic.png",
+   "occlusion": "cinder_scout-body-occlusion.png",
+   "emission": "cinder_scout-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 3.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "cinder_scout-glove-baseColor.png",
+   "normal": "cinder_scout-glove-normal.png",
+   "metallicMap": "cinder_scout-glove-metallic.png",
+   "occlusion": "cinder_scout-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

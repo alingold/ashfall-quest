@@ -1,0 +1,42 @@
+{
+  "materials": [
+    {
+      "color": [
+        0.45,
+        0.24,
+        0.1,
+        1
+      ],
+      "metallic": 0.7,
+      "roughness": 1,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.1,
+        0.8,
+        0.8,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "Shell0.Hull",
+    "Shell0.Cap",
+    "Shell1.Hull",
+    "Shell1.Cap"
+  ]
+}

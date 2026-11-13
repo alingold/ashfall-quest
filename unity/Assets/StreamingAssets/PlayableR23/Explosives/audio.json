@@ -1,0 +1,40 @@
+{
+  "cues": [
+    {
+      "action": "grenade_throw",
+      "files": [
+        "grenade_throw-0.wav"
+      ]
+    },
+    {
+      "action": "frag_blast",
+      "files": [
+        "frag_blast-0.wav"
+      ]
+    },
+    {
+      "action": "zone_bloom",
+      "files": [
+        "zone_bloom-0.wav"
+      ]
+    },
+    {
+      "action": "zone_arm",
+      "files": [
+        "zone_arm-0.wav"
+      ]
+    },
+    {
+      "action": "frag_warning",
+      "files": [
+        "frag-warning.wav"
+      ]
+    },
+    {
+      "action": "zone_warning",
+      "files": [
+        "zone-warning.wav"
+      ]
+    }
+  ]
+}

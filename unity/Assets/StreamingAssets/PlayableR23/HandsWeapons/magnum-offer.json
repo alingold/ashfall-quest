@@ -1,0 +1,98 @@
+{
+  "materials": [
+    {
+      "color": [
+        0.7176470588235294,
+        0.5843137254901961,
+        0.2823529411764706,
+        1
+      ],
+      "metallic": 0.8,
+      "roughness": 0.35,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.34901960784313724,
+        0.39215686274509803,
+        0.4196078431372549,
+        1
+      ],
+      "metallic": 0.85,
+      "roughness": 0.3,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.6784313725490196,
+        0.5215686274509804,
+        0.27058823529411763,
+        1
+      ],
+      "metallic": 0.78,
+      "roughness": 0.38,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.12549019607843137,
+        0.15294117647058825,
+        0.16862745098039217,
+        1
+      ],
+      "metallic": 0.36,
+      "roughness": 0.57,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "OfferRound0.Case",
+    "OfferRound0.Tip",
+    "OfferRound0.Rim",
+    "OfferRound0.TailRim",
+    "OfferRound1.Case",
+    "OfferRound1.Tip",
+    "OfferRound1.Rim",
+    "OfferRound1.TailRim",
+    "OfferRound2.Case",
+    "OfferRound2.Tip",
+    "OfferRound2.Rim",
+    "OfferRound2.TailRim",
+    "OfferRound3.Case",
+    "OfferRound3.Tip",
+    "OfferRound3.Rim",
+    "OfferRound3.TailRim",
+    "OfferRound4.Case",
+    "OfferRound4.Tip",
+    "OfferRound4.Rim",
+    "OfferRound4.TailRim",
+    "OfferRound5.Case",
+    "OfferRound5.Tip",
+    "OfferRound5.Rim",
+    "OfferRound5.TailRim",
+    "OfferRound6.Case",
+    "OfferRound6.Tip",
+    "OfferRound6.Rim",
+    "OfferRound6.TailRim"
+  ]
+}

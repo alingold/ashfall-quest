@@ -1,0 +1,114 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Integration.Playable.Climbing;
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Expansion;
+using UnityEngine;
+
+namespace Ashfall.Integration.Playable
+{
+    public sealed partial class R23VRRig
+    {
+        readonly R25RampCrouch rampCrouch = new R25RampCrouch();
+        Vector3 crouchTrackingPush;
+        int crouchReleaseFrame = -1;
+        public float RampCrouchOffset { get { return rampCrouch.Offset; } }
+        public bool RampCrouchBlocked { get; private set; }
+        bool CanRampCrouch
+        {
+            get { return R25Features.RampCrouch && R23HeadCollision.FullEyeSafety && !CarrierActive
+                && !headMotionOwned && !headJumpInProgress && HeadCollision != null && HeadCollision.Ready; }
+        }
+        float CrouchSeconds
+        {
+            get
+            {
+                if (crouchReleaseFrame == Time.frameCount) return 0;
+                crouchReleaseFrame = Time.frameCount;
+#if UNITY_EDITOR
+                if (HeadclipProbeOwnsTracking && ViewFade != null) return ViewFade.NativeProbeSeconds;
+#endif
+                return Mathf.Min(Time.unscaledDeltaTime, .1f);
+            }
+        }
+        void ResetRampCrouch()
+        {
+            // Remove only our offset, preserving calibration and room-scale origin.
+            if (TrackingOrigin != null) TrackingOrigin.position += Vector3.up * rampCrouch.Offset - crouchTrackingPush;
+            rampCrouch.Reset(); crouchTrackingPush = Vector3.zero;
+            RampCrouchBlocked = false; crouchReleaseFrame = -1;
+        }
+        void SetRampOffset(float physicalHeight, float safeHeight, float seconds)
+        {
+            float previous = rampCrouch.Offset;
+            float next = rampCrouch.Step(physicalHeight, safeHeight, seconds);
+            Vector3 delta = Vector3.up * (previous - next);
+            if (delta.y > 0)
+            {
+                bool hit;
+                Vector3 safe = HeadCollision.Sweep(Head.transform.position, delta, false, out hit, false, true);
+                // Keep the policy in agreement with the actual accepted origin.
+                if (safe.y < delta.y) next = rampCrouch.Step(physicalHeight, physicalHeight - previous + safe.y, 0);
+                delta.y = previous - next;
+            }
+            TrackingOrigin.position += delta;
+        }
+        bool CrouchFits(Vector3 referenceEye, Vector3 physicalEye, float floorY, out float ceiling)
+        {
+            ceiling = HeadCollision.CrouchCeiling(referenceEye, physicalEye, floorY);
+            return rampCrouch.Fits(ceiling - floorY, physicalEye.y - floorY);
+        }
+        Vector3 CrouchWalk(Vector3 requested)
+        {
+            RampCrouchBlocked = false;
+            if (!CanRampCrouch || !grounded || requested.y > .001f) return requested;
+            Vector3 eye = Head.transform.position;
+            Vector3 physical = eye + Vector3.up * rampCrouch.Offset;
+            float ceiling;
+            float fraction = 1;
+            if (!CrouchFits(eye, physical + requested, transform.position.y, out ceiling))
+            {
+                float low = 0, high = 1;
+                for (int i = 0; i < 16; i++)
+                {
+                    float mid = (low + high) * .5f; float bound;
+                    if (CrouchFits(eye, physical + requested * mid, transform.position.y, out bound)) low = mid;
+                    else high = mid;
+                }
+                fraction = low; RampCrouchBlocked = true;
+                CrouchFits(eye, physical + requested * fraction, transform.position.y, out ceiling);
+            }
+            SetRampOffset(physical.y - transform.position.y, ceiling - transform.position.y, CrouchSeconds);
+            return requested * fraction;
+        }
+        void CrouchPhysicalHead()
+        {
+            if (!CanRampCrouch) return;
+            // Re-evaluate the unmodified tracked pose every sample. At minimum
+            // height counter the unsafe horizontal lean in the tracking origin;
+            // do not teleport feet or consume the ordinary body's push budget.
+            Vector3 physical = Head.transform.position + Vector3.up * rampCrouch.Offset - crouchTrackingPush;
+            Vector3 reference = haveSourceHead ? previousSourceHead : Head.transform.position;
+            float floorY = transform.position.y, ceiling;
+            Vector3 safePhysical = physical;
+            if (!CrouchFits(reference, physical, floorY, out ceiling) && haveSourceHead)
+            {
+                Vector3 start = new Vector3(reference.x, physical.y, reference.z);
+                float low = 0, high = 1;
+                for (int i = 0; i < 16; i++)
+                {
+                    float mid = (low + high) * .5f; float bound;
+                    if (CrouchFits(reference, Vector3.Lerp(start, physical, mid), floorY, out bound)) low = mid;
+                    else high = mid;
+                }
+                safePhysical = Vector3.Lerp(start, physical, low);
+                CrouchFits(reference, safePhysical, floorY, out ceiling);
+                RampCrouchBlocked = true;
+            }
+            Vector3 push = safePhysical - physical;
+            TrackingOrigin.position += push - crouchTrackingPush;
+            crouchTrackingPush = push;
+            SetRampOffset(physical.y - floorY, ceiling - floorY, CrouchSeconds);
+        }
+    }
+}
+#endif

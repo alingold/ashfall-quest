@@ -1,0 +1,134 @@
+Shader "Ashfall/R24Architecture"
+{
+ Properties
+ {
+  _Brick("Source brick",2D)="white"{} _Concrete("Source concrete",2D)="white"{}
+  _Metal("Source corrugated",2D)="white"{} _Wood("Source planks",2D)="white"{}
+  _Stone("Source stone",2D)="white"{} _Freight("Source freight",2D)="white"{}
+  _SourceTint("Original tint",Color)=(1,1,1,1) _Roughness("Original roughness",Float)=1
+  _VertexSrgb("Original vertex colour sRGB",Float)=0
+  _SourceObjectOffset("Cut local source offset",Vector)=(0,0,0,0) _SourceCutFrame("Cut oriented source frame",Float)=0
+ }
+ SubShader
+ {
+  Tags {"RenderPipeline"="UniversalPipeline" "RenderType"="Opaque"}
+  Pass
+  {
+   Tags {"LightMode"="UniversalForward"} Cull Off
+   HLSLPROGRAM
+   #pragma vertex Vert
+   #pragma fragment Frag
+   #pragma target 3.5
+   #pragma multi_compile_instancing
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+   #include "R25Style.hlsl"
+   TEXTURE2D(_Brick);SAMPLER(sampler_Brick);TEXTURE2D(_Concrete);SAMPLER(sampler_Concrete);
+   TEXTURE2D(_Metal);SAMPLER(sampler_Metal);TEXTURE2D(_Wood);SAMPLER(sampler_Wood);
+   TEXTURE2D(_Stone);SAMPLER(sampler_Stone);TEXTURE2D(_Freight);SAMPLER(sampler_Freight);
+   CBUFFER_START(UnityPerMaterial)
+   float4 _SourceTint;float _Roughness,_VertexSrgb;
+   float4 _SourceObjectOffset;float _SourceCutFrame;float4x4 _SourceCutLocalToMap;
+   int _JunctionCount,_TrailerCount,_WheelCount;
+   float4 _JunctionZones[16],_JunctionBoxes[16];float _JunctionHeights[16];
+   float4 _TrailerOrigins[8],_TrailerLongs[8],_TrailerAcross[8],_TrailerSizes[8];
+   float4 _WheelCenters[16],_WheelAxles[16],_WheelUps[16],_WheelSides[16];
+   CBUFFER_END
+   struct Attributes{float4 positionOS:POSITION;float3 normalOS:NORMAL;float4 color:COLOR;UNITY_VERTEX_INPUT_INSTANCE_ID};
+   struct Varyings{float4 positionCS:SV_POSITION;float3 positionWS:TEXCOORD0;float3 normalWS:TEXCOORD1;float3 sourcePosition:TEXCOORD2;float4 color:COLOR;nointerpolation uint kind:TEXCOORD3;UNITY_VERTEX_OUTPUT_STEREO};
+   Varyings Vert(Attributes v)
+   {
+    Varyings o;UNITY_SETUP_INSTANCE_ID(v);UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+    o.positionWS=TransformObjectToWorld(v.positionOS.xyz);o.positionCS=TransformWorldToHClip(o.positionWS);o.normalWS=TransformObjectToWorldNormal(v.normalOS);
+    float3 sourcePosition=v.positionOS.xyz+_SourceObjectOffset.xyz;if(_SourceCutFrame>.5)sourcePosition=mul(_SourceCutLocalToMap,v.positionOS).xyz;
+    o.sourcePosition=sourcePosition*float3(1,1,-1);o.color=v.color;o.kind=(uint)round(v.color.a*255);return o;
+   }
+   float Hash(float2 p){return frac(sin(dot(p,float2(127.1,311.7)))*43758.5453);}
+   float3 LinearColour(float3 c){return lerp(c/12.92,pow((c+.055)/1.055,2.4),step(.04045,c));}
+   half4 Frag(Varyings i):SV_Target
+   {
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+    float3 normal=normalize(i.normalWS),wn=normal*float3(1,1,-1),wp=i.positionWS*float3(1,1,-1)+float3(0,0,4800),p=i.sourcePosition;
+    float3 tint=(_VertexSrgb>.5?LinearColour(i.color.rgb):i.color.rgb)*_SourceTint.rgb;
+    float3 albedo=tint;float roughness=_Roughness,metallic=0;uint kind=i.kind;
+    if(kind>=1&&kind<=5)
+    {
+     float3 a=abs(wn);float2 uv=a.y>max(a.x,a.z)?wp.xz:(a.x>a.z?wp.zy:wp.xy);
+     float3 pattern;float average,strength=.75;
+     if(kind==2||kind==4||kind==5){pattern=SAMPLE_TEXTURE2D(_Metal,sampler_Metal,uv/4).rgb;average=.494896;metallic=.18;roughness=.78;}
+     else if(kind==3||(kind==1&&i.color.r>i.color.g*1.5&&i.color.g<i.color.b*1.3)){pattern=SAMPLE_TEXTURE2D(_Wood,sampler_Wood,uv/4).rgb;average=.309123;roughness=.9;}
+     else if(kind==1&&a.y>.65){pattern=SAMPLE_TEXTURE2D(_Concrete,sampler_Concrete,uv/5).rgb;average=.883552;roughness=.92;strength=.5;}
+     else if(kind==1&&i.color.r>i.color.b+.045){pattern=SAMPLE_TEXTURE2D(_Brick,sampler_Brick,uv/4).rgb;average=.448671;roughness=.9;}
+     else{pattern=SAMPLE_TEXTURE2D(_Concrete,sampler_Concrete,uv/4).rgb;average=.883552;roughness=.92;}
+     #ifndef UNITY_COLORSPACE_GAMMA
+     if(kind==2||kind==4||kind==5)average=.212641;
+     else if(kind==3||(kind==1&&i.color.r>i.color.g*1.5&&i.color.g<i.color.b*1.3))average=.080248;
+     else if(kind==1&&a.y<=.65&&i.color.r>i.color.b+.045)average=.182893;
+     else average=.769550;
+     #endif
+     float detail=clamp(dot(pattern,float3(.2126,.7152,.0722))/average,.4,1.5);albedo=tint*lerp(1,detail,strength);
+    }
+    else if(kind==6)
+    {
+     float3 a=abs(wn);a/=max(a.x+a.y+a.z,.0001);
+     float3 pattern=SAMPLE_TEXTURE2D(_Stone,sampler_Stone,wp.yz/.85).rgb*a.x+SAMPLE_TEXTURE2D(_Stone,sampler_Stone,wp.xz/.85).rgb*a.y+SAMPLE_TEXTURE2D(_Stone,sampler_Stone,wp.xy/.85).rgb*a.z;
+     #ifdef UNITY_COLORSPACE_GAMMA
+     float average=.559484548;
+     #else
+     float average=.274064973;
+     #endif
+     albedo=tint*lerp(1,clamp(dot(pattern,float3(.2126,.7152,.0722))/average,.75,1.25),.6);
+    }
+    else if(kind==7)
+    {
+     for(int j=0;j<_JunctionCount;j++)
+     {
+      float4 box=_JunctionBoxes[j],zone=_JunctionZones[j];
+      if(p.x<box.x||p.x>box.y||p.z<box.z||p.z>box.w||abs(p.y-_JunctionHeights[j])>.075)continue;
+      float2 q=.5+(p.xz-zone.xy)/zone.zw;float fade=1-smoothstep(.003,.02,max(fwidth(q.x),fwidth(q.y)));
+      float3 asphalt=float3(.26,.275,.28)*(.93+.14*Hash(floor(q*512))*fade);
+      float bars=step(.45,frac(q.x*12))*step(.215,q.x)*step(q.x,.785);
+      float crosswalk=bars*max(step(.13,q.y)*step(q.y,.21),step(.79,q.y)*step(q.y,.87));
+      bars=step(.45,frac(q.y*12))*step(.215,q.y)*step(q.y,.785);
+      crosswalk=max(crosswalk,bars*max(step(.13,q.x)*step(q.x,.21),step(.79,q.x)*step(q.x,.87)));
+      albedo=lerp(asphalt,float3(.68,.70,.67),crosswalk*.85);roughness=.97;break;
+     }
+    }
+    else if(kind>=32&&kind<40&&kind-32<(uint)_TrailerCount)
+    {
+     int j=kind-32;float3 longAxis=_TrailerLongs[j].xyz,across=_TrailerAcross[j].xyz,size=_TrailerSizes[j].xyz;
+     float3 d=p-_TrailerOrigins[j].xyz;float3 q=float3(dot(d,longAxis),d.y,dot(d,across))/size;
+     float3 n=normalize(cross(ddx(p),ddy(p)));float side=smoothstep(.65,.9,abs(dot(n,across))),end=smoothstep(.65,.9,abs(dot(n,longAxis)));
+     float fade=1-smoothstep(.003,.018,max(fwidth(q.x),fwidth(q.y)));float rib=pow(max(0,cos(q.x*70*6.2831853)),12);
+     albedo=float3(.69,.72,.74)*(1-.055*rib*fade);
+     float horizontal=max(1-smoothstep(.018,.035,q.y),smoothstep(.965,.985,q.y));float vertical=max(1-smoothstep(.009,.022,q.x),smoothstep(.978,.991,q.x));
+     albedo=lerp(albedo,float3(.20,.24,.27),max(horizontal,vertical)*.8);
+     float width=min(.55,size.y*.5*1.85507246/size.x);float2 label=float2((q.x-(.5-width*.5))/width,1-(q.y-.25)/.5);if(q.z<.5)label.x=1-label.x;
+     float sign=step(0,label.x)*step(label.x,1)*step(0,label.y)*step(label.y,1)*side;
+     // Godot Image sampling and Unity LoadImage have opposite V origins.
+     // Keep source label bounds/projection, reflect only the texture lookup.
+     albedo=lerp(albedo,SAMPLE_TEXTURE2D(_Freight,sampler_Freight,float2(label.x,1-label.y)).rgb,sign);
+     albedo=lerp(albedo,float3(.11,.56,.60),step(.145,q.y)*step(q.y,.165)*side);
+     albedo=lerp(albedo,float3(.13,.16,.18),(1-smoothstep(.005,.012,abs(q.z-.5)))*end*.7);
+     float rail=step(.065,q.y)*step(q.y,.095)*side;albedo=lerp(albedo,float3(.24,.29,.31),rail);albedo=lerp(albedo,float3(.78,.24,.035),rail*step(.58,frac(q.x*18)));metallic=.23;roughness=.74;
+    }
+    else if(kind>=48&&kind<64&&kind-48<(uint)_WheelCount)
+    {
+     int j=kind-48;float3 d=p-_WheelCenters[j].xyz,axle=_WheelAxles[j].xyz;
+     float2 q=float2(dot(d,_WheelSides[j].xyz),dot(d,_WheelUps[j].xyz))/_WheelCenters[j].w;float r=length(q),angle=atan2(q.y,q.x);
+     float3 n=normalize(cross(ddx(p),ddy(p)));float cap=smoothstep(.55,.85,abs(dot(n,axle))),fade=1-smoothstep(.012,.05,max(fwidth(q.x),fwidth(q.y)));
+     float tread=.5+.5*sin(angle*40+dot(d,axle)*110);float rings=(1-smoothstep(.009,.025,abs(r-.76)))+(1-smoothstep(.009,.025,abs(r-.90)));
+     float3 rubber=float3(.032,.036,.039)*(1+.12*tread*fade+.18*rings*fade*cap);float hub=(1-smoothstep(.44,.49,r))*cap;
+     albedo=lerp(rubber,float3(.39,.42,.44)*(1-.10*sin(angle*10)*fade),hub);albedo=lerp(albedo,float3(.075,.085,.09),(1-smoothstep(.12,.17,r))*hub);
+     float bolt=(1-smoothstep(.015,.045,abs(r-.30)))*pow(max(0,cos(angle*8)),18)*hub*fade;albedo=lerp(albedo,float3(.62,.64,.65),bolt);metallic=hub*.72;roughness=lerp(.95,.38,hub);
+    }
+    albedo=R25StyleAlbedo(albedo);
+    Light light=GetMainLight();float diffuse=saturate(dot(normal,light.direction));float3 ambient=max(SampleSH(normal),float3(.12,.14,.16));
+    float3 h=normalize(light.direction+GetWorldSpaceNormalizeViewDir(i.positionWS));float spec=pow(saturate(dot(normal,h)),lerp(100,4,roughness));
+    float3 radiance=albedo*(ambient+light.color*diffuse)*(1-.35*metallic)+spec*light.color*lerp(.04,albedo,metallic);
+    return half4(R25StyleFinish(radiance,diffuse,i.positionWS),1);
+   }
+   ENDHLSL
+  }
+ }
+}

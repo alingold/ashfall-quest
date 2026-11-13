@@ -1,0 +1,234 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.HandsWeapons;
+using Ashfall.Integration.Playable.Explosives;
+using Ashfall.Integration.Playable.Consumables;
+using UnityEngine;
+using UnityEngine.Networking;
+
+namespace Ashfall.Integration.Playable.World.Loot
+{
+    // Local source map caches. Owners are minted once; distant art is dormant.
+    // Multiplayer replication and unsupported catalog mechanics remain separate.
+    public sealed partial class R23WorldLoot:MonoBehaviour
+    {
+        R23PlayableMap map;R23HandsWeapons weapons;R23VRExplosives explosives;Transform actor;Manifest data;MapRow row;
+        string currentMap;R23CacheActivation activation;Vector3[] sites=new Vector3[0];
+        readonly List<string> instances=new List<string>();float clock,visualClock;bool enabledWorld,prepared;
+        readonly List<string> grenadeInstances=new List<string>();long grenadeSerial;
+        R23VRConsumables foods;readonly List<string> foodInstances=new List<string>();readonly HashSet<string> withdrawnFoods=new HashSet<string>();long foodSerial;
+        R23PlayableLoop sourceWorld;Coroutine preparingArchive;long preparationVersion,cacheSourceGeneration=-1;Float3[] sourceSites=new Float3[0];
+        public bool Ready {get;private set;}public string Failure {get;private set;}
+        public int ValidatedSites {get{return sites.Length;}}public int SpawnedCount {get;private set;}
+        public int UnsupportedDraws {get;private set;}public int RejectedSites {get;private set;}
+        public int ActivatedSites {get{return activation==null?0:activation.ActivatedCount;}}
+        public bool MagnumOnlyRecipe {get{return R24ArchiveMapPolicy.MagnumOnly(currentMap);}}
+        public string PlacementMode {get;private set;}
+        public bool PreparationPending {get{return preparingArchive!=null||enabledWorld&&UsesSourceWorld&&(!prepared||!SourceWorldReady||cacheSourceGeneration!=sourceWorld.ArchiveWorldGeneration);}}
+        public long CacheSourceGeneration {get{return cacheSourceGeneration;}}
+        public string PreparedMapId {get{return prepared?currentMap:null;}}
+        public int InitialAcceptedSites {get;private set;}public int FallbackSites {get;private set;}public int SparseAddedSites {get;private set;}
+        public int InitialRejectedFloor {get;private set;}public int InitialRejectedOutside {get;private set;}public int InitialRejectedHazard {get;private set;}
+        public Float3[] SourceCacheSitePositions {get{return(Float3[])sourceSites.Clone();}}
+        public bool TryReadCacheSite(int index,out Float3 originalGodotLocal,out Vector3 worldPosition){originalGodotLocal=new Float3();worldPosition=Vector3.zero;if(!prepared||index<0||index>=sites.Length||sourceSites.Length!=sites.Length)return false;originalGodotLocal=sourceSites[index];worldPosition=sites[index];return true;}
+        public R23SparseLootResult SparseDiagnostics {get;private set;}
+        bool UsesSourceWorld {get{return sourceWorld!=null&&map!=null&&map.MapId!=null&&map.MapId.StartsWith("archive:",StringComparison.Ordinal);}}
+        bool SourceWorldReady {get{return !UsesSourceWorld||sourceWorld.ArchiveWorldReady&&sourceWorld.ArchiveWorldMapId==map.MapId&&sourceWorld.ArchiveWorldPlan!=null&&sourceWorld.ArchiveWorldInfo!=null;}}
+        public void BindArchiveWorld(R23PlayableLoop context){if(context==null||context.Consumables==null)throw new ArgumentNullException("Actual source world and consumable owner required");foods=context.Consumables;supplies=context.Supplies;if(sourceWorld==context)return;CancelArchivePreparation();sourceWorld=context;prepared=false;}
+        public Vector3[] CacheSitePositions {get{return (Vector3[])sites.Clone();}}
+        public string[] WorldInstanceActionIds {get{return row==null?baselineWeapons.ToArray():instances.ToArray();}}
+        public string[] WorldGrenadeInstanceIds {get{return row==null?baselineGrenades.ToArray():grenadeInstances.ToArray();}}
+        public string[] CacheFoodInstanceIds {get{return foodInstances.ToArray();}}
+        public bool AllowsWorldClaim(string actionId){return !instances.Contains(actionId)&&!grenadeInstances.Contains(actionId)&&!baselineWeapons.Contains(actionId)&&!baselineGrenades.Contains(actionId)||enabledWorld&&prepared&&currentMap==map.MapId&&SourceWorldReady&&(!UsesSourceWorld||cacheSourceGeneration==sourceWorld.ArchiveWorldGeneration);}
+        public void Initialize(R23PlayableMap sourceMap,R23HandsWeapons owner,Transform player)
+        {Initialize(sourceMap,owner,null,player);}
+        public void Initialize(R23PlayableMap sourceMap,R23HandsWeapons owner,R23VRExplosives grenadeOwner,Transform player)
+        {if(map!=null)throw new InvalidOperationException("loot already initialized");if(sourceMap==null||owner==null||player==null)throw new ArgumentException("real map, weapon owner and player required");map=sourceMap;weapons=owner;weapons.BindSourceGroundLayout();weapons.WorldPickupCollisionReady=delegate{return map!=null&&map.IsLoaded&&enabledWorld&&SourceWorldReady;};explosives=grenadeOwner;if(explosives!=null)explosives.WorldCollisionReady=delegate{return map!=null&&map.IsLoaded;};actor=player;StartCoroutine(Load());}
+        IEnumerator Load()
+        {
+            string url=Application.streamingAssetsPath+"/PlayableR23/Loot/caches.json";if(!url.Contains("://"))url=new Uri(url).AbsoluteUri;
+            using(var request=UnityWebRequest.Get(url))
+            {
+                request.timeout=30;yield return request.SendWebRequest();
+                if(request.result!=UnityWebRequest.Result.Success){Failure=request.error;yield break;}
+                try{data=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);if(data==null||data.version!=1||data.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||data.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||data.maps==null||data.maps.Length!=105)throw new InvalidOperationException("Actual R6 cache manifest");var ids=new HashSet<string>();foreach(var item in data.maps)if(item==null||!ids.Add(item.mapId)||item.sourceSha256==null||item.sourceSha256.Length!=64)throw new InvalidOperationException("Actual unique source cache row required");Ready=true;}catch(Exception e){Failure=e.Message;}
+            }
+        }
+        public void SetWorldEnabled(bool value)
+        {
+            if(enabledWorld==value&&(!value||prepared&&currentMap==map.MapId&&SourceWorldReady&&(!UsesSourceWorld||cacheSourceGeneration==sourceWorld.ArchiveWorldGeneration)))return;enabledWorld=value;if(!value){HideCacheBackpacks();CancelArchivePreparation();foreach(string id in AllWeaponWorldIds)weapons.SetWorldWeaponVisible(id,false);if(explosives!=null)foreach(string id in AllGrenadeWorldIds)explosives.SetWorldItemVisible(id,false);if(foods!=null)foreach(string id in foodInstances){var item=foods.InspectItem(id);foods.SetWorldItemVisible(id,item!=null&&item.Owner!=null);}return;}
+            if(!Ready||!map.IsLoaded||!weapons.Ready||explosives!=null&&!explosives.Ready||foods!=null&&!foods.Ready)return;
+            if(!prepared||currentMap!=map.MapId)PrepareMap();
+            StreamVisuals();
+        }
+        public void ResetMapLoot()
+        {CancelArchivePreparation();ClearWorldCopies();prepared=false;activation=null;sites=new Vector3[0];sourceSites=new Float3[0];if(enabledWorld&&Ready&&map.IsLoaded&&weapons.Ready&&(explosives==null||explosives.Ready))PrepareMap();}
+        public void WithdrawMap()
+        {SetWorldEnabled(false);CancelArchivePreparation();ClearWorldCopies();prepared=false;activation=null;sites=new Vector3[0];sourceSites=new Float3[0];}
+        void CancelArchivePreparation(){preparationVersion++;if(preparingArchive!=null){StopCoroutine(preparingArchive);preparingArchive=null;}}
+        void ClearWorldCopies(){ClearCacheBackpacks();if(weapons!=null&&weapons.Ready)foreach(string id in AllWeaponWorldIds)weapons.DespawnWorldWeapon(id);if(explosives!=null)foreach(string id in AllGrenadeWorldIds)explosives.RetireUnownedWorldItem(id);if(foods!=null)foreach(string id in foodInstances){var item=foods.InspectItem(id);if(item!=null&&item.Owner!=null){foods.SetWorldItemVisible(id,true);continue;}foods.SetWorldItemVisible(id,false);withdrawnFoods.Add(id);}RetireWithdrawnFoods();foodInstances.Clear();instances.Clear();grenadeInstances.Clear();baselineWeapons.Clear();baselineGrenades.Clear();baseline.Clear();baselineEager.Clear();ClearRangeGrapple();}
+        void RetireWithdrawnFoods()
+        {
+            if(foods==null||withdrawnFoods.Count==0)return;foreach(string id in new List<string>(withdrawnFoods))
+            {var snapshot=foods.InspectItem(id);if(snapshot==null||snapshot.Owner!=null||foods.RetireUnownedWorldItem(id))withdrawnFoods.Remove(id);}
+        }
+        void PrepareMap()
+        {
+            if(preparingArchive!=null)return;
+            if(UsesSourceWorld&&!SourceWorldReady){PlacementMode="awaiting-source-world";if(sourceWorld.ArchiveWorldFailure!=null)Failure="Source archive world: "+sourceWorld.ArchiveWorldFailure;return;}
+            ClearWorldCopies();currentMap=map.MapId;row=null;foreach(var candidate in data.maps)if(candidate.mapId==currentMap){row=candidate;break;}
+            if(row==null)row=MagnumFallbackRow(currentMap);
+            if(row==null&&currentMap.StartsWith("archive:",StringComparison.Ordinal)||row!=null&&row.sourceSha256!=map.SourceSha256){Failure="Actual source cache row does not match loaded map: "+currentMap;prepared=false;sites=new Vector3[0];return;}
+            Failure=null;
+            prepared=false;SpawnedCount=UnsupportedDraws=RejectedSites=InitialAcceptedSites=FallbackSites=SparseAddedSites=InitialRejectedFloor=InitialRejectedOutside=InitialRejectedHazard=0;clock=visualClock=0;sourceSites=new Float3[0];SparseDiagnostics=null;Physics.SyncTransforms();
+            if(UsesSourceWorld){cacheSourceGeneration=-1;preparingArchive=StartCoroutine(PrepareArchiveGuard(++preparationVersion,currentMap,sourceWorld.ArchiveWorldGeneration));return;}
+            prepared=true;
+            var validated=new List<Vector3>();
+            if(row!=null&&row.sites!=null)foreach(var source in row.sites)
+            {Vector3 p=map.transform.TransformPoint(V(source.position)),floor;if(TryFloor(p+Vector3.up*1.1f,4,out floor)&&!Outside(floor))validated.Add(floor+Vector3.up*.65f);else RejectedSites++;}
+            PlacementMode=row==null?"source-builtin-rack":"source-exported-cache-sites";
+            if(row!=null&&validated.Count==0){PlacementMode="source-native-floor-grid";BuildFallbackGrid(validated);}
+            sites=validated.ToArray();var positions=new Float3[sites.Length];for(int i=0;i<sites.Length;i++)positions[i]=F(sites[i]);activation=new R23CacheActivation(positions);
+            if(row==null)SpawnReviewCopies();else Activate(true);
+            StreamVisuals();
+        }
+        bool CurrentArchivePreparation(long version,string mapId,long generation)
+        {return preparationVersion==version&&enabledWorld&&map!=null&&map.IsLoaded&&map.MapId==mapId&&sourceWorld!=null&&SourceWorldReady&&sourceWorld.ArchiveWorldMapId==mapId&&sourceWorld.ArchiveWorldGeneration==generation;}
+        IEnumerator PrepareArchiveGuard(long version,string mapId,long generation)
+        {
+            // Match the source deferred physics boundary before querying a newly
+            // reset map. In particular, ResetRig restores destructibles this frame.
+            yield return new WaitForFixedUpdate();
+            var work=PrepareArchiveSites(version,mapId,generation);
+            try{
+                while(CurrentArchivePreparation(version,mapId,generation)){
+                    bool moved;object current=null;
+                    try{moved=work.MoveNext();if(moved)current=work.Current;}catch(Exception error){Failure="Source archive loot: "+error.Message;prepared=false;yield break;}
+                    if(!moved)yield break;yield return current;
+                }
+            }
+            finally{var dispose=work as IDisposable;if(dispose!=null)dispose.Dispose();if(preparationVersion==version)preparingArchive=null;}
+        }
+        IEnumerator PrepareArchiveSites(long version,string mapId,long generation)
+        {
+            var info=sourceWorld.ArchiveWorldInfo;var plan=sourceWorld.ArchiveWorldPlan;
+            if(row==null||info.Id!=mapId||info.SourceSha256!=row.sourceSha256||info.CacheFingerprint!=row.cacheFingerprint)throw new InvalidOperationException("Actual cache/source-world binding differs");
+            var accepted=new List<Float3>();int work=0;Physics.SyncTransforms();
+            if(row.sites!=null)foreach(var candidate in row.sites){
+                Float3 source,site;R23LootSiteRejection rejection;
+                if(!sourceWorld.TryArchiveWorldToSource(map.transform.TransformPoint(V(candidate.position)),out source))throw new InvalidOperationException("Actual source map frame unavailable");
+                if(R23SparseLoot.TryInitialSite(source,sourceWorld.ArchiveWorldFloor,sourceWorld.ArchiveWorldOutside,sourceWorld.ArchiveWorldHazard,out site,out rejection))accepted.Add(site);
+                else{RejectedSites++;if(rejection==R23LootSiteRejection.Floor)InitialRejectedFloor++;else if(rejection==R23LootSiteRejection.Outside)InitialRejectedOutside++;else InitialRejectedHazard++;}
+                if(++work%32==0)yield return null;
+            }
+            InitialAcceptedSites=accepted.Count;PlacementMode="source-exported-cache-sites";
+            // archive_gameplay_r8 uses every third EXACT source loot_point only
+            // when prepared/R17 sites yielded none. Never run a second grid here.
+            var loot=plan.Loot;
+            if(accepted.Count==0){PlacementMode="source-native-floor-grid";for(int i=0;i<loot.Length;i+=3)accepted.Add(loot[i]);FallbackSites=accepted.Count;}
+            var sparse=new R23SparseLootResult();SparseDiagnostics=sparse;
+            var supplement=R23SparseLoot.AddSites(accepted,plan.Spawns,loot,info.BoundsMin,info.BoundsMax,sourceWorld.ArchiveWorldFloor,sourceWorld.ArchiveWorldOutside,sourceWorld.ArchiveWorldHazard,sourceWorld.ArchiveWorldSafeSpawn,sparse);
+            try{while(supplement.MoveNext())yield return supplement.Current;}finally{var dispose=supplement as IDisposable;if(dispose!=null)dispose.Dispose();}
+            if(!CurrentArchivePreparation(version,mapId,generation))yield break;
+            SparseAddedSites=sparse.Added;var worldPositions=new Vector3[accepted.Count];
+            for(int i=0;i<accepted.Count;i++)if(!sourceWorld.TryArchiveSourceToWorld(accepted[i],out worldPositions[i]))throw new InvalidOperationException("Actual accepted source map frame unavailable");
+            sourceSites=accepted.ToArray();sites=worldPositions;var positions=new Float3[sites.Length];for(int i=0;i<sites.Length;i++)positions[i]=F(sites[i]);activation=new R23CacheActivation(positions);cacheSourceGeneration=generation;prepared=true;
+            SpawnBaselineArchive(loot);Activate(true);StreamVisuals();
+        }
+        void BuildFallbackGrid(List<Vector3> target)
+        {
+            Vector3 low=V(row.solidMin),high=V(row.solidMax),boundLow=V(row.boundsMin),boundHigh=V(row.boundsMax);
+            float minX=Mathf.Max(low.x,boundLow.x+.6f),maxX=Mathf.Min(high.x,boundHigh.x-.6f),minZ=Mathf.Max(low.z,boundLow.z+.6f),maxZ=Mathf.Min(high.z,boundHigh.z-.6f);
+            var points=new List<Vector3>();float top=high.y+5,depth=top-(low.y-5);
+            // Original loops Godot Z ascending; the one handedness reflection reverses Unity Z.
+            for(int z=0;z<19;z++)for(int x=0;x<19;x++)
+            {Vector3 floor,p=map.transform.TransformPoint(new Vector3(minX+(maxX-minX)*(x+.5f)/19,top,maxZ-(maxZ-minZ)*(z+.5f)/19));if(TryFloor(p,depth,out floor)&&!Outside(floor)&&Room(floor))points.Add(floor+Vector3.up*.6f);}
+            for(int i=0;i<points.Count;i+=3)target.Add(points[i]);
+        }
+        static MapRow MagnumFallbackRow(string id){
+            // Exact converted manifests bound to frozen R6 semantics and the shipped
+            // map sourceSha256. Source local Z is reflected once, as in caches.json.
+            // These two archives have no r17 row in the older three-map cache export.
+            if(id=="archive:magnum-chaosvr")return new MapRow{mapId=id,sourceSha256="004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",cacheFingerprint="1a3aad846543d24f6c20d5d2a96cfc3c7e7d0e93fca429f1427f89f8f2728dca",boundsMin=new[]{-510.037445068359f,3.64715480804443f,-460.537445068359f},boundsMax=new[]{431.037445068359f,60.1116676330566f,480.537445068359f},solidMin=new[]{-300f,-76.8562164306641f,-305.519653320313f},solidMax=new[]{300f,266.547912597656f,300f}};
+            if(id=="archive:magnum-3-chaosvr")return new MapRow{mapId=id,sourceSha256="466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",cacheFingerprint="8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",boundsMin=new[]{-259.999877929688f,-21.4009952545166f,-359.499938964844f},boundsMax=new[]{285.999816894531f,29.0483837127686f,390.499938964844f},solidMin=new[]{-300f,-76.8562164306641f,-305.519653320313f},solidMax=new[]{300f,173.143783569336f,300f}};
+            return null;
+        }
+        void SpawnReviewCopies()
+        {
+            // One source28 kit. The source deferred mesh-bound settler, rather
+            // than a preliminary short ray/rejection, resolves its authored grid.
+            foreach(var slot in BaselineSlots(false))SpawnBaseline(slot,map.Spawn+V3(R23BaselineLootRecipe.BuiltinOffset(slot.GridIndex)));
+        }
+        void Activate(bool initial)
+        {
+            if(activation==null||supplies!=null&&!supplies.Ready)return;Float3[] players=initial?new[]{F(map.WarmupSpawn),F(map.GameSpawn),F(actor.position)}:new[]{F(actor.position)};
+            foreach(int site in activation.Activate(players,initial)){foreach(var draw in R24MixedLootRecipe.Cache(currentMap,site))
+            {
+                if(draw.Category==R24CacheCategory.Heal?foods==null||!foods.Ready:!Supported(draw.Catalog)){UnsupportedDraws++;continue;}Vector3 at=sites[site];
+                foreach(float radius in new[]{1.05f,.65f,.3f})
+                {double angle=Math.PI*2*draw.Slot/6;Vector3 desired=at+new Vector3((float)Math.Cos(angle)*radius,0,-(float)Math.Sin(angle)*radius),floor;if(!TryFloor(desired+Vector3.up*.7f,2.8f,out floor)||Outside(floor))continue;desired.y=floor.y+.65f;if(Clear(at+Vector3.up*.5f,desired)){at=desired;break;}}
+                if(draw.Category==R24CacheCategory.Heal)SpawnCacheFood(draw.FoodKind,at);else Spawn(draw.Catalog,draw.Stars,at);
+            }if(R24MixedLootRecipe.Backpack(currentMap,site))SpawnCacheBackpack(site);
+            }
+        }
+        void SpawnCacheFood(string kind,Vector3 at)
+        {
+            string id="r24-cache/food/"+(++foodSerial);if(!foods.Spawn(id,kind,at,false))return;
+            foodInstances.Add(id);SpawnedCount++;foods.SetWorldItemVisible(id,false);
+            long version=preparationVersion,generation=cacheSourceGeneration;string capturedMap=currentMap;
+            foods.SettleWorldItem(id,delegate{return map!=null&&map.IsLoaded&&enabledWorld&&SourceWorldReady;},
+                delegate{return this!=null&&preparationVersion==version&&currentMap==capturedMap&&cacheSourceGeneration==generation&&foodInstances.Contains(id);});
+        }
+        string Profile(int catalog){foreach(string id in weapons.AvailableWeaponIds)if(R23WeaponPickupRules.CatalogIndex(id)==catalog)return id;return null;}
+        bool Supported(int catalog){return R23LootRecipe.GrenadeKind(catalog)!=null?explosives!=null:Profile(catalog)!=null;}
+        void Spawn(int catalog,int stars,Vector3 at)
+        {string id;if(!SpawnGround(catalog,stars,at,out id))return;if(R23LootRecipe.GrenadeKind(catalog)==null)instances.Add(id);else grenadeInstances.Add(id);SpawnedCount++;}
+        bool SpawnGround(int catalog,int stars,Vector3 at,out string id,bool visible=false)
+        {string kind=R23LootRecipe.GrenadeKind(catalog);if(kind!=null){kind=Ashfall.Integration.Playable.FlashSmoke.R25Throwables.LootKind(kind,currentMap,unchecked((int)grenadeSerial),0,explosives==null?null:explosives.KindAllowed);id="r6-ground/grenade/"+(++grenadeSerial);return explosives!=null&&explosives.SpawnWorldItem(id,kind,stars,at,Quaternion.identity,visible);}return weapons.SpawnWorldWeapon(Profile(catalog),stars,at,Quaternion.identity,out id,visible);}
+        void Update()
+        {
+            RetireWithdrawnFoods();
+            if(!enabledWorld||!Ready||!map.IsLoaded||!weapons.Ready||explosives!=null&&!explosives.Ready||foods!=null&&!foods.Ready)return;
+            if(preparingArchive!=null)return;
+            if(UsesSourceWorld&&!SourceWorldReady){if(!prepared)PlacementMode="awaiting-source-world";return;}
+            if(!prepared||currentMap!=map.MapId||UsesSourceWorld&&cacheSourceGeneration!=sourceWorld.ArchiveWorldGeneration){PrepareMap();return;}
+            RefreshRangeGrapple();clock+=Time.deltaTime;visualClock+=Time.deltaTime;if(clock>=.2f){clock=0;Activate(false);}if(visualClock>=.35f){visualClock=0;StreamVisuals();}
+        }
+        void StreamVisuals()
+        {
+            bool available=enabledWorld&&prepared&&SourceWorldReady&&(!UsesSourceWorld||cacheSourceGeneration==sourceWorld.ArchiveWorldGeneration);StreamCacheBackpacks(available);int shown=0;foreach(string id in AllWeaponWorldIds)
+            {string instance;Vector3 center,at;Quaternion rotation;if(!weapons.TryReadWorldWeapon(id,out instance,out center,out at,out rotation))continue;bool near=available&&(baselineEager.Contains(id)||(at-actor.position).sqrMagnitude<1600);
+                if(!near)weapons.SetWorldWeaponVisible(id,false);else if(!weapons.IsWorldWeaponVisible(id)&&shown<12){if(weapons.SetWorldWeaponVisible(id,true))shown++;}}
+            if(explosives!=null)foreach(string id in AllGrenadeWorldIds){Vector3 at;Quaternion rotation;bool owned;if(!explosives.TryReadWorldItem(id,out at,out rotation,out owned)||owned)continue;bool near=available&&(baselineEager.Contains(id)||(at-actor.position).sqrMagnitude<1600);if(!near)explosives.SetWorldItemVisible(id,false);else if(!explosives.IsWorldItemVisible(id)&&shown<12){if(explosives.SetWorldItemVisible(id,true))shown++;}}
+            if(foods!=null)foreach(string id in foodInstances){Vector3 at;Quaternion rotation;bool owned;if(!foods.TryReadWorldItem(id,out at,out rotation,out owned)||owned)continue;foods.SetWorldItemVisible(id,available&&(at-actor.position).sqrMagnitude<1600);}
+        }
+        bool Terrain(Collider c){return c!=null&&c.gameObject.layer==0&&c.transform.IsChildOf(map.transform);}
+        bool TryFloor(Vector3 origin,float depth,out Vector3 floor)
+        {
+            if(UsesSourceWorld){floor=Vector3.zero;Float3 source,hit;return SourceWorldReady&&sourceWorld.TryArchiveWorldToSource(origin,out source)&&sourceWorld.ArchiveWorldFloor(source,depth,out hit)&&sourceWorld.TryArchiveSourceToWorld(hit,out floor);}
+            floor=Vector3.zero;float nearest=Single.PositiveInfinity;RaycastHit first=default(RaycastHit);bool found=false;
+            foreach(var hit in Physics.RaycastAll(origin,Vector3.down,depth,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(Terrain(hit.collider)&&hit.distance<nearest){nearest=hit.distance;first=hit;found=true;}
+            if(!found||first.normal.y<=.7f)return false;floor=first.point;return true;
+        }
+        bool Room(Vector3 floor)
+        {
+            if(UsesSourceWorld){Float3 source;return SourceWorldReady&&sourceWorld.TryArchiveWorldToSource(floor,out source)&&sourceWorld.ArchiveWorldRoom(source);}
+            foreach(var offset in new[]{Vector3.right*.4f,Vector3.left*.4f,Vector3.forward*.4f,Vector3.back*.4f}){Vector3 other;if(!TryFloor(floor+offset+Vector3.up*.6f,1.2f,out other)||Mathf.Abs(other.y-floor.y)>.3f)return false;}
+            const float height=1.9288f,radius=.3f;foreach(var c in Physics.OverlapCapsule(floor+Vector3.up*(.02f+radius),floor+Vector3.up*(height+.02f-radius),radius,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(Terrain(c))return false;return true;
+        }
+        bool Outside(Vector3 world)
+        {if(UsesSourceWorld){Float3 source;return !SourceWorldReady||!sourceWorld.TryArchiveWorldToSource(world,out source)||sourceWorld.ArchiveWorldOutside(source);}if(row==null)return false;Vector3 warmup=world-map.WarmupSpawn;if(Mathf.Abs(warmup.y)<=4&&warmup.x*warmup.x+warmup.z*warmup.z<=64)return false;Vector3 p=map.transform.InverseTransformPoint(world),low=V(row.solidMin),high=V(row.solidMax);if(p.y<low.y-25||p.y>high.y+100)return true;if(currentMap==R23MapCatalog.AlphaId)return false;low=V(row.boundsMin);high=V(row.boundsMax);return p.x<low.x-10||p.x>high.x+10||p.z<low.z-10||p.z>high.z+10;}
+        bool Clear(Vector3 a,Vector3 b){Vector3 v=b-a;if(v.sqrMagnitude<1e-10f)return true;foreach(var h in Physics.RaycastAll(a,v.normalized,v.magnitude,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(Terrain(h.collider))return false;return true;}
+        void OnDestroy(){CancelArchivePreparation();ClearWorldCopies();}
+        static Float3 F(Vector3 p){return new Float3(p.x,p.y,p.z);}
+        static Vector3 V3(Float3 p){return new Vector3(p.X,p.Y,p.Z);}
+        static Vector3 V(float[] p){if(p==null||p.Length!=3)throw new InvalidOperationException("source cache vector");return new Vector3(p[0],p[1],p[2]);}
+        [Serializable]sealed class Manifest{public int version=0;public string contentId="",sourceManifestSha256="";public MapRow[] maps=null;}
+        [Serializable]sealed class MapRow{public string mapId="",sourceSha256="",cacheFingerprint="";public Site[] sites=null;public float[] boundsMin=null,boundsMax=null,solidMin=null,solidMax=null;}
+        [Serializable]sealed class Site{public int sourceIndex=0;public float[] position=null;}
+    }
+}
+#endif

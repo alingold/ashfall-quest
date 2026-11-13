@@ -1,0 +1,182 @@
+{
+  "parts": [
+    {
+      "material": 0,
+      "turret": false,
+      "triangles": 60,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 1,
+      "turret": false,
+      "triangles": 252,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 3,
+      "turret": false,
+      "triangles": 12,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 3,
+      "turret": false,
+      "triangles": 24,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 2,
+      "turret": false,
+      "triangles": 96,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 2,
+      "turret": false,
+      "triangles": 720,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 0,
+      "turret": true,
+      "triangles": 12,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 2,
+      "turret": true,
+      "triangles": 372,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 4,
+      "turret": true,
+      "triangles": 12,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 1,
+      "turret": true,
+      "triangles": 240,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 4,
+      "turret": false,
+      "triangles": 240,
+      "range": 0,
+      "margin": 2,
+      "small": false,
+      "shadows": true
+    },
+    {
+      "material": 5,
+      "turret": false,
+      "triangles": 84,
+      "range": 55,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 5,
+      "turret": true,
+      "triangles": 84,
+      "range": 55,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 6,
+      "turret": true,
+      "triangles": 384,
+      "range": 20,
+      "margin": 2,
+      "small": true,
+      "shadows": false
+    },
+    {
+      "material": 7,
+      "turret": true,
+      "triangles": 96,
+      "range": 20,
+      "margin": 2,
+      "small": true,
+      "shadows": false
+    },
+    {
+      "material": 6,
+      "turret": false,
+      "triangles": 384,
+      "range": 20,
+      "margin": 2,
+      "small": true,
+      "shadows": false
+    },
+    {
+      "material": 6,
+      "turret": false,
+      "triangles": 384,
+      "range": 55,
+      "margin": 2,
+      "small": false,
+      "shadows": false
+    },
+    {
+      "material": 7,
+      "turret": false,
+      "triangles": 972,
+      "range": 20,
+      "margin": 2,
+      "small": true,
+      "shadows": false
+    },
+    {
+      "material": 8,
+      "turret": false,
+      "triangles": 24,
+      "range": 20,
+      "margin": 2,
+      "small": true,
+      "shadows": false
+    }
+  ],
+  "sourcePrimitiveInstances": {
+    "box": 39,
+    "cylinder10": 15,
+    "plate28tri": 6,
+    "torus16x6": 4,
+    "cylinder8": 26
+  }
+}

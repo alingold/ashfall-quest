@@ -1,0 +1,120 @@
+{
+  "id": "spr",
+  "file": "m4_rifle.glb",
+  "scale": 0.03802722120109379,
+  "anchor": [
+    0,
+    5.66,
+    -5
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    10
+  ],
+  "bolt": [
+    6,
+    7
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.69
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "variant": "Latest explicit user request: new m4_rifle as SEMIAUTOMATIC SPR with game rectangular2x binocular-correct scope above rail. Source magazine and rear charging handle separated. Existing SPR recovery, cadence, capacity10 and magazineUP/handleBACK reload retained. Not a bolt-action conversion.",
+  "rotation": [
+    [
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      -1
+    ]
+  ],
+  "offset": [
+    0,
+    -0.17023407199819085,
+    -0.16513610600546894
+  ],
+  "source": "[local development path]",
+  "source_sha256": "54fd8d3b4fe35b50b7b2b926789eb5337a73f137223425f004bf5da38db614bf",
+  "output_sha256": "e104178daebac65fc3af45da04061b1afd7c586167aece6fafea2fd245cb0327",
+  "asset": {
+    "author": "Charlie Baldwin (https://sketchfab.com/charlieatron)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/m4-rifle-5029ec1a279e4834be88d5c46dae0515",
+    "title": "M4 Rifle"
+  },
+  "magazine_center": [
+    0,
+    -0.05928609032504199,
+    -0.11562737019076344
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 8144,
+  "body_triangles": 7278,
+  "magazine_triangles": 220,
+  "moving_triangles": 646,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.01908418843378235,
+    -0.14370264206193006,
+    -0.6899999999999992
+  ],
+  "bounds_max": [
+    0.03399807518395734,
+    0.07482031975466535,
+    0.21486017103856883
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 8144,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.013852649995610476,
+    0.0447209544579379,
+    0.005055178923243711
+  ],
+  "correction_090": {
+    "sourceChargingHandleNodes": [
+      17,
+      19
+    ],
+    "matchedTriangles": 646,
+    "bodyTriangles": 7278,
+    "movingTriangles": 646,
+    "movingRest": [
+      0,
+      0,
+      0
+    ],
+    "method": "Exact source-transformed triangle matching. Both chargingHandle children moved together; previous misidentified side part returned to body. Position, normals, UV and materials retained."
+  }
+}

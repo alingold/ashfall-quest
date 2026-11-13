@@ -1,0 +1,70 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using UnityEngine;
+using Unity.Networking.Transport.Relay;
+using Ashfall.Integration.Playable.Online;
+namespace Ashfall.Integration.Playable.Networking
+{
+    public sealed partial class R24LanSession
+    {
+        R26OnlineRoomFlow online;
+        public OnlineRoomState OnlineState { get { return online==null?OnlineRoomState.Idle:online.State; } }
+        public string OnlineCode { get { return online==null||online.Room==null?"":online.Room.Code; } }
+        public string OnlineReason { get { return online==null?null:online.Reason; } }
+        public bool OnlineActive { get { return online!=null && OnlineState!=OnlineRoomState.Idle && OnlineState!=OnlineRoomState.Failed; } }
+        public event Action OnlineChanged;
+        public void HostOnline() { BeginOnline(true,""); }
+        public void JoinOnline(string code) { BeginOnline(false,code); }
+        void BeginOnline(bool host,string code)
+        {
+            if(OnlineActive) return;
+            if(!new R26UnityOnlineRooms().IsConfigured)
+            {
+                EnsureOnlineFlow(); online.Begin(host,code,Time.realtimeSinceStartupAsDouble);
+                Error(OnlineReason); return;
+            }
+            if(host && (root==null||!root.Ready||!root.Map.IsLoaded)) { Error("Wait for the map to finish loading"); return; }
+            Leave();
+            EnsureOnlineFlow();
+            online.Begin(host,code,Time.realtimeSinceStartupAsDouble);
+            if(OnlineReason!=null) Error(OnlineReason);
+        }
+        void EnsureOnlineFlow()
+        {
+            if(online==null)
+            {
+                online=new R26OnlineRoomFlow(new R26UnityOnlineRooms());
+                online.Changed+=delegate { if(OnlineChanged!=null) OnlineChanged(); };
+            }
+        }
+        void PumpOnline()
+        {
+            if(online==null) return;
+            online.Pump(Time.realtimeSinceStartupAsDouble);
+            if(online.Room!=null && peer==null)
+            {
+                try
+                {
+                    var data=(RelayServerData)online.Room.TransportData;
+                    if(online.Hosting) StartHost(data);
+                    else
+                    {
+                        peer=R24LanPeer.JoinRelay(data,"Player",Time.realtimeSinceStartupAsDouble);
+                        BindConstructionPresentation(); BindExplosivePresentation(); peer.Lobby.Changed+=Publish;
+                        addresses="Room code: "+online.Room.Code; Publish();
+                    }
+                    if(peer==null) online.Fail("Cannot create the online room. Please try again");
+                }
+                catch(Exception) { Close(); online.Fail("Cannot connect to online play. Please try again"); }
+            }
+            if(peer!=null && online.Room!=null && peer.Lobby.State==R24LanLobbyState.Connected && OnlineState!=OnlineRoomState.Connected) online.MarkConnected();
+            if(OnlineState==OnlineRoomState.Failed)
+            {
+                string reason=OnlineReason;
+                if(peer!=null) { Close(); online.Fail(reason); }
+                Error(reason);
+            }
+        }
+    }
+}
+#endif

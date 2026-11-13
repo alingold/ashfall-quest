@@ -1,0 +1,68 @@
+{
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/melee_sword.gd": "8fc75cdc34b3c50f957efc81bf13db6a16ea9852f9cf97d3b18b652b0d2b4283",
+    "scripts/speed_sword.gd": "14d3959e4428cdaaf6d9d3ff8cd993de1df43f176e726bc9596b539dbcb8675f",
+    "scripts/energy_sword.gd": "905e8c7e7f8f2f7a4de74c5c3f58a797542166f5906c1057f3298887dcfc2a2c",
+    "scripts/blade_assets.gd": "1f0cad687af2006bdb7dc89283f45a667a35e1e7e8e35a584a6a66601f91bad2",
+    "scripts/downloaded_blade_model.gd": "2aba027841487033aa30bc378410f92997233db1adb206a43ef51aa682d5caeb",
+    "scripts/model_variants.gd": "aa993d206ed814c934dbb0f93ccda7638e26da2296465e613634cbc477d41ba3",
+    "scripts/measurement_calibration.gd": "1d1306b6da2a3c3d5685e7aedcbab402dbcec527b08fc8f88a64c3737ee805eb",
+    "scripts/directional_shield.gd": "84f29c3317812e405c52e03bad16e55e00eeae9361d27ecef79b4354f4387017",
+    "scripts/blade_sweep099.gd": "93a0b4114fe198395132d71841e551041de9e2c2f93f1241c115796c828aa062",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "assets/materials/field_guard_064.gdshader": "880a9447218d9cbcc46aef1f26b6c0bac73205d811f1a16cd7f9a6ce3024dd98",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/models/download_katana_alt/model.glb": "3d73c2755762b910e007c736634cdd5af6330aa19c295abb448a30c953ffe8cd",
+    "assets/models/download_katana_alt/asset-provenance.json": "8375fcfbd230ca586b622d42cd0dff2951cdd662321f0e60eeaf148a6f8eef9f",
+    "assets/models/download_katana_alt/ATTRIBUTION.txt": "a309edbaff892bd303d2bb6cc6e128689017c90db1a9cd70cfb1c12779e07d06",
+    "assets/ui/catalog094/weapon_14.png": "37298a9ca15d3eaebd43f41b44fda2cb48fe17862dc3e5dd37ad37b2c08643c8",
+    "assets/models/download_excalibur/model.glb": "29828083bd22ad6073c33be7936e52a28e38cdf651db25c345b85b30f06376b8",
+    "assets/models/download_excalibur/asset-provenance.json": "65632152ca75aaac48ef975e4e7970b098ef0d42ab0d3e979d29dd515bb748e7",
+    "assets/models/download_excalibur/ATTRIBUTION.txt": "519d760dce1ecdf347bca877f8f7fcbf91209e225fcae21f3dbdf06e8a74f9ad",
+    "assets/ui/catalog094/weapon_15.png": "e003577ebcd629ddb76fde0f487b339244a51a827a37dea20e974d9bec496194",
+    "assets/models/download_katana/model.glb": "194dae5ab2f13aaa197905ea49475256bf7983b4a006f190a14aa7c4ba19f87d",
+    "assets/models/download_katana/asset-provenance.json": "0c347933a8e216a12a05eb4c1afda375202df539458d791c4448a9a27438d653",
+    "assets/models/download_katana/ATTRIBUTION.txt": "ed3aabaa438191731f63417d83bab7a88a1ea9185a41ac019a7074096fa5af38",
+    "assets/ui/catalog094/weapon_16.png": "5d0f9aa354a9b91aa7e45b5ae3ae1377896de01c2c38ca0961b83cda04cd86c9",
+    "assets/audio/reference099/isolated_sword_swing_00.wav": "4119e56ba8017eb5d20ccebc6bafb39c261ad1a37c0562b3df2172daff526b2e",
+    "assets/audio/reference097/katana_shield_sustain_00.wav": "21c14e02ad188a6b9b6264c713719e6b2773e421d5cd58d9fd58907285403c12",
+    "assets/audio/reference096/katana_shield_raise_00.wav": "a3bf49991f9b104d0b241543e9e35a601c814c5d24ec7979e5a66798f6c58327",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/audio/reference097/ATTRIBUTION.txt": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+    "assets/audio/reference096/ATTRIBUTION.txt": "9adf8f7b2a50f1394806585e04eca1fad6f6d491e77a7f7423ebc630684f9697"
+  },
+  "assets": [
+    {
+      "name": "katana",
+      "vertices": 4164,
+      "triangles": 1388
+    },
+    {
+      "name": "excalibur",
+      "vertices": 3060,
+      "triangles": 1020
+    },
+    {
+      "name": "cyberblade",
+      "vertices": 11916,
+      "triangles": 3972
+    }
+  ],
+  "audio": {
+    "blade-swing": "assets/audio/reference099/isolated_sword_swing_00.wav",
+    "katana-shield": "assets/audio/reference097/katana_shield_sustain_00.wav",
+    "katana-raise": "assets/audio/reference096/katana_shield_raise_00.wav"
+  },
+  "sourceMeasurementFactor": 1.1566265060240963,
+  "sourceShieldRadii": [
+    0.5640636144578313,
+    0.7050795180722892
+  ],
+  "engine": false,
+  "gpu": false,
+  "device": false
+}

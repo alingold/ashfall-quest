@@ -1,0 +1,99 @@
+Shader "Ashfall/R23LobbySurface"
+{
+ Properties { _Night("Night",Float)=0 _BaseColor("Source color",Color)=(1,1,1,1) _Metallic("Source metallic",Float)=0 _Roughness("Source roughness",Float)=.48 _Emission("Source emission",Color)=(0,0,0,1) _Facade("Source facade recipe",Float)=0 }
+ SubShader {
+  Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Opaque" }
+  Pass {
+   Tags { "LightMode"="UniversalForward" }
+   HLSLPROGRAM
+   #pragma vertex Vert
+   #pragma fragment Frag
+   #pragma target 3.5
+   #pragma multi_compile_instancing
+   #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+   #pragma multi_compile _ _CLUSTER_LIGHT_LOOP
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+   CBUFFER_START(UnityPerMaterial)
+   float4 _BaseColor,_Emission;float _Metallic,_Roughness,_Facade,_Night;
+   CBUFFER_END
+   struct Attributes {float4 positionOS:POSITION;float3 normalOS:NORMAL;UNITY_VERTEX_INPUT_INSTANCE_ID};
+   struct Varyings {float4 positionCS:SV_POSITION;float3 positionWS:TEXCOORD0;float3 normalWS:TEXCOORD1;UNITY_VERTEX_OUTPUT_STEREO};
+   Varyings Vert(Attributes a) {
+    Varyings o;UNITY_SETUP_INSTANCE_ID(a);UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+    o.positionWS=TransformObjectToWorld(a.positionOS.xyz);o.positionCS=TransformWorldToHClip(o.positionWS);
+    // Source MODEL_NORMAL_MATRIX*NORMAL is interpolated without normalization.
+    o.normalWS=mul((float3x3)transpose(GetWorldToObjectMatrix()),a.normalOS);return o;
+   }
+   void R23Facade(float3 wall_position,float3 wall_normal,out float3 albedo,out float3 emission) {
+    // Exact lobby_facade_091.gdshader: all coordinates are GODOT WORLD coordinates.
+    float horizontal=abs(wall_normal.x)>0.5?wall_position.z:wall_position.x;
+    float2 grid=float2(horizontal*0.62,wall_position.y*0.64);
+    float2 cell=frac(grid);
+    float pane=step(0.16,cell.x)*step(cell.x,0.84)*step(0.20,cell.y)*step(cell.y,0.80)*(1.0-step(0.5,abs(wall_normal.y)));
+    float occupied=step(0.3,frac(sin(dot(floor(grid),float2(12.9898,78.233)))*43758.5453));
+    albedo=lerp(float3(0.17,0.22,0.29),float3(0.025,0.15,0.23),pane);
+    emission=float3(0.015,0.11,0.17)*pane*occupied;
+   }
+   float3 R23WorkingColor(float3 linearColor) {
+    #ifdef UNITY_COLORSPACE_GAMMA
+     return LinearToSRGB(linearColor);
+    #else
+     return linearColor;
+    #endif
+   }
+   half4 Frag(Varyings i):SV_Target {
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+    float3 n=normalize(i.normalWS),albedo=_BaseColor.rgb;
+    float metallic=_Metallic,roughness=_Roughness;
+    // Existing R23Lobby binding is source sRGB emission color * authored gain 1.5.
+    // Undo that multiply before source_color decoding, then apply energy in linear.
+    float3 emission=SRGBToLinear(_Emission.rgb/1.5)*1.5;
+    if(_Facade>.5) {
+     float3 sourceAlbedo;
+     R23Facade(i.positionWS*float3(1,1,-1),i.normalWS*float3(1,1,-1),sourceAlbedo,emission);
+     albedo=R23WorkingColor(sourceAlbedo);metallic=0.6;roughness=0.43;
+    }
+    if(_Night>.5){
+     float3 local=i.positionWS-float3(1000,0,-1000);
+     if(_Facade>.5){
+      float horizontal=abs(n.x)>.5?local.z:local.x;
+      float2 grid=float2(horizontal*.62,local.y*.64),cell=frac(grid),id=floor(grid);
+      float h=frac(sin(dot(id,float2(12.9898,78.233)))*43758.5453);
+      float pane=step(.2,cell.x)*step(cell.x,.8)*step(.23,cell.y)*step(cell.y,.77)*(1-step(.5,abs(n.y)));
+      float occupied=step(.69,h);
+      albedo=float3(.025,.032,.048);metallic=.1;roughness=.8;
+      emission=lerp(float3(.055,.14,.17),float3(.27,.13,.045),step(.85,h))*pane*occupied;
+      emission*=.93+.07*sin(_Time.y*.2+h*18);
+     }else if(n.y>.8){
+      albedo*=.36;metallic=.18;roughness=.68;
+      float ripples=.65+.35*sin(local.z*28+sin(local.x*8));
+      float streak=pow(saturate(1-abs(abs(local.x)-5.5)*1.8),10)*(.4+.6*pow(saturate(sin(local.z*.9)),8));
+      emission+=float3(.015,.085,.078)*streak*ripples;
+      emission+=float3(.035,.014,.004)*exp(-dot(local.xz-float2(1.35,.65),local.xz-float2(1.35,.65))*.12);
+     }
+     if(_Facade<.5 && abs(n.y)<.5)emission*=.96+.04*sin(local.y*16-_Time.y*.35);
+     float groundHaze=exp(-max(local.y,0)*.65)*saturate(length(local.xz)*.008);
+     emission+=float3(.004,.009,.012)*groundHaze;
+    }
+    SurfaceData surface=(SurfaceData)0;
+    surface.albedo=albedo;surface.alpha=1;surface.metallic=saturate(metallic);
+    surface.smoothness=1-saturate(roughness);surface.normalTS=half3(0,0,1);surface.occlusion=1;
+    InputData input=(InputData)0;input.positionWS=i.positionWS;input.normalWS=n;
+    input.viewDirectionWS=GetWorldSpaceNormalizeViewDir(i.positionWS);input.bakedGI=SampleSH(n);
+    input.vertexLighting=VertexLighting(i.positionWS,n);input.shadowMask=half4(1,1,1,1);
+    input.normalizedScreenSpaceUV=GetNormalizedScreenSpaceUV(i.positionCS);
+    float3 result=UniversalFragmentPBR(input,surface).rgb;
+    // Add original linear EMISSION after decoding Gamma working-space lighting.
+    // This preserves source energy, rather than adding separately encoded colors.
+    #ifdef UNITY_COLORSPACE_GAMMA
+     result=SRGBToLinear(max(result,0));
+    #endif
+    float3 finalColor=R23WorkingColor(result+emission);
+    if(_Night>.5){float distanceFade=1-exp(-distance(i.positionWS,_WorldSpaceCameraPos)*.004);finalColor=lerp(finalColor,float3(.035,.052,.073),distanceFade);}
+    return half4(finalColor,1);
+   }
+   ENDHLSL
+  }
+ }
+}

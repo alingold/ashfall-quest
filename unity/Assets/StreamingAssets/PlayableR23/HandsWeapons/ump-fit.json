@@ -1,0 +1,71 @@
+{
+  "id": "ump",
+  "modelScale": 0.7182,
+  "reloadScale": 1,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.46
+  ],
+  "magazineHome": [
+    9.047493904848665e-05,
+    -0.14787072428519224,
+    0.21439060338927785
+  ],
+  "offer": [
+    6.49791012246231e-05,
+    -0.22685835418162506,
+    0.15397533135417935
+  ],
+  "insert": [
+    6.49791012246231e-05,
+    -0.10620075418162506,
+    0.15397533135417935
+  ],
+  "chargingGrip": [
+    -0.045,
+    0.064,
+    0.1
+  ],
+  "chargingMirrorX": false,
+  "topFeed": false,
+  "insertionAxis": "Y",
+  "insertionTravel": 0.06,
+  "chargingPull": 0.075,
+  "offerRadius": 0.1,
+  "chargeRadius": 0.18,
+  "supportPoint": [
+    0,
+    -0.025,
+    0.36
+  ],
+  "heldMagazineGunBasis": false,
+  "opticScale": 0,
+  "opticMountHeight": 0,
+  "worldCrosshair": true,
+  "laserRange": 0,
+  "ammoFamily": "smg",
+  "reserve": 1200,
+  "sourceGLBTriangles": 10421,
+  "visibleTriangles": 10497,
+  "notes": [
+    "Actual live rack AMMO_FAMILIES overrides stale profile family label.",
+    "All model art before display scale; UMP logical reload scale remains1 because no visual_fit_scale084 metadata.",
+    "P90 actual source solid_import085 disables imported BLEND without changing textures/PBR/sidedness."
+  ],
+  "rearSight": [
+    0,
+    0.14,
+    -0.03
+  ],
+  "frontSight": [
+    0,
+    0.13885284042249502,
+    0.393
+  ]
+}

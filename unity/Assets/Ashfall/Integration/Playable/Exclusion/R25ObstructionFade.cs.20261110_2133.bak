@@ -1,0 +1,93 @@
+using System;
+
+namespace Ashfall.Integration.Playable.Exclusion
+{
+    // Unity-free fade policy for "the eye is pressed into geometry".
+    //
+    // Two kinds of hysteresis stop flicker at the threshold:
+    //  * spatial: the glue tests an enter sphere while clear, and a larger exit
+    //    sphere (ExitRadiusScale) while obstructed;
+    //  * temporal: once obstructed, the view stays obstructed until the exit test
+    //    has been clear for HoldSeconds.
+    // Alpha then moves toward 0 or 1 at a bounded rate, so the screen never
+    // strobes even if the inputs alternate every frame.
+    public sealed class R25ObstructionFade
+    {
+        // Time for a full fade to black (quick, so peeking shows nothing).
+        public readonly float FadeInSeconds = 0.12f;
+        // Time for a full fade back to the scene (slower, comfortable).
+        public readonly float FadeOutSeconds = 0.35f;
+        // Minimum clear time before the fade starts to lift.
+        public readonly float HoldSeconds = 0.30f;
+        // Exit sphere radius = enter radius * this.
+        public readonly float ExitRadiusScale = 1.25f;
+        // Largest frame step the policy integrates (hitches do not jump the fade).
+        public readonly float MaxStepSeconds = 0.1f;
+
+        bool obstructed;
+        float alpha, clearSeconds;
+
+        public bool Obstructed { get { return obstructed; } }
+        public float Alpha { get { return alpha; } }
+        public bool FullyFaded { get { return alpha >= 0.999f; } }
+
+        public void Reset()
+        {
+            obstructed = false;
+            alpha = 0;
+            clearSeconds = 0;
+        }
+
+        // enterOverlap: the enter sphere touches geometry (used while clear).
+        // exitOverlap: the larger exit sphere touches geometry (used while obstructed).
+        public float Step(bool enterOverlap, bool exitOverlap, float seconds)
+        {
+            if (float.IsNaN(seconds) || float.IsInfinity(seconds) || seconds < 0) seconds = 0;
+            if (seconds > MaxStepSeconds) seconds = MaxStepSeconds;
+            if (!obstructed)
+            {
+                if (enterOverlap)
+                {
+                    obstructed = true;
+                    clearSeconds = 0;
+                }
+            }
+            else if (exitOverlap || enterOverlap)
+            {
+                clearSeconds = 0;
+            }
+            else
+            {
+                clearSeconds += seconds;
+                if (clearSeconds >= HoldSeconds) obstructed = false;
+            }
+            float target = obstructed ? 1 : 0;
+            if (target > alpha) alpha = Math.Min(target, alpha + seconds / FadeInSeconds);
+            else if (target < alpha) alpha = Math.Max(target, alpha - seconds / FadeOutSeconds);
+            return alpha;
+        }
+
+        // Radius of a sphere around one eye that contains that eye's whole near
+        // clip rectangle. tanHalfWidth/tanHalfHeight are the largest frustum
+        // tangents (asymmetric XR frusta: use the larger side). safety >= 1.
+        public static float EyeRadius(float near, float tanHalfWidth, float tanHalfHeight, float safety, float minimum, float maximum)
+        {
+            if (float.IsNaN(near) || float.IsInfinity(near) || near <= 0) return minimum;
+            if (float.IsNaN(tanHalfWidth) || float.IsInfinity(tanHalfWidth) || tanHalfWidth < 0) tanHalfWidth = 0;
+            if (float.IsNaN(tanHalfHeight) || float.IsInfinity(tanHalfHeight) || tanHalfHeight < 0) tanHalfHeight = 0;
+            if (float.IsNaN(safety) || safety < 1) safety = 1;
+            float corner = near * (float)Math.Sqrt(1 + tanHalfWidth * tanHalfWidth + tanHalfHeight * tanHalfHeight) * safety;
+            if (corner < minimum) return minimum;
+            return corner > maximum ? maximum : corner;
+        }
+
+        // Largest frustum tangent from a perspective projection's two diagonal
+        // terms: |x| at the near plane is near*(1+|m02|)/m00 (same for y with m12/m11).
+        public static float FrustumTangent(float scale, float offset)
+        {
+            if (float.IsNaN(scale) || float.IsInfinity(scale) || Math.Abs(scale) < 0.000001f) return 0;
+            if (float.IsNaN(offset) || float.IsInfinity(offset)) offset = 0;
+            return (1 + Math.Abs(offset)) / Math.Abs(scale);
+        }
+    }
+}

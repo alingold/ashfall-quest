@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "modelScale": 1.6,
+  "modelOffset": [
+    0,
+    0.111,
+    -0.905
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    0.85
+  ],
+  "grip": [
+    0,
+    -0.105,
+    0.55
+  ],
+  "glovePhysicalDelta": [
+    0,
+    0.0254,
+    -0.0508
+  ],
+  "offer": [
+    0,
+    0.045,
+    0.9594999999999999
+  ],
+  "insert": [
+    0,
+    0.045,
+    0.96
+  ],
+  "rocketSpeed": 200,
+  "initialLoaded": 1,
+  "localReloads": 2,
+  "rarityDamage": [
+    60,
+    84,
+    109,
+    134,
+    160
+  ]
+}

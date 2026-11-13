@@ -1,0 +1,173 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Ashfall.Modules.Flight;
+using UnityEngine;
+using UnityEngine.Networking;
+
+namespace Ashfall.Integration.Playable.AudioTraversal
+{
+    // Host-driven only: call after the rig has accepted this frame's movement.
+    // No input pump, movement writes, AudioListener or independent Update.
+    public sealed class R23TraversalAudio:MonoBehaviour
+    {
+        [Serializable] sealed class Manifest { public Cue[] cues=null; }
+        [Serializable] sealed class Cue { public string kind=null;public string[] files=null; }
+        readonly Dictionary<string,AudioClip[]> clips=new Dictionary<string,AudioClip[]>();
+        readonly List<AudioClip> resources=new List<AudioClip>();
+        readonly R23TraversalState state=new R23TraversalState();
+        readonly System.Random pitch=new System.Random(71731);
+        R23VRRig rig;Transform feet;AudioSource foot,glide,climb;Coroutine loading;
+        readonly AudioSource[] impacts=new AudioSource[8];int impactCursor;
+        int variant,climbVariant;float sfxVolume=1,footGain=.11220185f; // R8: owner "two decibels quieter" (-17 -> -19 dB)
+        public bool Ready {get;private set;}
+        public string LoadFailure {get;private set;}
+        public int LoadedClipCount {get{return resources.Count;}}
+        public int ClimbContactsPlayed {get;private set;}
+        public int ImpactSoundsPlayed {get;private set;}
+        public R23TraversalFrame LastFrame {get;private set;}
+        // Optional source surface metadata resolver. Default uses collider ancestry names.
+        public Func<Collider,string> SurfaceResolver;
+        public event Action<R23Footfall,string> FootfallPlayed;
+        public void Initialize(R23VRRig player)
+        {
+            if(rig!=null)throw new InvalidOperationException("Traversal audio already initialized");
+            if(player==null||player.Head==null)throw new ArgumentException("Initialized rig required");
+            rig=player;feet=player.transform;
+            if(player.Head.GetComponent<Soundscape.R28AudioOutput>()==null)player.Head.gameObject.AddComponent<Soundscape.R28AudioOutput>();
+            foot=Voice(feet,"R23 source footsteps",true);foot.transform.localPosition=Vector3.up*.12f;foot.minDistance=4;foot.maxDistance=8;
+            glide=Voice(player.Head.transform,"R23 source glide",false);glide.loop=true;
+            climb=Voice(feet,"R6 source climbing contact",true);climb.transform.localPosition=Vector3.up*1.1f;climb.minDistance=2;climb.maxDistance=5;
+            for(int i=0;i<impacts.Length;i++){var voice=Voice(transform,"R6 source surface impact "+i,true);voice.minDistance=2;voice.maxDistance=55;voice.volume=.25118864f*sfxVolume;impacts[i]=voice;}
+            loading=StartCoroutine(Load());
+        }
+        static AudioSource Voice(Transform parent,string name,bool spatial)
+        {
+            var go=new GameObject(name);go.transform.SetParent(parent,false);var voice=go.AddComponent<AudioSource>();
+            voice.playOnAwake=false;voice.spatialBlend=spatial?1:0;voice.dopplerLevel=0;voice.rolloffMode=AudioRolloffMode.Logarithmic;return voice;
+        }
+        static string Url(string file)
+        {string path=Application.streamingAssetsPath+"/PlayableR23/TraversalAudio/"+file;return path.Contains("://")?path:new Uri(path).AbsoluteUri;}
+        IEnumerator Load()
+        {
+            Manifest manifest;
+            using(var request=UnityWebRequest.Get(Url("audio.json")))
+            {
+                request.timeout=30;yield return request.SendWebRequest();
+                if(request.result!=UnityWebRequest.Result.Success){Fail(request.error);yield break;}
+                manifest=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);
+            }
+            if(manifest==null||manifest.cues==null){Fail("Invalid traversal audio manifest");yield break;}
+            foreach(var cue in manifest.cues)
+            {
+                var loaded=new List<AudioClip>();
+                foreach(var file in cue.files)using(var request=UnityWebRequestMultimedia.GetAudioClip(Url(file),AudioType.WAV))
+                {
+                    request.timeout=30;yield return request.SendWebRequest();
+                    if(request.result!=UnityWebRequest.Result.Success){Fail(file+": "+request.error);continue;}
+                    var clip=Ashfall.Integration.Playable.UI.R25LegacyPack.Decoded(request);if(clip==null){Fail(file+": decoded null clip");continue;}
+                    clip.name=file;loaded.Add(clip);resources.Add(clip);
+                }
+                clips[cue.kind]=loaded.ToArray();
+            }
+            AudioClip[] flight;if(clips.TryGetValue("glide",out flight)&&flight.Length>0)glide.clip=Ashfall.Integration.Playable.UI.R25LegacyPack.Resolve(flight[0]);
+            Ready=glide.clip!=null&&Has("concrete_step")&&Has("climb")&&Has("impact_metal")&&Has("impact_concrete");loading=null;
+        }
+        void Fail(string message){LoadFailure=message;Debug.LogWarning("R23 traversal audio: "+message);}
+        bool Has(string kind){AudioClip[] found;return clips.TryGetValue(kind,out found)&&found.Length>0;}
+        public void SetSfxVolume(float value){sfxVolume=float.IsNaN(value)?0:Mathf.Clamp01(value);if(foot!=null)foot.volume=footGain*sfxVolume;if(glide!=null)glide.volume=LastFrame.GlideGain*.27f*sfxVolume;if(climb!=null)climb.volume=.05623413f*sfxVolume;foreach(var voice in impacts)if(voice!=null)voice.volume=.25118864f*sfxVolume;}
+        // main.gd/ambience.gd: one positional cue per accepted, unobstructed
+        // bullet contact (including pellets), independently of decal acceptance.
+        public void PlayImpact(Vector3 point,Collider surface)
+        {
+            if(!isActiveAndEnabled||rig==null||!rig.Tracking||!rig.SessionFocused||rig.Paused||rig.GameplayBlocked||surface==null||!Finite(point))return;
+            string kind=SurfaceResolver!=null?R23TraversalState.SurfaceType(SurfaceResolver(surface)):R23TraversalState.SurfaceType(surface.name);
+            AudioClip[] choices;if(!clips.TryGetValue(kind=="metal"?"impact_metal":"impact_concrete",out choices)||choices.Length==0)return;
+            var voice=impacts[impactCursor];impactCursor=(impactCursor+1)%impacts.Length;
+            voice.Stop();voice.transform.position=point;voice.clip=Ashfall.Integration.Playable.UI.R25LegacyPack.Resolve(choices[impactCursor%choices.Length]);voice.pitch=.97f+(float)pitch.NextDouble()*.06f;voice.volume=.25118864f*sfxVolume;voice.Play();ImpactSoundsPlayed++;
+        }
+        static bool Finite(Vector3 point){return !float.IsNaN(point.x)&&!float.IsInfinity(point.x)&&!float.IsNaN(point.y)&&!float.IsInfinity(point.y)&&!float.IsNaN(point.z)&&!float.IsInfinity(point.z);}
+        // sprinting MUST be the latched gameplay state, not the sprint-button edge.
+        // crouched uses the calibrated physical baseline; host can supply it directly.
+        public void Tick(float seconds,bool sprinting,bool crouched,bool blocked=false)
+        {
+            if(rig==null)return;
+            Vector3 velocity=rig.MotionVelocity;
+            Tick(new R23TraversalSample{Enabled=!blocked&&rig.Tracking&&rig.SessionFocused&&!rig.Paused&&!rig.GameplayBlocked,
+                Grounded=rig.Supported,HorizontalSpeed=new Vector2(velocity.x,velocity.z).magnitude,VerticalSpeed=velocity.y,
+                Sprinting=sprinting,Crouched=crouched,Gliding=rig.Activities!=null&&rig.Activities.Mode==FlightMode.Glide,
+                Climbing=rig.Climbing!=null&&(rig.Climbing.LeftAnchored||rig.Climbing.RightAnchored||rig.Climbing.Mantling),
+                HandAnchored=rig.Climbing!=null&&(rig.Climbing.LeftAnchored||rig.Climbing.RightAnchored)},seconds);
+        }
+        public void Tick(R23TraversalSample acceptedMotion,float seconds)
+        {
+            if(foot==null||glide==null||!isActiveAndEnabled)return;
+            LastFrame=state.Tick(acceptedMotion,seconds);
+            if(!acceptedMotion.Enabled||float.IsNaN(seconds)||float.IsInfinity(seconds)||seconds<=0||
+                float.IsNaN(acceptedMotion.HorizontalSpeed)||float.IsInfinity(acceptedMotion.HorizontalSpeed)||acceptedMotion.HorizontalSpeed<0||
+                float.IsNaN(acceptedMotion.VerticalSpeed)||float.IsInfinity(acceptedMotion.VerticalSpeed)){StopVoices();return;}
+            if(glide.clip!=null&&LastFrame.GlideGain>.00001f)
+            {
+                glide.volume=LastFrame.GlideGain*.27f*sfxVolume;glide.pitch=LastFrame.GlidePitch;
+                if(!glide.isPlaying)glide.Play();
+            }
+            else glide.Stop();
+            if(LastFrame.Footfall!=R23Footfall.None)PlayFootfall(LastFrame.Footfall);
+            if(LastFrame.ClimbContact)PlayClimbContact();
+        }
+        void PlayClimbContact()
+        {
+            AudioClip[] choices;if(climb==null||!clips.TryGetValue("climb",out choices)||choices.Length==0)return;
+            climb.Stop();climb.clip=Ashfall.Integration.Playable.UI.R25LegacyPack.Resolve(choices[climbVariant%choices.Length]);climbVariant=climbVariant==int.MaxValue?0:climbVariant+1;
+            climb.volume=.05623413f*sfxVolume;climb.pitch=.96f+(float)pitch.NextDouble()*.08f;climb.Play();ClimbContactsPlayed++;
+        }
+        void PlayFootfall(R23Footfall kind)
+        {
+            string surface=ReadSurface(),key=surface+"_step";
+            if(kind==R23Footfall.Sprint&&Has(surface+"_run_step"))key=surface+"_run_step";
+            AudioClip[] choices;if(!clips.TryGetValue(key,out choices)||choices.Length==0)return;
+            foot.Stop();foot.clip=Ashfall.Integration.Playable.UI.R25LegacyPack.Resolve(choices[variant%choices.Length]);variant=variant==int.MaxValue?0:variant+1;foot.pitch=(.96f+(float)pitch.NextDouble()*.08f)*(kind==R23Footfall.Landing?.84f:1);
+            footGain=FootVolume(kind);foot.volume=footGain*sfxVolume;foot.Play();if(FootfallPlayed!=null)FootfallPlayed(kind,surface);
+        }
+        static float FootVolume(R23Footfall kind)
+        {return Mathf.Pow(10,(kind==R23Footfall.Landing?-13:kind==R23Footfall.Sprint?-12:-19)/20f);}
+        string ReadSurface()
+        {
+            RaycastHit hit;Vector3 start=feet.position+Vector3.up*.3f;
+            if(rig.HeadCollision!=null&&rig.HeadCollision.Ready)
+            {if(!rig.HeadCollision.Ray(start,start-Vector3.up*.9f,out hit))return "concrete";}
+            else
+            {
+                bool found=false;hit=new RaycastHit();float nearest=float.PositiveInfinity;
+                foreach(var candidate in Physics.RaycastAll(start,Vector3.down,.9f,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))
+                {
+                    var c=candidate.collider;if(c==null||c.gameObject.layer==19||c.transform==feet||c.transform.IsChildOf(feet)||candidate.distance>=nearest)continue;
+                    hit=candidate;nearest=candidate.distance;found=true;
+                }
+                if(!found)return "concrete";
+            }
+            if(SurfaceResolver!=null)return R23TraversalState.SurfaceType(SurfaceResolver(hit.collider));
+            // Source metadata may be represented by collider child or render parent names.
+            for(var node=hit.collider.transform;node!=null;node=node.parent)
+            {string kind=R23TraversalState.SurfaceType(node.name);if(kind!="concrete")return kind;}
+            return "concrete";
+        }
+        public void ResetRound(){state.Reset();variant=climbVariant=impactCursor=0;ClimbContactsPlayed=ImpactSoundsPlayed=0;LastFrame=new R23TraversalFrame{GlidePitch=.85f};StopVoices();}
+        public void Suspend(){ResetRound();}
+        void StopVoices(){if(foot!=null){foot.Stop();foot.clip=null;}if(glide!=null)glide.Stop();if(climb!=null){climb.Stop();climb.clip=null;}foreach(var voice in impacts)if(voice!=null){voice.Stop();voice.clip=null;}}
+        void OnDisable(){ResetRound();}
+        // Desktop-mirror focus must not override the rig's actual OpenXR focus.
+        void OnApplicationFocus(bool focused){if(!focused&&(rig==null||!rig.SessionFocused))Suspend();}
+        void OnApplicationPause(bool paused){if(paused)Suspend();}
+        void OnDestroy()
+        {
+            if(loading!=null)StopCoroutine(loading);StopVoices();
+            if(foot!=null)Destroy(foot.gameObject);if(glide!=null)Destroy(glide.gameObject);
+            if(climb!=null)Destroy(climb.gameObject);
+            foreach(var voice in impacts)if(voice!=null)Destroy(voice.gameObject);
+            foreach(var clip in resources)if(clip!=null)Destroy(clip);resources.Clear();clips.Clear();Ready=false;
+        }
+    }
+}
+#endif

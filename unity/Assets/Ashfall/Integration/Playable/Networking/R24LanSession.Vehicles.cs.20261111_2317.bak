@@ -1,0 +1,194 @@
+#if UNITY_6000_0_OR_NEWER
+using System.Collections.Generic;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Vehicles;
+using UnityEngine;
+using Ashfall.Integration.Playable.Explosives;
+using Ashfall.Integration.Playable.HandsWeapons;
+namespace Ashfall.Integration.Playable.Networking
+{
+    public sealed partial class R24LanSession
+    {
+        readonly Dictionary<string,R25HelicopterPresentation> helicopterViews=new Dictionary<string,R25HelicopterPresentation>();
+        readonly Dictionary<string,R25ArmourPresentation> armourViews=new Dictionary<string,R25ArmourPresentation>();
+        readonly Dictionary<string,R25BikePresentation> bikeViews=new Dictionary<string,R25BikePresentation>();
+        readonly List<R25VehicleState> localBikes=new List<R25VehicleState>();
+        R25VehicleState[] bikeRows=new R25VehicleState[0];string bikeMap;
+        sealed class LocalShell {internal Vector3 At,Velocity;internal float Age;}
+        readonly List<LocalShell> localShells=new List<LocalShell>();
+        readonly Dictionary<string,GameObject> shellViews=new Dictionary<string,GameObject>();
+        Material shellMaterial;
+        readonly Dictionary<string,float> localHelicopterImpact=new Dictionary<string,float>();
+        R24LanProjectileState[] NonVehicleProjectiles(R24LanProjectileState[] rows)
+        {SyncTankShells();return System.Array.FindAll(rows,delegate(R24LanProjectileState row){return row.Kind!="shell";});}
+        bool FireLocalTank(string id)
+        {
+            for(int i=0;i<localBikes.Count;i++){
+                var row=localBikes[i];if(row.Id!=id||row.Kind!="tank"||row.Rider!="local"||row.Destroyed||localShells.Count>=8||row.FiredAt>0&&Time.unscaledTimeAsDouble-row.FiredAt<4)continue;
+                var forward=Quaternion.Euler(0,row.TurretYaw,0)*Vector3.forward;var aimed=R24LanLobby.TankShellDirection(row.TurretYaw,root.Rig.TankAimPitch);var shellDirection=new Vector3(aimed.X,aimed.Y,aimed.Z);
+                var at=root.Rig.transform.position+forward*3.6f+Vector3.up*(.65f+shellDirection.y*3.6f);
+                if(Physics.Linecast(root.Rig.transform.position+Vector3.up*.65f,at,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore))return false;
+                localShells.Add(new LocalShell{At=at,Velocity=shellDirection*45});
+                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,row.TurretYaw,System.Math.Max(.000001,Time.unscaledTimeAsDouble));return true;
+            }return false;
+        }
+        void TickLocalTank()
+        {
+            if(peer!=null)return;
+            float dt=Mathf.Min(.1f,Time.unscaledDeltaTime);
+            for(int i=0;i<localBikes.Count;i++){
+                var row=localBikes[i];
+                // R4: while the rider glides aboard, the hull stays at its rest pose.
+                if(row.Rider=="local"&&!row.Destroyed&&root.Rig.VehicleBoarding)continue;
+                if(row.Kind=="helicopter"){if(row.Destroyed&&Time.unscaledTimeAsDouble>=row.RespawnAt)localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Home,row.HomeYaw,600,"",0,row.Revision+1,"helicopter");else if(row.Rider=="local"){
+                    var at=root.Rig.transform.position;var previous=new Vector3(row.Rest.X,row.Rest.Y,row.Rest.Z);var d=at-previous;float health=row.Health,last;
+                    if(d.magnitude/dt>4&&(!localHelicopterImpact.TryGetValue(row.Id,out last)||Time.unscaledTime-last>.5f)){
+                        var extended=d+d.normalized*.08f;var accepted=root.Rig.HeadCollision.HelicopterMotion(previous,root.Rig.VehicleHullYaw,extended);
+                        if((accepted-extended).sqrMagnitude>.0001f){health=Mathf.Max(0,health-Mathf.Min(300,(d.magnitude/dt-4)*20));localHelicopterImpact[row.Id]=Time.unscaledTime;}
+                    }
+                    localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,V(at),root.Rig.VehicleHullYaw,health,health<=0?"":row.Rider,health<=0?Time.unscaledTimeAsDouble+20:0,row.Revision+1,row.Kind);
+                }continue;}if(row.Kind!="tank")continue;
+                if(row.Destroyed){if(Time.unscaledTimeAsDouble>=row.RespawnAt)localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Home,row.HomeYaw,1800,"",0,row.Revision+1,"tank");continue;}
+                if(row.Rider!="local")continue;
+                // R5: the turret follows the right-hand aim.
+                float target=root.Rig.TankAimYaw;
+                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,V(root.Rig.transform.position),root.Rig.VehicleHullYaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,R25VehicleKinds.Turn(row.TurretYaw,target,dt,90),row.FiredAt);
+            }
+            for(int i=localShells.Count-1;i>=0;i--){
+                var shell=localShells[i];shell.Age+=dt;shell.Velocity+=Vector3.down*9.8f*dt;var next=shell.At+shell.Velocity*dt;
+                float distance;Float3 normal;bool hit=new RootProjectileWorld(this).Sweep(V(shell.At),V(next),.035f,out distance,out normal);
+                if(hit||shell.Age>=8){
+                    if(hit)next=shell.At+shell.Velocity.normalized*distance;
+                    var blast=new R23GrenadeBlast("local/tank/shell","shell",0,V(next),15,225,true);root.Explosives.Deliver(blast);root.Explosives.PlaySourceVisual("frag",next);
+                    for(int j=0;j<localBikes.Count;j++){var row=localBikes[j];if(row.Destroyed)continue;float health=Mathf.Max(0,row.Health-blast.DamageAt(row.Rest));localBikes[j]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,health,health<=0?"":row.Rider,health<=0?Time.unscaledTimeAsDouble+20:0,row.Revision+1,row.Kind,row.TurretYaw,row.FiredAt);}
+                    localShells.RemoveAt(i);
+                }else shell.At=next;
+            }
+            bikeRows=localBikes.ToArray();
+        }
+        void SyncTankShells()
+        {
+            var live=new HashSet<string>();
+            if(peer!=null)foreach(var row in peer.Lobby.SharedProjectiles)if(row.Kind=="shell"){
+                if(row.Ended){if(shellViews.ContainsKey(row.Id)){root.Explosives.PlaySourceVisual("frag",new Vector3(row.Position.X,row.Position.Y,row.Position.Z));}continue;}
+                DrawShell(row.Id,new Vector3(row.Position.X,row.Position.Y,row.Position.Z),new Vector3(row.Velocity.X,row.Velocity.Y,row.Velocity.Z));live.Add(row.Id);
+            }
+            for(int i=0;i<localShells.Count;i++){string id="local/"+i;DrawShell(id,localShells[i].At,localShells[i].Velocity);live.Add(id);}
+            var remove=new List<string>();foreach(var id in shellViews.Keys)if(!live.Contains(id))remove.Add(id);foreach(var id in remove){Destroy(shellViews[id].GetComponent<MeshFilter>().sharedMesh);Destroy(shellViews[id]);shellViews.Remove(id);}
+        }
+        void DrawShell(string id,Vector3 at,Vector3 velocity)
+        {
+            GameObject view;if(!shellViews.TryGetValue(id,out view)){
+                if(shellMaterial==null)shellMaterial=R25ItemArtGeometry.Surface(new Color(1,.5f,.08f),0,.3f,true);
+                var mesh=new R25VehicleMesh();mesh.Loft(Vector3.zero,Quaternion.identity,new[]{-.3f,0f,.2f},new[]{.04f,.04f,.001f},new[]{.04f,.04f,.001f},2,8);view=mesh.Attach(transform,"Host shell tracer",shellMaterial);shellViews[id]=view;
+                var trail=view.AddComponent<TrailRenderer>();trail.sharedMaterial=shellMaterial;trail.time=.3f;trail.startWidth=.05f;trail.endWidth=0;
+            }view.transform.SetPositionAndRotation(at,velocity.sqrMagnitude>0?Quaternion.LookRotation(velocity):Quaternion.identity);
+        }
+        bool TankClear(Float3 ground)
+        {return !Physics.CheckBox(new Vector3(ground.X,ground.Y+.6f,ground.Z),new Vector3(1.5f,.45f,2.4f),Quaternion.identity,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore);}
+        bool HelicopterClear(Float3 ground)
+        {
+            var at=new Vector3(ground.X,ground.Y+.65f,ground.Z);RaycastHit hit;
+            return root.Rig.HeadCollision.HelicopterClear(at,0)&&!root.Rig.HeadCollision.Ray(at,at+Vector3.up*30,out hit);
+        }
+        void BindVehicles()
+        {
+            root.Rig.VehicleMapTop=delegate{return root.Map.Bounds.max.y;};
+            root.Rig.ReadVehicles=delegate{return bikeRows;};
+            root.Rig.VehicleEnabled=delegate{var r=peer==null?root.ActualMatchRules:(peer.Lobby.SelectedMap==null?null:peer.Lobby.SelectedMap.SourceRules);return r==null||r.Vehicles;};
+            root.Rig.ReadVehicleActor=delegate{return peer==null?"local":peer.Lobby.OwnActor;};
+            root.Rig.FireTank=delegate(string id){return peer!=null?peer.Lobby.RequestTankFire(id):FireLocalTank(id);};
+            root.Rig.MountVehicle=MountBike;root.Rig.DismountVehicle=DismountBike;BindVehicleAim();
+        }
+        bool MountBike(string id,int hand)
+        {
+            if(peer!=null)return peer.Lobby.RequestVehicleMount(id,hand);
+            for(int i=0;i<localBikes.Count;i++){
+                var row=localBikes[i];if(row.Rider=="local")return false;
+            }
+            for(int i=0;i<localBikes.Count;i++){
+                var row=localBikes[i];if(row.Id!=id||row.Destroyed||row.Rider!="")continue;
+                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,"local",0,row.Revision+1,row.Kind,row.TurretYaw,row.FiredAt);bikeRows=localBikes.ToArray();return true;
+            }return false;
+        }
+        void DismountBike(string id,Float3 rest,float yaw)
+        {
+            if(peer!=null){peer.Lobby.RequestVehicleDismount(id,rest,yaw);return;}
+            for(int i=0;i<localBikes.Count;i++){
+                var row=localBikes[i];if(row.Id==id&&row.Rider=="local")localBikes[i]=new R25VehicleState(id,row.Home,row.HomeYaw,rest,yaw,row.Health,"",0,row.Revision+1,row.Kind,row.TurretYaw,row.FiredAt);
+            }bikeRows=localBikes.ToArray();
+        }
+        void ClearVehiclesPresentation()
+        {
+            if(root!=null&&root.Rig!=null)root.Rig.CancelVehicle();
+            foreach(var view in bikeViews.Values)if(view!=null)Destroy(view.gameObject);
+            foreach(var view in helicopterViews.Values)if(view!=null)Destroy(view.gameObject);helicopterViews.Clear();
+            foreach(var view in armourViews.Values)if(view!=null)Destroy(view.gameObject);armourViews.Clear();
+            ClearVehicleAim();foreach(var v in shellViews.Values)if(v!=null){Destroy(v.GetComponent<MeshFilter>().sharedMesh);Destroy(v);}shellViews.Clear();localShells.Clear();localHelicopterImpact.Clear();if(shellMaterial!=null)Destroy(shellMaterial);shellMaterial=null;
+            bikeViews.Clear();localBikes.Clear();bikeRows=new R25VehicleState[0];bikeMap=null;
+        }
+        void SyncVehicles()
+        {
+            if(root==null||!root.Ready||root.Map==null||!root.Map.IsLoaded){if(bikeViews.Count>0||armourViews.Count>0||helicopterViews.Count>0)ClearVehiclesPresentation();return;}
+            string map=root.Map.ManifestSha256;
+            if(bikeMap!=map){ClearVehiclesPresentation();bikeMap=map;}
+            if(peer!=null&&peer.Lobby.State==R24LanLobbyState.Hosting){peer.Lobby.VehicleTankSite=delegate(string id){return R25VehicleKinds.LargeMap(id,root.Map.Bounds.size.x,root.Map.Bounds.size.z);};peer.Lobby.VehicleTankClear=TankClear;peer.Lobby.VehicleHelicopterClear=HelicopterClear;peer.Lobby.VehicleMapTop=delegate{return root.Map.Bounds.max.y;};peer.Lobby.VehicleHelicopterSweep=delegate(Float3 p,float y,Float3 d){return V(root.Rig.HeadCollision.HelicopterMotion(new Vector3(p.X,p.Y,p.Z),y,new Vector3(d.X,d.Y,d.Z)));};}
+            var rules=peer==null?root.ActualMatchRules:(peer.Lobby.SelectedMap==null?null:peer.Lobby.SelectedMap.SourceRules);
+            bool enabled=(rules==null||rules.Vehicles)&&PresenceScene!=null&&PresenceScene!="menu";
+            if(peer==null){
+                if(!enabled){localBikes.Clear();}
+                else if(localBikes.Count==0&&root.Map.MapId=="range"){
+                    // Offline authority stand-in: same immutable rows and custody callbacks.
+                    for(int i=0;i<2;i++){
+                        Vector3 at=root.Map.WarmupSpawn+new Vector3(i==0?3.2f:-3.2f,0,0);RaycastHit floor;
+                        if(!root.Rig.HeadCollision.Support(at,at+Vector3.up*2,out floor))continue;
+                        at.y=floor.point.y+.55f;
+                        var pos=V(at);localBikes.Add(new R25VehicleState("local/bike/"+i,pos,0,pos,0,300,"",0,1));
+                    }
+                }
+                if(enabled&&root.Map.MapId=="range"&&(rules==null||rules.Tanks)&&!localBikes.Exists(delegate(R25VehicleState v){return v.Kind=="tank";})){
+                    Vector3 at=root.Map.WarmupSpawn+new Vector3(9,0,9);RaycastHit floor;
+                    if(root.Rig.HeadCollision.Support(at,at+Vector3.up*2,out floor)&&TankClear(V(floor.point))){at.y=floor.point.y+.55f;var pos=V(at);localBikes.Add(new R25VehicleState("local/tank/0",pos,0,pos,0,1800,"",0,1,"tank"));}
+                }
+                if(enabled&&root.Map.MapId=="range"&&(rules==null||rules.Helicopters)&&!localBikes.Exists(delegate(R25VehicleState v){return v.Kind=="helicopter";})){
+                    Vector3 at=root.Map.WarmupSpawn+new Vector3(-12,0,9);RaycastHit floor;
+                    if(root.Rig.HeadCollision.Support(at,at+Vector3.up*2,out floor)&&HelicopterClear(V(floor.point))){at.y=floor.point.y+.65f;var pos=V(at);localBikes.Add(new R25VehicleState("local/helicopter/0",pos,0,pos,0,600,"",0,1,"helicopter"));}
+                }
+                bikeRows=localBikes.ToArray();
+            }else{localBikes.Clear();bikeRows=peer.Lobby.Vehicles;}
+            TickLocalTank();if(peer==null)SyncTankShells();TickVehicleAim();
+            var live=new HashSet<string>();
+            foreach(var row in bikeRows){
+                live.Add(row.Id);R25BikePresentation view=null;
+                if(row.Kind=="hoverbike"&&!bikeViews.TryGetValue(row.Id,out view)){view=new GameObject("Hover bike / "+row.Id).AddComponent<R25BikePresentation>();view.Initialize();bikeViews.Add(row.Id,view);}
+                Vector3 at=new Vector3(row.Rest.X,row.Rest.Y,row.Rest.Z);float yaw=row.Yaw,speed=0,bank=0;bool show=enabled;int team=-1;
+                if(row.Rider!=""){
+                    if(row.Rider==(peer==null?"local":peer.Lobby.OwnActor)&&root.Rig.VehicleBoarding){}
+                    else if(row.Rider==(peer==null?"local":peer.Lobby.OwnActor)){
+                        at=root.Rig.transform.position;yaw=root.Rig.VehicleHullYaw;speed=root.Rig.MotionVelocity.magnitude;bank=-root.Rig.LastFrame.MoveX*10;show&=root.Rig.Riding;
+                    }else{
+                        R24LanPoseSnapshot pose;
+                        if(peer==null||!peer.Lobby.TryReadPresence(row.Rider,out pose)||!pose.Pose.Riding||pose.Pose.Scene!=PresenceScene||Time.realtimeSinceStartupAsDouble-pose.ReceivedAt>1)show=false;
+                        else{var predicted=R25BikeRider.Remote(pose.Pose.Root.Position,pose.Pose.Velocity,Time.realtimeSinceStartupAsDouble-pose.ReceivedAt);at=new Vector3(predicted.X,predicted.Y,predicted.Z);var q=pose.Pose.Root.Rotation;yaw=R25BikeRider.Yaw(q.X,q.Y,q.Z,q.W);speed=Mathf.Sqrt(pose.Pose.Velocity.X*pose.Pose.Velocity.X+pose.Pose.Velocity.Z*pose.Pose.Velocity.Z);bank=-Vector3.Dot(Quaternion.Euler(0,yaw,0)*Vector3.right,new Vector3(pose.Pose.Velocity.X,0,pose.Pose.Velocity.Z))*1.5f;}
+                    }
+                    if(peer!=null)foreach(var member in peer.Lobby.Members)if(member.Actor==row.Rider)team=member.Team;
+                }
+                if(row.Kind=="helicopter"){
+                    R25HelicopterPresentation helicopter;if(!helicopterViews.TryGetValue(row.Id,out helicopter)){helicopter=new GameObject("Helicopter / "+row.Id).AddComponent<R25HelicopterPresentation>();helicopter.Initialize();helicopterViews.Add(row.Id,helicopter);}
+                    bool own=row.Rider==(peer==null?"local":peer.Lobby.OwnActor);
+                    helicopter.Show(at,yaw,own?root.Rig.LastFrame.MoveX:bank/10,own?root.Rig.LastFrame.MoveY:speed/18,row.Health,row.Rider!="",show&&(rules==null||rules.Helicopters),team,RenderSettings.ambientLight.grayscale<.25f);continue;
+                }
+                if(row.Kind=="tank"){
+                    R25ArmourPresentation armour;if(!armourViews.TryGetValue(row.Id,out armour)){armour=new GameObject("Tank / "+row.Id).AddComponent<R25ArmourPresentation>();armour.Initialize();armourViews.Add(row.Id,armour);}
+                    armour.Show(at,row.Rider==(peer==null?"local":peer.Lobby.OwnActor)?yaw:row.Yaw,row.TurretYaw,speed,row.Health,row.FiredAt,row.Rider!="",enabled&&(rules==null||rules.Tanks),team);continue;
+                }
+                view.Show(at,yaw,speed,bank,row.Health,row.Rider!="",team,show,root.Rig.VehicleHint);
+            }
+            var heliGone=new List<string>();foreach(var id in helicopterViews.Keys)if(!live.Contains(id))heliGone.Add(id);foreach(var id in heliGone){Destroy(helicopterViews[id].gameObject);helicopterViews.Remove(id);}
+            var gone=new List<string>();foreach(var id in armourViews.Keys)if(!live.Contains(id))gone.Add(id);foreach(var id in gone){Destroy(armourViews[id].gameObject);armourViews.Remove(id);}
+            var remove=new List<string>();foreach(var id in bikeViews.Keys)if(!live.Contains(id))remove.Add(id);
+            foreach(var id in remove){Destroy(bikeViews[id].gameObject);bikeViews.Remove(id);}
+        }
+    }
+}
+#endif

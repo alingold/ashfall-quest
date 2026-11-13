@@ -1,0 +1,15 @@
+ASHFALL Originals - player skins
+
+All 24 player skins in this folder (meshes and textures) are original procedural
+characters authored for ASHFALL (2026-11). Source specs and generators:
+ashfall/authoring/skins-v1. Dedicated to the project; no third-party geometry or textures.
+
+Articulated VR hand / glove base mesh and UV layout (preview-menu-left/right.meshbin and
+HandsWeapons/left|right.meshbin): Godot XR Tools "Hand_Glove_low" by DigitalN8m4r3
+(Miodrag Sejic), CC0-1.0 (assets) / MIT (repository),
+https://github.com/GodotVR/godot-xr-tools. Each skin paints its glove material on that UV.
+
+The previous 115 skins were recreations of other games' characters and were retired to
+ashfall/retired/20261110-recreated-skins. PBAN, OBSIDIAN and WITCH DOCTOR (Claude Opus)
+are recreations restored at the owner's request. Builds containing them are for private use;
+the other 112 remain retired.

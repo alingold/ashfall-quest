@@ -1,0 +1,121 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;
+using System.IO;
+using System.Reflection;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using Ashfall.Integration.Playable.UI;
+using Ashfall.Integration.Playable.Online;
+using Ashfall.Integration.Playable.Networking;
+using Unity.Networking.Transport.Relay;
+using Ashfall.Modules.HealthStates;
+namespace Ashfall.Editor.Playable
+{
+    // Isolated runtime UI, real renderer/font/helpers; fake state fixtures are explicit.
+    [InitializeOnLoad]
+    public static class R25FriendsCapture
+    {
+        const string Key="Ashfall.FriendsCapture";
+        static R23VrUI ui;
+        static Camera camera;
+        static int step;
+        static double next,started;
+        static string output;
+        static R26OnlineRoomFlow live;
+        static R24LanPeer peer;
+        static readonly string[] Errors={"That room code was not found","The room is full","No internet connection","The host left","Online play is not set up in this build","LAN connection rejected (version or protocol)","Connecting timed out","unknown"};
+        static R25FriendsCapture(){if(SessionState.GetBool(Key,false))EditorApplication.update+=Pump;}
+        public static void Run()
+        {
+            output=R23PlayableBuild.Argument("-ashfallFriendsCaptures");
+            if(String.IsNullOrEmpty(output))throw new ArgumentException("-ashfallFriendsCaptures required");
+            Directory.CreateDirectory(output);SessionState.SetString(Key+"path",output);SessionState.SetBool(Key,true);
+            EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+            EditorApplication.update+=Pump;EditorApplication.isPlaying=true;
+        }
+        static void Field(string name,object value){typeof(R23VrUI).GetField(name,BindingFlags.Instance|BindingFlags.NonPublic).SetValue(ui,value);}
+        static void State(OnlineRoomState state,string code="BCD678",string reason="",bool keypad=false,string typed="",bool other=false,int guests=0)
+        {
+            Field("friendsKeypad",keypad);Field("friendCode",typed);Field("friendsOther",other);
+            ui.SetOnlineRoom(state,code,reason);
+            var rows=new string[guests+1];rows[0]="HOST   Host   (YOU)";
+            for(int i=1;i<rows.Length;i++)rows[i]="PLAYER   Friend "+i;
+            ui.SetLanLobby(state==OnlineRoomState.RoomCode?R24LanLobbyState.Hosting:R24LanLobbyState.Offline,"Not connected","ASHFALL FRIENDS",state==OnlineRoomState.RoomCode?rows:new string[0],"");
+            ui.OpenFriends();
+        }
+        static void Capture(string name)
+        {
+            ui.RefreshTextLayout();var texture=RenderTexture.GetTemporary(1600,1100,24);var active=RenderTexture.active;
+            Texture2D pixels=null;
+            try
+            {
+                camera.targetTexture=texture;camera.Render();RenderTexture.active=texture;
+                pixels=new Texture2D(1600,1100,TextureFormat.RGB24,false);pixels.ReadPixels(new Rect(0,0,1600,1100),0,0);pixels.Apply();
+                string path=Path.Combine(output,name+".png");if(File.Exists(path))throw new IOException("Capture already exists: "+path);
+                File.WriteAllBytes(path,pixels.EncodeToPNG());
+            }
+            finally{camera.targetTexture=null;RenderTexture.active=active;RenderTexture.ReleaseTemporary(texture);if(pixels!=null)UnityEngine.Object.Destroy(pixels);}
+        }
+        static void Pump()
+        {
+            if(!Application.isPlaying || EditorApplication.isCompiling)return;
+            try
+            {
+                if(ui==null)
+                {
+                    output=SessionState.GetString(Key+"path","");started=EditorApplication.timeSinceStartup;
+                    camera=new GameObject("Friends capture camera").AddComponent<Camera>();camera.enabled=false;camera.gameObject.AddComponent<AudioListener>();
+                    camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(.025f,.028f,.035f);camera.fieldOfView=52;camera.aspect=1600f/1100;camera.nearClipPlane=.02f;
+                    ui=new GameObject("Friends runtime UI fixture").AddComponent<R23VrUI>();ui.Initialize(camera);
+                    ui.SetMapOptions(new[]{new R23MapOption("range","TRAINING RANGE")});
+                    ui.MatchStartRequested+=delegate { };
+                    ui.ShowReady();
+                    int joins=0,hosts=0;string submitted="";
+                    ui.OnlineHostRequested+=delegate{hosts++;};ui.OnlineJoinRequested+=delegate(string code){joins++;submitted=code;};
+                    ui.OpenFriends();
+                    typeof(R23VrUI).GetMethod("MakeFriendRoom",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(ui,null);
+                    if(hosts!=1)throw new Exception("Host button binding");
+                    Field("friendsKeypad",true);
+                    var key=typeof(R23VrUI).GetMethod("FriendKey",BindingFlags.Instance|BindingFlags.NonPublic);
+                    foreach(char c in "BCD678")key.Invoke(ui,new object[]{c.ToString()});
+                    if(joins!=1||submitted!="BCD678")throw new Exception("Six keys must auto join exactly once");
+                    Field("friendsOpen",false);Field("friendsKeypad",false);Field("friendCode","");
+                    ui.ShowReady();typeof(R23VrUI).GetMethod("Build",BindingFlags.Instance|BindingFlags.NonPublic).Invoke(ui,null);
+                    next=EditorApplication.timeSinceStartup+1;return;
+                }
+                double now=EditorApplication.timeSinceStartup;if(now<next)return;next=now+.12;
+                if(step==0){Capture("00-start-entry");}
+                else if(step==1){State(OnlineRoomState.Idle);Capture("01-friends-choice");}
+                else if(step==2){State(OnlineRoomState.SigningIn);Capture("02-getting-ready");}
+                else if(step==3){State(OnlineRoomState.CreatingRoom);Capture("03-making-room");}
+                else if(step>=4&&step<=6){int guests=step==4?0:step==5?1:7;State(OnlineRoomState.RoomCode,guests:guests);Capture("0"+step+"-room-"+guests+"-friends");}
+                else if(step>=7&&step<=9){string typed=step==7?"":step==8?"BC7":"BCD678";State(OnlineRoomState.Idle,keypad:true,typed:typed);Capture("0"+step+"-keypad-"+typed.Length);}
+                else if(step==10){State(OnlineRoomState.Joining);Capture("10-joining");}
+                else if(step>=11&&step<11+Errors.Length){State(OnlineRoomState.Failed,reason:Errors[step-11]);Capture(step+"-error");}
+                else if(step==19){State(OnlineRoomState.Idle,other:true);Capture("19-other-ways");}
+                else if(step==20){Field("enteringLanAddress",true);State(OnlineRoomState.Idle,other:true);Capture("20-lan-keypad");}
+                else if(step==21){State(OnlineRoomState.Connected);Capture("21-guest-waiting");}
+                else
+                {
+                    if(live==null){live=new R26OnlineRoomFlow(new R26UnityOnlineRooms());live.Begin(true,"",Time.realtimeSinceStartupAsDouble);}
+                    live.Pump(Time.realtimeSinceStartupAsDouble);
+                    if(live.State==OnlineRoomState.Failed)throw new Exception("Live room: "+live.Reason);
+                    if(live.Room==null){if(now-started>80)throw new TimeoutException("Live room capture deadline");return;}
+                    if(peer==null)peer=R24LanPeer.Host("Friends capture","Host","range",new string('a',64),healthStorage:delegate(string session,long epoch){return new FileHealthImageStore(Path.Combine(output,"health"),session,epoch,R24LanPeer.LobbyContent);},relay:(RelayServerData)live.Room.TransportData);
+                    peer.Tick(Time.realtimeSinceStartupAsDouble);State(OnlineRoomState.RoomCode,live.Room.Code);Capture("22-live-relay-room");Finish("");return;
+                }
+                step++;
+            }
+            catch(Exception e){Finish(e.ToString());}
+        }
+        static void Finish(string error)
+        {
+            EditorApplication.update-=Pump;SessionState.SetBool(Key,false);
+            if(peer!=null)peer.Dispose();if(live!=null)live.Leave();
+            File.WriteAllText(Path.Combine(output,"receipt.txt"),"Runtime UI render fixtures: "+step+"\nLive room allocation + host: "+(peer!=null)+"\nCleaned up peer and room.\n"+error);
+            EditorApplication.Exit(error.Length==0?0:1);
+        }
+    }
+}
+#endif

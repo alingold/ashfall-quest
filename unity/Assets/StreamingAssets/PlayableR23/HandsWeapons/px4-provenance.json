@@ -1,0 +1,103 @@
+{
+  "id": "px4",
+  "file": "beretta_px4_storm_sub-compact__free_lowpoly.glb",
+  "scale": 0.043230885650457414,
+  "anchor": [
+    0,
+    1.97432,
+    1.6
+  ],
+  "target": [
+    0,
+    0.045,
+    -0.09
+  ],
+  "mag": [
+    1,
+    18
+  ],
+  "slide": [
+    0,
+    5,
+    6,
+    10,
+    13,
+    14,
+    16,
+    17,
+    19,
+    20,
+    21,
+    24
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.29
+  ],
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.040351602157411084,
+    -0.15916941704073184
+  ],
+  "source": "[local development path]",
+  "source_sha256": "16ac1ce357cc1a6aeb8a49236ccfa7e5a09e20478ac345283275e1096aabeada",
+  "output_sha256": "2d9f7a3054205a51ef40c8e1e6f4df7b5d9a6217dabf2df723d2a3a9e2665c5c",
+  "asset": {
+    "author": "Vlasov Daniil (https://sketchfab.com/dan741vlasov)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/beretta-px4-storm-sub-compact-free-lowpoly-55958f5ee3674f5fbb1a5cb93ca84e44",
+    "title": "Beretta Px4 Storm Sub-Compact | Free Lowpoly"
+  },
+  "magazine_center": [
+    0.0,
+    -0.06629783107381636,
+    -0.09149366398761563
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 5400,
+  "body_triangles": 2143,
+  "magazine_triangles": 732,
+  "moving_triangles": 2525,
+  "moving_kind": "slide",
+  "bounds_min": [
+    -0.03353019437622907,
+    -0.15764727254049996,
+    -0.2900276581246557
+  ],
+  "bounds_max": [
+    0.03353019437622907,
+    0.07066778312528481,
+    -0.015474190635936053
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

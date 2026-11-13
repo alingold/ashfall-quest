@@ -1,0 +1,12 @@
+namespace Ashfall.Integration.Playable.Exclusion
+{
+    // Crouch constants (metres). The crouch itself lives in R23VRRig.RampCrouch.cs:
+    // origin Y = calibrated standing origin Y - crouch, crouch from free space.
+    public static class R25RampCrouch
+    {
+        // R8 (playtest 7): 0.60 m put the view almost on the ground ("pretty low").
+        // The ramp now blocks walking once the eye would have to go below 1.0 m.
+        public const float MinimumEyeHeight = 1.0f;
+        public const float Reserve = .008f;
+    }
+}

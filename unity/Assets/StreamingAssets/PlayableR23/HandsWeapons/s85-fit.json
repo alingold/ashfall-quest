@@ -1,0 +1,122 @@
+{
+  "id": "s85",
+  "modelScale": 1.12,
+  "reloadScale": 1.12,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.76
+  ],
+  "magazineHome": [
+    8.975620268726614e-09,
+    -0.025062778049173895,
+    0.13077066646302124
+  ],
+  "chargingRest": [
+    0,
+    0,
+    0
+  ],
+  "chargingMeshCenter": [
+    0.010086607187986374,
+    0.05407792329788208,
+    0.18385013937950134
+  ],
+  "chargingGrip": [
+    0.010086607187986374,
+    0.05407792329788208,
+    0.18385013937950134
+  ],
+  "offer": [
+    0,
+    -0.14192857142857146,
+    0.13077066646302124
+  ],
+  "insert": [
+    0,
+    -0.18,
+    0.13077066646302124
+  ],
+  "chargingPull": 0.075,
+  "chargingMaximum": 0.09,
+  "offerRadius": 0.1,
+  "chargeRadius": 0.18,
+  "insertionTravel": 0.06,
+  "insertionAxis": "Y",
+  "supportPoint": [
+    0,
+    -0.025,
+    0.36
+  ],
+  "ammoFamily": "sniper",
+  "reserve": 2400,
+  "capacity": 5,
+  "mode": "bolt",
+  "interval": 0.7142857142857143,
+  "bodyDamage": 65.0,
+  "headDamage": 105.0,
+  "maximumRange": 180,
+  "sharedMagazineControls": true,
+  "hideSeatedMagazine": true,
+  "boltAfterEveryShot": true,
+  "sourceGLBTriangles": 5834,
+  "legacyProvenanceTriangles": 29057,
+  "sourceVisibleTriangles": 5834,
+  "rearSight": [
+    0,
+    0.12607142857142858,
+    0.015
+  ],
+  "frontSight": [
+    0,
+    0.12547904337287583,
+    0.605
+  ],
+  "zeroDistance": 80,
+  "optic": "source-floating-rings",
+  "opticScale": 1,
+  "opticMountHeight": 0,
+  "slideCycleDistance": 0,
+  "slideCycleSeconds": 0,
+  "renderedHandOffset": [
+    0,
+    0.0762,
+    -0.0508
+  ],
+  "renderedHandPitchDegrees": -35,
+  "notes": [
+    "Coordinates already Unity reflected once; model display scale is not baked.",
+    "All5 inherit catalog_firearm/base foregrip;1911 is not PX4 pistol.gd.",
+    "S85 uses actual original download_s85_m1_099 recipe, retains source omitted sling/debris exclusions and hides seated clip.",
+    "Rate confidence follows original one_star_050, not a new reference measurement."
+  ],
+  "primaryGrip": [
+    0.0,
+    -0.057,
+    -0.025
+  ],
+  "renderedHandOffsetPhysical": [
+    0,
+    0.0762,
+    -0.0508
+  ],
+  "heldMagazineGunBasis": true,
+  "insertionFromOfferMinY": 0.045,
+  "insertionFromOfferMaxY": 0.4,
+  "insertionFromOfferRadius": 0.16,
+  "heldGuide": [
+    0,
+    0.036642857142857116,
+    0.13077066646302124
+  ],
+  "sightAssemblyOffset": [
+    0,
+    -0.03401785714285714,
+    0
+  ]
+}

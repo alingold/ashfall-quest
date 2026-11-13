@@ -1,0 +1,62 @@
+{
+  "id": "matadors",
+  "catalogIndex": 12,
+  "catalogId": "twin_matadors",
+  "modelName": "dual-matadors",
+  "modelScale": 0.9,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "primaryGrip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "spinPivot": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.37
+  ],
+  "spinSeconds": 0.36,
+  "roundsPerHand": [
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "bodyPerVolley": [
+    20,
+    24,
+    28,
+    32,
+    36
+  ],
+  "headPerVolley": [
+    20,
+    24,
+    28,
+    32,
+    36
+  ],
+  "pellets": 8,
+  "interval": 0.26666666666666666,
+  "ammoFamily": "shells",
+  "initialReserve": 480,
+  "physicalGloveOffset": [
+    0,
+    0.06917415230023845,
+    -0.05827536593326628
+  ],
+  "glovePitchDegrees": 35,
+  "sourcePerHandOnly": true,
+  "reticleLaser": false,
+  "sourceTriangles": 3146
+}

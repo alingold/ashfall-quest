@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "frostline_surveyor",
+ "label": "Frostline Surveyor",
+ "sourceIndex": 11,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "frostline_surveyor-body-baseColor.png",
+   "normal": "frostline_surveyor-body-normal.png",
+   "metallicMap": "frostline_surveyor-body-metallic.png",
+   "occlusion": "frostline_surveyor-body-occlusion.png",
+   "emission": "frostline_surveyor-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "frostline_surveyor-glove-baseColor.png",
+   "normal": "frostline_surveyor-glove-normal.png",
+   "metallicMap": "frostline_surveyor-glove-metallic.png",
+   "occlusion": "frostline_surveyor-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

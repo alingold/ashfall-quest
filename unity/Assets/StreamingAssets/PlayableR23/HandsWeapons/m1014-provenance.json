@@ -1,0 +1,1189 @@
+{
+  "sourceRoot": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "inputs": {
+    "assets/models/download_m1014/model.glb": "863176001b360d624532bdeec18e1e33f04c381b13ad66e43909f6f9db00b492",
+    "assets/models/download_m1014/asset-provenance.json": "ca22b23035d5b8ad018ab3e0a0bb3c5fe1a92de33aa6883e26fac55e9b6f0386",
+    "assets/models/download_m1014/ATTRIBUTION.txt": "f740c64cf7fa95b171825bb13d266184bd9af372371be29250d162f9a904d4d0",
+    "scripts/auto_shotgun.gd": "16ef24d3652e803c825059c6cf4d32d6ac944ddad305860b1427742dc0324b4f",
+    "scripts/downloaded_m1014_model.gd": "ee9e5c4db40225c32afc54842814ab3e463ce22deeeb43d1df6e6122de0b12af",
+    "scripts/heavy_model_finish.gd": "46c8fe81b166fe2078423c2a0b86d367ed1f479173e2b2156b75ea8c6a54478c",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5"
+  },
+  "assets": [
+    {
+      "name": "m1014",
+      "vertices": 229782,
+      "triangles": 76594,
+      "surfaces": 7,
+      "parts": [
+        {
+          "part": "Body.0",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 1752,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.1",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 4332,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.2",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 6886,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.3",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 7306,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.4",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 3826,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.5",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 31094,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Body.6",
+          "recipe": "Entire actual original fitted M1014 Body GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 21398,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "m1014-bolt",
+      "vertices": 7644,
+      "triangles": 2548,
+      "surfaces": 1,
+      "parts": [
+        {
+          "part": "Bolt.0",
+          "recipe": "Entire actual original fitted M1014 Bolt GLB surface; node identity, bolt home applied by runtime only",
+          "triangles": 2548,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "m1014-pack",
+      "vertices": 1488,
+      "triangles": 1584,
+      "surfaces": 4,
+      "parts": [
+        {
+          "part": "Shell0.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.08750000000000001,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell0.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.08750000000000001,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell0.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.08750000000000001,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell0.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.08750000000000001,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.052500000000000005,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.052500000000000005,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.052500000000000005,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.052500000000000005,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell2.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.0175,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell2.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.0175,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell2.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            -0.0175,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell2.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            -0.0175,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell3.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.0175,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell3.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.0175,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell3.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.0175,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell3.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.0175,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell4.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.052500000000000005,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell4.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.052500000000000005,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell4.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.052500000000000005,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell4.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.052500000000000005,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell5.Core",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.08750000000000001,
+            -0.03
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell5.Hull",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.08750000000000001,
+            -0.0315
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell5.Base",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 72,
+          "sourcePosition": [
+            0.0,
+            0.08750000000000001,
+            -0.0045
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              1.0
+            ],
+            [
+              0.0,
+              -1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell5.Primer",
+          "recipe": "Exact auto_shotgun six-pack + heavy_model_finish.m1014 manufacture",
+          "triangles": 60,
+          "sourcePosition": [
+            0.0,
+            0.08750000000000001,
+            0.00075
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "m1014-arrow",
+      "vertices": 108,
+      "triangles": 36,
+      "surfaces": 1,
+      "parts": [
+        {
+          "part": "Stem",
+          "recipe": "auto_shotgun UpThenBackArrow stem",
+          "triangles": 12,
+          "sourcePosition": [
+            0,
+            0.045,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "ArrowArm-1",
+          "recipe": "Source two rotated box arrow arms",
+          "triangles": 12,
+          "sourcePosition": [
+            -0.01,
+            0.077,
+            0
+          ],
+          "sourceRotation": [
+            [
+              0.7960837985490559,
+              0.6051864057360395,
+              0.0
+            ],
+            [
+              -0.6051864057360395,
+              0.7960837985490559,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "ArrowArm1",
+          "recipe": "Source two rotated box arrow arms",
+          "triangles": 12,
+          "sourcePosition": [
+            0.01,
+            0.077,
+            0
+          ],
+          "sourceRotation": [
+            [
+              0.7960837985490559,
+              -0.6051864057360395,
+              0.0
+            ],
+            [
+              0.6051864057360395,
+              0.7960837985490559,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    }
+  ],
+  "embeddedImages": [
+    {
+      "file": "m1014-image-0.png",
+      "sha256": "d88aef70ab1c68f17efab07ab51fd010d9185de49bb2139d3a0323825fd4bb01",
+      "sourceBufferView": 32
+    },
+    {
+      "file": "m1014-image-1.png",
+      "sha256": "3fc870c21187361cc9ade762a4c1b900ab4c903f4238abd85e30d19e3e9f80eb",
+      "sourceBufferView": 33
+    },
+    {
+      "file": "m1014-image-2.png",
+      "sha256": "d058b108fa8cacb9a0ea56479510fd2b3d18962d1b77186c9c262ad465cebcf4",
+      "sourceBufferView": 34
+    },
+    {
+      "file": "m1014-image-3.png",
+      "sha256": "bf4eb921b7b49958519f893df078661fb4360c0c00924e692ea90f8419b1d281",
+      "sourceBufferView": 35
+    },
+    {
+      "file": "m1014-image-4.png",
+      "sha256": "38b584b35897795cff71dd7264fd0f0b3f071284e5bf1df1dceb57751e74bab9",
+      "sourceBufferView": 36
+    },
+    {
+      "file": "m1014-image-5.png",
+      "sha256": "ebddc299af73765eb8eee6fd5346057a7040e432b2879dd4f193f3c6bc7513a9",
+      "sourceBufferView": 37
+    },
+    {
+      "file": "m1014-image-6.png",
+      "sha256": "82218c6d88a089682bb3b42d26c88c22a424b287b1d448e828e98e5ba3dd1e4e",
+      "sourceBufferView": 38
+    },
+    {
+      "file": "m1014-image-7.png",
+      "sha256": "ac20f6d5d79d9145fcbc0c32d0762024be83e7c78920f4664ccacd5fe2382076",
+      "sourceBufferView": 39
+    },
+    {
+      "file": "m1014-image-8.png",
+      "sha256": "8099870bd15fca6b72e8a622488e2c1f11f313c0bdc2f2c51fc44272913e0f27",
+      "sourceBufferView": 40
+    },
+    {
+      "file": "m1014-image-9.png",
+      "sha256": "c73f10c9e7fc1039c8a0801d844adef52076a341b89045a66127563845b74aed",
+      "sourceBufferView": 41
+    },
+    {
+      "file": "m1014-image-10.png",
+      "sha256": "3df9cd841526edbf56d77bb3da9426c57c8f219f30d1ec0f0d83d27c35afebe1",
+      "sourceBufferView": 42
+    },
+    {
+      "file": "m1014-image-11.png",
+      "sha256": "cf5b40e8fe61e22ff596734eb64c1c598adca01aac0af32b4dfd13da7a4fed42",
+      "sourceBufferView": 43
+    },
+    {
+      "file": "m1014-image-12.png",
+      "sha256": "b696667b15b8e91ce6ae2dde287faaa84b7212fc70ae95dcb4caa46eb708444f",
+      "sourceBufferView": 44
+    },
+    {
+      "file": "m1014-image-13.png",
+      "sha256": "93240a26e691373d6a8065e5a488c5f245957a14bd69fb36d626d74cbbf3f087",
+      "sourceBufferView": 45
+    },
+    {
+      "file": "m1014-image-14.png",
+      "sha256": "9fa794394f618c7a129259bb469d09e5ad634a95be33efbcf7a12bf3670c9909",
+      "sourceBufferView": 46
+    },
+    {
+      "file": "m1014-image-15.png",
+      "sha256": "dae463dc11587e031c69f276f47a5332c1d1bd68ce0b4491e0a621e69d725aec",
+      "sourceBufferView": 47
+    },
+    {
+      "file": "m1014-image-16.png",
+      "sha256": "ec78c1466861e2d78cbd9b42aaaed85e1390f38f48d57e63dd7a469f0c67ba94",
+      "sourceBufferView": 48
+    },
+    {
+      "file": "m1014-image-17.png",
+      "sha256": "e5312e26033e3113b06f4244fb4f09203ad29685e52073ad617b5d9feef4e794",
+      "sourceBufferView": 49
+    },
+    {
+      "file": "m1014-image-18.png",
+      "sha256": "6a88e92dee50891727770bc8601071ab129a82b496bf6ba14d3b71bc12740341",
+      "sourceBufferView": 50
+    },
+    {
+      "file": "m1014-image-19.png",
+      "sha256": "0d6d0e7a04af253e8a8a5facff3baafbd25dadca2d4c14f8ca6d5aec9e7df262",
+      "sourceBufferView": 51
+    },
+    {
+      "file": "m1014-image-20.png",
+      "sha256": "124838301331dae9b3ff56b4e27e9d0536cf78c15e240e9c9f92cd1cde280607",
+      "sourceBufferView": 52
+    }
+  ],
+  "outputs": {
+    "m1014-arrow.json": "4266b9e89dd5afcbbd2060cf6e41f416956bde7a38568754c70ed2e0974c6117",
+    "m1014-arrow.meshbin": "3ac165f3f660a923d160137a52d85fcc4a82d7a4545a811f969484dc759abdc6",
+    "m1014-ATTRIBUTION.txt": "f740c64cf7fa95b171825bb13d266184bd9af372371be29250d162f9a904d4d0",
+    "m1014-audio-bolt-0.wav": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+    "m1014-audio-cues.json": "cb54d6bad5cad68f8f6bcb5cc5e271e825a35c107a0a3190e61acb38e0634f32",
+    "m1014-audio-dry-0.wav": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+    "m1014-audio-dry-1.wav": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+    "m1014-audio-mag_eject-0.wav": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+    "m1014-audio-mag_insert-0.wav": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+    "m1014-audio-pouch-0.wav": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+    "m1014-audio-shot-0.wav": "50187ee41b6202b83a27c80a1e39256eb555bbde5d23ce7f16a0c4d95e8fa903",
+    "m1014-bolt.json": "db03510e42457692cdf375478b4b232822701c030b4d84dde8738083b293ae94",
+    "m1014-bolt.meshbin": "13139d96c4e0849ecd23f3a9ed59d0ff07fbd4b01e17ac2b3b39ba8b740a9276",
+    "m1014-fit.json": "f5d8e2687f884b6ead70f27fa43a868e1d2512a55c56d08745a6a68581711013",
+    "m1014-image-0.png": "d88aef70ab1c68f17efab07ab51fd010d9185de49bb2139d3a0323825fd4bb01",
+    "m1014-image-1.png": "3fc870c21187361cc9ade762a4c1b900ab4c903f4238abd85e30d19e3e9f80eb",
+    "m1014-image-10.png": "3df9cd841526edbf56d77bb3da9426c57c8f219f30d1ec0f0d83d27c35afebe1",
+    "m1014-image-11.png": "cf5b40e8fe61e22ff596734eb64c1c598adca01aac0af32b4dfd13da7a4fed42",
+    "m1014-image-12.png": "b696667b15b8e91ce6ae2dde287faaa84b7212fc70ae95dcb4caa46eb708444f",
+    "m1014-image-13.png": "93240a26e691373d6a8065e5a488c5f245957a14bd69fb36d626d74cbbf3f087",
+    "m1014-image-14.png": "9fa794394f618c7a129259bb469d09e5ad634a95be33efbcf7a12bf3670c9909",
+    "m1014-image-15.png": "dae463dc11587e031c69f276f47a5332c1d1bd68ce0b4491e0a621e69d725aec",
+    "m1014-image-16.png": "ec78c1466861e2d78cbd9b42aaaed85e1390f38f48d57e63dd7a469f0c67ba94",
+    "m1014-image-17.png": "e5312e26033e3113b06f4244fb4f09203ad29685e52073ad617b5d9feef4e794",
+    "m1014-image-18.png": "6a88e92dee50891727770bc8601071ab129a82b496bf6ba14d3b71bc12740341",
+    "m1014-image-19.png": "0d6d0e7a04af253e8a8a5facff3baafbd25dadca2d4c14f8ca6d5aec9e7df262",
+    "m1014-image-2.png": "d058b108fa8cacb9a0ea56479510fd2b3d18962d1b77186c9c262ad465cebcf4",
+    "m1014-image-20.png": "124838301331dae9b3ff56b4e27e9d0536cf78c15e240e9c9f92cd1cde280607",
+    "m1014-image-3.png": "bf4eb921b7b49958519f893df078661fb4360c0c00924e692ea90f8419b1d281",
+    "m1014-image-4.png": "38b584b35897795cff71dd7264fd0f0b3f071284e5bf1df1dceb57751e74bab9",
+    "m1014-image-5.png": "ebddc299af73765eb8eee6fd5346057a7040e432b2879dd4f193f3c6bc7513a9",
+    "m1014-image-6.png": "82218c6d88a089682bb3b42d26c88c22a424b287b1d448e828e98e5ba3dd1e4e",
+    "m1014-image-7.png": "ac20f6d5d79d9145fcbc0c32d0762024be83e7c78920f4664ccacd5fe2382076",
+    "m1014-image-8.png": "8099870bd15fca6b72e8a622488e2c1f11f313c0bdc2f2c51fc44272913e0f27",
+    "m1014-image-9.png": "c73f10c9e7fc1039c8a0801d844adef52076a341b89045a66127563845b74aed",
+    "m1014-metallic-0.png": "b68b48b4ba05f6685555516043033f6e3d7750c67ffd7c03dd8929fb9d94a4c0",
+    "m1014-metallic-1.png": "2566c497ce1f2bc266333a22e79b64dde5c9250e13bd70d1f839a140e43dfad8",
+    "m1014-metallic-2.png": "714e5d2fda999fc480c7d9c21cc3a79e3b154110dcfbb22a0ec40db53fe9818a",
+    "m1014-metallic-3.png": "f623d8df00ccd879e3bee62c9c09d8f05ea66229d0326b8f700044a9253a194f",
+    "m1014-metallic-4.png": "a34b595010a845d10960e61f5574d1f22550d41a8eafc462f26f30f1952c4c69",
+    "m1014-metallic-5.png": "a46be0ddba1f8f03d50d7a5a916ea6941ef64f356bdeed60e763fd67c1edcffe",
+    "m1014-metallic-6.png": "082e597661cb4630c6e6c19e34e946473758a93a2ef2ce275687b96aee9700c4",
+    "m1014-pack.json": "edfd249ad26262fb37334a47e12a2a49bfc98d770aa4bf26361dff6a560c95ef",
+    "m1014-pack.meshbin": "a1de00667c6a80045c8daee9679ef43db080ea9d7bc9422c1e84050b21c751c1",
+    "m1014.json": "7991c15ad001853ef36f9190656037aea01e62644a149fe8dd0f206b42553baa",
+    "m1014.meshbin": "aa029e398214aa2ef653eaada531b6a286512600b7b3d20deb0bd62c76466799"
+  },
+  "engineRun": false,
+  "deviceRun": false,
+  "limits": "CPU exact geometry/parts conversion; source textures copied, metallicRoughness repacked into Unity R-metal/A-smoothness. No shader/GPU/render acceptance. Current source six-pack mechanics supersede stale auto_shotgun_042 tube tests."
+}

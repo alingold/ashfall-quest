@@ -1,0 +1,7115 @@
+{
+  "version": 1,
+  "maps": [
+    {
+      "mapId": "archive:10000-days-gods-crazytrain",
+      "sourceSha256": "372abb96a7a8ca0e97e9586e6d5b537b92a2c09615633b7d1f5a00c1822fb35c",
+      "cacheFingerprint": "98164a326adc61c3e03c3bc14232a126958711880f0c24ea1f03df8eb92a9a95",
+      "stations": []
+    },
+    {
+      "mapId": "archive:5-levels-zyro",
+      "sourceSha256": "2a5f30b621ed16c6e44526a2874e64406e12061ebaf4ad9856cc258772297b54",
+      "cacheFingerprint": "23d33a09bbcb4af61801319eab40801b37b0d73667e08a3c6cf9744618b84a38",
+      "stations": []
+    },
+    {
+      "mapId": "archive:melipop-gods-poplightning",
+      "sourceSha256": "dd7b22842678f875ab27fdb959505424be7f96755d1b9b5cea64f11b9c10a152",
+      "cacheFingerprint": "6e2f16dea7e1b592369479a99fd5c38df5331202958e98a76e03920cdb04548b",
+      "stations": []
+    },
+    {
+      "mapId": "archive:aaa-tree-house-oldschoolshyit",
+      "sourceSha256": "9eb49f3937a7ed23eec2807eb3d1f760339a2eb6e6d180952e80cc823094671c",
+      "cacheFingerprint": "ebf9e9d7ce7b4b321f3aa25f2262fbe5b6097e71d8d17bbcd11195b7f2519431",
+      "stations": []
+    },
+    {
+      "mapId": "archive:aethelgard-solstis-kiki-80-bbb",
+      "sourceSha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+      "cacheFingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -110.58797,
+            145.91649,
+            -73.85464
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -113.51761,
+            145.62581,
+            83.74584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -4.42906,
+            141.98375,
+            -178.35966
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -41.23056,
+            171.43269,
+            -3.80029
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -38.71285,
+            267.90082,
+            -8.25371
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -14.82247,
+            162.94531,
+            146.33761
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            25.68986,
+            163.93279,
+            -168.78712
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            54.00856,
+            171.25912,
+            -3.57085
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            53.54533,
+            268.02246,
+            -4.69224
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            88.6768,
+            146.29352,
+            -71.81338
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            95.59318,
+            145.53557,
+            90.7985
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:afterlife-gods-alamo-hank",
+      "sourceSha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+      "cacheFingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+      "stations": []
+    },
+    {
+      "mapId": "archive:aftermath-light-vs-dark-gods-badbar",
+      "sourceSha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+      "cacheFingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+      "stations": []
+    },
+    {
+      "mapId": "archive:alfa-aglae-souza",
+      "sourceSha256": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994",
+      "cacheFingerprint": "4bdb9eb629b352982c4d161ea9937b33eb320df341f56146970c0a5fbf56ca92",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -664.66587,
+            51.73406,
+            -504.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -571.66587,
+            39.73406,
+            -471.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -583.16587,
+            39.93405,
+            238.25082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -568.66587,
+            40.23406,
+            307.75084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -526.75084,
+            48.73406,
+            -125.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -484.66583,
+            48.73406,
+            -86.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -498.24916,
+            48.43405,
+            -0.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -492.25084,
+            48.43405,
+            19.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -524.83413,
+            48.43405,
+            12.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -511.33417,
+            30.73406,
+            73.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            -471.16583,
+            39.93405,
+            -395.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            -445.24916,
+            39.93405,
+            -300.83417
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            -473.33417,
+            39.93405,
+            -195.75082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            -464.24916,
+            48.73406,
+            -137.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            -451.75084,
+            33.23406,
+            38.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            -454.24916,
+            32.23406,
+            88.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            -360.25084,
+            33.93405,
+            -329.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 17,
+          "center": [
+            -384.75084,
+            33.73406,
+            -253.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 18,
+          "center": [
+            -405.66583,
+            39.93405,
+            -229.74918
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 19,
+          "center": [
+            -398.83417,
+            35.73406,
+            148.24918
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 20,
+          "center": [
+            -320.25084,
+            35.23406,
+            -524.66587
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 21,
+          "center": [
+            -339.24916,
+            33.43405,
+            -392.83417
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 22,
+          "center": [
+            -346.24916,
+            30.73406,
+            -125.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 23,
+          "center": [
+            -303.75084,
+            22.23406,
+            64.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 24,
+          "center": [
+            -283.75084,
+            35.23406,
+            -530.16587
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 25,
+          "center": [
+            -249.83415,
+            25.43405,
+            -455.75084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 26,
+          "center": [
+            -292.33417,
+            27.43405,
+            -357.75084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 27,
+          "center": [
+            -256.16583,
+            24.93405,
+            -340.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 28,
+          "center": [
+            -276.75084,
+            27.23406,
+            -274.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 29,
+          "center": [
+            -289.75084,
+            26.93405,
+            -177.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 30,
+          "center": [
+            -272.16583,
+            19.23406,
+            -113.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 31,
+          "center": [
+            -266.74916,
+            20.73406,
+            -7.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 32,
+          "center": [
+            -267.74916,
+            20.73406,
+            -33.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 33,
+          "center": [
+            -241.24918,
+            20.73406,
+            41.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 34,
+          "center": [
+            -253.24918,
+            20.73406,
+            20.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 35,
+          "center": [
+            -245.74918,
+            20.73406,
+            79.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 36,
+          "center": [
+            -266.83417,
+            20.43405,
+            145.24918
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 37,
+          "center": [
+            -257.24916,
+            20.73406,
+            134.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 38,
+          "center": [
+            -268.25084,
+            20.43405,
+            165.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 39,
+          "center": [
+            -236.75082,
+            27.93405,
+            -270.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 40,
+          "center": [
+            -184.33415,
+            20.73406,
+            40.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 41,
+          "center": [
+            -181.16585,
+            20.73406,
+            95.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 42,
+          "center": [
+            -224.25082,
+            20.73406,
+            238.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 43,
+          "center": [
+            -139.25082,
+            37.73406,
+            -577.16587
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 44,
+          "center": [
+            -157.75082,
+            27.23406,
+            -267.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 45,
+          "center": [
+            -157.74918,
+            20.73406,
+            -60.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 46,
+          "center": [
+            -144.33415,
+            33.43405,
+            -30.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 47,
+          "center": [
+            -178.33415,
+            20.73406,
+            8.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 48,
+          "center": [
+            -144.66585,
+            20.43405,
+            175.25082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 49,
+          "center": [
+            -131.74918,
+            20.73406,
+            250.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 50,
+          "center": [
+            -153.16585,
+            20.73406,
+            307.25084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 51,
+          "center": [
+            -163.74918,
+            10.93405,
+            390.16583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 52,
+          "center": [
+            -87.33415,
+            25.43405,
+            -291.75084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 53,
+          "center": [
+            -97.25083,
+            25.93405,
+            -202.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 54,
+          "center": [
+            -102.74917,
+            20.73406,
+            -18.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 55,
+          "center": [
+            -108.66585,
+            20.73406,
+            45.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 56,
+          "center": [
+            -64.74917,
+            20.73406,
+            151.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 57,
+          "center": [
+            -80.74917,
+            20.73406,
+            163.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 58,
+          "center": [
+            -109.83415,
+            20.73406,
+            143.74918
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 59,
+          "center": [
+            -70.33415,
+            20.93405,
+            272.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 60,
+          "center": [
+            -113.24917,
+            20.73406,
+            362.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 61,
+          "center": [
+            -26.75083,
+            20.93405,
+            -58.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 62,
+          "center": [
+            -30.75083,
+            34.73406,
+            -58.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 63,
+          "center": [
+            -59.24917,
+            20.73406,
+            -4.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 64,
+          "center": [
+            -19.66584,
+            20.73406,
+            23.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 65,
+          "center": [
+            -35.33416,
+            20.73406,
+            87.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 66,
+          "center": [
+            -23.66584,
+            20.73406,
+            85.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 67,
+          "center": [
+            -56.74917,
+            33.43405,
+            126.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 68,
+          "center": [
+            -44.74917,
+            3.43405,
+            418.16583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 69,
+          "center": [
+            16.66584,
+            24.23406,
+            -317.75084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 70,
+          "center": [
+            22.24917,
+            24.43405,
+            -344.16583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 71,
+          "center": [
+            34.16584,
+            25.73406,
+            -294.25084
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 72,
+          "center": [
+            13.75083,
+            20.73406,
+            17.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 73,
+          "center": [
+            23.66584,
+            20.73406,
+            234.74918
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 74,
+          "center": [
+            53.25083,
+            30.73406,
+            240.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 75,
+          "center": [
+            69.74917,
+            24.43405,
+            -503.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 76,
+          "center": [
+            80.24917,
+            26.73406,
+            -533.16587
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 77,
+          "center": [
+            69.25083,
+            24.73406,
+            -471.83417
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 78,
+          "center": [
+            91.74917,
+            23.23406,
+            -456.16583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 79,
+          "center": [
+            90.24917,
+            16.93405,
+            -402.16583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 80,
+          "center": [
+            73.66585,
+            24.43405,
+            -201.75082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 81,
+          "center": [
+            120.25083,
+            20.73406,
+            9.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 82,
+          "center": [
+            73.25083,
+            20.73406,
+            18.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 83,
+          "center": [
+            63.25083,
+            20.73406,
+            241.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 84,
+          "center": [
+            125.24917,
+            22.23406,
+            -296.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 85,
+          "center": [
+            154.75082,
+            25.43405,
+            -242.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 86,
+          "center": [
+            152.25082,
+            26.93405,
+            -187.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 87,
+          "center": [
+            130.66585,
+            37.23406,
+            -81.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 88,
+          "center": [
+            122.02694,
+            19.93405,
+            -16.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 89,
+          "center": [
+            157.75082,
+            20.73406,
+            137.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 90,
+          "center": [
+            135.33415,
+            20.73406,
+            141.25082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 91,
+          "center": [
+            193.75082,
+            53.93405,
+            -538.33413
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 92,
+          "center": [
+            185.66585,
+            27.43405,
+            -142.75082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 93,
+          "center": [
+            189.66585,
+            20.93405,
+            81.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 94,
+          "center": [
+            204.33415,
+            20.73406,
+            105.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 95,
+          "center": [
+            289.74916,
+            64.23406,
+            -583.66587
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 96,
+          "center": [
+            391.33417,
+            66.93405,
+            -443.74916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 97,
+          "center": [
+            414.24916,
+            73.73405,
+            -33.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:asylum-gods-pitdevil",
+      "sourceSha256": "02b9923d1052bccee37ccf60dcf930ee185cbd31ecbfc544ef40ab8c4ff4725e",
+      "cacheFingerprint": "89575a87ea632469ba8601eb1c48c106f94f9c156f07ba83fa4321de720e0fc0",
+      "stations": []
+    },
+    {
+      "mapId": "archive:atrocious-gods-trashpandakiller",
+      "sourceSha256": "53efdbbacc8a60a0e1644ce16ab9d6e72adc9f7d7512fbb92a5c1683ab7e352e",
+      "cacheFingerprint": "23d58ed183b2bbde48b1747a04c59db564b823143fc0059468852db2906ac89d",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -157.21169,
+            116.61317,
+            22.10372
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -157.20548,
+            116.57152,
+            19.18597
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -157.21842,
+            116.60516,
+            24.89604
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -157.24828,
+            116.56506,
+            16.09321
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -157.21646,
+            116.6002,
+            27.5486
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -153.34299,
+            116.51883,
+            21.05404
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:badlands-gods-pitdevil",
+      "sourceSha256": "86fc76c858cea8e444aac14fb1cda3e384c6af634f2546daad5287cc3e973254",
+      "cacheFingerprint": "492d43301e0d1111d3617c5e1b29fc5a910516398ff9f8ea095124bcf7d4e295",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -209.74918,
+            71.93405,
+            -129.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -189.16585,
+            49.73406,
+            -54.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -227.24918,
+            60.73406,
+            80.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -147.33415,
+            52.23406,
+            100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -86.74917,
+            41.23406,
+            112.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -25.16584,
+            41.23406,
+            -291.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            13.66584,
+            70.73405,
+            119.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            100.74917,
+            72.23405,
+            -48.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            73.16585,
+            73.73405,
+            66.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            136.74918,
+            72.23405,
+            -103.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            183.24918,
+            41.23406,
+            -290.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            192.16585,
+            41.23406,
+            -203.75082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            265.74916,
+            41.23406,
+            -157.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:bamboo-gods-pitdevil",
+      "sourceSha256": "e11d43b8721ff9e31328837b62b46f2786f3648a4590c6dbbede4d87ef3345e0",
+      "cacheFingerprint": "5445e4c336ca42fa646e36801c6239b1d1e8d91ca68edf2db48e6a28b484c3bf",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -68.8377,
+            67.56025,
+            -78.73768
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -51.37713,
+            70.45919,
+            52.24663
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            37.85461,
+            71.02957,
+            32.77099
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:banana-land-gods-pitdevil",
+      "sourceSha256": "8eff4d8862387447fd6c0163d8c18d19b5f67bab361a9f16c40f2597e9d58e8a",
+      "cacheFingerprint": "256aa11ad7fd5f0a599079f323f3475c8d1014a0844d9338742968f0563d0b54",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -83.47036,
+            64.30926,
+            -49.90415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -68.76755,
+            62.25953,
+            15.65225
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -87.62837,
+            70.4902,
+            96.79354
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -44.05497,
+            51.44935,
+            -88.13326
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -49.62495,
+            96.77265,
+            -61.52514
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -10.79112,
+            83.5247,
+            -60.07824
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -15.00608,
+            62.26304,
+            -16.1547
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -51.85332,
+            83.53052,
+            -36.7364
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -6.94892,
+            124.14459,
+            -3.31578
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -24.64448,
+            58.25909,
+            -35.36549
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            -6.35473,
+            54.46862,
+            6.36992
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            -44.30699,
+            63.97533,
+            21.78056
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            -40.65714,
+            66.28646,
+            18.23872
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            -39.82035,
+            58.24994,
+            43.44456
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            -58.32849,
+            101.11918,
+            9.33907
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            -38.00014,
+            83.5369,
+            27.23989
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            -6.23929,
+            60.63108,
+            101.37118
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 17,
+          "center": [
+            -47.73302,
+            70.4863,
+            96.90024
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 18,
+          "center": [
+            -48.68591,
+            62.28211,
+            68.53395
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 19,
+          "center": [
+            4.01359,
+            50.97559,
+            -87.08012
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 20,
+          "center": [
+            22.09507,
+            66.66901,
+            -86.07881
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 21,
+          "center": [
+            41.52409,
+            64.72657,
+            -72.03489
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 22,
+          "center": [
+            23.99379,
+            83.48307,
+            -61.71983
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 23,
+          "center": [
+            41.8482,
+            64.71918,
+            -57.54647
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 24,
+          "center": [
+            12.58967,
+            62.26304,
+            -16.1547
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 25,
+          "center": [
+            33.11374,
+            62.26304,
+            -16.1547
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 26,
+          "center": [
+            52.31019,
+            62.26304,
+            -16.1547
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 27,
+          "center": [
+            6.57405,
+            62.26304,
+            -39.72881
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 28,
+          "center": [
+            22.66524,
+            58.25931,
+            -34.86751
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 29,
+          "center": [
+            2.81853,
+            50.22919,
+            52.43887
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 30,
+          "center": [
+            57.40744,
+            48.7031,
+            47.34112
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 31,
+          "center": [
+            38.08622,
+            64.27441,
+            24.31603
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 32,
+          "center": [
+            46.83416,
+            64.43405,
+            53.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 33,
+          "center": [
+            49.33388,
+            73.25732,
+            53.80716
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 34,
+          "center": [
+            47.55347,
+            83.56484,
+            41.92451
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 35,
+          "center": [
+            9.28757,
+            58.26534,
+            41.63654
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 36,
+          "center": [
+            14.72418,
+            58.25735,
+            3.94626
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 37,
+          "center": [
+            19.31764,
+            124.15897,
+            15.20764
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 38,
+          "center": [
+            46.77705,
+            108.10257,
+            4.22897
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 39,
+          "center": [
+            21.27768,
+            91.41583,
+            41.17198
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 40,
+          "center": [
+            3.45069,
+            60.60941,
+            114.95436
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 41,
+          "center": [
+            57.62802,
+            89.97791,
+            64.80218
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 42,
+          "center": [
+            13.26059,
+            91.3889,
+            72.83772
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 43,
+          "center": [
+            83.06544,
+            79.9949,
+            -69.84613
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 44,
+          "center": [
+            74.00847,
+            62.26304,
+            -10.87823
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 45,
+          "center": [
+            69.06431,
+            83.50008,
+            -33.96228
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 46,
+          "center": [
+            70.08977,
+            101.11908,
+            -17.83825
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 47,
+          "center": [
+            73.32733,
+            83.54139,
+            19.41675
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 48,
+          "center": [
+            78.67371,
+            83.5202,
+            77.32562
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 49,
+          "center": [
+            61.79207,
+            101.10234,
+            68.4656
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:battlefield-paintball-gods-pitdevil",
+      "sourceSha256": "1f2453276f150a5c04373ea92cb6c6e5f43707c0a7f1fc0dfe351b0a24573c0a",
+      "cacheFingerprint": "17a3c47f028fae76404f3aa12d8b9b905ae1306d6bb60ed0cc9357ad214ef76c",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -60.75083,
+            38.23406,
+            -109.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -60.25083,
+            37.43405,
+            61.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -49.25083,
+            37.43405,
+            -32.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -9.25083,
+            35.43405,
+            20.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -37.25083,
+            35.43405,
+            26.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -25.75083,
+            35.43405,
+            97.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -5.75083,
+            41.43405,
+            131.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            7.24917,
+            35.43405,
+            -141.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            18.24917,
+            35.73406,
+            -46.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            16.74917,
+            43.43405,
+            -9.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            14.74917,
+            47.43405,
+            16.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            58.74917,
+            38.43405,
+            113.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            83.74917,
+            37.73406,
+            -134.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            117.24917,
+            41.43405,
+            -92.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            70.41961,
+            35.41804,
+            -49.75282
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            98.24917,
+            41.43405,
+            43.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            149.04729,
+            38.28392,
+            -2.22631
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:beast-mode-gods-pitdevil",
+      "sourceSha256": "8a6bf7afcc48cb1488f441b1680bc5f82e847512c6f23f475b0f2313b0e2e587",
+      "cacheFingerprint": "e1259d0fa01a9cce1e2c0df3f903e2b5b56d05e27abd1eb99b0dd855501fd875",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -141.74053,
+            47.35493,
+            -135.93571
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -63.16584,
+            62.93405,
+            18.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -113.08123,
+            52.82018,
+            24.22177
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -1.83416,
+            62.73406,
+            -42.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -37.25083,
+            62.93405,
+            19.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -24.22208,
+            54.95765,
+            56.53142
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -2.66585,
+            62.73406,
+            79.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            58.16584,
+            62.73406,
+            18.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            89.24917,
+            57.93405,
+            131.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            143.01775,
+            47.3655,
+            -95.35492
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:bi-polar-gods-trashpandakiller",
+      "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+      "cacheFingerprint": "ae27c5ff40fb46ad919ddba0f50fdc4bcc8bd400093a027130eab52ced53a6d4",
+      "stations": []
+    },
+    {
+      "mapId": "archive:bigbabyjesuz-classic-kiki-80",
+      "sourceSha256": "34522d0f636f2ea40bb234070353bec785045ef1c934918dbdab41d00f11bfa3",
+      "cacheFingerprint": "274a6630b96fad5e7ae1ff07dd753f117d7858a95656aedfc0a34effa2874570",
+      "stations": []
+    },
+    {
+      "mapId": "archive:blue-gods-quietowl",
+      "sourceSha256": "be630548066e0469afcac0edd2a58b329bd788c5030f76530106438eafdd8d9b",
+      "cacheFingerprint": "c7369cb759c3b4746cbbf1f744634e8dd32782e15f7913ab0766abd624a328e7",
+      "stations": []
+    },
+    {
+      "mapId": "archive:candle-magic-gods-goodwitch",
+      "sourceSha256": "6fe3c4ef99a28bec532fff0711ca7981838b6c5961541a1152bd2794bf2577ab",
+      "cacheFingerprint": "b7874a2060c7f7ec78eb6e9f0527d2f2b1d2033aa35c7d22535eb94149d360d6",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -187.37195,
+            280.61124,
+            -48.78087
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -198.95432,
+            280.56342,
+            -8.06493
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -205.4637,
+            280.39233,
+            48.77468
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -139.50486,
+            290.40051,
+            -132.11183
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -152.84176,
+            290.41705,
+            -126.99432
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -144.73467,
+            289.70724,
+            195.04263
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -131.37539,
+            289.70724,
+            195.04263
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -5.9022,
+            280.66641,
+            -86.82364
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -11.1415,
+            280.56497,
+            8.87308
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -34.00709,
+            280.59799,
+            75.9922
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            2.69669,
+            280.39236,
+            113.27514
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            74.14006,
+            280.47852,
+            20.11371
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            135.34478,
+            280.39841,
+            -168.86123
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:caskades-gods-alamo-hank",
+      "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+      "cacheFingerprint": "e38d1bae62dc208404a86fb20c03939f42e508a514d5cf3667b7ae9c18f3df6c",
+      "stations": []
+    },
+    {
+      "mapId": "archive:chaotic-gods-alamo-hank",
+      "sourceSha256": "2292992c46d6eb1d4b33ea7a5d8bd7766bd874583b186d622c7685827055577c",
+      "cacheFingerprint": "8eca9e377d9f6347bc1556109765203ad7bf1e690db30256c813196218c6eba5",
+      "stations": []
+    },
+    {
+      "mapId": "archive:chem-x-template",
+      "sourceSha256": "83c2cd3b982ab4c1ca66cf6e4155c6d12b8ca18ba6a246515845592b97fa3baf",
+      "cacheFingerprint": "048473a1616d5d72d3df48bdf4333dd36837dc2bccb81e50a8ac39cbb3ccc671",
+      "stations": []
+    },
+    {
+      "mapId": "archive:chess-ifun",
+      "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+      "cacheFingerprint": "b0f1ef9b49f03801ae2bd63013a32f7ac924a0395d3fd00ac9324a8f5d3afd77",
+      "stations": []
+    },
+    {
+      "mapId": "archive:chill-gods-pitdevil",
+      "sourceSha256": "51357e7ae38620f0cf7dcbc035f7e3ca9001bac471f76dd9b0ca19a124406945",
+      "cacheFingerprint": "e7a179a93b7a79ee9629ca8f21812960109f57abfe55980bc7b6e5e4fb7a960f",
+      "stations": []
+    },
+    {
+      "mapId": "archive:classic-bigbox-vr",
+      "sourceSha256": "0179873e65c372825682725737bfcd34762132cf9d759342425fff0d2bb8079d",
+      "cacheFingerprint": "f720f430ea1b84a6c32a3c7d8723859db193982bd6570f32562646a6a716c10a",
+      "stations": []
+    },
+    {
+      "mapId": "archive:classic-bw-187norvis",
+      "sourceSha256": "615df34fe80e4343d49aaf2277546d87f89d426d28975607e6fe9101a6166311",
+      "cacheFingerprint": "e6474f5307a45ff2584e11417904ef48cfc9c506e2741d1eedde620074b2eb02",
+      "stations": []
+    },
+    {
+      "mapId": "archive:cold-hearted-gods-pitdevil",
+      "sourceSha256": "de3fab4119f34c9d9966c2bfeb65c79a0f63cf028e18e807b567b6743bdf15ec",
+      "cacheFingerprint": "b9ecbbeef4ea11f6ed0dbac659b93403e3a2fc3e84bda87a96395ce9940075ff",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -123.73116,
+            40.84307,
+            134.52317
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            19.34841,
+            57.6106,
+            -71.43549
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            19.48118,
+            47.15645,
+            37.30285
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            73.7906,
+            40.80547,
+            -226.39414
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            112.66505,
+            40.83614,
+            -40.15552
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            195.41688,
+            48.56737,
+            -60.05286
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            195.37966,
+            48.57795,
+            -51.12734
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            195.38541,
+            48.57291,
+            -56.87411
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            195.38541,
+            48.57291,
+            -54.01505
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            208.61225,
+            48.54721,
+            -51.46416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            215.01719,
+            48.51001,
+            -51.01787
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:cont-cl-er-ssd-cjcoops",
+      "sourceSha256": "7b39c34dbaa5adbe0f5944c13f7c3b7e9c2c7eb5c7b056a442f86260252d8fd9",
+      "cacheFingerprint": "bd0817ea4aab5fe77c2bb2b24993e6e631364c9f8a56cf59530d8c6b28364d8d",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -502.74916,
+            39.93405,
+            -436.33417
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -219.74918,
+            235.43405,
+            -68.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -235.24918,
+            235.43405,
+            -17.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -216.74918,
+            235.43405,
+            32.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -124.74917,
+            235.43405,
+            -102.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -177.24918,
+            235.43405,
+            -101.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -172.74918,
+            235.43405,
+            62.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -119.74917,
+            235.43405,
+            60.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -81.74917,
+            235.43405,
+            -72.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -63.24917,
+            235.43405,
+            -22.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            -78.24917,
+            235.43405,
+            28.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            214.75082,
+            41.73406,
+            -16.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:cont-cl-ssd-cjcoops",
+      "sourceSha256": "03c7b9f3dd6a5f963c0ca6634a3892c68da1f285724bc52b07e62e5e56cc2e9d",
+      "cacheFingerprint": "b342c347ba6a2d24cad88ab994241ce305d9f4413c42fa5468f19c89b3278496",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -502.74916,
+            39.93405,
+            -436.33417
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -362.36557,
+            35.76788,
+            -162.53273
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -310.49924,
+            29.27843,
+            -282.32457
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -316.76288,
+            37.74531,
+            211.30219
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -248.45474,
+            28.19661,
+            -313.61668
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -273.74231,
+            20.57566,
+            -42.59356
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -255.08117,
+            20.75796,
+            53.14094
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -228.92419,
+            23.02687,
+            -127.9934
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -219.83415,
+            235.43405,
+            -68.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -185.50478,
+            28.16165,
+            -86.78036
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            -234.83415,
+            235.43405,
+            -17.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            -198.5235,
+            20.74257,
+            -34.80942
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            -216.83415,
+            235.43405,
+            32.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            -135.21852,
+            27.56531,
+            -336.91194
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            -177.83415,
+            235.43405,
+            -101.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            -124.83415,
+            235.43405,
+            -102.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            -150.54162,
+            20.78704,
+            -71.89554
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 17,
+          "center": [
+            -119.83415,
+            235.43405,
+            59.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 18,
+          "center": [
+            -178.16878,
+            20.80601,
+            22.0752
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 19,
+          "center": [
+            -172.83415,
+            235.43405,
+            61.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 20,
+          "center": [
+            -171.10396,
+            20.70973,
+            111.17131
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 21,
+          "center": [
+            -131.65814,
+            20.72139,
+            220.81119
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 22,
+          "center": [
+            -104.40224,
+            23.95411,
+            -150.33393
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 23,
+          "center": [
+            -81.33415,
+            235.43405,
+            -72.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 24,
+          "center": [
+            -63.33416,
+            235.43405,
+            -22.75083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 25,
+          "center": [
+            -100.42473,
+            20.71996,
+            -37.66401
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 26,
+          "center": [
+            -78.33415,
+            235.43405,
+            27.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 27,
+          "center": [
+            -117.08964,
+            20.76612,
+            20.4526
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 28,
+          "center": [
+            -36.7098,
+            20.72813,
+            -78.03665
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 29,
+          "center": [
+            -48.23581,
+            20.70627,
+            60.16211
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 30,
+          "center": [
+            77.31486,
+            20.08546,
+            -321.04429
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 31,
+          "center": [
+            61.76828,
+            20.70297,
+            172.83208
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 32,
+          "center": [
+            147.95352,
+            27.05863,
+            -168.56662
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 33,
+          "center": [
+            148.44948,
+            19.58133,
+            22.82533
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 34,
+          "center": [
+            214.75082,
+            41.73406,
+            -16.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 35,
+          "center": [
+            247.58272,
+            23.36819,
+            -254.03963
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:dark-carnival-gods-pitdevil",
+      "sourceSha256": "64c020e6289085645e3586af7c38e20320b132cab402dfa9b2f5d7952688fe4f",
+      "cacheFingerprint": "f870798f90064946289d55f8bebcd0de5eb268221518c37c3ebeeae631693b1e",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -175.79241,
+            99.64114,
+            -124.68369
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -174.22335,
+            99.64114,
+            194.71835
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            143.81568,
+            99.64114,
+            -123.52585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            142.01975,
+            99.64114,
+            193.78563
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:deep-space-5-stand-alone-pro-yt",
+      "sourceSha256": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+      "cacheFingerprint": "fe51b0649cf0d7fe0e61e37a7fdb9b3f54547f0b0e35c85199dbd73734444299",
+      "stations": []
+    },
+    {
+      "mapId": "archive:ereptile-disfunction-gods-pitdevil",
+      "sourceSha256": "a238f905d290ce71b6396810315eebbff95cabf1c4bb2cb04179c33880f6665e",
+      "cacheFingerprint": "0e92a3c1e7b87fad303a201229ece2d3f858c927c182d753c607f871e64cc10e",
+      "stations": []
+    },
+    {
+      "mapId": "archive:evolving-map-bigbox",
+      "sourceSha256": "f5b9c42f6f00a6ce7c3f37efe9929fe6c7d11984561920eb62105e8cad082903",
+      "cacheFingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+      "stations": []
+    },
+    {
+      "mapId": "archive:fear-thy-neighbor-oitc-steve-qc",
+      "sourceSha256": "8e7cb8a22dcb0557951d9b6560e15b8958d28de299804b64a840a9546fd218a3",
+      "cacheFingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+      "stations": []
+    },
+    {
+      "mapId": "archive:flash-gods-pitdevil",
+      "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+      "cacheFingerprint": "9698c43334aa81f0aa5ef826cbcd418ffc11f6735c90dfa653c2d2b2fd5b9fd9",
+      "stations": []
+    },
+    {
+      "mapId": "archive:fortress-gods-putangfreyja",
+      "sourceSha256": "ed19b10297661fa13755a00b1c67af3c6013d2d42913603dc91e52265fa911a9",
+      "cacheFingerprint": "1d3657a77fe8b7653bbd9dda027645d79e95f84965b3a567123202be16130238",
+      "stations": []
+    },
+    {
+      "mapId": "archive:g-spot-gods-pitdevil",
+      "sourceSha256": "6946df672418a57c92200c5bb3b95d590fc1f78ae1a50a5eb1ee94cf0ca9fc23",
+      "cacheFingerprint": "f10467954a2c2281d6eee1745eb573e1b471428a52201bcf4377a54d5ee46a7a",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -152.77732,
+            39.86372,
+            145.14668
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -157.25082,
+            58.43405,
+            58.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -60.03456,
+            44.91055,
+            179.47494
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            16.66584,
+            85.43405,
+            -44.25083
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:g0dtham-gods-poplightning",
+      "sourceSha256": "46a3e69b394c4356f2fbb3e3bca9367f769d24c31b96cb9fa979098ce5eefd81",
+      "cacheFingerprint": "3f72c46ce6661473e869c654c0dbdcb71d99ff952dde80fe5775a0e9e847b2ed",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -135.92387,
+            61.23376,
+            60.58343
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -107.30495,
+            61.12387,
+            4.9562
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -16.65915,
+            61.23376,
+            -99.45646
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -24.45806,
+            61.23376,
+            60.58343
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            47.57197,
+            61.23376,
+            -99.45646
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            11.12117,
+            64.3335,
+            -20.83938
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            9.75083,
+            67.23405,
+            50.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            48.72081,
+            61.23376,
+            60.58343
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            162.78278,
+            61.23376,
+            -99.45646
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            132.83415,
+            61.12387,
+            4.9562
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:ga-fenix-ga-hikesa",
+      "sourceSha256": "255ec785c959697afaf93155f3fdf308774619b7c23c9fe799d5610144d00186",
+      "cacheFingerprint": "3915a3096049812ec9c0ab4bca3ee1b9f6a3cd79922496d00a0e21b5ea8557ce",
+      "stations": []
+    },
+    {
+      "mapId": "archive:ghost-ship-wintersoldier-egy",
+      "sourceSha256": "523184bf0cdd424ee7f88e9e159c86c2cd68c1b3dcba3b2f0451692ce1630290",
+      "cacheFingerprint": "2a2c03586d5f6340db12da7f166810d9b3565ea9e91cf8d9a40968caaf09dbe6",
+      "stations": []
+    },
+    {
+      "mapId": "archive:gun-game-star-wars-by-sam-sam",
+      "sourceSha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+      "cacheFingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+      "stations": []
+    },
+    {
+      "mapId": "archive:halloween-5-level-x-ifun-ifun",
+      "sourceSha256": "b1753b4b495c7e21fc2c12fcff66e3743dac0ef6a43a177bb39f3350a4bfa1a4",
+      "cacheFingerprint": "7eaa7fb88d8c977f7f403ca83580e2a167fff8154a3840868a87e75508d243ce",
+      "stations": []
+    },
+    {
+      "mapId": "archive:heavens-arena-big-battles-swa-wildbarnacle",
+      "sourceSha256": "2f3297adc92631cc9c2b24e1e54e3a8ff3816970a10c56b03b40b5813221c0a6",
+      "cacheFingerprint": "608b455a642c311b0df8fc90651c7318cecab2f2e682db3ba6b102f64f2bf542",
+      "stations": []
+    },
+    {
+      "mapId": "archive:high-ground-gods-thor",
+      "sourceSha256": "b857dca932b9e5585eb456b73e73134d4f051c8c4a29d89d35e0eaa41ad9ba0e",
+      "cacheFingerprint": "dc4fdeaac8818fe1e0ebcffff8313d15aa1399298417afd23730855b55278ee3",
+      "stations": []
+    },
+    {
+      "mapId": "archive:hildrs-echo-gods-pitdevil",
+      "sourceSha256": "72e73d43d64d6672d7dbd1a040194f55ace61d6a88b4ea4c364d8c1c11f014aa",
+      "cacheFingerprint": "2e13b3ccb616b9c2d0eb9a4db5654c8c27c4d9fec7b340aebdebc1d6c425445a",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -141.74053,
+            47.35493,
+            -135.93571
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -113.08123,
+            52.82018,
+            24.22177
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -24.22208,
+            54.95765,
+            56.53142
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            143.01775,
+            47.3655,
+            -95.35492
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:holy-ground-gods-pitdevil",
+      "sourceSha256": "d8ae9becfeec2c266618eb668984743f2f4a5f1166e3620076d72224dd9743d7",
+      "cacheFingerprint": "41b7dc529fe9934dd9afe03c21a9d2120891ad0a9e1f81cbf69e0fffd6e48152",
+      "stations": []
+    },
+    {
+      "mapId": "archive:home-town-sir-dave-sir-dave",
+      "sourceSha256": "a4c93cd39a87134623aae864ee41c926e970334f85d118b90ab860687feb2b27",
+      "cacheFingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+      "stations": []
+    },
+    {
+      "mapId": "archive:hunted-gods-pitdevil",
+      "sourceSha256": "69b8ac120f6f0f2e72bcbcd40b705bb9bb9a7c751d029f88cc5c0932c47910b7",
+      "cacheFingerprint": "cbcf63ec63c41506ea0a9de51c2f0abf272f003c3de60691e2c1aadeefefceda",
+      "stations": []
+    },
+    {
+      "mapId": "archive:hypnosis-gods-pitdevil",
+      "sourceSha256": "9d5a6c4091e1ab0d44c2739edc92e53fa6500b406b3ec506a7225ec9593eac08",
+      "cacheFingerprint": "0ca12562b3483b596016767be5e8fb9cb1a9b8bc57363cfc103559182e6947a7",
+      "stations": []
+    },
+    {
+      "mapId": "archive:ivars-village-trigger-apex",
+      "sourceSha256": "6389df2a132b4f6f11f9fa72074e3583de8f7548862fafde90dde1e8d0dae561",
+      "cacheFingerprint": "e92eeb8b42f8db67cf41b454a8159347387d0354f5bd0b930103f99b3d27deed",
+      "stations": []
+    },
+    {
+      "mapId": "archive:king-of-the-balz-st1-spaceteam1",
+      "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+      "cacheFingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+      "stations": []
+    },
+    {
+      "mapId": "archive:kokiri-forest-atc-garden-porfavortiktok",
+      "sourceSha256": "276f98e23ba96cf3cc422778794b811d576752f46209b4dacbcdbdb20ec2dd21",
+      "cacheFingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+      "stations": []
+    },
+    {
+      "mapId": "archive:la-la-la-gods-trashpandakiller",
+      "sourceSha256": "dfd4d287711e0fd9105c034131562084baeef7616c99666cdd413364eb062bcf",
+      "cacheFingerprint": "b19a789f380015d76f3df5c313cf09e3c39f4e9b944d200b2bd23a0a15813a04",
+      "stations": []
+    },
+    {
+      "mapId": "archive:light-vs-dark-gods-badbar",
+      "sourceSha256": "ce6a8ddeeffd755b8d2b82d68f741ebd183ebca7e199f85855256f17b99a8ed5",
+      "cacheFingerprint": "719c86e8f0a24c3bdb25334313d28c01013e5b6ded8a914b508a323e5aeac5d4",
+      "stations": []
+    },
+    {
+      "mapId": "archive:magnum-chaosvr",
+      "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+      "cacheFingerprint": "1a3aad846543d24f6c20d5d2a96cfc3c7e7d0e93fca429f1427f89f8f2728dca",
+      "stations": []
+    },
+    {
+      "mapId": "archive:magnum-3-chaosvr",
+      "sourceSha256": "466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",
+      "cacheFingerprint": "8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",
+      "stations": []
+    },
+    {
+      "mapId": "archive:marksman-remarkabled",
+      "sourceSha256": "f2f6e58b7ca877b0ae66b195d2b560de21bff01f08d48d18a261ca3802d255c9",
+      "cacheFingerprint": "c76c9e1d9788d60b0ee271a620a11f2c7999e6486d2355524543aaa34e236361",
+      "stations": []
+    },
+    {
+      "mapId": "archive:melis-cafe-gods-pitdevil",
+      "sourceSha256": "6c42e928f34a55ec6bd88f9b587c5bda53eece8c458351c8e33a3e6a74b4a61d",
+      "cacheFingerprint": "2348ab8b3b1c625289aeaa111ce4939568224527052f35b90fec1a86e6f5c319",
+      "stations": []
+    },
+    {
+      "mapId": "archive:metal-mayhem-ghostlymostly88",
+      "sourceSha256": "38445692ae79198f71b4de70ba7c2a7dedc98bffc4b2f3782bfee2e8dabdb7ca",
+      "cacheFingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+      "stations": []
+    },
+    {
+      "mapId": "archive:mortal-kombat-bwaynecs",
+      "sourceSha256": "257470dbebf0478f588661e996b1d6a9483bdb6e7327206f990e205979276b0e",
+      "cacheFingerprint": "4682e46b32d63449145c14d9c5faf4b54aa07872dc1edd1b834cf0cb72776a11",
+      "stations": []
+    },
+    {
+      "mapId": "archive:muddy26-muddyfartz",
+      "sourceSha256": "622c9257a7748b9aa0d854f7a7cf418098d56626b196e7033479f2bdedc3287f",
+      "cacheFingerprint": "34bf91aaad3cdeeef8ef18ba50485adbb1691c16c4bde68a93ff2ab2248be257",
+      "stations": []
+    },
+    {
+      "mapId": "archive:mushy-gods-putangfreyja",
+      "sourceSha256": "23f795914c354a9836e5d55852ba48119477239b2688d82f575326843b79fa21",
+      "cacheFingerprint": "7adee4e08041f636149724c607a791a0827d3954cbe116f5fa102a522360ce8a",
+      "stations": []
+    },
+    {
+      "mapId": "archive:mushy-2-gods-putangfreyja",
+      "sourceSha256": "9abec0557618ad864380479189069bfe94e5dd2c1b7c9004bd61b6b056fd7330",
+      "cacheFingerprint": "2a0f32fdc2f424a0bf20edcbdfa6a0abf3323e381b9e0785b94a2ec1ad045abb",
+      "stations": []
+    },
+    {
+      "mapId": "archive:odf-5-level-odf-birdshot",
+      "sourceSha256": "68bcb9ce68ab722351a9e8c814652ce670bdebb1d986a8bacb5a81253c773fe0",
+      "cacheFingerprint": "0783b53e72e350495d69665481f237a9abb128837c03ec1b6036cec7876be665",
+      "stations": []
+    },
+    {
+      "mapId": "archive:oppression-gods-thor",
+      "sourceSha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+      "cacheFingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            115.72797,
+            59.58075,
+            92.89243
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            128.58622,
+            59.66899,
+            78.78425
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:phantom-gods-badbar",
+      "sourceSha256": "b2c70b5530fa04dd3e4e274929637c223b38342d28e734056b85161243d51e95",
+      "cacheFingerprint": "96bf3b704641483428768a6f6ab338543c742b88f945677817bb4fe0a21345ce",
+      "stations": []
+    },
+    {
+      "mapId": "archive:phoenix-bigbox-vr",
+      "sourceSha256": "915590b61ba40e7b7b5f0ae28b238b79aff3f36314ac788b6f41e501a250b3c5",
+      "cacheFingerprint": "3f85b40b45bc7562b9b6d0654860d717498eb8c39b45e78d8617745e703def80",
+      "stations": []
+    },
+    {
+      "mapId": "archive:plan-b-gods-pitdevil",
+      "sourceSha256": "45198e5157a98c297f0fa51672908b56793c5e53a6c43422afe90d162c06d204",
+      "cacheFingerprint": "58b4908281af9f62d94dc8afcb31ed79e57088cda6eef0653819688327fa7d75",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -175.79241,
+            99.64114,
+            -124.68369
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -174.22335,
+            99.64114,
+            194.71835
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            143.81568,
+            99.64114,
+            -123.52585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            142.01975,
+            99.64114,
+            193.78563
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:pollen-panic-kiki-80",
+      "sourceSha256": "e5812d38562a67ab10057b8ff69d77657ddbc6875bb84f678d29eec12f07cd5b",
+      "cacheFingerprint": "211c6ca637183aeef05163854f0a4cd4006d5442ef76df7bbfa40612e1fa0c1a",
+      "stations": []
+    },
+    {
+      "mapId": "archive:poppy-gods-poplightning",
+      "sourceSha256": "f607fde898b0e60add02e9d0a1c64c9955f23d10072002be3e4487d4901f740f",
+      "cacheFingerprint": "4cdbb885696a4a0802739662f136b8bdd7199f2cad564c3712a604b08ab56717",
+      "stations": []
+    },
+    {
+      "mapId": "archive:quantum-city-gods-pitdevil",
+      "sourceSha256": "2523b65982988c4eb8c105393a496cbb0585944f24cf1b8f6882790e1bd0097c",
+      "cacheFingerprint": "cd673075bf3a826b3d62fb77b0635973926cc533b3a4275d10d814453c35cbd3",
+      "stations": []
+    },
+    {
+      "mapId": "archive:quietowl-gods-pitdevil",
+      "sourceSha256": "418cac4a7612b937d4d766e909eb840ec39e310c15874c170fb3e64e86306013",
+      "cacheFingerprint": "fc232fdb25946f471759f88d9a43f157d54392d348f4f0812c6b46ec4dffd551",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -83.47036,
+            64.30926,
+            -49.90415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -87.62837,
+            70.4902,
+            96.79354
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -44.05497,
+            51.44935,
+            -88.13326
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -6.35473,
+            54.46862,
+            6.36992
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -44.30699,
+            63.97533,
+            21.78056
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -6.23929,
+            60.63108,
+            101.37118
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -47.73302,
+            70.4863,
+            96.90024
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            4.01359,
+            50.97559,
+            -87.08012
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            22.09507,
+            66.66901,
+            -86.07881
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            41.52409,
+            64.72657,
+            -72.03489
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            41.8482,
+            64.71918,
+            -57.54647
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            2.81853,
+            50.22919,
+            52.43887
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            57.40744,
+            48.7031,
+            47.34112
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            3.45069,
+            60.60941,
+            114.95436
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            57.62802,
+            89.97791,
+            64.80218
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            115.72797,
+            59.58075,
+            92.89243
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            128.58622,
+            59.66899,
+            78.78425
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 17,
+          "center": [
+            -49.62495,
+            96.77265,
+            -61.52514
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:realtree-gods-poplightning",
+      "sourceSha256": "d9d89ab2587d68707f35ef310617fcadf689a7ca479f943d19d5358fcffc056f",
+      "cacheFingerprint": "b1c82e56989fb6d6848a3a38c7fc4616e171d4d52d2539c339fbffd74d2319b0",
+      "stations": []
+    },
+    {
+      "mapId": "archive:rip-respect-integrity-pop1-armsreach",
+      "sourceSha256": "5e9296aad507ddf72cbd4dd6150cd386acc5ec55a37110295d3581aa09b9f4e6",
+      "cacheFingerprint": "276be5d1d64573c8e4f50ab1989ddc682603f078a6297f39f02cf9c9d67a8eca",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            13.87542,
+            175.64845,
+            -0.42014
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            7.97758,
+            178.05731,
+            -25.42272
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:robotics-2-gods-pitdevil",
+      "sourceSha256": "9119b9d2eca2d39a17571866280bafdba190728d2fcd75036f15eb60ca79aff4",
+      "cacheFingerprint": "6137c8596b7a98e4e7f1809237276940af484d3de17d54419d8b97b3e229fa08",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -209.74918,
+            71.93405,
+            -129.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -189.16585,
+            49.73406,
+            -54.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -227.24918,
+            60.73406,
+            80.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -147.33415,
+            52.23406,
+            100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -115.41845,
+            60.17952,
+            -78.92063
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -63.27735,
+            46.67045,
+            -4.15533
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -86.74917,
+            41.23406,
+            112.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -25.16584,
+            41.23406,
+            -291.24916
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -43.83223,
+            50.66692,
+            -86.90025
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -5.65979,
+            46.66678,
+            75.92526
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            15.6435,
+            46.70062,
+            -109.96051
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            52.25083,
+            50.71019,
+            83.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            13.66584,
+            70.73405,
+            119.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            72.54032,
+            54.61757,
+            -108.22673
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            100.74917,
+            72.23405,
+            -48.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            73.16585,
+            73.73405,
+            66.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            120.91722,
+            54.18143,
+            -106.63035
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 17,
+          "center": [
+            136.74918,
+            72.23405,
+            -103.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 18,
+          "center": [
+            125.07093,
+            46.69388,
+            28.1018
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 19,
+          "center": [
+            183.24918,
+            41.23406,
+            -290.66583
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 20,
+          "center": [
+            192.16585,
+            41.23406,
+            -203.75082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 21,
+          "center": [
+            265.74916,
+            41.23406,
+            -157.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:romulus-gods-skblong",
+      "sourceSha256": "0ac3f983fcc3bf18eeb6b272eb8a80e676ad127e36571ddd6e617f02b40a39e1",
+      "cacheFingerprint": "1218f0d8968694992581fe934bc764c59d5edbe8897c28e3b0466a8f5948034b",
+      "stations": []
+    },
+    {
+      "mapId": "archive:sean0311-gods-sean0311",
+      "sourceSha256": "b78895f67cea47fe73be7ad758fda9211ccdd50d9ad2b606cd6e67a3df887377",
+      "cacheFingerprint": "7e7d4bc3cf8792d90d0b799a46bd313312471f307a0282695ead054e83c31c87",
+      "stations": []
+    },
+    {
+      "mapId": "archive:sharp-objects-kiwishade",
+      "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+      "cacheFingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+      "stations": []
+    },
+    {
+      "mapId": "archive:showdown-gods-crazytrain",
+      "sourceSha256": "4f2171e67edfd8a1e004e810e79989fe85cfada34277f5e3e2d32c3be408006d",
+      "cacheFingerprint": "7a985234fac33219ddaa1a825431f8920f3f04a770eac7136c5d369dce0a49bb",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            22.66584,
+            62.43405,
+            -20.29949
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:skb-paintball-gods-skblong",
+      "sourceSha256": "cd5aaaa7de37a9077a39283ffecd560e1cf56f087ac5e6a20096834ad0dbbdb8",
+      "cacheFingerprint": "68390f92cd69204e09c4ef38543e7b6c023db21c0ff12c85de9313932dbb01fd",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -105.66585,
+            492.23404,
+            -100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -103.16585,
+            492.23404,
+            -100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -103.16585,
+            492.23404,
+            -103.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -105.66585,
+            492.23404,
+            -103.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -108.16585,
+            492.23404,
+            -100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -108.16585,
+            492.23404,
+            -103.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            -100.66585,
+            492.23404,
+            -103.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            -100.66585,
+            492.23404,
+            -100.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            -103.16585,
+            492.23404,
+            -105.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            -105.66585,
+            492.23404,
+            -105.74917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            -103.16585,
+            492.23404,
+            -98.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            -105.66585,
+            492.23404,
+            -98.24917
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:stacked-gods-trashpandakiller",
+      "sourceSha256": "b60f507045111455f184941efcd1e772d81a3b3301b77389ad7c0ead70eb0532",
+      "cacheFingerprint": "4c510e447dfb224943afe432a47c6fb5e5e0490847232c966047e33afa667882",
+      "stations": []
+    },
+    {
+      "mapId": "archive:statmaster-classic-soulsmight",
+      "sourceSha256": "36579e8cf66cbd73d9f55b12562e63bfe1fcef3f3235d8281c4748dcbeb4139b",
+      "cacheFingerprint": "78e9d46aa694036fc2dc4fcdd79716b40bbc8770d1b60677406048ba5c14b0f0",
+      "stations": []
+    },
+    {
+      "mapId": "archive:statmaster-evolving-soulsmight",
+      "sourceSha256": "795a32676af36833b747ff2a5617dab5e31a3e927535b72a7d6c0043d4ab19f3",
+      "cacheFingerprint": "28d3e23ab6a9abfcc37b9cfad707e2c135179eff7ac6ed97c4b1a67b46f8376f",
+      "stations": []
+    },
+    {
+      "mapId": "archive:suffering-gods-thor",
+      "sourceSha256": "cf68defaea8ceb9aa11a3579eb56fbe242767995b13bcbad98d1c9a80eee22ac",
+      "cacheFingerprint": "e77d8e1240b866dc18a563758ce6e1fd8c328c7d8baf3921a453f1f52df4f4fe",
+      "stations": []
+    },
+    {
+      "mapId": "archive:sunflower-city-kiki-80-bbb",
+      "sourceSha256": "cef6add47ad1f752e04e96fe7abf8d4d9f2ab734d4423fe0fd3099e4d006c13b",
+      "cacheFingerprint": "7e5154445ef622c817fc6dc7843f3842a4c4cbf89e63294b259d572564426594",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -64.81563,
+            53.46548,
+            -16.28595
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -92.43598,
+            61.37426,
+            -37.79396
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -61.49519,
+            60.15928,
+            59.23302
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -107.13924,
+            53.78522,
+            20.27936
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -58.4541,
+            42.97948,
+            1.29791
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -5.55076,
+            52.59578,
+            58.03813
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            44.77797,
+            43.44968,
+            46.88049
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            44.83114,
+            53.50343,
+            49.15549
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            68.00168,
+            61.4859,
+            -3.30052
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            79.04035,
+            55.42123,
+            21.22905
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:survive-gods-goodwitch",
+      "sourceSha256": "0473f193991ada44dd035fd2a6e96d2bf9c850627b400facc22866c6f40bef6f",
+      "cacheFingerprint": "fd160dc9c9f0c4f26100929a5a1a0eb32bbd3cad1dffd42f8f4f753636bdaff1",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -229.12033,
+            267.80368,
+            -8.51533
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -206.25082,
+            255.8392,
+            171.90335
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -74.14116,
+            311.48105,
+            35.42505
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -25.75083,
+            260.43405,
+            -95.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -32.34386,
+            322.19046,
+            6.78851
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            -59.02943,
+            270.85324,
+            275.40317
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            30.69538,
+            268.39172,
+            -186.22484
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            101.75405,
+            260.83636,
+            -310.07952
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            101.75405,
+            260.83636,
+            -173.60145
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            74.70842,
+            321.91589,
+            10.81973
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:swarm-gods-chriso",
+      "sourceSha256": "ca9088bac716f9f4081cb56b6785938465a1a51e108130133bf36655f0689db8",
+      "cacheFingerprint": "4b8f5307cca865be0f69c4fae48cf5508a46a63e05e9e74a6cc20598027a5ea2",
+      "stations": []
+    },
+    {
+      "mapId": "archive:sweet-dreams-gods-badbar",
+      "sourceSha256": "f941aa69c2bccf048654b7ce79aaf833b47781a1f9d77403d89d7bf418a5c4c8",
+      "cacheFingerprint": "3ff8734088fce2b3676d0224e51777a2590f5a341030317d303e720074284c7c",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -152.7406,
+            114.44238,
+            -169.92698
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -77.24917,
+            105.23405,
+            -151.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -42.74917,
+            105.23405,
+            -80.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -28.24917,
+            105.23405,
+            10.66584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            -6.69802,
+            105.23405,
+            71.01118
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            24.75083,
+            105.23405,
+            -58.33416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            41.75083,
+            105.23405,
+            40.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            53.25083,
+            105.23405,
+            100.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            78.75083,
+            105.23405,
+            -44.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            105.75083,
+            105.43405,
+            -27.83416
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            71.25083,
+            105.23405,
+            143.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            149.75082,
+            105.23405,
+            -153.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 12,
+          "center": [
+            133.75082,
+            105.23405,
+            -82.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 13,
+          "center": [
+            128.75082,
+            105.23405,
+            20.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 14,
+          "center": [
+            153.25082,
+            105.23405,
+            116.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 15,
+          "center": [
+            126.75083,
+            105.23405,
+            110.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 16,
+          "center": [
+            182.75082,
+            105.23405,
+            159.66585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:tagd-gods-pitdevil",
+      "sourceSha256": "569eb7f52ccd20837dd99f8de190619995a71ec43e83f339c67605067859db1f",
+      "cacheFingerprint": "5626d0d5eaa4bce94d90be82e8ae7981f007e6520b63c1db7dbfd22081118909",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-citadel-gods-thor",
+      "sourceSha256": "bd7182b904229b1d3b7982c92dd47d89dda66dd22e94af0782cbbf766a9403f0",
+      "cacheFingerprint": "9cfd917759d54c00372a30fe9aefcca1ed04576402896c3c332383429520985d",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-fortress-gods-alamo-hank",
+      "sourceSha256": "a3002111c0dcb070d792f0ff6d4f362d402d238dda278c1e891dff6f279b17f7",
+      "cacheFingerprint": "3b36a7afb62d7383634893eadded99b61986012e3a0a481dede3c9579ebb75a7",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-holler-gods-alamo-hank",
+      "sourceSha256": "a7e7c56f931ee49192ecdadd636ff8b09c80088bc326febfd81583cd4873cd32",
+      "cacheFingerprint": "6705aa80bf82042f36748a9a02ee19c0ca0cacf5dedcd14677d53ba2862274b8",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-powerpuff-g0ds-gods-meli",
+      "sourceSha256": "dc8310310317a595e60b86ec1433f8efbe80b030b6c1694f4248b98551eb1cae",
+      "cacheFingerprint": "65ecd7d807303db41396e75c3deaf969380f57bb44ab85958ce9713def280d0b",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-shining-gods-ghostlymostly88",
+      "sourceSha256": "e41e2ab9ca6de3a41ce607f277b7e7087bf8ef76e095d568c3a08f990049efc8",
+      "cacheFingerprint": "d9f41688944129186004944c55e391399747b8bac818087a1c7784d0ecdba85f",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -85.27216,
+            91.03801,
+            5.93258
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -85.72579,
+            56.7377,
+            60.59792
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -26.17319,
+            54.33635,
+            -31.20421
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            -2.53066,
+            56.2281,
+            157.86772
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            48.16271,
+            88.6248,
+            -120.96359
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            3.02348,
+            56.2281,
+            157.86772
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            84.88541,
+            56.75986,
+            -78.57158
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            85.92171,
+            88.57426,
+            -24.47655
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:the-swamp-taffy-dragon-vr",
+      "sourceSha256": "1dde98149b583b39dd9a421742f7198530516c9b8fc11c0493361bc54bedac6f",
+      "cacheFingerprint": "77847af39a60aad2ca8364c487fb60ef6ea7bc8808460db9a46f179ce5f17165",
+      "stations": []
+    },
+    {
+      "mapId": "archive:the-white-house-gods-osprey-kat",
+      "sourceSha256": "4ce15e966db225cc08e8512a9f4cdbf976a42ffbad8375c2972c93894d55e331",
+      "cacheFingerprint": "d8f5714de7aa8b37e48feb1be9aefb8fb4106d126fde67dadd69d28d61bb8ec1",
+      "stations": []
+    },
+    {
+      "mapId": "archive:thor-city-gods-thor",
+      "sourceSha256": "ee7d45ed854d134474e499b396fcef7af9a72a4c3c23829c53850c53aee0f6f1",
+      "cacheFingerprint": "0af52069fdbbd35bef8d700ee689c9faa0b54048a47af06711d9d23058500b47",
+      "stations": []
+    },
+    {
+      "mapId": "archive:train-rmx-armsreach",
+      "sourceSha256": "cb9e2eb5f9202b0874a8e6feb09bf08bf6b6285da2682a76c4e665961e8014a5",
+      "cacheFingerprint": "a128d44a4c036529d61d094f7c2a24233ece0ee311f295266545dd212b8550d9",
+      "stations": []
+    },
+    {
+      "mapId": "archive:trashed-gods-pitdevil",
+      "sourceSha256": "e78ffd3eff470f3dd1930a4faf3e8daad8e2710089cb01db690d2e75e299f1da",
+      "cacheFingerprint": "5aff40c123cd65e46798ebc2342384ce107a3872936bccaa702d3b1db5353d73",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -121.65492,
+            64.87324,
+            -131.01537
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -121.65492,
+            64.87324,
+            143.25082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            50.67488,
+            94.48996,
+            44.56398
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            51.78803,
+            94.4594,
+            62.15031
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            67.37907,
+            94.55013,
+            60.45513
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            68.35363,
+            94.5584,
+            44.12425
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 6,
+          "center": [
+            134.83415,
+            64.87324,
+            -131.01537
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 7,
+          "center": [
+            159.87077,
+            106.46512,
+            -1.1046
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 8,
+          "center": [
+            138.53037,
+            106.45818,
+            -1.18058
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 9,
+          "center": [
+            138.72987,
+            106.45957,
+            10.06652
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 10,
+          "center": [
+            159.62949,
+            106.46596,
+            9.96189
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 11,
+          "center": [
+            134.83415,
+            64.87324,
+            143.25082
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:trauma-gods-pitdevil",
+      "sourceSha256": "56f47a512e7948ec83d5fd18a8cc1eb225be02997f899c82a7e2efce69316a42",
+      "cacheFingerprint": "21ffbd967193a5c31b7bc75635c5fcebccf10f53d60888787a7fe9309b2025ac",
+      "stations": []
+    },
+    {
+      "mapId": "archive:ultimate-5-levels-rexryan",
+      "sourceSha256": "4618a055707531fbadeb1638d65da182b8715c3d7a8a9039d7291f92c9e5b46a",
+      "cacheFingerprint": "4c6bb7726162dfe2d5ab41365db5d1ec0f29aa2fcec9430f8d1d2763fa531da3",
+      "stations": []
+    },
+    {
+      "mapId": "archive:unbroken-gods-thor",
+      "sourceSha256": "24aadde52aeb72d532931917ef783d91648cbbc2c1b55b261a594f7a095c3360",
+      "cacheFingerprint": "f00b4fe83d948e4b94aaad81612de20cf9b4f3d1ac7000abf4db7b8f62eab979",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -113.74917,
+            30.23406,
+            -109.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -113.75083,
+            30.23406,
+            111.33415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            -6.25083,
+            37.73406,
+            -8.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            2.24917,
+            37.73406,
+            -8.16584
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 4,
+          "center": [
+            107.74917,
+            30.43405,
+            -111.16585
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 5,
+          "center": [
+            108.24917,
+            30.23406,
+            108.83415
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:viral-gods-ghostlymostly88",
+      "sourceSha256": "281e6a762653a21e7cddf556c323f0c3bd34776baaa5883af7ff150e7a905674",
+      "cacheFingerprint": "eb6ccc1dbd1b9b3b2434db8ad89fd562dd0ff2afc11e8c260ac9665d1081880d",
+      "stations": [
+        {
+          "sourceIndex": 0,
+          "center": [
+            -42.00296,
+            62.53765,
+            -42.34867
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 1,
+          "center": [
+            -43.04725,
+            62.55679,
+            52.98176
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 2,
+          "center": [
+            51.91159,
+            62.46772,
+            -41.93136
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        },
+        {
+          "sourceIndex": 3,
+          "center": [
+            52.49217,
+            62.54586,
+            52.14503
+          ],
+          "normal": [
+            0,
+            1,
+            0
+          ],
+          "radius": 1.12,
+          "healthPerSecond": 10
+        }
+      ]
+    },
+    {
+      "mapId": "archive:vortex-sd-stumpdawg",
+      "sourceSha256": "76db6dfecf8bebe95d19e5514235b607c0487aaddfd1f5330170870de1a8889e",
+      "cacheFingerprint": "466946c954308d5b16eb4221c54a0fba2e3055d41989e329b7a1a9ab321eb91b",
+      "stations": []
+    },
+    {
+      "mapId": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+      "sourceSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+      "cacheFingerprint": "9c456feb8d525d218b872fca489d598eb592b98236f743ad3b27da7e61951a3e",
+      "stations": []
+    }
+  ]
+}

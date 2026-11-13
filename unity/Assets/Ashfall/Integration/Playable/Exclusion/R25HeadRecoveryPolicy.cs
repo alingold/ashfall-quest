@@ -1,0 +1,218 @@
+using System;
+using Ashfall.Core;
+
+namespace Ashfall.Integration.Playable.Exclusion
+{
+    public enum R25RecoveryReason
+    {
+        None = 0,
+        Respawn = 1,
+        CarrierExit = 2,
+        Calibration = 3,
+        GhostMove = 4,
+        Stuck = 5,
+        TrappedOpaque = 6
+    }
+
+    // Unity-free decision policy for getting the player's head hull out of world
+    // geometry. The rig supplies "is the head hull clear right now" each frame;
+    // this class decides when to try a recovery, bounds the push-out, and keeps a
+    // small ring buffer of recent clear head positions to fall back to.
+    public sealed class R25HeadRecoveryPolicy
+    {
+        // Ring buffer size for recent clear head positions.
+        public readonly int HistoryCapacity = 8;
+        // A new clear sample is stored only after this much time AND distance since
+        // the newest stored one, so the buffer spans a few seconds of real travel.
+        public readonly float RecordSeconds = 0.25f;
+        public readonly float RecordDistance = 0.10f;
+        // A head jump larger than this in one observed frame is a teleport (map load,
+        // respawn, scripted move): older history no longer describes nearby space.
+        public readonly float TeleportDistance = 3.0f;
+        // Iterative push-out limits: total displacement and number of passes.
+        public readonly float MaxPushDistance = 0.35f;
+        public readonly int MaxPushIterations = 4;
+        // Extra separation added to every penetration depth (metres).
+        public readonly float PushSkin = 0.002f;
+        // A history fallback further than this from the current head is refused.
+        public readonly float MaxFallbackDistance = 4.0f;
+        // Consecutive frames the hull must fail its starting-clear test before an
+        // unrequested ("stuck") recovery is attempted.
+        public readonly int StuckFrames = 3;
+        // After a failed attempt, wait this long before trying again.
+        public readonly float RetrySeconds = 0.5f;
+        // Minimum time between log lines.
+        public readonly float LogSeconds = 1.0f;
+
+        readonly Float3[] history;
+        int historyCount, newestIndex;
+        float newestTime;
+        bool haveObserved;
+        Float3 lastObserved;
+        int blockedFrames;
+        bool pending;
+        R25RecoveryReason pendingReason;
+        float retryAt = float.NegativeInfinity;
+        bool carrierWasActive;
+        float nextLogAt = float.NegativeInfinity;
+        int suppressedLogs;
+        bool opaqueObserved;
+        Float3 opaqueProgressHead;
+        float opaqueProgressAt;
+        public void ResetOpaque() { opaqueObserved = false; }
+        // Every centimetre of real escape restarts the two-second no-progress
+        // timer. Stationary/tangential protection never holds a player forever.
+        public bool TickOpaque(Float3 head, bool opaque, float now)
+        {
+            if (!head.IsFinite || float.IsNaN(now) || float.IsInfinity(now)) return false;
+            if (!opaque) { ResetOpaque(); return false; }
+            if (!opaqueObserved || Distance(head, opaqueProgressHead) >= .01f)
+            { opaqueObserved = true; opaqueProgressHead = head; opaqueProgressAt = now; return false; }
+            if (now - opaqueProgressAt < 2f) return false;
+            opaqueProgressAt = now;
+            return true;
+        }
+
+        public R25HeadRecoveryPolicy()
+        {
+            history = new Float3[HistoryCapacity];
+        }
+
+        public int HistoryCount { get { return historyCount; } }
+        public int BlockedFrames { get { return blockedFrames; } }
+        public bool Pending { get { return pending; } }
+
+        // Forget every stored position (teleport, respawn, map change, pod launch).
+        public void ClearHistory()
+        {
+            historyCount = 0;
+            newestIndex = 0;
+            haveObserved = false;
+        }
+
+        // Ask for an immediate check on the next frame (the head pose was just
+        // accepted without a sweep). Later requests replace earlier reasons.
+        public void Request(R25RecoveryReason reason)
+        {
+            if (reason == R25RecoveryReason.None) return;
+            pending = true;
+            pendingReason = reason;
+        }
+
+        // One frame of the policy. Returns the reason a recovery must be attempted
+        // now, or None. carrierOwns: a pod/carrier wrote the root this frame.
+        public R25RecoveryReason Tick(Float3 head, bool clear, bool carrierOwns, float now)
+        {
+            if (!head.IsFinite || float.IsNaN(now) || float.IsInfinity(now)) return R25RecoveryReason.None;
+            if (carrierOwns)
+            {
+                // Never fight the carrier. Positions before/during the flight are not
+                // a safe nearby fallback after landing.
+                if (!carrierWasActive) ClearHistory();
+                carrierWasActive = true;
+                blockedFrames = 0;
+                pending = false;
+                return R25RecoveryReason.None;
+            }
+            if (carrierWasActive)
+            {
+                carrierWasActive = false;
+                ClearHistory();
+                Request(R25RecoveryReason.CarrierExit);
+            }
+            Observe(head, clear, now);
+            if (clear)
+            {
+                pending = false;
+                return R25RecoveryReason.None;
+            }
+            if (now < retryAt) return R25RecoveryReason.None;
+            if (pending) return pendingReason;
+            return blockedFrames >= StuckFrames ? R25RecoveryReason.Stuck : R25RecoveryReason.None;
+        }
+
+        void Observe(Float3 head, bool clear, float now)
+        {
+            if (haveObserved && Distance(head, lastObserved) > TeleportDistance) ClearHistory();
+            lastObserved = head;
+            haveObserved = true;
+            if (!clear)
+            {
+                if (blockedFrames < int.MaxValue) blockedFrames++;
+                return;
+            }
+            blockedFrames = 0;
+            if (historyCount > 0)
+            {
+                Float3 newest = history[newestIndex];
+                if (now - newestTime < RecordSeconds || Distance(head, newest) < RecordDistance) return;
+                newestIndex = (newestIndex + 1) % HistoryCapacity;
+            }
+            history[newestIndex] = head;
+            newestTime = now;
+            if (historyCount < HistoryCapacity) historyCount++;
+        }
+
+        // Report the outcome of an attempt that Tick asked for.
+        public void Completed(bool success, float now)
+        {
+            pending = false;
+            blockedFrames = 0;
+            retryAt = success ? float.NegativeInfinity : now + RetrySeconds;
+        }
+
+        // Accumulate one penetration correction into the running push-out offset.
+        // Returns false (offset unchanged) when the bounded budget would be exceeded
+        // or the input is not a usable separation.
+        public bool AcceptPush(ref Float3 offset, Float3 away, float depth)
+        {
+            if (!away.IsFinite || !offset.IsFinite || float.IsNaN(depth) || float.IsInfinity(depth) || depth < 0) return false;
+            float length = Length(away);
+            if (length < 0.000001f) return false;
+            float step = depth + PushSkin;
+            Float3 next = new Float3(offset.X + away.X / length * step, offset.Y + away.Y / length * step, offset.Z + away.Z / length * step);
+            if (Length(next) > MaxPushDistance) return false;
+            offset = next;
+            return true;
+        }
+
+        // ageIndex 0 is the newest stored clear head position. Candidates further
+        // than MaxFallbackDistance from the current head are refused.
+        public bool TryFallback(Float3 head, int ageIndex, out Float3 candidate)
+        {
+            candidate = new Float3();
+            if (ageIndex < 0 || ageIndex >= historyCount || !head.IsFinite) return false;
+            int index = (newestIndex - ageIndex + HistoryCapacity) % HistoryCapacity;
+            Float3 stored = history[index];
+            if (Distance(stored, head) > MaxFallbackDistance) return false;
+            candidate = stored;
+            return true;
+        }
+
+        // Rate limiter for the recovery log. suppressed = lines skipped since the
+        // previous emitted line.
+        public bool ShouldLog(float now, out int suppressed)
+        {
+            suppressed = 0;
+            if (now < nextLogAt)
+            {
+                suppressedLogs++;
+                return false;
+            }
+            suppressed = suppressedLogs;
+            suppressedLogs = 0;
+            nextLogAt = now + LogSeconds;
+            return true;
+        }
+
+        public static float Distance(Float3 a, Float3 b)
+        {
+            return Length(new Float3(a.X - b.X, a.Y - b.Y, a.Z - b.Z));
+        }
+
+        public static float Length(Float3 v)
+        {
+            return (float)Math.Sqrt(v.X * v.X + v.Y * v.Y + v.Z * v.Z);
+        }
+    }
+}

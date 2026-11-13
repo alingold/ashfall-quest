@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "slag_warden",
+ "label": "Slag Warden",
+ "sourceIndex": 1,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "slag_warden-body-baseColor.png",
+   "normal": "slag_warden-body-normal.png",
+   "metallicMap": "slag_warden-body-metallic.png",
+   "occlusion": "slag_warden-body-occlusion.png",
+   "emission": "slag_warden-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 3.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "slag_warden-glove-baseColor.png",
+   "normal": "slag_warden-glove-normal.png",
+   "metallicMap": "slag_warden-glove-metallic.png",
+   "occlusion": "slag_warden-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

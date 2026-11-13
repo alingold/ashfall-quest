@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "circuit_jester",
+ "label": "Circuit Jester",
+ "sourceIndex": 14,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "circuit_jester-body-baseColor.png",
+   "normal": "circuit_jester-body-normal.png",
+   "metallicMap": "circuit_jester-body-metallic.png",
+   "occlusion": "circuit_jester-body-occlusion.png",
+   "emission": "circuit_jester-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "circuit_jester-glove-baseColor.png",
+   "normal": "circuit_jester-glove-normal.png",
+   "metallicMap": "circuit_jester-glove-metallic.png",
+   "occlusion": "circuit_jester-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

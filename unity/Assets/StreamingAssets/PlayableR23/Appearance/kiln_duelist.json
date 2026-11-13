@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "kiln_duelist",
+ "label": "Kiln Duelist",
+ "sourceIndex": 3,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "kiln_duelist-body-baseColor.png",
+   "normal": "kiln_duelist-body-normal.png",
+   "metallicMap": "kiln_duelist-body-metallic.png",
+   "occlusion": "kiln_duelist-body-occlusion.png",
+   "emission": "kiln_duelist-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "kiln_duelist-glove-baseColor.png",
+   "normal": "kiln_duelist-glove-normal.png",
+   "metallicMap": "kiln_duelist-glove-metallic.png",
+   "occlusion": "kiln_duelist-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

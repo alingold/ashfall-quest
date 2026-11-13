@@ -1,0 +1,63 @@
+{
+  "id": "cx4",
+  "modelScale": 0.855,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.62
+  ],
+  "magazineHome": [
+    -1.7463485197863338e-08,
+    -0.12042804992201052,
+    -0.010780132485311018
+  ],
+  "offer": [
+    0,
+    -0.278,
+    -0.010780132485311018
+  ],
+  "insert": [
+    0,
+    -0.18,
+    -0.010780132485311018
+  ],
+  "chargingGrip": [
+    -0.045,
+    0.064,
+    0.1
+  ],
+  "chargingPullUnityZ": -0.075,
+  "chargingMaximum": 0.09,
+  "supportPoint": [
+    0,
+    -0.025,
+    0.36
+  ],
+  "rearSight": [
+    0,
+    0.135,
+    0.015
+  ],
+  "frontSight": [
+    0,
+    0.13449754977979034,
+    0.465
+  ],
+  "zeroDistance": 80,
+  "capacity": 25,
+  "ammoFamily": "rifle",
+  "sourceVisibleTriangles": 6188,
+  "sourceGLBTriangles": 6060,
+  "slideCycleDistance": 0,
+  "slideCycleSeconds": 0,
+  "notes": [
+    "Coordinates already reflected Unity+Zforward. Model scale is NOT baked.",
+    "Downloaded Magazine and Slide homes restored exactly once.",
+    "CX4 retains original barrel extension and beveled charging handle; R5 collimated dot supplied by runtime, not an MK18 optic."
+  ]
+}

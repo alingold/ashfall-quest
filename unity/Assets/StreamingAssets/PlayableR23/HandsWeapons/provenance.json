@@ -1,0 +1,324 @@
+{
+  "baseline": "quest-r24 snapshot of actual Opus R23",
+  "inputs": [
+    {
+      "source": "assets\\hands\\xrtools086\\Hand_Glove_low_L.gltf",
+      "sha256": "8010745a3d60329a828361a19a8e52233788ccf3e7654c1b4f5c8fa694b6202c"
+    },
+    {
+      "source": "assets\\hands\\xrtools086\\textures_glove_caucasian_dark_camo.png",
+      "sha256": "720b2d1fcb1f64a3eb18fd021a8216ecb3a0650fdfe9feffa92c38b69d8c1e2d"
+    },
+    {
+      "source": "assets\\hands\\xrtools086\\Hand_Glove_low_R.gltf",
+      "sha256": "0719afd3184871240ddb65f359bdf60740a330cccb4179b1335b3da1b00370de"
+    },
+    {
+      "source": "assets\\hands\\xrtools086\\textures_glove_caucasian_dark_camo.png",
+      "sha256": "720b2d1fcb1f64a3eb18fd021a8216ecb3a0650fdfe9feffa92c38b69d8c1e2d"
+    },
+    {
+      "source": "assets\\models\\download_mk18\\model.glb",
+      "sha256": "15a7669b504249510bd5e2fec024221277f0dcb4049c5c4649f60a10275cefb8"
+    },
+    {
+      "source": "assets\\models\\download_akm\\model.glb",
+      "sha256": "e386743d16a91bf3b0cf633ec9b164ecd094d2de5a6cba0944bcacbd5e8aebdb"
+    },
+    {
+      "source": "assets\\models\\download_spr\\model.glb",
+      "sha256": "e104178daebac65fc3af45da04061b1afd7c586167aece6fafea2fd245cb0327"
+    },
+    {
+      "source": "assets\\models\\gemini_scope099\\spr_scope_pcvr.glb",
+      "sha256": "5a07bf84e1f063ed0895e2d51e9bd6e6c9fb303adee6083f0dea50c64ed84c08"
+    },
+    {
+      "source": "assets\\models\\download_mk18\\asset-provenance.json",
+      "sha256": "3d5e56e084a3898caa652c057821ced450c809b45e95bac233f77f8c85a1d4db"
+    },
+    {
+      "source": "assets\\models\\download_akm\\asset-provenance.json",
+      "sha256": "2bfa056a9653d2c36750ced7d95ef50413bd5b23dcc753b02fa7c4384ce912bd"
+    },
+    {
+      "source": "assets\\models\\download_spr\\asset-provenance.json",
+      "sha256": "2294cea02bb2dc4b12197197ce9c2cace7efa0ab53c4fd65ef5d436c2c7aa172"
+    },
+    {
+      "source": "assets\\models\\download_mk18\\asset-provenance.json",
+      "sha256": "3d5e56e084a3898caa652c057821ced450c809b45e95bac233f77f8c85a1d4db"
+    },
+    {
+      "source": "assets\\hands\\xrtools086\\ATTRIBUTION.txt",
+      "sha256": "8527c4b37ca7dda9ab478508c6b8831055d0b94124deeb2ebcaa4ef5eb6e1a30"
+    },
+    {
+      "source": "assets\\hands\\xrtools086\\LICENSE.txt",
+      "sha256": "b72375b7c6e3eb4297bb1a4711f31ad7a9ef102bea04cafd52f1146f06fc4ddb"
+    },
+    {
+      "source": "scripts\\grip_hand_086.gd",
+      "sha256": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c"
+    },
+    {
+      "source": "scripts\\player.gd",
+      "sha256": "6bdc208101b450f51225fb666df45a759ef1282a578d044aa3a8ce7a12c2ac47"
+    },
+    {
+      "source": "scripts\\playtest_fit_088.gd",
+      "sha256": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a"
+    },
+    {
+      "source": "scripts\\downloaded_firearm_model.gd",
+      "sha256": "9b3f25e8b2f33e49cd51884188e745b251afcbe4a6912ce7b7f0b9d2c374b3e0"
+    },
+    {
+      "source": "scripts\\model_scale_084.gd",
+      "sha256": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3"
+    },
+    {
+      "source": "scripts\\common_reflex_090.gd",
+      "sha256": "459c1d259208debeacbb799a2b84e458559aa30db2413c8ad581f9a57f2c7824"
+    },
+    {
+      "source": "scripts\\authored_reflex_sight.gd",
+      "sha256": "a021bb0feb089d49ddf300c35158850f2f5dc6d692153713e1f04042bc19f03e"
+    },
+    {
+      "source": "scripts\\authored_ring_dot_sight.gd",
+      "sha256": "3150aeb8695a2336cb3262103098d44665ba87bdf77944a66ebb1d769639115a"
+    },
+    {
+      "source": "scripts\\practice_dummy.gd",
+      "sha256": "6facd31955cb440bd1289cd89605509386660fc0a75ba0cdeb8c006cab149911"
+    },
+    {
+      "source": "scripts\\audio_bank.gd",
+      "sha256": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34"
+    },
+    {
+      "source": "scripts\\reference_audio_099.gd",
+      "sha256": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72"
+    },
+    {
+      "source": "scripts\\weapon.gd",
+      "sha256": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a"
+    },
+    {
+      "source": "scripts\\weapon_rack.gd",
+      "sha256": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9"
+    },
+    {
+      "source": "scripts\\burst_carbine.gd",
+      "sha256": "d60760d7ea63312ce19dab5fc7c9c186d6689f34af332da8e8abc6ad38066352"
+    },
+    {
+      "source": "scripts\\catalog_firearm.gd",
+      "sha256": "63d33af1c8fe7c44a78fb41db8c7c66139c1339c7e4e5798dbd2e9b899a3ffdd"
+    },
+    {
+      "source": "scripts\\arsenal_data.gd",
+      "sha256": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98"
+    },
+    {
+      "source": "scripts\\weapon_rarity_r6.gd",
+      "sha256": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d"
+    },
+    {
+      "source": "scripts\\spr.gd",
+      "sha256": "7f44e92a8b0cb2b7c25672913e50b95276b2e3c71a5c05eb3261b5f5ee7b8b01"
+    },
+    {
+      "source": "scripts\\spr_scope.gd",
+      "sha256": "72b6a2d866fbca92002e07eae4a2eabdd09e9aef7d53392ec2d602490b8332b2"
+    },
+    {
+      "source": "scripts\\longwatch_scope.gd",
+      "sha256": "0e63863586f337e3f5ea4192f7baae04840e3ec522ca0ac0fb92b709ea4d6fe3"
+    },
+    {
+      "source": "scripts\\gemini_scope099.gd",
+      "sha256": "85f920447100633832d2b6cd4a1c379f07a491b8742f1cfabb7ccc06b56a3573"
+    },
+    {
+      "source": "assets\\models\\gemini_scope099\\provenance.json",
+      "sha256": "86fbf55feb721d2b0e1b055433cd5dc42cfb8668ca4138ebfc71ac18cba3be4f"
+    },
+    {
+      "source": "assets\\models\\gemini_scope099\\ATTRIBUTION.txt",
+      "sha256": "88525549b6a2d9c5808887c251d2c011b42a54a9fdf6748e8dcf6e38fdc11e8d"
+    },
+    {
+      "source": "assets\\audio\\reference0992\\manifest.json",
+      "sha256": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_s85_pouch_00.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_s85_mag_insert_00.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_s85_bolt_00.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7"
+    },
+    {
+      "source": "assets\\audio\\sfx\\dry_00.wav",
+      "sha256": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776"
+    },
+    {
+      "source": "assets\\audio\\sfx\\dry_01.wav",
+      "sha256": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228"
+    },
+    {
+      "source": "assets\\audio\\sfx\\hit_00.wav",
+      "sha256": "1b2cfa30c85a7c14c8ad66b3b0df6fe17bb654ac584eb7d0cbd32c4a54cdb111"
+    },
+    {
+      "source": "assets\\audio\\sfx\\hit_01.wav",
+      "sha256": "8c5e229e71a1ecb58922c68b2c10fa51fd3dc09973dd4c40a7d11f62d17f2ec4"
+    },
+    {
+      "source": "assets\\audio\\sfx\\hurt_00.wav",
+      "sha256": "8513f19b6088d24b875d5a5460d206b390e324b0ea132ab4d1c89621f4fa5b1d"
+    },
+    {
+      "source": "assets\\audio\\sfx\\hurt_01.wav",
+      "sha256": "dce5d9e2ca188f07255513f9aeb3bcb8ace426e80ab43e2cc3e908436b5a1a71"
+    },
+    {
+      "source": "assets\\audio\\reference097\\shot_mk18_last_00.wav",
+      "sha256": "8c7bbd92284fe7c11720eb59a39e86dc09ccab4649e772951872253f3642852f"
+    },
+    {
+      "source": "assets\\audio\\reference097\\shot_akm_last_00.wav",
+      "sha256": "bd5dcf6f92084374565ec449cca6cfad7af9c3e4c595f200e9c6b9ba5120e652"
+    },
+    {
+      "source": "assets\\audio\\reference099\\akm_mag_insert_00.wav",
+      "sha256": "e7a124d21e39bffb2fb0b77f249045f35ee1b81557525635eb6ae1b186a73509"
+    },
+    {
+      "source": "assets\\audio\\reference099\\akm_mag_insert_01.wav",
+      "sha256": "21e73232902584d734ac472a473d4af99dcff7c1287ae1d95d2a79123be4e2ab"
+    },
+    {
+      "source": "assets\\audio\\reference099\\akm_bolt_00.wav",
+      "sha256": "8234e4c9774cb16dd3bb204915a866f5dbcf2af8e3a71f03cc945bcfd7831016"
+    },
+    {
+      "source": "assets\\audio\\reference099\\akm_bolt_01.wav",
+      "sha256": "4040727cf86c080abb75657996ea1d6ac948254cfe1087b767ebc7fa127d1d11"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_spr_shot_00.wav",
+      "sha256": "857a5f394071361df79978ca718b53c0268ec30d78928326665299afabb3681d"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_spr_bolt_00.wav",
+      "sha256": "22746f175548e36c87afe41f54dcd1c890069d24d612b2e0c2cd955042fa141d"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3"
+    },
+    {
+      "source": "assets\\audio\\reference099\\isolated_spr_mag_insert_00.wav",
+      "sha256": "d3c820339da031d75e1d39c0cc7a92e548452948725ec77eb477b26225ea106f"
+    },
+    {
+      "source": "assets\\data\\one_star0991.json",
+      "sha256": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb"
+    },
+    {
+      "source": "assets\\data\\one_star_050.json",
+      "sha256": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb"
+    },
+    {
+      "source": "assets\\data\\weapon_rarity_r6.json",
+      "sha256": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428"
+    }
+  ],
+  "geometry": [
+    {
+      "name": "left",
+      "vertices": 812,
+      "triangles": 1160
+    },
+    {
+      "name": "right",
+      "vertices": 812,
+      "triangles": 1160
+    },
+    {
+      "name": "mk18",
+      "vertices": 188940,
+      "triangles": 62980
+    },
+    {
+      "name": "akm",
+      "vertices": 9444,
+      "triangles": 3148
+    },
+    {
+      "name": "spr",
+      "vertices": 24432,
+      "triangles": 8144
+    },
+    {
+      "name": "spr-scope",
+      "vertices": 13174,
+      "triangles": 7450
+    }
+  ],
+  "conversion": "Full source primitives, default skin pose baked, normals inverse transpose, Z reflection + winding reversal. Magazine and moving bolt homes restored from current source runtime; SPR bolt rest ZERO overrides stale provenance. No decimation. Runtime fits MK18 .92 / AKM .945 / SPR1.32. Gemini scope ReticleViewPlane omitted because live stereo aperture owns it.",
+  "mechanics": {
+    "mode": "Three persistent first-rarity local loadout instances; selector equips existing instances. Explicit round restart regrants starter loadout.",
+    "mk18": {
+      "capacity": 18,
+      "mode": "committed three-round burst",
+      "intra_seconds": 0.08,
+      "recovery_seconds": 0.24
+    },
+    "akm": {
+      "capacity": 20,
+      "mode": "automatic",
+      "rounds_per_second": 11
+    },
+    "spr": {
+      "capacity": 4,
+      "mode": "semi",
+      "rounds_per_second": 3.125,
+      "rearm_trigger_below": 0.2,
+      "body": 55,
+      "head": 92,
+      "ammo_family": "sniper",
+      "scope": "Accepted Gemini PCVR housing; per-eye520x307 source angular2x image with fixed1m virtual reticle; source eye-relief/alignment/occlusion gates."
+    },
+    "reserves": {
+      "rifle": {
+        "shared_by": [
+          "mk18",
+          "akm"
+        ],
+        "initial": 2400
+      },
+      "sniper": {
+        "shared_by": [
+          "spr"
+        ],
+        "initial": 2400
+      },
+      "gameplay_cap": null
+    },
+    "reload": "Source eject/refund -> grab/upward insert/debit -> release/regrip/rearward charge; button advances one source desktop step. Native WeaponHandling owns all loaded/seated/chamber/ammo mutations.",
+    "limits": "First rarity only; existing Unity recoil presentation retained. Source-specific configuration is not supported by generic schema1 weapon checkpoint restore. Dropped props use explicit supplied poses, no gravity simulation. Scope shader/GPU/stereo acceptance not run in this CPU-only port lane."
+  }
+}

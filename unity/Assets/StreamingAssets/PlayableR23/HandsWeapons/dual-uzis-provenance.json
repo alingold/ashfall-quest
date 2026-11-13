@@ -1,0 +1,96 @@
+{
+  "id": "uzi",
+  "file": "uzi.glb",
+  "scale": 0.2930290568933381,
+  "anchor": [
+    0,
+    0.378,
+    -0.05
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    4
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.46
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "variant": "Source Uzi rendered independently in each occupied hand. Source magazine separate but stays seated during existing upward-flick reload; independent ammo/trigger/recoil preserved. Runtime display0.6once.",
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.0657649835056818,
+    0.03965145284466691
+  ],
+  "source": "[local development path]",
+  "source_sha256": "d04f66ffad5eeec1f8e8bddcb06d29f7470900e2ee46884f7c72f2c07792504a",
+  "output_sha256": "febf84472d4e97d7629d829dcf75638aa2acdc9dda010b64d5c2a2777c19dfd5",
+  "asset": {
+    "author": "creationwasteland (https://sketchfab.com/creationwasteland)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/uzi-fde60adc8aff4c61b6a8bea1f9e0743f",
+    "title": "UZI"
+  },
+  "magazine_center": [
+    -0.002984128612366927,
+    -0.11712479868758183,
+    0.008655665528599837
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 3525,
+  "body_triangles": 3283,
+  "magazine_triangles": 242,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.0440358822620999,
+    -0.24100484907248104,
+    -0.45999999999999996
+  ],
+  "bounds_max": [
+    0.049501394497568914,
+    0.13855752140441122,
+    0.31961979963300513
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 3525,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

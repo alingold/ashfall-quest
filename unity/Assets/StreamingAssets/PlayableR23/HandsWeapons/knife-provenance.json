@@ -1,0 +1,43 @@
+{
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "sourceRoot": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source",
+  "inputs": {
+    "scripts/short_knife.gd": "3d07b1a0e3f7bcbb8adaed3dda12b1074ceba68146f7b3c0d27c555f2c2abc7b",
+    "scripts/melee_sword.gd": "8fc75cdc34b3c50f957efc81bf13db6a16ea9852f9cf97d3b18b652b0d2b4283",
+    "scripts/blade_assets.gd": "1f0cad687af2006bdb7dc89283f45a667a35e1e7e8e35a584a6a66601f91bad2",
+    "scripts/downloaded_blade_model.gd": "2aba027841487033aa30bc378410f92997233db1adb206a43ef51aa682d5caeb",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/model_variants.gd": "aa993d206ed814c934dbb0f93ccda7638e26da2296465e613634cbc477d41ba3",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "assets/models/download_knife/model.glb": "5e0c549acbf390a02a177e13aa5fde9b51e7562e176a318497cf7e4216a4ed88",
+    "assets/models/download_knife/asset-provenance.json": "51f58d202016872104e3c16499b675d1ff53486eee2e0ce6dc7995ed4d592aad",
+    "assets/models/download_knife/ATTRIBUTION.txt": "11f75e5b4a80bdc8962f6dd8282faa150cb2239285469aaa98fb0f820542b9fa",
+    "assets/ui/catalog094/weapon_29.png": "a12381ec082094373eebd3c2d0704d1108a9c7bc1315bf358cdd992c7c216805",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/audio/reference099/isolated_sword_swing_00.wav": "4119e56ba8017eb5d20ccebc6bafb39c261ad1a37c0562b3df2172daff526b2e"
+  },
+  "mesh": {
+    "name": "knife",
+    "vertices": 3426,
+    "triangles": 1142
+  },
+  "sourceWhoosh": "assets/audio/reference099/isolated_sword_swing_00.wav",
+  "outputs": {
+    "knife-0-baseColor.png": "52d4e7b8e831496778b2b37958e03d6e73932de21667402e834f7f61dada9915",
+    "knife-0-metallic.png": "afe8ca79f874c953f058b13662de0d4a62d1e9ca8e6c47d2bd0a28c8eeca0634",
+    "knife-0-normal.png": "6e90f1763e3471d043f1b614e490132355ba99b9d96da8c8d2cd4d453a82133d",
+    "knife-ATTRIBUTION.txt": "11f75e5b4a80bdc8962f6dd8282faa150cb2239285469aaa98fb0f820542b9fa",
+    "knife-audio-ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "knife-fit.json": "43c9477fcf2faa1f4e3f8241c018733c26d43b90e603ad518d4687c1c78ba2f6",
+    "knife-icon.png": "a12381ec082094373eebd3c2d0704d1108a9c7bc1315bf358cdd992c7c216805",
+    "knife-swing.wav": "4119e56ba8017eb5d20ccebc6bafb39c261ad1a37c0562b3df2172daff526b2e",
+    "knife.json": "3ea7a0d6aee6e1b9e46eee0a0ca2a104aee231a3d2bc6e5037c435654cb44c92",
+    "knife.meshbin": "a449e7aa16481ddcf2b55530b34d31462ca918bd69205e37483303d7f6bdd083"
+  },
+  "engine": false,
+  "device": false,
+  "gpu": false
+}

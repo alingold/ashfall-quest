@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "magma_golem",
+ "label": "Magma Golem",
+ "sourceIndex": 22,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "magma_golem-body-baseColor.png",
+   "normal": "magma_golem-body-normal.png",
+   "metallicMap": "magma_golem-body-metallic.png",
+   "occlusion": "magma_golem-body-occlusion.png",
+   "emission": "magma_golem-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 3.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "magma_golem-glove-baseColor.png",
+   "normal": "magma_golem-glove-normal.png",
+   "metallicMap": "magma_golem-glove-metallic.png",
+   "occlusion": "magma_golem-glove-occlusion.png",
+   "emission": "magma_golem-glove-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 3.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

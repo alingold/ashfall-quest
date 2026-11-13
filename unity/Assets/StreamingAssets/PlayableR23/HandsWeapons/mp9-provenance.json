@@ -1,0 +1,89 @@
+{
+  "id": "mp9",
+  "file": "mp9.glb",
+  "scale": 0.03,
+  "anchor": [
+    0,
+    5.17025,
+    5.1
+  ],
+  "target": [
+    0,
+    0.045,
+    -0.04
+  ],
+  "mag": [
+    1
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.42
+  ],
+  "suppressor_start": -0.2729109687805176,
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.11010750000000001,
+    0.11299999999999999
+  ],
+  "source": "[local development path]",
+  "source_sha256": "4f3c492de583c54dad1fa8523863421b81b9c2340c9688c97ce4f35a347980c2",
+  "output_sha256": "1f43c77bbfad4b429a92a7a65ddd7e460094d08bdb089611dfef1278588037b2",
+  "asset": {
+    "author": "AvnisT (https://sketchfab.com/AvnisT)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/mp9-5060c84b1d344c9bb9f24c89dd7b9219",
+    "title": "MP9"
+  },
+  "magazine_center": [
+    -3.59997153282169e-05,
+    -0.09888900343894963,
+    -0.03798250389099121
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 13849,
+  "body_triangles": 12779,
+  "magazine_triangles": 1070,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.030404999256134033,
+    -0.2176845020484925,
+    -0.2729109687805176
+  ],
+  "bounds_max": [
+    0.030333001613616944,
+    0.09807150180816647,
+    0.3908719902038574
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

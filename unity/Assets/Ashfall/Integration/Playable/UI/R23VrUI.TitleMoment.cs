@@ -1,0 +1,108 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
+using Ashfall.Integration.Playable.Expansion;
+namespace Ashfall.Integration.Playable.UI
+{
+    public sealed partial class R23VrUI
+    {
+        static bool titleBootConsumed;
+        readonly R25TitleMoment titleClock=new R25TitleMoment();
+        Transform titleRoot,titleLogo;
+        TextMesh titleFallback;
+        Renderer titleLogoRenderer;
+        Texture2D titleTexture;
+        Material titleLogoMaterial;
+        AudioClip titleSting;
+        AudioSource titleVoice;
+        Mesh titleParticles;
+        Vector3 titleHeadStart;
+        bool titleInput;
+        readonly Vector3[] titleVertices=new Vector3[240];
+        readonly Color[] titleColors=new Color[240];
+        void EnterTitleMoment()
+        {
+            if(Page!=R23UiPage.Ready||titleClock.Entered)return;
+            bool show=titleClock.Enter(R25Features.TitleMoment,titleBootConsumed);titleBootConsumed=true;
+            if(!show)return;
+            titleRoot=Child(transform,"ASHFALL lobby title moment");titleRoot.position=panel.position;titleRoot.rotation=panel.rotation;
+            titleLogo=Quad(titleRoot,"ASHFALL wordmark",Vector3.zero,new Vector2(2.2f,.55f),Color.white);
+            titleLogoRenderer=titleLogo.GetComponent<Renderer>();titleLogoRenderer.enabled=false;
+            titleFallback=Text(titleRoot,"ASHFALL",Vector3.zero,.0792f,2.2f,Hex(R25Theme.Text));
+            titleHeadStart=view.transform.position;
+            var particles=Child(titleRoot,"Pooled ember and ash mesh");titleParticles=new Mesh();titleParticles.name="ASHFALL pooled title particles";titleParticles.MarkDynamic();
+            var indices=new int[360];
+            for(int i=0;i<60;i++){int v=i*4,t=i*6;indices[t]=v;indices[t+1]=v+2;indices[t+2]=v+1;indices[t+3]=v;indices[t+4]=v+3;indices[t+5]=v+2;}
+            titleParticles.vertices=titleVertices;titleParticles.colors=titleColors;titleParticles.triangles=indices;
+            particles.gameObject.AddComponent<MeshFilter>().sharedMesh=titleParticles;
+            var renderer=particles.gameObject.AddComponent<MeshRenderer>();renderer.sharedMaterial=flatMaterial;renderer.sortingOrder=15;
+            StartCoroutine(LoadTitleImage());StartCoroutine(LoadTitleSound());
+        }
+        static string BrandingUrl(string file)
+        {string path=Application.streamingAssetsPath+"/PlayableR23/Branding/"+file;return path.Contains("://")?path:new Uri(path).AbsoluteUri;}
+        IEnumerator LoadTitleImage()
+        {
+            // Same StreamingAssets GET + LoadImage path as map/source art, including jar URLs.
+            using(var request=UnityWebRequest.Get(BrandingUrl("logo-wordmark.png")))
+            {
+                request.timeout=10;yield return request.SendWebRequest();
+                if(request.result!=UnityWebRequest.Result.Success||titleRoot==null)yield break;
+                titleTexture=new Texture2D(2,2,TextureFormat.RGBA32,false,false);
+                if(!titleTexture.LoadImage(request.downloadHandler.data,true)){Destroy(titleTexture);titleTexture=null;yield break;}
+                titleTexture.wrapMode=TextureWrapMode.Clamp;
+                titleLogoMaterial=new Material(Resources.Load<Shader>("R23SourceIcon"));titleLogoMaterial.SetTexture("_IconTex",titleTexture);titleLogoMaterial.renderQueue=4102;
+                titleLogoRenderer.sharedMaterial=titleLogoMaterial;titleLogoRenderer.enabled=true;titleFallback.gameObject.SetActive(false);
+            }
+        }
+        IEnumerator LoadTitleSound()
+        {
+            // Same native WAV loader as R23MenuAudio, preserving stereo branding.
+            using(var request=UnityWebRequestMultimedia.GetAudioClip(BrandingUrl("startup-sting.wav"),AudioType.WAV))
+            {
+                request.timeout=10;yield return request.SendWebRequest();
+                if(request.result!=UnityWebRequest.Result.Success||titleRoot==null)yield break;
+                titleSting=DownloadHandlerAudioClip.GetContent(request);
+                if(titleSting==null||titleClock.Elapsed>=4||titleClock.Settle>0)yield break;
+                titleVoice=titleRoot.gameObject.AddComponent<AudioSource>();titleVoice.playOnAwake=false;titleVoice.spatialBlend=0;titleVoice.volume=Settings.SfxVolume;titleVoice.clip=titleSting;titleVoice.Play();
+            }
+        }
+        void UpdateTitleMoment()
+        {
+            EnterTitleMoment();if(titleRoot==null)return;
+            bool visible=Page==R23UiPage.Ready&&!friendsOpen&&R25Features.TitleMoment;
+            titleRoot.gameObject.SetActive(visible);
+            bool moved=(view.transform.position-titleHeadStart).sqrMagnitude>.0025f;
+            titleClock.Advance(Time.unscaledDeltaTime,titleInput||moved||!visible);titleInput=false;
+            if(!visible){if(titleVoice!=null)titleVoice.Stop();return;}
+            titleRoot.position=panel.position;titleRoot.rotation=panel.rotation;
+            float settle=titleClock.Settle;
+            titleRoot.localScale=Vector3.one*titleClock.Scale;
+            titleRoot.position+=panel.TransformVector(Vector3.Lerp(new Vector3(0,.55f+titleClock.Rise,0),new Vector3(0,.28f,0),settle));
+            var logo=Color.white;logo.a=titleClock.LogoAlpha;if(titleLogoMaterial!=null)titleLogoMaterial.SetColor("_Tint",logo);else SetRendererColor(titleLogoRenderer,logo);
+            var ink=Hex(R25Theme.Text);ink.a=titleClock.LogoAlpha;titleFallback.color=ink;
+            if(titleVoice!=null)titleVoice.volume=Settings.SfxVolume;
+            for(int i=0;i<60;i++)
+            {
+                bool ash=i>=36;float seed=(i*.61803399f)%1,life=3+3*seed;
+                float age=(titleClock.Elapsed+i*.37f)%life,phase=age/life;
+                float alpha=Mathf.Min(Mathf.Clamp01(phase/.15f),Mathf.Clamp01((1-phase)/.3f));
+                bool active=ash?i-36<titleClock.AshCount:i<titleClock.EmberCount;
+                Color color=Hex(ash?R25Theme.TextDim:seed<.65f?R25Theme.Ember:R25Theme.EmberHot);color.a=active?alpha*(ash?.25f+.3f*seed:1):0;
+                float x=-1.2f+2.4f*seed+(.02f+.05f*seed)*Mathf.Sin(age*2*Mathf.PI*(.15f+.3f*seed));
+                float y=-.45f+((i*.173f)%.4f)+age*(ash?-(.03f+.05f*seed):.05f+.11f*seed);
+                float z=-.3f+(i*.137f)%.6f;float size=ash?.004f+.006f*seed:.006f+.010f*seed;
+                float angle=(45+(ash?age*12:0))*Mathf.Deg2Rad;
+                for(int j=0;j<4;j++){float dx=(j==0||j==3?-.5f:.5f)*size,dy=(j<2?-.5f:.5f)*size*(ash?.5f:1);titleVertices[i*4+j]=new Vector3(x+dx*Mathf.Cos(angle)-dy*Mathf.Sin(angle),y+dx*Mathf.Sin(angle)+dy*Mathf.Cos(angle),z);titleColors[i*4+j]=color;}
+            }
+            titleParticles.vertices=titleVertices;titleParticles.colors=titleColors;titleParticles.RecalculateBounds();
+        }
+        void DisposeTitleMoment()
+        {
+            if(titleVoice!=null)titleVoice.Stop();if(titleRoot!=null){Clear(titleRoot);Destroy(titleRoot.gameObject);}
+            if(titleParticles!=null)Destroy(titleParticles);if(titleTexture!=null)Destroy(titleTexture);if(titleLogoMaterial!=null)Destroy(titleLogoMaterial);if(titleSting!=null)Destroy(titleSting);
+        }
+    }
+}
+#endif

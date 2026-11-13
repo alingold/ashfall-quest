@@ -1,0 +1,24 @@
+{
+  "formatVersion": 1,
+  "request": "User requested DT sound from recoil.mp4 at6:30",
+  "source": {
+    "path": "C:\\Users\\aling\\Downloads\\recoil.mp4",
+    "bytes": 536031595,
+    "mtimeNs": 1792462494474530700,
+    "sha256": "56cf1d1b42f6510c231f753e8294a29a3e05fd1b6a5a751d7b167a658f445b31"
+  },
+  "selectedStartSeconds": 391.022,
+  "selectedEndSeconds": 392.047,
+  "file": "dt11-recoil-0631-shot.wav",
+  "sha256": "ca21c37988ddd93c58968789fea409a70631a6fd1bd3068cb3b1e13b08cd063a",
+  "pcmSha256": "0186e8ed9a589d4b7724f5fe9421598613984007675dda3639835e6fa5400214",
+  "channels": 1,
+  "sampleRate": 48000,
+  "samples": 49200,
+  "processing": "Mono average; final 10ms fade prevents a trim click. No EQ, normalization, compression or pitch change.",
+  "replaces": "dt11-authored-blast.wav",
+  "oldAssetRetained": true,
+  "mechanicalCuesUnchanged": true,
+  "existingGainPitchSpatializationVoicePolicyUnchanged": true,
+  "qualification": "User-supplied capture audio; no claim of isolated original game master, native decoding or headset audibility."
+}

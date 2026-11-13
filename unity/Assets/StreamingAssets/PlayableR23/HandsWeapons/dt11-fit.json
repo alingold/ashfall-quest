@@ -1,0 +1,61 @@
+{
+  "id": "dt11",
+  "catalog": 1,
+  "displayName": "DT11",
+  "modelScale": 1.6,
+  "reloadScale": 1.6,
+  "loadNames": [
+    "dt11",
+    "dt11-barrels",
+    "dt11-chambers",
+    "dt11-pair",
+    "dt11-ejected",
+    "dt11-arrow"
+  ],
+  "grip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "renderedHandPhysicalOffset": [
+    0,
+    0.10403230962470196,
+    0.06014420741658284
+  ],
+  "renderedHandPitchDegreesUnity": 35,
+  "muzzle": [
+    0,
+    0.04,
+    0.65
+  ],
+  "hinge": [
+    0,
+    -0.135,
+    0.13
+  ],
+  "barrelsVerticesRelativeHinge": true,
+  "chamberMarkerRelativeHinge": [
+    0,
+    0.175,
+    -0.017
+  ],
+  "foreEndRelativeHinge": [
+    0,
+    0.09,
+    0.27
+  ],
+  "shellOfferVerticalOffset": 0.1020625,
+  "closeGrabBackOffset": -0.06,
+  "hingeOpenRadians": 0.72,
+  "physicalDownStroke": 0.036,
+  "physicalUpStroke": 0.04000000000000001,
+  "sourceDefaultModel": "download_dt11",
+  "sourceOptionalAlternate": "download_dt11_alt (not selected by default)",
+  "sourceVisibleBodyTriangles": 5846,
+  "sourceOmittedTriangles": 242,
+  "sourceOmission": "downloaded model source omits fore-end; runtime hides retained authored fore-end085; no invented replacement",
+  "capacity": 2,
+  "roundsPerSecond": 5,
+  "pellets": 8,
+  "pelletDamage": 12
+}

@@ -1,0 +1,64 @@
+#if UNITY_6000_0_OR_NEWER
+using System.Collections;
+using UnityEngine;
+using Ashfall.Integration.Playable.HandsWeapons;
+using Ashfall.Integration.Playable.Explosives;
+namespace Ashfall.Integration.Playable.Vehicles
+{
+    public sealed class R25HelicopterPresentation:MonoBehaviour
+    {
+        Transform airframe,rotor,blades,disc,tail,cone;Renderer accentRenderer;
+        Material paint,dark,metal,red,green,white,transparent,accent;R24ItemAudio audioBank;AudioSource engine;
+        float rotorSpeed,angle;bool wasMounted;
+        public void Initialize()
+        {
+            paint=Surface(new Color(.14f,.17f,.19f));dark=Surface(new Color(.035f,.043f,.05f));metal=Surface(new Color(.24f,.28f,.30f));
+            red=Surface(new Color(1,.416f,.169f),true);green=Surface(new Color(.224f,.776f,.722f),true);white=Surface(new Color(.7f,.9f,1),true);
+            accent=Surface(new Color(1,.416f,.169f));
+            transparent=new Material(Shader.Find("Sprites/Default"));transparent.color=new Color(.42f,.48f,.50f,.035f);
+            airframe=new GameObject("Visual only airframe bank").transform;airframe.SetParent(transform,false);
+            var body=new R25VehicleMesh();body.Loft(new Vector3(0,.12f,0),Quaternion.identity,new[]{-1.65f,-1.1f,-.35f,.8f,1.35f},new[]{.18f,.62f,.75f,.55f,.18f},new[]{.22f,.5f,.42f,.24f,.12f},2,24);body.Attach(airframe,"Sculpted scout fuselage",paint);
+            // Open bubble frame leaves tracked hands and forward sight unobstructed.
+            var frame=new R25VehicleMesh();
+            for(int s=-1;s<=1;s+=2){
+                frame.Tube(new[]{new Vector3(s*.6f,.2f,-.6f),new Vector3(s*.65f,1.15f,-.5f),new Vector3(s*.48f,1.55f,.3f),new Vector3(s*.28f,.65f,1.25f),new Vector3(s*.3f,.3f,1.15f)},.035f);
+                frame.Tube(new[]{new Vector3(s*.82f,-.48f,-1.2f),new Vector3(s*.82f,-.48f,1.1f),new Vector3(s*.82f,-.32f,1.45f)},.065f);
+                for(int k=-1;k<=1;k+=2)frame.Tube(new[]{new Vector3(s*.82f,-.44f,k*.8f),new Vector3(s*.48f,.1f,k*.65f)},.045f);
+            }
+            frame.Tube(new[]{new Vector3(-.60f,1.15f,-.5f),new Vector3(0,1.67f,-.65f),new Vector3(.60f,1.15f,-.5f)},.035f);frame.Attach(airframe,"Bubble canopy frame and swept skids",dark);
+            var boom=new R25VehicleMesh();boom.Loft(new Vector3(0,.4f,0),Quaternion.identity,new[]{-4.35f,-3.8f,-1.1f},new[]{.07f,.12f,.32f},new[]{.08f,.13f,.3f},2,12);boom.Attach(airframe,"Tapered tail boom",dark);
+            var fins=new R25VehicleMesh();fins.Plate(new Vector3(0,.85f,-4),new Vector3(.08f,1.1f,.6f),Quaternion.Euler(-20,0,0));fins.Plate(new Vector3(0,.55f,-3.45f),new Vector3(1.5f,.07f,.4f),Quaternion.identity);fins.Attach(airframe,"Tail stabilizers",paint);
+            var mechanical=new R25VehicleMesh();mechanical.Loft(new Vector3(0,.6f,-.65f),Quaternion.identity,new[]{-.7f,-.4f,.4f},new[]{.3f,.42f,.22f},new[]{.2f,.32f,.12f},3);mechanical.Tube(new[]{new Vector3(0,.6f,-.95f),new Vector3(0,2,-.95f)},.10f);mechanical.Attach(airframe,"Turbine and rotor mast",dark);
+            var wear=new R25VehicleMesh();for(int side=-1;side<=1;side+=2){wear.Tube(new[]{new Vector3(side*.59f,.23f,-.8f),new Vector3(side*.70f,.25f,-.35f),new Vector3(side*.53f,.20f,.7f)},.012f,4);}wear.Attach(airframe,"Worn cockpit sill edges",metal);
+            var housing=new R25VehicleMesh();housing.Loft(new Vector3(0,.85f,-1.02f),Quaternion.identity,new[]{-.65f,-.45f,.25f,.40f},new[]{.17f,.30f,.26f,.12f},new[]{.16f,.25f,.19f,.08f},3,16);housing.Attach(airframe,"Streamlined engine cowling",paint);
+            var exhaust=new R25VehicleMesh();for(int side=-1;side<=1;side+=2)exhaust.Loft(new Vector3(side*.23f,.94f,-1.5f),Quaternion.identity,new[]{-.18f,.12f},new[]{.085f,.065f},new[]{.085f,.065f},2,10);exhaust.Attach(airframe,"Twin turbine exhausts",dark);
+            var band=new R25VehicleMesh();band.Loft(new Vector3(0,.4f,-2.85f),Quaternion.identity,new[]{-.09f,.09f},new[]{.19f,.20f},new[]{.195f,.205f},2,12);band.Plate(new Vector3(.045f,.95f,-4f),new Vector3(.012f,.62f,.10f),Quaternion.Euler(-20,0,0));accentRenderer=band.Attach(airframe,"Tail recognition band and fin stripe",accent).GetComponent<Renderer>();
+            rotor=new GameObject("Main rotor hub").transform;rotor.SetParent(airframe,false);rotor.localPosition=new Vector3(0,2,-.95f);
+            var bladeMesh=new R25VehicleMesh();for(int i=0;i<4;i++)bladeMesh.Plate(Quaternion.Euler(0,i*90,0)*new Vector3(0,0,1.72f),new Vector3(.28f,.035f,2.95f),Quaternion.Euler(0,i*90,0));blades=bladeMesh.Attach(rotor,"Four swept rotor blades",metal).transform;
+            var tips=new R25VehicleMesh();for(int j=0;j<4;j++)tips.Plate(Quaternion.Euler(0,j*90,0)*new Vector3(0,0,3.08f),new Vector3(.28f,.038f,.18f),Quaternion.Euler(0,j*90,0));tips.Attach(blades,"Rotor tip recognition paint",accent);
+            var blur=new R25VehicleMesh();blur.Loft(Vector3.zero,Quaternion.Euler(90,0,0),new[]{-.012f,.012f},new[]{3.2f,3.2f},new[]{3.2f,3.2f},2,64);disc=blur.Attach(rotor,"Translucent fast rotor disc",transparent).transform;
+            var tailMesh=new R25VehicleMesh();for(int i=0;i<4;i++)tailMesh.Plate(Quaternion.Euler(i*90,0,0)*new Vector3(0,.32f,0),new Vector3(.035f,.6f,.1f),Quaternion.Euler(i*90,0,0));tail=tailMesh.Attach(airframe,"Tail rotor",metal).transform;tail.localPosition=new Vector3(.15f,.8f,-4.05f);
+            var port=new R25VehicleMesh();port.Loft(new Vector3(-.72f,.3f,0),Quaternion.identity,new[]{-.08f,.08f},new[]{.07f,.07f},new[]{.06f,.06f},2);port.Attach(airframe,"Red port light",red);
+            var starboard=new R25VehicleMesh();starboard.Loft(new Vector3(.72f,.3f,0),Quaternion.identity,new[]{-.08f,.08f},new[]{.07f,.07f},new[]{.06f,.06f},2);starboard.Attach(airframe,"Green starboard light",green);
+            var lamp=new R25VehicleMesh();lamp.Loft(new Vector3(0,-.16f,1.1f),Quaternion.identity,new[]{0f,.1f},new[]{.13f,.13f},new[]{.1f,.1f},2);lamp.Attach(airframe,"Searchlight lens",white);
+            var beam=new R25VehicleMesh();beam.Loft(Vector3.zero,Quaternion.Euler(65,0,0),new[]{0f,8f},new[]{.08f,1.6f},new[]{.08f,1.6f},2,24);cone=beam.Attach(airframe,"Faint night searchlight cone",transparent).transform;cone.localPosition=new Vector3(0,-.2f,1.1f);
+            audioBank=new R24ItemAudio();engine=audioBank.Voice(transform,"Helicopter rotor",-25,70,true);StartCoroutine(Load());
+        }
+        static Material Surface(Color c,bool emission=false){return R25ItemArtGeometry.Surface(c,.35f,.4f,emission);}
+        IEnumerator Load(){yield return audioBank.LoadOptional("rotor","Expansion/Audio/helicopter/rotor-loop.wav");}
+        public void Show(Vector3 at,float yaw,float thrustX,float thrustZ,float health,bool mounted,bool visible,int team,bool night,float captureRotor=-1)
+        {
+            gameObject.SetActive(visible&&health>0);if(!visible||health<=0){audioBank.Stop();return;}
+            if(mounted&&!wasMounted)rotorSpeed=0;
+            rotorSpeed=captureRotor>=0?captureRotor:Mathf.MoveTowards(rotorSpeed,mounted?1:0,Time.unscaledDeltaTime/1.5f);wasMounted=mounted;
+            transform.SetPositionAndRotation(at,Quaternion.Euler(0,yaw,0));airframe.localRotation=Quaternion.Euler(Mathf.Clamp(thrustZ,-1,1)*4,0,-Mathf.Clamp(thrustX,-1,1)*4);
+            angle=Mathf.Repeat(angle+rotorSpeed*1800*Time.unscaledDeltaTime,360);rotor.localRotation=Quaternion.Euler(0,angle,0);tail.localRotation=Quaternion.Euler(angle*3,0,0);
+            blades.gameObject.SetActive(rotorSpeed<.85f);disc.gameObject.SetActive(rotorSpeed>=.85f);cone.gameObject.SetActive(night&&mounted);
+            var block=new MaterialPropertyBlock();block.SetColor("_BaseColor",team<0?new Color(1,.416f,.169f):Color.HSVToRGB((team*.27f)%1,.6f,.55f));accentRenderer.SetPropertyBlock(block);
+            if(mounted){if(!engine.isPlaying)audioBank.Play(engine,"rotor");engine.pitch=.45f+rotorSpeed*.85f;}else engine.Stop();
+        }
+        void OnDisable(){if(audioBank!=null)audioBank.Stop();}
+        void OnDestroy(){if(audioBank!=null)audioBank.Dispose();foreach(var f in GetComponentsInChildren<MeshFilter>(true))Destroy(f.sharedMesh);foreach(var m in new[]{paint,dark,metal,red,green,white,transparent,accent})if(m!=null)Destroy(m);}
+    }
+}
+#endif

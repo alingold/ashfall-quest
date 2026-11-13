@@ -1,0 +1,96 @@
+{
+  "originalSource": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "inputs": {
+    "scripts/explosive_weapon.gd": "b6af6345f0d13b493f0543daad7412493833df85a5118c8cd1565f1fe8c778ae",
+    "scripts/explosive_projectile.gd": "a1b90bc9c398584ea39dae74617dbbc53e50f353897e8e8b5d7a910555985191",
+    "scripts/grenade_ballistics.gd": "227b2d52ad22e267e25bc667eed01023d9657752825065d36ea4cecb4f78d993",
+    "scripts/grenade_warning.gd": "12b0131dfb0cb306fbb92b0e6e82158f1ccd999ec9ae12365a2fc2c234cdeaff",
+    "scripts/explosive_finish_064.gd": "308fcb10890068fb338d732ab4c2ab07e889d6fb1ce041a85df2abeb2064d97a",
+    "scripts/downloaded_grenade_model.gd": "c29335b48729b3f535361178c9363663f5a203ef70cf77b8635a10d35eb438dc",
+    "scripts/explosive_effect.gd": "f056a6f680bee60535dd992789a5f2b5a2f78a4d2b01f380ba226d270dc56f4a",
+    "scripts/main.gd": "d202407d4b6fcc99bccb8ab2f3d420ec4cdd95a543d98902c5344e83050f108a",
+    "scripts/weapon_inventory.gd": "593e9f573dbb5ae2d1aa08f1d9155ee64914927350abcc780e36907851192e84",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5"
+  },
+  "geometry": [
+    {
+      "name": "frag",
+      "vertices": 45710,
+      "triangles": 34634,
+      "source": "assets\\models\\download_frag_alt\\model.glb",
+      "sha256": "18b346eb034c7bed624de14d0cfca6655a943a5ee90f530c00e67ed3a115918c",
+      "heldScale": 0.9,
+      "flightScale": 0.6702127659574469
+    },
+    {
+      "name": "zone",
+      "vertices": 7302,
+      "triangles": 2434,
+      "source": "assets\\models\\download_frag\\model.glb",
+      "sha256": "3656f72288d34ccf0857f98641203807ad014cb86a7a00b8f1babb78b1af5ede",
+      "heldScale": 2.0,
+      "flightScale": 1.4893617021276597
+    }
+  ],
+  "audio": [
+    {
+      "source": "res://assets/audio/reference099/isolated_grenade_throw_00.wav",
+      "file": "grenade_throw-0.wav",
+      "sha256": "02fb9af54810080bcc36953ef806d6771ed452b500aff8b165096f864b751249",
+      "pcmSha256": "83a06425a5577ac9301a056be4a3a0abbae2d13937a8ec0207dd475772715024",
+      "frames": 18000,
+      "rate": 48000
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_frag_blast_00.wav",
+      "file": "frag_blast-0.wav",
+      "sha256": "efb7467b2289ee8cf94b7bc5c230312985b11344047bfacc3400a1df08ba7c4b",
+      "pcmSha256": "9cba0f753e69530797e5082c50534039c3a4bd385aeee2c5e41553e776bbce09",
+      "frames": 145920,
+      "rate": 48000
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_zone_bloom_00.wav",
+      "file": "zone_bloom-0.wav",
+      "sha256": "e967392c8c6d14cac8c57163ca26abec0bdc4b9f74c01bf652cfc52545aeb90d",
+      "pcmSha256": "da5e288254cf9f364a6e83dfcfa31858f3ff7e5bf57fe0eed980d49dc323998c",
+      "frames": 164160,
+      "rate": 48000
+    },
+    {
+      "source": "res://assets/audio/sfx/zone_arm_00.wav",
+      "file": "zone_arm-0.wav",
+      "sha256": "1c83f87e97f8cab1869a441150736a70c55538be84f82312eb0b5d005c1e22d9",
+      "pcmSha256": "1c9f02290006f9d1eafcd463f49e21ab7bf3e6f6506f04cc3524ce2c4428bf91",
+      "frames": 86400,
+      "rate": 32000
+    },
+    {
+      "source": "scripts/grenade_warning.gd::tone(frag)",
+      "file": "frag-warning.wav",
+      "sha256": "c7378345088a474a3f70a67044f163c615a6ddb0ea72ccae97ff796b36ead6f2",
+      "pcmSha256": "5f34ebbaecbaa183d71fb7df3bb50439693445c29e60f49320c23c8f33edf087",
+      "frames": 1560,
+      "rate": 24000,
+      "sourceRecipe": true
+    },
+    {
+      "source": "scripts/grenade_warning.gd::tone(zone)",
+      "file": "zone-warning.wav",
+      "sha256": "4cb0b8bdba4511e49cd130ec2ebc49bd180783930332e5efb0efd2afb4a08c77",
+      "pcmSha256": "d7aa8bfa67db3c23fc7ebd4aadeb3cc952d87bade6b4ca58bdfbc46d762ba73f",
+      "frames": 1560,
+      "rate": 24000,
+      "sourceRecipe": true
+    }
+  ],
+  "notes": [
+    "Actual original grenade variant selection is frag_alt for FRAG and frag for ZONE; source held scales.9/2.0, projectile ratio.035/.047.",
+    "Current original frag_alt asset already contains its historical authored source decimation; this port adds no decimation.",
+    "Only source head-to-launch LOS blocks throws. Actual source radial damage has no wall LOS exclusion.",
+    "No engine/GPU/build/device or listening run."
+  ]
+}

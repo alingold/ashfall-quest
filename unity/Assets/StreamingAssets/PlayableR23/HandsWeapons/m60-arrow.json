@@ -1,0 +1,25 @@
+{
+  "materials": [
+    {
+      "color": [
+        0.8980392156862745,
+        0.7137254901960784,
+        0.27450980392156865,
+        1
+      ],
+      "metallic": 0.48,
+      "roughness": 0.3,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "PhysicalReloadChevronRod0",
+    "PhysicalReloadChevronRod1",
+    "PhysicalReloadChevronRod2"
+  ]
+}

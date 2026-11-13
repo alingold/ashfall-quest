@@ -1,0 +1,67 @@
+{
+  "id": "m1014",
+  "modelScale": 1,
+  "loadNames": [
+    "m1014",
+    "m1014-bolt",
+    "m1014-pack",
+    "m1014-arrow"
+  ],
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    0.77
+  ],
+  "handle": [
+    0.06,
+    0.045,
+    0.1
+  ],
+  "offer": [
+    0,
+    -0.25,
+    0.14
+  ],
+  "socket": [
+    0,
+    -0.1,
+    0.14
+  ],
+  "foregrip": [
+    0,
+    -0.025,
+    0.36
+  ],
+  "renderedHandPhysicalOffset": [
+    0,
+    0.0381,
+    -0.0381
+  ],
+  "mirrorHandleXAndBoltScaleForLeft": true,
+  "handlePullDirection": [
+    0,
+    0,
+    -1
+  ],
+  "handlePullThreshold": 0.085,
+  "loadUpThreshold": 0.1,
+  "shotVisualCarrierSeconds": 0.095,
+  "shotVisualCarrierTravel": 0.038,
+  "flashSeconds": 0.055,
+  "sourceActualBoltContact": [
+    0.05162028847324438,
+    0.07999234747668911,
+    -0.1650733513567412
+  ],
+  "notes": [
+    "Body includes actual authored iron sights; no invented optic.",
+    "Do not apply source raw fit scale.698799: it is already baked in original model.glb.",
+    "Apply handle home exactly once to separate local Bolt geometry.",
+    "Shell pack always draws all6source shells when offered, including partial finite reserves."
+  ]
+}

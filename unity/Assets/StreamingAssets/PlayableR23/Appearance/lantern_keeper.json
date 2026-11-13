@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "lantern_keeper",
+ "label": "Lantern Keeper",
+ "sourceIndex": 15,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "lantern_keeper-body-baseColor.png",
+   "normal": "lantern_keeper-body-normal.png",
+   "metallicMap": "lantern_keeper-body-metallic.png",
+   "occlusion": "lantern_keeper-body-occlusion.png",
+   "emission": "lantern_keeper-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "lantern_keeper-glove-baseColor.png",
+   "normal": "lantern_keeper-glove-normal.png",
+   "metallicMap": "lantern_keeper-glove-metallic.png",
+   "occlusion": "lantern_keeper-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

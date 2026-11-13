@@ -1,0 +1,171 @@
+#if UNITY_EDITOR
+using System;
+using System.Collections;
+using System.IO;
+using System.Reflection;
+using UnityEditor;
+using UnityEngine;
+using Ashfall.Integration.Playable;
+using Ashfall.Integration.Playable.UI;
+namespace Ashfall.Editor.Playable
+{
+    // Editor-only production AWP/audio evidence. No player build or network peer.
+    [InitializeOnLoad]
+    public static class R28AudioLoudnessCapture
+    {
+        const string Key = "Ashfall.Audio6.Output";
+        static IEnumerator work;
+        static float deadline;
+        static object waiting;
+        static int lastFrame = -1;
+        static R28AudioLoudnessCapture() { EditorApplication.playModeStateChanged += Changed; }
+        public static void Run()
+        {
+            string output = R23PlayableBuild.Argument("-ashfallAudio6Output");
+            if (String.IsNullOrEmpty(output) || Directory.Exists(output)) { EditorApplication.Exit(2); return; }
+            Directory.CreateDirectory(output);
+            R23PlayableBuild.Prepare();
+            R23PlayableBuild.Xr().InitManagerOnStart = false;
+            SessionState.SetString(Key, output);
+            EditorApplication.isPlaying = true;
+        }
+        static void Changed(PlayModeStateChange state)
+        {
+            if (SessionState.GetString(Key, "").Length == 0) return;
+            if (state == PlayModeStateChange.EnteredPlayMode)
+            { deadline = Time.realtimeSinceStartup + 240; work = CaptureHands(); EditorApplication.update += Pump; }
+            if (state == PlayModeStateChange.EnteredEditMode)
+            {
+                EditorApplication.update -= Pump; work = null;
+                string output = SessionState.GetString(Key, ""); SessionState.EraseString(Key);
+                R23PlayableBuild.Xr().InitManagerOnStart = true; AssetDatabase.SaveAssets();
+                EditorApplication.Exit(File.Exists(Path.Combine(output, "success.txt")) ? 0 : 2);
+            }
+        }
+        static void Pump()
+        {
+            try
+            {
+                if (Time.realtimeSinceStartup > deadline) throw new Exception("240 second capture deadline");
+                // Editor update runs faster than play frames; honor coroutine waits.
+                if (Time.frameCount == lastFrame) return;
+                lastFrame = Time.frameCount;
+                var delay = waiting as CustomYieldInstruction;
+                if (delay != null && delay.keepWaiting) return;
+                if (work != null)
+                {
+                    if (!work.MoveNext()) { work = null; EditorApplication.isPlaying = false; }
+                    else waiting = work.Current;
+                }
+            }
+            catch (Exception e)
+            {
+                var partial=UnityEngine.Object.FindAnyObjectByType<R28AudioCaptureTap>();if(partial!=null)partial.Save(SessionState.GetString(Key,""));
+                File.WriteAllText(Path.Combine(SessionState.GetString(Key, ""), "error.txt"), e.ToString());
+                Debug.LogException(e); work = null; EditorApplication.isPlaying = false;
+            }
+        }
+        static void Need(bool value,string why){if(!value)throw new Exception(why);}
+        static readonly BindingFlags Flags=BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic;
+        static object Read(object o,string n){return o.GetType().GetField(n,Flags).GetValue(o);}
+        static void Call(object o,string n,params object[] a){o.GetType().GetMethod(n,Flags).Invoke(o,a);}
+        static IEnumerator CaptureHands()
+        {
+            R23PlayableLoop loop=null;
+            while(loop==null||!loop.Ready){loop=UnityEngine.Object.FindAnyObjectByType<R23PlayableLoop>();if(loop!=null&&loop.Failure!=null)throw new Exception(loop.Failure);yield return null;}
+            loop.ManualSmoke=true;loop.ExternalProbePump=true;loop.Rig.enabled=false;loop.Gameplay.ExternalInputPump=true;
+            loop.SelectMap("range",true);while(!loop.Ready)yield return null;loop.StartPlaying();
+            var g=loop.Gameplay;g.CanCollectWorldWeapon=null;g.MakeRoomForWorldWeapon=null;g.CanClaimWorldGrip=null;g.SlotCapacity=20;
+            g.NotifyFocus(true);g.SetGameplayPaused(false);g.SetWeaponPresentationSuppressed(false);
+            g.UpdateInputAvailability(new Ashfall.Integration.Playable.HandsWeapons.R23HandsInputFrame{LeftTracked=true,RightTracked=true});
+            loop.Rig.transform.position+=new Vector3(10000,100,10000);
+            loop.Rig.Right.position=loop.Rig.Head.transform.position+new Vector3(.2f,-.3f,.4f);
+            AudioListener.pause=false;AudioListener.volume=1;g.SetSfxVolume(1);loop.TraversalAudio.SetSfxVolume(1);
+            while(!loop.TraversalAudio.Ready)yield return null;
+            // Disable incidental menu/music sources; event voices remain production owners.
+            foreach(var source in UnityEngine.Object.FindObjectsByType<AudioSource>())source.Stop();
+            var listener=UnityEngine.Object.FindAnyObjectByType<AudioListener>();Need(listener!=null,"listener");
+            var tap=listener.gameObject.AddComponent<R28AudioCaptureTap>();
+            var notes=new System.Text.StringBuilder();
+            // Exercise the production limiter with a deliberate stereo overload.
+            var probe=new GameObject("A6 limiter verification");
+            var limiter=probe.AddComponent<Ashfall.Integration.Playable.Soundscape.R28AudioOutput>();
+            float limiterPeak=0;int limiterSamples=0;
+            for(int block=0;block<128;block++)
+            {
+                var data=new float[1024];
+                for(int n=0;n<512;n++){float value=(block<8?1.7f:.02f)*Mathf.Sin(2*Mathf.PI*997*(block*512+n)/48000f);data[n*2]=value;data[n*2+1]=value*.5f;}
+                Call(limiter,"OnAudioFilterRead",data,2);
+                for(int n=0;n<data.Length;n+=2){limiterPeak=Mathf.Max(limiterPeak,Mathf.Abs(data[n]));Need(!float.IsNaN(data[n])&&Mathf.Abs(data[n])<=Ashfall.Integration.Playable.Soundscape.R28AudioOutput.Ceiling+.000001f,"limiter bound/finite");Need(Mathf.Abs(data[n+1]-data[n]*.5f)<.000001f,"stereo-linked limiter");limiterSamples+=2;}
+            }
+            notes.AppendLine("Production limiter overload: samples="+limiterSamples+" peak="+limiterPeak+" stereo ratio preserved; no clipped/nonfinite samples");
+            UnityEngine.Object.Destroy(probe);
+            var audio=Read(g,"audioCues");var traversal=loop.TraversalAudio;
+            string output=SessionState.GetString(Key,"");
+            double dsp=UnityEngine.AudioSettings.dspTime;
+            for(int eventIndex=0;eventIndex<9;eventIndex++)
+            {
+                string name=new[]{"walk-hard-5s","pickup-ground","pickup-table","pickup-rack","single-shot","burst","reload","jump-land","ui-click"}[eventIndex];
+                g.NotifyFocus(true);g.SetGameplayPaused(false);g.SetWeaponPresentationSuppressed(false);
+                g.UpdateInputAvailability(new Ashfall.Integration.Playable.HandsWeapons.R23HandsInputFrame{LeftTracked=true,RightTracked=true});
+                g.GetType().GetField("haveTrackedControls",Flags).SetValue(g,false);
+                g.TickControls(.25f,false,false);
+                tap.Mark(name);float start=Time.realtimeSinceStartup;int fired=0;bool landed=false,clicked=false;
+                if(eventIndex>=1&&eventIndex<=3)
+                {
+                    string id;Need(g.SpawnWorldWeapon("cx4",1,loop.Rig.Right.position+Vector3.up*(eventIndex-2)*.5f,Quaternion.identity,out id,true),"spawn "+name);
+                    Need(g.CollectCatalogWorldWeapon(id,1),"accepted pickup "+name);
+                    var voices=listener.GetComponentsInChildren<AudioSource>(true); // evidence uses actual owned audio below
+                    notes.AppendLine(name+" accepted id="+id+" dsp="+UnityEngine.AudioSettings.dspTime.ToString("F6"));
+                    var owned=(System.Collections.Generic.List<GameObject>)Read(audio,"voices");bool pickupPlaying=false;
+                    foreach(var go in owned){var s=go.GetComponent<AudioSource>();if(s.isPlaying&&s.clip!=null&&s.clip.name.Contains("weapon_swap"))pickupPlaying=true;if(s.isPlaying)notes.AppendLine("playing="+s.isPlaying+" source="+s.name+" clip="+(s.clip==null?"null":s.clip.name)+" timeSamples="+s.timeSamples+" volume="+s.volume+" min="+s.minDistance+" max="+s.maxDistance);}
+                    Need(voices!=null,"listener source inventory");
+                    if(R23PlayableBuild.Argument("-ashfallRequirePickup")=="true")Need(pickupPlaying,"Actual pickup source is playing swap clip");
+                    File.WriteAllText(Path.Combine(output,"evidence.txt"),notes.ToString());
+                }
+                while(Time.realtimeSinceStartup-start<(eventIndex==0?5:eventIndex==5?4:3))
+                {
+                    float elapsed=Time.realtimeSinceStartup-start;
+                    if(eventIndex==0)traversal.Tick(new Ashfall.Integration.Playable.AudioTraversal.R23TraversalSample{Enabled=true,Grounded=true,HorizontalSpeed=2},Time.unscaledDeltaTime);
+                    if(eventIndex==4&&fired==0)
+                    {Need(g.Fire(.12f),"accepted CX4 single shot");fired++;g.TickControls(.001f,false,false);}
+                    if(eventIndex==5&&fired<15&&g.Fire(Mathf.Min(Time.unscaledDeltaTime,.1f)))fired++;
+                    if(eventIndex==6&&fired<4&&elapsed>=fired*.6f){g.Reload();fired++;}
+                    if(eventIndex==7)
+                    {
+                        if(!landed){traversal.Tick(new Ashfall.Integration.Playable.AudioTraversal.R23TraversalSample{Enabled=true,Grounded=false,VerticalSpeed=-4},.1f);traversal.Tick(new Ashfall.Integration.Playable.AudioTraversal.R23TraversalSample{Enabled=true,Grounded=true},.1f);landed=true;}
+                        }
+                    if(eventIndex==8&&!clicked){var menu=UnityEngine.Object.FindAnyObjectByType<Ashfall.Integration.Playable.UI.R23MenuAudio>();Need(menu!=null,"menu audio");Call(menu,"Play",Ashfall.Integration.Playable.UI.R23MenuCue.Click);clicked=true;}
+                    yield return null;
+                }
+                if(eventIndex==5)Need(fired==15,"15 actual burst rounds; got "+fired);
+                traversal.ResetRound();
+            }
+            tap.Mark("end");tap.Save(output);
+            // Additional custody evidence is outside the loudness recording windows.
+            Need(g.DropCurrent(loop.Rig.Head.transform.position+Vector3.right*5,Quaternion.identity),"free Range test slot");
+            var rangeIds=loop.WorldLoot.WorldInstanceActionIds;Need(rangeIds.Length>0,"Actual Range source loot");
+            string rangeId=rangeIds[0];Need(g.SetWorldWeaponVisible(rangeId,true),"actual Range rack item visible");
+            Need(g.CollectCatalogWorldWeapon(rangeId,1),"actual Range rack custody");
+            var pickup=(AudioSource)Read(audio,"pickup");
+            Need(pickup.isPlaying&&pickup.clip!=null,"actual Range rack pickup voice");
+            notes.AppendLine("Range source rack id="+rangeId+" profile="+g.ActiveWeaponId+" clip="+pickup.clip.name+" playing="+pickup.isPlaying+" dsp="+UnityEngine.AudioSettings.dspTime);
+            Need(g.DropCurrent(loop.Rig.Head.transform.position+Vector3.right*6,Quaternion.identity),"free physical test slot");
+            string physicalId;Need(g.SpawnWorldWeapon("cx4",1,loop.Rig.Head.transform.position+Vector3.forward*.5f,Quaternion.identity,out physicalId,true),"physical pickup fixture");
+            string instance;Vector3 center,at;Quaternion rotation;
+            Need(g.TryReadWorldWeapon(physicalId,out instance,out center,out at,out rotation),"physical source bounds");
+            loop.Rig.Right.position=center;
+            g.TickInput(.02f,new Ashfall.Integration.Playable.HandsWeapons.R23HandsInputFrame{LeftTracked=true,RightTracked=true});
+            Need(g.TryPickup(1)&&g.ActiveWeaponActionId==physicalId,"actual proximity/LOS TryPickup");
+            Need(pickup.isPlaying&&pickup.clip!=null,"physical pickup voice playing");
+            notes.AppendLine("Physical TryPickup id="+physicalId+" clip="+pickup.clip.name+" playing="+pickup.isPlaying+" dsp="+UnityEngine.AudioSettings.dspTime);
+            Need(!g.CollectCatalogWorldWeapon(physicalId,1),"owned item cannot be picked up twice");
+            notes.AppendLine("DSP start="+dsp+" end="+UnityEngine.AudioSettings.dspTime+" samples="+tap.Count);
+            File.WriteAllText(Path.Combine(output,"evidence.txt"),notes.ToString());
+            Need(tap.Count>48000,"listener delivered PCM");Need(tap.Peak>.00001f,"nonzero listener PCM");
+            File.WriteAllText(Path.Combine(output,"success.txt"),"Actual listener PCM and accepted pickup/shot sequence completed");
+            UnityEngine.Object.Destroy(tap);g.HolsterCurrent();
+        }
+    }
+}
+#endif

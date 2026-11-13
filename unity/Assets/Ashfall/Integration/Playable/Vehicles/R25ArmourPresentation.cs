@@ -1,0 +1,97 @@
+#if UNITY_6000_0_OR_NEWER
+using System.Collections;
+using UnityEngine;
+using Ashfall.Integration.Playable.HandsWeapons;
+using Ashfall.Integration.Playable.Explosives;
+namespace Ashfall.Integration.Playable.Vehicles
+{
+    public sealed class R25ArmourPresentation:MonoBehaviour
+    {
+        Transform hull,turret,flash,smoke;Transform[] treads=new Transform[2];float treadTravel;Transform[] wheels=new Transform[12];TextMesh reload;
+        Material paint,dark,edge,glow,accent;Renderer accentHull,accentTurret;R24ItemAudio bank;AudioSource engine,gun;
+        double fired;float shotTime;bool occupied,seen;
+        static Material Surface(Color c,bool luminous=false){return R25ItemArtGeometry.Surface(c,.45f,.32f,luminous);}
+        Transform mountHandles;
+        Vector3 previousMotionPosition;bool haveMotionPosition;
+        public float SignedForwardSpeed {get;private set;}
+        // Shared by local and remote presentation: never trust the caller's unsigned speed.
+        public float SampleSignedForwardSpeed(Vector3 at,float yaw,float deltaTime)
+        {
+            Vector3 displacement=at-previousMotionPosition;previousMotionPosition=at;
+            SignedForwardSpeed=haveMotionPosition&&deltaTime>0&&deltaTime<=.5f&&displacement.sqrMagnitude<=25
+                ?Vector3.Dot(displacement,Quaternion.Euler(0,yaw,0)*Vector3.forward)/deltaTime:0;
+            haveMotionPosition=true;return SignedForwardSpeed;
+        }
+        public void Initialize()
+        {
+            paint=Surface(new Color(.115f,.14f,.10f));dark=Surface(new Color(.025f,.035f,.04f));edge=Surface(new Color(.23f,.26f,.24f));glow=Surface(new Color(.224f,.776f,.722f),true);
+            accent=Surface(new Color(1,.416f,.169f));
+            hull=new GameObject("Planted hull").transform;hull.SetParent(transform,false);
+            var body=new R25VehicleMesh();body.Loft(new Vector3(0,.03f,0),Quaternion.identity,new[]{-2.1f,-1.6f,1.35f,2.15f},new[]{.85f,1.12f,1.12f,.75f},new[]{.20f,.36f,.36f,.12f},5);body.Attach(hull,"Sloped monocoque glacis",paint);
+            var trim=new R25VehicleMesh();
+            for(int side=-1;side<=1;side+=2){
+                trim.Plate(new Vector3(side*1.12f,.22f,0),new Vector3(.24f,.12f,4.25f),Quaternion.identity);
+                trim.Tube(new[]{new Vector3(side*.45f,.68f,-.65f),new Vector3(side*.55f,.84f,-.9f),new Vector3(side*.55f,.84f,-1.35f)},.035f);
+                var track=new R25VehicleMesh();track.Loft(new Vector3(side*1.13f,-.12f,0),Quaternion.identity,new[]{-2.1f,-1.8f,1.8f,2.1f},new[]{.16f,.24f,.24f,.16f},new[]{.18f,.40f,.40f,.18f},4);track.Attach(hull,"Continuous track recess",dark);
+                for(int i=0;i<6;i++){
+                    var wheel=new R25VehicleMesh();wheel.Loft(Vector3.zero,Quaternion.Euler(0,90,0),new[]{-.09f,.09f},new[]{.27f,.27f},new[]{.27f,.27f},2,12);
+                    var w=wheel.Attach(hull,"Road wheel",edge).transform;w.localPosition=new Vector3(side*1.36f,-.15f,-1.55f+i*.62f);wheels[(side== -1?0:6)+i]=w;
+                }
+                for(int i=0;i<3;i++){
+                    var armour=new R25VehicleMesh();armour.Plate(new Vector3(side*1.36f,.10f,-1.3f+i*1.15f),new Vector3(.12f,.38f,.93f),Quaternion.Euler(0,0,side*-12));armour.Attach(hull,"Segmented track armour",paint);
+                }
+                var shoes=new R25VehicleMesh();for(int i=0;i<18;i++)shoes.Plate(new Vector3(side*1.15f,.3f,-1.88f+i*.22f),new Vector3(.45f,.055f,.11f),Quaternion.identity);treads[side<0?0:1]=shoes.Attach(hull,"Scrolling tread shoes",edge).transform;
+            }
+            trim.Attach(hull,"Chamfered fenders tread shoes and grab rails",edge);
+            turret=new GameObject("Head tracking turret").transform;turret.SetParent(transform,false);turret.localPosition=new Vector3(0,.45f,0);
+            var top=new R25VehicleMesh();top.Loft(new Vector3(0,0,.2f),Quaternion.identity,new[]{-1.05f,-.6f,.65f,1.0f},new[]{.55f,.85f,.72f,.40f},new[]{.16f,.27f,.24f,.12f},5);top.Attach(turret,"Faceted wedge turret",paint);
+            var barrel=new R25VehicleMesh();barrel.Loft(new Vector3(0,.05f,1),Quaternion.identity,new[]{0f,.3f,2.1f,2.18f,2.45f},new[]{.16f,.11f,.075f,.15f,.15f},new[]{.16f,.11f,.075f,.11f,.11f},2,12);barrel.Attach(turret,"Long gun and muzzle brake",edge);
+            var bore=new R25VehicleMesh();bore.Plate(new Vector3(0,.05f,3.46f),new Vector3(.17f,.09f,.015f),Quaternion.identity);bore.Attach(turret,"Black recessed muzzle",dark);
+            var rails=new R25VehicleMesh();var ring=new Vector3[25];for(int i=0;i<25;i++){float a=i*Mathf.PI/12;ring[i]=new Vector3(Mathf.Cos(a)*.43f,.3f,-.38f+Mathf.Sin(a)*.43f);}rails.Tube(ring,.045f);rails.Tube(new[]{new Vector3(.65f,.1f,-.6f),new Vector3(.7f,1.65f,-.7f)},.018f);rails.Attach(turret,"Open hatch ring and antenna",edge);
+            var hatch=new R25VehicleMesh();hatch.Loft(new Vector3(0,.25f,-.38f),Quaternion.Euler(90,0,0),new[]{-.01f,.01f},new[]{.38f,.38f},new[]{.38f,.38f},2);hatch.Attach(turret,"Open hatch interior",dark);
+            var wear=new R25VehicleMesh();
+            for(int side=-1;side<=1;side+=2){wear.Tube(new[]{new Vector3(side*.76f,.19f,2.02f),new Vector3(side*1.05f,.38f,1.3f),new Vector3(side*1.05f,.38f,.7f)},.012f,4);}
+            wear.Attach(hull,"Worn glacis corners",edge);
+            var hubs=new R25VehicleMesh();for(int side=-1;side<=1;side+=2)for(int j=0;j<6;j++)hubs.Loft(new Vector3(side*1.46f,-.15f,-1.55f+j*.62f),Quaternion.Euler(0,90,0),new[]{-.01f,.01f},new[]{.14f,.14f},new[]{.14f,.14f},2,10);hubs.Attach(hull,"Recessed road wheel hubs",dark);
+            var stow=new R25VehicleMesh();
+            for(int side=-1;side<=1;side+=2){stow.Plate(new Vector3(side*.65f,.42f,-1.42f),new Vector3(.48f,.28f,.60f),Quaternion.identity);}
+            stow.Attach(hull,"Rear deck stowage boxes",dark);
+            var cable=new R25VehicleMesh();cable.Tube(new[]{new Vector3(-.8f,.40f,-1.6f),new Vector3(-.65f,.45f,-1.85f),new Vector3(0,.46f,-1.95f),new Vector3(.65f,.45f,-1.85f),new Vector3(.8f,.4f,-1.6f)},.025f);cable.Attach(hull,"Deck tow cable",edge);
+            var sleeve=new R25VehicleMesh();sleeve.Loft(new Vector3(0,.05f,1),Quaternion.identity,new[]{.45f,.5f,1.40f,1.45f},new[]{.105f,.13f,.13f,.10f},new[]{.105f,.13f,.13f,.10f},2,12);
+            for(int side=-1;side<=1;side+=2)for(int j=0;j<3;j++)sleeve.Loft(new Vector3(side*(.63f+j*.065f),.21f,.38f-j*.20f),Quaternion.Euler(-25,side*25,0),new[]{0f,.22f},new[]{.045f,.045f},new[]{.045f,.045f},2,8);
+            sleeve.Attach(turret,"Thermal sleeve and smoke launcher stubs",dark);
+            var cuts=new R25VehicleMesh();for(int side=-1;side<=1;side+=2)for(int j=0;j<2;j++)cuts.Plate(new Vector3(side*.15f,.05f,3.23f+j*.13f),new Vector3(.012f,.12f,.065f),Quaternion.identity);cuts.Attach(turret,"Muzzle brake vent recesses",dark);
+            var stripe=new R25VehicleMesh();stripe.Plate(new Vector3(-.48f,.397f,.25f),new Vector3(.12f,.018f,1.85f),Quaternion.identity);accentHull=stripe.Attach(hull,"Hull recognition stripe",accent).GetComponent<Renderer>();
+            var flashes=new R25VehicleMesh();for(int side=-1;side<=1;side+=2)flashes.Plate(new Vector3(side*.78f,.03f,-.05f),new Vector3(.018f,.16f,.52f),Quaternion.Euler(0,side*8,0));accentTurret=flashes.Attach(turret,"Turret flank accents",accent).GetComponent<Renderer>();
+            var lights=new R25VehicleMesh();for(int s=-1;s<=1;s+=2)lights.Plate(new Vector3(s*.8f,.1f,1.93f),new Vector3(.2f,.08f,.05f),Quaternion.identity);lights.Attach(hull,"Running lights",glow);
+            var flare=new R25VehicleMesh();flare.Loft(Vector3.zero,Quaternion.identity,new[]{0f,.25f,.65f},new[]{.04f,.22f,.01f},new[]{.04f,.22f,.01f},2);flash=flare.Attach(turret,"Gun flash",glow).transform;flash.localPosition=new Vector3(0,.05f,3.5f);flash.gameObject.SetActive(false);
+            var fumes=new R25VehicleMesh();fumes.Loft(Vector3.zero,Quaternion.Euler(90,0,0),new[]{0f,.3f,.8f},new[]{.08f,.22f,.35f},new[]{.08f,.22f,.35f},2);smoke=fumes.Attach(hull,"Low hull health fumes",dark).transform;smoke.localPosition=new Vector3(.7f,.5f,-1.5f);
+            reload=new GameObject("Hatch grip and reload indicator").AddComponent<TextMesh>();reload.transform.SetParent(turret,false);reload.transform.localPosition=new Vector3(.55f,.36f,.75f);reload.fontSize=48;reload.characterSize=.008f;reload.anchor=TextAnchor.MiddleCenter;reload.color=Color.cyan;
+            bank=new R24ItemAudio();engine=bank.Voice(transform,"Tank engine",-23,50,true);gun=bank.Voice(transform,"Main gun",-12,100);StartCoroutine(Load());
+            mountHandles=R25VehicleMountPresentation.Create(transform,"tank",glow);
+        }
+        IEnumerator Load(){foreach(string name in new[]{"engine-loop","fire","reload"})yield return bank.LoadOptional(name,"Expansion/Audio/tank/"+name+".wav");}
+        public void Show(Vector3 at,float yaw,float turretYaw,float speed,float health,double firedAt,bool mounted,bool visible,int team)
+        {
+            gameObject.SetActive(visible&&health>0);if(!visible||health<=0){bank.Stop();return;}
+            mountHandles.gameObject.SetActive(!mounted);
+            transform.SetPositionAndRotation(at,Quaternion.Euler(0,yaw,0));turret.rotation=Quaternion.Euler(0,turretYaw,0);
+            if(!seen){seen=true;fired=firedAt;shotTime=Time.unscaledTime-R25VehicleKinds.TankReloadSeconds;}
+            if(firedAt>fired){fired=firedAt;shotTime=Time.unscaledTime;bank.Play(gun,"fire");}
+            float age=Time.unscaledTime-shotTime;flash.gameObject.SetActive(fired>0&&age<.12f);hull.localPosition=Vector3.back*(fired>0?Mathf.Max(0,.1f-age)*1.2f:0);
+            float signedSpeed=SampleSignedForwardSpeed(at,yaw,Time.unscaledDeltaTime);
+            treadTravel=Mathf.Repeat(treadTravel+signedSpeed*Time.unscaledDeltaTime,.22f);foreach(var tread in treads)tread.localPosition=Vector3.forward*treadTravel;
+            foreach(var wheel in wheels)wheel.localRotation*=Quaternion.Euler(signedSpeed*Time.unscaledDeltaTime*100,0,0);
+            smoke.gameObject.SetActive(health<540);smoke.localScale=Vector3.one*(1+Mathf.Sin(Time.unscaledTime*3)*.12f);
+            reload.text=!mounted?"HATCH: HOLD GRIP":fired>0&&age<R25VehicleKinds.TankReloadSeconds?"RELOAD "+(R25VehicleKinds.TankReloadSeconds-age).ToString("F1"):"GUN READY";
+            var camera=Camera.main;if(camera!=null)reload.transform.rotation=Quaternion.LookRotation(reload.transform.position-camera.transform.position);
+            if(mounted){if(!engine.isPlaying)bank.Play(engine,"engine-loop");engine.pitch=.7f+speed/14;}else engine.Stop();
+            if(occupied&&!mounted)bank.Stop();occupied=mounted;
+            var block=new MaterialPropertyBlock();block.SetColor("_BaseColor",team<0?new Color(1,.416f,.169f):Color.HSVToRGB((team*.27f)%1,.65f,.65f));accentHull.SetPropertyBlock(block);accentTurret.SetPropertyBlock(block);
+
+        }
+        void OnDisable(){haveMotionPosition=false;SignedForwardSpeed=0;if(bank!=null)bank.Stop();}
+        void OnDestroy(){if(bank!=null)bank.Dispose();foreach(var f in GetComponentsInChildren<MeshFilter>(true))Destroy(f.sharedMesh);foreach(var m in new[]{paint,dark,edge,glow,accent})if(m!=null)Destroy(m);}
+    }
+}
+#endif

@@ -1,0 +1,181 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Expansion;
+using UnityEngine;
+
+namespace Ashfall.Integration.Playable
+{
+    // B. Presentation-only "eye pressed into geometry" fade. Each frame a small
+    // sphere around each rendered eye (radius from the camera's actual near plane
+    // and frustum) is overlap-tested against exactly what the head hull collides
+    // with. While obstructed the view fades to black through a camera-attached
+    // unlit quad (no post-processing). The head dome, motion and wire are untouched.
+    [DefaultExecutionOrder(1100)]
+    public sealed class R25ObstructedViewFade : MonoBehaviour
+    {
+        // Lower bound on the eye sphere radius (m).
+        public float MinimumRadius = 0.08f;
+        // Upper bound, so an unusual projection cannot fade normal play.
+        public float MaximumRadius = 0.16f;
+        // Margin over the exact near-rectangle corner distance.
+        public float RadiusSafety = 1.1f;
+        // Drawn after world/weapons (Overlay+50) but before the VR UI (Overlay+100),
+        // so menus stay usable even if the player is stuck in geometry.
+        public int RenderQueue = 4050;
+        // Fail-safe: if the eye stays obstructed this long (recovery failed, e.g. a
+        // spawn deep inside a solid) the view is partly restored so the player is
+        // never left blind; it stays dimmed until the eye is clear again.
+        public float MaximumBlackSeconds = 6f;
+        public float StuckAlpha = 0.35f;
+
+        static readonly int ColorId = Shader.PropertyToID("_Color");
+        readonly R25ObstructionFade policy = new R25ObstructionFade();
+        R23VRRig rig;
+        Camera view;
+        MeshRenderer quadRenderer;
+        Material material;
+        Mesh mesh;
+        float presentedAlpha = -1;
+        float obstructedSeconds, stuckBlend;
+        bool stuck;
+
+        public float Alpha { get { return policy.Alpha; } }
+        public bool Stuck { get { return stuck; } }
+        public bool FullyFaded { get { return R25Features.ObstructedViewFade && isActiveAndEnabled && policy.FullyFaded && !stuck; } }
+        public float LastRadius { get; private set; }
+
+        public void Initialize(R23VRRig owner, Camera camera)
+        {
+            rig = owner;
+            view = camera;
+            var shader = Resources.Load<Shader>("R23VrUi");
+            if (shader == null || view == null)
+            {
+                Debug.LogWarning("R25 obstructed-view fade disabled: R23VrUi shader or head camera unavailable");
+                enabled = false;
+                return;
+            }
+            material = new Material(shader);
+            material.name = "R25 obstructed view fade";
+            material.SetColor(ColorId, new Color(0, 0, 0, 0));
+            material.renderQueue = RenderQueue;
+            mesh = BuildQuad(2f);
+            var node = new GameObject("R25 obstructed view fade");
+            // Layer 18 (own presentation art) is drawn by the head camera only; the
+            // scopes and tactical map exclude it.
+            node.layer = 18;
+            node.transform.SetParent(view.transform, false);
+            node.transform.localPosition = new Vector3(0, 0, Mathf.Max(view.nearClipPlane * 1.5f, view.nearClipPlane + .01f));
+            node.transform.localRotation = Quaternion.identity;
+            node.AddComponent<MeshFilter>().sharedMesh = mesh;
+            quadRenderer = node.AddComponent<MeshRenderer>();
+            quadRenderer.sharedMaterial = material;
+            quadRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            quadRenderer.receiveShadows = false;
+            quadRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
+            quadRenderer.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
+            quadRenderer.enabled = false;
+        }
+
+        void LateUpdate()
+        {
+            if (quadRenderer == null) return;
+            var collision = rig == null ? null : rig.HeadCollision;
+            bool active = R25Features.ObstructedViewFade && rig != null && rig.isActiveAndEnabled && rig.Tracking && rig.UseSourceHeadHull
+                && !rig.CarrierActive && collision != null && collision.Ready;
+            if (!active)
+            {
+                policy.Reset();
+                obstructedSeconds = 0;
+                stuckBlend = 0;
+                stuck = false;
+                Present();
+                return;
+            }
+            float radius = Radius();
+            LastRadius = radius;
+            bool enter = false, exit = false;
+            if (!policy.Obstructed) enter = Obstructed(collision, radius);
+            else exit = Obstructed(collision, radius * policy.ExitRadiusScale);
+            policy.Step(enter || rig.HeadClearanceBlocked, exit || rig.HeadClearanceBlocked, Time.unscaledDeltaTime);
+            float step = Mathf.Min(Mathf.Max(Time.unscaledDeltaTime, 0), .1f);
+            if (policy.Obstructed) obstructedSeconds += step;
+            else
+            {
+                obstructedSeconds = 0;
+                stuck = false;
+            }
+            if (!stuck && obstructedSeconds > MaximumBlackSeconds)
+            {
+                stuck = true;
+                Debug.LogWarningFormat(this, "R25 obstructed view held {0:F1} s: restoring a dimmed view (head {1})", obstructedSeconds, view.transform.position.ToString("F3"));
+            }
+            // Ease between the full fade and the dimmed stuck view (never a hard cut).
+            stuckBlend = Mathf.MoveTowards(stuckBlend, stuck ? 1 : 0, step * 2f);
+            Present();
+        }
+
+        bool Obstructed(Climbing.R23HeadCollision collision, float radius)
+        {
+            if (!view.stereoEnabled) return collision.EyeObstructed(view.transform.position, radius);
+            return collision.EyeObstructed(EyePosition(Camera.StereoscopicEye.Left), radius)
+                || collision.EyeObstructed(EyePosition(Camera.StereoscopicEye.Right), radius);
+        }
+
+        Vector3 EyePosition(Camera.StereoscopicEye eye)
+        {
+            Vector4 column = view.GetStereoViewMatrix(eye).inverse.GetColumn(3);
+            Vector3 position = new Vector3(column.x, column.y, column.z);
+            return float.IsNaN(position.x) || float.IsInfinity(position.x) ? view.transform.position : position;
+        }
+
+        // Near-rectangle corner distance from the actual projection(s) in use.
+        float Radius()
+        {
+            float near = view.nearClipPlane, tanX = 0, tanY = 0;
+            if (view.stereoEnabled)
+            {
+                Accumulate(view.GetStereoProjectionMatrix(Camera.StereoscopicEye.Left), ref tanX, ref tanY);
+                Accumulate(view.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right), ref tanX, ref tanY);
+            }
+            else Accumulate(view.projectionMatrix, ref tanX, ref tanY);
+            return R25ObstructionFade.EyeRadius(near, tanX, tanY, RadiusSafety, MinimumRadius, MaximumRadius);
+        }
+
+        static void Accumulate(Matrix4x4 projection, ref float tanX, ref float tanY)
+        {
+            tanX = Mathf.Max(tanX, R25ObstructionFade.FrustumTangent(projection.m00, projection.m02));
+            tanY = Mathf.Max(tanY, R25ObstructionFade.FrustumTangent(projection.m11, projection.m12));
+        }
+
+        void Present()
+        {
+            float alpha = Mathf.Lerp(policy.Alpha, Mathf.Min(policy.Alpha, StuckAlpha), stuckBlend);
+            if (Mathf.Abs(alpha - presentedAlpha) < .002f) return;
+            presentedAlpha = alpha;
+            material.SetColor(ColorId, new Color(0, 0, 0, alpha));
+            quadRenderer.enabled = alpha > .001f;
+        }
+
+        static Mesh BuildQuad(float size)
+        {
+            float h = size * .5f;
+            var result = new Mesh();
+            result.name = "R25 obstructed view fade quad";
+            result.vertices = new[] { new Vector3(-h, -h, 0), new Vector3(h, -h, 0), new Vector3(h, h, 0), new Vector3(-h, h, 0) };
+            result.uv = new[] { new Vector2(0, 0), new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1) };
+            result.colors = new[] { Color.white, Color.white, Color.white, Color.white };
+            result.triangles = new[] { 0, 2, 1, 0, 3, 2 };
+            // Never frustum-culled while attached just in front of the eye.
+            result.bounds = new Bounds(Vector3.zero, new Vector3(size, size, size));
+            return result;
+        }
+
+        void OnDestroy()
+        {
+            if (material != null) Destroy(material);
+            if (mesh != null) Destroy(mesh);
+        }
+    }
+}
+#endif

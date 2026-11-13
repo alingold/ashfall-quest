@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "mirage_thief",
+ "label": "Mirage Thief",
+ "sourceIndex": 19,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "mirage_thief-body-baseColor.png",
+   "normal": "mirage_thief-body-normal.png",
+   "metallicMap": "mirage_thief-body-metallic.png",
+   "occlusion": "mirage_thief-body-occlusion.png",
+   "emission": "mirage_thief-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "mirage_thief-glove-baseColor.png",
+   "normal": "mirage_thief-glove-normal.png",
+   "metallicMap": "mirage_thief-glove-metallic.png",
+   "occlusion": "mirage_thief-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "fal",
+  "file": "avas_sa58_para__fn_fal.glb",
+  "scale": 0.020600501452324907,
+  "anchor": [
+    0,
+    1.0712655,
+    -5.7
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    4,
+    23
+  ],
+  "bolt": [
+    37
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.76
+  ],
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.022931393511424432,
+    -0.09242285827825197
+  ],
+  "source": "[local development path]",
+  "source_sha256": "28b5d9096bd6f4bd1fdeee8ffc5115b48bc7c9b5c278adfe15b2a825110c2c7c",
+  "output_sha256": "404b6a3e241fc0b066ebbc31023c474c40b5e66abd43aea844a0cc2df8eb3f6a",
+  "asset": {
+    "author": "alx_flameniro (https://sketchfab.com/alx_flameniro)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/avas-sa58-para-fn-fal-4d195b887353491a99e3749e6a9def42",
+    "title": "AVA's SA58 Para ( FN Fal )"
+  },
+  "magazine_center": [
+    -0.0002909407327395912,
+    -0.03597471000886576,
+    -0.16448644208263535
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 2980,
+  "body_triangles": 2785,
+  "magazine_triangles": 172,
+  "moving_triangles": 23,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.05086486509693925,
+    -0.12694899510491744,
+    -0.76
+  ],
+  "bounds_max": [
+    0.029245130212706794,
+    0.10620753597044691,
+    0.36717891532484076
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": false
+}

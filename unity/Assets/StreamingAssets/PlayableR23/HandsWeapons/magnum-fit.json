@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "id": "magnum",
+  "loadNames": [
+    "magnum",
+    "magnum-cylinder",
+    "magnum-offer"
+  ],
+  "coordinates": "Unity local Y-up/+Zforward; source Z reflected once. All homes before overall modelScale; no .84 baked into vertices.",
+  "modelScale": 0.84,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "trackedGripPitchUnityDegrees": 90,
+  "renderedHandPhysicalOffset": [
+    0,
+    0,
+    -0.05715
+  ],
+  "renderedHandOffsetInsideScaledModel": [
+    0,
+    0,
+    -0.06803571428571428
+  ],
+  "muzzle": [
+    0,
+    0.065,
+    0.392
+  ],
+  "rearSight": [
+    0,
+    0.104,
+    0.025
+  ],
+  "frontSight": [
+    0,
+    0.10370771706306346,
+    0.365
+  ],
+  "zeroDistance": 45,
+  "cylinderClosedRoot": [
+    0,
+    0,
+    0
+  ],
+  "cylinderOpenRoot": [
+    -0.1,
+    0,
+    0
+  ],
+  "cylinderCenter": [
+    0.0,
+    0.04556326127877071,
+    0.11
+  ],
+  "cylinderFitScale": [
+    0.66,
+    0.66,
+    0.6
+  ],
+  "cylinderFitSourceOffset": [
+    0.0,
+    0.022463261278770706,
+    -0.044
+  ],
+  "liveRoundHomes": [
+    [
+      0.01782,
+      0.04556326127877071,
+      0.0791
+    ],
+    [
+      0.011110588269122633,
+      0.059495498296351,
+      0.0791
+    ],
+    [
+      -0.003965323043101521,
+      0.0629364766738508,
+      0.0791
+    ],
+    [
+      -0.016055265226021107,
+      0.0532950695098456,
+      0.0791
+    ],
+    [
+      -0.01605526522602111,
+      0.03783145304769583,
+      0.0791
+    ],
+    [
+      -0.0039653230431015265,
+      0.02819004588369061,
+      0.0791
+    ],
+    [
+      0.011110588269122628,
+      0.03163102426119042,
+      0.0791
+    ]
+  ],
+  "offerRestRoot": [
+    -0.18,
+    0.095,
+    -0.13
+  ],
+  "offerRoundHomes": [
+    [
+      0.01782,
+      0.0,
+      0.0
+    ],
+    [
+      0.011110588269122633,
+      0.013932237017580293,
+      0.0
+    ],
+    [
+      -0.003965323043101521,
+      0.017373215395080098,
+      0.0
+    ],
+    [
+      -0.016055265226021107,
+      0.007731808231074888,
+      0.0
+    ],
+    [
+      -0.01605526522602111,
+      -0.007731808231074884,
+      0.0
+    ],
+    [
+      -0.0039653230431015265,
+      -0.017373215395080098,
+      0.0
+    ],
+    [
+      0.011110588269122628,
+      -0.013932237017580295,
+      0.0
+    ]
+  ],
+  "offerFitScale": [
+    0.66,
+    0.66,
+    1
+  ],
+  "offerHeldWorldScale": 1,
+  "offerRestWorldScale": 0.84,
+  "mirrorReloadXForLeftDominance": true,
+  "loadTravel": 0.06,
+  "closeTravel": 0.05,
+  "reloadRadius": 0.18,
+  "capacity": 7,
+  "bodyPart": "Body",
+  "cylinderStaticPrefixes": [
+    "DrumBody",
+    "DrumRecesses",
+    "DrumRims",
+    "DrumFlutes"
+  ],
+  "livePrefixes": [
+    "LiveRound0",
+    "LiveRound1",
+    "LiveRound2",
+    "LiveRound3",
+    "LiveRound4",
+    "LiveRound5",
+    "LiveRound6"
+  ],
+  "offerPrefixes": [
+    "OfferRound0",
+    "OfferRound1",
+    "OfferRound2",
+    "OfferRound3",
+    "OfferRound4",
+    "OfferRound5",
+    "OfferRound6"
+  ],
+  "ejector": null,
+  "ejectorSource": "revolver.eject_cases is intentionally pass; no separate moving ejector exists",
+  "notes": [
+    "Hide every mesh whose name begins LiveRoundN (includes .Primer).",
+    "Hide every OfferRoundN prefix by actual deficit/reserve.",
+    "Apply cylinderRoot translation to entire fitted cylinder subtree only.",
+    "Rest offer inherits model .84; held offer source global basis is unit scale.",
+    "Source hides authored extra sight/frame detail meshes; downloaded cosmetic sights remain in Body."
+  ]
+}

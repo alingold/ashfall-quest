@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "static_owl",
+ "label": "Static Owl",
+ "sourceIndex": 21,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "static_owl-body-baseColor.png",
+   "normal": "static_owl-body-normal.png",
+   "metallicMap": "static_owl-body-metallic.png",
+   "occlusion": "static_owl-body-occlusion.png",
+   "emission": "static_owl-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.6,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "static_owl-glove-baseColor.png",
+   "normal": "static_owl-glove-normal.png",
+   "metallicMap": "static_owl-glove-metallic.png",
+   "occlusion": "static_owl-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

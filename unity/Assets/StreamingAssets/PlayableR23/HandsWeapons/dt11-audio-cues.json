@@ -1,0 +1,32 @@
+{
+  "cues": [
+    {
+      "weapon": "dt11",
+      "action": "shot",
+      "files": [
+        "dt11-recoil-0631-shot.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_eject",
+      "files": [
+        "dt11-authored-open.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_insert",
+      "files": [
+        "dt11-authored-insert.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "bolt",
+      "files": [
+        "dt11-authored-close.wav"
+      ]
+    }
+  ]
+}

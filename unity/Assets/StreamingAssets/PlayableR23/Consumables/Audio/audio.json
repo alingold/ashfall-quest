@@ -1,0 +1,103 @@
+{
+  "cues": [
+    {
+      "kind": "soda",
+      "action": "item_equip",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "soda",
+      "action": "item_stow",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "soda",
+      "action": "consume_open",
+      "files": [
+        "isolated_soda_consume_open_00.wav"
+      ]
+    },
+    {
+      "kind": "soda",
+      "action": "consume_drink",
+      "files": [
+        "isolated_soda_consume_drink_00.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "item_equip",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "item_stow",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "consume_open",
+      "files": [
+        "shaker_open_00.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "consume_drink",
+      "files": [
+        "isolated_shaker_consume_drink_00.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "consume_shake",
+      "files": [
+        "shaker_full0992.wav"
+      ]
+    },
+    {
+      "kind": "shaker",
+      "action": "consume_ready",
+      "files": [
+        "isolated_shaker_consume_ready_00.wav"
+      ]
+    },
+    {
+      "kind": "banana",
+      "action": "item_equip",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "banana",
+      "action": "item_stow",
+      "files": [
+        "weapon_swap_ui0992.wav"
+      ]
+    },
+    {
+      "kind": "banana",
+      "action": "consume_open",
+      "files": [
+        "isolated_banana_consume_open_00.wav"
+      ]
+    },
+    {
+      "kind": "banana",
+      "action": "consume_drink",
+      "files": [
+        "consume_drink_00.wav",
+        "consume_drink_01.wav"
+      ]
+    }
+  ]
+}

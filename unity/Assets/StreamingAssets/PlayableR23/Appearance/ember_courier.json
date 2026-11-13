@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "ember_courier",
+ "label": "Ember Courier",
+ "sourceIndex": 2,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "ember_courier-body-baseColor.png",
+   "normal": "ember_courier-body-normal.png",
+   "metallicMap": "ember_courier-body-metallic.png",
+   "occlusion": "ember_courier-body-occlusion.png",
+   "emission": "ember_courier-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "ember_courier-glove-baseColor.png",
+   "normal": "ember_courier-glove-normal.png",
+   "metallicMap": "ember_courier-glove-metallic.png",
+   "occlusion": "ember_courier-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

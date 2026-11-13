@@ -1,0 +1,25 @@
+#if UNITY_6000_0_OR_NEWER
+using UnityEngine;
+using Ashfall.Integration.Playable.Networking;
+namespace Ashfall.Integration.Playable
+{
+    public sealed class R25NetDiagnostics : MonoBehaviour
+    {
+        float next;
+        R23PlayableLoop root;
+        void Update()
+        {
+            if (Time.realtimeSinceStartup < next) return;
+            next = Time.realtimeSinceStartup + 2;
+            if (root == null) root = GetComponent<R23PlayableLoop>();
+            var session = root == null ? null : root.LanSession;
+            var lobby = session == null ? null : session.Lobby;
+            if (lobby == null) return;
+            Debug.Log("ASHFALL NET role=" + (lobby.State == R24LanLobbyState.Hosting ? "host" : "client") +
+                " state=" + lobby.State + " members=" + lobby.Members.Length +
+                " messagesIn=" + session.MessagesIn + " messagesOut=" + session.MessagesOut +
+                " lastError=" + (lobby.HealthStorageFailure ?? lobby.LastShotRejection ?? lobby.Status));
+        }
+    }
+}
+#endif

@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "verdant_reclaimer",
+ "label": "Verdant Reclaimer",
+ "sourceIndex": 9,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "verdant_reclaimer-body-baseColor.png",
+   "normal": "verdant_reclaimer-body-normal.png",
+   "metallicMap": "verdant_reclaimer-body-metallic.png",
+   "occlusion": "verdant_reclaimer-body-occlusion.png",
+   "emission": "verdant_reclaimer-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "verdant_reclaimer-glove-baseColor.png",
+   "normal": "verdant_reclaimer-glove-normal.png",
+   "metallicMap": "verdant_reclaimer-glove-metallic.png",
+   "occlusion": "verdant_reclaimer-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

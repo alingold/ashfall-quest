@@ -1,0 +1,21 @@
+{
+  "baseline": "actual original R23 user finish",
+  "inputs": {
+    "assets/materials/build_panel_user.png": "30aa22e75d16ec540d9234a05e7d228e3aa720f67ab6414cd719a60e3ffdc9a3",
+    "scripts/construction_piece.gd": "49b2a4bd7edd5374b34029556dcf541699436d32b03d5733d51467b40d307bb0",
+    "scripts/field_builder.gd": "08d137e6851ea73de4b38e109fe86a7a9491b5b583eee2a8cd708ee0abf94d2d"
+  },
+  "conversion": "None: exact source PNG bytes. Unity unit cube full-face UV reproduces Godot BoxMesh3x2 UV multiplied by source(3,2) texture repeat.",
+  "material": {
+    "albedo": "white",
+    "metallic": 0.6,
+    "roughness": 0.78,
+    "emission": false
+  },
+  "health": {
+    "wall": 180,
+    "floor": 140,
+    "ramp": 160
+  },
+  "collapseStepSeconds": 0.3
+}

@@ -1,0 +1,74 @@
+{
+  "materials": [
+    {
+      "color": [
+        0.7176470588235294,
+        0.5843137254901961,
+        0.2823529411764706,
+        1
+      ],
+      "metallic": 0.8,
+      "roughness": 0.35,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.16862745098039217,
+        0.18823529411764706,
+        0.1803921568627451,
+        1
+      ],
+      "metallic": 0.03,
+      "roughness": 0.78,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.5803921568627451,
+        0.5843137254901961,
+        0.5529411764705883,
+        1
+      ],
+      "metallic": 0.82,
+      "roughness": 0.26,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        0.09019607843137255,
+        0.12549019607843137,
+        0.1450980392156863,
+        1
+      ],
+      "metallic": 0.48,
+      "roughness": 0.52,
+      "doubleSided": false,
+      "alphaMode": "OPAQUE",
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "SourceStaticMaterial0",
+    "SourceStaticMaterial1",
+    "SourceStaticMaterial2",
+    "SourceStaticMaterial3"
+  ]
+}

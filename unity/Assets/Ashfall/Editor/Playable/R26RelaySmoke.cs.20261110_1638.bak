@@ -1,0 +1,67 @@
+#if UNITY_EDITOR && UNITY_6000_0_OR_NEWER
+using System;
+using System.IO;
+using UnityEditor;
+using UnityEngine;
+using Unity.Networking.Transport.Relay;
+using Ashfall.Integration.Playable.Online;
+using Ashfall.Integration.Playable.Networking;
+using Ashfall.Modules.HealthStates;
+namespace Ashfall.Editor.Playable
+{
+    public static class R26RelaySmoke
+    {
+        [Serializable] sealed class Receipt
+        {
+            public bool success, configured, handshake, cleanup;
+            public string status, error;
+        }
+        static R26OnlineRoomFlow host, guest;
+        static R24LanPeer a,b;
+        static string output;
+        static double start;
+        public static void Run()
+        {
+            output=R23PlayableBuild.Argument("-ashfallRelaySmoke");
+            if(String.IsNullOrEmpty(output)) throw new ArgumentException("-ashfallRelaySmoke <receipt.json> required");
+            var service=new R26UnityOnlineRooms();
+            host=new R26OnlineRoomFlow(service); guest=new R26OnlineRoomFlow(service);
+            start=EditorApplication.timeSinceStartup; host.Begin(true,"",start);
+            EditorApplication.update+=Pump;
+        }
+        static void Pump()
+        {
+            try
+            {
+                double now=EditorApplication.timeSinceStartup;
+                host.Pump(now); guest.Pump(now);
+                if(host.State==OnlineRoomState.Failed)
+                {
+                    bool missing=host.Reason==R26OnlineRoomFlow.NotSetUp;
+                    Finish(new Receipt { success=missing, configured=!missing, status=missing?"not set up":"failed", error=host.Reason }); return;
+                }
+                if(host.Room!=null && a==null)
+                {
+                    a=R24LanPeer.Host("Relay smoke","Host","range",new string('a',64),healthStorage:delegate(string session,long epoch) { return new FileHealthImageStore(Path.Combine(Path.GetDirectoryName(output),"health"),session,epoch,R24LanPeer.LobbyContent); },relay:(RelayServerData)host.Room.TransportData);
+                    guest.Begin(false,host.Room.Code,now);
+                }
+                if(guest.State==OnlineRoomState.Failed) throw new Exception(guest.Reason);
+                if(guest.Room!=null && b==null) b=R24LanPeer.JoinRelay((RelayServerData)guest.Room.TransportData,"Guest",now);
+                if(a!=null)a.Tick(now); if(b!=null)b.Tick(now);
+                if(a!=null && b!=null && a.Lobby.Members.Length==2 && b.Lobby.Members.Length==2 && b.Lobby.State==R24LanLobbyState.Connected)
+                    Finish(new Receipt { success=true, configured=true, handshake=true, status="connected" });
+                else if(now-start>90) throw new TimeoutException("Relay handshake timed out");
+            }
+            catch(Exception e) { Finish(new Receipt { status="failed", error=e.ToString() }); }
+        }
+        static void Finish(Receipt result)
+        {
+            EditorApplication.update-=Pump;
+            try { if(b!=null)b.Dispose(); if(a!=null)a.Dispose(); guest.Leave(); host.Leave(); result.cleanup=true; }
+            catch(Exception e) { result.success=false; result.error+=" Cleanup: "+e.Message; }
+            Directory.CreateDirectory(Path.GetDirectoryName(output)); File.WriteAllText(output,JsonUtility.ToJson(result,true));
+            Debug.Log("ASHFALL RELAY SMOKE "+result.status); EditorApplication.Exit(result.success?0:1);
+        }
+    }
+}
+#endif

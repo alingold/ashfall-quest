@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "soot_sparrow",
+ "label": "Soot Sparrow",
+ "sourceIndex": 7,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "soot_sparrow-body-baseColor.png",
+   "normal": "soot_sparrow-body-normal.png",
+   "metallicMap": "soot_sparrow-body-metallic.png",
+   "occlusion": "soot_sparrow-body-occlusion.png",
+   "emission": "soot_sparrow-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "soot_sparrow-glove-baseColor.png",
+   "normal": "soot_sparrow-glove-normal.png",
+   "metallicMap": "soot_sparrow-glove-metallic.png",
+   "occlusion": "soot_sparrow-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

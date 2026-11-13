@@ -1,0 +1,16 @@
+{
+  "sourceRoot": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "inputs": {
+    "assets/data/map_semantics_r14.json": "d2eec08d77b134b10b0a0095a16f2fe4feb82139299b38eac7c84582d7d8a0b2",
+    "assets/data/archive_semantics_r9.json": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a",
+    "scripts/map_semantics_r14.gd": "573b4b2628e81be3eb4d3655bc59e1719c31e4dbb17250195150e8dbc1d79447"
+  },
+  "maps": 105,
+  "mapsWithStations": 30,
+  "stations": 430,
+  "conversion": "Original source rows, order, rate and radius unchanged; center/normal Z reflected once into Unity local coordinates; native map root transforms to world.",
+  "geometryAdded": false,
+  "engineRun": false,
+  "deviceRun": false,
+  "limits": "Valley/Range have no rows in this archive semantics dataset; no synthetic stations. Physical contact must pass native geometry queries before root health owner receives gain."
+}

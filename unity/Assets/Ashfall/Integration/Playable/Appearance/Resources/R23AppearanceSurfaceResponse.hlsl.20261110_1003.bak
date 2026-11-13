@@ -1,0 +1,27 @@
+#ifndef ASHFALL_APPEARANCE_SURFACE_RESPONSE
+#define ASHFALL_APPEARANCE_SURFACE_RESPONSE
+// One response for explicitly identified cloth, skin and leather slots.
+// Authored metallic and glossy pixels bypass the dry-surface adjustment.
+void R23ApplyAppearanceResponse(half3 sourceAlbedo,half metallic,half roughness,half sourceDielectric,half2 response,
+    out half3 diffuse,out half3 specular,out half smoothness)
+{
+    metallic=saturate(metallic);roughness=saturate(roughness);
+    // A negative Y tag opts in only explicitly named published body atlases.
+    // Keep mirror/glass texels <=.15 and metal texels >=.45 unchanged.
+    half glossWeight=response.y<0?smoothstep(.15h,.35h,roughness):smoothstep(.35h,.60h,roughness);
+    half weight=(1-smoothstep(.08h,.45h,metallic))*glossWeight;
+    half dielectricScale=response.y<0?-response.y:response.y;
+    half dielectric=sourceDielectric*lerp(1.0h,dielectricScale,weight);
+    specular=lerp(dielectric.xxx,sourceAlbedo,metallic);
+    half remaining=max(1-Max3(specular.r,specular.g,specular.b),.0001h);
+    // Keep the source diffuse energy while reducing dry dielectric highlights.
+    diffuse=sourceAlbedo*(1-metallic)*(1-sourceDielectric)/remaining;
+    smoothness=1-lerp(roughness,max(roughness,response.x),weight);
+}
+// Active only for explicit named part finishes. Disabled is an exact no-op.
+half R23AppearanceFinishSmoothness(half smoothness,half2 minimumAndEnabled)
+{
+    if(minimumAndEnabled.y>.5h)return max(smoothness,saturate(minimumAndEnabled.x));
+    return smoothness;
+}
+#endif

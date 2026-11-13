@@ -1,0 +1,103 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Vehicles;
+using Ashfall.Integration.Playable.Networking;
+using UnityEngine;
+namespace Ashfall.Integration.Playable
+{
+    public sealed partial class R23VRRig
+    {
+        readonly R25HelicopterDynamics helicopterMotor=new R25HelicopterDynamics();
+        public System.Func<float> VehicleMapTop;
+        readonly R25TankDynamics tankMotor=new R25TankDynamics();
+        string vehicleKind="hoverbike";bool tankClick;
+        public System.Func<string,bool> FireTank;
+        public float VehicleHullYaw {get{return vehicleKind=="tank"?tankMotor.Yaw:transform.eulerAngles.y;}}
+        readonly R25BikeDynamics bikeMotor=new R25BikeDynamics();
+        readonly R25BikeHold mountHold=new R25BikeHold(),exitHold=new R25BikeHold();
+        public System.Func<R25VehicleState[]> ReadVehicles;
+        public System.Func<bool> VehicleEnabled;
+        public System.Func<string> ReadVehicleActor;
+        public System.Func<string,int,bool> MountVehicle;
+        public System.Action<string,Float3,float> DismountVehicle;
+        string vehicleId,mountCandidate;float mountRequestedUntil;bool vehicleExitPending;
+        public bool Riding {get{return vehicleId!=null&&!vehicleExitPending;}}
+        public string VehicleHint {get;private set;}
+        public void CancelVehicle()
+        {
+            if(vehicleId!=null&&!vehicleExitPending&&DismountVehicle!=null)DismountVehicle(vehicleId,F(transform.position),transform.eulerAngles.y);
+            vehicleExitPending=true;vehicleId=null;mountCandidate=null;mountHold.Step(false,.01f,.4f);exitHold.Step(false,.01f,.5f);
+            VehicleHint="";
+        }
+        void AcceptVehicleVelocity(Float3 velocity)
+        {if(vehicleKind=="helicopter"){helicopterMotor.Accept(velocity);motor.SetVelocity(helicopterMotor.Velocity);}else if(vehicleKind=="tank"){tankMotor.Accept(velocity);motor.SetVelocity(tankMotor.Velocity);}else{bikeMotor.Accept(velocity);motor.SetVelocity(bikeMotor.Velocity);}}
+        Vector3 VehicleChassisMotion(Vector3 desired)
+        {
+            if(vehicleKind=="helicopter")return HeadCollision.HelicopterMotion(transform.position,transform.eulerAngles.y,desired);
+            if(vehicleKind!="tank")return HeadCollision.VehicleMotion(transform.position,transform.forward,desired);
+            var q=Quaternion.Euler(0,tankMotor.Yaw,0);RaycastHit support;if(HeadCollision.Support(transform.position,transform.position+Vector3.up*.2f,out support))q=Quaternion.FromToRotation(Vector3.up,support.normal)*q;var half=new Vector3(1.35f,.45f,2.2f);
+            // Fail closed at starts/ends; the common verified head sweep still runs afterwards.
+            int mask=(1<<0)|(1<<8);
+            if(Physics.CheckBox(transform.position,half,q,mask,QueryTriggerInteraction.Ignore))return Vector3.zero;
+            RaycastHit hit;float length=desired.magnitude;
+            if(length>0&&Physics.BoxCast(transform.position,half,desired/length,out hit,q,length+.02f,mask,QueryTriggerInteraction.Ignore))desired=desired.normalized*Mathf.Max(0,hit.distance-.02f);
+            if(Physics.CheckBox(transform.position+desired,half,q,mask,QueryTriggerInteraction.Ignore))return Vector3.zero;
+            return desired;
+        }
+        bool EvaluateVehicle(InputFrame frame,float dt,out Vector3 displacement,out Vector3 velocity)
+        {
+            displacement=velocity=Vector3.zero;
+            var rules=ReadTraversalRules==null?null:ReadTraversalRules();
+            bool allowed=R25BikeRider.Allowed((rules==null||rules.Vehicles)&&(VehicleEnabled==null||VehicleEnabled()),frame.Tracked&&!frame.Paused,
+                GameplayBlocked||MenuLocomotion||!TraversalInputAllowed,SourceGhostMotion,CarrierActive);
+            var rows=ReadVehicles==null?new R25VehicleState[0]:ReadVehicles();
+            string actor=ReadVehicleActor==null?null:ReadVehicleActor();R25VehicleState owned=null;
+            foreach(var row in rows)if(!row.Destroyed&&row.Rider==actor&&actor!=null)owned=row;
+            if(owned!=null&&owned.Kind=="tank"&&rules!=null&&!rules.Tanks)allowed=false;
+            if(owned!=null&&owned.Kind=="helicopter"&&rules!=null&&!rules.Helicopters)allowed=false;
+            if(!allowed){CancelVehicle();return false;}
+            if(owned==null){if(vehicleId!=null){vehicleId=null;if(vehicleKind!="helicopter")RequestHeadRecovery(Exclusion.R25RecoveryReason.Respawn,false);}vehicleExitPending=false;}
+            else if(!vehicleExitPending&&vehicleId!=owned.Id){
+                vehicleKind=owned.Kind;helicopterMotor.Reset(owned.Home.Y-.65f);tankMotor.Reset(owned.Yaw,motor.Velocity);tankClick=true;vehicleId=owned.Id;bikeMotor.Accept(motor.Velocity);CancelTraversal();
+                // Mount without relocating the tracked head; chassis starts beneath the rider.
+                if(Climbing!=null)Climbing.ResetMotion();
+            }
+            if(!Riding){
+                if(owned!=null)return false;
+                string candidate=null;int hand=0;
+                foreach(var row in rows)if((row.Kind!="tank"||rules==null||rules.Tanks)&&(row.Kind!="helicopter"||rules==null||rules.Helicopters)&&grounded&&!row.Destroyed&&row.Rider==""&&Vector3.Distance(transform.position,U(row.Rest))<1.8f){
+                    Vector3 marker=U(row.Rest)+Quaternion.Euler(0,row.Yaw,0)*new Vector3(0,.55f,.55f);
+                    for(int h=0;h<2;h++)if((h==0?frame.GripLeft&&LeftInput.Tracked&&!LeftHandOccupied:frame.GripRight&&RightInput.Tracked&&!RightHandOccupied)&&Vector3.Distance(h==0?Left.position:Right.position,marker)<.35f){candidate=row.Id;hand=h;}
+                }
+                if(candidate!=null){if(hand==0)LeftObjectiveGripReserved=true;else RightObjectiveGripReserved=true;}
+                if(candidate!=mountCandidate){mountHold.Step(false,dt,.4f);mountCandidate=candidate;}
+                if(mountHold.Step(candidate!=null,dt,.4f)&&MountVehicle!=null&&MountVehicle(candidate,hand))mountRequestedUntil=Time.unscaledTime+2;
+                VehicleHint=Time.unscaledTime<mountRequestedUntil?"MOUNT REQUESTED":candidate!=null?"HOLD GRIP TO MOUNT":"";
+                return false;
+            }
+            VehicleHint=vehicleKind=="helicopter"?"JUMP: CLIMB / CLICK: DESCEND / LAND + EMPTY DUAL GRIP: EXIT":vehicleKind=="tank"?"BODY YAW: STEER / STICK CLICK: GUN / HOLD JUMP: EXIT":"JUMP TAP: HOP / HOLD: DISMOUNT";
+            if(vehicleKind!="helicopter"&&exitHold.Step(frame.Jump,dt,.5f)){CancelVehicle();return false;}
+            CancelTraversal();
+            RaycastHit floor;bool ground;
+            // Initialize separately because short-circuit support may not execute.
+            floor=new RaycastHit();ground=HeadCollision!=null&&HeadCollision.Support(transform.position,transform.position+Vector3.up*.2f,out floor);
+            if(vehicleKind=="helicopter"){
+                ground=HeadCollision.HelicopterGround(transform.position,out floor);
+                float height=ground?transform.position.y-floor.point.y:200;
+                bool exit=R25HelicopterDynamics.CanExit(height,frame.GripLeft&&frame.GripRight,!LeftHandOccupied&&!RightHandOccupied,LeftInput.Tracked&&RightInput.Tracked,frame.Jump,LeftInput.Click,frame.Paused||MenuLocomotion);
+                if(exit){LeftObjectiveGripReserved=true;RightObjectiveGripReserved=true;}
+                if(exitHold.Step(exit,dt,.6f)){CancelVehicle();return false;}
+                helicopterMotor.Step(dt,frame.MoveX,frame.MoveY,transform.eulerAngles.y,frame.Jump,LeftInput.Click,transform.position.y,ground?floor.point.y:helicopterMotor.LaunchGround-200,VehicleMapTop==null?helicopterMotor.LaunchGround+82.3f:VehicleMapTop());
+                displacement=U(helicopterMotor.Displacement);velocity=U(helicopterMotor.Velocity);return true;
+            }
+            if(vehicleKind=="tank"){
+                tankMotor.Step(dt,frame.MoveY,transform.eulerAngles.y,ground,ground?transform.position.y-floor.point.y:3,ground?F(floor.normal):new Float3(0,1,0));
+                if(LeftInput.Click&&!tankClick&&FireTank!=null)FireTank(vehicleId);tankClick=LeftInput.Click;
+                displacement=U(tankMotor.Displacement);velocity=U(tankMotor.Velocity);return true;
+            }
+            R25BikeRider.Drive(bikeMotor,dt,frame.MoveX,frame.MoveY,transform.eulerAngles.y,LeftInput.Click,frame.Jump,ground,ground?transform.position.y-floor.point.y:3,ground?F(floor.normal):new Float3(0,1,0));
+            displacement=U(bikeMotor.Displacement);velocity=U(bikeMotor.Velocity);return true;
+        }
+    }
+}
+#endif

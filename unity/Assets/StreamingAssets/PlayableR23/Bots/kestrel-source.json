@@ -1,0 +1,58 @@
+{
+  "sourceContent": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "assets/enemies/irondust/soldier_clean.tscn": "1640f835309c1156d73df1a3d474450d8692b5a0c69c6a3ff43cef4012062e07",
+    "assets/enemies/irondust/FederalSoldierSkin.tres": "d4923476c142037c523c0bc7c7ba0a55c128b4ea8c002c33046b5575249903bf",
+    "scripts/enemy_visual.gd": "13fa4accb5a1006a53011a7d1213f36dd9819e35eff75c8930e1ca9799bee136",
+    "scripts/enemy.gd": "8591c5ae631c1ec25a49dfe6fbd4b3968ea016a8b26f26dc139b83d16d7f2c79",
+    "assets/enemies/irondust/FederalSoldierSkin_Albedo.png.import": "4c6db5fd7fedfb58b0da100a314ccd81569ca5d08258c6c4a8e631f5495fcfc1",
+    "assets/enemies/irondust/FederalSoldierSkin_Albedo.png": "0395b19a403e4975d6caaedf0ba12bd05e109c4f899447d81869a66d4224738b",
+    "assets/enemies/irondust/FederalSoldierSkin_NormalMap.png.import": "02ef008343d46ba4d7423dbeaced4a8641426da5dd1caf9c13000fc95d95ebdd",
+    "assets/enemies/irondust/FederalSoldierSkin_NormalMap.png": "d1aaa480c041cea17a12dd966a0e086a4253ae10c3bba6457410845f5ab04b39",
+    "assets/enemies/irondust/FederalSoldierSkin_Occlusion.png.import": "1bea3f721666a17ac795c515e274cb3da97d4d6d1a873dbd8173323302b5b186",
+    "assets/enemies/irondust/FederalSoldierSkin_Occlusion.png": "b3bfe0ad93f05a53ee10ad3d0d350f8635c2fd7be4907b5b79d6118e2655c0b7",
+    "assets/enemies/irondust/FederalSoldierSkin_Roughness.png.import": "a19ebdbdb548c90d2d2cd7c054240ca7e643fb69d2e90bbf2f10bf2c15291a54",
+    "assets/enemies/irondust/FederalSoldierSkin_Roughness.png": "2c265235f54086461e02339a2cd7ebc7420a8a0c19be25d29c17893cb742aa07",
+    "assets/enemies/irondust/FederalSoldierSkin_Emission.png.import": "868c662a89fed52ecb581b3de8748dc0eef536198ff15b92fb92c9f7dae77d3c",
+    "assets/enemies/irondust/FederalSoldierSkin_Emission.png": "1e894731a304a6e3e7beaa628b955ceb306b4bc5862a57fd9aaa16496a87e92a",
+    "assets/enemies/irondust/PROVENANCE.txt": "b8573c54a5b657a8100915186f58f986306b31c6378701a9055515f9214f0d79",
+    "scripts/drone_detail.gd": "9f4c2c810c90e7140b577a2f6c78c07a4c0f92b22f4ad6295ca0d13f9b121196",
+    "project.godot": "525644531df1018622fc9907ecb7f4d0b90f5c546bc1fb2791e2bf911fbbe0cc"
+  },
+  "geometry": {
+    "soldierVisibleParts": [
+      "Body",
+      "Head3",
+      "HandSimple"
+    ],
+    "soldierVertices": 2487,
+    "soldierTriangles": 3908,
+    "skeletonBones": 64,
+    "sourceInfluences": 8,
+    "scoutTriangles": 4452,
+    "scoutBuckets": 19
+  },
+  "conversion": {
+    "coordinates": "single Z reflection, winding swap, UV V flip; Transform3D serialized row-major, per-part skin binds retained; initial64bonepose/rest retained; no source animation clips used",
+    "sourceWeights": "All8 uint16 source influences retained. Runtime normalizes tiny uint16 sum error and sorts by weight for Unity, does not truncate to4. Renderer Auto obeys project setting.",
+    "textures": "5 byte-identical2048 PNGs, original no-mipmap import setting, 4x anisotropy from source project enum2, normalY uninverted",
+    "pose": "enemy_visual.gd travelphase/two-boneIK/controlledrest/chest-headpitch; enemy.gd retainedturret/recoil/collar/muzzle. Rootownsvisualyaw and standingratio once.",
+    "scout": "enemy.gd variant1 complete base; drone_detail.gd exact appendplacements/radial10 default4rings/radial8 explicit1ring/torus16x6/bevelplate28tri. Batched by material/attachment/shadows/range; no soldier surrogate."
+  },
+  "primaryDecoderReferences": [
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.4/servers/rendering_server.cpp",
+      "sha256": "0cfb72414a2c9ee5b510726900878e062c31835931577918068cd0c58b09ab9e"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.4/core/math/vector3.cpp",
+      "sha256": "9062e9842c15a25e12e594b2be203c6e6bcf1a1b7c4c35f200546b56dbcb81d1"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.4/scene/resources/3d/primitive_meshes.h",
+      "sha256": "bd82f90523560d4a8f56c98cba555efa24e0a4ff29789ddb441516f81eebc82c"
+    }
+  ],
+  "nativeRenderingExecuted": false
+}

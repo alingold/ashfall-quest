@@ -1,0 +1,135 @@
+{
+  "target": "Published frozen R24 R6 (R5 item recipes byte-identical)",
+  "contentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "inputs": [
+    {
+      "path": "scripts/supply_catalog_088.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\supply_catalog_088.gd",
+      "sha256": "41dca35a51e233d138d9ee674714387f4b433320237c88c0177db242738153e2"
+    },
+    {
+      "path": "scripts/ammo_pickups.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\ammo_pickups.gd",
+      "sha256": "40bebb9d78dea991bb70d1c0560497917002c4c0946d9829942c2d5373aea148"
+    },
+    {
+      "path": "scripts/item_catalog_service_088.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\item_catalog_service_088.gd",
+      "sha256": "61fc295d3e7dd925a9b4e6d477edec105a5b958e1911b42318e7da0cb949bbe5"
+    },
+    {
+      "path": "scripts/field_item_models.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\field_item_models.gd",
+      "sha256": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b"
+    },
+    {
+      "path": "scripts/field_consumables.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\field_consumables.gd",
+      "sha256": "670bb1fc92207d8d2a4b5cb93ac87958c8429a36e24677bee1c66b7a349f3134"
+    },
+    {
+      "path": "scripts/banana_peel_086.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\banana_peel_086.gd",
+      "sha256": "ea19bd6fed81fd26856fa8ec5c9c19dcb7d770436e8c3c0626183b7ba5a4826d"
+    },
+    {
+      "path": "assets/ui/supply_088_pistol.svg",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\ui\\supply_088_pistol.svg",
+      "sha256": "8f1776fdc7c2f31ba06e8624c8b701a9f89fbaf28530114bdf2c27cd5e7a60cd"
+    },
+    {
+      "path": "assets/ui/supply_088_smg.svg",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\ui\\supply_088_smg.svg",
+      "sha256": "7c739f7d9dafd524e67b0dabf45f88e05ac197bef2ada191cd19b767cbcd3969"
+    },
+    {
+      "path": "assets/ui/supply_088_rifle.svg",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\ui\\supply_088_rifle.svg",
+      "sha256": "ed515281feb5f6c87c59f12f69798988f3ee850b6909a548c299c3fe17af8ce7"
+    },
+    {
+      "path": "assets/ui/supply_088_shells.svg",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\ui\\supply_088_shells.svg",
+      "sha256": "e463672b0d5d3330458e17260cf32a44c74a85605cb8334b7dca0ff1d08f7be8"
+    },
+    {
+      "path": "assets/ui/supply_088_sniper.svg",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\ui\\supply_088_sniper.svg",
+      "sha256": "4df7693e025a2e1b3a20cce3e8da69dc72a3ea72e02a20e28454c33606b2cb26"
+    }
+  ],
+  "models": [
+    {
+      "family": "pistol",
+      "amount": 16,
+      "triangles": 756,
+      "surfaces": 3,
+      "glyph": "pistol-glyph.png"
+    },
+    {
+      "family": "smg",
+      "amount": 20,
+      "triangles": 756,
+      "surfaces": 3,
+      "glyph": "smg-glyph.png"
+    },
+    {
+      "family": "rifle",
+      "amount": 32,
+      "triangles": 756,
+      "surfaces": 3,
+      "glyph": "rifle-glyph.png"
+    },
+    {
+      "family": "shells",
+      "amount": 6,
+      "triangles": 756,
+      "surfaces": 3,
+      "glyph": "shells-glyph.png"
+    },
+    {
+      "family": "sniper",
+      "amount": 5,
+      "triangles": 756,
+      "surfaces": 3,
+      "glyph": "sniper-glyph.png"
+    },
+    {
+      "family": "builds",
+      "amount": 6,
+      "triangles": 1080,
+      "surfaces": 3,
+      "glyph": ""
+    },
+    {
+      "family": "backpack",
+      "amount": 1,
+      "triangles": 2448,
+      "surfaces": 5,
+      "glyph": ""
+    }
+  ],
+  "audio": [
+    {
+      "action": "ammo_pickup",
+      "source": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\reference099\\isolated_item_pickup_00.wav",
+      "file": "ammo_pickup.wav",
+      "sha256": "71ee3ba31171f5e34c70f5f1182e8ffa7862fa3aa1a32e5a99b8342649daa304",
+      "rate": 48000,
+      "frames": 32640,
+      "channels": 1,
+      "pcmSha256": "876eeb7519e02258a59733bc69c36bd152550e6943e67f5b98395416ea545aa8"
+    },
+    {
+      "action": "build_pickup",
+      "source": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\reference099\\isolated_item_pickup_00.wav",
+      "file": "build_pickup.wav",
+      "sha256": "71ee3ba31171f5e34c70f5f1182e8ffa7862fa3aa1a32e5a99b8342649daa304",
+      "rate": 48000,
+      "frames": 32640,
+      "channels": 1,
+      "pcmSha256": "876eeb7519e02258a59733bc69c36bd152550e6943e67f5b98395416ea545aa8"
+    }
+  ],
+  "engineRun": false
+}

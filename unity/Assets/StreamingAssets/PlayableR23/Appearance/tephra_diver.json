@@ -1,0 +1,70 @@
+{
+ "version": 1,
+ "id": "tephra_diver",
+ "label": "Tephra Diver",
+ "sourceIndex": 5,
+ "eyeToShoulder": 0.18,
+ "bodyRear": 0.06,
+ "gloveMaterialIndex": 1,
+ "leftWrist": [
+  0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "rightWrist": [
+  -0.001026332217453563,
+  0.022985152075430573,
+  -0.05350169563455417
+ ],
+ "stabilizePreviewLegs": true,
+ "materials": [
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "tephra_diver-body-baseColor.png",
+   "normal": "tephra_diver-body-normal.png",
+   "metallicMap": "tephra_diver-body-metallic.png",
+   "occlusion": "tephra_diver-body-occlusion.png",
+   "emission": "tephra_diver-body-emission.png",
+   "emissionColor": [
+    1,
+    1,
+    1
+   ],
+   "emissionEnergy": 2.2,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  },
+  {
+   "color": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "metallic": 1,
+   "roughness": 1,
+   "doubleSided": false,
+   "baseColor": "tephra_diver-glove-baseColor.png",
+   "normal": "tephra_diver-glove-normal.png",
+   "metallicMap": "tephra_diver-glove-metallic.png",
+   "occlusion": "tephra_diver-glove-occlusion.png",
+   "emission": "",
+   "emissionColor": [
+    0,
+    0,
+    0
+   ],
+   "emissionEnergy": 1.0,
+   "normalScale": 1.0,
+   "occlusionStrength": 1
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+  "baseline": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "geometry": [
+    {
+      "id": "ump",
+      "source": "assets\\models\\ump_aggressor\\ump_aggressor.glb",
+      "sha256": "021fd6a47eeb84028181dfdb22433725fb9b3952dab1e15e5d1cfef5367f84a3",
+      "vertices": 31479,
+      "triangles": 10497,
+      "sourceTriangles": 10421
+    },
+    {
+      "id": "p90",
+      "source": "assets\\models\\download_p90\\model.glb",
+      "sha256": "3a4a9e9f4ddb47a8216ab8ffa27ac9bad736039f74a9833d15080e93e9979915",
+      "vertices": 114342,
+      "triangles": 38114,
+      "sourceTriangles": 38082
+    },
+    {
+      "id": "mp5",
+      "source": "assets\\models\\download_mp5\\model.glb",
+      "sha256": "12813cf2426963b9e79b12d08700332aa17d719e5c02efdfe8c85bb9a4986ae9",
+      "vertices": 102675,
+      "triangles": 34225,
+      "sourceTriangles": 34193
+    },
+    {
+      "id": "mp9",
+      "source": "assets\\models\\download_mp9\\model.glb",
+      "sha256": "1f43c77bbfad4b429a92a7a65ddd7e460094d08bdb089611dfef1278588037b2",
+      "vertices": 41750,
+      "triangles": 14001,
+      "sourceTriangles": 13849
+    }
+  ],
+  "audio": [
+    {
+      "source": "res://assets/audio/reference097/shot_ump_last_00.wav",
+      "file": "audio/ump-shot-0.wav",
+      "sha256": "44be078b5ae3682702488b28dfcb3f59f9231f3733590bf6538004c77d1af159"
+    },
+    {
+      "source": "res://assets/audio/reference097/shot_p90_last_00.wav",
+      "file": "audio/p90-shot-0.wav",
+      "sha256": "8a72bc171a8cf98b0ec728bf1680fce5f978eebaf8a6cefe8ee469b3ba0d6ba0"
+    },
+    {
+      "source": "res://assets/audio/reference0992/shot_mp5_verified0992.wav",
+      "file": "audio/mp5-shot-0.wav",
+      "sha256": "14259ccbcb89ec5774f867261dd5e9072d7322d7b98cec6874fca7d7d36d4190"
+    },
+    {
+      "source": "res://assets/audio/reference0992/shot_mp9_verified0992.wav",
+      "file": "audio/mp9-shot-0.wav",
+      "sha256": "b55818bc60cc561adfe781936ab74add2f01f9b278c52403ef9f958850892596"
+    }
+  ],
+  "sourceInputs": {
+    "scripts/compact_smg.gd": "213eabb15a7d3c4a3ed4d6fd8ade36188a773e12c36db451a3f7084330d7bf4f",
+    "scripts/top_feed_pdw.gd": "7a35d8e40ec162826d1c5c993a9abd5666187dd16bdff85bd209472529ae7abb",
+    "scripts/catalog_firearm.gd": "63d33af1c8fe7c44a78fb41db8c7c66139c1339c7e4e5798dbd2e9b899a3ffdd",
+    "scripts/ump_aggressor_model.gd": "b9a7c571114b936b11a17cac4ea3b7f47d7895a21bf3604ff4d6ca50a401465b",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/mp9_laser_091.gd": "e908285dbcf044113e4d864d724cf7590b40112e40107ed7b5ae3237b598e17c",
+    "scripts/solid_import_085.gd": "0f0519ad1a501249bd9f5638496332c0b217e88656164a36e06806376ff5159e",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/data/recoil_observed_067.json": "cb494da42fc7900d049d4104e1c680e775fff43e2fe4b84f4e6f1f5627b83930",
+    "assets/data/recoil_endpoint_experiment_071.json": "56a7d2bb33106adbbb85bb1ba0f8e1ac115c0051248b3f25691698cbc14c9cc0"
+  },
+  "conversion": "Original full GLBs + only source visible authored components, no decimation; normal inverse transpose, single Z reflection and UV/winding conversion; no Blender/engine."
+}

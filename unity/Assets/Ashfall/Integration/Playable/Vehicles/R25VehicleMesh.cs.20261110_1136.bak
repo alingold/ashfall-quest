@@ -1,0 +1,50 @@
+#if UNITY_6000_0_OR_NEWER
+using System.Collections.Generic;
+using UnityEngine;
+namespace Ashfall.Integration.Playable.Vehicles
+{
+    // Closed superellipse rings along local Z. Broad faces share vertices for smooth
+    // shading; bevelled plates split triangles so the chamfers retain crisp highlights.
+    public sealed class R25VehicleMesh
+    {
+        readonly List<Vector3> vertices=new List<Vector3>();
+        readonly List<int> triangles=new List<int>();
+        readonly List<Color> colours=new List<Color>();
+        public void Loft(Vector3 center,Quaternion rotation,float[] z,float[] width,float[] height,float square,int sides=16)
+        {
+            int start=vertices.Count;
+            for(int r=0;r<z.Length;r++)for(int i=0;i<sides;i++){
+                float a=i*2*Mathf.PI/sides,c=Mathf.Cos(a),s=Mathf.Sin(a);
+                Vector3 p=new Vector3(Mathf.Sign(c)*Mathf.Pow(Mathf.Abs(c),2/square)*width[r],Mathf.Sign(s)*Mathf.Pow(Mathf.Abs(s),2/square)*height[r],z[r]);
+                vertices.Add(center+rotation*p);colours.Add(Color.Lerp(new Color(.55f,.6f,.65f),Color.white,(p.y/Mathf.Max(.001f,height[r])+1)*.5f));
+            }
+            for(int r=0;r<z.Length-1;r++)for(int i=0;i<sides;i++){int a=start+r*sides+i,b=start+r*sides+(i+1)%sides,c=b+sides,d=a+sides;Face(a,b,c);Face(a,c,d);}
+            // Separate cap centers and ring vertices avoid smoothing a cap into the skin.
+            for(int end=0;end<2;end++){
+                int r=end==0?0:z.Length-1,cap=vertices.Count;vertices.Add(center+rotation*new Vector3(0,0,z[r]));colours.Add(Color.white);
+                for(int i=0;i<sides;i++){vertices.Add(vertices[start+r*sides+i]);colours.Add(Color.white);}
+                for(int i=0;i<sides;i++){int a=cap+1+i,b=cap+1+(i+1)%sides;if(end==0)Face(cap,b,a);else Face(cap,a,b);}
+            }
+        }
+        void Face(int a,int b,int c){triangles.Add(a);triangles.Add(b);triangles.Add(c);}
+        public void Plate(Vector3 at,Vector3 size,Quaternion rotation)
+        {
+            int begin=triangles.Count;
+            float b=Mathf.Min(size.x,Mathf.Min(size.y,size.z))*.2f;
+            Loft(at,rotation,new[]{-size.z*.5f,-size.z*.5f+b,size.z*.5f-b,size.z*.5f},new[]{size.x*.5f-b,size.x*.5f,size.x*.5f,size.x*.5f-b},new[]{size.y*.5f-b,size.y*.5f,size.y*.5f,size.y*.5f-b},8,8);
+            // Split this plate's faces, preserving smooth loft shading on other components.
+            for(int i=begin;i<triangles.Count;i++){int old=triangles[i];triangles[i]=vertices.Count;vertices.Add(vertices[old]);colours.Add(colours[old]);}
+        }
+        public void Tube(Vector3[] path,float radius,int sides=8)
+        {
+            for(int i=1;i<path.Length;i++){
+                Vector3 d=path[i]-path[i-1];Loft((path[i]+path[i-1])*.5f,Quaternion.LookRotation(d),new[]{-d.magnitude*.5f,d.magnitude*.5f},new[]{radius,radius},new[]{radius,radius},2,sides);
+            }
+        }
+        public GameObject Attach(Transform parent,string name,Material material)
+        {
+            var go=new GameObject(name);go.transform.SetParent(parent,false);var mesh=new Mesh();mesh.name=name;mesh.SetVertices(vertices);mesh.SetTriangles(triangles,0);mesh.SetColors(colours);mesh.RecalculateNormals();mesh.RecalculateBounds();go.AddComponent<MeshFilter>().sharedMesh=mesh;go.AddComponent<MeshRenderer>().sharedMaterial=material;return go;
+        }
+    }
+}
+#endif

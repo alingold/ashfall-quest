@@ -1,0 +1,76 @@
+Shader "Ashfall/R23PlayableWorld"
+{
+ Properties
+ {
+  _R25DetailMap("Linear detail",2D)="gray"{}
+  _R25DetailStrength("Detail strength",Range(0,1))=0
+  _R25DetailMetres("Detail repeat metres",Float)=1
+  _R25GroundTint("Ground tint",Color)=(1,1,1,1)
+  _BaseMap("Source albedo", 2D) = "white" {}
+  _NormalMap("Source normal", 2D) = "bump" {}
+  _NormalStrength("Normal strength", Float) = 0
+  _Metallic("Metallic", Range(0,1)) = 0
+  _Roughness("Roughness", Range(0,1)) = .72
+  _Cutoff("Alpha clip", Float) = 0
+ }
+ SubShader
+ {
+  Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Opaque" }
+  Pass
+  {
+   Tags { "LightMode"="UniversalForward" }
+   Cull Off
+   HLSLPROGRAM
+   #pragma vertex Vert
+   #pragma fragment Frag
+   #pragma target 3.0
+   #pragma multi_compile_instancing
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+   #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+   #include "R25Style.hlsl"
+   TEXTURE2D(_BaseMap); SAMPLER(sampler_BaseMap);
+   TEXTURE2D(_NormalMap); SAMPLER(sampler_NormalMap);
+   TEXTURE2D(_R25DetailMap); SAMPLER(sampler_R25DetailMap);
+   CBUFFER_START(UnityPerMaterial)
+   float _R25DetailStrength, _R25DetailMetres;
+   float4 _R25GroundTint;
+   float _NormalStrength, _Metallic, _Roughness, _Cutoff;
+   CBUFFER_END
+   #include "R25Detail.hlsl"
+   struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; float2 uv:TEXCOORD0; float4 color:COLOR; UNITY_VERTEX_INPUT_INSTANCE_ID };
+   struct Varyings { float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; float3 normalWS:TEXCOORD1; float2 uv:TEXCOORD2; float4 color:COLOR; UNITY_VERTEX_OUTPUT_STEREO };
+   Varyings Vert(Attributes a)
+   {
+    Varyings o; UNITY_SETUP_INSTANCE_ID(a); UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+    o.positionWS=TransformObjectToWorld(a.positionOS.xyz);o.positionCS=TransformWorldToHClip(o.positionWS);
+    o.normalWS=TransformObjectToWorldNormal(a.normalOS);o.uv=a.uv;o.color=a.color;return o;
+   }
+   half4 Frag(Varyings i):SV_Target
+   {
+    UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+    half4 color=SAMPLE_TEXTURE2D(_BaseMap,sampler_BaseMap,i.uv)*i.color;clip(color.a-_Cutoff);
+    color.rgb=R25StyleAlbedo(color.rgb)*_R25GroundTint.rgb;
+    float3 n=normalize(i.normalWS);
+    if(_R25DetailStrength>0)color.rgb=R25DetailAlbedo(color.rgb,i.positionWS,n);
+    if (_NormalStrength>0)
+    {
+     float3 dp1=ddx(i.positionWS),dp2=ddy(i.positionWS);float2 duv1=ddx(i.uv),duv2=ddy(i.uv);
+     float3 q1=cross(dp2,n),q2=cross(n,dp1);
+     float3 t=q1*duv1.x+q2*duv2.x,b=q1*duv1.y+q2*duv2.y;
+     float invScale=rsqrt(max(max(dot(t,t),dot(b,b)),1e-12));
+     float3 tn=SAMPLE_TEXTURE2D(_NormalMap,sampler_NormalMap,i.uv).xyz*2-1;
+     // UV V was flipped once for Texture2D; keep the source glTF normal basis.
+     tn.xy*=_NormalStrength; tn.y=-tn.y;
+     n=normalize(tn.x*t*invScale+tn.y*b*invScale+tn.z*n);
+    }
+    Light light=GetMainLight();float diffuse=saturate(dot(n,light.direction));
+    float3 ambient=max(SampleSH(n),float3(.12,.14,.16));
+    float3 view=GetWorldSpaceNormalizeViewDir(i.positionWS);float3 h=normalize(light.direction+view);
+    float spec=pow(saturate(dot(n,h)),lerp(100,4,_Roughness));
+    float3 radiance=color.rgb*(ambient+light.color*diffuse)*(1-.35*_Metallic)+spec*light.color*lerp(.04,color.rgb,_Metallic);
+    return half4(R25StyleFinish(radiance,diffuse,i.positionWS),1);
+   }
+   ENDHLSL
+  }
+ }
+}

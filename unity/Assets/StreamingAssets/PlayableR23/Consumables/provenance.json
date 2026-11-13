@@ -1,0 +1,107 @@
+{
+  "baseline": "actual R23 snapshot quest-r24/source",
+  "inputs": {
+    "scripts/field_item_models.gd": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b",
+    "scripts/field_consumables.gd": "670bb1fc92207d8d2a4b5cb93ac87958c8429a36e24677bee1c66b7a349f3134",
+    "scripts/banana_peel_086.gd": "ea19bd6fed81fd26856fa8ec5c9c19dcb7d770436e8c3c0626183b7ba5a4826d"
+  },
+  "models": [
+    {
+      "kind": "soda",
+      "parts": [
+        "CanBody",
+        "BottomRolledSeam",
+        "TopRolledSeam",
+        "RecessedInterior",
+        "PermanentEndPlate",
+        "LidPressGroove",
+        "PermanentPullTab",
+        "PermanentRivet",
+        "RemovableOpeningSeal",
+        "SideBand-1",
+        "SideBand1",
+        "ShieldMark",
+        "ShieldInset",
+        "LabelRule0",
+        "LabelRule1",
+        "LabelRule2"
+      ],
+      "surfaces": [
+        "BodySurface0",
+        "BodySurface1",
+        "BodySurface3",
+        "CapSurface1",
+        "BodySurface2"
+      ],
+      "triangles": 2208,
+      "vertices": 6624
+    },
+    {
+      "kind": "shaker",
+      "parts": [
+        "BottleBody",
+        "HeelBumper",
+        "NeckCollar",
+        "OpenMouth",
+        "RibbedLid",
+        "LidRib0",
+        "LidRib1",
+        "LidRib2",
+        "LidRib3",
+        "LidRib4",
+        "LidRib5",
+        "LidRib6",
+        "LidRib7",
+        "LidRib8",
+        "LidRib9",
+        "LidRib10",
+        "LidRib11",
+        "LidRib12",
+        "LidRib13",
+        "LidRib14",
+        "LidRib15",
+        "FlipSpout",
+        "MeasureTick0",
+        "MeasureTick1",
+        "MeasureTick2",
+        "MeasureTick3",
+        "MeasureTick4",
+        "MeasureTick5",
+        "GripInset-1",
+        "GripInset1",
+        "ShieldMark"
+      ],
+      "surfaces": [
+        "BodySurface0",
+        "BodySurface1",
+        "BodySurface2",
+        "CapSurface1",
+        "CapSurface2",
+        "CapSurface0",
+        "BodySurface3"
+      ],
+      "triangles": 3132,
+      "vertices": 9396
+    },
+    {
+      "kind": "banana",
+      "parts": [
+        "FruitCore",
+        "PeelShell",
+        "PeelSeam-1",
+        "PeelSeam1",
+        "Stem",
+        "BlossomTip"
+      ],
+      "surfaces": [
+        "BodySurface0",
+        "CapSurface1",
+        "CapSurface2",
+        "CapSurface3"
+      ],
+      "triangles": 1316,
+      "vertices": 3948
+    }
+  ],
+  "conversion": "CPU translation of authored source profiles, wrapped panels, aperture, cap parts, cylinder/torus recipes and rounded-box algorithm; no invented GLB or texture source. Source procedural materials retained. One Z reflection plus winding conversion."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "px4",
+  "modelScale": 0.7,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.29
+  ],
+  "magazineHome": [
+    0.0,
+    -0.06629783107381636,
+    0.09149366398761563
+  ],
+  "offer": [
+    0,
+    -0.278,
+    0.09149366398761563
+  ],
+  "insert": [
+    0,
+    -0.18,
+    0.09149366398761563
+  ],
+  "chargingGrip": [
+    0,
+    0.03602747788280249,
+    0.15576319806277752
+  ],
+  "chargingPullUnityZ": -0.075,
+  "chargingMaximum": 0.09,
+  "supportPoint": [
+    0,
+    -0.065,
+    0.095
+  ],
+  "rearSight": [
+    0,
+    0.083,
+    0.015
+  ],
+  "frontSight": [
+    0,
+    0.08275223245924876,
+    0.245
+  ],
+  "zeroDistance": 35,
+  "capacity": 16,
+  "ammoFamily": "pistol",
+  "sourceVisibleTriangles": 5400,
+  "sourceGLBTriangles": 5400,
+  "slideCycleDistance": 0.035,
+  "slideCycleSeconds": 0.095,
+  "notes": [
+    "Pistol inherited downloaded magazine Z; physical magazine up .06, release/regrip then slide back .075.",
+    "PX4 uses source semi rearm at released .65 fire threshold; SPR-only .2 latch is not applied."
+  ]
+}

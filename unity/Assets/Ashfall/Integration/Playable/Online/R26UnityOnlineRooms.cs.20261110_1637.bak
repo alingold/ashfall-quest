@@ -1,0 +1,73 @@
+#if UNITY_6000_0_OR_NEWER
+using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using Unity.Services.Core;
+using Unity.Services.Authentication;
+using Unity.Services.Relay;
+using Unity.Services.Relay.Models;
+namespace Ashfall.Integration.Playable.Online
+{
+    public sealed class R26UnityOnlineRooms : IOnlineRooms
+    {
+        static Task signIn;
+        public bool IsConfigured { get { return !String.IsNullOrEmpty(Application.cloudProjectId); } }
+        public Task SignIn()
+        {
+            if(!IsConfigured) throw new OnlineRoomFailure(R26OnlineRoomFlow.NotSetUp);
+            if(signIn==null || signIn.IsCompleted) signIn=Initialize();
+            return signIn;
+        }
+        static async Task Initialize()
+        {
+            try
+            {
+                if(Application.internetReachability==NetworkReachability.NotReachable) throw new OnlineRoomFailure("No internet connection");
+                await UnityServices.InitializeAsync();
+                if(!AuthenticationService.Instance.IsSignedIn) await AuthenticationService.Instance.SignInAnonymouslyAsync();
+            }
+            catch(Exception e) { throw Friendly(e); }
+        }
+        public async Task<OnlineRoom> CreateRoom(int maxPlayers)
+        {
+            try
+            {
+                var allocation=await RelayService.Instance.CreateAllocationAsync(maxPlayers-1);
+                string code=await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+                return new OnlineRoom(code,AllocationUtils.ToRelayServerData(allocation,"dtls"));
+            }
+            catch(Exception e) { throw Friendly(e); }
+        }
+        public async Task<OnlineRoom> JoinRoom(string code)
+        {
+            try
+            {
+                var allocation=await RelayService.Instance.JoinAllocationAsync(code);
+                return new OnlineRoom(code,AllocationUtils.ToRelayServerData(allocation,"dtls"));
+            }
+            catch(Exception e) { throw Friendly(e); }
+        }
+        static Exception Friendly(Exception e)
+        {
+            if(e is OnlineRoomFailure) return e;
+            var relay=e as RelayServiceException;
+            if(relay!=null)
+            {
+                switch(relay.Reason)
+                {
+                    case RelayExceptionReason.InactiveProject: return new OnlineRoomFailure(R26OnlineRoomFlow.NotSetUp);
+                    case RelayExceptionReason.JoinCodeNotFound:
+                    case RelayExceptionReason.AllocationNotFound:
+                    case RelayExceptionReason.EntityNotFound: return new OnlineRoomFailure("That room code was not found");
+                    case RelayExceptionReason.Conflict: return new OnlineRoomFailure("The room is full");
+                    case RelayExceptionReason.NetworkError: return new OnlineRoomFailure("No internet connection");
+                }
+                // Relay's full-allocation response carries a service detail, not a distinct enum.
+                if(relay.Message.IndexOf("full",StringComparison.OrdinalIgnoreCase)>=0 || relay.Message.IndexOf("capacity",StringComparison.OrdinalIgnoreCase)>=0)
+                    return new OnlineRoomFailure("The room is full");
+            }
+            return new OnlineRoomFailure("Cannot connect to online play. Please try again");
+        }
+    }
+}
+#endif

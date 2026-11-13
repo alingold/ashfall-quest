@@ -1,0 +1,125 @@
+{
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-0.png",
+      "normal": "m1014-image-2.png",
+      "metallicMap": "m1014-metallic-0.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-3.png",
+      "normal": "m1014-image-5.png",
+      "metallicMap": "m1014-metallic-1.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-6.png",
+      "normal": "m1014-image-8.png",
+      "metallicMap": "m1014-metallic-2.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-9.png",
+      "normal": "m1014-image-11.png",
+      "metallicMap": "m1014-metallic-3.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-12.png",
+      "normal": "m1014-image-14.png",
+      "metallicMap": "m1014-metallic-4.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-15.png",
+      "normal": "m1014-image-17.png",
+      "metallicMap": "m1014-metallic-5.png",
+      "occlusion": ""
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "alphaMode": "OPAQUE",
+      "baseColor": "m1014-image-18.png",
+      "normal": "m1014-image-20.png",
+      "metallicMap": "m1014-metallic-6.png",
+      "occlusion": ""
+    }
+  ],
+  "parts": [
+    "Body.0",
+    "Body.1",
+    "Body.2",
+    "Body.3",
+    "Body.4",
+    "Body.5",
+    "Body.6"
+  ]
+}

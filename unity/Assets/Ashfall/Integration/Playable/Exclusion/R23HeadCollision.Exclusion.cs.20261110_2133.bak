@@ -1,0 +1,209 @@
+#if UNITY_6000_0_OR_NEWER
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using UnityEngine;
+
+namespace Ashfall.Integration.Playable.Climbing
+{
+    // Exclusion queries that reuse the head hull's collider filter (Relevant) and
+    // layer mask, so they block exactly what the head hull blocks. All queries are
+    // synchronous, non-allocating and leave the hidden proxies disabled.
+    public sealed partial class R23HeadCollision
+    {
+        readonly RaycastHit[] bodyHits = new RaycastHit[32];
+        readonly Collider[] eyeOverlaps = new Collider[32];
+        Rigidbody bodyProxy;
+        CapsuleCollider bodyCapsule;
+
+        // Exact source starting-clear test at a head point, without any sweep.
+        public bool HeadClear(Vector3 point)
+        {
+            if (!Ready || !Finite(point)) return false;
+            try { Pose(point); return StartingClear(point, Vector3.zero); }
+            finally { EndQuery(); }
+        }
+
+        // A. Iterative push-out of the head hull from overlapping colliders.
+        // The policy bounds total distance and iterations; success requires the
+        // exact starting-clear predicate at the result.
+        public bool TryDepenetrate(Vector3 point, R25HeadRecoveryPolicy policy, out Vector3 resolved)
+        {
+            resolved = point;
+            if (!Ready || policy == null || !Finite(point)) return false;
+            Float3 offset = new Float3();
+            try
+            {
+                for (int iteration = 0; iteration < policy.MaxPushIterations; iteration++)
+                {
+                    Vector3 at = point + U(offset);
+                    Pose(at);
+                    if (StartingClear(at, Vector3.zero)) { resolved = at; return true; }
+                    int count = Physics.OverlapSphereNonAlloc(at, .121f, overlaps, Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask, QueryTriggerInteraction.Ignore);
+                    if (count == overlaps.Length) return false;
+                    bool moved = false;
+                    for (int i = 0; i < count; i++)
+                    {
+                        var c = overlaps[i];
+                        if (!Relevant(c)) continue;
+                        Vector3 away; float depth;
+                        Vector3 current = point + U(offset);
+                        if (!Physics.ComputePenetration(hull, current, proxy.rotation, c, c.transform.position, c.transform.rotation, out away, out depth) || depth <= .0001f) continue;
+                        if (!policy.AcceptPush(ref offset, new Float3(away.x, away.y, away.z), depth)) return false;
+                        moved = true;
+                    }
+                    if (!moved) return false;
+                }
+                Vector3 final = point + U(offset);
+                Pose(final);
+                if (!StartingClear(final, Vector3.zero)) return false;
+                resolved = final;
+                return true;
+            }
+            finally { EndQuery(); }
+        }
+
+        // B. True when a sphere at an eye touches anything the head hull collides with.
+        public bool EyeObstructed(Vector3 eye, float radius)
+        {
+            if (!Ready || !Finite(eye) || float.IsNaN(radius) || radius <= 0) return false;
+            int count = Physics.OverlapSphereNonAlloc(eye, radius, eyeOverlaps, Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask, QueryTriggerInteraction.Ignore);
+            for (int i = 0; i < count; i++) if (Relevant(eyeOverlaps[i])) return true;
+            return false;
+        }
+
+        // C. Horizontal walking motion allowed for the body column under the head.
+        // Only the horizontal part of desired is used and returned.
+        public Vector3 BodyColumnMotion(Vector3 feet, Vector3 eye, Vector3 desired, R25BodyColumnRules rules)
+        {
+            Vector3 flat = new Vector3(desired.x, 0, desired.z);
+            if (!Ready || rules == null || !Finite(feet) || !Finite(eye) || !Finite(desired)) return flat;
+            float bottomY, topY;
+            if (!rules.TryColumn(feet.y, eye.y, out bottomY, out topY) || !rules.Walking(F(flat))) return flat;
+            EnsureBodyProxy(rules);
+            Vector3 bottom = new Vector3(eye.x, bottomY, eye.z), top = new Vector3(eye.x, topY, eye.z);
+            Float3 motion = F(flat);
+            bool previousBackfaces = Physics.queriesHitBackfaces;
+            try
+            {
+                // Thin imported surfaces must stop the body from either side, as for the head.
+                Physics.queriesHitBackfaces = true;
+                motion = RemoveExistingOverlaps(bottom, top, motion, rules);
+                Vector3 total = Vector3.zero;
+                for (int pass = 0; pass < rules.Passes; pass++)
+                {
+                    Vector3 step = U(motion);
+                    float length = step.magnitude;
+                    if (length < rules.MinimumMotion) break;
+                    RaycastHit hit;
+                    if (!NearestBodyHit(bottom + total, top + total, step / length, length + rules.Skin, rules.Radius, out hit)) { total += step; motion = new Float3(); break; }
+                    Float3 slide;
+                    total += U(rules.Advance(motion, hit.distance, F(hit.normal), out slide));
+                    motion = slide;
+                }
+                return new Vector3(total.x, 0, total.z);
+            }
+            finally
+            {
+                Physics.queriesHitBackfaces = previousBackfaces;
+                if (bodyCapsule != null) bodyCapsule.enabled = false;
+            }
+        }
+
+        // Starting overlaps: allow only motion that does not deepen them.
+        Float3 RemoveExistingOverlaps(Vector3 bottom, Vector3 top, Float3 motion, R25BodyColumnRules rules)
+        {
+            int count = Physics.OverlapCapsuleNonAlloc(bottom, top, rules.Radius, eyeOverlaps, Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask, QueryTriggerInteraction.Ignore);
+            if (count == eyeOverlaps.Length) return new Float3();
+            if (count == 0) return motion;
+            bool posed = false;
+            for (int i = 0; i < count; i++)
+            {
+                var c = eyeOverlaps[i];
+                if (!Relevant(c) || c == bodyCapsule) continue;
+                if (!posed)
+                {
+                    bodyCapsule.enabled = true;
+                    bodyProxy.transform.SetPositionAndRotation((bottom + top) * .5f, Quaternion.identity);
+                    bodyCapsule.height = (top - bottom).magnitude + rules.Radius * 2;
+                    Physics.SyncTransforms();
+                    posed = true;
+                }
+                Vector3 away; float depth;
+                if (Physics.ComputePenetration(bodyCapsule, bodyProxy.transform.position, Quaternion.identity, c, c.transform.position, c.transform.rotation, out away, out depth) && depth > .0001f)
+                    motion = rules.RemoveInto(motion, F(away));
+            }
+            return motion;
+        }
+
+        public Vector3 VehicleMotion(Vector3 center,Vector3 forward,Vector3 desired)
+        {
+            Vector3 total=Vector3.zero,remaining=desired;
+            bool backfaces=Physics.queriesHitBackfaces;
+            try {
+                Physics.queriesHitBackfaces=true;
+                EnsureBodyProxy(new R25BodyColumnRules());
+                float oldRadius=bodyCapsule.radius;int oldDirection=bodyCapsule.direction;
+                try {
+                    var rotation=Quaternion.LookRotation(forward,Vector3.up);
+                    bodyCapsule.direction=2;bodyCapsule.radius=.3f;bodyCapsule.height=1.9f;
+                    bodyProxy.transform.SetPositionAndRotation(center,rotation);bodyCapsule.enabled=true;Physics.SyncTransforms();
+                    int count=Physics.OverlapCapsuleNonAlloc(center-forward*.65f,center+forward*.65f,.3f,eyeOverlaps,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore);
+                    if(count==eyeOverlaps.Length)return Vector3.zero;
+                    for(int i=0;i<count;i++){
+                        var c=eyeOverlaps[i];if(!Relevant(c)||c==bodyCapsule)continue;
+                        Vector3 away;float depth;
+                        if(Physics.ComputePenetration(bodyCapsule,center,rotation,c,c.transform.position,c.transform.rotation,out away,out depth)&&depth>.0001f&&Vector3.Dot(remaining,away)<0)remaining=Vector3.ProjectOnPlane(remaining,away);
+                    }
+                }finally{bodyCapsule.enabled=false;bodyCapsule.direction=oldDirection;bodyCapsule.radius=oldRadius;}
+                for(int pass=0;pass<3;pass++) {
+                    float length=remaining.magnitude;if(length<.00001f)break;
+                    RaycastHit hit;
+                    if(!NearestBodyHit(center+total-forward*.65f,center+total+forward*.65f,remaining/length,length+.02f,.3f,out hit)){total+=remaining;break;}
+                    float fraction=Mathf.Clamp01((hit.distance-.02f)/length);
+                    total+=remaining*fraction;remaining=Vector3.ProjectOnPlane(remaining*(1-fraction),hit.normal);
+                }
+                return total;
+            } finally {Physics.queriesHitBackfaces=backfaces;}
+        }
+        bool NearestBodyHit(Vector3 bottom, Vector3 top, Vector3 direction, float distance, float radius, out RaycastHit closest)
+        {
+            closest = new RaycastHit();
+            float nearest = float.PositiveInfinity;
+            int count = Physics.CapsuleCastNonAlloc(bottom, top, radius, direction, bodyHits, distance, Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask, QueryTriggerInteraction.Ignore);
+            if (count == bodyHits.Length) { closest.distance = 0; closest.normal = -direction; return true; }
+            for (int i = 0; i < count; i++)
+            {
+                var hit = bodyHits[i];
+                if (!Relevant(hit.collider) || hit.collider == bodyCapsule) continue;
+                // Starting overlaps were handled by RemoveExistingOverlaps.
+                if (hit.distance <= 0 && hit.point == Vector3.zero) continue;
+                Vector3 normal = hit.normal;
+                // Mesh backface hits can report authored winding; face the motion.
+                if (Vector3.Dot(normal, direction) > 0) normal = -normal;
+                hit.normal = normal;
+                if (hit.distance < nearest) { nearest = hit.distance; closest = hit; }
+            }
+            return !float.IsPositiveInfinity(nearest);
+        }
+
+        void EnsureBodyProxy(R25BodyColumnRules rules)
+        {
+            if (bodyCapsule != null) return;
+            var node = new GameObject("R25 hidden body column");
+            node.layer = 2;
+            node.transform.SetParent(transform, false);
+            bodyProxy = node.AddComponent<Rigidbody>();
+            bodyProxy.isKinematic = true;
+            bodyProxy.useGravity = false;
+            bodyProxy.detectCollisions = true;
+            bodyCapsule = node.AddComponent<CapsuleCollider>();
+            bodyCapsule.direction = 1;
+            bodyCapsule.radius = rules.Radius;
+            bodyCapsule.height = rules.Radius * 2;
+            bodyCapsule.enabled = false;
+        }
+
+        static Float3 F(Vector3 value) { return new Float3(value.x, value.y, value.z); }
+    }
+}
+#endif

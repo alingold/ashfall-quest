@@ -1,0 +1,40 @@
+{
+  "cues": [
+    {
+      "kind": "build_place",
+      "file": "build_place_0.wav",
+      "source": "res://assets/audio/reference099/isolated_build_place_00.wav",
+      "sha256": "155092b03fd308d8f6566936cc9ff89971ed45a9c9e14e1f36cfeee783abfc5a"
+    },
+    {
+      "kind": "build_place",
+      "file": "build_place_1.wav",
+      "source": "res://assets/audio/reference099/isolated_build_place_01.wav",
+      "sha256": "521e834fe508537a1b2995bf5a5969f61d7723a0b92f0c2799354684b7ecc79b"
+    },
+    {
+      "kind": "build_break",
+      "file": "build_break_0.wav",
+      "source": "res://assets/audio/sfx/build_break_00.wav",
+      "sha256": "d560b7ce7e734978f640b37b93363b88eb406ef5b425dce53981fb95668c1dd8"
+    },
+    {
+      "kind": "build_break",
+      "file": "build_break_1.wav",
+      "source": "res://assets/audio/sfx/build_break_01.wav",
+      "sha256": "4cb21d93a02c7bda9190ce69e9c1f556654609d253acc37fbdd5d72533f7db9f"
+    },
+    {
+      "kind": "build_break",
+      "file": "build_break_2.wav",
+      "source": "res://assets/audio/sfx/build_break_02.wav",
+      "sha256": "18c68625662e0d7a6dd726f9994fd62d110eb28cb8b9ccb21ecfa747adc05689"
+    },
+    {
+      "kind": "build_lightning",
+      "file": "build_lightning_0.wav",
+      "source": "res://assets/audio/reference099/isolated_build_lightning_00.wav",
+      "sha256": "8bf8e4add8296eb811de45c1dbfc15ad3313643eba989710b696c8873f5acf7c"
+    }
+  ]
+}

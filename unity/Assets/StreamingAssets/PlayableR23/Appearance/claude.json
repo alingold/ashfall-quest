@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "claude",
+  "label": "WITCH DOCTOR",
+  "sourceIndex": 26,
+  "eyeToShoulder": 0.29,
+  "bodyRear": 0.12,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "claude-body-0-baseColor.png",
+      "normal": "claude-body-0-normal.png",
+      "metallicMap": "claude-body-0-metallic.png",
+      "occlusion": "claude-body-0-occlusion.png",
+      "emission": "claude-body-0-emission.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "claude-glove-baseColor.png",
+      "normal": "claude-glove-normal.png",
+      "metallicMap": "claude-glove-metallic.png",
+      "occlusion": "claude-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

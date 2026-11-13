@@ -1,0 +1,35 @@
+[
+  {
+    "name": "BladeCandidate.Runtime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\BladeRuntime\\Compiler\\BladeCandidate.Runtime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "BladeCandidate.EditorRuntime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\BladeRuntime\\Compiler\\BladeCandidate.EditorRuntime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "BladeCandidate.BuildAndSmoke",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\BladeRuntime\\Compiler\\BladeCandidate.BuildAndSmoke.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

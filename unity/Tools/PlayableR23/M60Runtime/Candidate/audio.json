@@ -1,0 +1,418 @@
+{
+  "cues": [
+    {
+      "weapon": "",
+      "action": "mag_eject",
+      "files": [
+        "audio/generic-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "pouch",
+      "files": [
+        "audio/generic-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "mag_insert",
+      "files": [
+        "audio/generic-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "bolt",
+      "files": [
+        "audio/generic-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "dry",
+      "files": [
+        "audio/generic-dry-0.wav",
+        "audio/generic-dry-1.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "hit",
+      "files": [
+        "audio/generic-hit-0.wav",
+        "audio/generic-hit-1.wav"
+      ]
+    },
+    {
+      "weapon": "",
+      "action": "hurt",
+      "files": [
+        "audio/generic-hurt-0.wav",
+        "audio/generic-hurt-1.wav"
+      ]
+    },
+    {
+      "weapon": "mk18",
+      "action": "shot",
+      "files": [
+        "audio/mk18-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "akm",
+      "action": "shot",
+      "files": [
+        "audio/akm-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "akm",
+      "action": "mag_insert",
+      "files": [
+        "audio/akm-mag_insert-0.wav",
+        "audio/akm-mag_insert-1.wav"
+      ]
+    },
+    {
+      "weapon": "akm",
+      "action": "bolt",
+      "files": [
+        "audio/akm-bolt-0.wav",
+        "audio/akm-bolt-1.wav"
+      ]
+    },
+    {
+      "weapon": "spr",
+      "action": "shot",
+      "files": [
+        "audio/spr-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "spr",
+      "action": "bolt",
+      "files": [
+        "audio/spr-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "spr",
+      "action": "mag_eject",
+      "files": [
+        "audio/spr-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "spr",
+      "action": "mag_insert",
+      "files": [
+        "audio/spr-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "magnum",
+      "action": "shot",
+      "files": [
+        "audio/magnum-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "cx4",
+      "action": "shot",
+      "files": [
+        "audio/cx4-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "cx4",
+      "action": "mag_insert",
+      "files": [
+        "audio/cx4-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "cx4",
+      "action": "bolt",
+      "files": [
+        "audio/cx4-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "px4",
+      "action": "shot",
+      "files": [
+        "audio/px4-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "shot",
+      "files": [
+        "m1014-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "mag_eject",
+      "files": [
+        "m1014-audio-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "pouch",
+      "files": [
+        "m1014-audio-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "mag_insert",
+      "files": [
+        "m1014-audio-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "bolt",
+      "files": [
+        "m1014-audio-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "m1014",
+      "action": "dry",
+      "files": [
+        "m1014-audio-dry-0.wav",
+        "m1014-audio-dry-1.wav"
+      ]
+    },
+    {
+      "weapon": "ump",
+      "action": "shot",
+      "files": [
+        "audio/ump-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "p90",
+      "action": "shot",
+      "files": [
+        "audio/p90-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "mp5",
+      "action": "shot",
+      "files": [
+        "audio/mp5-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "mp9",
+      "action": "shot",
+      "files": [
+        "audio/mp9-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "1911",
+      "action": "shot",
+      "files": [
+        "1911-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "tec9",
+      "action": "shot",
+      "files": [
+        "tec9-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "rfb",
+      "action": "shot",
+      "files": [
+        "rfb-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "shot",
+      "files": [
+        "fal-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "mag_insert",
+      "files": [
+        "fal-audio-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "bolt",
+      "files": [
+        "fal-audio-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "shot",
+      "files": [
+        "s85-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "pouch",
+      "files": [
+        "s85-audio-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "mag_insert",
+      "files": [
+        "s85-audio-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "bolt",
+      "files": [
+        "s85-audio-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "shot",
+      "files": [
+        "dt11-authored-blast.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_eject",
+      "files": [
+        "dt11-open-0.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_insert",
+      "files": [
+        "dt11-insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "bolt",
+      "files": [
+        "dt11-close-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "shot",
+      "files": [
+        "awp-source-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "bolt",
+      "files": [
+        "awp-source-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "mag_eject",
+      "files": [
+        "awp-source-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "pouch",
+      "files": [
+        "awp-source-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "mag_insert",
+      "files": [
+        "awp-source-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "dry",
+      "files": [
+        "awp-source-dry-0.wav",
+        "awp-source-dry-1.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "shot",
+      "files": [
+        "m60-source-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "mag_eject",
+      "files": [
+        "m60-source-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "pouch",
+      "files": [
+        "m60-source-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "mag_insert",
+      "files": [
+        "m60-source-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "close",
+      "files": [
+        "m60-source-close-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "bolt",
+      "files": [
+        "m60-source-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "open",
+      "files": [
+        "m60-source-open-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "dry",
+      "files": [
+        "m60-source-dry-0.wav",
+        "m60-source-dry-1.wav"
+      ]
+    }
+  ]
+}

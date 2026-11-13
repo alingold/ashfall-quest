@@ -1,0 +1,13 @@
+using System;using Ashfall.Core;using Ashfall.Integration.Playable.Networking;using Ashfall.Integration.Playable.Match;
+partial class LobbyCases {
+ static void MeleeAuthority(){using(var pair=new Pair()){
+  for(int i=0;i<5;i++)pair.Tick();bool wall=false;pair.Host.BindCombatWorld(delegate(Float3 o,Float3 d,float range){return wall?0:range;});string hash=new string('b',64);StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("loadout","swords").With("protection",0).With("starting_shield",0),hash);
+  float x=8,hand=.9f;Action raw=delegate{pair.Host.RequestEquipment("katana",1,false);pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),x,0,0,7,rx:hand-x,ry:1.2f,rz:-.6f));pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),0,0,0));pair.Tick();};
+  // Continuous approach keeps strict root validation; the blade stays outside the victim.
+  while(x>1.5f){hand=x;raw();x=Math.Max(1.5f,x-.3f);}hand=.9f;raw();raw();Need(!pair.Host.RequestEquipment("forged/knife",1,false),"Equipment cannot mint a forged blade");
+  R24LanHealthState before,after;pair.Host.TryReadHealth(pair.Client.OwnActor,out before);float hp=before.Health;
+  wall=true;for(int i=0;i<8;i++){hand-=.1f;raw();}pair.Host.TryReadHealth(pair.Client.OwnActor,out after);Need(after.Health==hp,"Actual host world blocks melee through a wall");
+  wall=false;hand=.9f;raw();for(int i=0;i<8;i++){hand-=.1f;raw();}pair.Host.TryReadHealth(pair.Client.OwnActor,out after);Need(after.Health<hp,"Source convex blade sweep applies real host PvP loss");float hit=after.Health;R25MeleeHit confirm;Need(pair.Host.TryDequeueMeleeHit(out confirm)&&confirm.Kind=="blade"&&confirm.Target==pair.Client.OwnActor,"Host blade confirmation");Need(pair.Client.TryDequeueMeleeHit(out confirm)&&confirm.Kind=="blade"&&confirm.Attacker==pair.Host.OwnActor,"Victim blade confirmation");for(int i=0;i<5;i++)raw();pair.Host.TryReadHealth(pair.Client.OwnActor,out after);Need(after.Health==hit,"Held overlap does not repeat contact damage");
+  pair.Host.RequestEquipment("katana",1,true);for(int i=0;i<8;i++){pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),x,0,0,7,rx:.1f-x,ry:1.2f,rz:-.6f));pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),0,0,0));pair.Tick();}pair.Host.TryReadHealth(pair.Client.OwnActor,out after);Need(after.Health==hit,"Suppressed equipment cannot damage from raw poses");pair.Host.RequestEquipment(null,1,false);pair.Client.SubmitShot("cx4",0,new Float3(0,1.5f,0),new[]{new Float3(0,1,0)});for(int i=0;i<4;i++)pair.Tick();Need(pair.Host.State==R24LanLobbyState.Hosting&&pair.Client.State==R24LanLobbyState.Connected,"Holstered null equipment is safe on the actual incoming bullet/guard path");
+ }}
+}

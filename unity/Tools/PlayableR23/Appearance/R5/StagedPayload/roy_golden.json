@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "id": "roy_golden",
+  "label": "Roy Golden (Draft)",
+  "sourceIndex": 75,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 5,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-9bf54b4672fd775b2031b3d2.png",
+      "normal": "r5-normal-350d52dc03d4660758ac1df3.png",
+      "metallicMap": "r5-metallic-e54c402a104347acf5018a46.png",
+      "occlusion": "r5-occlusion-8ab7b73643146e0bf05d0b94.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-e230f89db33ec6843174e797.png",
+      "normal": "r5-normal-350d52dc03d4660758ac1df3.png",
+      "metallicMap": "r5-metallic-b7c615bad810195df10a5bda.png",
+      "occlusion": "r5-occlusion-8ab7b73643146e0bf05d0b94.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-3ff4873494116a6bb311044b.png",
+      "normal": "r5-normal-350d52dc03d4660758ac1df3.png",
+      "metallicMap": "r5-metallic-5d66f983f1d68ba23f58a4ea.png",
+      "occlusion": "r5-occlusion-8ab7b73643146e0bf05d0b94.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-7a1b1f238d882e060df4ba7c.png",
+      "normal": "r5-normal-350d52dc03d4660758ac1df3.png",
+      "metallicMap": "r5-metallic-a415761b61198735fe4ac0f4.png",
+      "occlusion": "r5-occlusion-8ab7b73643146e0bf05d0b94.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-744c6d41345f4f1265041827.png",
+      "normal": "r5-normal-350d52dc03d4660758ac1df3.png",
+      "metallicMap": "r5-metallic-8699fff74ac97e82d94bb8e7.png",
+      "occlusion": "r5-occlusion-8ab7b73643146e0bf05d0b94.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-25f1b5eaf0f74ddc46cf07be.png",
+      "normal": "r5-normal-072b54cf18c7b6527f75471c.png",
+      "metallicMap": "r5-metallic-25e8dab98c54a0b6e8fb17d2.png",
+      "occlusion": "r5-occlusion-a6c755060d880f6c589f07b6.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

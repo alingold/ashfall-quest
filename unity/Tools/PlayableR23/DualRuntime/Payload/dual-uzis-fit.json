@@ -1,0 +1,62 @@
+{
+  "id": "uzis",
+  "catalogIndex": 11,
+  "catalogId": "twin_meridian",
+  "modelName": "dual-uzis",
+  "modelScale": 0.65436,
+  "weaponGripOrigin": [
+    0,
+    0,
+    0
+  ],
+  "primaryGrip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "spinPivot": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "muzzle": [
+    0.0,
+    0.045,
+    0.46
+  ],
+  "spinSeconds": 0.36,
+  "roundsPerHand": [
+    20,
+    24,
+    28,
+    32,
+    36
+  ],
+  "bodyPerVolley": [
+    14,
+    14,
+    14,
+    14,
+    14
+  ],
+  "headPerVolley": [
+    14,
+    14,
+    14,
+    14,
+    14
+  ],
+  "pellets": 1,
+  "interval": 0.07692307692307693,
+  "ammoFamily": "smg",
+  "initialReserve": 1200,
+  "physicalGloveOffset": [
+    0,
+    0,
+    -0.0127
+  ],
+  "glovePitchDegrees": 0,
+  "sourcePerHandOnly": true,
+  "reticleLaser": true,
+  "sourceTriangles": 3525
+}

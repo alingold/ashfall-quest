@@ -1,0 +1,87 @@
+PASS old real feedback+motor reproduces12cm curb ->12m/s launch
+PASS same owner now keeps support positional; source16.2 gravity unchanged
+PASS supported rise/drop never launches atdt=0.001 rise=-0.25
+PASS supported rise/drop never launches atdt=0.001 rise=-0.12
+PASS supported rise/drop never launches atdt=0.001 rise=0
+PASS supported rise/drop never launches atdt=0.001 rise=0.004
+PASS supported rise/drop never launches atdt=0.001 rise=0.025
+PASS supported rise/drop never launches atdt=0.001 rise=0.12
+PASS supported rise/drop never launches atdt=0.001 rise=0.5
+PASS supported rise/drop never launches atdt=0.001 rise=1.5
+PASS supported rise/drop never launches atdt=0.005 rise=-0.25
+PASS supported rise/drop never launches atdt=0.005 rise=-0.12
+PASS supported rise/drop never launches atdt=0.005 rise=0
+PASS supported rise/drop never launches atdt=0.005 rise=0.004
+PASS supported rise/drop never launches atdt=0.005 rise=0.025
+PASS supported rise/drop never launches atdt=0.005 rise=0.12
+PASS supported rise/drop never launches atdt=0.005 rise=0.5
+PASS supported rise/drop never launches atdt=0.005 rise=1.5
+PASS supported rise/drop never launches atdt=0.01 rise=-0.25
+PASS supported rise/drop never launches atdt=0.01 rise=-0.12
+PASS supported rise/drop never launches atdt=0.01 rise=0
+PASS supported rise/drop never launches atdt=0.01 rise=0.004
+PASS supported rise/drop never launches atdt=0.01 rise=0.025
+PASS supported rise/drop never launches atdt=0.01 rise=0.12
+PASS supported rise/drop never launches atdt=0.01 rise=0.5
+PASS supported rise/drop never launches atdt=0.01 rise=1.5
+PASS supported rise/drop never launches atdt=0.02 rise=-0.25
+PASS supported rise/drop never launches atdt=0.02 rise=-0.12
+PASS supported rise/drop never launches atdt=0.02 rise=0
+PASS supported rise/drop never launches atdt=0.02 rise=0.004
+PASS supported rise/drop never launches atdt=0.02 rise=0.025
+PASS supported rise/drop never launches atdt=0.02 rise=0.12
+PASS supported rise/drop never launches atdt=0.02 rise=0.5
+PASS supported rise/drop never launches atdt=0.02 rise=1.5
+PASS supported rise/drop never launches atdt=0.05 rise=-0.25
+PASS supported rise/drop never launches atdt=0.05 rise=-0.12
+PASS supported rise/drop never launches atdt=0.05 rise=0
+PASS supported rise/drop never launches atdt=0.05 rise=0.004
+PASS supported rise/drop never launches atdt=0.05 rise=0.025
+PASS supported rise/drop never launches atdt=0.05 rise=0.12
+PASS supported rise/drop never launches atdt=0.05 rise=0.5
+PASS supported rise/drop never launches atdt=0.05 rise=1.5
+PASS supported rise/drop never launches atdt=0.1 rise=-0.25
+PASS supported rise/drop never launches atdt=0.1 rise=-0.12
+PASS supported rise/drop never launches atdt=0.1 rise=0
+PASS supported rise/drop never launches atdt=0.1 rise=0.004
+PASS supported rise/drop never launches atdt=0.1 rise=0.025
+PASS supported rise/drop never launches atdt=0.1 rise=0.12
+PASS supported rise/drop never launches atdt=0.1 rise=0.5
+PASS supported rise/drop never launches atdt=0.1 rise=1.5
+PASS real unsupported6m/s jump/fling retained
+PASS actual ceiling still clips upward velocity
+PASS real airborne fall momentum retained, no terminal/gravity disguise
+PASS 3s forward+spread flight remains actual glide, no hidden dive timer
+PASS glide release0 uses only genuine gravity for400ms
+PASS reentry0 restores controlled descent immediately
+PASS reentered spread flight0 does not force dive after1s
+PASS glide release1 uses only genuine gravity for400ms
+PASS reentry1 restores controlled descent immediately
+PASS reentered spread flight1 does not force dive after1s
+PASS glide release2 uses only genuine gravity for400ms
+PASS reentry2 restores controlled descent immediately
+PASS reentered spread flight2 does not force dive after1s
+PASS glide release3 uses only genuine gravity for400ms
+PASS reentry3 restores controlled descent immediately
+PASS reentered spread flight3 does not force dive after1s
+PASS glide release4 uses only genuine gravity for400ms
+PASS reentry4 restores controlled descent immediately
+PASS reentered spread flight4 does not force dive after1s
+PASS glide release5 uses only genuine gravity for400ms
+PASS reentry5 restores controlled descent immediately
+PASS reentered spread flight5 does not force dive after1s
+PASS glide release6 uses only genuine gravity for400ms
+PASS reentry6 restores controlled descent immediately
+PASS reentered spread flight6 does not force dive after1s
+PASS glide release7 uses only genuine gravity for400ms
+PASS reentry7 restores controlled descent immediately
+PASS reentered spread flight7 does not force dive after1s
+PASS genuine arms-folded900ms fall has no early dive
+PASS genuine1.2s folded forward freefall still dives with96m/s2 acceleration
+PASS spread hands recover from intentional dive on the same tick
+PASS post-dive glide release does not inherit the old dive counter
+PASS supported spread hands remain grounded
+PASS authored pad launch remains supported
+PASS spread hands retain source300ms straight pad clearance
+PASS pad can hand off into spread glide after actual clearance
+MotionFix CPU checks=86; native curb/ramp/free-hand fixture staged separately, not executed.

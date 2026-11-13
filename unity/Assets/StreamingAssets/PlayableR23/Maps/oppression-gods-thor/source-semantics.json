@@ -1,0 +1,434 @@
+{
+  "mapId": "archive:oppression-gods-thor",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+    "cache_fingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+    "warmup": [
+      {
+        "center": [
+          -14.02789,
+          94.02154,
+          0.11152
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [],
+    "health": [
+      {
+        "center": [
+          115.72797,
+          59.58075,
+          -92.89243
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          128.58622,
+          59.66899,
+          -78.78425
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      }
+    ],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 60,
+        "center": [
+          -14.02789,
+          94.02153,
+          0.29353
+        ],
+        "min": [
+          -14.61591,
+          93.99999,
+          -0.11436
+        ],
+        "max": [
+          -13.43987,
+          94.04308,
+          0.70142
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 44,
+        "center": [
+          -14.01514,
+          94.02154,
+          -0.18344
+        ],
+        "min": [
+          -14.59041,
+          93.99999,
+          -0.47839
+        ],
+        "max": [
+          -13.43987,
+          94.04308,
+          0.11152
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -14.02789,
+          94.02396,
+          1.08419
+        ],
+        "min": [
+          -14.39267,
+          94.00001,
+          0.77687
+        ],
+        "max": [
+          -13.66311,
+          94.04791,
+          1.39151
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -14.02789,
+          94.02394,
+          -0.72239
+        ],
+        "min": [
+          -14.39267,
+          93.99999,
+          -1.02971
+        ],
+        "max": [
+          -13.66311,
+          94.0479,
+          -0.41508
+        ]
+      }
+    ],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          115.7189,
+          60.3767,
+          -92.89229
+        ],
+        "min": [
+          115.62691,
+          60.0767,
+          -92.97377
+        ],
+        "max": [
+          115.8109,
+          60.6767,
+          -92.81081
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          115.7189,
+          60.3767,
+          -92.89229
+        ],
+        "min": [
+          115.62691,
+          60.2967,
+          -93.21419
+        ],
+        "max": [
+          115.8109,
+          60.4567,
+          -92.57039
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          128.58214,
+          60.46494,
+          -78.79234
+        ],
+        "min": [
+          128.46867,
+          60.16494,
+          -78.91068
+        ],
+        "max": [
+          128.6956,
+          60.76494,
+          -78.67401
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          128.58214,
+          60.46494,
+          -78.79234
+        ],
+        "min": [
+          128.25237,
+          60.38494,
+          -79.01561
+        ],
+        "max": [
+          128.91191,
+          60.54494,
+          -78.56908
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 400,
+      "warmup": 1,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 2,
+      "marker_parts": 4
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        -204.75003051757812,
+        37.726776123046875,
+        -6.799997806549072
+      ],
+      "boundsMax": [
+        162.75001525878906,
+        85.39999389648438,
+        8.799999237060547
+      ],
+      "triangles": 96
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -41.49127197265625,
+        39.99854278564453,
+        -58.46179962158203
+      ],
+      "boundsMax": [
+        54.199554443359375,
+        50.974998474121094,
+        48.89283752441406
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:oppression-gods-thor",
+    "title": "OPPRESSION",
+    "creator": "GODS_THOR",
+    "template": "MapEditorSnow",
+    "center": [
+      -21.456336470625,
+      43.0702871923908,
+      0.0412095619378654
+    ],
+    "recorded_spawns": [
+      [
+        -207.64,
+        41.02,
+        7.63
+      ],
+      [
+        -207.64,
+        41.02,
+        -5.41
+      ],
+      [
+        -207.64,
+        41.02,
+        -2.83
+      ],
+      [
+        -207.64,
+        41.02,
+        -0.27
+      ],
+      [
+        -207.64,
+        41.02,
+        2.32
+      ],
+      [
+        -207.64,
+        41.02,
+        4.9
+      ],
+      [
+        168.41,
+        41.02,
+        8.13
+      ],
+      [
+        168.41,
+        41.02,
+        5.55
+      ],
+      [
+        168.41,
+        41.02,
+        2.99
+      ],
+      [
+        168.41,
+        41.02,
+        0.39
+      ],
+      [
+        168.41,
+        41.02,
+        -2.19
+      ],
+      [
+        168.41,
+        41.02,
+        -4.91
+      ],
+      [
+        166.27,
+        41.02,
+        8.13
+      ],
+      [
+        166.27,
+        41.02,
+        5.55
+      ],
+      [
+        166.27,
+        41.02,
+        2.99
+      ],
+      [
+        166.27,
+        41.02,
+        0.39
+      ],
+      [
+        166.27,
+        41.02,
+        -2.19
+      ],
+      [
+        166.27,
+        41.02,
+        -4.91
+      ],
+      [
+        -211.53,
+        41.02,
+        -5.41
+      ],
+      [
+        -211.53,
+        41.02,
+        -2.83
+      ],
+      [
+        -211.53,
+        41.02,
+        -0.27
+      ],
+      [
+        -211.53,
+        41.02,
+        2.32
+      ],
+      [
+        -211.53,
+        41.02,
+        4.9
+      ],
+      [
+        -211.53,
+        41.02,
+        7.63
+      ]
+    ],
+    "bounds_min": [
+      -299.498931884766,
+      -8.4999942779541,
+      -299.998809814453
+    ],
+    "bounds_max": [
+      300.499969482422,
+      96.5000228881836,
+      298.999969482422
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      173.143783569336,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/oppression-gods-thor/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

@@ -1,0 +1,26 @@
+using System;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Networking;
+
+partial class LobbyCases
+{
+    static void RampCrouchPolicy()
+    {
+        // R8: the crouch policy is the rig's single view-height owner (native
+        // fixtures); only its minimum eye height is a shared constant.
+        Need(Math.Abs(R25RampCrouch.MinimumEyeHeight-1f)<.00001f,"Crouch never lowers the view below 1.0 m");
+
+        // Crouching head and both hands share one world translation. Existing
+        // body validation and codec carry it without a new protocol field.
+        var q=new R24LanRotation(0,0,0,1);
+        var root=new R24LanTransform(new Float3(0,0,0),q);
+        var head=new R24LanTransform(new Float3(0,.6f,0),q);
+        var left=new R24LanTransform(new Float3(-.3f,.25f,.25f),q);
+        var right=new R24LanTransform(new Float3(.3f,.25f,.25f),q);
+        var pose=new R24LanRawTracking(new string('c',64),7,root,head,left,right,0,0);
+        R24LanRawTracking decoded=null;
+        Need(pose.BodyValid&&R24LanRawTracking.TryDecode(pose.Encode(),out decoded),"Crouch pose accepted by unchanged raw codec");
+        Need(Math.Abs(decoded.Head.Position.Y-.6f)<.00001f&&Math.Abs(decoded.Left.Position.Y-.25f)<.00001f,"Network head and hands keep crouch world height");
+    }
+}

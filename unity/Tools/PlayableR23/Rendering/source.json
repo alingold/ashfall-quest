@@ -1,0 +1,36 @@
+{
+  "official": {
+    "tonemap-4.5.glsl": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.5/drivers/gles3/shaders/tonemap_inc.glsl",
+      "sha256": "5e3489e638faf908d854a665915d029f1f7198c6d5a63dbaec67ee0e52054a97",
+      "bytes": 7955
+    },
+    "tonemap-master.glsl": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/master/drivers/gles3/shaders/tonemap_inc.glsl",
+      "sha256": "a0dea1a09f4d89739d5d3447c04929146bbf266e72532b68b7d76705216f69da",
+      "bytes": 8478
+    },
+    "environment-4.5.h": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.5/scene/resources/environment.h",
+      "sha256": "f58bb20d568069936b3280360e34b53e043f6345bc41bef29e77c2e117999b66",
+      "bytes": 15576
+    },
+    "scene-4.5.glsl": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.5/drivers/gles3/shaders/scene.glsl",
+      "sha256": "2c35e86c547cacc463c8835621430256aabc05d46c1a3f1783312e7a71d47141",
+      "bytes": 82228
+    },
+    "GODOT-LICENSE.txt": {
+      "url": "https://raw.githubusercontent.com/godotengine/godot/4.5/LICENSE.txt",
+      "sha256": "b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80",
+      "bytes": 1149
+    }
+  },
+  "whiteDefault": 1,
+  "exposureDefault": 1,
+  "filmicCoefficientParityWithMaster": true,
+  "masterDifference": "white normalizer moved to CPU tonemapper_params.x; numerator/constants unchanged",
+  "compatibilityOrder": "linear lighting + emission/ambient + fog; multiply exposure; filmic(max0,white); Godot linear_to_srgb; framebuffer write. Additive passes map separately.",
+  "frozenR6RendererDefault": "mobile; Compatibility requires a launch override",
+  "capturedR23ValleyEnvironment": "tonemap_mode2, exposure1, white1 in existing qualified environment.json"
+}

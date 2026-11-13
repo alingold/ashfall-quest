@@ -1,0 +1,18 @@
+{
+  "installedApiCompile": true,
+  "pureMathExit": 0,
+  "pureMathOutput": "57 actual C# FILMIC/domain cases PASS; no engine or GPU invoked.",
+  "shaderStaticChecks": true,
+  "shaderCompile": false,
+  "engineRun": false,
+  "gpuRun": false,
+  "xrRun": false,
+  "references": [
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Core.Runtime.Shared",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.RenderPipelines.Universal.Config.Runtime",
+    "Unity.RenderPipeline.Universal.ShaderLibrary",
+    "Unity.RenderPipelines.GPUDriven.Runtime"
+  ]
+}

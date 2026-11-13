@@ -1,0 +1,74 @@
+{
+  "payloads": [
+    {
+      "id": "ump",
+      "parts": [
+        "Body",
+        "Magazine",
+        "Bolt",
+        "SourceChargingSlot",
+        "SourceCarrier"
+      ],
+      "triangles": 10497,
+      "sha256": "134e90986c8871cc8ce26858fb6111a1a80237b3842c111371494ac39eec6fe4"
+    },
+    {
+      "id": "p90",
+      "parts": [
+        "Body",
+        "Magazine",
+        "Bolt"
+      ],
+      "triangles": 38114,
+      "sha256": "314e07ae5d7fbdb026d02eb1ae5a7a009713dca0fc51ec950c6632d6128875ff"
+    },
+    {
+      "id": "mp5",
+      "parts": [
+        "Body",
+        "Body",
+        "Body",
+        "Body",
+        "Body",
+        "Magazine",
+        "Bolt"
+      ],
+      "triangles": 34225,
+      "sha256": "a563e79f5d94b6be8a1cf370ba8b8c1cab85496f917e4b4fa1e1d3953be0145b"
+    },
+    {
+      "id": "mp9",
+      "parts": [
+        "Body",
+        "Magazine",
+        "Bolt",
+        "SourceRetainedSuppressor"
+      ],
+      "triangles": 14001,
+      "sha256": "da76c618d918df7ac7e2f6ada01dade66a543f948d75229d8b6c13baa0b8f085"
+    },
+    {
+      "id": "p90-insert-arrow",
+      "parts": [
+        "ArrowRod0",
+        "ArrowRod1",
+        "ArrowRod2"
+      ],
+      "triangles": 144,
+      "sha256": "1cc7404c2be83260097c86e19cb14b90e9f5659e922d93e3e126fba16767f6dc"
+    },
+    {
+      "id": "p90-charge-arrow",
+      "parts": [
+        "ArrowRod0",
+        "ArrowRod1",
+        "ArrowRod2"
+      ],
+      "triangles": 144,
+      "sha256": "65e2ffb261f867dd4ea49c117ae82469a816150d6747316adb2926ec904b6ba5"
+    }
+  ],
+  "profiles": 4,
+  "sourceInfinitePreviewReserve": true,
+  "engineRenderDevice": "UNRUN"
+}

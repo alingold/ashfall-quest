@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "logan_maverick",
+  "label": "Logan (Maverick)",
+  "sourceIndex": 49,
+  "eyeToShoulder": 0.21,
+  "bodyRear": 0.04,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-53ca55c423ddc29f7a003f6e.png",
+      "normal": "r5-normal-ee7901e0997a2cdbcbe2688a.png",
+      "metallicMap": "r5-metallic-5bdacd66cff9022126b81077.png",
+      "occlusion": "r5-occlusion-13f657d97ee276b78d7e3bc5.png",
+      "emission": "r5-emission-4c66f73e0e2dc5f54a42703d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-8c8698319eb2b79494e001ac.png",
+      "normal": "r5-normal-6d4ddcbe9a8a91bdfdbb7dd1.png",
+      "metallicMap": "r5-metallic-7877a8a97bb6067651727beb.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

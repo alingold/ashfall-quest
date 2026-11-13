@@ -1,0 +1,36 @@
+using System;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+using Ashfall.Integration.Playable.Networking;
+
+partial class LobbyCases
+{
+    static void RampCrouchPolicy()
+    {
+        var crouch=new R25RampCrouch();
+        Need(crouch.Step(1.7088f,float.PositiveInfinity,1f/72)==0,"Clear overhead leaves standing view unchanged");
+        Need(crouch.Fits(.6f,1.7088f)&&!crouch.Fits(.599f,1.7088f),"Minimum eye height admits contact boundary and refuses lower roof");
+        Need(crouch.Fits(.45f,.4f),"A real physical duck is preserved below virtual minimum");
+        Need(Math.Abs(crouch.Step(1.7088f,.6f,1f/72)-1.1088f)<.00001f,"Minimum view offset leaves eye at 60 cm");
+        float held=crouch.Offset;
+        Need(Math.Abs(crouch.Step(2.0088f,.6f,1f/72)-1.4088f)<.00001f,"30 cm upward tracking absorbed without lowering minimum eye");
+        float old=crouch.Offset;
+        Need(Math.Abs(crouch.Step(2.0088f,2.3f,.05f)-(old-.04f))<.00001f,"Return speed bounded to 0.8 m/s");
+        Need(Math.Abs(crouch.Step(1.7088f,.6f,1f/72)-1.1088f)<.00001f,"Abrupt physical return keeps minimum eye height");
+        for(int i=0;i<300;i++)crouch.Step(1.7088f,float.PositiveInfinity,1f/72);
+        Need(crouch.Offset==0&&held>1,"Standing height fully restored");
+        crouch.Reset();Need(crouch.Offset==0,"Spawn/reset forgets crouch");
+
+        // Crouching head and both hands share one world translation. Existing
+        // body validation and codec carry it without a new protocol field.
+        var q=new R24LanRotation(0,0,0,1);
+        var root=new R24LanTransform(new Float3(0,0,0),q);
+        var head=new R24LanTransform(new Float3(0,.6f,0),q);
+        var left=new R24LanTransform(new Float3(-.3f,.25f,.25f),q);
+        var right=new R24LanTransform(new Float3(.3f,.25f,.25f),q);
+        var pose=new R24LanRawTracking(new string('c',64),7,root,head,left,right,0,0);
+        R24LanRawTracking decoded=null;
+        Need(pose.BodyValid&&R24LanRawTracking.TryDecode(pose.Encode(),out decoded),"Crouch pose accepted by unchanged raw codec");
+        Need(Math.Abs(decoded.Head.Position.Y-.6f)<.00001f&&Math.Abs(decoded.Left.Position.Y-.25f)<.00001f,"Network head and hands keep crouch world height");
+    }
+}

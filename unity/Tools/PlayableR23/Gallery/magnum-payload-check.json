@@ -1,0 +1,26 @@
+{
+  "payloads": [
+    {
+      "name": "magnum",
+      "parts": 1,
+      "triangles": 5382,
+      "sha256": "eb1e8b7d68b8a6d30839514aeffb093f250d8e569db5842c137e8ac9b779d960"
+    },
+    {
+      "name": "magnum-cylinder",
+      "parts": 18,
+      "triangles": 2462,
+      "sha256": "16b12de880acd869ec36cb85ce9ce850eb91755cd58a940e07bf97cd1d3c6970"
+    },
+    {
+      "name": "magnum-offer",
+      "parts": 28,
+      "triangles": 6384,
+      "sha256": "47729a1616df38400c74e42bd047b1ce81b1061b4bab2b3d1a4f41ac30568dae"
+    }
+  ],
+  "privateReserve": 1200,
+  "capacity": 7,
+  "noCarriedOwnerReference": true,
+  "engineRenderDevice": "UNRUN"
+}

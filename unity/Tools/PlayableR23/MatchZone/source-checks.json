@@ -1,0 +1,30 @@
+{
+  "checks": 37,
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "runtimeHashes": {
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/R24MatchZone.cs": "df154abb59f432aa2d2d7d23e1cef02a64b8391cdfc721a1e7d4afea48489aa0",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/R24MatchZone.cs.meta": "dcc15f5fdb70abb41b5517ae7d92f8846ab82ffa1520e677b8bb455cc554793b",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/R24MatchZoneState.cs": "b87da8c6859e580dffac4d3f332cb787b800dc9fa4e7183a8fe19d5b73c88d87",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/R24MatchZoneState.cs.meta": "31c7c5de06fb5523aae38c93895cb846e78eeb00dd92b3d4126c2aeba5aeb8ca",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/Resources/R24ZoneDanger.shader": "a627ad1bbb0f4471d09ca2521eafe563b72957fe3661f136c4f25df538b1c29b",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/Resources/R24ZoneDanger.shader.meta": "d7e77882c4d064c2f14b89ef71bb3f4ca417ab9c2d12b33feea10066ee186baf",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/Resources/R24ZoneSurface.shader": "d5c386d19bb18ac4f90781d0e3fb0d603759480ac45fcaee54b77f6fa63f4271",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/Resources/R24ZoneSurface.shader.meta": "f19762e45f01451443d31cd5bc41eba9073e40962d469fcad93a38121541c886",
+    "unity/Assets/Ashfall/Integration/Playable/MatchZone/Resources.meta": "c3551949e92159969dd892ada59914cc8a762d4c3ab1c2f3c6b1a7ac1ca09491"
+  },
+  "payloadHashes": {
+    "AUDIO-PROVENANCE.json": "b4dfe94efd0895252767c94e3287a79535d8752e641848c8a121fb7da927e03c",
+    "AUDIO-PROVENANCE.json.meta": "4d3a28726779095af17251982a079f764d9c7b5fbfc679e22454ad8ccc32440b",
+    "danger_zone_loop.wav": "3ad93fd0711159cebd2aa5b454acd7901450852be04e4c48402312efdf7fa4d1",
+    "danger_zone_loop.wav.meta": "8394d8ab08f390cef9cc5fa45aec170f2ed19bc74cd062912525e5a26e0bd31d",
+    "LICENSE.txt": "14c52bd8bc2239b3ec000ffebc1baa31d040bd9389f8d62dca1efea6eaeb4bfc",
+    "LICENSE.txt.meta": "9dbab143b972c429fe6c4184bf72e7def43b0aa1cf245e517a0c7bcee81276a1",
+    "source-danger.gdshader": "14765a24df1cbf8f93035f031fb45c0e3d5460740c788533341575c78cf08352",
+    "source-danger.gdshader.meta": "d50758dd8e916f4b214fd0af36650ee3828a3cc768aeefe650cb5e729b47569d",
+    "source-surface.gdshader": "40a8739d8b221b50442c93ff5b40fe92add5c7ab4f838311d871f2e82ca8429f",
+    "source-surface.gdshader.meta": "9367e76aabc1abc7a0b1bcc2f00c93d8b4a8d790cb6043a8fc2745332421a746",
+    "source.json": "03cb74b8607d057cefabe063a6e287a56acd8d317d43bfc17ba3c34d53aab8af",
+    "source.json.meta": "6bed4b075586ad49a6ace5f8ee4a2c4d8e44553ad53261f2d2531548754f44a6"
+  },
+  "nativeRun": false
+}

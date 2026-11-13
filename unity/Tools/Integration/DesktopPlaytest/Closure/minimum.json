@@ -1,0 +1,189 @@
+{
+  "units": [
+    {
+      "name": "Core",
+      "dependencies": [],
+      "directories": [
+        "unity/Assets/Ashfall/Core"
+      ]
+    },
+    {
+      "name": "RecoveryContracts",
+      "dependencies": [
+        "Core"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/RecoveryContracts"
+      ]
+    },
+    {
+      "name": "Player",
+      "dependencies": [
+        "Core"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/Player"
+      ]
+    },
+    {
+      "name": "WeaponHandling",
+      "dependencies": [
+        "Core",
+        "RecoveryContracts"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/WeaponHandling"
+      ]
+    },
+    {
+      "name": "HealthStates",
+      "dependencies": [
+        "Core",
+        "RecoveryContracts"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/HealthStates"
+      ]
+    },
+    {
+      "name": "Combat",
+      "dependencies": [
+        "Core",
+        "HealthStates"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/Combat"
+      ],
+      "exclude": {
+        "CheckpointState.cs": "Cold Combat recovery disabled in local desktop minimum; existing cross-DLL internal Health CheckpointWire dependency is invalid; full capture02 failure retained."
+      }
+    },
+    {
+      "name": "Construction",
+      "dependencies": [
+        "Core"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/Construction"
+      ]
+    },
+    {
+      "name": "ConstructionCandidate",
+      "dependencies": [
+        "Core",
+        "Construction"
+      ],
+      "directories": [
+        "unity/Assets/Ashfall/Modules/ConstructionCandidate"
+      ]
+    },
+    {
+      "name": "BuildChargeLedger",
+      "dependencies": [
+        "Core"
+      ],
+      "files": [
+        "unity/Assets/Ashfall/Modules/InventoryItems/BuildChargeLedger.cs"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "PlayerFixture",
+      "files": [
+        "unity/Tools/Modules/Player/PlayerTests.cs"
+      ],
+      "dependencies": [
+        "Core",
+        "Player"
+      ],
+      "main": "PlayerTests"
+    },
+    {
+      "name": "WeaponFixture",
+      "files": [
+        "unity/Tools/Modules/WeaponHandling/BehaviorTests.cs",
+        "unity/Tools/Modules/WeaponHandling/TestSpawn.cs"
+      ],
+      "dependencies": [
+        "Core",
+        "RecoveryContracts",
+        "WeaponHandling"
+      ],
+      "main": "BehaviorTests"
+    },
+    {
+      "name": "HealthFixture",
+      "files": [
+        "unity/Tools/Modules/HealthStates/HealthTests.cs"
+      ],
+      "dependencies": [
+        "Core",
+        "HealthStates",
+        "RecoveryContracts"
+      ],
+      "main": "HealthTests"
+    },
+    {
+      "name": "CombatFixture",
+      "files": [
+        "unity/Tools/Modules/Combat/CombatTests.cs",
+        "unity/Tools/Modules/Combat/CombatFixture.cs"
+      ],
+      "dependencies": [
+        "Core",
+        "Combat",
+        "HealthStates",
+        "RecoveryContracts"
+      ],
+      "main": "Tests"
+    },
+    {
+      "name": "ChargeFixture",
+      "files": [
+        "unity/Tools/Integration/DesktopPlaytest/Closure/ChargeFixture.cs"
+      ],
+      "dependencies": [
+        "Core",
+        "Construction",
+        "ConstructionCandidate",
+        "BuildChargeLedger"
+      ],
+      "main": "ChargeFixture"
+    }
+  ],
+  "desktop": {
+    "name": "Desktop",
+    "dependencies": [
+      "Core",
+      "RecoveryContracts",
+      "Player",
+      "WeaponHandling",
+      "HealthStates",
+      "Combat"
+    ],
+    "files": [
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/DesktopPlaytestContext.cs"
+    ],
+    "directories": [
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/Pawn",
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/Arena",
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/Combat",
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/Hud"
+    ],
+    "constructionDirectories": [
+      "unity/Assets/Ashfall/Integration/DesktopPlaytest/Construction"
+    ],
+    "constructionDependencies": [
+      "Construction",
+      "ConstructionCandidate",
+      "BuildChargeLedger"
+    ]
+  },
+  "context": "unity/Assets/Ashfall/Integration/DesktopPlaytest/DesktopPlaytestContext.cs",
+  "roots": [
+    "Player",
+    "WeaponHandling",
+    "Combat"
+  ]
+}

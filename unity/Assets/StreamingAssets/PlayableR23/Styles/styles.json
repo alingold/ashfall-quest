@@ -1,0 +1,1259 @@
+{
+  "version": 1,
+  "presets": {
+    "clear-noon": {
+      "label": "Clear noon",
+      "clearColor": [
+        0.616,
+        0.714,
+        0.776
+      ],
+      "ambientColor": [
+        0.78,
+        0.85,
+        0.91
+      ],
+      "ambientIntensity": 0.83,
+      "sunColor": [
+        1,
+        0.98,
+        0.92
+      ],
+      "sunIntensity": 0.75,
+      "sunEuler": [
+        53,
+        28,
+        0
+      ],
+      "fogColor": [
+        0.616,
+        0.714,
+        0.776
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "saturation": 1.0,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.25,
+        0.47,
+        0.8
+      ],
+      "skyHorizon": [
+        0.7,
+        0.82,
+        0.92
+      ],
+      "skyNadir": [
+        0.52,
+        0.6,
+        0.66
+      ],
+      "sunGlow": 0.25
+    },
+    "golden-hour": {
+      "label": "Golden hour",
+      "clearColor": [
+        0.74,
+        0.68,
+        0.6
+      ],
+      "ambientColor": [
+        0.88,
+        0.8,
+        0.7
+      ],
+      "ambientIntensity": 0.83,
+      "sunColor": [
+        1,
+        0.76,
+        0.48
+      ],
+      "sunIntensity": 0.72,
+      "sunEuler": [
+        24,
+        48,
+        0
+      ],
+      "fogColor": [
+        0.74,
+        0.68,
+        0.6
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        1,
+        0.98,
+        0.93
+      ],
+      "saturation": 0.96,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.3,
+        0.42,
+        0.66
+      ],
+      "skyHorizon": [
+        0.98,
+        0.76,
+        0.5
+      ],
+      "skyNadir": [
+        0.52,
+        0.44,
+        0.38
+      ],
+      "sunGlow": 0.6
+    },
+    "ember-dusk": {
+      "label": "Ember dusk",
+      "clearColor": [
+        0.46,
+        0.46,
+        0.57
+      ],
+      "ambientColor": [
+        0.8,
+        0.73,
+        0.82
+      ],
+      "ambientIntensity": 0.85,
+      "sunColor": [
+        1,
+        0.53,
+        0.34
+      ],
+      "sunIntensity": 0.65,
+      "sunEuler": [
+        20,
+        105,
+        0
+      ],
+      "fogColor": [
+        0.46,
+        0.46,
+        0.57
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        1,
+        0.94,
+        0.91
+      ],
+      "saturation": 0.92,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.14,
+        0.13,
+        0.28
+      ],
+      "skyHorizon": [
+        0.92,
+        0.44,
+        0.26
+      ],
+      "skyNadir": [
+        0.24,
+        0.18,
+        0.2
+      ],
+      "sunGlow": 0.7
+    },
+    "overcast-ash": {
+      "label": "Overcast ash",
+      "clearColor": [
+        0.56,
+        0.63,
+        0.67
+      ],
+      "ambientColor": [
+        0.79,
+        0.84,
+        0.86
+      ],
+      "ambientIntensity": 0.9,
+      "sunColor": [
+        0.84,
+        0.89,
+        0.94
+      ],
+      "sunIntensity": 0.36,
+      "sunEuler": [
+        68,
+        15,
+        0
+      ],
+      "fogColor": [
+        0.56,
+        0.63,
+        0.67
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.95,
+        0.99,
+        1
+      ],
+      "saturation": 0.82,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.5,
+        0.54,
+        0.58
+      ],
+      "skyHorizon": [
+        0.68,
+        0.71,
+        0.72
+      ],
+      "skyNadir": [
+        0.42,
+        0.45,
+        0.47
+      ],
+      "sunGlow": 0.1
+    },
+    "glacier-morning": {
+      "label": "Glacier morning",
+      "clearColor": [
+        0.63,
+        0.77,
+        0.87
+      ],
+      "ambientColor": [
+        0.75,
+        0.87,
+        0.97
+      ],
+      "ambientIntensity": 0.88,
+      "sunColor": [
+        0.87,
+        0.94,
+        1
+      ],
+      "sunIntensity": 0.62,
+      "sunEuler": [
+        35,
+        55,
+        0
+      ],
+      "fogColor": [
+        0.63,
+        0.77,
+        0.87
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.96,
+        0.99,
+        1
+      ],
+      "saturation": 0.92,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.32,
+        0.58,
+        0.88
+      ],
+      "skyHorizon": [
+        0.82,
+        0.92,
+        0.98
+      ],
+      "skyNadir": [
+        0.6,
+        0.72,
+        0.82
+      ],
+      "sunGlow": 0.3
+    },
+    "moonlit-blue": {
+      "label": "Moonlit blue",
+      "clearColor": [
+        0.34,
+        0.43,
+        0.62
+      ],
+      "ambientColor": [
+        0.62,
+        0.75,
+        0.98
+      ],
+      "ambientIntensity": 0.91,
+      "sunColor": [
+        0.7,
+        0.82,
+        1
+      ],
+      "sunIntensity": 0.48,
+      "sunEuler": [
+        36,
+        150,
+        0
+      ],
+      "fogColor": [
+        0.34,
+        0.43,
+        0.62
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.94,
+        0.97,
+        1
+      ],
+      "saturation": 0.88,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.05,
+        0.08,
+        0.22
+      ],
+      "skyHorizon": [
+        0.26,
+        0.38,
+        0.62
+      ],
+      "skyNadir": [
+        0.1,
+        0.14,
+        0.26
+      ],
+      "sunGlow": 0.35
+    },
+    "botanical-haze": {
+      "label": "Botanical haze",
+      "clearColor": [
+        0.63,
+        0.7,
+        0.59
+      ],
+      "ambientColor": [
+        0.78,
+        0.87,
+        0.72
+      ],
+      "ambientIntensity": 0.88,
+      "sunColor": [
+        1,
+        0.91,
+        0.65
+      ],
+      "sunIntensity": 0.56,
+      "sunEuler": [
+        42,
+        70,
+        0
+      ],
+      "fogColor": [
+        0.63,
+        0.7,
+        0.59
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.97,
+        1,
+        0.94
+      ],
+      "saturation": 0.94,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.42,
+        0.62,
+        0.66
+      ],
+      "skyHorizon": [
+        0.8,
+        0.86,
+        0.66
+      ],
+      "skyNadir": [
+        0.4,
+        0.48,
+        0.36
+      ],
+      "sunGlow": 0.35
+    },
+    "neon-night": {
+      "label": "Neon night",
+      "clearColor": [
+        0.4,
+        0.39,
+        0.58
+      ],
+      "ambientColor": [
+        0.77,
+        0.72,
+        0.94
+      ],
+      "ambientIntensity": 0.93,
+      "sunColor": [
+        0.57,
+        0.88,
+        1
+      ],
+      "sunIntensity": 0.48,
+      "sunEuler": [
+        35,
+        210,
+        0
+      ],
+      "fogColor": [
+        0.4,
+        0.39,
+        0.58
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.99,
+        0.96,
+        1
+      ],
+      "saturation": 1.02,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.07,
+        0.04,
+        0.2
+      ],
+      "skyHorizon": [
+        0.52,
+        0.22,
+        0.62
+      ],
+      "skyNadir": [
+        0.1,
+        0.08,
+        0.2
+      ],
+      "sunGlow": 0.3
+    },
+    "desert-bloom": {
+      "label": "Desert bloom",
+      "clearColor": [
+        0.78,
+        0.66,
+        0.56
+      ],
+      "ambientColor": [
+        0.91,
+        0.81,
+        0.73
+      ],
+      "ambientIntensity": 0.86,
+      "sunColor": [
+        1,
+        0.83,
+        0.59
+      ],
+      "sunIntensity": 0.63,
+      "sunEuler": [
+        40,
+        120,
+        0
+      ],
+      "fogColor": [
+        0.78,
+        0.66,
+        0.56
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        1,
+        0.97,
+        0.93
+      ],
+      "saturation": 0.91,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.36,
+        0.56,
+        0.82
+      ],
+      "skyHorizon": [
+        0.96,
+        0.8,
+        0.62
+      ],
+      "skyNadir": [
+        0.62,
+        0.5,
+        0.4
+      ],
+      "sunGlow": 0.5
+    },
+    "storm-front": {
+      "label": "Storm front",
+      "clearColor": [
+        0.43,
+        0.52,
+        0.63
+      ],
+      "ambientColor": [
+        0.72,
+        0.8,
+        0.89
+      ],
+      "ambientIntensity": 0.93,
+      "sunColor": [
+        0.8,
+        0.88,
+        1
+      ],
+      "sunIntensity": 0.43,
+      "sunEuler": [
+        28,
+        245,
+        0
+      ],
+      "fogColor": [
+        0.43,
+        0.52,
+        0.63
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.96,
+        0.98,
+        1
+      ],
+      "saturation": 0.85,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.2,
+        0.25,
+        0.33
+      ],
+      "skyHorizon": [
+        0.52,
+        0.6,
+        0.68
+      ],
+      "skyNadir": [
+        0.24,
+        0.28,
+        0.33
+      ],
+      "sunGlow": 0.1
+    },
+    "deep-space": {
+      "label": "Deep space",
+      "clearColor": [
+        0.32,
+        0.34,
+        0.52
+      ],
+      "ambientColor": [
+        0.73,
+        0.76,
+        0.95
+      ],
+      "ambientIntensity": 0.91,
+      "sunColor": [
+        0.8,
+        0.74,
+        1
+      ],
+      "sunIntensity": 0.48,
+      "sunEuler": [
+        45,
+        300,
+        0
+      ],
+      "fogColor": [
+        0.32,
+        0.34,
+        0.52
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        0.98,
+        0.96,
+        1
+      ],
+      "saturation": 0.92,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.02,
+        0.02,
+        0.08
+      ],
+      "skyHorizon": [
+        0.2,
+        0.16,
+        0.42
+      ],
+      "skyNadir": [
+        0.04,
+        0.04,
+        0.1
+      ],
+      "sunGlow": 0.4
+    },
+    "candy-pop": {
+      "label": "Candy pop",
+      "clearColor": [
+        0.7,
+        0.63,
+        0.75
+      ],
+      "ambientColor": [
+        0.91,
+        0.8,
+        0.88
+      ],
+      "ambientIntensity": 0.86,
+      "sunColor": [
+        1,
+        0.91,
+        0.86
+      ],
+      "sunIntensity": 0.58,
+      "sunEuler": [
+        50,
+        330,
+        0
+      ],
+      "fogColor": [
+        0.7,
+        0.63,
+        0.75
+      ],
+      "fogDensity": 0.0,
+      "tint": [
+        1,
+        0.98,
+        1
+      ],
+      "saturation": 1.04,
+      "contrast": 0.98,
+      "exposure": 1.0,
+      "shadeColor": [
+        0.09,
+        0.12,
+        0.17
+      ],
+      "shadeStrength": 0.12,
+      "groundTexture": "",
+      "groundTint": [
+        1,
+        1,
+        1
+      ],
+      "skyZenith": [
+        0.46,
+        0.56,
+        0.94
+      ],
+      "skyHorizon": [
+        0.98,
+        0.74,
+        0.86
+      ],
+      "skyNadir": [
+        0.66,
+        0.56,
+        0.74
+      ],
+      "sunGlow": 0.35
+    }
+  },
+  "maps": {
+    "archive:10000-days-gods-crazytrain": {
+      "preset": "clear-noon",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:afterlife-gods-alamo-hank": {
+      "preset": "ember-dusk",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/ember-ash.jpg"
+    },
+    "archive:aftermath-light-vs-dark-gods-badbar": {
+      "preset": "deep-space",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:asylum-gods-pitdevil": {
+      "preset": "moonlit-blue",
+      "saturation": 0.88,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:atrocious-gods-trashpandakiller": {
+      "preset": "overcast-ash",
+      "saturation": 0.82,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:badlands-gods-pitdevil": {
+      "preset": "desert-bloom",
+      "saturation": 0.91,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/pale-dune.jpg"
+    },
+    "archive:bamboo-gods-pitdevil": {
+      "preset": "botanical-haze",
+      "saturation": 0.94,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:banana-land-gods-pitdevil": {
+      "preset": "botanical-haze",
+      "saturation": 0.9,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:battlefield-paintball-gods-pitdevil": {
+      "preset": "clear-noon",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:beast-mode-gods-pitdevil": {
+      "preset": "deep-space",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:bi-polar-gods-trashpandakiller": {
+      "preset": "deep-space",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:blue-gods-quietowl": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:candle-magic-gods-goodwitch": {
+      "preset": "ember-dusk",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:caskades-gods-alamo-hank": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:chaotic-gods-alamo-hank": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:chill-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:cold-hearted-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:dark-carnival-gods-pitdevil": {
+      "preset": "ember-dusk",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/ember-ash.jpg"
+    },
+    "archive:ereptile-disfunction-gods-pitdevil": {
+      "preset": "botanical-haze",
+      "saturation": 0.94,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:flash-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:fortress-gods-putangfreyja": {
+      "preset": "clear-noon",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:g-spot-gods-pitdevil": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:g0dtham-gods-poplightning": {
+      "preset": "neon-night",
+      "saturation": 0.98,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:high-ground-gods-thor": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:hildrs-echo-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:holy-ground-gods-pitdevil": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:hunted-gods-pitdevil": {
+      "preset": "moonlit-blue",
+      "saturation": 0.88,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:hypnosis-gods-pitdevil": {
+      "preset": "candy-pop",
+      "saturation": 1.04,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:la-la-la-gods-trashpandakiller": {
+      "preset": "candy-pop",
+      "saturation": 1.04,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:light-vs-dark-gods-badbar": {
+      "preset": "deep-space",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:melipop-gods-poplightning": {
+      "preset": "candy-pop",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:melis-cafe-gods-pitdevil": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:metal-mayhem-ghostlymostly88": {
+      "preset": "overcast-ash",
+      "saturation": 0.82,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:mushy-2-gods-putangfreyja": {
+      "preset": "botanical-haze",
+      "saturation": 0.94,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:mushy-gods-putangfreyja": {
+      "preset": "botanical-haze",
+      "saturation": 0.94,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:oppression-gods-thor": {
+      "preset": "overcast-ash",
+      "saturation": 0.82,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:phantom-gods-badbar": {
+      "preset": "moonlit-blue",
+      "saturation": 0.88,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:plan-b-gods-pitdevil": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:poppy-gods-poplightning": {
+      "preset": "candy-pop",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/candy-turf.jpg"
+    },
+    "archive:quantum-city-gods-pitdevil": {
+      "preset": "neon-night",
+      "saturation": 1.02,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:quietowl-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:realtree-gods-poplightning": {
+      "preset": "botanical-haze",
+      "saturation": 0.9,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:robotics-2-gods-pitdevil": {
+      "preset": "neon-night",
+      "saturation": 1.02,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:romulus-gods-skblong": {
+      "preset": "desert-bloom",
+      "saturation": 0.91,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/pale-dune.jpg"
+    },
+    "archive:sean0311-gods-sean0311": {
+      "preset": "clear-noon",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:showdown-gods-crazytrain": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:skb-paintball-gods-skblong": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:stacked-gods-trashpandakiller": {
+      "preset": "glacier-morning",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:suffering-gods-thor": {
+      "preset": "overcast-ash",
+      "saturation": 0.82,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:survive-gods-goodwitch": {
+      "preset": "overcast-ash",
+      "saturation": 0.82,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:swarm-gods-chriso": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:sweet-dreams-gods-badbar": {
+      "preset": "ember-dusk",
+      "saturation": 0.92,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:tagd-gods-pitdevil": {
+      "preset": "glacier-morning",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:the-citadel-gods-thor": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/botanical-moss.jpg"
+    },
+    "archive:the-fortress-gods-alamo-hank": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:the-holler-gods-alamo-hank": {
+      "preset": "desert-bloom",
+      "saturation": 0.91,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/pale-dune.jpg"
+    },
+    "archive:the-powerpuff-g0ds-gods-meli": {
+      "preset": "candy-pop",
+      "saturation": 1.04,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/candy-turf.jpg"
+    },
+    "archive:the-shining-gods-ghostlymostly88": {
+      "preset": "moonlit-blue",
+      "saturation": 0.88,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:the-white-house-gods-osprey-kat": {
+      "preset": "golden-hour",
+      "saturation": 0.96,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.1,
+      "groundTexture": "Styles/ground/golden-meadow.jpg"
+    },
+    "archive:thor-city-gods-thor": {
+      "preset": "neon-night",
+      "saturation": 1.02,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:trashed-gods-pitdevil": {
+      "preset": "clear-noon",
+      "saturation": 1.0,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/meadow.jpg"
+    },
+    "archive:trauma-gods-pitdevil": {
+      "preset": "moonlit-blue",
+      "saturation": 0.88,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    },
+    "archive:unbroken-gods-thor": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/moon-regolith.jpg"
+    },
+    "archive:viral-gods-ghostlymostly88": {
+      "preset": "storm-front",
+      "saturation": 0.85,
+      "fogDensity": 0.0,
+      "shadeStrength": 0.16,
+      "groundTexture": "Styles/ground/glacier-frost.jpg"
+    }
+  }
+}

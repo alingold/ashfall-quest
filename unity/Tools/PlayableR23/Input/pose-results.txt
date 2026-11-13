@@ -1,0 +1,5 @@
+PASS stage-local aim preserved exactly; no fixed grip rotation or positional offset
+PASS aim quaternion normalized without changing supplied orientation
+PASS untracked pointer never falls back to tracked grip
+PASS partial pointer position/rotation tracking fails closed
+PASS invalid pointer values and zero quaternion rejected

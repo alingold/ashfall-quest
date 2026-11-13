@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "id": "knife",
+  "catalog": 29,
+  "displayName": "FIELD KNIFE",
+  "modelScale": 1,
+  "grip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "bladeBase": [
+    0,
+    0.025,
+    -0.025
+  ],
+  "bladeTip": [
+    0,
+    0.246,
+    -0.025
+  ],
+  "renderedHandPhysicalOffset": [
+    0,
+    0,
+    -0.0508
+  ],
+  "sourceBladeRadius": 0.026,
+  "exitHysteresis": 0.008,
+  "flatDamage": 35,
+  "minimumBladeSpeed": 0.2,
+  "teleportTravelLimit": 1,
+  "maximumStepSeconds": 0.15,
+  "movementMultiplier": 1.15,
+  "sourceWhoosh": {
+    "minimumSpeed": 1.4,
+    "minimumTravel": 0.12,
+    "rearmMilliseconds": 180,
+    "source": "assets/audio/reference099/isolated_sword_swing_00.wav",
+    "gainDb": -13
+  }
+}

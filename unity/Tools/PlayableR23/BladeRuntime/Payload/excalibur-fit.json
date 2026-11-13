@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "excalibur",
+  "catalog": 15,
+  "displayName": "RIDGE EXCALIBUR",
+  "variant": "excalibur",
+  "modelScale": 1,
+  "grip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "bladeBase": [
+    0.0,
+    0.125,
+    -0.025
+  ],
+  "bladeTip": [
+    0.0,
+    1.1181325301204819,
+    -0.025
+  ],
+  "renderedHandPhysicalOffset": [
+    0,
+    0,
+    -0.0381
+  ],
+  "supportPoint": [
+    0,
+    -0.19,
+    -0.025
+  ],
+  "contactRadius": 0.026,
+  "exitHysteresis": 0.008,
+  "fullDamageHandSpeed": 2,
+  "damageRange": [
+    25,
+    75
+  ],
+  "movementUnsupported": 1.25,
+  "movementShield": 1.25,
+  "shieldCentre": [
+    0,
+    0.34,
+    0.08
+  ],
+  "shieldRadii": [
+    0.5640636144578313,
+    0.7050795180722892
+  ],
+  "sourceBodyTransform": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

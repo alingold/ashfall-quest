@@ -1,0 +1,20 @@
+PASS source flash/tracer45ms and impact110ms lifetimes
+PASS gun panel source finite/infinite reserve formatting
+PASS new presentation has no fabricated shot/effects
+PASS source MK18 first accepted shot has exact render kick
+PASS duplicate/stale native shot serial cannot replay recoil or flash
+PASS source accepted-shot flash and reference crosshair bloom are live before45ms
+PASS flash expires independently of ammo or trigger state
+PASS source reference32px bloom at55ms,70/58px unsupported/supported rest width
+PASS actual supported shot uses source38percent render recoil gain
+PASS source SPR signed Hermite peak/zero/undershoot/end timing
+PASS source SPR visual pulse peak includes retained gain1.25
+PASS SPR settles through source signed undershoot
+PASS AKM uses shipped source endpoint experiment, not generic rifle curve
+PASS AKM supported presentation uses actual separate source endpoint profile
+PASS holster/focus suppression clears visuals without changing native shot identity
+PASS explicit round restart rearms presentation serial without ammo access
+PASS real native committed burst emits exactly3 feedback events, single authoritative ammo debit
+PASS paused native owner cannot mint feedback or consume ammo
+PASS source800ms recovery resets render kick
+19 focused feedback cases passed

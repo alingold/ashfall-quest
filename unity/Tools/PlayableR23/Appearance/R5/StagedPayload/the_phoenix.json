@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "the_phoenix",
+  "label": "The Phoenix",
+  "sourceIndex": 50,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-5298754f2430c565e3804c53.png",
+      "normal": "r5-normal-613970da4fa21a5194bc1244.png",
+      "metallicMap": "r5-metallic-465aa36db93a061dc02ef9cf.png",
+      "occlusion": "r5-occlusion-ba83ad1f4557debac2ac4aea.png",
+      "emission": "r5-emission-999c091e23bc78d0d9069354.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-506ac941dc0b22589429e568.png",
+      "normal": "r5-normal-44252d8f7417936056e94a2a.png",
+      "metallicMap": "r5-metallic-79913d44a9e4bc2f45ac365f.png",
+      "occlusion": "r5-occlusion-6f37a9446172160c49eea75b.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

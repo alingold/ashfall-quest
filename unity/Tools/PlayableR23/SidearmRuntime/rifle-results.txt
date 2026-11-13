@@ -1,0 +1,97 @@
+PASS analog-only controllers activate grip and trigger thresholds
+PASS below-threshold analog input remains released
+PASS valid button path survives absent analog readings
+PASS invalid analog readings cannot create a press
+PASS normal map works without practice targets
+PASS initial real health and finite ammunition
+PASS paused/unequipped path does not fire
+PASS finite magazine dry fire, no shadow debit
+PASS actual staged reload debits reserve
+PASS selection/focus suspension retains ammo and blocks held trigger
+PASS production fire owner accepts loaded shot
+PASS actual combat and health hit
+PASS shot cannot hit twice
+PASS source MK18 body damage is real shield-first health state
+PASS paused target reset timer is suspended
+PASS source 1.5s target reset restores only target, never ammunition
+PASS source MK18 head damage 33
+PASS source AKM body damage 20
+PASS source AKM head damage 30
+PASS map obstruction blocks target mutation
+PASS source dummy receives lethal real health damage
+PASS dead dummy resets stable target identity without player/ammo reset
+PASS actual player health damage
+PASS invalid damage rejected
+PASS dead player cannot fire
+PASS round reset restores real owners and target state
+PASS MK18 exact source 18-round committed burst at 0/80/160ms; held trigger does not repeat
+PASS MK18 release rearms next burst without ammunition grant
+PASS MK18 completes burst after trigger release and installs source 240ms recovery
+PASS MK18 post-burst recovery rejects early trigger attempts
+PASS MK18 next burst becomes available at source recovery boundary
+PASS pause cancels committed burst and requires actual trigger release
+PASS released trigger resumes source burst after pause
+PASS AKM source 20-round automatic11rps including initial zero-time shot
+PASS AKM auto empty eject preserves finite family reserve
+PASS source tactical eject refunds exactly15 live rounds without cap
+PASS source reload does not silently advance without next click/gesture
+PASS source insert debits exact20, reports seated rounds, remains unchambered
+PASS source charging step chambers existing seated ammunition without extra debit
+PASS source physical offer acquires magazine without premature ammo debit
+PASS physical insertion rejects insufficient upward travel
+PASS source upward insertion debits reserve once
+PASS source rack requires release before new charging-handle grip
+PASS source actual AKM charging-grip geometry and rearward80mm pull chamber magazine
+PASS support reservation cancels unseated contact without consuming ammunition
+PASS released reservation cannot reacquire magazine with stale held grip
+PASS actual support release/regrip rearms source magazine gesture
+PASS source exhausted reserve inserts partial two-round magazine without invented refill
+PASS selection equips separate persistent AKM instance with shared source rifle pool
+PASS switch returns exact MK18 magazine and reflects only real shared reserve debit
+PASS selection preserves independent seated magazine, chamber and reload stage
+PASS source player shield getter and damage come from actual native health snapshot
+PASS source damage carries through exhausted shield into health
+PASS source lifetime cannot grant the same stable instance twice
+PASS source owner accepts authority-bound native fire
+PASS source owner rejects replay without shadow ammo debit
+PASS source owner rejects duplicate time advance in same tick
+PASS legacy grip/trigger/reload remain right; support grip remains physical left
+PASS resolved hand snapshot is immutable after compatibility frame changes
+PASS nearest free tracked LEFT grip wins source pickup
+PASS nearest right grip wins; equal-distance legacy tie stays right
+PASS climbing reservation prevents nearer left hand stealing pickup
+PASS reserved/out-of-reach/invalid candidates cannot pick up
+PASS LEFT-primary projected source fire debits exact existing AKM once
+PASS primary hand switch routes old firing hand into support without cross-hand trigger
+PASS RIGHT hand takes same source instance after release with no switch grant
+PASS RIGHT climb reservation blocks LEFT-primary support reload claim without ammo debit
+PASS left-primary physical reload uses RIGHT support grip on real source offer
+PASS right support inserts and charges LEFT-held rifle in unchanged source geometry
+PASS left-primary climb reservation suspends actual native gun without ammo loss
+PASS full native player rejects consumable gain without mutation
+PASS positive effect applies actual prepared native health and shield gain
+PASS native gains cap to missing health/shield and never alter weapon ammunition
+PASS invalid/empty positive effects fail without loss or state mutation
+PASS health-only effect rejects no-effect without silently converting to shield
+PASS positive consumable effect cannot resurrect dead native player
+PASS SPR current first-rarity catalog overrides stale setup: four rounds, semi320ms, sniper pool,55/92damage
+PASS SPR shot remains chambered ready, not converted to bolt-action mechanism
+PASS held SPR trigger never repeats or performs shadow ammo debit
+PASS released SPR trigger permits next accepted shot
+PASS SPR native cadence rejects early click and accepts320ms boundary
+PASS SPR analog semi latch does not rearm at intermediate .3 trigger travel
+PASS SPR analog semi latch rearms only below source .2 threshold
+PASS pressed trigger button prevents false analog rearm
+PASS SPR source magazine offer is raised exactly five physical inches
+PASS SPR tactical eject refunds three live rounds; raised offer grabs without debit
+PASS SPR source raised offer still requires actual60mm upward insertion travel
+PASS SPR source upward insertion seats exact four rounds and debits sniper reserve once
+PASS SPR exact source rear T-handle AABB grip and80mm rearward pull chamber existing rounds
+PASS SPR fresh source body hit applies55 real native shield damage
+PASS SPR actual head hit applies92 across remaining shield into health
+PASS SPR sniper reload pool is independent of shared MK18/AKM rifle ammunition
+PASS SPR equip/custody suspension preserves exact instance, seated magazine and separate reserve
+PASS SPR optical camera extent matches physical source window and exact2x angular magnification
+PASS per-eye off-axis optical extents cover actual eye-dependent aperture corners symmetrically
+PASS SPR angular scene reprojection uses2x and fixed one-metre virtual reticle plane
+PASS SPR scope respects source eye relief, alignment, gaze and map-occlusion gates

@@ -1,0 +1,304 @@
+{
+  "originalSource": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "geometry": [
+    {
+      "id": "1911",
+      "source": "assets\\models\\tactical_1911\\tactical_1911.glb",
+      "sha256": "53472b4af3564f1cf5baeaf641af723a654e90c918b822a84d44891a34653e9c",
+      "legacyProvenanceOutputSha": "53472b4af3564f1cf5baeaf641af723a654e90c918b822a84d44891a34653e9c",
+      "legacyProvenanceOutputMatches": true,
+      "vertices": 11664,
+      "triangles": 3888,
+      "sourceTriangles": 3888,
+      "profile": {
+        "index": 19,
+        "id": "1911",
+        "name": "1911",
+        "rarity": 1,
+        "magazine_per_hand": 8,
+        "hands": 1,
+        "fire_mode": "semi",
+        "rounds_per_second": 5,
+        "rate_confidence": "uncertain_original_configurable",
+        "rate_source_date": "unverified",
+        "rate_source": "",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "pistol",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "notes": "Modern8 supersedes stale12 catalog",
+        "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+      },
+      "damage": {
+        "body": 44.0,
+        "head": 61.0,
+        "pellets": 1,
+        "head_policy": "Exact first-rarity listed head damage",
+        "wiki_name": "1911"
+      }
+    },
+    {
+      "id": "tec9",
+      "source": "assets\\models\\download_tec9\\model.glb",
+      "sha256": "a84dc924c750de34581c7bb117d0734b3ef6f007fec8f35abc65519b92cba59e",
+      "legacyProvenanceOutputSha": "a84dc924c750de34581c7bb117d0734b3ef6f007fec8f35abc65519b92cba59e",
+      "legacyProvenanceOutputMatches": true,
+      "vertices": 77946,
+      "triangles": 25982,
+      "sourceTriangles": 25982,
+      "profile": {
+        "index": 20,
+        "id": "tec9",
+        "name": "TEC9",
+        "rarity": 1,
+        "magazine_per_hand": 12,
+        "hands": 1,
+        "fire_mode": "auto",
+        "rounds_per_second": 14.4,
+        "rate_confidence": "observed_twelve_round_clip_target_frame_bounds14.1185_to15.0006_not_hidden_universal_rate",
+        "rate_source_date": "user_film_analysis_2026-10-20",
+        "rate_source": "recoil.mp4 SHA25656CF1D1B42F6510C231F753E8294A29A3E05FD1B6A5A751D7B167A658F445B31 PTS834.43524..835.33796",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "pistol",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "notes": "066 configurable output target14.4rps from11 visible first-to-last transition intervals.12-round magazine retained. Source rarity and hidden frame scheduling not established; see external VISUAL-TIMING-REVIEW.json.",
+        "audit_052": "Visible one-star table at2:39 inspected; author analysis, not raw frame-count measurement",
+        "rate_prior_065": {
+          "rounds_per_second": 17,
+          "rate_confidence": "dated_2024_analysis_table_not_live_verified",
+          "rate_source_date": "2024-05-17",
+          "rate_source": "https://www.youtube.com/watch?v=3wUBqKTdfOY&t=159s",
+          "notes": "Fire mode and rate unverified in retrieved primary text;automatic12rps is configurable original candidate, must validate.",
+          "audit_052": "Visible one-star table at2:39 inspected; author analysis, not raw frame-count measurement"
+        }
+      },
+      "damage": {
+        "body": 25.0,
+        "head": 30.0,
+        "pellets": 1,
+        "head_policy": "Exact first-rarity listed head damage",
+        "wiki_name": "Tec9"
+      }
+    },
+    {
+      "id": "rfb",
+      "source": "assets\\models\\download_rfb\\model.glb",
+      "sha256": "c9cec68e1cccb167e284dde208c149629d1aa7417c3340c85a12f5654a6078f5",
+      "legacyProvenanceOutputSha": "c9cec68e1cccb167e284dde208c149629d1aa7417c3340c85a12f5654a6078f5",
+      "legacyProvenanceOutputMatches": true,
+      "vertices": 51882,
+      "triangles": 17294,
+      "sourceTriangles": 17294,
+      "profile": {
+        "index": 23,
+        "id": "rfb",
+        "name": "RFB",
+        "rarity": 1,
+        "magazine_per_hand": 25,
+        "hands": 1,
+        "fire_mode": "auto",
+        "rounds_per_second": 9.5,
+        "rate_confidence": "dated_official_not_live_verified",
+        "rate_source_date": "2022-06-07",
+        "rate_source": "https://www.reddit.com/r/populationonevr/comments/v71e38/",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "rifle",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+      },
+      "damage": {
+        "body": 19.0,
+        "head": 23.0,
+        "pellets": 1,
+        "head_policy": "Exact first-rarity listed head damage",
+        "wiki_name": "RFB"
+      }
+    },
+    {
+      "id": "fal",
+      "source": "assets\\models\\download_fal\\model.glb",
+      "sha256": "404b6a3e241fc0b066ebbc31023c474c40b5e66abd43aea844a0cc2df8eb3f6a",
+      "legacyProvenanceOutputSha": "404b6a3e241fc0b066ebbc31023c474c40b5e66abd43aea844a0cc2df8eb3f6a",
+      "legacyProvenanceOutputMatches": true,
+      "vertices": 8940,
+      "triangles": 2980,
+      "sourceTriangles": 2980,
+      "profile": {
+        "index": 24,
+        "id": "fal",
+        "name": "FAL",
+        "rarity": 1,
+        "magazine_per_hand": 15,
+        "hands": 1,
+        "fire_mode": "semi",
+        "rounds_per_second": 5,
+        "rate_confidence": "uncertain_original_configurable",
+        "rate_source_date": "unverified",
+        "rate_source": "",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "rifle",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+      },
+      "damage": {
+        "body": 33.0,
+        "head": 44.0,
+        "pellets": 1,
+        "head_policy": "Exact first-rarity listed head damage",
+        "wiki_name": "FAL"
+      }
+    },
+    {
+      "id": "s85",
+      "source": "assets\\models\\download_s85_m1_099\\model.glb",
+      "sha256": "9473f1cc96c645e7c42a3f2bd3e0e6875a2c63224ac046e8eb30803ef7711d3a",
+      "legacyProvenanceOutputSha": "20456735ff21fb5919c72bff054c8ebc2046c6160f769fce1be377da34c7e7bc",
+      "legacyProvenanceOutputMatches": false,
+      "vertices": 5415,
+      "triangles": 5834,
+      "sourceTriangles": 29057,
+      "profile": {
+        "index": 25,
+        "id": "s85",
+        "name": "S85",
+        "rarity": 1,
+        "magazine_per_hand": 5,
+        "hands": 1,
+        "fire_mode": "bolt",
+        "rounds_per_second": 1.4,
+        "rate_confidence": "uncertain_original_configurable",
+        "rate_source_date": "unverified",
+        "rate_source": "",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "rifle",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+      },
+      "damage": {
+        "body": 65.0,
+        "head": 105.0,
+        "pellets": 1,
+        "head_policy": "Exact first-rarity listed head damage",
+        "wiki_name": "S85 | (Sako 85)"
+      }
+    }
+  ],
+  "audio": [
+    {
+      "source": "res://assets/audio/reference097/shot_1911_last_00.wav",
+      "file": "1911-audio-shot-0.wav",
+      "sha256": "20ef8d24abeb2f42fe40ea893c45815bf18e960c6230b21fbc36a5bb8fc09368",
+      "pcmSha256": "de899ce78db2bca283e1ae62a78c6d1a75308019968dc2f65fdc826fb9d4d86f",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 46656
+    },
+    {
+      "source": "res://assets/audio/reference097/shot_tec9_last_00.wav",
+      "file": "tec9-audio-shot-0.wav",
+      "sha256": "5a8348ee4856520a946bd1a6c8c75987b6b8d5eaf1d5ee91765dff577ddd5876",
+      "pcmSha256": "4e53832acc0a71a0ed759e5b4200cb5e170828b4ead3b91159dafabdbc84ddfd",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 39456
+    },
+    {
+      "source": "res://assets/audio/reference097/shot_rfb_last_00.wav",
+      "file": "rfb-audio-shot-0.wav",
+      "sha256": "b34b94b155bfcf53eb27e0fe1a0af25bd40f4895a21e9f9e01f293b9ba82c4ac",
+      "pcmSha256": "6d622243171fb684c7823f1a80963da119b309f5aa180e911d3272bb89bf62d3",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 46656
+    },
+    {
+      "source": "res://assets/audio/reference097/shot_fal_last_00.wav",
+      "file": "fal-audio-shot-0.wav",
+      "sha256": "e51d687288d89bf18c7fb28c7be1f5d6cf7f6f4a3a8dbbb8ea29d493f9eaef66",
+      "pcmSha256": "da40a7d1314278fbcf9d2468c0fdd7ce61b878911ae411cb3607a2d09a9829be",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 51456
+    },
+    {
+      "source": "res://assets/audio/reference097/fal_mag_insert_00.wav",
+      "file": "fal-audio-mag_insert-0.wav",
+      "sha256": "e8b7129b13650f0e3f0a41cc4e40284bce7df203a22f1bb30dc169dc8f8497b8",
+      "pcmSha256": "c979c8ecb9fb46871097dbb6df7e8bd8fcdce7a64e57bd50c1c9342db1913148",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 13680
+    },
+    {
+      "source": "res://assets/audio/reference097/fal_bolt_00.wav",
+      "file": "fal-audio-bolt-0.wav",
+      "sha256": "f89b74edd8e638a89cda592050907d3250b2b252cb4c2b228089b7b0426d04ee",
+      "pcmSha256": "c70ad356572df22bccfd6f236eba3beeae692bd4641b87cd2d87f223198ee2c4",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 14640
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_s85_shot_00.wav",
+      "file": "s85-audio-shot-0.wav",
+      "sha256": "c9ced7d6fb6b4687aa6887b9e80ce233efdbacba0613720068b0a4e79924cb67",
+      "pcmSha256": "9e05e28902203996f7e22dcef42634f0947dc46c764c11e3487af720ca34ad5c",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 157440
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_s85_pouch_00.wav",
+      "file": "s85-audio-pouch-0.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+      "pcmSha256": "14a1671d24f24a2a8740e8a067c3cd9cf9a0c2b2d3860c789e37e39e04a1f20e",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 29760
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav",
+      "file": "s85-audio-mag_insert-0.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "pcmSha256": "a45938b90cc1e32c8dd70371b957844789765c99a2efa9c652ac6fda0658887f",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 26880
+    },
+    {
+      "source": "res://assets/audio/reference099/isolated_s85_bolt_00.wav",
+      "file": "s85-audio-bolt-0.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "pcmSha256": "b4e825f5067065ec6e57f6617f9149f4db8295ad5d101b6cd47cb9755a5e23b4",
+      "channels": 1,
+      "sampleRate": 48000,
+      "frames": 31200
+    }
+  ],
+  "sourceInputs": {
+    "scripts/catalog_firearm.gd": "63d33af1c8fe7c44a78fb41db8c7c66139c1339c7e4e5798dbd2e9b899a3ffdd",
+    "scripts/tactical_1911_model.gd": "5ad030159b01c69fe936dfd38dffede222121fa0b66518c7ebf44e5e1622c220",
+    "scripts/downloaded_firearm_model.gd": "9b3f25e8b2f33e49cd51884188e745b251afcbe4a6912ce7b7f0b9d2c374b3e0",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/model_variants.gd": "aa993d206ed814c934dbb0f93ccda7638e26da2296465e613634cbc477d41ba3",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/authored_ring_dot_sight.gd": "3150aeb8695a2336cb3262103098d44665ba87bdf77944a66ebb1d769639115a",
+    "scripts/common_reflex_090.gd": "459c1d259208debeacbb799a2b84e458559aa30db2413c8ad581f9a57f2c7824",
+    "scripts/player.gd": "6bdc208101b450f51225fb666df45a759ef1282a578d044aa3a8ce7a12c2ac47",
+    "scripts/grip_hand_086.gd": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5",
+    "assets/data/recoil_observed_067.json": "cb494da42fc7900d049d4104e1c680e775fff43e2fe4b84f4e6f1f5627b83930",
+    "assets/data/recoil_endpoint_experiment_071.json": "56a7d2bb33106adbbb85bb1ba0f8e1ac115c0051248b3f25691698cbc14c9cc0",
+    "assets/data/reference_062.json": "dfa6ff2272756e0553722cb20ed580aaeb6d08454b368c73dfd375569c71789f",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5"
+  },
+  "conversion": "Original current GLBs without decimation, source node homes once, inverse-transpose normals, Z+index winding+UV reflection once; immutable source and shared runtime untouched."
+}

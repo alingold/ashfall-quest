@@ -1,0 +1,56 @@
+PASS source controller heading retains azimuth across the vertical pole in both directions
+PASS controller heading follows artificial body yaw without stale-world reversal
+PASS unavailable left controller falls back to actual head reference
+PASS same-tick turn is composed once and preserves analog stick magnitude
+PASS actual Flight owner preserves source partial-stick .35 steering influence
+PASS actual Flight owner receives current-frame travel heading instead of stale head direction
+PASS held startup trigger cannot place
+PASS right trigger begins preview
+PASS preview remains pinned to hand
+PASS release commits once
+PASS release cannot repeat commit
+PASS free left hand builds with weapon hand unavailable
+PASS lost hand reservation cancels instead of placing
+PASS tracking loss cancels release
+PASS source grid preview validates without spending
+PASS release placement debits exact source panel cost
+PASS stack level0 placed through actual CandidateService
+PASS stack level1 placed through actual CandidateService
+PASS stack level2 placed through actual CandidateService
+PASS actual wall max180 from Candidate snapshot
+PASS real25 damage updates owner snapshot only; no charge change
+PASS invalid and foreign damage inert
+PASS lethal anchor damage withdraws only actual owner panel; no refund
+PASS withdrawn panel id cannot take damage twice
+PASS dependent walls remain before source300ms
+PASS paused100 seconds cannot advance collapse clock
+PASS first dependent collapses at source300ms; upper branch retains600ms deadline
+PASS second support depth collapses at600ms without refund
+PASS stack level0 placed through actual CandidateService
+PASS same slot rebuild consumes new charge and genuine fresh180hp id
+PASS stack level1 placed through actual CandidateService
+PASS second anchor sever accepted
+PASS stack level0 placed through actual CandidateService
+PASS reattached genuine anchor rescues pending branch before collapse
+PASS lost native world support schedules source delay
+PASS restored world contact rescues due structures
+PASS actual floor max140 from CandidateService
+PASS real140 floor lethal damage and no refund
+PASS invalid advance cannot mutate construction
+PASS source spread starts 12m/s descending glide
+PASS source height difference banks right
+PASS accepted collision stops flight at floor
+PASS unready hands cannot glide and use source gravity
+PASS climbing keeps sole root motion authority
+PASS one second fall plus forward enters source dive
+PASS authored horizontal pad publishes45m/s without invented upward bias
+PASS source pad keeps straight clearance at0.05 seconds
+PASS horizontal physical feedback preserves source launch at2
+PASS source pad keeps straight clearance at0.1 seconds
+PASS horizontal physical feedback preserves source launch at3
+PASS source pad keeps straight clearance at0.15 seconds
+PASS horizontal physical feedback preserves source launch at4
+PASS source pad keeps straight clearance at0.2 seconds
+PASS horizontal physical feedback preserves source launch at5
+PASS horizontal launch resumes actual gravity and air drag after source300ms
+Managed source mechanics checked; actual Unity engine/device execution remains separate.

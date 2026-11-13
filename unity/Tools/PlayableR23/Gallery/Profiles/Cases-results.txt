@@ -1,0 +1,21 @@
+PASS CX4 creates actual source owner
+PASS CX4 actual25-round automatic preview, no carried pool
+PASS CX4 grab held trigger blocked until neutral
+PASS CX4 fires actual native owner
+PASS CX4 automatic hold uses native interval
+PASS CX4 release retires private owner, regrab fresh source preview
+PASS PX4 switches actual private owner
+PASS PX4 finite private source1200 pistol reserve
+PASS PX4 native semi fires one round
+PASS PX4 held trigger cannot repeat
+PASS PX4 source below-fire-threshold release rearms without SPR-only .2 latch
+PASS PX4 full release rearms
+PASS PX4 real native eject stage
+PASS PX4 VR click cannot bypass physical magazine reload
+PASS PX4 actual offered magazine grip
+PASS PX4 upward insertion uses production geometry
+PASS PX4 real slide rack chambers, finite preview debits only fired rounds
+PASS focus invalidation cannot fire private preview
+PASS new profile hide cleans private live owner
+PASS new previews never mutate carried ammo or world targets
+PASS 20 actual CX4/PX4 private preview-owner cases

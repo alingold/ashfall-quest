@@ -1,0 +1,42 @@
+PASS world identity registration prevents duplicate item grant
+PASS map relocation changes only the existing available world source
+PASS source reserve collect equip transfers real instance once
+PASS map relocation refuses owned exact instances
+PASS repeated pickup cannot duplicate inventory
+PASS free other-hand cap opening uses source reach check
+PASS soda consumes once and schedules source50 point dose
+PASS map relocation cannot revive consumed sources or alter pending effects
+PASS consumed exact instance cannot apply duplicate effect
+PASS soda actual effect port receives50 shield over10 active seconds
+PASS shaker grip pickup and equip works
+PASS source shake distance reversals and1.3 charge rate reaches readiness
+PASS refused effect leaves the real owned item available
+PASS shaker applies actual instant50 shield through effect port
+PASS two weapon slots leave one source soda stack of at most2
+PASS drop returns exact instance to world without a duplicate
+PASS dropped instance can be picked up again
+PASS pause or tracking loss stows preparation without deleting inventory
+PASS untilted held soda cannot consume
+PASS new-round reset restores world starters without inventory or effect grants
+PASS explicit map lifecycle clears old world identities for caller-owned placement
+PASS real banana world instance collects and equips closed
+PASS banana cannot bypass four actual peels
+PASS free opposite-hand grip starts a real source peel
+PASS partial five-centimetre pull does not complete a peel
+PASS releasing grip cancels partial peel without inventing progress
+PASS occupied or untracked opposite hand cannot peel
+PASS source ten-centimetre peel 1 of4
+PASS source ten-centimetre peel 2 of4
+PASS source ten-centimetre peel 3 of4
+PASS source ten-centimetre peel 4 of4
+PASS four source peels expose ready fruit
+PASS banana actual effect port applies capped100 health and full stamina without drink tilt
+PASS eaten banana cannot apply duplicate heal or stamina refill
+PASS full-health player can consume banana for real missing stamina
+PASS full health and full stamina preserve prepared banana
+PASS over-half-metre peel movement cancels source gesture
+PASS bananas remain unstacked in the shared three-slot loadout
+PASS source quarter-shell grid retains22cm closed fruit length
+PASS fully peeled shell retains its anchored base and rolls tip downward
+PASS four partial source quarter-shells produce finite render vertices
+Tests use a real effect-port fixture, not runtime fake vitals. Native engine and headset not executed.

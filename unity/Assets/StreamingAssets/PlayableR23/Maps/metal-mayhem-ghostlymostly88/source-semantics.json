@@ -1,0 +1,530 @@
+{
+  "mapId": "archive:metal-mayhem-ghostlymostly88",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "38445692ae79198f71b4de70ba7c2a7dedc98bffc4b2f3782bfee2e8dabdb7ca",
+    "cache_fingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+    "warmup": [],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -31.75882,
+          -0.30929,
+          -5.93972
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          53.07681,
+          7.27726,
+          -144.80205
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          2.87322,
+          7.27726,
+          -144.80205
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          90.77574,
+          -0.30929,
+          0.8725
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          145.07951,
+          0.0229,
+          -70.232
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          132.57986,
+          0.0229,
+          -82.73098
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      }
+    ],
+    "health": [],
+    "marker_parts": [],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -31.21078,
+          0.06986,
+          -5.93972
+        ],
+        "min": [
+          -31.52026,
+          0.0334,
+          -6.28209
+        ],
+        "max": [
+          -30.9013,
+          0.10632,
+          -5.59734
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -31.7019,
+          0.06986,
+          -5.93972
+        ],
+        "min": [
+          -32.01138,
+          0.0334,
+          -6.28209
+        ],
+        "max": [
+          -31.39242,
+          0.10632,
+          -5.59734
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          53.07681,
+          7.65641,
+          -144.25401
+        ],
+        "min": [
+          52.73444,
+          7.61995,
+          -144.56349
+        ],
+        "max": [
+          53.41919,
+          7.69287,
+          -143.94453
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          53.07681,
+          7.65641,
+          -144.74513
+        ],
+        "min": [
+          52.73444,
+          7.61995,
+          -145.05461
+        ],
+        "max": [
+          53.41919,
+          7.69287,
+          -144.43565
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          2.87322,
+          7.65641,
+          -144.25401
+        ],
+        "min": [
+          2.53084,
+          7.61995,
+          -144.56349
+        ],
+        "max": [
+          3.21559,
+          7.69287,
+          -143.94453
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          2.87322,
+          7.65641,
+          -144.74513
+        ],
+        "min": [
+          2.53084,
+          7.61995,
+          -145.05461
+        ],
+        "max": [
+          3.21559,
+          7.69287,
+          -144.43565
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          91.32378,
+          0.06986,
+          0.8725
+        ],
+        "min": [
+          91.0143,
+          0.0334,
+          0.53013
+        ],
+        "max": [
+          91.63326,
+          0.10632,
+          1.21488
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          90.83266,
+          0.06986,
+          0.8725
+        ],
+        "min": [
+          90.52319,
+          0.0334,
+          0.53013
+        ],
+        "max": [
+          91.14214,
+          0.10632,
+          1.21488
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          144.81304,
+          0.40205,
+          -70.49847
+        ],
+        "min": [
+          144.47316,
+          0.36559,
+          -70.83836
+        ],
+        "max": [
+          145.15292,
+          0.43851,
+          -70.15859
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          145.16032,
+          0.40205,
+          -70.1512
+        ],
+        "min": [
+          144.82043,
+          0.36559,
+          -70.49109
+        ],
+        "max": [
+          145.5002,
+          0.43851,
+          -69.81132
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          132.31339,
+          0.40205,
+          -82.99745
+        ],
+        "min": [
+          131.97351,
+          0.36559,
+          -83.33733
+        ],
+        "max": [
+          132.65327,
+          0.43851,
+          -82.65757
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          132.66067,
+          0.40205,
+          -82.65018
+        ],
+        "min": [
+          132.32079,
+          0.36559,
+          -82.99007
+        ],
+        "max": [
+          133.00055,
+          0.43851,
+          -82.3103
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 167,
+      "warmup": 0,
+      "deathmatch": 0,
+      "jump": 6,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 0
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+    "sites": [
+      [
+        -59.63719940185547,
+        24.718997955322266,
+        -41.87909698486328
+      ],
+      [
+        -4.9572930335998535,
+        14.237918853759766,
+        3.6283993124961853
+      ],
+      [
+        -53.87076950073242,
+        24.718997955322266,
+        -41.78312683105469
+      ],
+      [
+        -53.87076950073242,
+        24.718997955322266,
+        -31.264629364013672
+      ],
+      [
+        -4.9572930335998535,
+        14.237918853759766,
+        -2.1651921570301056
+      ],
+      [
+        92.81216430664062,
+        30.96030044555664,
+        20.450376510620117
+      ],
+      [
+        100.114990234375,
+        43.90567970275879,
+        13.999401092529297
+      ],
+      [
+        73.63835144042969,
+        27.87542152404785,
+        2.1725015938282013
+      ],
+      [
+        108.51649475097656,
+        27.87542152404785,
+        -32.13962936401367
+      ],
+      [
+        102.89022064208984,
+        27.87542152404785,
+        -32.13962936401367
+      ],
+      [
+        114.1126708984375,
+        27.87542152404785,
+        -40.90325164794922
+      ]
+    ],
+    "marker_parts": [
+      {
+        "key": "p2a61c272",
+        "triangles": 72,
+        "center": [
+          -60.439693450927734,
+          24.718997955322266,
+          -41.87909698486328
+        ],
+        "min": [
+          -61.16774368286133,
+          24.70149803161621,
+          -43.6026725769043
+        ],
+        "max": [
+          -59.71164321899414,
+          24.73649787902832,
+          -40.155521392822266
+        ]
+      },
+      {
+        "key": "p2a61c272",
+        "triangles": 120,
+        "center": [
+          -58.909812927246094,
+          24.718997955322266,
+          -41.87909698486328
+        ],
+        "min": [
+          -59.71297073364258,
+          24.70149803161621,
+          -43.62067413330078
+        ],
+        "max": [
+          -58.10665512084961,
+          24.73649787902832,
+          -40.13751983642578
+        ]
+      }
+    ]
+  },
+  "metadataVolumes": [
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        -319.9960021972656,
+        -1.5649824142456055,
+        -322.0307312011719
+      ],
+      "boundsMax": [
+        376.9915466308594,
+        39.25522232055664,
+        316.9203186035156
+      ],
+      "triangles": 216
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:metal-mayhem-ghostlymostly88",
+    "title": "METAL MAYHEM",
+    "creator": "GhostlyMostly88",
+    "template": "MapEditorDefault",
+    "center": [
+      26.4180074924507,
+      13.9415381041507,
+      -12.5482821392299
+    ],
+    "recorded_spawns": [],
+    "bounds_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "bounds_max": [
+      300.0,
+      258.546325683594,
+      305.519653320313
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      258.546325683594,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/metal-mayhem-ghostlymostly88/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

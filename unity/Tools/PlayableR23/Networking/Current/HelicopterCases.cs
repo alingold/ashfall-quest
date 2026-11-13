@@ -1,0 +1,118 @@
+using System;
+using System.Reflection;
+using Ashfall.Core;
+using Ashfall.Modules.Networking;
+using Ashfall.Integration.Playable.Vehicles;
+using Ashfall.Integration.Playable.Networking;
+using Ashfall.Integration.Playable.Match;
+partial class LobbyCases
+{
+    static void HelicopterCases()
+    {
+        foreach(float dt in new[]{.02f,1f/72,1f/120,.1f}){
+            var m=new R25HelicopterDynamics();m.Reset(0);float time=0,y=.65f;
+            while(time+dt<1.49f){m.Step(dt,1,1,0,true,false,y,0,200);Need(m.Displacement.Equals(new Float3()),"No lift or lateral travel before spinup");time+=dt;}
+            for(int i=0;i<400;i++){m.Step(dt,1,1,0,true,false,y,0,200);y+=m.Displacement.Y;Need(Math.Sqrt(m.Velocity.X*m.Velocity.X+m.Velocity.Z*m.Velocity.Z)<=18.001,"18m/s lateral cap");Need(m.Velocity.Y<=6,"Climb rate cap (R5: no launch ceiling)");}
+            Need(m.Rotor==1&&m.Velocity.X>0&&m.Velocity.Z>0,"Rotor ready diagonal thrust");
+            for(int i=0;i<200;i++)m.Step(dt,0,0,0,false,false,40,0,200);
+            Need(Math.Abs(m.Velocity.X)<.001&&Near(m.Velocity.Y,-2,.001f),"Auto-hover lateral damping and gentle descent");
+            for(int i=0;i<150;i++)m.Step(dt,0,0,0,false,true,40,0,200);
+            Need(Near(m.Velocity.Y,-6,.001f),"Click fast descent");
+            m.Accept(new Float3(0,-6,0));m.Step(dt,0,0,0,false,true,.56f,0,200);Need(.56f+m.Displacement.Y>=.55f-.0001f,"Soft landing never penetrates ground");
+            m.Accept(new Float3(0,6,0));m.Step(dt,0,0,0,true,false,27.49f,0,30);Need(27.49f+m.Displacement.Y>27.5f,"R5 owner: no map-top height limit");Need(R25HelicopterDynamics.Ceiling(0,30)>=1000,"R5 owner: helicopter ceiling effectively removed");
+            var prior=m.Velocity;m.Step(float.NaN,0,0,0,false,false,20,0,100);Need(m.Velocity.Equals(prior)&&m.Displacement.Equals(new Float3()),"Invalid dt inert");
+            m.Step(dt,float.NaN,0,0,false,false,20,0,100);Need(m.Displacement.Equals(new Float3()),"Invalid stick inert");
+            m.Accept(new Float3(float.PositiveInfinity,0,0));Need(m.Velocity.Equals(new Float3()),"Invalid accepted motion cleared");
+        }
+        var hold=new R25BikeHold();for(int i=0;i<5;i++)Need(!hold.Step(R25HelicopterDynamics.CanExit(1,true,true,true,false,false,false),.1f,.6f),"Exit requires full .6s");
+        Need(hold.Step(true,.1f,.6f),"Sixth tenth exits");
+        Need(R25HelicopterDynamics.CanExit(15,true,true,true,true,true,false)&&!R25HelicopterDynamics.CanExit(float.NaN,true,true,true,false,false,false)&&!R25HelicopterDynamics.CanExit(1,true,false,true,false,false,false)&&!R25HelicopterDynamics.CanExit(1,true,true,true,false,false,true),"Airborne exit permits climb/click; weapon and menu prevent dismount");
+        HelicopterAnalytic();HelicopterAuthority();HelicopterAirExit();
+    }
+    static void HelicopterAirExit()
+    {
+        foreach(int variant in new[]{0,1,2,3})using(var pair=new Pair()){
+            pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleHelicopterClear=delegate(Float3 p){return true;};pair.Host.BindSupplyDropWorld(new DropWorld());
+            string hash=new string('b',64);StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0),hash);
+            var row=HelicopterRow(pair.Host);
+            for(int i=1;i<=20;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),row.Rest.X*i/20,0,row.Rest.Z*i/20));pair.Tick();}
+            pair.Client.RequestVehicleMount(row.Id,1);pair.Tick();pair.Tick();
+            for(int i=0;i<=60;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),row.Rest.X,i*.25f,row.Rest.Z));pair.Tick();}
+            pair.Tick();pair.Tick();
+            row=HelicopterRow(pair.Host);
+            var root=(Float3)typeof(R24LanLobby).GetMethod("VehicleRoot",BindingFlags.NonPublic|BindingFlags.Instance).Invoke(pair.Host,new object[]{row});
+            Need(root.Y>14,"Air-exit fixture has accepted 15m rider track");
+            typeof(R24LanLobby).GetField("rawWorldClear",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(pair.Host,new Func<Float3,Float3,bool>(delegate(Float3 a,Float3 b){return variant!=2&&b.Y>=0;}));
+            var rest=new Float3(root.X+(variant==1?1:0),variant==3?5:.65f,root.Z);
+            Need(pair.Client.RequestVehicleDismount(row.Id,rest,0),"Airborne dismount queues");pair.Tick();pair.Tick();
+            row=HelicopterRow(pair.Host);
+            Need(row.Rider==""&&(variant==0?Near(row.Rest.Y,.65f,.001f):row.Rest.Equals(root)),"Host accepts supported vertical rest only, case "+variant+" rest="+row.Rest.X+","+row.Rest.Y+","+row.Rest.Z+" root="+root.X+","+root.Y+","+root.Z+" rider="+row.Rider);
+            if(variant==0)Need(Near(HelicopterRow(pair.Client).Rest.Y,.65f,.001f),"Ground rest replicated to client");
+        }
+    }
+    static void HelicopterAnalytic()
+    {
+        foreach(bool ceiling in new[]{false,true}){
+            Float3 motion=ceiling?new Float3(0,5,0):new Float3(8,0,0);
+            Func<Float3,Float3,bool> clear=delegate(Float3 c,Float3 h){return ceiling?c.Y+h.Y<=4.01f:c.X+h.X<=5.01f;};
+            Func<Float3,Float3,Float3,float> cast=delegate(Float3 c,Float3 h,Float3 d){return ceiling?Math.Min(1,(4-c.Y-h.Y)/d.Y):Math.Min(1,(5-c.X-h.X)/d.X);};
+            var accepted=R25HelicopterClearance.Sweep(new Float3(),0,motion,clear,cast);
+            Need(ceiling?Near(accepted.Y,1.6f,.001f):Near(accepted.X,1.6f,.001f),"Rotor disc stops at ceiling or wall before airframe");
+        }
+        var blocked=R25HelicopterClearance.Sweep(new Float3(),0,new Float3(1,0,0),delegate(Float3 c,Float3 h){return c.Y+h.Y<2;},delegate(Float3 c,Float3 h,Float3 d){return 1;});
+        Need(blocked.Equals(new Float3()),"Rotor starting under overlapping overhang refuses motion");
+        var endpoint=R25HelicopterClearance.Sweep(new Float3(),0,new Float3(4,0,0),delegate(Float3 c,Float3 h){return c.X<1;},delegate(Float3 c,Float3 h,Float3 d){return 1;});
+        Need(endpoint.Equals(new Float3()),"Disagreeing cast blocked by endpoint check");
+    }
+    static R25VehicleState HelicopterRow(R24LanLobby lobby)
+    {foreach(var row in lobby.Vehicles)if(row.Kind=="helicopter")return row;return null;}
+    static void HelicopterAuthority()
+    {
+        using(var pair=new Pair()){
+            pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleHelicopterClear=delegate(Float3 p){return true;};pair.Host.VehicleMapTop=delegate{return 200;};pair.Host.BindSupplyDropWorld(new DropWorld());
+            string hash=new string('b',64);StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0),hash);
+            var row=HelicopterRow(pair.Host);Need(row!=null&&row.Health==600&&HelicopterRow(pair.Client)!=null&&pair.Client.SelectedMap.Rules.Helicopters,"Kind/health/default rule replicated");
+            for(int i=1;i<=20;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),row.Rest.X*i/20,0,row.Rest.Z*i/20));pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),8,0,0));pair.Tick();}
+            Need(pair.Client.RequestVehicleMount(row.Id,1),"Helicopter mount command queues");
+            for(int i=0;i<4;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),row.Rest.X,0,row.Rest.Z));pair.Tick();}
+            row=HelicopterRow(pair.Host);Need(row.Rider==pair.Client.OwnActor,"Host accepts tracked custodian");Need(!pair.Host.RequestVehicleMount(row.Id,1)&&!pair.Host.RequestTankFire(row.Id),"Second rider and helicopter gun refused");
+            var track=typeof(R24LanLobby).GetMethod("VehicleTrackAllowed",BindingFlags.NonPublic|BindingFlags.Instance);
+            // R5 owner: no practical height limit; the host still bounds absurd heights.
+            Need((bool)track.Invoke(pair.Host,new object[]{row.Rider,new Float3(row.Home.X,500,row.Home.Z)})&&!(bool)track.Invoke(pair.Host,new object[]{row.Rider,new Float3(row.Home.X,row.Home.Y+2100,row.Home.Z)}),"Custody ceiling allows high flight but bounds absurd heights");
+            // R5 lobby-v18: the helicopter machine gun travels on vehicle.fire/1 mode 3.
+            int gunBefore=pair.Host.AcceptedVehicleGunShots;
+            Need(pair.Client.RequestVehicleGun(row.Id,new Float3(row.Rest.X,1.5f,row.Rest.Z+.5f),new Float3(0,0,1)),"Client queues a helicopter gun shot");
+            pair.Tick();pair.Tick();
+            Need(pair.Host.AcceptedVehicleGunShots==gunBefore+1,"Host accepts the custodian's helicopter gun shot ("+pair.Host.LastVehicleGunRejection+")");
+            Need(!pair.Host.RequestVehicleGun(row.Id,new Float3(row.Rest.X,1.5f,row.Rest.Z),new Float3(0,0,1)),"Non-rider helicopter gun refused");
+            Need(!pair.Client.RequestVehicleGun(row.Id,new Float3(float.NaN,0,0),new Float3(0,0,1)),"Non-finite gun ray refused before sending");
+            Need(!pair.Client.PublishRawTracking(null),"Malformed tracking refused");
+            pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),row.Rest.X,85,row.Rest.Z));pair.Tick();pair.Tick();Need(pair.Host.LastRawTrackingRejection!="vehicle-ceiling","R5 owner: real host track no longer applies the old 80 m aircraft ceiling");
+            pair.Host.VehicleHelicopterSweep=delegate(Float3 p,float yaw,Float3 d){return new Float3();};
+            float x=row.Rest.X;
+            for(int i=0;i<3;i++){x+=.4f;pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),x,0,row.Rest.Z));pair.Tick();}
+            row=HelicopterRow(pair.Host);Need(row.Health<600&&row.Health>0,"Host accepted-track hard contact damages airframe");float initial=row.Health;
+            int rejected=pair.Host.RejectedFrames;
+            pair.HostPipe.Inbox.Enqueue(new Frame{Peer="client",Bytes=Wire.Encode(new Packet{Protocol=Protocol.Name,Schema=Protocol.Schema,Kind=PacketKind.Command,FeatureId="playable.vehicle.mount/1",ActorId=pair.Client.OwnActor,SessionId=pair.Host.SessionId,ContentHash=new string('a',64),Epoch=pair.Host.Epoch,Sequence=999,BaseSequence=-1,Payload=new byte[]{255}})});pair.Tick();
+            Need(pair.Host.RejectedFrames==rejected&&pair.Client.State==R24LanLobbyState.Connected,"Malformed helicopter command ignored without peer rejection");
+            pair.Host.DamageVehicle(row.Id,100,true);Need(HelicopterRow(pair.Host).Health==initial-100,"Firearms full damage");pair.Host.DamageVehicle(row.Id,100);Need(HelicopterRow(pair.Host).Health==initial-200,"Explosives full damage");
+            pair.Host.DamageVehicle(row.Id,float.NaN);Need(HelicopterRow(pair.Host).Health==initial-200,"Malformed damage ignored");
+            pair.Host.DamageVehicle(row.Id,500);row=HelicopterRow(pair.Host);Need(row.Destroyed&&row.Rider==""&&row.RespawnAt>pair.Now,"Airframe destruction ejects");
+            var pipe=new Pipe();var late=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));pipe.Lost=late.TransportDisconnected;
+            pair.HostPipe.Links.Add("heli-late",new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=pair.HostPipe,Back="heli-late"});late.StartClient("server","HeliLate",pair.Now);pair.Host.TransportConnected("heli-late");
+            try{for(int i=0;i<12;i++){pair.Tick();late.Tick(pair.Now);}Need(HelicopterRow(late)!=null&&HelicopterRow(late).Destroyed,"Late join replays destroyed helicopter");}finally{late.Dispose();pipe.Dispose();}
+            pair.Now=row.RespawnAt+.01;pair.Tick();row=HelicopterRow(pair.Host);Need(row.Health==600&&row.Rest.Equals(row.Home),"20s respawn preserves helicopter kind");
+            Need(pair.Host.BeginRoundSelection(R24PlayableMatchRules.ForPreset("free_for_all","range").With("helicopters",false),hash,321),"Round reset");for(int i=0;i<6;i++)pair.Tick();Need(HelicopterRow(pair.Host)==null&&HelicopterRow(pair.Client)==null,"Round reset and rule off clear aircraft");
+        }
+        foreach(bool roof in new[]{false,true})using(var pair=new Pair()){
+            pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleHelicopterClear=delegate(Float3 p){return true;};pair.Host.BindSupplyDropWorld(new DropWorld());
+            StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("helicopters",false),new string('b',64));
+            Need(HelicopterRow(pair.Host)==null,"Rule off prevents spawn");
+            typeof(R24LanLobby).GetField("rawWorldClear",BindingFlags.NonPublic|BindingFlags.Instance).SetValue(pair.Host,new Func<Float3,Float3,bool>(delegate(Float3 a,Float3 b){return !roof||b.Y-a.Y<29;}));
+            // Swap only the host's replicated rules by starting the next round. StartRound would rebind the world.
+            pair.Host.BeginRoundSelection(R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false),new string('b',64),322);
+            pair.Host.ReportMapLoaded(new string('b',64));for(int i=0;i<3;i++)pair.Tick();pair.Client.ReportMapLoaded(new string('b',64));for(int i=0;i<4;i++)pair.Tick();pair.Now=pair.Host.SelectedMap.StartsAt+.1;for(int i=0;i<4;i++)pair.Tick();
+            Need(roof?HelicopterRow(pair.Host)==null:HelicopterRow(pair.Host)!=null,"Host 30m upward world ray gates open sky");
+        }
+    }
+}

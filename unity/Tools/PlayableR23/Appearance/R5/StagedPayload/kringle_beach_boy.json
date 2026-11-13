@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "kringle_beach_boy",
+  "label": "Kringle (Beach Boy)",
+  "sourceIndex": 20,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-e028bd1e6201856bfbca1703.png",
+      "normal": "r5-normal-51d04da55337e8bc26732562.png",
+      "metallicMap": "r5-metallic-af409a577a8c5b5607f1b891.png",
+      "occlusion": "r5-occlusion-8012e063c39339f2321c70a5.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-b8ad6abdd7f0a56e29b358d2.png",
+      "normal": "r5-normal-9aa92e3a5838d0fbc770aef6.png",
+      "metallicMap": "r5-metallic-0817409efde33182a84c308b.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

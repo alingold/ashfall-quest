@@ -1,0 +1,5 @@
+# Immutable settings publication
+
+PlayerSettingsPublication owns the committed effective profile. It captures exact source walk=1, slow=7.5f/6.5f and fast=9.5f/6.5f outputs, forward-reference enum and supported stamina/recovery durations into sealed PlayerSettingsSnapshot before publication. Locomotion currently requests only these three tiers. Later caller mutations cannot alter the published capability or consume a publication revision. New settings require the existing authority/revision gate and disarm boundary. A new source tier requires an explicit versioned owner change; unsupported values reject.
+
+Capture validates finite gain0..100, stamina2..20 and recovery1..20. It does not grant authority, attest content, prove physical tracking, or make arbitrary caller callbacks pure. Existing host-lane/pure-port requirements still apply. Snapshot construction and all fallible validation precede the commit assignments. This additive source requires normal central build-graph inclusion; no asmdef/project proposal is applied by this contract.

@@ -1,0 +1,48 @@
+{
+  "contentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "inputs": [
+    {
+      "path": "scripts/explosive_effect.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\explosive_effect.gd",
+      "sha256": "f056a6f680bee60535dd992789a5f2b5a2f78a4d2b01f380ba226d270dc56f4a"
+    },
+    {
+      "path": "scripts/explosive_projectile.gd",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\scripts\\explosive_projectile.gd",
+      "sha256": "a1b90bc9c398584ea39dae74617dbbc53e50f353897e8e8b5d7a910555985191"
+    },
+    {
+      "path": "assets/models/download_frag_alt/model.glb",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\models\\download_frag_alt\\model.glb",
+      "sha256": "18b346eb034c7bed624de14d0cfca6655a943a5ee90f530c00e67ed3a115918c"
+    },
+    {
+      "path": "assets/models/download_frag/model.glb",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\models\\download_frag\\model.glb",
+      "sha256": "3656f72288d34ccf0857f98641203807ad014cb86a7a00b8f1babb78b1af5ede"
+    },
+    {
+      "path": "assets/audio/reference099/isolated_grenade_throw_00.wav",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\reference099\\isolated_grenade_throw_00.wav",
+      "sha256": "02fb9af54810080bcc36953ef806d6771ed452b500aff8b165096f864b751249"
+    },
+    {
+      "path": "assets/audio/reference099/isolated_frag_blast_00.wav",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\reference099\\isolated_frag_blast_00.wav",
+      "sha256": "efb7467b2289ee8cf94b7bc5c230312985b11344047bfacc3400a1df08ba7c4b"
+    },
+    {
+      "path": "assets/audio/reference099/isolated_zone_bloom_00.wav",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\reference099\\isolated_zone_bloom_00.wav",
+      "sha256": "e967392c8c6d14cac8c57163ca26abec0bdc4b9f74c01bf652cfc52545aeb90d"
+    },
+    {
+      "path": "assets/audio/sfx/zone_arm_00.wav",
+      "resolved": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\sfx\\zone_arm_00.wav",
+      "sha256": "1c83f87e97f8cab1869a441150736a70c55538be84f82312eb0b5d005c1e22d9"
+    }
+  ],
+  "cpu": "PASS 7915 source blast/zone geometry-motion cases. Shader render/engine not run.",
+  "engineRun": false,
+  "shaderRenderRun": false
+}

@@ -1,0 +1,2 @@
+from pathlib import Path
+p=Path(r'C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Player\Engine\UnityPlayerDriver.cs');s=p.read_text().replace('if(sourceChanged)locomotion.ResetMotion();','if(sourceChanged||(UseXr&&(XrLifecycle==null||!XrLifecycle.SessionFocused||!XrLifecycle.Present)))locomotion.ResetMotion();').replace('if(!result.Complete) {InteractionsAllowed=false;input.Disarm();}','if(!result.Complete) {InteractionsAllowed=false;input.Disarm();frames.Invalidate();}');p.write_text(s)

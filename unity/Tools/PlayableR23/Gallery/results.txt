@@ -1,0 +1,18 @@
+PASS source full-size gallery dock is1.1m ahead/.16below with reflected source90-degree yaw
+PASS source upright gallery preserves view pitch and removes roll
+PASS source near-grip and two-metre remote-facing gallery reach limits
+PASS tracking, hand reservation and focus gate preview grab
+PASS gallery097 creates independent live source MK18 with preview-only unlimited reserve
+PASS new gallery live instance requires trigger release before firing
+PASS gallery preview fires through actual native weapon owner
+PASS MK18 inspection preserves committed three-round source burst
+PASS same viewed ID/status refresh cannot refill live preview
+PASS gallery unlimited source reserve still uses real eject/insert/charge mechanics
+PASS blocked gallery cannot shoot or consume preview magazine
+PASS release retires live097; next grab creates fresh private instance, not carried refill
+PASS gallery AKM uses source automatic20-round magazine and dry/empty state
+PASS AKM preview-only reload does not need or touch carried rifle pool
+PASS gallery SPR holds semi-auto latch through held and intermediate trigger travel
+PASS source SPR preview rearms after full release
+PASS hidden gallery owns no live firing state
+PASS gallery firing/reloading/releasing changes no carried ammunition, reserve or world target health

@@ -1,0 +1,41 @@
+{
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/square_zone_r3.gd": "6c9e5888e0db26e0b3eccc74bd39ef059418b966c052579538c76fc9ac3c3da2",
+    "scripts/zone_surface_r6.gd": "fe3baa9d09f034f35bca159deede2446fdc659a2d14db3344d98cad4ccf53785",
+    "scripts/zone_outline_r3.gd": "0636a9b2afe84f0b54c0d86c642c9e74e6a5f9ec6d4ef605bd94fdfd0151b3fd",
+    "scripts/zone_danger_r5.gd": "da61e65cd30a6c0a4507cf435c0da6d0c75c7401bd15344263569dad69de544d",
+    "scripts/net_session1000.gd": "e34befa058704bb21f85f61f073e27d464689ee1179b5f9c058fe0c7b3d0d8b0",
+    "scripts/net_rules1000.gd": "9451f2668169dbc67763f9717d29dcf87af0ffeaddf3cc9e0afed6ecab87b7cc",
+    "scripts/map_catalog1000.gd": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5",
+    "assets/cyber_bird/zone_r6/surface.gdshader": "40a8739d8b221b50442c93ff5b40fe92add5c7ab4f838311d871f2e82ca8429f",
+    "assets/cyber_bird/zone_r5/danger.gdshader": "14765a24df1cbf8f93035f031fb45c0e3d5460740c788533341575c78cf08352",
+    "assets/cyber_bird/zone_r5/danger_zone_loop.wav": "3ad93fd0711159cebd2aa5b454acd7901450852be04e4c48402312efdf7fa4d1",
+    "assets/cyber_bird/zone_r5/LICENSE.txt": "14c52bd8bc2239b3ec000ffebc1baa31d040bd9389f8d62dca1efea6eaeb4bfc",
+    "assets/cyber_bird/zone_r5/AUDIO-PROVENANCE.json": "b4dfe94efd0895252767c94e3287a79535d8752e641848c8a121fb7da927e03c"
+  },
+  "audio": {
+    "channels": 1,
+    "rate": 24000,
+    "frames": 192000,
+    "bits": 16,
+    "pcmSha256": "06fb374dd8ce48e0554527de544a6b67e1d49179dcebfc05f1afd377e6fac17b"
+  },
+  "coordinates": "State is Godot map-local X/Z; Unity map-root inverse followed by Z reflection exactly once. Original Godot catalog origin affects crosshatch phase, not local square containment.",
+  "rules": {
+    "ratio": 0.65,
+    "minSize": 12,
+    "initialMinimumBase": 52,
+    "edgeClearance": 1,
+    "damageCadence": 0.1,
+    "directHealth": true,
+    "ignoreGenericDamageMultiplier": true,
+    "currentSurfaceHalfWidth": 0.6,
+    "nextSurfaceTotalWidth": 0.3048
+  },
+  "limits": [
+    "Source RNG uniform samples are host-supplied; Godot PCG bit-sequence is not recreated.",
+    "Graphics overlay draws actual visible MeshFilter meshes; non-mesh particle/skinned renderers are not collected. Map/construction physics and materials remain caller-owned.",
+    "Unity shader import/rendering, HDR/tonemapping, spatial-audio rolloff/panning and Quest behavior remain native-unverified."
+  ]
+}

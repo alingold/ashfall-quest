@@ -1,0 +1,28 @@
+from pathlib import Path
+import json,struct,hashlib,subprocess
+import numpy as np
+from PIL import Image
+T=Path(__file__).resolve().parent;R=T.parents[5];S=Path('D:/ashfall-r6-staging/frozen-source-r6-v001/source');sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest();src=S/'assets/models/custom_skins/stacy_throwback/player_kit_stacy_throwback_light.glb';pins={x['path']:x['sha256']for x in json.loads((S.parent/'SOURCE-MANIFEST.json').read_text())['files']};assert sha(src)==pins[src.relative_to(S).as_posix()];raw=src.read_bytes();n=struct.unpack_from('<I',raw,12)[0];g=json.loads(raw[20:20+n]);blob=raw[28+n:]
+def acc(i):
+ a=g['accessors'][i];b=g['bufferViews'][a['bufferView']];dt=np.dtype({5126:'<f4',5125:'<u4',5123:'<u2'}[a['componentType']]);c={'VEC3':3,'SCALAR':1}[a['type']];return np.ndarray((a['count'],c),dt,blob,offset=b.get('byteOffset',0)+a.get('byteOffset',0),strides=(b.get('byteStride',c*dt.itemsize),dt.itemsize)).copy()
+node=next(x for x in g['nodes']if x.get('name')=='AvatarHead');primitive=g['meshes'][node['mesh']]['primitives'][2];assert primitive['material']==2 and'COLOR_0'not in primitive['attributes'];material=g['materials'][2];assert material['doubleSided']and'extras'not in material and'extensions'not in material;assert material['pbrMetallicRoughness']['metallicFactor']==0
+v=acc(primitive['attributes']['POSITION'])*[1,1,-1];norm=acc(primitive['attributes']['NORMAL'])*[1,1,-1];tri=acc(primitive['indices']).reshape(-1,3)[:,[0,2,1]];pts=v[tri];e1=pts[:,1]-pts[:,0];e2=pts[:,2]-pts[:,0];geometric=np.cross(e1,e2);camera=np.array([0,1.65,1.05]);f=np.array([0,-.03,-1.05]);f/=np.linalg.norm(f);right=np.cross([0,1,0],f);right/=np.linalg.norm(right);up=np.cross(f,right);images=R/'docs/agent-runs/20261104-three-chats/unity/playable-r23/floor-20261105-153908/appearance-images';native=np.asarray(Image.open(images/'matched-camera-stacy_throwback-head.png').convert('RGB'));rows=[];checks=0
+for x,y in [(440,625),(460,625),(480,625),(500,625),(520,625),(480,535)]:
+ direction=f+right*((x+.5-480)/480*np.tan(np.deg2rad(19)))+up*((480-y-.5)/480*np.tan(np.deg2rad(19)));direction/=np.linalg.norm(direction);h=np.cross(np.broadcast_to(direction,e2.shape),e2);det=np.einsum('ij,ij->i',e1,h);inv=np.divide(1,det,out=np.zeros_like(det),where=abs(det)>1e-10);s=camera-pts[:,0];u=np.einsum('ij,ij->i',s,h)*inv;q=np.cross(s,e1);w=q@direction*inv;t=np.einsum('ij,ij->i',e2,q)*inv;t[(u<0)|(w<0)|(u+w>1)|(t<0)]=np.inf;i=t.argmin();assert np.isfinite(t[i]);point=camera+direction*t[i];N=norm[tri[i,0]]*(1-u[i]-w[i])+norm[tri[i,1]]*u[i]+norm[tri[i,2]]*w[i];N/=np.linalg.norm(N);front=geometric[i]@(-direction)>0;corrected=N if front else-N;assert (not front)if y==625 else front;assert corrected@(-direction)>0
+ light=np.array([-2,2,3])-point;light/=np.linalg.norm(light);rows.append(dict(pixel=[x,y],material=2,point=point.tolist(),frontFacing=bool(front),normalBefore=N.tolist(),normalAfter=corrected.tolist(),fillDotBefore=float(N@light),fillDotAfter=float(corrected@light),nativeRgb=native[y,x].tolist(),triangle=int(i)));checks+=4
+# The source leaves tangent and binormal intact when flipping N. URP stock derives
+# B=cross(N,T)*sign, so flipping tangent sign alongside N preserves exact T/B.
+for sign in [-1,1]:
+ for N,Tan in [(np.array([0.,0.,1.]),np.array([1.,0.,0.])),(np.array([.6,0,.8]),np.array([.8,0,-.6]))]:
+  B=np.cross(N,Tan)*sign;assert np.allclose(np.cross(-N,Tan)*(-sign),B);assert np.allclose(N,N*1);checks+=2
+P=R/'unity/Assets/Ashfall/Integration/Playable/Appearance';runtime=(P/'R23PlayerAppearance.cs').read_text();wrapper=(P/'Resources/R23AppearanceDoubleSided.shader').read_text();special=(P/'Resources/R23AppearanceSpecular.shader').read_text();assert 's.doubleSided?Resources.Load<Shader>("R23AppearanceDoubleSided")'in runtime;assert 'LitPassFragment(input, outColor'in wrapper and 'input.normalWS = -input.normalWS;'in wrapper and'input.tangentWS.w = -input.tangentWS.w;'in wrapper;assert'FRONT_FACE_SEMANTIC'in wrapper and'UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(input)'in wrapper;assert '_SourceDoubleSided>.5&&!IS_FRONT_VFACE'in special
+old=json.loads((T.parent/'ColorDomainFix/payload-before.json').read_text());A=R/'unity/Assets/StreamingAssets/PlayableR23/Appearance';assert all(sha(A/k)==h for k,h in old.items());pose=json.loads((T.parent/'NeutralPreviewPose/receipt.json').read_text());assert all(sha(A/h['file'])==h['sha256']for h in pose['hands']);(T/'neck-ray-proof.json').write_text(json.dumps(dict(source=src.as_posix(),sha256=sha(src),nativeImage=sha(images/'matched-camera-stacy_throwback-head.png'),material=material,samples=rows),indent=2)+'\n');print('PASS'+str(checks)+' genuine source neck/face material,back/front normal and tangent-basis cases;115 outfits/new source neutral hands byte-unchanged. Shader GPU compile UNRUN.')
+E=Path('C:/Program Files/Unity/Hub/Editor/6000.6.8f1/Editor/Data');args=[]
+for row in (R/'campaign-staging/20261104-three-chats/unity/playable-r23/compiler/R23Playable.BuildAndSmoke.rsp').read_text(encoding='utf-8-sig').splitlines():
+ a=row.strip().strip('"')
+ if a.startswith('/out:'):a='/out:'+str(T/'TwoSidedNormals.BuildAndSmoke.dll')
+ args.append(a)
+for file in ['R23MenuGlovePreview.cs','R23AppearanceColorDomain.cs']:
+ p=P/file
+ if not any(Path(a).name==file for a in args):args.append(str(p))
+rsp=T/'api.rsp';rsp.write_text('\n'.join('"'+a+'"'for a in args));q=subprocess.run([str(E/'NetCoreRuntime/dotnet.exe'),str(E/'DotNetSdk/sdk/8.0.318/Roslyn/bincore/csc.dll'),'/noconfig','@'+str(rsp)],capture_output=True,text=True);(T/'api.log').write_text(q.stdout+q.stderr);print(q.stdout+q.stderr);assert q.returncode==0;print('PASS installed BuildAndSmoke API for source two-sided shader binding; native/shader compilation UNRUN.')

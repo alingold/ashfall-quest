@@ -1,0 +1,307 @@
+{
+  "mapId": "archive:afterlife-gods-alamo-hank",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+    "cache_fingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+    "warmup": [
+      {
+        "center": [
+          -507.55655,
+          417.80032,
+          316.42882
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0.70712,
+          0,
+          -0.7071
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -507.09586,
+          417.80273,
+          315.96814
+        ],
+        "min": [
+          -507.44214,
+          417.77878,
+          315.62186
+        ],
+        "max": [
+          -506.74957,
+          417.82669,
+          316.31442
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -507.55655,
+          417.80032,
+          316.42882
+        ],
+        "min": [
+          -508.14676,
+          417.77878,
+          315.83859
+        ],
+        "max": [
+          -506.96634,
+          417.82187,
+          317.01904
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -508.40192,
+          417.85065,
+          317.11197
+        ],
+        "min": [
+          -508.7482,
+          417.82669,
+          316.76569
+        ],
+        "max": [
+          -508.05563,
+          417.8746,
+          317.45825
+        ]
+      }
+    ],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 143,
+      "warmup": 1,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 3
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        4.685426712036133,
+        75.48843383789062,
+        -8.850977897644043
+      ],
+      "boundsMax": [
+        9.846653938293457,
+        85.48843383789062,
+        -0.11021902412176132
+      ],
+      "triangles": 12
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -41.49127197265625,
+        39.99854278564453,
+        -58.46179962158203
+      ],
+      "boundsMax": [
+        54.199554443359375,
+        50.974998474121094,
+        48.89283752441406
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:afterlife-gods-alamo-hank",
+    "title": "AFTERLIFE",
+    "creator": "GODS_ALAMO_HANK",
+    "template": "MapEditorSnow",
+    "center": [
+      17.3228117865595,
+      94.5861201479235,
+      -4.15747524774995
+    ],
+    "recorded_spawns": [
+      [
+        -311.41,
+        124.38,
+        -339.14
+      ],
+      [
+        -310.24,
+        124.38,
+        -339.14
+      ],
+      [
+        -309.06,
+        124.38,
+        -339.14
+      ],
+      [
+        -307.88,
+        124.38,
+        -337.41
+      ],
+      [
+        -306.71,
+        124.38,
+        -337.41
+      ],
+      [
+        -307.88,
+        124.38,
+        -341.14
+      ],
+      [
+        -306.71,
+        124.38,
+        -341.14
+      ],
+      [
+        -309.06,
+        124.38,
+        -341.14
+      ],
+      [
+        -310.24,
+        124.38,
+        -341.14
+      ],
+      [
+        -311.41,
+        124.38,
+        -341.14
+      ],
+      [
+        -307.88,
+        124.38,
+        -339.14
+      ],
+      [
+        -306.71,
+        124.38,
+        -339.14
+      ],
+      [
+        233.71,
+        123.19,
+        332.78
+      ],
+      [
+        232.69,
+        123.19,
+        333.37
+      ],
+      [
+        231.67,
+        123.19,
+        333.96
+      ],
+      [
+        230.65,
+        123.19,
+        334.55
+      ],
+      [
+        229.63,
+        123.19,
+        335.13
+      ],
+      [
+        228.61,
+        123.19,
+        335.72
+      ],
+      [
+        229.63,
+        123.19,
+        337.3
+      ],
+      [
+        228.61,
+        123.19,
+        337.88
+      ],
+      [
+        230.65,
+        123.19,
+        336.71
+      ],
+      [
+        231.67,
+        123.19,
+        336.12
+      ],
+      [
+        232.69,
+        123.19,
+        335.53
+      ],
+      [
+        233.71,
+        123.19,
+        334.94
+      ]
+    ],
+    "bounds_min": [
+      -441.364685058594,
+      8.77613735198975,
+      -504.784484863281
+    ],
+    "bounds_max": [
+      454.072937011719,
+      77.8579559326172,
+      495.215515136719
+    ],
+    "solid_min": [
+      -620.695922851563,
+      -145.141662597656,
+      -662.944396972656
+    ],
+    "solid_max": [
+      729.420043945313,
+      519.500061035156,
+      684.678894042969
+    ],
+    "source": "https://maps.deliciouswines.org/maps/afterlife-gods-alamo-hank/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

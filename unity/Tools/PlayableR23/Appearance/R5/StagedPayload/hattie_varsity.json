@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "hattie_varsity",
+  "label": "Hattie (Varsity)",
+  "sourceIndex": 28,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-e25b341b02cbd67cc9dd9114.png",
+      "normal": "r5-normal-bb65d305008ea3d66a74e6fc.png",
+      "metallicMap": "r5-metallic-9e0813dd0358d70adfae4949.png",
+      "occlusion": "r5-occlusion-390c8b25757e43f54e22343b.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-fe9c61223d70796587133e88.png",
+      "normal": "r5-normal-cf0a468c0f716cbcdb96f35e.png",
+      "metallicMap": "r5-metallic-3b1b1fab67c1adc8de515cd4.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

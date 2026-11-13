@@ -1,0 +1,118 @@
+{
+  "base_checkpoint": "1d2e2d8b8acc42b30aed54128ce41f2eded367f2",
+  "branch": "standalone/r8-imported-map-gameplay",
+  "groups": {
+    "map_adapters": [
+      {
+        "path": "scripts/archive_semantics_r8.gd",
+        "sha256": "d488cab8d6f579ea2e1df4dee9c26b2fb4ff76c914ec01be3ecb6ec7fa1fc823"
+      },
+      {
+        "path": "scripts/archive_prepared_r8.gd",
+        "sha256": "476757e6b036c64a202d3a49db7a4ca6923cee2aa8598e737adfd7ac48f62bca"
+      },
+      {
+        "path": "scripts/archive_gameplay_r8.gd",
+        "sha256": "083548daff00cbcc2f4e121b3f4503357642c0ed96024187fc80b1899bd2fa74"
+      },
+      {
+        "path": "scripts/archive_panel_r8.gd",
+        "sha256": "bf59a9152ff00a8767ae54e82dfc17fffcc9ec19940b46d965183647d2b3feba"
+      },
+      {
+        "path": "scripts/archive_overview_r8.gd",
+        "sha256": "b071382eff2c42424afafc612e3ec6a43e33689c8c23fb4c7f420253e30dd4b0"
+      },
+      {
+        "path": "scripts/archive_map1003.gd",
+        "sha256": "66d1a8ffe8530b24d45992bceb3adce83527fbe91c5cf950025fb97716ae0512"
+      },
+      {
+        "path": "scripts/archive_materials1004.gd",
+        "sha256": "23632aa15bc21772ed934e004f1dda6adcd7dab16d079ec632b50cd6ce081a57"
+      },
+      {
+        "path": "scripts/archive_catalog1003.gd",
+        "sha256": "0deb7d2eb6f345e160d5e8c1d5b6e5f31daf0c034b2cf463fb6fc1e9756542d2"
+      },
+      {
+        "path": "assets/data/archive_adapters_r8.json",
+        "sha256": "728c99a4134dcc01fa962ac6daa733b4cbea50544c9d6329abe7328d1fd6fc83"
+      }
+    ],
+    "spawn_network": [
+      {
+        "path": "scripts/net_bridge1000.gd",
+        "sha256": "fe08ace360a08a822c02eae3de46e0ec89ed309cb1c046e72068e750524e1648"
+      },
+      {
+        "path": "scripts/net_session1000.gd",
+        "sha256": "c5d6a0f801a1b637e7ff8800f265b51a4512673fa3f00e60a068561ef9e5b047"
+      },
+      {
+        "path": "scripts/weapon_inventory.gd",
+        "sha256": "0632bca6cbe67208c846f0a78a501978332f16e1a269ea0b0d91a94ba202183e"
+      }
+    ],
+    "skin_selector": [
+      {
+        "path": "scripts/gemini_player_models_099.gd",
+        "sha256": "74f6fdf72995f453252b9cf694cf96a43d6cdbb0f070fa6a012d9f905434b518"
+      },
+      {
+        "path": "scripts/lobby_gallery_091.gd",
+        "sha256": "17d282e34d5ddf73b539c6d2b391aad79614e32c15d97c0813afe0944629e48d"
+      },
+      {
+        "path": "scripts/front_menu1000.gd",
+        "sha256": "0d3bc7d21603523f1c555ea278527f90455d3a33b3316abdb8953dca676b2a2b"
+      },
+      {
+        "path": "scripts/menu.gd",
+        "sha256": "40b2b2b1a688becb6d04a4e2ea08839ff902d8e2ea95f7590f20a1f44964e07c"
+      },
+      {
+        "path": "assets/models/witch_doctors_r8/PROVENANCE.json",
+        "sha256": "f0570c6562649c115ea24e0bb33c915398df3d92a18e2b8c762b6c6f893fbef7"
+      }
+    ],
+    "hud_pointer": [
+      {
+        "path": "scripts/combat_hud.gd",
+        "sha256": "9eca56e2b363ed804bb71f8df65fcedb9e0866f2e6b2269ddb148facb2e3bf9f"
+      },
+      {
+        "path": "scripts/reference_hud_090.gd",
+        "sha256": "edfd7338a7123d78ea8c535128314ee8caa89ba84c1a189e8f016c74d935ab49"
+      },
+      {
+        "path": "scripts/match_hud_r3.gd",
+        "sha256": "3f76a772683ad8b9e0c70b6df0de1e9bdef5c0e59962a10ecf1895e8aa9e0dc7"
+      },
+      {
+        "path": "scripts/front_menu_090.gd",
+        "sha256": "35a7308603590a57405d82db0b03549f58a15fa7224e315563e5982c381c5c5e"
+      },
+      {
+        "path": "scripts/tactical_map1000.gd",
+        "sha256": "d1efad13c2e7fcda4028f65b6691beb511009d5f890f3cea7d533a0dfcbf3021"
+      },
+      {
+        "path": "scripts/voice_r4.gd",
+        "sha256": "34d8df0347c55bc08a9d391a208092e8936ae201739b294dcd9337e6b9541c5e"
+      }
+    ]
+  },
+  "audio": "assets/audio restored from accepted R6; new glass_break_r8.wav and jump_pad_r8.wav are original procedural effects",
+  "changes": [
+    "SKINS is available beside LOADOUT and in the field menu. Four new Witch Doctor variants are labeled GPT-6 Astra, GPT-6.1 Sol, Gemini 4 Argon and Claude Opus. Selection persists and replicates to peers; the three existing styles remain available. Original donor files were not edited.",
+    "Imported map spawn candidates are grounded and checked for headroom, boundaries and hazards. Zone-enabled matches retain valid arena sites; warmup uses a separate supported location. Atrocious and Paintball transitions are covered by exported runtime checks and a two-peer Atrocious match/respawn/rematch.",
+    "Recognized red weapon hexagons/question glyphs become nearby caches of six actual random ASHFALL weapons. Classic receives distributed cache sites. Loot activates near players with bounded allocation, existing ammo/build/heal systems and authoritative ownership. Held rarity glow stays off.",
+    "Prepared geometry adapters for all 105 imported maps remove recognized weapon symbols and collisions without decoding meshes during play. Glass and recognized thin entry panels shatter on approach or gunfire, remove collision, play an original break sound and synchronize broken state. Structural walls remain solid.",
+    "Classic has an actual north-up tactical map and 12 newly placed functional launch pads with sound/cooldowns. Live world scoreboards show session totals near warmup and distant arena spawn areas. Original scoreboard/pad metadata was not supplied; these are ASHFALL implementations rather than exact source-object restoration.",
+    "HUD surfaces render over nearby geometry, obstruction blackout is removed while head collision remains, and menu pointer ownership suppresses the duplicate beam. Imported map textures use mipmaps, anisotropic filtering and foliage alpha scissor. Headset comfort and tracked controller acceptance remain to be tested.",
+    "Restored accepted R6/0992/0993 audio after finding R7/1004 changed PCM under the same filenames. Exported audio routing and decoded samples pass 604 checks. CX4 sight/rarity alignment passes 6391 checks. Weapon handling and statistics are preserved.",
+    "Bamboo and Bananaland overlapping scenery is present in original Delicious mesh data. Independent raw-geometry views reproduced it without ASHFALL or prior maps; it remains a source issue. All 105 maps passed READY entry and weak-reference unload checks.",
+    "Separate R8 branch, executable, userdata and unchanged R7 settings seed. Keep both adjacent map PCKs with the executable. Private imported map data remains local; creator credits retained. No VR or other running game was launched/stopped."
+  ]
+}

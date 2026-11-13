@@ -1,0 +1,35 @@
+[
+  {
+    "name": "KnifeCandidate.Runtime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\MeleeRuntime\\Compiler\\KnifeCandidate.Runtime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "KnifeCandidate.EditorRuntime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\MeleeRuntime\\Compiler\\KnifeCandidate.EditorRuntime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "KnifeCandidate.BuildAndSmoke",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\MeleeRuntime\\Compiler\\KnifeCandidate.BuildAndSmoke.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

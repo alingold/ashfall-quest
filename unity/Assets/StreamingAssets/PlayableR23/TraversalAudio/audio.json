@@ -1,0 +1,75 @@
+{
+  "cues": [
+    {
+      "kind": "glide",
+      "files": [
+        "flight_continuous0991.wav"
+      ]
+    },
+    {
+      "kind": "metal_step",
+      "files": [
+        "metal_step_00.wav",
+        "metal_step_01.wav",
+        "metal_step_02.wav",
+        "metal_step_03.wav",
+        "metal_step_04.wav",
+        "metal_step_05.wav"
+      ]
+    },
+    {
+      "kind": "concrete_step",
+      "files": [
+        "isolated_concrete_step_00.wav",
+        "isolated_concrete_step_01.wav"
+      ]
+    },
+    {
+      "kind": "concrete_run_step",
+      "files": [
+        "isolated_concrete_run_step_00.wav",
+        "isolated_concrete_run_step_01.wav",
+        "isolated_concrete_run_step_02.wav"
+      ]
+    },
+    {
+      "kind": "gravel_step",
+      "files": [
+        "gravel_step_00.wav",
+        "gravel_step_01.wav",
+        "gravel_step_02.wav"
+      ]
+    },
+    {
+      "kind": "wood_step",
+      "files": [
+        "wood_step_00.wav",
+        "wood_step_01.wav",
+        "wood_step_02.wav"
+      ]
+    },
+    {
+      "kind": "impact_metal",
+      "files": [
+        "impact_metal_00.wav",
+        "impact_metal_01.wav",
+        "impact_metal_02.wav"
+      ]
+    },
+    {
+      "kind": "impact_concrete",
+      "files": [
+        "impact_concrete_00.wav",
+        "impact_concrete_01.wav",
+        "impact_concrete_02.wav"
+      ]
+    },
+    {
+      "kind": "climb",
+      "files": [
+        "climb_00.wav",
+        "climb_01.wav"
+      ]
+    }
+  ]
+}

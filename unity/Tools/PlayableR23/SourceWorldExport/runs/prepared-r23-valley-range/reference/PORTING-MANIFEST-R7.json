@@ -1,0 +1,50 @@
+{
+  "base_checkpoint": "3d60cb0dac987a685e700d2511759b14e310f1b4",
+  "r6_checkpoint": "be071cbca7f64971e719adb7a6e41df1b62af9ba",
+  "shared_content_base": "c1b4d71b9752c5ee9d6774e194dea3498ca9d7be",
+  "changes": [
+    "105 existing completed archive maps added to MAP SELECT, alongside Relay Valley, Sandbox Range and Cyber Bird:108 entries over27 pages, with thumbnails and creator names. Pick a card, then READY. The adjacent private ASHFALL-Local-Maps.pck is mounted automatically; keep the builds folder intact.",
+    "Rarity glow is now world-pickup-only. Local and remote held weapons keep their normal materials; dropped weapons keep rarity colors/stars. Rarity levels, damage, recoil and capacities are unchanged.",
+    "Isolated branch standalone/r7-library-ground-glow starts from completed 1004 checkpoint3d60cb0dac987a685e700d2511759b14e310f1b4. R6 runtime features were deliberately ported using a three-way content merge against the shared1.0.0.0 source. Latest1004 session nonce/serial/replay fences and finite reload ownership preserved and checked.",
+    "Includes inherited Cyber Bird144-building city,384 extra real weapon drops,64 rideable/climbable cars, held map, surface zones, online bullet holes, compact host/voice controls and Argon skins. Initialization remains manual; settings/calibration seed copied unchanged from this user’s R6 profile into separate R7 userdata.",
+    "Original105-map scenes/materials/dependencies were copied and packed byte-for-byte from the completed1004 local cache. Raw maps are local-use data with existing creator credits; no map archive was uploaded or published. The code/source checkpoint excludes the ignored local map cache. Original1004 and priorR6 source/builds remain untouched."
+  ],
+  "files": [
+    {
+      "path": "scripts/weapon_rarity_r6.gd",
+      "sha256": "3bb10545a228798bb90b173065f94f77d3d96f389f05864cfcd7ed30ed4109cd"
+    },
+    {
+      "path": "scripts/net_avatar1000.gd",
+      "sha256": "89222adc94143fdff13cbdd6d94eff02b762ad90f1f3a379d434fc43fc1f2280"
+    },
+    {
+      "path": "scripts/archive_catalog1003.gd",
+      "sha256": "d0b5b14862625acddf94abb1c1bf2a457e80caccb17c42cf4a7aca415e9dd628"
+    },
+    {
+      "path": "scripts/front_menu1000.gd",
+      "sha256": "3f59d3ea0b6dd79745d903e29bce883ece7052ce285c83cebc65c6d2183c5079"
+    },
+    {
+      "path": "scripts/map_catalog1000.gd",
+      "sha256": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5"
+    },
+    {
+      "path": "scripts/cyber_bird_registration.gd",
+      "sha256": "508be2798220d548cd0b75dc310a040a431126c439125609f42ceb2a8336d7ae"
+    },
+    {
+      "path": "scripts/net_bridge1000.gd",
+      "sha256": "5759659534ac831f107c0a5348d1230859c14e6205f1e5dc8c691bd04f5c69dd"
+    },
+    {
+      "path": "scripts/net_session1000.gd",
+      "sha256": "390ee7460b99acccb25415e3d6053d44583eb46946565fb05086cd4a3a9a39c9"
+    },
+    {
+      "path": "scripts/net_rules1000.gd",
+      "sha256": "f8f159cb113bfa942c09caee3566519c6f69b7db848cb0b1c2ff54347ff3c9b3"
+    }
+  ]
+}

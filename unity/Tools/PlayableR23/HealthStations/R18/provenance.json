@@ -1,0 +1,17 @@
+{
+  "sourceRoot": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "inputs": {
+    "scripts/healing_stations_r18.gd": "459162d943542df3178c5c11bc5df4d2cf096af8920d5a435debc56187271ac6",
+    "scripts/map_semantics_r14.gd": "573b4b2628e81be3eb4d3655bc59e1719c31e4dbb17250195150e8dbc1d79447",
+    "assets/materials/station_ring_r18.gdshader": "9894b41ff886c99a7f317f592e2929741d05823a88868d270355251766097afb",
+    "assets/audio/sfx/r18/station_restore.wav": "abf90b613bcf55c74ae774334dcf022f7a4ddbe2feafcdadb52acff38ac484c2"
+  },
+  "audio": {
+    "channels": 1,
+    "sampleBytes": 2,
+    "rate": 24000,
+    "frames": 13200
+  },
+  "callback": "Func<bool> actual full health+shield restore; false never consumes15s",
+  "nativeRun": false
+}

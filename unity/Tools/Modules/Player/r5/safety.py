@@ -1,0 +1,3 @@
+from pathlib import Path
+p=Path(r'C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Player\Engine\UnityPlayerGeometry.cs');s=p.read_text().replace('using UnityEngine;','using UnityEngine;\nusing UnityEngine.SceneManagement;').replace('body!=null&&body.enabled','body!=null&&body.enabled&&body.gameObject.scene.GetPhysicsScene()==Physics.defaultPhysicsScene');p.write_text(s)
+p=Path(r'C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Player\Engine\UnityPlayerDriver.cs');s=p.read_text().replace('public bool InteractionsAllowed { get; private set; }','private bool interactionsAllowed;\n        public bool InteractionsAllowed {get {ObserveLifecycle();return interactionsAllowed;} private set {interactionsAllowed=value;} }');p.write_text(s)

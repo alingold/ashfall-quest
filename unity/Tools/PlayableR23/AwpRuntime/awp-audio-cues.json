@@ -1,0 +1,47 @@
+{
+  "cues": [
+    {
+      "weapon": "awp",
+      "action": "shot",
+      "files": [
+        "awp-source-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "bolt",
+      "files": [
+        "awp-source-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "mag_eject",
+      "files": [
+        "awp-source-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "pouch",
+      "files": [
+        "awp-source-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "mag_insert",
+      "files": [
+        "awp-source-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "awp",
+      "action": "dry",
+      "files": [
+        "awp-source-dry-0.wav",
+        "awp-source-dry-1.wav"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "prism",
+  "label": "Prism",
+  "sourceIndex": 45,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-0c430d5f0d662cca5f5e8a26.png",
+      "normal": "r5-normal-862b8a32b617fc8266673312.png",
+      "metallicMap": "r5-metallic-47f0c0c59e0c6b6614412ed3.png",
+      "occlusion": "r5-occlusion-ab89aceb69a5596da06a72c2.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-bd3724728589865fd041e835.png",
+      "normal": "r5-normal-80343b2d875644ae3452eb3c.png",
+      "metallicMap": "r5-metallic-6aad5ff8c77f2129c34b6785.png",
+      "occlusion": "r5-occlusion-1c59747dffe9703548bf68cd.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

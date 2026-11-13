@@ -1,0 +1,882 @@
+[
+  {
+    "path": "scripts/arsenal_data.gd",
+    "owner": "InventoryItems",
+    "partners": [
+      "WeaponHandling"
+    ],
+    "acceptance": "Preserve exact profile/index lookup and absent-data fallback; compare per-weapon ammo, timing and configurable exceptions against both sources.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/asset_quality.gd",
+    "owner": "Toolchain",
+    "partners": [
+      "World",
+      "WeaponHandling"
+    ],
+    "acceptance": "Validate explicit lightweight/render policy selection and source settings without altering native XR target size; actual target-device quality/performance remains unknown.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/authored_catalog_detail.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/belt_lmg.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/blade_assets.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/blade_sweep099.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/burst_carbine.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/campaign_extension.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Modes",
+      "Persistence",
+      "World"
+    ],
+    "acceptance": "Trace main/campaign orchestration and mission/jammer/gate transitions; verify initialization order, progress/reset and mode/save boundaries against both trees.",
+    "ambiguity": "Cross-module orchestration split requires coordinator confirmation.",
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/catalog_firearm.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/city_life_r5.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/closure_flick.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/common_reflex_090.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/community_catalog1002.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/compact_smg.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/directional_shield.gd",
+    "owner": "Combat",
+    "partners": [
+      "HealthStates",
+      "Construction"
+    ],
+    "acceptance": "Test zone tick boundaries and shrinking radius, one-shot detonation, finite front-facing rectangular bullet intersection; route damage once and preserve destructible occlusion.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_awp_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_blade_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_firearm_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_heavy_085.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_m1014_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_magnum_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/downloaded_pair_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/drone_detail.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat"
+    ],
+    "acceptance": "Validate enemy/drone visual assembly and animation lifecycle against AI state without movement/aim/damage authority; independent rendered inspection required.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/elbow_wakes0992.gd",
+    "owner": "Avatar",
+    "partners": [
+      "Presentation"
+    ],
+    "acceptance": "Verify per-avatar appearance override restoration, independent elbow wakes and no shared material mutation; holdout poses/local/remote render inspection required.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/enemy.gd",
+    "owner": "Combat",
+    "partners": [
+      "World",
+      "HealthStates"
+    ],
+    "acceptance": "Enemy detection/FOV/attack/state/death and Traversal.direction time budget, blocked timeout and waypoint completion require centrally named AI/navigation owner; compare both trees.",
+    "ambiguity": "Coordinator must name AI/navigation owner; Combat is provisional routing only.",
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/enemy_visual.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat"
+    ],
+    "acceptance": "Validate enemy/drone visual assembly and animation lifecycle against AI state without movement/aim/damage authority; independent rendered inspection required.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/explosive_effect.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/explosive_finish_064.gd",
+    "owner": "InventoryItems",
+    "partners": [
+      "Pickups",
+      "Presentation"
+    ],
+    "acceptance": "Check held/flight/ground model identity and cleanup; no inherited reload guidance/offered ammo on ground copy; validate provenance and attachment transforms.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/explosive_projectile.gd",
+    "owner": "Combat",
+    "partners": [
+      "HealthStates",
+      "Construction"
+    ],
+    "acceptance": "Test zone tick boundaries and shrinking radius, one-shot detonation, finite front-facing rectangular bullet intersection; route damage once and preserve destructible occlusion.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/extension_detail.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/ghost_appearance_r13.gd",
+    "owner": "Avatar",
+    "partners": [
+      "Presentation"
+    ],
+    "acceptance": "Verify per-avatar appearance override restoration, independent elbow wakes and no shared material mutation; holdout poses/local/remote render inspection required.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/ground_art0992.gd",
+    "owner": "InventoryItems",
+    "partners": [
+      "Pickups",
+      "Presentation"
+    ],
+    "acceptance": "Check held/flight/ground model identity and cleanup; no inherited reload guidance/offered ammo on ground copy; validate provenance and attachment transforms.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/guard_routes.gd",
+    "owner": "Combat",
+    "partners": [
+      "World",
+      "HealthStates"
+    ],
+    "acceptance": "Enemy detection/FOV/attack/state/death and Traversal.direction time budget, blocked timeout and waypoint completion require centrally named AI/navigation owner; compare both trees.",
+    "ambiguity": "Coordinator must name AI/navigation owner; Combat is provisional routing only.",
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/hatch_backing_r21.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/healing_stations_r18.gd",
+    "owner": "HealthStates",
+    "partners": [
+      "World",
+      "Networking"
+    ],
+    "acceptance": "Test clear semantic station contact and shared 15-second recharge, restore health/shield once; host owns multiplayer timer/feedback and blocked contact rejects.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/heavy_model_finish.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/impact_marks.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/incoming_fire.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/interference_unit.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/light_fixture.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/magnum_finish_094.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/main.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Modes",
+      "Persistence",
+      "World"
+    ],
+    "acceptance": "Trace main/campaign orchestration and mission/jammer/gate transitions; verify initialization order, progress/reset and mode/save boundaries against both trees.",
+    "ambiguity": "Cross-module orchestration split requires coordinator confirmation.",
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/model_scale_084.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/model_variants.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/motion_trail097.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/mp9_laser_091.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/one_star0991.gd",
+    "owner": "InventoryItems",
+    "partners": [
+      "WeaponHandling"
+    ],
+    "acceptance": "Preserve exact profile/index lookup and absent-data fallback; compare per-weapon ammo, timing and configurable exceptions against both sources.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/optic_material_094.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/paddle_lightning097.gd",
+    "owner": "HealthStates",
+    "partners": [
+      "Presentation"
+    ],
+    "acceptance": "Check paddle geometry/orientation and five-second readiness effect lifecycle against revive state; no duplicate revive or stale visual after cancellation.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/paddle_visual_089.gd",
+    "owner": "HealthStates",
+    "partners": [
+      "Presentation"
+    ],
+    "acceptance": "Check paddle geometry/orientation and five-second readiness effect lifecycle against revive state; no duplicate revive or stale visual after cancellation.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/playtest_fit_088.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/postcut_lods_r19.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/practice_dummy.gd",
+    "owner": "Combat",
+    "partners": [
+      "HealthStates",
+      "Presentation"
+    ],
+    "acceptance": "Damage reusable target then verify 1.5-second reset without starting encounter; emitted damage totals agree with shield/health application.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/quest_pose_capture_r19.gd",
+    "owner": "ParityHarness",
+    "partners": [
+      "Toolchain"
+    ],
+    "acceptance": "Opt-in bounded numeric diagnostics and lifecycle/retention checks only; verify no tracking/settings mutation or uploads. Actual XR/render acceptance requires allocated engine/device lane.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/quest_render_r16.gd",
+    "owner": "Toolchain",
+    "partners": [
+      "World",
+      "WeaponHandling"
+    ],
+    "acceptance": "Validate explicit lightweight/render policy selection and source settings without altering native XR target size; actual target-device quality/performance remains unknown.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/reference_response.gd",
+    "owner": "InventoryItems",
+    "partners": [
+      "WeaponHandling"
+    ],
+    "acceptance": "Preserve exact profile/index lookup and absent-data fallback; compare per-weapon ammo, timing and configurable exceptions against both sources.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/remaining_firearm_finish.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/render_diagnostics_r19.gd",
+    "owner": "ParityHarness",
+    "partners": [
+      "Toolchain"
+    ],
+    "acceptance": "Opt-in bounded numeric diagnostics and lifecycle/retention checks only; verify no tracking/settings mutation or uploads. Actual XR/render acceptance requires allocated engine/device lane.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/revolver.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/smaw_tube_065.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/solid_import_085.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/source_surface_subset_r18.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/sparse_loot_r18.gd",
+    "owner": "Pickups",
+    "partners": [
+      "World"
+    ],
+    "acceptance": "Verify sparse loot bounds/density threshold and spawn-site fallback; valid reachable sites and host/client deterministic selection, no duplicate placement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/spillway_gate.gd",
+    "owner": "World",
+    "partners": [
+      "Networking"
+    ],
+    "acceptance": "Verify community presence and manifest selection, traffic/city-life lifecycle and spillway/fixture collision from actual source; repeat interactions and host/client clock agreement.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/team_marks.gd",
+    "owner": "Modes",
+    "partners": [
+      "Networking",
+      "Presentation"
+    ],
+    "acceptance": "Verify stable mark payload/action/color and team visibility; local marks do not imply implemented transport.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/telemetry.gd",
+    "owner": "ParityHarness",
+    "partners": [
+      "Toolchain"
+    ],
+    "acceptance": "Opt-in bounded numeric diagnostics and lifecycle/retention checks only; verify no tracking/settings mutation or uploads. Actual XR/render acceptance requires allocated engine/device lane.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/top_feed_pdw.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/tracer_follow_090.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Combat",
+      "Audio"
+    ],
+    "acceptance": "Verify pooled visual lifetime/reset, correct world/emitter anchors and pause/teleport/tracking-loss cleanup; retain source limits without authoring damage.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/traffic_carry_r6.gd",
+    "owner": "Player",
+    "partners": [
+      "World",
+      "Climbing"
+    ],
+    "acceptance": "Test moving traffic feet/grip support, detach and platform deletion; preserve yaw, tracked local poses, input and fling gain.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/training.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Modes",
+      "Persistence"
+    ],
+    "acceptance": "Observe progress/hints/reset at training.gd:37; hints remain optional/nonblocking and reset clears prior progress without changing authoritative gameplay.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/ump_aggressor_model.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems",
+      "Presentation"
+    ],
+    "acceptance": "Verify named meshes, magazine/bolt anchors, materials, model variants/scale and held/ground transforms; visual and provenance acceptance remains open.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/upright_ui.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Player"
+    ],
+    "acceptance": "Verify upright basis including vertical view and gaze-operated 1.25-second initialization; retain tracked poses, controls and persistence ownership.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/uzi_vertical_prefix.gd",
+    "owner": "WeaponHandling",
+    "partners": [
+      "InventoryItems"
+    ],
+    "acceptance": "Exercise full/empty reload, cancel, tracking loss, occupied support hand, rearm and ammunition conservation for each weapon; preserve source-specific exceptions.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/vertical_combat_initialization.gd",
+    "owner": "Presentation",
+    "partners": [
+      "Player"
+    ],
+    "acceptance": "Verify upright basis including vertical view and gaze-operated 1.25-second initialization; retain tracked poses, controls and persistence ownership.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/xr_diagnostics.gd",
+    "owner": "ParityHarness",
+    "partners": [
+      "Toolchain"
+    ],
+    "acceptance": "Opt-in bounded numeric diagnostics and lifecycle/retention checks only; verify no tracking/settings mutation or uploads. Actual XR/render acceptance requires allocated engine/device lane.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  },
+  {
+    "path": "scripts/xr_pose_diagnostics_r19.gd",
+    "owner": "ParityHarness",
+    "partners": [
+      "Toolchain"
+    ],
+    "acceptance": "Opt-in bounded numeric diagnostics and lifecycle/retention checks only; verify no tracking/settings mutation or uploads. Actual XR/render acceptance requires allocated engine/device lane.",
+    "ambiguity": null,
+    "status": "proposed; coordinator confirmation required",
+    "basis": "Inventory-r1 concrete next-tranche assignments plus source declaration/comment inspection"
+  }
+]

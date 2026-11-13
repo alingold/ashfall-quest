@@ -1,0 +1,10 @@
+/nologo
+/langversion:5
+/warnaserror+
+/target:exe
+/out:"C:\Users\aling\Documents\ashfall\campaign-staging\20261104-three-chats\unity\Construction\ConstructionTests.exe"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Core\Contracts.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Construction\Ports.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Construction\Geometry.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Construction\ConstructionService.cs"
+"C:\Users\aling\Documents\ashfall\unity\Tools\Modules\Construction\ConstructionTests.cs"

@@ -1,0 +1,36 @@
+{
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/grip_hand_086.gd": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+    "assets/hands/xrtools086/Hand_Glove_low_L.gltf": "8010745a3d60329a828361a19a8e52233788ccf3e7654c1b4f5c8fa694b6202c",
+    "assets/hands/xrtools086/left_Grip 5.res": "08d4d5ba821cdb8441a43b52fa296aad753077a940813cd16d79a419aa90fc00",
+    "assets/hands/xrtools086/left_Grip.res": "5f0ad88d3f9127ba37508731752b62ac44e1d731ac35e62c5ef9a27c6a74efbf",
+    "assets/hands/xrtools086/left_Grip 1.res": "51eddaf434948f951c3d3a34b26ad7c0afa934e79b44f0d19f8ac95459d7fd85",
+    "assets/hands/xrtools086/left_Grip Shaft.res": "2be04356f76f516afc4453d8c88febb5022a17f1bb18ccb89e5a04e5261e8dee",
+    "assets/hands/xrtools086/Hand_Glove_low_R.gltf": "0719afd3184871240ddb65f359bdf60740a330cccb4179b1335b3da1b00370de",
+    "assets/hands/xrtools086/right_Grip 5.res": "1525f2dcc06a864910c75ef3fac3ff5a3b85e250a6fe204ba1f5f5b017000538",
+    "assets/hands/xrtools086/right_Grip.res": "f32e8d70d384732e8f5281b1eb4819e4ae5f1cd59228ec1f9d2587e1b6282966",
+    "assets/hands/xrtools086/right_Grip 1.res": "b026b270fc0050ea6c5d9507c292b507a90f6a562747d6de5d10e8cc261a00e9",
+    "assets/hands/xrtools086/right_Grip Shaft.res": "e10c5eaebe5e6678e7673827e1f122d64859f439b19d349b04bb924b4ee1f433"
+  },
+  "hands": [
+    {
+      "side": "left",
+      "bytes": 167356,
+      "vertices": 812,
+      "animatedBones": 19,
+      "joints": 26,
+      "restMaximumError": 1.8189524580991545e-08,
+      "sha256": "03c53de34c13be6b480bf30d0150b4f09904241c107e3a55be53bc051cef2fef"
+    },
+    {
+      "side": "right",
+      "bytes": 166470,
+      "vertices": 812,
+      "animatedBones": 19,
+      "joints": 26,
+      "restMaximumError": 1.7093904569609464e-08,
+      "sha256": "54f60a365265a062644045fc7344c4849ed75991bb9e7256324b42e93a67e2ff"
+    }
+  ]
+}

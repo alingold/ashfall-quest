@@ -1,0 +1,73 @@
+{
+  "changedFiles": [
+    "Appearance/R23PlayerAppearance.cs",
+    "Climbing/R23HeadCollision.cs",
+    "HandsWeapons/R23HandsWeapons.Ghost.cs",
+    "HandsWeapons/R23HandsWeapons.Ghost.cs.meta",
+    "Match/R24GhostAppearance.cs",
+    "Match/R24GhostAppearance.cs.meta",
+    "Match/R24GhostLifePolicy.cs",
+    "Match/R24GhostLifePolicy.cs.meta",
+    "Match/Resources/R24SourceGhost.shader",
+    "Match/Resources/R24SourceGhost.shader.meta",
+    "Match/Resources.meta",
+    "R23PlayableLoop.Ghost.cs",
+    "R23PlayableLoop.Ghost.cs.meta",
+    "R23PlayableLoop.Match.cs",
+    "R23VRRig.Ghost.cs",
+    "R23VRRig.Ghost.cs.meta",
+    "R23VRRig.cs"
+  ],
+  "sourceFiles": [
+    {
+      "path": "Appearance/R23PlayerAppearance.cs",
+      "baselineSha256": "749734000d967c4ba02dc152f2a6a887be606fe1827752558a6e70bb314a7a92",
+      "stagedSha256": "03741bcb1ec0e3ce329c2083aa3e409b7392bc1c795534969e2efcd1babc5bb9"
+    },
+    {
+      "path": "Climbing/R23HeadCollision.cs",
+      "baselineSha256": "810902e7e9c5108f179655e12c7c6bd15d4e2028f39691a6ae40cdcf43094cb1",
+      "stagedSha256": "6f082fba92909df2c3ac96b01261e29745a3169d56919bd7769bdc95f4a86b93"
+    },
+    {
+      "path": "HandsWeapons/R23HandsWeapons.Ghost.cs",
+      "baselineSha256": null,
+      "stagedSha256": "cd3632c32bda2ac804aea0c220557877ff2fe91f95b15ff2954f49443533c6e4"
+    },
+    {
+      "path": "Match/R24GhostAppearance.cs",
+      "baselineSha256": null,
+      "stagedSha256": "0f7ecc4189801c40e979c73613b22cbbe772a9f1bb4f40c9158e69b333d00d0d"
+    },
+    {
+      "path": "Match/R24GhostLifePolicy.cs",
+      "baselineSha256": null,
+      "stagedSha256": "90be71dea478716c57e6711121146c4e326b1050b899bd811a633f3e83baff27"
+    },
+    {
+      "path": "Match/Resources/R24SourceGhost.shader",
+      "baselineSha256": null,
+      "stagedSha256": "9dd6ac69228eeb45eaf76719ecefce99ce0398a8423ebfa2c7f26d9ac61e4ce4"
+    },
+    {
+      "path": "R23PlayableLoop.Ghost.cs",
+      "baselineSha256": null,
+      "stagedSha256": "2624ba2743a6ae557d4b485e858b0d4f4bbfff3c22811cf2cb3ae2b524679d8e"
+    },
+    {
+      "path": "R23PlayableLoop.Match.cs",
+      "baselineSha256": "7dfca853b2013800377c2a2ba214f02db082e1889ddf56447d8ee75d2dcf1e11",
+      "stagedSha256": "3f96c5868b2669b6e280c10c8e81c80f4b76dbb3a298778156150ae820b37b72"
+    },
+    {
+      "path": "R23VRRig.Ghost.cs",
+      "baselineSha256": null,
+      "stagedSha256": "21fab7e138379971389df24b7e676d2541d5fb293c9429e8cb8ddeb5c6fb00cf"
+    },
+    {
+      "path": "R23VRRig.cs",
+      "baselineSha256": "d5213b6d97d08d84d8e6a0bd4b1f3c8f7cd983f4013e9ce69a6fbb0a567b26e7",
+      "stagedSha256": "d175a8be28a5d81739a6b7b884ef35327b960dcbd876188193866ee0c9649acc"
+    }
+  ]
+}

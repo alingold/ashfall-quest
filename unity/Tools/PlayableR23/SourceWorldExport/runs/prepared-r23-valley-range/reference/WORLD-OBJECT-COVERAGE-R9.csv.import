@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bh17084yuevhw"
+
+[deps]
+
+files=["res://WORLD-OBJECT-COVERAGE-R9.doors.translation", "res://WORLD-OBJECT-COVERAGE-R9.glass.translation", "res://WORLD-OBJECT-COVERAGE-R9.panel.translation", "res://WORLD-OBJECT-COVERAGE-R9.door.translation", "res://WORLD-OBJECT-COVERAGE-R9.already.translation", "res://WORLD-OBJECT-COVERAGE-R9.wall.translation", "res://WORLD-OBJECT-COVERAGE-R9.pads.translation", "res://WORLD-OBJECT-COVERAGE-R9.weapon.translation", "res://WORLD-OBJECT-COVERAGE-R9.weapon.translation", "res://WORLD-OBJECT-COVERAGE-R9.score.translation"]
+
+source_file="res://WORLD-OBJECT-COVERAGE-R9.csv"
+dest_files=["res://WORLD-OBJECT-COVERAGE-R9.doors.translation", "res://WORLD-OBJECT-COVERAGE-R9.glass.translation", "res://WORLD-OBJECT-COVERAGE-R9.panel.translation", "res://WORLD-OBJECT-COVERAGE-R9.door.translation", "res://WORLD-OBJECT-COVERAGE-R9.already.translation", "res://WORLD-OBJECT-COVERAGE-R9.wall.translation", "res://WORLD-OBJECT-COVERAGE-R9.pads.translation", "res://WORLD-OBJECT-COVERAGE-R9.weapon.translation", "res://WORLD-OBJECT-COVERAGE-R9.weapon.translation", "res://WORLD-OBJECT-COVERAGE-R9.score.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

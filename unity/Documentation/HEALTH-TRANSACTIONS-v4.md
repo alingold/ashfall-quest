@@ -1,0 +1,12 @@
+# Health prepared publication boundary v4
+
+Coordinator clarification following executed ConsumableTransactions-r1 and RuntimeLoop-r1 HIGH findings. Two gain tokens validated together must never publish the same transition sequence or partially mutate then throw. All Health producers share one event sequence and host serialization lane; per-actor uniqueness is insufficient.
+
+The authorized repair may enforce one bounded outstanding Health publication reservation per service, or implement a true batch that reserves conflict-free unique sequence positions, command/logical IDs, target/life/revision/connection and all ledger/outbox capacity before validate-all. A rejection during Prepare is permitted; a throwing second commit after successful validate-all is not no-fail publication. Explicit expiry/Abort releases only uncommitted reservations. Commit and Abort after successful publication preserve the receipt. Stale or cross-host tokens reject before any protected module mutates.
+
+Ownership is disjoint: ConsumableTransactionsR2 owns PreparedGains.cs and new PreparedPublication.cs (global reservation helper); RuntimeLoopR2 owns new PreparedAdvance.cs; LifecycleTransactionsR1 retains PreparedLifecycle.cs; CombatCheckpointR2 owns new CheckpointState.cs. HealthService.cs stays coordinator-owned. New writers pin current source snapshots and use the helper if actually present. They cannot edit another writer's file or claim absent adoption as implemented. Cross-producer reservation adoption by old lifecycle code is an explicit remaining gate until its owner publishes/review verifies it.
+
+PreparedAdvance must validate normal admission/watermarks/timers/publication capacity before root or ammo publication. Synchronize/PrepareDamage currently mutate admission and are not pure preflight substitutes. Runtime binding must reject missing Health/Inventory/Session/canonical/root generation before accepting a live actor. Invalid stable environments must reject before the first actor effect.
+
+Durable checkpoint requires actual state/generations/timers/sequence/receipts/watermarks/outbox plus Combat provenance/replay and acknowledged-prefix consistency. Reopen refusal is honest but is not recovery. Never Register-as-restore, Spawn-as-heal, clear replay or reopen empty state as a successful checkpoint. All new boundaries remain candidates pending independent review; this clarification grants no automatic integration/runtime approval.
+

@@ -1,0 +1,32 @@
+{
+  "cues": [
+    {
+      "weapon": "dt11",
+      "action": "shot",
+      "files": [
+        "dt11-authored-blast.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_eject",
+      "files": [
+        "dt11-open-0.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "mag_insert",
+      "files": [
+        "dt11-insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "dt11",
+      "action": "bolt",
+      "files": [
+        "dt11-close-0.wav"
+      ]
+    }
+  ]
+}

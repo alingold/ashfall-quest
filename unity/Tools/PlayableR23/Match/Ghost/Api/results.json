@@ -1,0 +1,35 @@
+[
+  {
+    "name": "R23Playable.Runtime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Match\\Ghost\\Api\\R23Playable.Runtime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "R23Playable.EditorRuntime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Match\\Ghost\\Api\\R23Playable.EditorRuntime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "R23Playable.BuildAndSmoke",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Match\\Ghost\\Api\\R23Playable.BuildAndSmoke.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

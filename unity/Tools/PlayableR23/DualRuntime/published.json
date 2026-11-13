@@ -1,0 +1,446 @@
+{
+  "files": [
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R23LobbyWeaponGallery.cs",
+      "sha256": "cb6065a1d169d05df615c32da87fb1316c947f1de383b660584d5c1e864093b3",
+      "bytes": 30845
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24DualGallery.cs",
+      "sha256": "b7ce4ba49f4ef95ec1b884064e1d5621e512625ff0a66374e80c13d0d43d5d69",
+      "bytes": 6390
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24DualGallery.cs.meta",
+      "sha256": "b13162d165a263e0d280a44af6a4116b3700aec9596580d9dfc4205ac8e10c8c",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.cs",
+      "sha256": "9a388bfceffa271e83098d00b3da66f66e2b849d2e592ddfdb3ff757b4638816",
+      "bytes": 99053
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.DisplayedPose.cs",
+      "sha256": "073b8ba160c00ba06454f1845b08f20230e5b99aaea560ee44df38b0caeeee17",
+      "bytes": 6691
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.Dual.cs",
+      "sha256": "927de68fe24b3d8c512555101da1dd901bb26693a241ca6c896db757d63caacf",
+      "bytes": 8879
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.Dual.cs.meta",
+      "sha256": "c5684f730234b12586c8b561491902683e13db642e6bb555b91747ba7026853c",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.cs",
+      "sha256": "6ec2c97d3c141c28483aa899422ffa902f4f282aa18e45c3168871b043bc02fe",
+      "bytes": 31290
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.Dual.cs",
+      "sha256": "8e3993f4d2dafbe242a8f17cc77406f61624aef0835d4d213f19517d56b7258d",
+      "bytes": 3950
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.Dual.cs.meta",
+      "sha256": "e675e849cc163453d56daf0173cc036d9af5fa3dabf2026f849095b0ca6e2c72",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponFeedbackState.cs",
+      "sha256": "bfb36aa1bc4d9163b581d90bbb53d19e3fd6805c623465d023c361a554a2804f",
+      "bytes": 9648
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponInstances.cs",
+      "sha256": "26e2a18e4eba524a284238e2a1d18807068a962202b93956247fe79a7205d2a0",
+      "bytes": 6231
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPickupRules.cs",
+      "sha256": "996a362c70cf5cd3d2d70be360dcebc654a507a023a91f731b786f9980017478",
+      "bytes": 1758
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualFeedback.cs",
+      "sha256": "669b071a22c92ce8fa771978fce0b0c3dc539950a3fc95883d7e0ef1d60d0a88",
+      "bytes": 4830
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualFeedback.cs.meta",
+      "sha256": "23c7feb5356f7f6bf6b59a0ff179ad9524057aae62f336bdc934eba6abbac5a9",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualOwner.cs",
+      "sha256": "34d329883b7e3cd3f7aafa897ea77344ebcbc281718717790e77123e515e33e9",
+      "bytes": 10815
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualOwner.cs.meta",
+      "sha256": "bfc1b038a80275af0bb1ff2bcfa1780d19153645bc52cd5f4f2350a095f2d039",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualPresentation.cs",
+      "sha256": "a1a97fbc55ce0d640aa1142f51848ab16891c294b0ee844639e2820c812027b4",
+      "bytes": 5835
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualPresentation.cs.meta",
+      "sha256": "d6a7ff3fe4c2dfd17f52777f825ce6f9933cb54a44d49982112e7d097bd595ba",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualSessions.cs",
+      "sha256": "202ef9d4c34c2c50695bd102cb20a5d4698993e1877f2e8b29e12e63a8c77792",
+      "bytes": 6092
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualSessions.cs.meta",
+      "sha256": "7fdf474e6ea19a7ad4db8a8d0ef61000c728379a5b3750b5a76edcbaf49ca7b3",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualSourceData.cs",
+      "sha256": "e0527dc3702e20c2939b0d0046050227c9fb673c4f86a3dbdb2ff7a7756bec6c",
+      "bytes": 378
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualSourceData.cs.meta",
+      "sha256": "4272913073bdb3b15c233c236fa51f65a674106b1a6ec51e785f4fd7354b1bcc",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualView.cs",
+      "sha256": "4d28b70d2ce9ce08ff85e2138e3425ff7c473e00439607f538e691a8b12c33a7",
+      "bytes": 11078
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24DualView.cs.meta",
+      "sha256": "35db5aff49858a07382f3bbc02c3d5e908581b831a7ae9821ffb47874516589a",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Input/R23WeaponWheelIcons.cs",
+      "sha256": "be3e56e6ae58ede924382f55232b2ec651a0311973c85c93f91770918ce9d012",
+      "bytes": 1398673
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Input/R23WeaponWheelState.cs",
+      "sha256": "271d889630163ed7f9d77bbc87a1d5288be9ccda58467c7ae1f52bd85f824a43",
+      "bytes": 6399
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/audio.json",
+      "sha256": "5a3c098f10d45c82b5a8eee1bf425f709a6ba280bc5a4fc625010de42c27617f",
+      "bytes": 8236
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-audio-cues.json",
+      "sha256": "d33223b156559de93b3efc8e4f9ea60050f40d9c0a7c9c390ee20a36a6eb4cba",
+      "bytes": 598
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-audio-cues.json.meta",
+      "sha256": "44b261361ef9f93e737ed32876bd317ff94639712950b2cc7179eb88e6f5c639",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-0-normal.png",
+      "sha256": "c8c1d307d9e2bec90a0b4034abcedf192bb6a8beb44391dbde45de05b7a96ca4",
+      "bytes": 1849107
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-0-normal.png.meta",
+      "sha256": "5ac71257fbcdda7fe35c2d23c975941bd1be5529167fb04aab0b35955009cf06",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-0-occlusion.png",
+      "sha256": "4b78cd45781821519d7b218f021f507311a019bda8564fb7431009b35d722863",
+      "bytes": 574801
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-0-occlusion.png.meta",
+      "sha256": "20365b3e983c554a4a13b301b5f944d20c3fb0dc00ad274aff70db56a5942234",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-ATTRIBUTION.txt",
+      "sha256": "379e9bac51ff0f19bf82bc43e736ba22b3c2221b81e4ba2f5c7a9fe3a365b321",
+      "bytes": 774
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-ATTRIBUTION.txt.meta",
+      "sha256": "379073f9e6aef8e7db8c945166bd29b0f21744b4cb089460badbecfd2c9c5fc7",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-fit.json",
+      "sha256": "4f9d592e7fa839e419bb8dc6ef1cc68cd87582a1c9fe3d04698ead026c8c304d",
+      "bytes": 907
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-fit.json.meta",
+      "sha256": "13dd7919d2e763865b8fa16c2911a63322a52d7d9157d44fab613b3a104c17b8",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-icon.png",
+      "sha256": "05c061a57ee717cc5094b024d85c322e77f58ec55cfe16c809af3bb98fcbb302",
+      "bytes": 82296
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-icon.png.meta",
+      "sha256": "6a61bb0e08a2fb2d3ee6ee89ce90eb3ad98b9a71940abe3197bfc459e6199c3d",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-mag_insert-0.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "bytes": 53804
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-mag_insert-0.wav.meta",
+      "sha256": "7f2542af814bcd4681693fc379d318c13ca7c6442a80a65546303b4e91476594",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-provenance.json",
+      "sha256": "68355494e066d39f6067252f81ca2bc4a37031dc73e1a466b5342b1aeef4ece9",
+      "bytes": 2496
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-provenance.json.meta",
+      "sha256": "67712f3dd753bc5247c97d027511bf1225037a563afe3dda8a419b21ea02ca76",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference096-ATTRIBUTION.txt",
+      "sha256": "9adf8f7b2a50f1394806585e04eca1fad6f6d491e77a7f7423ebc630684f9697",
+      "bytes": 348
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference096-ATTRIBUTION.txt.meta",
+      "sha256": "bd53c9d3f369fdbd31fc14d6cda3bf84025284e06fd390cc53054ed224cebde7",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference097-ATTRIBUTION.txt",
+      "sha256": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+      "bytes": 304
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference097-ATTRIBUTION.txt.meta",
+      "sha256": "3c3f2274a02bd23cc6fcc46576a083275cdde22d756c44c2fd8049d09cce369c",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference099-ATTRIBUTION.txt",
+      "sha256": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+      "bytes": 363
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-reference099-ATTRIBUTION.txt.meta",
+      "sha256": "82fd87084cb21530b670383290fbd8de1ca5ba67edddfb5650451e1774648722",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-shot-0.wav",
+      "sha256": "3e468b7ed509379c8457d902ac77ed705464a68cd69d1d6c41f150b790fb4f54",
+      "bytes": 102956
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors-shot-0.wav.meta",
+      "sha256": "07097eb1bbe4bd191ab4a01674bc26887d591b4055ad7d300a2234ff07e45f43",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors.json",
+      "sha256": "14138644366cd21d8e5b5794f25cab12447dd04d73b788d3dde22bfd4ed83c8e",
+      "bytes": 257
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors.json.meta",
+      "sha256": "8ea74ebb864fb1989304e74ba2c27e8312148f856dba5b323f02bcd0e39323a9",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors.meshbin",
+      "sha256": "3bd47a2d74a309ff4812671e141e6004095be3a0be82c7ebb2f215852bd5b9c3",
+      "bytes": 339788
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-matadors.meshbin.meta",
+      "sha256": "ff228faafe6d88b3ac163ae805ee7cac31364afe89d005cef5c0d44e7a83b242",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-baseColor.png",
+      "sha256": "28ec5e18c6710cd6e353cf85ffdaef38693ef0895b39a315416a3210059c2d94",
+      "bytes": 842177
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-baseColor.png.meta",
+      "sha256": "23cc8f1a81ebd3e643a3660080544727c53459d07a37d000ba315249a6b082ff",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-metallic.png",
+      "sha256": "861d1451f66ae75b8de91d051496df5bb4afe72426a05393b3b12fb2af8a5367",
+      "bytes": 540105
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-metallic.png.meta",
+      "sha256": "352e5e6ba0bf0e07c03decf3dd2d137aa95548d82c4b9488e8df5475146a5e17",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-normal.png",
+      "sha256": "589e714445d523ddc94c168a1b4187f090abdb4872a914845058b5c4a2c48d31",
+      "bytes": 848109
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-normal.png.meta",
+      "sha256": "a2c5aa3e34e109fa459bbcda62089882e7a04ad726741c9a2d1e08c4383db0b2",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-occlusion.png",
+      "sha256": "72d0a5bdf9441730591196fb31fe3a68a510509d4dc24109a93a77e56f01a53e",
+      "bytes": 449598
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-0-occlusion.png.meta",
+      "sha256": "45927e891c710689f0384b18fdb6cab072d23a72032b45b7ad06c9f1bdf38900",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-ATTRIBUTION.txt",
+      "sha256": "719a105b64c58a4be47b70d36efb3d98f228ddb5518917217b53b986c95afeb1",
+      "bytes": 626
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-ATTRIBUTION.txt.meta",
+      "sha256": "97b96e42c2f514cb770f95e153f449bbbd3d2ec09f3b18836cc77746f39c12d0",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-fit.json",
+      "sha256": "af4d3c15c6042779f5fb60226d276de185dddd781880e9f9a541ed96c699424e",
+      "bytes": 873
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-fit.json.meta",
+      "sha256": "8f2a32aafe3c297dd482198ca92a0c833167cd5692666a5ca91773b79a7e096e",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-icon.png",
+      "sha256": "fd456f94437f86e4c4915cc0a140b6f1a4c8eefd1274ddefb85bd96a95a0cc0f",
+      "bytes": 36859
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-icon.png.meta",
+      "sha256": "6332cd44330f09c8c03695f0c2ef75dcd911360595fcf8eb56bc4492ecb531d5",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-mag_insert-0.wav",
+      "sha256": "fc678e8973fd8a84d6fafdaa1f4c4652930e76b9fba86666b0c97710261e225e",
+      "bytes": 65612
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-mag_insert-0.wav.meta",
+      "sha256": "fe36b0dd2c826de848c9ec6c84843ec8feb5cad10e609dc992c880101ca37c6d",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-mag_insert-1.wav",
+      "sha256": "be3a76e3ef4828e365f3e607b20c76a7052424a78560a4bbd6705562944808de",
+      "bytes": 63692
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-mag_insert-1.wav.meta",
+      "sha256": "a05871ce669a571c26824cba52e7bb66c761cff10429b0ab9366917bc9e09e36",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-provenance.json",
+      "sha256": "5b8cab9dd82e6a098bbbf0dc05a2df9f364093ba3170ada0b57d7088bc9c2ea8",
+      "bytes": 2378
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-provenance.json.meta",
+      "sha256": "c4c16cb49424a70d4dfb6e5c3b8cb8928b3330a88a00933a436318f802364533",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference096-ATTRIBUTION.txt",
+      "sha256": "9adf8f7b2a50f1394806585e04eca1fad6f6d491e77a7f7423ebc630684f9697",
+      "bytes": 348
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference096-ATTRIBUTION.txt.meta",
+      "sha256": "3cee9a9751d571a4abb484270e4273836c84a6ee6795fc87ba6e79e5db03ee32",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference097-ATTRIBUTION.txt",
+      "sha256": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+      "bytes": 304
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference097-ATTRIBUTION.txt.meta",
+      "sha256": "27e6325e2e228c7a27d9cc9e7cd566399f89b44b33ec118ff526656b47324d10",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference099-ATTRIBUTION.txt",
+      "sha256": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+      "bytes": 363
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-reference099-ATTRIBUTION.txt.meta",
+      "sha256": "b46ac65b49b3b9829fb669aab4906bf24db822a20ecc7085a18d9be0e231426a",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-shot-0.wav",
+      "sha256": "5cada4b8d32cf39cddb4f9be6b3b173fb15594719c8dbd7ca82f535a37efb0b7",
+      "bytes": 69356
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis-shot-0.wav.meta",
+      "sha256": "cdd6d2ccb39463f0eebff38b6d94117168492e560648b716c69be654bfa39b43",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis.json",
+      "sha256": "8b14c22d22262614e629853ba103bfa128b00afeaab10b4b960689633265e9a8",
+      "bytes": 310
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis.json.meta",
+      "sha256": "906660805c90c91f88d70a442e9f82db38518b3adb0af709a8ecbb273e562047",
+      "bytes": 62
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis.meshbin",
+      "sha256": "a49fd1c13d79eb2b36812f7189349caf08aad858ed94b392b1186f5d3de29301",
+      "bytes": 380732
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/dual-uzis.meshbin.meta",
+      "sha256": "e4ff2e66015bbeeb9ad6f638a8acef3114dfb010a2e7b3def9aac08deb2bc984",
+      "bytes": 62
+    }
+  ],
+  "profiles": 26,
+  "engineRun": false
+}

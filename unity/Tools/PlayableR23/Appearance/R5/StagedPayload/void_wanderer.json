@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "void_wanderer",
+  "label": "Void Wanderer",
+  "sourceIndex": 43,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-11cd4721378b19c2bd44d8b6.png",
+      "normal": "r5-normal-648b67b380e0a8983e3ab814.png",
+      "metallicMap": "r5-metallic-a4fa72eaaddbdacb9e73c7cf.png",
+      "occlusion": "r5-occlusion-980c1f17226371b7ff8d6bf2.png",
+      "emission": "r5-emission-ccc668075222d78dbcfb4601.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-9f2c21c25db2b2afe3b4a729.png",
+      "normal": "r5-normal-6893b665715528b68b8c7b96.png",
+      "metallicMap": "r5-metallic-fad12cf66c94640ccca34283.png",
+      "occlusion": "r5-occlusion-b1430e2b96152edba94b97a3.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

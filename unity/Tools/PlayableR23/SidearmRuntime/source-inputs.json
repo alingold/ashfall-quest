@@ -1,0 +1,41 @@
+{
+  "baseline": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "profile": {
+    "index": 7,
+    "id": "magnum",
+    "name": "MAGNUM",
+    "rarity": 1,
+    "magazine_per_hand": 7,
+    "hands": 1,
+    "fire_mode": "semi",
+    "rounds_per_second": 3,
+    "rate_confidence": "dated_official_not_live_verified",
+    "rate_source_date": "2021-07",
+    "rate_source": "https://store.steampowered.com/news/posts/?enddate=1625772341&feed=steam_community_announcements",
+    "capacity_source": "https://www.pop1stats.com/items",
+    "capacity_confidence": "parent_researched_community_catalog",
+    "family": "pistol",
+    "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+    "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+  },
+  "damage": {
+    "body": 63.0,
+    "head": 81.0,
+    "pellets": 1,
+    "head_policy": "Exact first-rarity listed head damage",
+    "wiki_name": ".357 Magnum"
+  },
+  "inputs": {
+    "scripts/revolver.gd": "85cfe42ef768f3f72dff4f384d59a650536002f992eac8f45133e7597dc294c8",
+    "scripts/pistol.gd": "1b6561890a49743e77ded2ff35b7999c26e0d6567003bfc892cc4d97846bf190",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/closure_flick.gd": "136eb9945d67efed9b5d044555db55fa4eb442523354a0d8fe5a7cf109276eca",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "scripts/one_star0991.gd": "edc394c49f27cd9ec8c625d9e8055cb84c638cd768b32ca941886f764b98ec65",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/main.gd": "d202407d4b6fcc99bccb8ab2f3d420ec4cdd95a543d98902c5344e83050f108a",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb"
+  }
+}

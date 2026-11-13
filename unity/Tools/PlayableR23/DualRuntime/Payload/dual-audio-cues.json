@@ -1,0 +1,33 @@
+{
+  "cues": [
+    {
+      "weapon": "uzis",
+      "action": "shot",
+      "files": [
+        "dual-uzis-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "uzis",
+      "action": "mag_insert",
+      "files": [
+        "dual-uzis-mag_insert-0.wav",
+        "dual-uzis-mag_insert-1.wav"
+      ]
+    },
+    {
+      "weapon": "matadors",
+      "action": "shot",
+      "files": [
+        "dual-matadors-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "matadors",
+      "action": "mag_insert",
+      "files": [
+        "dual-matadors-mag_insert-0.wav"
+      ]
+    }
+  ]
+}

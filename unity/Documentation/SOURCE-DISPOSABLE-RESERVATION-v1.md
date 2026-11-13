@@ -1,0 +1,7 @@
+# Source disposable reservation v1 — root owner decision
+
+An additive InventoryItems implementation may depend on WeaponHandling's concrete public owner-minted reservation API to remove an actually exhausted frag/zone member. WeaponHandling must not depend on InventoryItems or Integration. This is an explicitly declared acyclic candidate edge; no live asmdef, project or accepted assembly proposal is applied by this document. Separate-DLL evidence must declare the edge rather than using merged owners or global references to conceal it.
+
+Exhaustion may be established only by the actual registered source handler and its privately bound current prepared launch/reservation. A caller-provided exhausted boolean, fake interface implementation or copied descriptor is insufficient. The final launch and exact-member removal/old-new mechanical selection must share genuine owner reservations. No first-throw removal, whole-stack eviction, repeated grant/reset or unchecked interleaving. Revalidate actual eligibility/lifetime/expiry/revisions before the first commit, then callback-free owner commits. Abort preserves pre-operation state and replay; successful receipts remain idempotent.
+
+This permits concrete owner implementation/tests, not production authority, root launch adoption, global retirement or recovery. Unsupported joint owner APIs must remain explicit. Schema1 may not silently omit new fields or prepared tokens. Shipped desktop candidate04 and accepted modules remain immutable.

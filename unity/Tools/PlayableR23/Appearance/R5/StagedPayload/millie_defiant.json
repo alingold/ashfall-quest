@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "millie_defiant",
+  "label": "Millie (Defiant)",
+  "sourceIndex": 33,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-ab7d660858b8a5ea28b19b02.png",
+      "normal": "r5-normal-4733956a6bd6e786f75cacae.png",
+      "metallicMap": "r5-metallic-c2961968dd18420decc95830.png",
+      "occlusion": "r5-occlusion-04003ac77acceba9048b0567.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-858a5b7306168d26ecf5e75c.png",
+      "normal": "r5-normal-af2cff73a5e5d22ee39cd931.png",
+      "metallicMap": "r5-metallic-a8e65e192baffa91e1c92500.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

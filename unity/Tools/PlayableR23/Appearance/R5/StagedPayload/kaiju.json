@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "kaiju",
+  "label": "Kaiju",
+  "sourceIndex": 51,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-85e56074b11e58fc5e664548.png",
+      "normal": "r5-normal-cfe8076a449f91b604bb6b0b.png",
+      "metallicMap": "r5-metallic-010e53f4db9022859f0cd8ac.png",
+      "occlusion": "r5-occlusion-ca6eda27336ebd3f82c452d1.png",
+      "emission": "r5-emission-5473ea37f12a5462d6d2eb93.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 1.2000000476837158
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-9d2f5ab0cb116f31538cdc20.png",
+      "normal": "r5-normal-253995b07aba4ee920210852.png",
+      "metallicMap": "r5-metallic-078210feba1e925914d1fc0d.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

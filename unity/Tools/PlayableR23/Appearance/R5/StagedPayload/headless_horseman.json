@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "headless_horseman",
+  "label": "Headless Horseman",
+  "sourceIndex": 41,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.02,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-3fdc5f02ca58801ba55989e8.png",
+      "normal": "r5-normal-6cb057e4146ef6a89682b00f.png",
+      "metallicMap": "r5-metallic-edd87122c5bc7c6de6435da4.png",
+      "occlusion": "r5-occlusion-c9b09f632ece38ed9a936851.png",
+      "emission": "r5-emission-b1539c3daff800b8d11f5982.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 1.2000000476837158
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-dac1a372431ffe560907637e.png",
+      "normal": "r5-normal-a0270f7e05fd6fc2796d4d5c.png",
+      "metallicMap": "r5-metallic-07fb0f97260e23c55d7788ae.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

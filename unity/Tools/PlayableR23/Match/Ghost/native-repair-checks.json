@@ -1,0 +1,29 @@
+{
+  "historicalUnchanged": {
+    "ghost-reload.json": "9413da9208548e8766256a7fb5922c95008d4d5f52053fabf1021dbc639fa9aa",
+    "editor.log": "880ec0d8994b54db6e50ece7263f61a3cbe43597908355260269b39da66dc973",
+    "smoke-ghost-actual-source-body-hands.png": "893d2f988ba94f050e7f636250d0633ccd32db0b95b1a5282ab72bbbe5f76e53"
+  },
+  "priorNativeGroupsPassed": 5,
+  "priorNativeGroupsTotal": 7,
+  "neutralOwnerOutput": "10 actual PlayerInput native-fixture failure reproduction/80ms dwell/100ms repair/held/pause cases PASS",
+  "nativeFloorSource": {
+    "center": [
+      0.0,
+      -0.2,
+      -600.0
+    ],
+    "size": [
+      90.0,
+      0.4,
+      100.0
+    ]
+  },
+  "shaderColorLibrary": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\com.unity.render-pipelines.core\\ShaderLibrary\\Color.hlsl",
+  "shaderColorLibrarySha256": "21ec6ebfa1ae02cce8b4966e669ddd0d437dd4c89422712e6b48d1ee3cf18c3e",
+  "shaderNativeCompileRerun": false,
+  "changedAssets": {
+    "unity\\Assets\\Ashfall\\Editor\\Playable\\R24GhostSmoke.cs": "c91e58417ea720d1f5a32135c7e2206cd6fe945065b6dc501bde5663de9f7548",
+    "unity\\Assets\\Ashfall\\Integration\\Playable\\Match\\Resources\\R24SourceGhost.shader": "6b7e6902c268cc60729de2550c05b609fc684a8c2fdb54518a431a18bf3f96e1"
+  }
+}

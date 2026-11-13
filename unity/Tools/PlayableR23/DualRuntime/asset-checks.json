@@ -1,0 +1,22 @@
+{
+  "checks": 83,
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "geometry": [
+    {
+      "profile": "uzis",
+      "triangles": 3525,
+      "vertices": 10575
+    },
+    {
+      "profile": "matadors",
+      "triangles": 3146,
+      "vertices": 9438
+    }
+  ],
+  "wavFiles": 5,
+  "bytes": 6310241,
+  "nativeRun": false,
+  "limits": [
+    "Unity/native/Quest rendering, audio listening, physical flick calibration and simultaneous source aim remain untested."
+  ]
+}

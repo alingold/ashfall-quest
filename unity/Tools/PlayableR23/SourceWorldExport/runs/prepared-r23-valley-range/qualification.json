@@ -1,0 +1,71 @@
+{
+  "qualified": true,
+  "scope": "Complete visible/static geometry and material images are present and validated. Optional null Object property encodings raised errors and must remain qualified, not a clean full-property export claim.",
+  "scriptErrors": {
+    "Attempt to call function 'get_class' in base 'null instance' on a null instance.": 1633
+  },
+  "unsupported": {
+    "Source ShaderMaterial code and effective uniform values exported; Unity shader translation not supplied": 24,
+    "Label3D text/font recipe preserved; no Unity glyph atlas or rendered text mesh exported": 6
+  },
+  "noiseImages": [
+    {
+      "id": "resource_00203",
+      "extrema": [
+        [
+          126,
+          255
+        ],
+        [
+          126,
+          255
+        ],
+        [
+          126,
+          255
+        ],
+        [
+          255,
+          255
+        ]
+      ],
+      "sha256": "ec2c445bbce6e582a8f6f408a04f0df8fd0aea1c3c7dc8dbd49eb1a8c28635a0",
+      "bytes": 349524
+    },
+    {
+      "id": "resource_01419",
+      "extrema": [
+        [
+          126,
+          255
+        ],
+        [
+          126,
+          255
+        ],
+        [
+          126,
+          255
+        ],
+        [
+          255,
+          255
+        ]
+      ],
+      "sha256": "ec2c445bbce6e582a8f6f408a04f0df8fd0aea1c3c7dc8dbd49eb1a8c28635a0",
+      "bytes": 349524
+    }
+  ],
+  "shapeOccurrences": {
+    "BoxShape3D": 1138,
+    "ConcavePolygonShape3D": 114,
+    "ConvexPolygonShape3D": 9,
+    "CylinderShape3D": 11
+  },
+  "resources": 1429,
+  "sourceBuilder": "scripts/world.gd::build",
+  "output": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\valley",
+  "executedExporter": "unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\export_source_world.executed.gd",
+  "originalCriticalHashesUnchanged": true,
+  "rangeEngineRun": false
+}

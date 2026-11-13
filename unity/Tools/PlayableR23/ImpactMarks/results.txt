@@ -1,0 +1,40 @@
+PASS original fixed512 pool,90s lifetime,10s fade and3mm surface offset
+PASS accepted flat surface uses exactly9 verification rays and8 triangles
+PASS all flat-patch vertices lie3mm above the actual collider, not a free-floating plane
+PASS exact source floor tangent/bitangent and top-down UV survive Unity Z reflection
+PASS wall patch reflects source helper-cross-normal basis and offset
+PASS accepted sequence1 gives original137degree spin and95percent diameter
+PASS source deterministic90..110percent diameter cycle and smaller pellet footprint
+PASS shallow facets conform each vertex instead of rejecting irregular rock or floating a flat decal
+PASS missing surface projection rejects entire patch without phantom geometry
+PASS strict static surface refuses a neighbor collider across an unsupported edge
+PASS actual painted-floor flag allows a verified neighboring static slab
+PASS paint-neighbor exception refuses construction/damage hit receivers
+PASS paint-neighbor exception refuses damageable actors; no blood invented
+PASS paint-neighbor exception is limited to near-horizontal source surfaces
+PASS ordinary unflagged narrow surface rejects a floating fracture rim
+PASS source rendered-rib flag clips footprint with8 bounded bisections, at most81 rays
+PASS clipped vertices and UVs remain within the verified narrow rib
+PASS normal discontinuity below source0.7 dot rejects patch
+PASS source0.7 normal-dot boundary remains accepted
+PASS projection farther than footprint diameter rejects displaced geometry
+PASS ineligible dynamic surface rejects before any footprint rays
+PASS ineligible damageable surface rejects before any footprint rays
+PASS ineligible layer surface rejects before any footprint rays
+PASS ineligible proxy surface rejects before any footprint rays
+PASS invalid point/short normal never reaches native physics
+PASS new source pool has no fabricated impacts
+PASS source accepts coincident impacts without spacing rejection and stays bounded512
+PASS 513th impact reuses oldest pool slot without increasing scene capacity
+PASS source holes remain opaque through80 seconds
+PASS source final10-second fade is50percent at85 seconds
+PASS source pause freezes aging and collider retirement checks
+PASS negative process delta cannot reverse source age
+PASS marks expire at90 seconds rather than becoming permanent
+PASS destroyed/disabled collider retires its mark on next unpaused update
+PASS source clear resets visibility/cursor while preserving fracture sequence and counters
+PASS source procedural center is dark neutral fracture, not blood
+PASS source fracture texture transparent corner avoids rectangular stamps
+PASS source pale fractured rim retains its authored warm tone
+PASS all4096 deterministic source texture texels are finite RGBA range
+39 focused original impact-mark cases passed

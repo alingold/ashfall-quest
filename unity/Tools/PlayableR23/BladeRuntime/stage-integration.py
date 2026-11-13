@@ -1,0 +1,48 @@
+from pathlib import Path
+T=Path(__file__).resolve().parent;R=T.parents[3];H=R/'unity/Assets/Ashfall/Integration/Playable/HandsWeapons';C=T/'Candidate';C.mkdir(exist_ok=True)
+def read(n):return(H/n).read_text(encoding='utf-8-sig')
+def save(n,s): (C/n).write_text(s,encoding='utf-8')
+def swap(s,a,b):
+ assert a in s,a[:120]
+ return s.replace(a,b)
+s=read('R23RoundState.cs')
+s=s.replace('selectedRifle=="knife"?Knife.Snapshot','R24MeleeProfiles.ForId(selectedRifle)!=null?Melee.Snapshot').replace('selectedRifle=="knife"?0','R24MeleeProfiles.ForId(selectedRifle)!=null?0')
+s=s.replace('profile=="knife"&&stars','R24MeleeProfiles.ForId(profile)!=null&&stars').replace('&&profile!="knife"','&&R24MeleeProfiles.ForId(profile)==null')
+s=swap(s,'if(profile=="knife"){knives.Add(actionId,new R24KnifeRuntime(nativeId));','if(R24MeleeProfiles.ForId(profile)!=null){knives.Add(actionId,profile=="knife"?(R24MeleeRuntime)new R24KnifeRuntime(nativeId):new R24MeleeRuntime(nativeId,R24MeleeProfiles.ForId(profile)));')
+s=s.replace('R24KnifeRuntime knife;','R24MeleeRuntime knife;').replace('if(selectedRifle=="knife")','if(R24MeleeProfiles.ForId(selectedRifle)!=null)').replace('||selectedRifle=="knife"','||R24MeleeProfiles.ForId(selectedRifle)!=null')
+s=swap(s,'RegisterWeaponInstance("knife","knife",1,"r24-loadout/knife");','RegisterWeaponInstance("knife","knife",1,"r24-loadout/knife");foreach(var blade in new[]{"katana","excalibur","cyberblade"})RegisterWeaponInstance(blade,blade,1,"r24-loadout/"+blade);')
+save('R23RoundState.cs',s)
+s=read('R23RoundState.Knife.cs').replace('Dictionary<string,R24KnifeRuntime>','Dictionary<string,R24MeleeRuntime>').replace('new Dictionary<string,R24KnifeRuntime>()','new Dictionary<string,R24MeleeRuntime>()')
+a=s.index('        public R24KnifeRuntime Knife');b=s.index('        public bool ApplyKnifeContact',a)
+s=s[:a]+'''        public R24MeleeRuntime Melee{get{R24MeleeRuntime owner;return knives.TryGetValue(selectedAction,out owner)?owner:null;}}
+        public R24KnifeRuntime Knife{get{return ReadKnifeInstance(selectedRifle=="knife"?selectedAction:"knife");}}
+        public R24KnifeRuntime ReadKnifeInstance(string actionId){return ReadMeleeInstance(actionId) as R24KnifeRuntime;}
+        public R24MeleeRuntime ReadMeleeInstance(string actionId){R24MeleeRuntime owner;return actionId!=null&&knives.TryGetValue(actionId,out owner)?owner:null;}
+'''+s[b:]
+s=s.replace('var owner=ReadKnifeInstance(actionId)','var owner=ReadMeleeInstance(actionId)').replace('selectedRifle!="knife"','R24MeleeProfiles.ForId(selectedRifle)==null')
+save('R23RoundState.Knife.cs',s)
+s=read('R23WeaponInstances.cs');s=s.replace('case "knife":','case "katana":case "excalibur":case "cyberblade":stats=new R23RarityStats(0,0,0,1,1);return true;\n            case "knife":');save('R23WeaponInstances.cs',s)
+s=read('R23WeaponPickupRules.cs').replace('case "knife":return 29;','case "katana":return 14;case "excalibur":return 15;case "cyberblade":return 16;case "knife":return 29;');save('R23WeaponPickupRules.cs',s)
+s=read('R23WeaponPoseMath.cs').replace('id=="px4"||id=="p90"?','id=="katana"||id=="excalibur"||id=="cyberblade"||id=="px4"||id=="p90"?');save('R23WeaponPoseMath.cs',s)
+s=read('R23WeaponFeedbackState.cs').replace('&&weaponId!="knife"','&&R24MeleeProfiles.ForId(weaponId)==null').replace('id=="smaw"||id=="knife"','id=="smaw"||R24MeleeProfiles.ForId(id)!=null');save('R23WeaponFeedbackState.cs',s)
+s=read('R23HandsWeapons.cs').replace('new Transform[18]','new Transform[21]')
+s=s.replace('"smaw","knife"};','"smaw","knife","katana","excalibur","cyberblade"};')
+s=s.replace('1.6f,1f};','1.6f,1f,1f,1f,1f};').replace('Vector3.zero,Vector3.zero};','Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero};')
+s=s.replace('new R23WeaponFeedbackState("knife")};','new R23WeaponFeedbackState("knife"),new R23WeaponFeedbackState("katana"),new R23WeaponFeedbackState("excalibur"),new R23WeaponFeedbackState("cyberblade")};')
+s=s.replace('{"knife",new Vector3(.50f,0,.75f)}','{"knife",new Vector3(.50f,0,.75f)},{"katana",new Vector3(.15f,0,.75f)},{"excalibur",new Vector3(-.2f,0,.75f)},{"cyberblade",new Vector3(-.55f,0,.75f)}')
+s=s.replace('if(id=="knife")return "FIELD KNIFE";','var melee=R24MeleeProfiles.ForId(id);if(melee!=null)return melee.Name;').replace('if(id=="knife")return "melee";','if(R24MeleeProfiles.ForId(id)!=null)return "melee";')
+s=s.replace('IsKnife','IsMelee').replace('return index==3&&','return BladeTransient(index,item)||index==3&&').replace('yield return LoadKnifePresentation();','yield return LoadKnifePresentation();yield return LoadBladePresentation();')
+s=s.replace('if(knifeAudio!=null)knifeAudio.SetVolume(sfxVolume);','if(knifeAudio!=null)knifeAudio.SetVolume(sfxVolume);if(bladeAudio!=null)bladeAudio.SetVolume(sfxVolume);')
+s=s.replace('if(knifePhysics!=null)knifePhysics.Dispose();','DisposeBladePresentation();if(knifePhysics!=null)knifePhysics.Dispose();')
+s=s.replace('}else{visual.localPosition=home+', '''}else if(HasWeapon&&!presentationSuppressed&&IsMelee&&round.Melee!=null&&round.Melee.Supported&&hand!=primaryHand){var model=weaponModels[selectedWeapon];visual.position=model.TransformPoint(From(R24MeleeRuntime.SupportPoint));visual.rotation=model.rotation*Quaternion.AngleAxis(hand==0?90:-90,Vector3.forward)*Quaternion.Inverse(grip)*R23TrackedGripPose.GloveLocalRotation(hand);}else{visual.localPosition=home+''')
+save('R23HandsWeapons.cs',s)
+s=read('R23HandsWeapons.MeleeHooks.cs').replace('KnifeUsable?R24KnifeRuntime.MovementMultiplier:1','KnifeUsable&&round!=null&&round.Melee!=null?round.Melee.MovementGain:1');save('R23HandsWeapons.MeleeHooks.cs',s)
+s=read('R23HandsWeapons.Knife.cs').replace('bool IsKnife{get{return ActiveWeaponId=="knife";}}','bool IsMelee{get{return R24MeleeProfiles.ForId(ActiveWeaponId)!=null;}}')
+s=s.replace('&&IsKnife&&','&&IsMelee&&').replace('round.Knife','round.Melee').replace('weaponModels[17].SetPositionAndRotation','weaponModels[selectedWeapon].SetPositionAndRotation')
+s=s.replace('if(!KnifeUsable&&knifeWhoosh!=null)knifeWhoosh.Stop();','SyncBladePresentation();if(!KnifeUsable&&knifeWhoosh!=null)knifeWhoosh.Stop();')
+s=s.replace('RenderKnifePose();if(knifePhysics','RenderKnifePose();UpdateBladeSupport(usable);if(knifePhysics')
+s=s.replace('if(owner.WhooshRequested&&knifeWhoosh!=null){knifeWhoosh.pitch=owner.WhooshPitch;knifeAudio.Play(knifeWhoosh,"knife-swing");}','PlayBladeWhoosh(owner);SampleBladeArt(dt,usable);')
+s=s.replace('MeleeContactAccepted(hit.Entry.TargetId,hit.Point,35)','MeleeContactAccepted(hit.Entry.TargetId,hit.Point,hit.Entry.Damage)')
+s=s.replace('public bool KnifeReady{','public int KnifeHullQueries{get{return knifePhysics==null?0:knifePhysics.HullQueries;}}public bool TryReadMeleeTargetCollider(int index,out Collider collider){collider=index<0||index>=targets.Count?null:targets[index].Body;return collider!=null;}\n        public bool KnifeReady{')
+save('R23HandsWeapons.Knife.cs',s)
+print('STAGED generic melee production integration; Assets untouched')

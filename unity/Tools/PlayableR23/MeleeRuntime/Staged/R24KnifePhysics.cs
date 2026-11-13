@@ -1,0 +1,46 @@
+#if UNITY_6000_0_OR_NEWER
+using System;using System.Collections.Generic;using Ashfall.Core;using UnityEngine;
+namespace Ashfall.Integration.Playable.HandsWeapons
+{
+    public sealed class R24KnifeHit
+    {
+        public readonly R24KnifeEntry Entry;public readonly Collider Collider;public readonly Vector3 Point,Normal,Direction;
+        internal R24KnifeHit(R24KnifeEntry entry,Collider collider,Vector3 point,Vector3 normal,Vector3 direction){Entry=entry;Collider=collider;Point=point;Normal=normal;Direction=direction;}
+    }
+    // Actual continuous convex swept blade volume. The disabled query collider
+    // belongs to this adapter only; no player/controller/target pose writes.
+    public sealed class R24KnifePhysics:IDisposable
+    {
+        sealed class Contact {public string Id;public Collider Collider;public Vector3 Point,Normal;public float Distance;}
+        readonly Transform root;readonly MeshCollider probe;readonly Mesh mesh;readonly Func<Collider,bool> ignored;readonly Func<Collider,string> targetId;readonly Func<Vector3,Vector3,string,bool> lineClear;
+        public int LastSubsteps{get;private set;}public int LastAcceptedEntries{get;private set;}public int LastActualDamage{get;private set;}public int HullQueries{get;private set;}
+        const int ProbeLayer=2;bool disposed;
+        public R24KnifePhysics(Transform world,Func<Collider,bool> actorOrIgnored,Func<Collider,string> actualTargetId,Func<Vector3,Vector3,string,bool> actualLineClear){if(world==null||actualTargetId==null||actualLineClear==null)throw new ArgumentNullException("actual knife scene ports");ignored=actorOrIgnored;targetId=actualTargetId;lineClear=actualLineClear;var go=new GameObject("Source knife continuous swept-volume query");go.layer=ProbeLayer;go.hideFlags=HideFlags.HideInHierarchy|HideFlags.DontSave;root=go.transform;root.SetParent(world,false);probe=go.AddComponent<MeshCollider>();probe.enabled=false;probe.convex=true;probe.cookingOptions=MeshColliderCookingOptions.EnableMeshCleaning|MeshColliderCookingOptions.WeldColocatedVertices|MeshColliderCookingOptions.CookForFasterSimulation;mesh=new Mesh();mesh.name="Actual source thick swept blade convex cloud";}
+        static Vector3 V(Float3 a){return new Vector3(a.X,a.Y,a.Z);}static Float3 F(Vector3 a){return new Float3(a.x,a.y,a.z);}
+        List<Contact> Query(Float3 oldBase,Float3 oldTip,Float3 lower,Float3 tip,float margin){HullQueries++;var points=R24KnifeMath.HullPoints(oldBase,oldTip,lower,tip,margin+.001f);Vector3 center=(V(oldBase)+V(oldTip)+V(lower)+V(tip))*.25f;var vertices=new Vector3[points.Length];var bounds=new Bounds(V(points[0]),Vector3.zero);for(int i=0;i<vertices.Length;i++){var point=V(points[i]);vertices[i]=point-center;bounds.Encapsulate(point);}var triangles=new int[(vertices.Length-2)*3];for(int i=0;i<vertices.Length-2;i++){triangles[i*3]=0;triangles[i*3+1]=i+1;triangles[i*3+2]=i+2;}
+            var candidates=new List<KeyValuePair<Collider,string>>();foreach(var candidate in Physics.OverlapBox(bounds.center,bounds.extents+Vector3.one*.001f,Quaternion.identity,Physics.AllLayers,QueryTriggerInteraction.Ignore)){if(candidate==null||candidate==probe||!candidate.enabled||candidate.isTrigger||candidate.gameObject.layer==22||ignored!=null&&ignored(candidate))continue;string semantic=targetId(candidate);if(!String.IsNullOrEmpty(semantic))candidates.Add(new KeyValuePair<Collider,string>(candidate,semantic));}if(candidates.Count==0)return new List<Contact>();
+            probe.sharedMesh=null;mesh.Clear();mesh.vertices=vertices;mesh.triangles=triangles;mesh.RecalculateBounds();probe.sharedMesh=mesh;root.SetPositionAndRotation(center,Quaternion.identity);
+            var found=new Dictionary<string,Contact>(StringComparer.Ordinal);foreach(var candidate in candidates){
+                var collider=candidate.Key;string id=candidate.Value;Vector3 direction;float distance;if(!Physics.ComputePenetration(probe,center,Quaternion.identity,collider,collider.transform.position,collider.transform.rotation,out direction,out distance))continue;
+                // Recover a real surface point on the intersected collider, not a
+                // target origin or a second weapon/gaze ray. Penetration normal
+                // selects the outside side of the actual convex contact.
+                float supportDot=float.PositiveInfinity;Vector3 bladePoint=Vector3.zero;int supportCount=0;foreach(var sourcePoint in points){var sample=V(sourcePoint);float dot=Vector3.Dot(sample,direction);if(dot<supportDot-.000001f){supportDot=dot;bladePoint=sample;supportCount=1;}else if(Mathf.Abs(dot-supportDot)<=.000001f){bladePoint+=sample;supportCount++;}}bladePoint/=Mathf.Max(1,supportCount);var outside=bladePoint+direction*(distance+.002f);Vector3 point;if(!SurfacePoint(collider,outside,out point))continue;var contact=new Contact{Id=id,Collider=collider,Point=point,Normal=direction,Distance=(point-V(oldBase)).sqrMagnitude};Contact prior;if(!found.TryGetValue(id,out prior)||contact.Distance<prior.Distance)found[id]=contact;
+            }
+            var result=new List<Contact>(found.Values);result.Sort(delegate(Contact a,Contact b){int distance=a.Distance.CompareTo(b.Distance);return distance!=0?distance:StringComparer.Ordinal.Compare(a.Id,b.Id);});if(result.Count>64)result.RemoveRange(64,result.Count-64);return result;
+        }
+        bool SurfacePoint(Collider collider,Vector3 outside,out Vector3 point){point=Vector3.zero;var shaped=collider as MeshCollider;if(shaped==null||shaped.convex){point=collider.ClosestPoint(outside);return true;}var source=shaped.sharedMesh;if(source==null)return false;if(!source.isReadable)return false;var vertices=source.vertices;var triangles=source.triangles;float best=float.PositiveInfinity;for(int i=0;i+2<triangles.Length;i+=3){var a=collider.transform.TransformPoint(vertices[triangles[i]]);var b=collider.transform.TransformPoint(vertices[triangles[i+1]]);var c=collider.transform.TransformPoint(vertices[triangles[i+2]]);var candidate=ClosestTriangle(outside,a,b,c);float distance=(candidate-outside).sqrMagnitude;if(distance<best){best=distance;point=candidate;}}return best<float.PositiveInfinity;}
+        static Vector3 ClosestTriangle(Vector3 p,Vector3 a,Vector3 b,Vector3 c){var ab=b-a;var ac=c-a;var ap=p-a;float d1=Vector3.Dot(ab,ap),d2=Vector3.Dot(ac,ap);if(d1<=0&&d2<=0)return a;var bp=p-b;float d3=Vector3.Dot(ab,bp),d4=Vector3.Dot(ac,bp);if(d3>=0&&d4<=d3)return b;float vc=d1*d4-d3*d2;if(vc<=0&&d1>=0&&d3<=0)return a+ab*(d1/(d1-d3));var cp=p-c;float d5=Vector3.Dot(ab,cp),d6=Vector3.Dot(ac,cp);if(d6>=0&&d5<=d6)return c;float vb=d5*d2-d1*d6;if(vb<=0&&d2>=0&&d6<=0)return a+ac*(d2/(d2-d6));float va=d3*d6-d5*d4;if(va<=0&&d4-d3>=0&&d5-d6>=0)return b+(c-b)*((d4-d3)/((d4-d3)+(d5-d6)));float sum=va+vb+vc;if(Mathf.Abs(sum)<.0000000001f)return a;return a+ab*(vb/sum)+ac*(vc/sum);}
+        static string[] Ids(List<Contact> contacts){var ids=new string[contacts.Count];for(int i=0;i<ids.Length;i++)ids[i]=contacts[i].Id;return ids;}
+        public int Sample(R24KnifeRuntime owner,float dt,bool usable,R23ShotPose actor,R23ShotPose blade,Float3 gripWorld,Float3 head,Func<R24KnifeHit,bool> applyActualContact){LastSubsteps=LastAcceptedEntries=LastActualDamage=0;if(disposed||owner==null)return 0;if(!usable||!blade.Valid||!actor.Valid||!gripWorld.IsFinite||!head.IsFinite){owner.BeginFrame(dt,false,actor,new Float3(),new Float3(),new Float3(),new string[0]);return 0;}var lower=blade.Point(R24KnifeRuntime.BladeBase);var tip=blade.Point(R24KnifeRuntime.BladeTip);var initial=Query(lower,tip,lower,tip,0);var sweep=owner.BeginFrame(dt,true,actor,lower,tip,gripWorld,Ids(initial));if(sweep==null)return 0;LastSubsteps=sweep.Steps;
+            for(int i=0;i<sweep.Steps;i++){Float3 oldBase,oldTip,nextBase,nextTip;sweep.ReadStep(i,out oldBase,out oldTip,out nextBase,out nextTip);var raw=Query(oldBase,oldTip,nextBase,nextTip,0);var touching=Query(nextBase,nextTip,nextBase,nextTip,0);var retained=Query(nextBase,nextTip,nextBase,nextTip,R24KnifeRuntime.ExitHysteresis);var visible=new List<Contact>();foreach(var contact in raw)if(lineClear(V(head),V(nextBase),contact.Id)&&lineClear(V(nextBase),contact.Point,contact.Id))visible.Add(contact);var entries=owner.SampleStep(sweep,i,Ids(visible),Ids(touching),Ids(retained));LastAcceptedEntries+=entries.Length;var direction=(V(nextTip)-V(oldTip)).normalized;if(direction.sqrMagnitude<.000001f)direction=(V(nextBase)-V(oldBase)).normalized;
+                // Freeze this substep's spatial contacts before callbacks can destroy
+                // a panel. The next substep queries the resulting actual scene.
+                var decisions=new List<R24KnifeHit>();foreach(var entry in entries)foreach(var contact in visible)if(entry.TargetId==contact.Id){decisions.Add(new R24KnifeHit(entry,contact.Collider,contact.Point,contact.Normal,direction));break;}foreach(var decision in decisions)if(applyActualContact!=null&&applyActualContact(decision))LastActualDamage++;
+            }
+            return LastActualDamage;
+        }
+        public void Dispose(){if(disposed)return;disposed=true;if(probe!=null)probe.sharedMesh=null;if(mesh!=null)UnityEngine.Object.Destroy(mesh);if(root!=null)UnityEngine.Object.Destroy(root.gameObject);}
+    }
+}
+#endif

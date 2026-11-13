@@ -1,0 +1,15 @@
+# R12 delivery record
+
+November 1, 2026. Work continues the user's clarified Team Revive requirement: shared map warmup, elevated separate team platforms with optional pods or direct jump/glide, random arena spawns for deathmatch. Earlier feedback remains in the retained registers.
+
+The completed R10 checkpoint and receipt were the initial base. The independent R11 character delivery completed during this work; its handoff, executable and complete runtime manifest were verified. R11's six changes were materialized over a new clean R10 clone and committed as 29c5f78f129be9f7317426ff79274f8bf8010c45. Own deployment work moved to a separate R12 source/candidate/branch. R10/R11 delivered executables and original donor assets remain intact.
+
+The R11 development name had been chosen concurrently, leaving that working directory with uncommitted work from both efforts. It was not used as a trusted source checkpoint. R12 was recreated from clean R10 plus the exact completed R11 receipt hashes, before applying deployment changes. The isolated R12 checkpoint is the authoritative source for this combined delivery.
+
+Reference film and the original artist's breakdown informed an original modular metal deck and red cabin design. Shared materials, instanced docked cabins, climbable real collision, mounted controls and three synthesized cues avoid copied reference assets and dynamic light/texture costs. Source metadata audit across 105 maps did not recover authoritative team/pod bindings; the platforms are explicitly reconstruction.
+
+Validation caught and corrected several concrete issues: input held while entering a cabin could launch immediately; a carrier could be rejected by an ordinary movement ray hitting its own moving cabin; lower flight settings incorrectly limited server-generated carrier motion; renderer-only MultiMesh bounds vanished in headless mode; Cyberbird's finished canopy must remain above deployment; an abandoned moving cabin could sweep into an ejected player. The final implementation uses authored CPU bounds for Cyberbird, physics/metadata bounds elsewhere, a cabin-clearance climb, server-clamped passenger root, and immediate released-pod/audio retirement.
+
+Test fixtures were also corrected: an idle-clock comparison could sample a newly synchronized clock before the next physics step, and net displacement underestimated travel on an outward-then-returning path. Final transport checks sample synchronization and accumulated travel after actual physics steps. Controlled authored-roster checks remain distinct from real transport checks. Historical development logs are retained in the sibling Evidence folder; only the passing final receipts and selected native captures belong in the candidate validation folder.
+
+Final receipt: candidate VALIDATION-R12.json. It binds tests to the executable SHA256, source checkpoint and runtime content ID. Source fingerprints prove accepted audio and character assets unchanged. No VR session, microphone acceptance or real Internet test was performed; no other game was started/stopped. Existing source-artwork/overlap/bespoke-object-binding gaps remain open.

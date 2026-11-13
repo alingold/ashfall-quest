@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "mapId": "range",
+  "title": "SANDBOX RANGE",
+  "sourceSha256": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7",
+  "spawn": [
+    0.0,
+    0.2,
+    -608.0
+  ],
+  "boundsMin": [
+    -45.15,
+    -0.4,
+    -650.0
+  ],
+  "boundsMax": [
+    45.15,
+    16.0,
+    -550.0
+  ],
+  "materials": [
+    {
+      "name": "RangeFloor_48545b",
+      "color": "",
+      "normal": "",
+      "alpha": false,
+      "metallic": 0.35,
+      "roughness": 0.65,
+      "sourceTintHex": "48545b",
+      "sourceTintRgba": [
+        0.2823529411764706,
+        0.32941176470588235,
+        0.3568627450980392,
+        1
+      ]
+    },
+    {
+      "name": "RangeWall_26343a",
+      "color": "",
+      "normal": "",
+      "alpha": false,
+      "metallic": 0.4,
+      "roughness": 0.62,
+      "sourceTintHex": "26343a",
+      "sourceTintRgba": [
+        0.14901960784313725,
+        0.20392156862745098,
+        0.22745098039215686,
+        1
+      ]
+    }
+  ],
+  "chunks": 4,
+  "boxes": [
+    {
+      "center": [
+        0.0,
+        -0.2,
+        -600.0
+      ],
+      "size": [
+        90.0,
+        0.4,
+        100.0
+      ]
+    },
+    {
+      "center": [
+        0.0,
+        8.0,
+        -562.0
+      ],
+      "size": [
+        90.0,
+        16.0,
+        0.3
+      ]
+    },
+    {
+      "center": [
+        -45.0,
+        4.0,
+        -600.0
+      ],
+      "size": [
+        0.3,
+        8.0,
+        100.0
+      ]
+    },
+    {
+      "center": [
+        45.0,
+        4.0,
+        -600.0
+      ],
+      "size": [
+        0.3,
+        8.0,
+        100.0
+      ]
+    }
+  ],
+  "source": {
+    "scripts": [
+      {
+        "path": "C:/Users/aling/Documents/Codex/2026-11-03/ashfall-r23/source/scripts/sandbox_map_091.gd",
+        "sha256": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7"
+      },
+      {
+        "path": "C:/Users/aling/Documents/Codex/2026-11-03/ashfall-r23/source/scripts/field_item_models.gd",
+        "sha256": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b"
+      }
+    ],
+    "translation": "Direct CPU recipe port; not an engine export",
+    "originGodot": [
+      0.0,
+      0.0,
+      600.0
+    ],
+    "spawnLocalGodot": [
+      0.0,
+      0.2,
+      8.0
+    ],
+    "spawnWorldGodot": [
+      0.0,
+      0.2,
+      608.0
+    ],
+    "boundsMinGodot": [
+      -45.15,
+      -0.4,
+      550.0
+    ],
+    "boundsMaxGodot": [
+      45.15,
+      16.0,
+      650.0
+    ],
+    "boxSpecsLocalGodot": [
+      {
+        "center": [
+          0.0,
+          -0.2,
+          0.0
+        ],
+        "size": [
+          90.0,
+          0.4,
+          100.0
+        ]
+      },
+      {
+        "center": [
+          0.0,
+          8.0,
+          -38.0
+        ],
+        "size": [
+          90.0,
+          16.0,
+          0.3
+        ]
+      },
+      {
+        "center": [
+          -45.0,
+          4.0,
+          0.0
+        ],
+        "size": [
+          0.3,
+          8.0,
+          100.0
+        ]
+      },
+      {
+        "center": [
+          45.0,
+          4.0,
+          0.0
+        ],
+        "size": [
+          0.3,
+          8.0,
+          100.0
+        ]
+      }
+    ],
+    "sourceRoundedBox": {
+      "script": "scripts/field_item_models.gd",
+      "line": 244,
+      "bevel": 0.01,
+      "uv": "not authored; zero-filled payload slots"
+    },
+    "bodyGroups": [
+      [
+        "climbable",
+        "construction_terrain"
+      ],
+      [
+        "climbable"
+      ],
+      [
+        "climbable"
+      ],
+      [
+        "climbable"
+      ]
+    ],
+    "environment": "Source range inherits the existing Valley environment, which is not ported by this asset task.",
+    "scope": "Only the actual four render boxes and four BoxShape3D descriptors. Inventory shifts, training/dynamic systems and Valley environment remain runtime-owned."
+  }
+}

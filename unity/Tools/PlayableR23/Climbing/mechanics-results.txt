@@ -1,0 +1,13 @@
+PASS weapon/item reservation prevents new wall anchor
+PASS free tracked hand grip anchors actual controller mechanics
+PASS existing physical anchor survives new reservation until release
+PASS accepted 10m/s pull smoothed .35 times source300% times1.25
+PASS release momentum transfers to next frame without grounded cancellation
+PASS two-hand mean pull caps at source .3m per frame
+PASS collision-blocked proposed pull produces zero fling
+PASS source release limit7 times fling3 times1.25 caps26.25m/s
+PASS tracking loss releases without launching
+PASS native ceiling feedback clips upward release
+PASS reset clears both anchors and release memory
+PASS no wall contact leaves movement with root locomotion
+Native Unity API compiled separately; no actual engine or headset execution performed.

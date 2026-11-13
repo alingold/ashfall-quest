@@ -1,0 +1,205 @@
+{
+  "facadeCases": 12,
+  "maxFacadeFormulaError": 0.0,
+  "rawNormalRegressionCaught": true,
+  "skyGradientCases": 7,
+  "maxSkyFormulaError": 0.0,
+  "maxOldGammaInterpolationDifference": 0.09068812741611715,
+  "sunHaloCases": 6,
+  "sourceSunAngularSizeDegrees": 0,
+  "sourceEmissionGain": 1.5,
+  "propertiesAndMetaGuidsPreserved": true,
+  "inputs": {
+    "C:\\Users\\aling\\Documents\\ashfall\\quest-r24\\source\\assets\\materials\\lobby_facade_091.gdshader": "6b2036c265eb14b386dccfe786cf3204320fcc17c5fc8d2dccfe4ba0143a297b",
+    "C:\\Users\\aling\\Documents\\ashfall\\quest-r24\\source\\scripts\\lobby_map_091.gd": "c2f4d0164df67ba2de918935c46779fdb9e6a2c65fdd54a4574cfeb8a433383f",
+    "C:\\Users\\aling\\Documents\\ashfall\\quest-r24\\source\\scripts\\front_menu_091.gd": "26b7478a87f6a5524101bd9a22bc45fa42285d16e36c5026bba00227a655d3be",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Lobby\\GodotSkyReference.cpp": "fea858bf8ddad54b679872ca689fb3f515323da76f470dc2e14d412bab902533"
+  },
+  "shaders": {
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\Ashfall\\Integration\\Playable\\Lobby\\Resources\\R23LobbySurface.shader": "ce6df68a52e44d274bc38dff527b6eee0b44b8cf1b12371be1e0648d6f1280c4",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\Ashfall\\Integration\\Playable\\Lobby\\Resources\\R23LobbySky.shader": "2450d0050149c911367c11036614fc903f771bcbe93a7651d8d959aecdef6e68"
+  },
+  "samples": [
+    {
+      "case": "wall",
+      "pane": 1.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.025,
+        0.15,
+        0.23
+      ],
+      "linearEmission": [
+        0.015,
+        0.11,
+        0.17
+      ]
+    },
+    {
+      "case": "side",
+      "pane": 1.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.025,
+        0.15,
+        0.23
+      ],
+      "linearEmission": [
+        0.015,
+        0.11,
+        0.17
+      ]
+    },
+    {
+      "case": "roof",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "bevel raw",
+      "pane": 1.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.025,
+        0.15,
+        0.23
+      ],
+      "linearEmission": [
+        0.015,
+        0.11,
+        0.17
+      ]
+    },
+    {
+      "case": "roof threshold",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "below roof threshold",
+      "pane": 1.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.025,
+        0.15,
+        0.23
+      ],
+      "linearEmission": [
+        0.015,
+        0.11,
+        0.17
+      ]
+    },
+    {
+      "case": "mullion",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "above pane",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "left pane edge",
+      "pane": 1.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.025,
+        0.15,
+        0.23
+      ],
+      "linearEmission": [
+        0.015,
+        0.11,
+        0.17
+      ]
+    },
+    {
+      "case": "outside left",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "negative grid",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "other occupancy",
+      "pane": 0.0,
+      "occupied": 1.0,
+      "linearAlbedo": [
+        0.17,
+        0.22,
+        0.29
+      ],
+      "linearEmission": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "limits": "CPU source/formula checks and installed URP source inspection only. No shader compile, engine, render, GPU or device execution. Renderer BRDF, ambient/reflection/exposure/debanding parity is not claimed."
+}

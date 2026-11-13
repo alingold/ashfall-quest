@@ -1,0 +1,443 @@
+{
+  "version": 1,
+  "origin": [
+    1000,
+    0,
+    -1000
+  ],
+  "spawn": [
+    0,
+    0.3,
+    -3.8
+  ],
+  "menu": [
+    0.1,
+    1.3,
+    -1.55
+  ],
+  "preview": [
+    1.35,
+    0.31,
+    0.65
+  ],
+  "colliders": [
+    {
+      "name": "LobbyDeck",
+      "at": [
+        0,
+        -0.15,
+        2
+      ],
+      "size": [
+        22,
+        0.3,
+        18
+      ]
+    },
+    {
+      "name": "InvisibleLobbyForceField",
+      "at": [
+        -10.75,
+        5.8,
+        2
+      ],
+      "size": [
+        0.25,
+        12,
+        18
+      ]
+    },
+    {
+      "name": "InvisibleLobbyForceField",
+      "at": [
+        10.75,
+        5.8,
+        2
+      ],
+      "size": [
+        0.25,
+        12,
+        18
+      ]
+    },
+    {
+      "name": "InvisibleLobbyForceField",
+      "at": [
+        0,
+        5.8,
+        10.75
+      ],
+      "size": [
+        22,
+        12,
+        0.25
+      ]
+    },
+    {
+      "name": "InvisibleLobbyForceField",
+      "at": [
+        0,
+        5.8,
+        -6.75
+      ],
+      "size": [
+        22,
+        12,
+        0.25
+      ]
+    }
+  ],
+  "towers": [
+    {
+      "index": 0,
+      "x": -16.86225700378418,
+      "z": -39.15876770019531,
+      "height": 17.639034271240234,
+      "width": 2.459195613861084
+    },
+    {
+      "index": 1,
+      "x": -30.322311401367188,
+      "z": -53.005096435546875,
+      "height": 5.015626430511475,
+      "width": 3.2175183296203613
+    },
+    {
+      "index": 2,
+      "x": -14.387771606445312,
+      "z": -26.393550872802734,
+      "height": 17.40085220336914,
+      "width": 2.793332099914551
+    },
+    {
+      "index": 3,
+      "x": 30.340980529785156,
+      "z": -45.271907806396484,
+      "height": 24.1005916595459,
+      "width": 3.740506172180176
+    },
+    {
+      "index": 4,
+      "x": 6.853736877441406,
+      "z": -45.82234573364258,
+      "height": 24.194644927978516,
+      "width": 3.0948574542999268
+    },
+    {
+      "index": 5,
+      "x": 2.1190414428710938,
+      "z": -50.845947265625,
+      "height": 20.16122055053711,
+      "width": 4.019829273223877
+    },
+    {
+      "index": 6,
+      "x": -12.58283805847168,
+      "z": -45.087059020996094,
+      "height": 13.442618370056152,
+      "width": 4.713354110717773
+    },
+    {
+      "index": 7,
+      "x": -2.3613967895507812,
+      "z": -52.871395111083984,
+      "height": 17.849136352539062,
+      "width": 2.31701922416687
+    },
+    {
+      "index": 8,
+      "x": 5.76239013671875,
+      "z": -32.293636322021484,
+      "height": 22.434900283813477,
+      "width": 3.7603254318237305
+    },
+    {
+      "index": 9,
+      "x": 38.29058837890625,
+      "z": -18.491119384765625,
+      "height": 11.21506404876709,
+      "width": 2.42008376121521
+    },
+    {
+      "index": 10,
+      "x": -28.92115592956543,
+      "z": -30.61762046813965,
+      "height": 11.648630142211914,
+      "width": 4.777861595153809
+    },
+    {
+      "index": 11,
+      "x": -34.54936218261719,
+      "z": -44.134952545166016,
+      "height": 11.47422981262207,
+      "width": 2.8846912384033203
+    },
+    {
+      "index": 12,
+      "x": 27.11211395263672,
+      "z": -32.525856018066406,
+      "height": 22.017587661743164,
+      "width": 4.569039344787598
+    },
+    {
+      "index": 13,
+      "x": 12.01748275756836,
+      "z": -22.80984115600586,
+      "height": 8.637994766235352,
+      "width": 3.7039260864257812
+    },
+    {
+      "index": 14,
+      "x": 5.631175994873047,
+      "z": -49.562381744384766,
+      "height": 19.19499969482422,
+      "width": 2.0063316822052
+    },
+    {
+      "index": 15,
+      "x": 13.517417907714844,
+      "z": -30.30567741394043,
+      "height": 13.295546531677246,
+      "width": 2.9445338249206543
+    },
+    {
+      "index": 16,
+      "x": 13.576248168945312,
+      "z": -20.15741729736328,
+      "height": 21.687925338745117,
+      "width": 4.728946208953857
+    },
+    {
+      "index": 17,
+      "x": -16.147920608520508,
+      "z": -36.56342315673828,
+      "height": 17.61662483215332,
+      "width": 2.464445114135742
+    },
+    {
+      "index": 18,
+      "x": -0.16651535034179688,
+      "z": -35.077728271484375,
+      "height": 22.922407150268555,
+      "width": 3.8084867000579834
+    },
+    {
+      "index": 19,
+      "x": -2.0140419006347656,
+      "z": -44.96384811401367,
+      "height": 9.949125289916992,
+      "width": 3.6809182167053223
+    },
+    {
+      "index": 20,
+      "x": 13.09539794921875,
+      "z": -32.340057373046875,
+      "height": 19.684288024902344,
+      "width": 2.9547536373138428
+    },
+    {
+      "index": 21,
+      "x": -11.975801467895508,
+      "z": -37.66249084472656,
+      "height": 15.057863235473633,
+      "width": 3.5424749851226807
+    },
+    {
+      "index": 22,
+      "x": 16.53792953491211,
+      "z": -51.14118576049805,
+      "height": 6.108020305633545,
+      "width": 2.5732614994049072
+    },
+    {
+      "index": 23,
+      "x": -15.112876892089844,
+      "z": -25.905750274658203,
+      "height": 12.673927307128906,
+      "width": 2.994093656539917
+    },
+    {
+      "index": 24,
+      "x": -19.237247467041016,
+      "z": -40.61771774291992,
+      "height": 17.881362915039062,
+      "width": 4.138998508453369
+    },
+    {
+      "index": 25,
+      "x": 22.079238891601562,
+      "z": -54.545570373535156,
+      "height": 12.389625549316406,
+      "width": 2.7334647178649902
+    },
+    {
+      "index": 26,
+      "x": 6.841373443603516,
+      "z": -54.47241973876953,
+      "height": 5.320585250854492,
+      "width": 3.2399771213531494
+    },
+    {
+      "index": 27,
+      "x": 22.518272399902344,
+      "z": -24.08761215209961,
+      "height": 11.326568603515625,
+      "width": 4.182559013366699
+    }
+  ],
+  "authoredParts": [
+    "LobbyDeck",
+    "DeckPerimeter",
+    "DeckLight",
+    "DeckPerimeter",
+    "DeckLight",
+    "DeckSeam",
+    "DeckSeam",
+    "DeckSeam",
+    "DeckSeam",
+    "DisplayPedestal",
+    "CyanPedestalRim",
+    "SkylineTower0",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower1",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower2",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower3",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower4",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower5",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower6",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower7",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower8",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower9",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower10",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower11",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower12",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower13",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower14",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower15",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower16",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower17",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower18",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower19",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower20",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower21",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower22",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower23",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower24",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower25",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower26",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "SkylineTower27",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand",
+    "TowerNeonBand"
+  ],
+  "triangles": 16476,
+  "surfaces": 5
+}

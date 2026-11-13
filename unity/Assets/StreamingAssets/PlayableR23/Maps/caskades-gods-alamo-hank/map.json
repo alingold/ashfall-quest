@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "mapId": "archive:caskades-gods-alamo-hank",
+  "title": "CASKADES",
+  "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+  "spawn": [
+    -2.325439453124943,
+    24.60293361136419,
+    -134.71666404322582
+  ],
+  "gameSpawn": [
+    -2.325439453124943,
+    24.60293361136419,
+    -134.71666404322582
+  ],
+  "warmupSpawn": [
+    -2.325439453124943,
+    46.294921032125636,
+    22.98860393323389
+  ],
+  "boundsMin": [
+    -502.325439453125,
+    -1.28378057479858,
+    -529.579833984375
+  ],
+  "boundsMax": [
+    497.674560546875,
+    92.3869323730469,
+    470.420196533203
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p0d65efac",
+      "color": "p0d65efac_c.jpg",
+      "normal": "p0d65efac_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p4227e4ec",
+      "color": "p4227e4ec_c.jpg",
+      "normal": "p4227e4ec_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p52c49b5d",
+      "color": "p52c49b5d_c.jpg",
+      "normal": "p52c49b5d_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p871ea67c",
+      "color": "p871ea67c_c.jpg",
+      "normal": "p871ea67c_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pa5d5158f",
+      "color": "pa5d5158f_c.jpg",
+      "normal": "pa5d5158f_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t111",
+      "color": "t111_c.jpg",
+      "normal": "t111_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t22",
+      "color": "t22_c.jpg",
+      "normal": "t22_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t4",
+      "color": "t4_c.jpg",
+      "normal": "t4_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 170,
+  "cameraFarDistance": 3135.4876477513176
+}

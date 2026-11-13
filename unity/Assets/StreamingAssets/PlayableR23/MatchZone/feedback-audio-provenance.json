@@ -1,0 +1,26 @@
+{
+  "source": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\cyber_bird\\zone_r5\\danger_zone_loop.wav",
+  "sourceSha256": "3ad93fd0711159cebd2aa5b454acd7901450852be04e4c48402312efdf7fa4d1",
+  "license": "CC0-1.0",
+  "zone": "Derivative: retain original low hum; reject hiss above200Hz, no normalization/gain boost.",
+  "hum": {
+    "file": "danger_zone_hum.wav",
+    "rate": 24000,
+    "samples": 192000,
+    "pcmSha256": "aa85ecf3d588352039def558de12bd1034de8f05fe93956c8d8e1cb326b5969c",
+    "peak": 0.4046550328485138,
+    "rms": 0.09783601972779285
+  },
+  "pad": {
+    "file": "pad_launch.wav",
+    "rate": 48000,
+    "samples": 31200,
+    "pcmSha256": "b7aa4a8aacfa429fd6060575eb74682708dad5484f4de2a54e251dee5d58637b",
+    "peak": 0.8199462890625,
+    "rms": 0.1742018444073621
+  },
+  "padOrigin": "Exact frozen R6 assets/audio/sfx/jump_pad_r8.wav, copied byte-for-byte; no synthesis/resampling.",
+  "padSource": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source\\assets\\audio\\sfx\\jump_pad_r8.wav",
+  "padSourceSha256": "01c0e17a606fc7ea7e02e989f05faa6d76f57d6f70e8677140d5c070cccc0f58",
+  "padSourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"
+}

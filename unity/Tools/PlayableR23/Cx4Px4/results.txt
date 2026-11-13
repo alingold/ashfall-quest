@@ -1,0 +1,49 @@
+PASS actual first-rarity CX4 capacity25 auto6rps and latest0991 damage19/23
+PASS actual first-rarity PX4 capacity16 semi.21s and latest0991 damage30/45
+PASS source distinct visual scales and cupped pistol support datum
+PASS new CX4 instance requires neutral trigger after custody suspension
+PASS real CX4 accepted first shot debits one native round
+PASS CX4 automatic cadence refuses too-early held-trigger shot
+PASS CX4 exact1/6 automatic interval accepts continued held trigger
+PASS CX4 empties25 actual rounds then enters existing source magazine flow without reserve shadow debit
+PASS cx4 actual fresh support grip takes real magazine
+PASS cx4 upward source stroke seats native magazine
+PASS cx4 source rearward charging stroke chambers real native rounds
+PASS CX4 actual physical reload debits shared rifle pool25 once
+PASS CX4 completed source reload retains actual staged.12s cooldown
+PASS PX4 real accepted shot consumes one actual pistol round
+PASS PX4 held trigger never becomes automatic after cooldown
+PASS PX4 trigger release rearms source semi without SPR-specific.2 hysteresis
+PASS px4 actual fresh support grip takes real magazine
+PASS px4 upward source stroke seats native magazine
+PASS px4 source rearward charging stroke chambers real native rounds
+PASS PX4 left-primary reload refunds remaining rounds then debits16 from actual finite pool
+PASS PX4 late re-press starts full source.21 interval rather than generic auto-rifle overrun credit
+PASS PX4 real cupped support owns offhand and stabilizes native shot profile
+PASS supported PX4 can fire through native source owner
+PASS PX4 pause freezes actual cooldown and held trigger cannot fire on resume
+PASS CX4 primary tracking loss cannot consume ammunition
+PASS CX4 primary climb reservation gates accepted fire
+PASS actual production VR right-click opens PX4 and cannot auto-insert on another click
+PASS actual production PX4 support stroke seats native ammunition after VR opening
+PASS actual production PX4 released-grip slide pull charges without refill
+PASS production PX4 applies source30 damage through real HealthService at150m
+PASS production PX4 applies listed45 head damage without invented multiplier
+PASS PX4 and Magnum share true pistol1200 pool, separate from rifle reserve
+PASS source selection retains exact PX4 instance/magazine/shared reserve without grants
+PASS production CX4 source damage19 uses real accepted native shot
+PASS CX4 source eject refund shares rifle pool with MK18/AKM, sniper remains separate
+PASS CX4 uses actual observed source time0 output, not substituted MK18 curve
+PASS CX4 source observed recoil interpolates shipped time samples
+PASS CX4 holster/focus clears observed output without weapon state mutation
+PASS PX4 source pistol reduction applies.0312m accepted-shot visual kick
+PASS PX4 actual source95ms slide cycle reaches35mm halfway
+PASS PX4 source6.655degree signed pulse peaks97ms while slide closes
+PASS PX4 exact source226/278/450ms zero/undershoot/end pulse
+PASS source auto proximity35cm accepts any controller angle
+PASS source aimed corrected-grip reach accepts exactly2m
+PASS source remote reach and strict>.94 alignment boundaries reject
+PASS source nearby pickup scores above farther aligned pickup
+PASS head-to-hand and hand-to-real-center occlusion independently deny acquisition
+PASS equal-score ties use actual original catalog identities
+48 focused CX4/PX4 source-owner/pickup cases passed

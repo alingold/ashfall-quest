@@ -1,0 +1,16 @@
+PASS all79 actual source rounded-contact fixtures and strict witnesses
+PASS all115 genuine ALFA authored rows
+PASS 44 actual tilted pads retain source directions
+PASS actual current-feet source pad dispatches positive45m/s launch
+PASS source1.2-second per-pad cooldown prevents duplicate dispatch
+PASS cooldown expiration permits next actual contact
+PASS occluded authored face-to-feet contact cannot launch
+PASS refused root launch spends no cooldown or launch publication
+PASS rejected root launch can retry when the actual owner accepts
+PASS input pause climbing mantle and ghost eligibility suppress launches
+PASS nominal15m swept feet contact dispatches source pad
+PASS over15m teleport cannot trigger a swept pad
+PASS reset clears stale feet history before relocation
+PASS genuine zero-pad Paintball does not invent a launch
+PASS actual tilted source pad passes its reflected normalized direction
+Source fixture math and launch-port dispatch only. Native engine physics, Flight root route and headset not executed.

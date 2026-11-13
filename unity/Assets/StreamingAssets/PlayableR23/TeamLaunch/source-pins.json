@@ -1,0 +1,26 @@
+{
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "contentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "inputs": {
+    "scripts/team_launch_r12.gd": "aab0d469b4afc1b3f2798d794200fec32030d06ff6c4bb2811031f06a8495ade",
+    "scripts/launch_art_r12.gd": "f53af0f72e35dba04e6bcc095a9efa35c387f5ed1428a22868c6766b8cf0ddd2",
+    "scripts/net_session1000.gd": "e34befa058704bb21f85f61f073e27d464689ee1179b5f9c058fe0c7b3d0d8b0",
+    "scripts/net_bridge1000.gd": "f7c441a245f065ab25b26295445a5920827db38c5b08cf82d639e17abf45ab01",
+    "assets/audio/sfx/r18/pod_launch.wav": "44ba65a70cdc30d3138c4402df315107d492d4958e4ffdc58bf8e9b6d18ce5be",
+    "assets/audio/sfx/r18/pod_engine.wav": "7569107b2a64a351294f0906caa97e424b3e3fd532d9174a6b6385d11dca2caa",
+    "assets/audio/sfx/r18/pod_land.wav": "329fd3b93b162f58e84b3ee4f8416ec6d4d7fef1870e0efe796660142c88ac7a",
+    "assets/audio/sfx/r18/pod_exit.wav": "c073e07bb009c25c643f92df64b76681a83f2c99c8c7282640a217721c989363"
+  },
+  "geometry": {
+    "cabin": {
+      "parts": 71,
+      "triangles": 884,
+      "solidParts": 27
+    },
+    "deck": {
+      "parts": 254,
+      "triangles": 3048,
+      "solidParts": 101
+    }
+  }
+}

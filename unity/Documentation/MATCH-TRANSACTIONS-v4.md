@@ -1,0 +1,13 @@
+# Match transactions v4 — versioned repair boundary
+Coordinator contract, 2026-11-04. MatchDirector-r5 is unpromoted: retained score retry can be stranded by Results, and Session epoch advances before a fallible Modes rollover. Both are HIGH; preserving a pending journal alone is insufficient.
+
+The accepted Modes/2 source and its frozen evidence remain immutable. A new, separately named candidate may derive only the required round controller and command ledger from exact accepted bytes under Ashfall.Integration.MatchRounds, using existing accepted ModeRules/roster/score types. Record base hashes and explicit semantic diff; preserve all old behavior/gates. This version is UNREVIEWED and must never be represented as accepted Modes/2. No generic acceptance of changed scoring.
+
+Required new boundaries are (1) typed host committed-event reconciliation, retaining original session/round/epoch/victim/killer eligibility/life/event identity, with once-only totals and durable discoverability across Match/Results; (2) opaque prepared rollover binding both current module states, old/new epoch, lifecycle revision, authority, expiry and clocks, validating both before either publishes. Preallocate next state; final no-fail commits have no callbacks, IO or allocations. Abort preserves old state. An explicit recoverable in-progress rollover is acceptable only with genuine idempotent completion; repeated retries must not advance Session epoch again.
+
+Never discard/ack an uncredited death to unlock loading, reset replay, restore captured objects as rollback, guess epochs, bypass authority or substitute shadow counters for actual round state. Pending valid committed events require recoverable disposition before old-round teardown. Source immediate loss-transition scoring and final results must remain correct.
+
+A new Session partial file PreparedMatchLifecycle.cs may implement only the required prepared match rollover. Session.cs/Ports.cs remain owned by SessionAdmissionR6; PreparedLifeProjection.cs by LifecycleTransactionsR1. No simultaneous edit of those files. New partial tokens must detect every relevant intervening lifecycle/membership mutation and may not claim concurrent-writer compatibility without exact source capture and separate tests.
+
+Actual new lifecycle projection may be consumed from immutable small snapshots; its existence does not imply promotion. Checkpoint/restore, authenticated identity provisioning, complete downed/spawn behavior, crash durability, Unity/runtime/device gates remain open until implemented and reviewed. New MatchDirector/MatchRounds/partial API candidate requires fresh independent review.
+

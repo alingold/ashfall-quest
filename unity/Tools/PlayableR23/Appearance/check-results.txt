@@ -1,0 +1,13 @@
+PASS preserved original R23 source input hashes match
+PASS original three mesh, texture and manifest outputs are byte-identical
+PASS camo: 14 exact source parts / 14 material surfaces, 18482 vertices / 27132 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS witch_doctor: 14 exact source parts / 14 material surfaces, 22250 vertices / 32708 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS eclipse_ronin: 14 exact source parts / 14 material surfaces, 18531 vertices / 26728 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS astra: 13 exact source parts / 63 material surfaces, 296748 vertices / 98916 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS sol: 13 exact source parts / 13 material surfaces, 127137 vertices / 42379 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS argon: 13 exact source parts / 55 material surfaces, 220344 vertices / 73448 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS claude: 14 exact source parts / 14 material surfaces, 48493 vertices / 62042 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS obsidian: 14 exact source parts / 15 material surfaces, 70243 vertices / 99958 triangles, real PBR+glove maps, finite normals and reflected topology
+PASS eight distinct source mesh payloads; intentional missing chest plates and multiple materials retained, no duplicate hands
+PASS installed Unity 6000.6.8f1 API compilation, warnings as errors
+No Unity engine, GPU, build, renderer or headset observation performed.

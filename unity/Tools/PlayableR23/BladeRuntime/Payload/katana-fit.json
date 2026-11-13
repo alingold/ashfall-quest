@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "id": "katana",
+  "catalog": 14,
+  "displayName": "ASH KATANA",
+  "variant": "katana_alt",
+  "modelScale": 1,
+  "grip": [
+    0,
+    -0.057,
+    -0.025
+  ],
+  "bladeBase": [
+    0.0,
+    0.125,
+    -0.025
+  ],
+  "bladeTip": [
+    0.0,
+    1.115057390147468,
+    0.06807747501332542
+  ],
+  "renderedHandPhysicalOffset": [
+    0,
+    0,
+    -0.0381
+  ],
+  "supportPoint": [
+    0,
+    -0.19,
+    -0.025
+  ],
+  "contactRadius": 0.026,
+  "exitHysteresis": 0.008,
+  "fullDamageHandSpeed": 2,
+  "damageRange": [
+    25,
+    75
+  ],
+  "movementUnsupported": 1.15,
+  "movementShield": 0.9,
+  "shieldCentre": [
+    0,
+    0.34,
+    0.08
+  ],
+  "shieldRadii": [
+    0.5640636144578313,
+    0.7050795180722892
+  ],
+  "sourceBodyTransform": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ]
+}

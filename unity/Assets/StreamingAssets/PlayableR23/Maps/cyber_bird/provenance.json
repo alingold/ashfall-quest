@@ -1,0 +1,64 @@
+{
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "scripts/cyber_bird.gd": "9a35ad5e52e1181613a11b56544a16e6da0002eeb81f65800054403894efc647",
+    "scripts/cyber_bird_registration.gd": "706c8623143f85c64824060ff55078b3c97d0f554210705b468aef4e81c9b944",
+    "scripts/map_catalog1000.gd": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5",
+    "scripts/city_life_r5.gd": "cbdf5d18ccc42d3e9db96a071b170a023f6472e8fa506497b5ee0f69dccc8d1c",
+    "assets/cyber_bird/weathered.gdshader": "d719ddee32db76d43a756f1adc33d0ba2ffac1e2c86c646d6406cff4a23c746c",
+    "assets/cyber_bird/CREDITS.txt": "96d35c06789b4f534571cd20bc01409a17dd89ea73e5bcafd90d362aba7bbaa0",
+    "assets/maps1000/cyber_bird.png": "1b19cf19b2ea1289faa3bea2c4aae1ccfa39bd4cfecc74cfbe8fcf35c47ebabc",
+    "assets/maps1000/cyber_bird_top.png": "e7384c1c2712c401b4b8d3a9669e3743c920f0e53d10463eb2f0522ea5e6c11c"
+  },
+  "engineRun": false,
+  "renderRun": false,
+  "sourceMath": "Restricted frozen GDScript geometry subset; unsupported syntax fails, integer division/array loops/dictionary fields mapped explicitly; Vector/Basis operations float32",
+  "primitive": {
+    "worldSha256": "94aea8c3459618640c7b670393219858f2e4690ac0c63d51feca114de8b300f4",
+    "payloadSha256": "0f4472a6d3d94d786b9d64d04d9cb126e25dda868b0f68a73b6dce7cfd653263",
+    "mesh": "mesh_00133",
+    "primitive": "BoxMesh size ONE; source 24 vertices/36 indices/3x2 atlas; exact axis normals restored from packed-normal quantization",
+    "sourceGodot": {
+      "build": "official",
+      "hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+      "hex": 263938,
+      "major": 4,
+      "minor": 7,
+      "patch": 2,
+      "status": "stable",
+      "string": "4.7.2-stable (official)",
+      "timestamp": 0
+    }
+  },
+  "unitFaceHash": "c3d89f0878c411b7b0cb4fbde046efdae8dc7f8572ee9f5431a43afb8f5e9625",
+  "boxes": 114367,
+  "solidBoxes": 74689,
+  "buildings": 144,
+  "storeys": 825,
+  "stairs": 825,
+  "bridges": 18,
+  "ramps": 1650,
+  "labels": {
+    "fontSha256": "ab424b0dfe9aa67c0305a992402750431ea024254047f6e09a99c0b89955e9a1",
+    "sourceFont": "Godot4.7.2 default OpenSans SemiBold; matching original glyphs, added source-independent star fallback never used here",
+    "signInstances": 876,
+    "uniqueSignImages": 99,
+    "rasterizer": "Pillow font96, source4px outline/pixel_size/modulate; native Godot Label3D raster/line-baseline parity remains unverified"
+  },
+  "chunks": 159,
+  "materials": 111,
+  "counts": {
+    "renderTriangles": 1374156,
+    "collisionTriangles": 899568
+  },
+  "sourceBoxReceiptsSha256": "bc6a2988698c93d744534c2a216d1f8dc36a1b059000ef4bcb5611b726d4f424",
+  "geometrySha256": "a35bed39018b171b9cae940ac7769b8dc9623f01dfbd5b6f9bfd8b4fd43e2af6",
+  "elapsedSeconds": 10.889,
+  "limits": [
+    "No native/render/headset validation.",
+    "Root must bind cyberWeathered shader, color-background environment/light pools and layer16 foot-only collision; environmentFile remains empty to avoid misusing Valley-only HDR loader.",
+    "Runtime traffic,live weapon/ammo/consumable placements,weather lighting pools and occluder nodes are preserved/described or separate features, not represented as fake scenery.",
+    "Label3D uses genuine Godot default glyphs rasterized on CPU; exact engine text baseline/raster and glow/tone response remain unverified.",
+    "Native source visibility distances are recorded; global native batching differs from each original per-building MultiMesh visibility owner."
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "inputs": {
+    "scripts/belt_lmg.gd": "bbde8e6982595ff0c310553512725898ad83ed2bda0a7ddb26e3048980d0309b",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/downloaded_m60_087.gd": "68aa8c2b67541b5934b016daa52ba38f80f0207d2c4dd8e6951bd8203e07fece",
+    "scripts/downloaded_heavy_085.gd": "af8beb19c7d4f5c07cb082bbb8d6199ce1946f9e9e76d33914b4372e3230ccb1",
+    "scripts/heavy_model_finish.gd": "46c8fe81b166fe2078423c2a0b86d367ed1f479173e2b2156b75ea8c6a54478c",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/recoil_observation.gd": "9e9611d9f24d6c5c38a668246edb42b86253abd5121a58c05846dcae1182cb27",
+    "scripts/recoil_endpoint_experiment.gd": "e4b76469429c8e9c22f12083168f2bc28b1539e8b27d8f1013e1e429ce998c05",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5",
+    "scripts/reference_response.gd": "ddc085cd9c7264aab0f331e5955a5a9b47e1da274ff3cade62f87e02ed73a333",
+    "scripts/grip_hand_086.gd": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+    "scripts/player.gd": "6bdc208101b450f51225fb666df45a759ef1282a578d044aa3a8ce7a12c2ac47",
+    "scripts/menu.gd": "a69ced37ab2299d433cea2db268f645182393f431977a69aa32853f5fc203c43",
+    "scripts/aim_reticle.gd": "87d93cd4f7d951e837d22b0c1686b3fd9ec1bbbce6401f2f45efd44a044bd140",
+    "scripts/reticle_geometry.gd": "7d3442d2cef989a640f9eb7e6f4deac986bbca3eef0fdcbacda17d7743f10c00",
+    "project.godot": "525644531df1018622fc9907ecb7f4d0b90f5c546bc1fb2791e2bf911fbbe0cc",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/data/weapon_rarity_r6.json": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428",
+    "assets/data/reference_062.json": "dfa6ff2272756e0553722cb20ed580aaeb6d08454b368c73dfd375569c71789f",
+    "assets/data/recoil_observed_067.json": "cb494da42fc7900d049d4104e1c680e775fff43e2fe4b84f4e6f1f5627b83930",
+    "assets/data/recoil_endpoint_experiment_071.json": "56a7d2bb33106adbbb85bb1ba0f8e1ac115c0051248b3f25691698cbc14c9cc0",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/models/download_m60/reload-fit.json": "703a9dd9358056aef89f8cb7855e22069583ab8ec176d8c13c81e3700b80b6e6",
+    "assets/ui/catalog094/weapon_8.png": "bc23a1db869c84a4bf1f18b0cb303c4b40b04c2a425968b7e773c23e1a13300e",
+    "assets/models/download_m60/model.glb": "2b3d96d38f9b006bc0ba139798f62da0bd230c4ede354524449d5a14e9018546",
+    "assets/models/download_m60/asset-provenance.json": "fc177a612f29589ea49ce8260c6b6749a2d55186c1dc6d0465801c683fa3a3f2",
+    "assets/models/download_m60/ATTRIBUTION.txt": "47ced9ee91023796c1bb0641403df7661a79f38283cbcd5e5b081aba7adb1773",
+    "assets/models/download_m60_reload087/model.glb": "374549ce9fded12ba4a1eef3cb8a6a97e884a7152c6d9af51a953caf611ce1ae",
+    "assets/models/download_m60_reload087/asset-provenance.json": "1f61d0129640e1ebf06fd3ad4622318af09bf8c2aa2b4baadb71f0762cd52a48",
+    "assets/models/download_m60_reload087/ATTRIBUTION.txt": "4470ff75fb641fe40da53959d9f6bee28160952bb4428aa768a51eecd446411c",
+    "assets/audio/reference097/shot_m60_last_00.wav": "9033458ea5d5444b3fe15011529fb7720fead28a3e3ecd45d0e20a5224c5f87f",
+    "assets/audio/reference099/isolated_spr_mag_eject_00.wav": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+    "assets/audio/reference099/isolated_s85_pouch_00.wav": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+    "assets/audio/reference099/isolated_s85_mag_insert_00.wav": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+    "assets/audio/reference099/isolated_s85_bolt_00.wav": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+    "assets/audio/sfx/dry_00.wav": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+    "assets/audio/sfx/dry_01.wav": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+    "assets/audio/reference097/ATTRIBUTION.txt": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/audio/sfx/PROVENANCE.txt": "35783ab25ae2863bb2aaa327002402bd42919b88a245374451af49224f619426"
+  },
+  "geometry": [
+    {
+      "name": "m60-main",
+      "vertices": 149466,
+      "triangles": 49822
+    },
+    {
+      "name": "m60-donor",
+      "vertices": 21498,
+      "triangles": 7166
+    },
+    {
+      "name": "m60-arrow",
+      "vertices": 141,
+      "triangles": 144,
+      "surfaces": 3,
+      "parts": [
+        {
+          "part": "PhysicalReloadChevronRod0",
+          "recipe": "belt_lmg.gd source PhysicalReloadMotionChevron",
+          "triangles": 48,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "PhysicalReloadChevronRod1",
+          "recipe": "belt_lmg.gd source PhysicalReloadMotionChevron",
+          "triangles": 48,
+          "sourcePosition": [
+            -0.006,
+            0.017,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              -0.8000000000000003,
+              -0.6,
+              0.0
+            ],
+            [
+              0.6,
+              -0.8000000000000003,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "PhysicalReloadChevronRod2",
+          "recipe": "belt_lmg.gd source PhysicalReloadMotionChevron",
+          "triangles": 48,
+          "sourcePosition": [
+            0.006,
+            0.017,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              -0.8000000000000003,
+              0.6,
+              0.0
+            ],
+            [
+              -0.6,
+              -0.8000000000000003,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "file": "m60-source-shot-0.wav",
+      "source": "res://assets/audio/reference097/shot_m60_last_00.wav",
+      "sha256": "9033458ea5d5444b3fe15011529fb7720fead28a3e3ecd45d0e20a5224c5f87f",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 56256
+    },
+    {
+      "file": "m60-source-mag_eject-0.wav",
+      "source": "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 29280
+    },
+    {
+      "file": "m60-source-pouch-0.wav",
+      "source": "res://assets/audio/reference099/isolated_s85_pouch_00.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 29760
+    },
+    {
+      "file": "m60-source-mag_insert-0.wav",
+      "source": "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 26880
+    },
+    {
+      "file": "m60-source-close-0.wav",
+      "source": "res://assets/audio/reference099/isolated_s85_bolt_00.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 31200
+    },
+    {
+      "file": "m60-source-bolt-0.wav",
+      "source": "res://assets/audio/reference099/isolated_s85_bolt_00.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 31200
+    },
+    {
+      "file": "m60-source-open-0.wav",
+      "source": "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 29280
+    },
+    {
+      "file": "m60-source-dry-0.wav",
+      "source": "res://assets/audio/sfx/dry_00.wav",
+      "sha256": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 10560
+    },
+    {
+      "file": "m60-source-dry-1.wav",
+      "source": "res://assets/audio/sfx/dry_01.wav",
+      "sha256": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 10560
+    }
+  ],
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "payloadBytes": 25407663
+}

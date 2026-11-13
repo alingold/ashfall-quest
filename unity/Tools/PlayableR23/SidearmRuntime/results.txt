@@ -1,0 +1,49 @@
+PASS source starter has7 native chambers and finite shared pistol1200
+PASS selection requires trigger release
+PASS actual native accepted shot removes exactly one source chamber
+PASS source semi-auto never repeats held trigger
+PASS source3rps cadence prevents early re-press
+PASS native chamber discharge 0
+PASS native chamber discharge 1
+PASS native chamber discharge 2
+PASS native chamber discharge 3
+PASS native chamber discharge 4
+PASS native chamber discharge 5
+PASS last native shot opens cylinder without ejector/fake spent rounds
+PASS physical forward .06 load debits actual shared reserve once
+PASS fresh support grip required for separate closing stroke
+PASS support upward .05 closes source cylinder
+PASS partial cylinder load fills real empty slots from finite reserve only
+PASS closing resets source chamber index; fire scans remaining live slots
+PASS holster/drop/recollect suspension preserves per-instance native ammo and chamber mask
+PASS left primary mirrors offer/cylinder reach, retains actual physical reload
+PASS neutral-armed player-right primary flick closes loaded cylinder
+PASS raw trigger>.2 blocks flick despite being below firing threshold
+PASS pause freezes native time and held trigger cannot fire on resume
+PASS tracking loss requires trigger release without ammo grants
+PASS primary climb reservation blocks Magnum fire
+PASS actual head obstruction blocks Magnum fire
+PASS two native instances share one finite pistol pool, no negative/unlimited fallback
+PASS support climbing/reservation blocks cartridge acquisition
+PASS source primary stick-down opens cylinder
+PASS explicit desktop reload advances open/load/close without refill of live rounds
+PASS real HealthService applies source63 body damage inside180m source range
+PASS one native shot cannot be applied twice
+PASS real HealthService applies exact81 head damage across shield/health
+PASS map occlusion blocks damage without refunding consumed native shot
+PASS retired pre-restart owner cannot fire
+PASS explicit new-round reset creates source starter; selection never does
+PASS round cannot select an ungranted Magnum or allocate an inventory slot
+PASS production RoundState explicitly allocates and selects native Magnum state
+PASS production RoundState source damage path accepts native Magnum shot at150m
+PASS round damage consumes the runtime pending shot too
+PASS repeated explicit grant-state lookup cannot refill Magnum
+PASS round switching returns same persistent native instance/reserve
+PASS explicit round restart retires previous Magnum and resets granted native starter
+PASS source Magnum pistol-scaled .039m recoil and chevron134/88px rest widths
+PASS source Magnum8.47degree signed pulse peaks at90ms
+PASS source Magnum pulse zero240ms, undershoot310ms, end500ms
+PASS source Magnum chevron accepted-shot bloom225/200px at62ms
+PASS Magnum holster/suppression feedback clears without resetting actual native serial
+PASS immutable dominant thumbstick fields preserve source stick-down and legacy ReloadPressed compatibility
+48 focused source Magnum cases passed

@@ -1,0 +1,23 @@
+HEADSET RECOIL / SPR / SOURCE GRIP REPAIR — CPU handoff
+
+Production fixes
+- Original weapon.gd fire captures model.to_global(muzzle) and unit_model_basis BEFORE _kick_recoil; the next shot/reticle follows the new visible model. R23WeaponPoseMath now calculates this one displayed model/unit-muzzle frame. Carried bullets, pellet volley, reticle, reflex/laser, SPR scene target and flash consume it. No neutral muzzle firing path remains. Accepted-shot world endpoints stay fixed. Native ammo, stage/replay/lifetime, damage and head-to-muzzle obstruction checks remain authoritative.
+- RefreshLateTrackedPresentation runs after Rig before-render tracking, before SPR optics. It only recomputes displayed pose/aim/art; it never reads XR devices, integrates recoil twice, ticks owners, or writes raw controllers/player/head. Native diagnostics distinguish current post-kick model from the captured accepted pre-kick shot.
+- Source gun root is zero at corrected tracked grip for all16. The former MK18/AKM/SPR receiver recenter was wrong: primary_grip_084 is player.gd's rendered-glove contact, not gun-root translation. Ported per-profile source primary contact plus playtest_fit_088 physical deltas, including PX4/Magnum profile centers, TEC9 metadata override, MP5/1911/S85/etc. Held glove contact follows visible recoil; existing free glove hierarchy/orientation calibration is retained. Root independently fixes stale pre-motion contact proxies causing free-glove strafe lag.
+- SPR uses shared actual ballistic target/pose for both eyes. Scope camera culling includes world layer19 marks/targets; gun-mounted ammo/flash remain excluded on18. Standard render-target texel-Y-sign handling added. Projection/reticle-center calculations are shared tested math. MK18/AKM/SPR previous100m pilot boundary now source180m, with source no-hit tracer length100m (pellets remain40m).
+
+Narrow public APIs (no Root edits by worker)
+TryReadDisplayedShotPose(out R23ShotPose): current visible source muzzle, valid only when gameplay presentation allowed.
+TryReadLastAcceptedShotPose(out R23ShotPose): immutable captured BEFORE accepted native kick; LastAcceptedShotActionId / LastAcceptedNativeShot identify actual shot. Reset clears it; holster/pause do not invent another accepted shot.
+DisplayedAimPoint / DisplayedAimBlocked; TryReadHandArtPose(hand0left1right,out Vector3,out Quaternion).
+SetGripToggle(bool): stores pre-init, applies real native support toggle to all retained/new owners, suspends controls on actual changes without grants.
+ReadAmmoReserveFamily(string): real family total even when no owned weapon uses it; unknown/uninitialized0. TryReadAmmoReserveFamily(string,out int) distinguishes unknown=false. Families rifle/pistol/shells/smg/sniper; construction separate.
+TryReadPracticeDamageTarget(index,out string id,out Vector3 center); ApplyTargetDamage(string id,float amount,Vector3 acceptedBlastOrigin): same registered real HealthService, TargetDamaged feedback/reset timer. Flight explosive owner admits blast/tick/falloff; bridge adds no invented blast LOS and no gun-ammo debit.
+MotionDamping / OffhandInfluence remain unbound: no fake source filtering or two-hand steering setter claimed. Dominant hand already uses actual EquipOwned(actionId,hand).
+
+Validation
+python unity/Tools/PlayableR23/HeadsetRecoil/check.py
+210 focused source pose/recoil/rolled-pulse/both-eye SPR/grip/native fire-negative/health/settings/reserve cases passed. Retained222 independent instances +97 rifle/hand/gain/SPR +71SMG +43shotgun +100Catalog5 passed. Installed6000.6.8f1 runtime and UNITY_EDITOR API csc compile passed. No engine/shader compilation/render/GPU/headset/device/process launch or runtime interruption. Human e82/performance baseline remains installed/untouched. Actual GPU UV orientation, impact visibility, physical grip comfort and late-tracked render alignment require next Root-coordinated native/headset pass.
+
+Changed files
+HandsWeapons/R23HandsWeapons.cs; new R23HandsWeapons.DisplayedPose.cs+meta; new R23WeaponPoseMath.cs+meta; R23SprScope.cs/R23SprScopeMath.cs/Resources/R23SprScope.shader; R23GunFeedback.cs; R23SourceRifleOwner.cs; R23RoundState.cs; R23MagnumRuntime.cs; R23M1014Owner.cs; DesktopPlaytest/Combat/LocalRifleSandbox.cs; Tools/HandsWeapons/sources.txt; new Tools/HeadsetRecoil checks. Root/Rig/UI/World/existing Editor fixtures untouched by this worker. Source references remain read-only.

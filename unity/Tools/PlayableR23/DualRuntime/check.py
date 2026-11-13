@@ -1,0 +1,6 @@
+from source import *
+import subprocess,sys
+live="--live" in sys.argv
+T=HERE;H=ROOT/'unity/Assets/Ashfall/Integration/Playable/HandsWeapons'
+files=sorted(set([ROOT/x for x in(ROOT/'unity/Tools/PlayableR23/HandsWeapons/sources.txt').read_text().splitlines()]+list(H.glob('*.cs'))))+([] if live else list((T/'Staged').glob('*.cs')))+[T/'Cases.cs']
+args=['/nologo','/langversion:5','/warn:4','/warnaserror+','/target:exe','/out:'+str(T/'Cases.exe'),'/reference:C:/Windows/Microsoft.NET/Framework64/v4.0.30319/System.dll','/reference:C:/Windows/Microsoft.NET/Framework64/v4.0.30319/System.Core.dll']+[str(p)for p in files];rsp=T/'cases.rsp';rsp.write_text('\n'.join('"'+x+'"'for x in args));q=subprocess.run(['C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe','/noconfig','@'+str(rsp)],capture_output=True,text=True);(T/'compile.log').write_text(q.stdout+q.stderr);print(q.stdout+q.stderr);assert q.returncode==0;q=subprocess.run([str(T/'Cases.exe')],capture_output=True,text=True);(T/'cases.log').write_text(q.stdout+q.stderr);print(q.stdout+q.stderr);assert q.returncode==0

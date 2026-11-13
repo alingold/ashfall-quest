@@ -1,0 +1,11 @@
+/nologo
+/langversion:5
+/warnaserror+
+/target:exe
+/out:"C:\Users\aling\Documents\ashfall\unity\Tools\Modules\Presentation\PresentationTests.exe"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Core\Contracts.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Presentation\PresentationPorts.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Presentation\SettingsCatalog.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Presentation\PresentationModel.cs"
+"C:\Users\aling\Documents\ashfall\unity\Assets\Ashfall\Modules\Presentation\HudModel.cs"
+"C:\Users\aling\Documents\ashfall\unity\Tools\Modules\Presentation\PresentationTests.cs"

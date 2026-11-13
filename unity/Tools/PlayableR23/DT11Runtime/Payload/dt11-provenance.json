@@ -1,0 +1,507 @@
+{
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/dt11.gd": "cf553752c2b89bdf36b3a6a3db3e7dd66f67763e6bcfbca553eadd9667b3df84",
+    "scripts/shotgun.gd": "51763af07cbaff7e01c62a54bc5ae4edffe09f9af088fea7b46080e5475bcba6",
+    "scripts/break_action_state.gd": "6824f7671e05bb15f93221ac018487a902068617f6d55f07eab9db1204ff7c20",
+    "scripts/closure_flick.gd": "136eb9945d67efed9b5d044555db55fa4eb442523354a0d8fe5a7cf109276eca",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/player.gd": "6bdc208101b450f51225fb666df45a759ef1282a578d044aa3a8ce7a12c2ac47",
+    "scripts/solid_import_085.gd": "0f0519ad1a501249bd9f5638496332c0b217e88656164a36e06806376ff5159e",
+    "scripts/common_reflex_090.gd": "459c1d259208debeacbb799a2b84e458559aa30db2413c8ad581f9a57f2c7824",
+    "scripts/downloaded_dt11_model.gd": "3599b9710781d2439eae3cc43f7bd9d7f719de8a101200f6b4234e9149d826c4",
+    "scripts/model_variants.gd": "aa993d206ed814c934dbb0f93ccda7638e26da2296465e613634cbc477d41ba3",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/heavy_model_finish.gd": "46c8fe81b166fe2078423c2a0b86d367ed1f479173e2b2156b75ea8c6a54478c",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "scripts/one_star0991.gd": "edc394c49f27cd9ec8c625d9e8055cb84c638cd768b32ca941886f764b98ec65",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5",
+    "project.godot": "525644531df1018622fc9907ecb7f4d0b90f5c546bc1fb2791e2bf911fbbe0cc",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/data/weapon_rarity_r6.json": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428",
+    "assets/data/reference_062.json": "dfa6ff2272756e0553722cb20ed580aaeb6d08454b368c73dfd375569c71789f",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/models/download_dt11/model.glb": "ab122decaa2a83de32c464ae11ad876edae2ab9a794e95b1e1635b283175b72c",
+    "assets/models/download_dt11/asset-provenance.json": "252fd393d87ca5ed57475a2a6035baeb0df3abd490905d64193033a349d1d703",
+    "assets/models/download_dt11/ATTRIBUTION.txt": "77e0c0d76a3487208f90195386b98529fc1f1beb1b09abdf74849dee67a8c1a7",
+    "assets/ui/catalog094/weapon_1.png": "50178b33e6b4bc8eb51f7fb85477b59108194bc51b68bc3195abd14a79dde80f",
+    "assets/audio/reference099/isolated_spr_mag_eject_00.wav": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+    "assets/audio/reference099/isolated_s85_mag_insert_00.wav": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+    "assets/audio/reference099/isolated_s85_bolt_00.wav": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562"
+  },
+  "assets": [
+    {
+      "name": "dt11",
+      "vertices": 12786,
+      "triangles": 4262
+    },
+    {
+      "name": "dt11-barrels",
+      "vertices": 4752,
+      "triangles": 1584
+    },
+    {
+      "name": "dt11-chambers",
+      "vertices": 574,
+      "triangles": 800,
+      "surfaces": 6,
+      "parts": [
+        {
+          "part": "OpenChamberMouth0",
+          "recipe": "shotgun.gd retained mouth, fitted default factor and+.02y",
+          "triangles": 256,
+          "sourcePosition": [
+            -0.01152684834816202,
+            0.175,
+            0.014
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "LiveShellCap0",
+          "recipe": "source live chamber cap source radiusfit only",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.01152684834816202,
+            0.175,
+            0.017
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SpentShellCap0",
+          "recipe": "source spent cap distinct visual",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.01152684834816202,
+            0.175,
+            0.0175
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "OpenChamberMouth1",
+          "recipe": "shotgun.gd retained mouth, fitted default factor and+.02y",
+          "triangles": 256,
+          "sourcePosition": [
+            0.01152684834816202,
+            0.175,
+            0.014
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "LiveShellCap1",
+          "recipe": "source live chamber cap source radiusfit only",
+          "triangles": 72,
+          "sourcePosition": [
+            0.01152684834816202,
+            0.175,
+            0.017
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SpentShellCap1",
+          "recipe": "source spent cap distinct visual",
+          "triangles": 72,
+          "sourcePosition": [
+            0.01152684834816202,
+            0.175,
+            0.0175
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              6.123233995736766e-17,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              6.123233995736766e-17
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "dt11-pair",
+      "vertices": 268,
+      "triangles": 288,
+      "surfaces": 4,
+      "parts": [
+        {
+          "part": "Shell0.Hull",
+          "recipe": "source shell_offer/shell_pair hull12radial/rings1",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.010246087420588463,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell0.Cap",
+          "recipe": "source pair source cap, x/radius fit only",
+          "triangles": 72,
+          "sourcePosition": [
+            -0.010246087420588463,
+            0.035,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Hull",
+          "recipe": "source shell_offer/shell_pair hull12radial/rings1",
+          "triangles": 72,
+          "sourcePosition": [
+            0.010246087420588463,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "Shell1.Cap",
+          "recipe": "source pair source cap, x/radius fit only",
+          "triangles": 72,
+          "sourcePosition": [
+            0.010246087420588463,
+            0.035,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "dt11-ejected",
+      "vertices": 90,
+      "triangles": 120,
+      "surfaces": 1,
+      "parts": [
+        {
+          "part": "SpentCasing",
+          "recipe": "source8pool projectile cylinder10radial/default4rings",
+          "triangles": 120,
+          "sourcePosition": [
+            0,
+            0,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "dt11-arrow",
+      "vertices": 72,
+      "triangles": 36,
+      "surfaces": 3,
+      "parts": [
+        {
+          "part": "UpCloseShaft",
+          "recipe": "dt11.gd source UpCloseOnly shaft",
+          "triangles": 12,
+          "sourcePosition": [
+            0,
+            0.045,
+            0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "UpCloseArm-1",
+          "recipe": "source original three-box UP-only arrow",
+          "triangles": 12,
+          "sourcePosition": [
+            -0.01,
+            0.077,
+            0
+          ],
+          "sourceRotation": [
+            [
+              0.7960837985490559,
+              0.6051864057360395,
+              0.0
+            ],
+            [
+              -0.6051864057360395,
+              0.7960837985490559,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "UpCloseArm1",
+          "recipe": "source original three-box UP-only arrow",
+          "triangles": 12,
+          "sourcePosition": [
+            0.01,
+            0.077,
+            0
+          ],
+          "sourceRotation": [
+            [
+              0.7960837985490559,
+              -0.6051864057360395,
+              0.0
+            ],
+            [
+              0.6051864057360395,
+              0.7960837985490559,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "file": "dt11-open-0.wav",
+      "source": "assets/audio/reference099/isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3"
+    },
+    {
+      "file": "dt11-insert-0.wav",
+      "source": "assets/audio/reference099/isolated_s85_mag_insert_00.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26"
+    },
+    {
+      "file": "dt11-close-0.wav",
+      "source": "assets/audio/reference099/isolated_s85_bolt_00.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7"
+    }
+  ],
+  "blast": {
+    "kind": "source procedural shotgun._bake_cue",
+    "source": "scripts/shotgun.gd",
+    "seed": 3501763729,
+    "samples": 20800,
+    "rate": 32000,
+    "rng": "Godot4.6 PCG32 source algorithm",
+    "primaryReferences": [
+      "https://github.com/godotengine/godot/blob/4.6.2-stable/core/math/random_pcg.h",
+      "https://github.com/godotengine/godot/blob/4.6.2-stable/thirdparty/misc/pcg.cpp"
+    ],
+    "limits": "Recipe port, CPU deterministic verification only; no native Godot PCM byte-comparison. Reference0992 DT11 recorded shot exists but actual shotgun._mechanisms.blast bypasses it."
+  },
+  "engine": false,
+  "gpu": false,
+  "device": false
+}

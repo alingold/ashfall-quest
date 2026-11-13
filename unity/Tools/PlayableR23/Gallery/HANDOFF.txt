@@ -1,0 +1,71 @@
+R23 source lobby weapon inspection gallery
+
+Component: Ashfall.Integration.Playable.Gallery.R23LobbyWeaponGallery
+Initialize(headCamera, leftTrackedHand, rightTrackedHand, optionalPlayerRoot).
+Wire R23VrUI.WeaponViewed: null -> Hide(), otherwise Show(id).
+Call Sample(dt, immutableHandsSnapshot, hardwareFocused, dominantHand) while
+gallery is active, including while carried gameplay is menu-paused. Dominant
+hand is 0 left / 1 right. Existing tracked transforms are read, never changed.
+SetSfxVolume(0..1) preserves the source cue gain ratios.
+
+Ready/Loading/Failure expose asynchronous source payload readiness.
+ViewState and ViewStateChanged expose label/status, ammo/capacity/reserve,
+source reload phase, holding hand and actual scope-active state.
+HoldingChanged(hand,held) and ActiveChanged(active) let root suppress the carried
+gun's presentation and route inputs exclusively to preview. Gallery deliberately
+does not hide, equip, drop, grant, refill or otherwise mutate carried inventory.
+Root should suppress carried weapon input while inspection is active.
+
+Source behavior retained: MK18, AKM and SPR genuine art/optics/audio; full-size
+1.10m-forward/.16m-below pitched upright dock; reflected source 90-degree yaw;
+dominant-hand grip edge, 2m reach/.94 remote aim gate; source native burst/auto/
+semi and physical eject/insert/charge reload. Release/tracking loss/reservation/
+focus loss retires the live preview and returns its own art to the saved dock.
+Every regrab creates a private live097 instance. Preview-only unlimited reserve
+is genuine source behavior (no ammo_provider), exposed as -1. Same-ID Show is
+idempotent so a UI refresh cannot refill a live preview. Source harmless trace
+is physics-occluded at 40m and lives .07s. No world-damage callback is supplied.
+
+Limits: four implemented source weapons; no character gallery/desktop
+mouse pane. Caller owns menu placement, dominant-hand choice, input exclusivity
+and carried gun visibility. Real scope render/device behavior remains untested.
+
+Validation: python unity/Tools/PlayableR23/Gallery/check.py
+18 source mechanics/isolation/reload/trigger/release cases passed; full gallery
+plus HandsWeapons compiled against installed Unity 6000.6.8f1 APIs with warnings
+as errors. No Unity engine, GPU, render capture, headset or current build run.
+
+MAGNUM ADDITION (2026-11-05)
+Show("magnum") now accepts the catalog choice, immediately hides prior rifles,
+and displays the actual merged Magnum body/cylinder/offer at source .84 scale
+and zero grip origin. Existing UI.WeaponViewed->root ViewGalleryWeapon wiring
+already works; no Root/Hands/Rig/UI change is required.
+
+The gallery uses a separate real R23MagnumRuntime with seven native chambers
+and its own finite1200 pistol reserve. Each source live097 grip creates a fresh
+private owner; release/focus/tracking/reservation loss retires it. No carried
+inventory/health/ammo object is passed, and TryApplyHit is never called.
+The source main-runtime physical cylinder open/load/fresh-grip close/flick and
+semi-auto/cadence rules run unchanged. Current control policy uses right stick
+click or ReloadRequested to open, dominant stick-down/flick and support strokes.
+Exact existing Magnum shot/reload audio routes are reused; only harmless gallery
+traces are emitted. No rifle substitute or shared infinite reserve is used for
+Magnum. The original three rifle previews retain their source unlimited reserve
+behavior and their untouched art/SPR optics/model adapter.
+
+Ready remains the rifle-bank startup readiness. For Magnum use ViewState.Ready
+or MagnumReady; Loading covers startup/its independent load. MagnumFailure and
+ViewState.Error report failures; failure of Magnum does not disable the three
+working rifles. MagnumPreviewVisible verifies the actual loaded render root.
+ViewState reports capacity7 and finite private reserve while live, ScopeActive
+false. SetSfxVolume and Hide/disposal include the new owned view/audio resources.
+
+Checks: Gallery/check.py now passes18 existing rifle/source cases +20 production
+Magnum gallery cases (native chambers/semi/fire/finite reload/retire/isolation),
+and reads back all three actual Magnum render payloads/seven-round contracts.
+Installed API compilation passes for gallery+Hands and full project source.
+No native art, reload gesture, audio listening, VR, engine/build/device job was
+run; installed APK remains unchanged. Future coordinator check: Show("magnum"),
+wait ViewState.Ready, require MagnumPreviewVisible, inspect the actual Magnum
+then Sample neutral/grip/trigger releases and physical cylinder reload. Hide
+must clear HoldingHand/live state/trace and the owned model visibility.

@@ -1,0 +1,23 @@
+*** Begin Patch
+*** Update File: unity/Assets/Ashfall/Integration/Playable/UI/R23VrUI.cs
+@@
+         string appearanceStatus="",appearanceSelected="";
++        string calibrationStatus="STAND UPRIGHT TO CALIBRATE";
+@@
+-        public event Action StartRequested,RestartRequested,ReloadRequested;
++        public event Action StartRequested,RestartRequested,ReloadRequested,RecalibrationRequested;
+@@
+         public void OpenSettings() { OpenSubpage(R23UiPage.Settings); }
++        public void SetCalibrationStatus(string value)
++        {
++            Require();string status=Clean(value,48);if(status==calibrationStatus)return;
++            calibrationStatus=status;if(Page==R23UiPage.Settings)Build();
++        }
+@@
+             title.text="SETTINGS / "+(settingsPage==0?"LOCOMOTION":"AUDIO");
++            Text(panel,calibrationStatus,new Vector3(0,.405f,-.01f),.023f,1.34f,new Color(.6f,.85f,.9f));
+@@
+-            AddButton(panel,settingsPage==0?"AUDIO >":"< MOTION",0,-.34f,1.2f,.11f,delegate{settingsPage=1-settingsPage;Build();},.032f);Back();
++            AddButton(panel,settingsPage==0?"AUDIO >":"< MOTION",-.31f,-.34f,.58f,.11f,delegate{settingsPage=1-settingsPage;Build();},.030f);
++            AddButton(panel,"CALIBRATE",.31f,-.34f,.58f,.11f,delegate{if(RecalibrationRequested!=null)RecalibrationRequested();},.030f);Back();
+*** End Patch

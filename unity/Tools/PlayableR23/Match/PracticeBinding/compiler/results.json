@@ -1,0 +1,24 @@
+[
+  {
+    "name": "R23Playable.EditorRuntime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Match\\PracticeBinding\\compiler\\R23Playable.EditorRuntime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "PracticeFixture",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\Match\\PracticeBinding\\compiler\\PracticeFixture.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

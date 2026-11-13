@@ -1,0 +1,249 @@
+[
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R23HandsWeapons.Awp.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.Awp.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R23RoundState.Awp.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.Awp.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpCatalog.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpCatalog.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpFeedback.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpFeedback.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpGallery.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24AwpGallery.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpGallerySession.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24AwpGallerySession.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpMath.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpMath.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpMechanics.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpMechanics.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpOwner.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpOwner.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpScope.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpScope.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpScope.shader",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/Resources/R24AwpScope.shader",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Staged/R24AwpView.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24AwpView.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23Audio.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23Audio.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23HandsWeapons.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23HandsWeapons.DisplayedPose.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.DisplayedPose.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23LobbyWeaponGallery.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R23LobbyWeaponGallery.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23RoundState.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23SourceRifleOwner.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23SourceRifleOwner.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23WeaponFeedbackState.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponFeedbackState.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23WeaponInstances.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponInstances.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23WeaponPickupRules.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPickupRules.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23WeaponPoseMath.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPoseMath.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/R23WeaponWheelIcons.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Input/R23WeaponWheelIcons.cs",
+    "new": false,
+    "preserveExistingMeta": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-0-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-0-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-0-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-0-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-audio-authored-sfx-PROVENANCE.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-audio-authored-sfx-PROVENANCE.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-audio-reference099-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-audio-reference099-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-chamber.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-chamber.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-chamber.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-chamber.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-charge-arrow.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-charge-arrow.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-charge-arrow.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-charge-arrow.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-fit.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-fit.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-icon.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-icon.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-insert-arrow.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-insert-arrow.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-insert-arrow.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-insert-arrow.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-provenance.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-provenance.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-bolt-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-bolt-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-dry-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-dry-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-dry-1.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-dry-1.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-mag_eject-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-mag_eject-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-mag_insert-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-mag_insert-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-pouch-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-pouch-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp-source-shot-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp-source-shot-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Payload/awp.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/awp.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/AwpRuntime/Candidate/audio.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/audio.json",
+    "new": false,
+    "preserveExistingMeta": true
+  }
+]

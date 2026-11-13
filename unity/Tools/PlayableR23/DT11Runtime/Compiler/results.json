@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Dt11Candidate.Runtime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\DT11Runtime\\Compiler\\Dt11Candidate.Runtime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "Dt11Candidate.EditorRuntime",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\DT11Runtime\\Compiler\\Dt11Candidate.EditorRuntime.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  },
+  {
+    "name": "Dt11Candidate.BuildAndSmoke",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\DT11Runtime\\Compiler\\Dt11Candidate.BuildAndSmoke.rsp"
+    ],
+    "exit": 0,
+    "output": ""
+  }
+]

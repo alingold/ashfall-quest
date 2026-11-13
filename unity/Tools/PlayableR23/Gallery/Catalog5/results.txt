@@ -1,0 +1,71 @@
+PASS 1911 actual catalog base support, no PX4 shortcut
+PASS 1911 private source live097 owner, no carried provider
+PASS 1911 held entry cannot fire
+PASS 1911 real owner first accepted discharge
+PASS 1911 held semi trigger stays disarmed
+PASS 1911 focus loss cannot debit
+PASS 1911 actual click eject
+PASS 1911 held click cannot insert or rack
+PASS 1911 actual offered magazine grip
+PASS 1911 actual source insertion zone
+PASS 1911 physical reload fills private owner only
+PASS 1911 released owner retired, fresh isolated regrab
+PASS 1911 menu hide cleanup
+PASS tec9 actual catalog base support, no PX4 shortcut
+PASS tec9 private source live097 owner, no carried provider
+PASS tec9 held entry cannot fire
+PASS tec9 real owner first accepted discharge
+PASS tec9 actual automatic held cadence
+PASS tec9 focus loss cannot debit
+PASS tec9 actual click eject
+PASS tec9 held click cannot insert or rack
+PASS tec9 actual offered magazine grip
+PASS tec9 actual source insertion zone
+PASS tec9 physical reload fills private owner only
+PASS tec9 released owner retired, fresh isolated regrab
+PASS tec9 menu hide cleanup
+PASS rfb actual catalog base support, no PX4 shortcut
+PASS rfb private source live097 owner, no carried provider
+PASS rfb held entry cannot fire
+PASS rfb real owner first accepted discharge
+PASS rfb actual automatic held cadence
+PASS rfb focus loss cannot debit
+PASS rfb actual click eject
+PASS rfb held click cannot insert or rack
+PASS rfb actual offered magazine grip
+PASS rfb actual source insertion zone
+PASS rfb physical reload fills private owner only
+PASS rfb released owner retired, fresh isolated regrab
+PASS rfb menu hide cleanup
+PASS fal actual catalog base support, no PX4 shortcut
+PASS fal private source live097 owner, no carried provider
+PASS fal held entry cannot fire
+PASS fal real owner first accepted discharge
+PASS fal held semi trigger stays disarmed
+PASS fal focus loss cannot debit
+PASS fal actual click eject
+PASS fal held click cannot insert or rack
+PASS fal actual offered magazine grip
+PASS fal actual source insertion zone
+PASS fal physical reload fills private owner only
+PASS fal released owner retired, fresh isolated regrab
+PASS fal menu hide cleanup
+PASS s85 actual catalog base support, no PX4 shortcut
+PASS s85 private source live097 owner, no carried provider
+PASS s85 held entry cannot fire
+PASS s85 real owner first accepted discharge
+PASS S85 nonfinal discharge stores seated rounds and requires rack
+PASS S85 held trigger cannot substitute bolt cycle
+PASS S85 physical BACK rack restores actual retained four rounds
+PASS s85 focus loss cannot debit
+PASS s85 actual click eject
+PASS s85 held click cannot insert or rack
+PASS s85 actual offered magazine grip
+PASS S85 old low well cannot replace raised offer-relative zone
+PASS s85 actual source insertion zone
+PASS s85 physical reload fills private owner only
+PASS s85 released owner retired, fresh isolated regrab
+PASS s85 menu hide cleanup
+PASS RFB simultaneous trigger+fresh click fires then ejects, source order
+PASS RFB custom VR path has no generic stick-down eject
+PASS 70 actual private Catalog5 owner/control/physical reload cases; no engine/render/device run

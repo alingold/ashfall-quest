@@ -1,0 +1,130 @@
+{
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/grip_hand_086.gd": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+    "scripts/gemini_player_models_099.gd": "bdfe832b771ea76400b2c69b0552677a67672b513921a5751c71fe8b5e23eef9",
+    "scripts/lobby_map_091.gd": "c2f4d0164df67ba2de918935c46779fdb9e6a2c65fdd54a4574cfeb8a433383f",
+    "assets/hands/xrtools086/Hand_Glove_low_L.gltf": "8010745a3d60329a828361a19a8e52233788ccf3e7654c1b4f5c8fa694b6202c",
+    "assets/hands/xrtools086/left_Grip 5.res": "08d4d5ba821cdb8441a43b52fa296aad753077a940813cd16d79a419aa90fc00",
+    "assets/hands/xrtools086/left_Grip.res": "5f0ad88d3f9127ba37508731752b62ac44e1d731ac35e62c5ef9a27c6a74efbf",
+    "assets/hands/xrtools086/Hand_Glove_low_R.gltf": "0719afd3184871240ddb65f359bdf60740a330cccb4179b1335b3da1b00370de",
+    "assets/hands/xrtools086/right_Grip 5.res": "1525f2dcc06a864910c75ef3fac3ff5a3b85e250a6fe204ba1f5f5b017000538",
+    "assets/hands/xrtools086/right_Grip.res": "f32e8d70d384732e8f5281b1eb4819e4ae5f1cd59228ec1f9d2587e1b6282966"
+  },
+  "hands": [
+    {
+      "side": "left",
+      "file": "preview-menu-left.meshbin",
+      "bytes": 39924,
+      "sha256": "38c246433946bac8f30966f4b471f0f62c5226aa064047829a5d2513c71b87df",
+      "vertices": 812,
+      "triangles": 1160,
+      "weightSumMaxError": 1.1920928955078125e-07,
+      "maxOpenVsRestDegrees": 14.475271044687853,
+      "bakedWrist": [
+        0.0010263277019149917,
+        0.02298515296209848,
+        -0.053501691973600204
+      ],
+      "bakedKnuckle": [
+        -0.0010173297697297315,
+        0.03400886372459644,
+        0.053898397765615516
+      ],
+      "relaxedPosition": [
+        -0.25336682994789167,
+        0.9170803632239756,
+        0.01660524101782114
+      ],
+      "relaxedForward": [
+        0.04242376505246007,
+        -0.9989848740201827,
+        -0.015147463076492507
+      ],
+      "relaxedUp": [
+        -0.23321590780155732,
+        -0.024643954159481243,
+        0.972112655956953
+      ],
+      "canonicalPosition": [
+        -0.26,
+        0.94,
+        0.04
+      ],
+      "canonicalForward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "canonicalUp": [
+        -0.19866933079506122,
+        0.9800665778412416,
+        0.0
+      ],
+      "openPoseBoneCount": 19,
+      "sourceWrist": [
+        -0.26,
+        0.97,
+        0.04
+      ]
+    },
+    {
+      "side": "right",
+      "file": "preview-menu-right.meshbin",
+      "bytes": 39924,
+      "sha256": "df92ff9a94ec3cb6e963e0ad4b3107e344085f7da5ea1eafc3a110bfd0ce49dd",
+      "vertices": 812,
+      "triangles": 1160,
+      "weightSumMaxError": 1.1920928955078125e-07,
+      "maxOpenVsRestDegrees": 14.475273613217404,
+      "bakedWrist": [
+        -0.0010263277019149917,
+        0.02298515296209848,
+        -0.053501691973600204
+      ],
+      "bakedKnuckle": [
+        0.0010173297697702668,
+        0.0340088625264892,
+        0.05389839778088694
+      ],
+      "relaxedPosition": [
+        0.2533668301407301,
+        0.9170803629543256,
+        0.016605241573101403
+      ],
+      "relaxedForward": [
+        -0.042423762263764146,
+        -0.9989848743000571,
+        -0.015147452428929009
+      ],
+      "relaxedUp": [
+        0.23321590592852093,
+        -0.02464394307193222,
+        0.9721126566873856
+      ],
+      "canonicalPosition": [
+        0.26,
+        0.94,
+        0.04
+      ],
+      "canonicalForward": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "canonicalUp": [
+        0.19866933079506122,
+        0.9800665778412416,
+        0.0
+      ],
+      "openPoseBoneCount": 19,
+      "sourceWrist": [
+        0.26,
+        0.97,
+        0.04
+      ]
+    }
+  ],
+  "normalContract": "Godot Compatibility skeleton.glsl blended bone matrix normal direction, normalized, skin basis then one Z reflection; no bind-rest gameplay mesh replacement.",
+  "policy": "Seed0..7 canonical; all ExtraKits8..114 source relaxed pose; actual Grip5 skeleton pose, no controller/gameplay/bore changes."
+}

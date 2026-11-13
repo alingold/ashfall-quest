@@ -1,0 +1,198 @@
+{
+  "base": "008b01f819dc2e9e4fbedd7c2e7466dbe6709c45",
+  "branch": "standalone/r10-runtime-corrections",
+  "groups": {
+    "paired_ammo": [
+      {
+        "path": "scripts/dual_pistols.gd",
+        "sha256": "45318dce819f24c9b0b60c9b37904fe831c1f8b231deeaa1f7a4a79f49c9d675"
+      }
+    ],
+    "pad_locomotion": [
+      {
+        "path": "scripts/archive_gameplay_r8.gd",
+        "sha256": "c343772269803f8fff901e57436d6df4c3f9ccc444bfdd945b83f434a6a64acd"
+      },
+      {
+        "path": "scripts/player.gd",
+        "sha256": "7fa656559137af26e34b195f921f6626d92bd4ef30e6bafdb2e1b39d0320438f"
+      }
+    ],
+    "glass_doors_and_prop_rendering": [
+      {
+        "path": "assets/audio/sfx/ORIGINAL-DESIGN-R10.txt",
+        "sha256": "6ee2d618d0286f7535304c2f55b86fcdd495ae458b9c367c5eed537f26af4ce7"
+      },
+      {
+        "path": "assets/audio/sfx/wood_break_r10.wav",
+        "sha256": "4f778f5ded92982d7f66326d5e98980659f08d360b855f0a9e04cde44eb9d50c"
+      },
+      {
+        "path": "assets/materials/ORIGINAL-DESIGN-R10.txt",
+        "sha256": "62bb40d388e7dfe0461dd8d88534678a7dabd94ebb3450b529fc9ff9435f958b"
+      },
+      {
+        "path": "assets/materials/archive_container_r10.gdshader",
+        "sha256": "a61645b86cc2d36474d6210d943dbe9800376277c92f98dc96b0147e332002e9"
+      },
+      {
+        "path": "assets/materials/archive_van_r10.gdshader",
+        "sha256": "48be96e8d03396e9ba59ceda51d17464a725305a8f6bbeaa28d5d7f28b71c1e2"
+      },
+      {
+        "path": "assets/materials/clear_glass_r10.gdshader",
+        "sha256": "870e6eab10deb52d4cd5209958ead6ff531c37620abc14abaf1b03616f18e1cd"
+      },
+      {
+        "path": "scripts/archive_panel_r8.gd",
+        "sha256": "719b3a2ccdcd07f55f6065c047739ddcb8a84c277f6ec37c5bd4bca34f274b1d"
+      },
+      {
+        "path": "scripts/archive_passage_cut_r9.gd",
+        "sha256": "9594ec9c26895d251b70bbda26943e27b3c978e2d1727e02249fc1f53717862d"
+      },
+      {
+        "path": "scripts/archive_prop_materials_r10.gd",
+        "sha256": "75b03167ce931f67eb68786203fc377e80c50f05f39df55520a4e730265bf305"
+      },
+      {
+        "path": "scripts/archive_semantics_r8.gd",
+        "sha256": "857bbf458575af9407d4f969eb9b158683088dc1c89199c9ea57c5b91a9526e5"
+      },
+      {
+        "path": "scripts/archive_semantics_r9.gd",
+        "sha256": "a24e26762d5f3b4f03c498116e47d25099166f5ba837a4c1a86289208b0197b2"
+      }
+    ],
+    "menu_and_spawn": [
+      {
+        "path": "scripts/lobby_gallery_091.gd",
+        "sha256": "bad7a4ad6602dc2b2f912c34b9a736af7c91d08f900c44c33f7c74fbabfcde14"
+      },
+      {
+        "path": "scripts/menu.gd",
+        "sha256": "c4f26545cd3dbaf75752f628f9cc2d867519cf9481cb569e58f6b052552e2090"
+      },
+      {
+        "path": "scripts/net_bridge1000.gd",
+        "sha256": "bbc2c1fddb3f5b4983e2368621be611d9e873b67401289fe31c6a8e33ca94b0a"
+      },
+      {
+        "path": "scripts/net_session1000.gd",
+        "sha256": "222aba2d97e5176a2050e676dc2b63612d8937bbeab9709900d2623aa5b64881"
+      }
+    ],
+    "build_and_fingerprint": [
+      {
+        "path": "assets/data/archive_adapters_r10.json",
+        "sha256": "00aee2d894f87aa3399720f9c88abe70b8ebd8eb90895442a3b8ae983a4e7695"
+      },
+      {
+        "path": "assets/data/network_content1000.json",
+        "sha256": "6c42e15b8c5b0831480112749b46486487032136f43fd3031dcd5d4d72988b70"
+      },
+      {
+        "path": "export_presets.cfg",
+        "sha256": "fc3cfdd0ec7541dbe2656ac404a50c9c9798d048cd0ec01b1140ea335b588b45"
+      },
+      {
+        "path": "project.godot",
+        "sha256": "0d0ec4b7d289eac9cbd51900f5da8f6b408f637be3d8f9a120584f044bd3cc40"
+      },
+      {
+        "path": "scripts/archive_catalog1003.gd",
+        "sha256": "3e79f32c572c3a8c69c682cd15f9f1673c96f6e5b5769e87f2d228df54248d3b"
+      },
+      {
+        "path": "scripts/archive_map1003.gd",
+        "sha256": "aaaca320b0f00d244c9c2efaf4de5d4289444a82db22c1bd5263dceb1482a413"
+      }
+    ],
+    "tests_and_documentation": [
+      {
+        "path": ".gitignore",
+        "sha256": "4011f74fa21863116e7020d7bc87795b12c031c93ab8b2d163c50f0b788eb0b8"
+      },
+      {
+        "path": "FEEDBACK-REGISTER-R10.md",
+        "sha256": "b7e7ff6286abe4b3483feab35d6fa383ee865c8a47f2c298e2ba9609fe776221"
+      },
+      {
+        "path": "README-R10.md",
+        "sha256": "2e2f44499b1a7313dbbc73a4cdc0306fdae212d878d6e099319b8fdf74a6fc07"
+      },
+      {
+        "path": "scripts/one_star0991.gd",
+        "sha256": "edc394c49f27cd9ec8c625d9e8055cb84c638cd768b32ca941886f764b98ec65"
+      },
+      {
+        "path": "scripts/weapon_rarity_r6.gd",
+        "sha256": "97fd595a07399de7c6b7173c7f3dd4c2cc27205bda784a57b8573ff947fabc4e"
+      },
+      {
+        "path": "tests/audio_preservation_r10.gd",
+        "sha256": "f03639f929d50f849fcb911f670c7e8968a976493a6389f9d41dc38475fb8dce"
+      },
+      {
+        "path": "tests/bake_adapters_r10.gd",
+        "sha256": "4ea4b9f7a8f2fe3f25b3d05691e564dbfca02943b8f6cd09b98d5c0f10faeaec"
+      },
+      {
+        "path": "tests/capture_r10.gd",
+        "sha256": "6220aecd0fe6c3ad5536a347e01fccf15240b684362a68d32924c92da2d7b953"
+      },
+      {
+        "path": "tests/dual_trigger_r10.gd",
+        "sha256": "82f5d4dd8436978979e9488f67d96ff4f06dbc7ad91ff9f519912c8f078b0fd2"
+      },
+      {
+        "path": "tests/host_transition_r10.gd",
+        "sha256": "9fcc6240010d4899dd572b2a9467cab43b827fd14203eb17cae737f9605b9d31"
+      },
+      {
+        "path": "tests/library_gameplay_r10.gd",
+        "sha256": "3766db5ce42d795afc4c04b4299fa4e3ee54424bba293a481c78319d8de70f80"
+      },
+      {
+        "path": "tests/passages_r10.gd",
+        "sha256": "2c04c5aae986ce38bbf4d79e7b59563035a277cd9c28f0507929eb17015ef39d"
+      },
+      {
+        "path": "tests/peer_runtime_r10.gd",
+        "sha256": "d9fb7eacb809d8b59883658ee507be85cdfd9ee2b9434aa2daf3a30175faa3dc"
+      },
+      {
+        "path": "tests/prop_preservation_r10.gd",
+        "sha256": "b217b6d90901f8ea03e23faf0cb1aa883505e770d942e1244c09a78d741ec3c9"
+      },
+      {
+        "path": "tests/runtime_r10.gd",
+        "sha256": "bb4c3446007d52771c003d1a0d02f3fa6ff6520e5d42c07a811f52e0274f46a8"
+      },
+      {
+        "path": "tests/wire_r10.gd",
+        "sha256": "1c8ea85121c75bc6c949067e6398f0adf9d1b274b9ef56a9a2d2fbf83c1fc692"
+      },
+      {
+        "path": "tools/r10/content_manifest.cjs",
+        "sha256": "e23622a91010f3eb80d20605e7cbd5a45fa6028259d60414b51b2c2fa8065743"
+      },
+      {
+        "path": "tools/r10/index_adapters.cjs",
+        "sha256": "7268336d869c5511900c78e2e4070882fc02b624fb103276a3f9ca11b20ad3d2"
+      },
+      {
+        "path": "tools/r10/pack_adapters.gd",
+        "sha256": "b26ff28ab425039c045610187ada066ee4ac1c0784ea283db6d61f0cfa7d5ba5"
+      }
+    ]
+  },
+  "notes": [
+    "net_bridge1000.gd includes both paired-hand relay and initial warmup/match spawn separation; merge those hunks deliberately.",
+    "player.gd adds only an explicit pad ascent state; retain accepted height, calibration, controls, movement gains and recoil/reload data.",
+    "archive_semantics_r8/r9 and archive_passage_cut_r9 are shared library resolvers; rebuild all private adapters after changing them.",
+    "The R10 PCK mount/index, userdata/version and generated network fingerprint are standalone packaging changes; do not copy project configuration blindly into Skyra/Skyrim.",
+    "Original donor files and private derived map geometry are excluded from Git. Original prop detail is replacement shading, not recovered source art.",
+    "R8/R9 porting manifests and feedback registers are retained; R10 does not silently close their source-data gaps."
+  ]
+}

@@ -1,0 +1,25 @@
+PASS Cold/recovered held grip cannot claim a source objective
+PASS Closer gun wins over earlier-sampled farther consumable
+PASS Chosen source hand is reserved against the same wall-grab gesture
+PASS A held grip cannot acquire a second newly closer objective
+PASS Partially relaxed .54 grip cannot rearm
+PASS Source inclusive .2 neutral releases its claim
+PASS Closer actual supply wins over the weapon provider
+PASS Two simultaneous fresh hands dispatch only the nearest objective
+PASS Both eligible fresh source hands retain claims even though only one target dispatches
+PASS The losing simultaneous hand cannot claim later while still held
+PASS Neutral releases only its physical hand
+PASS A nonfresh closer hand cannot steal a fresh other-hand event
+PASS Tracking loss clears source claims and requires a new neutral
+PASS Restored tracking while grip held cannot acquire
+PASS Actual source remote reach includes exactly two metres
+PASS Beyond-source reach never claims or reserves
+PASS A nearer exposed cap beats a world pickup
+PASS Exposed cap uses source .35 metre contact reach
+PASS Cap contact cannot borrow the two-metre world reach
+PASS Equal distances retain source physical-left sample order
+PASS Equal target distances retain source provider order
+PASS Pause/menu closure while held cannot invent a fresh input
+PASS Nonfinite provider distances cannot steal a claim
+PASS Round reset clears claims without arming already held controllers
+24 source objective grip conflict/rearm/hand-ownership checks passed; native dispatch pending

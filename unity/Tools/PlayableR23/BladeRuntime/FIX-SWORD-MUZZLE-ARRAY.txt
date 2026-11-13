@@ -1,0 +1,1 @@
+One required source21 correction: R23HandsWeapons.cs sourceMuzzles currently18 entries whileweaponIds21. Append three Vector3(0,-.057f,-.025f) entries before array terminator; those are meleegrip references only, no bullet fake. Candidate/R23HandsWeapons.cs contains exact current live file plusonly that append. HOLD honored; pending Root permission/release before publication.

@@ -1,0 +1,41 @@
+{
+  "routing": "quest-r24\\source\\assets\\audio\\reference0992\\manifest.json",
+  "variant_index": 0,
+  "source_gain_db": -8,
+  "bus": "SFX",
+  "cues": [
+    {
+      "cue": "menu_hover",
+      "source": "quest-r24\\source\\assets\\audio\\reference099\\isolated_menu_hover_00.wav",
+      "file": "isolated_menu_hover_00.wav",
+      "bytes": 16844,
+      "sha256": "8502587630362fe0f7aa2fda9deeb0ffd86229930d60c70e400f8a4eb32711ac",
+      "sample_rate": 48000,
+      "channels": 1,
+      "frames": 8400,
+      "seconds": 0.175
+    },
+    {
+      "cue": "menu_click",
+      "source": "quest-r24\\source\\assets\\audio\\reference099\\isolated_menu_click_00.wav",
+      "file": "isolated_menu_click_00.wav",
+      "bytes": 57452,
+      "sha256": "8c5862645532f3efc5548f78bf14c3e13fbbec83a57c9fe94a617d4b40545d7b",
+      "sample_rate": 48000,
+      "channels": 1,
+      "frames": 28704,
+      "seconds": 0.598
+    },
+    {
+      "cue": "vr_initialize",
+      "source": "quest-r24\\source\\assets\\audio\\reference099\\isolated_vr_initialize_00.wav",
+      "file": "isolated_vr_initialize_00.wav",
+      "bytes": 518444,
+      "sha256": "cb6742bd259eb4e0da9980c59f272682ae1344842c4e070787aabb43646262b5",
+      "sample_rate": 48000,
+      "channels": 2,
+      "frames": 129600,
+      "seconds": 2.7
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "sourceRoot": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source",
+  "licenseSourceRoot": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "sourceReadOnly": true,
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "routingSource": "assets\\audio\\reference0992\\manifest.json",
+  "routingSha256": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+  "behaviorSource": "scripts/ambience.gd",
+  "behaviorSha256": "6fe938f064b471709ad7076794e344107a9dd193d76d64f7933305ecf7b79c3f",
+  "files": [
+    {
+      "file": "flight_continuous0991.wav",
+      "source": "res://assets/audio/reference0991/flight_continuous0991.wav",
+      "sha256": "c877635e36c8fc482e4417206d6dcae420c43504da13686aea4176b2a80cbb50",
+      "frames": 768000,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_00.wav",
+      "source": "res://assets/audio/reference096/metal_step_00.wav",
+      "sha256": "ccc9c401534000a237e9bd60b565d5b838eacd17d8ddd0b93ea368b358c5dcee",
+      "frames": 10512,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_01.wav",
+      "source": "res://assets/audio/reference096/metal_step_01.wav",
+      "sha256": "3ca841b9ab4321cdfb7a62e1948438b3bfccc119f2068c8f2699beea203d2f0f",
+      "frames": 10512,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_02.wav",
+      "source": "res://assets/audio/reference096/metal_step_02.wav",
+      "sha256": "e00fc64ea527cb091c148c096453ad4f366c452511799969b8a0f02eecb51e27",
+      "frames": 10032,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_03.wav",
+      "source": "res://assets/audio/reference096/metal_step_03.wav",
+      "sha256": "d8893e08148b5ba95bbdd2645b66b5cdfb4a555509842d6d5434f0ab71be0b17",
+      "frames": 10032,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_04.wav",
+      "source": "res://assets/audio/reference096/metal_step_04.wav",
+      "sha256": "b903b963279680308d4b7315b5328c98b1c471b819a45bb63ad1c324f9d57573",
+      "frames": 9552,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "metal_step_05.wav",
+      "source": "res://assets/audio/reference096/metal_step_05.wav",
+      "sha256": "63fbff0356c14ad11d3a6554b441e8e392b5c35b26358691be1b65765af15355",
+      "frames": 10032,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "isolated_concrete_step_00.wav",
+      "source": "res://assets/audio/reference099/isolated_concrete_step_00.wav",
+      "sha256": "a551219e0a43953760d7688ee8bf16b43abe9b4c2b3829af7d96e78070bfedcf",
+      "frames": 13920,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "isolated_concrete_step_01.wav",
+      "source": "res://assets/audio/reference099/isolated_concrete_step_01.wav",
+      "sha256": "37831ee5f9637780a89fb6d49209da36b25d29e727d11053ab20529c1bb7f0a3",
+      "frames": 12480,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "isolated_concrete_run_step_00.wav",
+      "source": "res://assets/audio/reference099/isolated_concrete_run_step_00.wav",
+      "sha256": "049c6d4d01810cd3c8844500e86a8df3479c58aeb670ecae2f9a9c62d174a597",
+      "frames": 12480,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "isolated_concrete_run_step_01.wav",
+      "source": "res://assets/audio/reference099/isolated_concrete_run_step_01.wav",
+      "sha256": "b3f129e049b3e88890f6c6c0d1270b17538bfe0e8127cdb7806e3884edfdb7e1",
+      "frames": 12480,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "isolated_concrete_run_step_02.wav",
+      "source": "res://assets/audio/reference099/isolated_concrete_run_step_02.wav",
+      "sha256": "350d09d0df6cbc01c50d4f91d62396a7642efaa575574d92bfe80f245fb2d875",
+      "frames": 12480,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "gravel_step_00.wav",
+      "source": "res://assets/audio/sfx/gravel_step_00.wav",
+      "sha256": "4308065903179845159c9e38714bef9992cbf9aa41cd09e8cf9ea7b81a87a093",
+      "frames": 12160,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "gravel_step_01.wav",
+      "source": "res://assets/audio/sfx/gravel_step_01.wav",
+      "sha256": "3ccf23e31256971dc2184cad2c360539fe6cb4dbd6a6a208215b22ceb1b5e9a7",
+      "frames": 12160,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "gravel_step_02.wav",
+      "source": "res://assets/audio/sfx/gravel_step_02.wav",
+      "sha256": "147dc537fdf16b93913e28d15006cf55da7038ec80a2257deae58a75606a13c6",
+      "frames": 12160,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "wood_step_00.wav",
+      "source": "res://assets/audio/sfx/wood_step_00.wav",
+      "sha256": "5122e5b97f248d2a5cfeeb34eb192ec7360ad2ff137611a63172ca5f570a524b",
+      "frames": 8960,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "wood_step_01.wav",
+      "source": "res://assets/audio/sfx/wood_step_01.wav",
+      "sha256": "24f818424ed77e7c80be3dbd102496371be23bd75e645d74f2d3f984751ac122",
+      "frames": 8960,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "wood_step_02.wav",
+      "source": "res://assets/audio/sfx/wood_step_02.wav",
+      "sha256": "ceaee3cc7fe2dd37ffa4b012f376c532eb85598f15d44a4df03465ca5e7220e2",
+      "frames": 8960,
+      "rate": 32000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_metal_00.wav",
+      "source": "res://assets/audio/sfx/impact_metal_00.wav",
+      "sha256": "e57e9292d5f440be4378a97f96960d37d10e57fc99f44f05ab7f3d7588554f3d",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_metal_01.wav",
+      "source": "res://assets/audio/sfx/impact_metal_01.wav",
+      "sha256": "dcd3af9828e4b37a4c4f91e9cb68f1258c65d816468c1369ade3820ceeee76f5",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_metal_02.wav",
+      "source": "res://assets/audio/sfx/impact_metal_02.wav",
+      "sha256": "b9fa78c5bbe98352726dabd68bfcada9305ed0a49ec5525d0719db149b974a8c",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_concrete_00.wav",
+      "source": "res://assets/audio/sfx/impact_concrete_00.wav",
+      "sha256": "98cfe7e6db36be149b9b45b8a7030bad5d153e3a2f04988c9f5649dee2168b33",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_concrete_01.wav",
+      "source": "res://assets/audio/sfx/impact_concrete_01.wav",
+      "sha256": "034d416b226607a76f6ff4a51379a296b9f5b6f51b22f5ecc24655f772a3bfe8",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    },
+    {
+      "file": "impact_concrete_02.wav",
+      "source": "res://assets/audio/sfx/impact_concrete_02.wav",
+      "sha256": "0b709b7ecfbd81d4644fe0e5bc19c4f43273ea0f276d85833c524e0959374d84",
+      "frames": 14400,
+      "rate": 48000,
+      "channels": 1,
+      "sampleBytes": 2
+    }
+  ],
+  "pcmProcessing": false,
+  "engineRun": false,
+  "deviceRun": false,
+  "limits": [
+    "No ambient wind/turbines/creaks included; component covers footsteps, landings, glide and accepted bullet-impact cues."
+  ],
+  "climbSource": {
+    "file": "climb-source.json",
+    "sha256": "d5bd8f6d1a34bfc9c6cde3fad12cfd18da817125363b6382e1ada9ef194db167"
+  }
+}

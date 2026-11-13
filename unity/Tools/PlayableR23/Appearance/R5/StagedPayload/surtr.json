@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "id": "surtr",
+  "label": "Surtr (Draft)",
+  "sourceIndex": 65,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 0,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        0.10499999672174454,
+        0.11500000208616257,
+        0.13500000536441803,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.8100000023841858,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.06499999761581421,
+        0.0729999989271164,
+        0.08699999749660492,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.8100000023841858,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.1550000011920929,
+        0.16500000655651093,
+        0.18000000715255737,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.8100000023841858,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.024000000208616257,
+        0.027000000700354576,
+        0.032999999821186066,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.8100000023841858,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        0.02500000037252903,
+        0.0020000000949949026,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.41999998688697815,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        1,
+        0.02500000037252903,
+        0.0020000000949949026
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 2.200000047683716
+    }
+  ]
+}

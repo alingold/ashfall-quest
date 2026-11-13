@@ -1,0 +1,85 @@
+    static void PendingSettlesAfterResults()
+    {
+        string path=PathFor("r6-pending");var store=new Ashfall.Modules.Persistence.AtomicSettingsStore(path);Check(store.Load(false).Accepted,"store");var journal=new ScoreReceiptJournal(store);
+        var r=new Rig("respawn",0,0,1,2,1,journal);r.Join("a",false,null);r.Join("b",false,null);r.Load("a","b");
+        Check(r.D.UpdateLimits(r.C("host"),new LiveLimits(0,1)).Accepted,"fill limit capacity");var e=Kill(r);r.E.DenyScore=true;
+        Check(r.D.Deliver(e).Reason=="score-held","score denied");Check(Score(r.D,"b")==0,"no credit before permission");
+        r.E.DenyScore=false;r.E.Now=1;Check(r.D.Heartbeat().Accepted&&r.D.Stage==RoundStage.Results,"heartbeat Results");
+        Check(r.D.BeginLoading().Reason=="pending-score","no teardown of pending");
+        Check(r.D.Deliver(e).Accepted&&r.D.Deliver(e).Accepted,"retained event settles and replay");
+        Check(Score(r.D,"b")==1&&r.S.Get("a").Deaths==1,"real totals and death once");
+        var reopened=new Ashfall.Modules.Persistence.AtomicSettingsStore(path);Check(reopened.Load(false).Accepted,"reopen");Check(new ScoreReceiptJournal(reopened).Pending("test",r.S.Epoch).Length==0,"durable ack");
+        r.Load("a","b");Check(r.S.Epoch==2&&r.D.RoundIndex==2,"next round works");r.Loss("a",false);Check(Score(r.D,"b")==1,"next round scoring");
+    }
+    static void AtomicEpochDenial()
+    {
+        var r=new Rig("respawn",0,0,1,2,1);r.Join("a",false,null);r.Join("b",false,null);r.Load("a","b");r.E.Now=1;Check(r.D.Heartbeat().Accepted,"Results");
+        r.E.DenyScore=true;for(int i=0;i<3;i++){Check(r.D.BeginLoading().Reason=="score-held","Modes denial");Check(r.S.Epoch==1&&r.S.Stage==SessionStage.Results&&r.D.Stage==RoundStage.Results,"both unchanged");}
+        r.E.DenyScore=false;Check(r.D.BeginLoading().Accepted,"coherent retry");Check(r.S.Epoch==2&&r.S.Stage==SessionStage.Loading&&r.D.Stage==RoundStage.Loading,"coherent publish");
+        Check(!r.D.BeginLoading().Accepted&&r.S.Epoch==2,"repeat never increments twice");
+    }
+    static void PreparedSessionInterleavings()
+    {
+        var r=new Rig("respawn",0,0,1,2,1);r.Join("a",false,null);r.Join("b",false,null);r.Load("a","b");r.E.Now=1;Check(r.D.Heartbeat().Accepted,"Results");
+        Session.PreparedMatchRollover p;long seq=r.S.LifecycleSequence+1;
+        var c=new CommandContext("test","host","sessions-lifecycle/"+seq,seq,r.S.Epoch,true);
+        Check(r.S.PrepareMatchRollover(c,6,out p).Accepted,"prepare");Check(r.S.Epoch==1&&r.S.Stage==SessionStage.Results,"prepare pure");
+        Check(r.S.ValidateMatchRollover(p).Accepted,"validate");r.S.AbortMatchRollover(p);r.S.AbortMatchRollover(p);Check(!r.S.ValidateMatchRollover(p).Accepted&&r.S.Epoch==1,"abort preserves");
+        Check(r.S.PrepareMatchRollover(c,6,out p).Accepted,"prepare again");r.E.Now=6;Check(!r.S.ValidateMatchRollover(p).Accepted,"expired");r.E.Now=1;
+        Check(r.S.PrepareMatchRollover(c,6,out p).Accepted,"prepare before membership");Check(r.S.Disconnect(r.C("a"),false).Accepted,"disconnect");Check(!r.S.ValidateMatchRollover(p).Accepted,"membership invalidates");
+        Check(r.S.PrepareMatchRollover(c,6,out p).Accepted,"prepare before clock");r.E.Now=2;Check(!r.S.ValidateMatchRollover(p).Accepted,"clock invalidates");
+    }
+    static void AckFailureAndLateFirst()
+    {
+        string path=PathFor("r6-ack");var store=new Ashfall.Modules.Persistence.AtomicSettingsStore(path,new FailSecondWrite());Check(store.Load(false).Accepted,"store");
+        var r=new Rig("respawn",0,0,1,2,1,new ScoreReceiptJournal(store));r.Join("a",false,null);r.Join("b",false,null);r.Load("a","b");var e=Kill(r);
+        Check(!r.D.Deliver(e).Accepted,"ack fails");r.E.Now=1;Check(r.D.Heartbeat().Accepted,"Results");Check(r.D.BeginLoading().Reason=="pending-score","unacked blocks teardown");
+        Check(r.D.Deliver(e).Accepted&&r.D.Deliver(e).Accepted&&Score(r.D,"b")==1&&r.S.Get("a").Deaths==1,"ack retry no duplicates");
+        var late=new Rig("respawn",0,0,1,2,1);late.Join("a",false,null);late.Join("b",false,null);late.Load("a","b");var death=Kill(late);late.E.Now=1;Check(late.D.Heartbeat().Accepted,"late Results");Check(late.D.Deliver(death).Accepted&&Score(late.D,"b")==1&&late.S.Get("a").Deaths==1,"late first reconciliation");
+    }
+    static void BeforeScoreIOFailure()
+    {
+        string path=PathFor("r6-lock");var store=new Ashfall.Modules.Persistence.AtomicSettingsStore(path);Check(store.Load(false).Accepted,"store");
+        var r=new Rig("respawn",0,0,1,2,1,new ScoreReceiptJournal(store));r.Join("a",false,null);r.Join("b",false,null);r.Load("a","b");var e=Kill(r);
+        using(new Ashfall.Modules.Persistence.PhysicalSettingsFiles().AcquireFamily(path))
+        {Check(!r.D.Deliver(e).Accepted&&Score(r.D,"b")==0,"physical IO failure before score");Check(r.D.BeginLoading().Reason=="pending-score","IO pending blocks teardown");}
+        r.E.Now=1;Check(r.D.Heartbeat().Accepted,"IO failure then Results");Check(r.D.Deliver(e).Accepted&&Score(r.D,"b")==1&&r.S.Get("a").Deaths==1,"retry recovers after pre-score IO failure");
+    }
+    static void RealProjection()
+    {
+        var r=new Rig("revive",2,0,0,1,64,null,true);string token=r.Join("a",false,null);r.Join("b",false,null);r.Join("c",false,null);r.Join("d",false,null);r.Load("a","b","c","d");
+        var projection=new SessionHealthProjection(r.S,r.E,"host");r.Loss("a",true);
+        Check(projection.Project("test",r.S.Epoch,"a",r.H.Read("a")).Accepted,"actual down projection");
+        Check(r.S.Get("a").Life==SessionLife.Eliminated&&r.S.ProjectedLife("a").Life==LifeState.Downed,"real down distinction");
+        Check(!r.S.Spawn(r.C("a")).Accepted,"spawn denied while downed revive mode");
+        for(int i=0;i<65;i++){r.E.Now+=.1;Check(r.H.SamplePaddles(r.C("c")).Accepted,"paddles");}
+        Check(r.H.Revive(r.C("c"),"a",r.H.Read("a").Revision).Accepted,"source revive");r.Deliver();
+        Check(projection.Project("test",r.S.Epoch,"a",r.H.Read("a")).Accepted&&r.S.Get("a").Life==SessionLife.Alive,"actual revive projection");
+        Check(!projection.Project("test",r.S.Epoch-1,"a",r.H.Read("a")).Accepted,"epoch denied");
+        Check(!projection.Project("test",r.S.Epoch,"b",r.H.Read("a")).Accepted,"actor team binding denied");
+        r.Loss("a",false);Check(projection.Project("test",r.S.Epoch,"a",r.H.Read("a")).Accepted&&r.S.Get("a").Deaths==2,"final death projects exact deaths");
+        Check(r.S.Disconnect(r.C("a"),false).Accepted,"projection disconnect");Check(r.H.SetConnected(r.C("host"),"a",r.H.Read("a").Revision,false).Accepted,"Health disconnect");
+        Check(projection.Project("test",r.S.Epoch,"a",r.H.Read("a")).Reason=="disconnected-projection-api-required","honest disconnected gate");
+        r.Join("new-a",false,token);Check(r.S.Loaded(r.C("new-a"),"maphash").Accepted,"remap loaded");Check(r.H.SetConnected(r.C("host"),"a",r.H.Read("a").Revision,true).Accepted,"Health canonical reconnect");
+        Check(projection.Project("test",r.S.Epoch,"new-a",r.H.Read("a")).Accepted&&r.S.Get("new-a").CanonicalActorId=="a"&&r.S.Get("new-a").Deaths==2,"real remapped projection retains canonical deaths");
+        var spectator=new Rig("respawn",0,0,0,1,8);spectator.Join("s",true,null);spectator.Load("s");
+        Check(!new SessionHealthProjection(spectator.S,spectator.E,"host").Project("test",spectator.S.Epoch,"s",spectator.H.Read("s")).Accepted,"spectator port unsupported rejects honestly");
+    }
+    sealed class Roster : IModeRoster
+    {
+        public bool TryGet(string id,out ModeActor a){a=new ModeActor(id,id,id=="a"?0:1,"alive",true,false);return id=="a"||id=="b";}
+        public ModeActor[] Snapshot(){ModeActor a,b;TryGet("a",out a);TryGet("b",out b);return new[]{a,b};}
+    }
+    static void PreparedRoundInterleavings()
+    {
+        var e=new Environment();var roster=new Roster();var round=new Ashfall.Integration.MatchRounds.RoundController(new ModeRules("respawn",0,0,1,2),roster,"host","test",1,e,1);
+        var start=new CommandContext("test","host","start",0,1,true);Check(round.StartRound(start,0).Accepted,"round start");Check(round.AdvanceClock(1).Accepted,"round Results");
+        var c=new CommandContext("test","host","matchdirector:1",1,1,true);Ashfall.Integration.MatchRounds.RoundController.PreparedRollover p;
+        Check(round.PrepareRollover(c,1,6,2,out p).Accepted&&round.Epoch==1,"round prepare pure");
+        Check(!round.ValidateRollover(p,6).Accepted,"round expiry");round.AbortRollover(p);
+        Check(round.PrepareRollover(c,1,6,2,out p).Accepted,"round prepare");e.DenyScore=true;Check(!round.ValidateRollover(p,1).Accepted&&round.Epoch==1,"authority interleave");e.DenyScore=false;
+        Check(round.ValidateRollover(p,1).Accepted,"round revalidate");round.CommitRolloverValidated(p);round.CommitRolloverValidated(p);round.AbortRollover(p);Check(round.Epoch==2&&round.Stage==RoundStage.Loading,"idempotent final publication");
+        bool overflow=false;try{var r=new Rig("respawn",0,0,1,1,Int32.MaxValue);GC.KeepAlive(r);}catch(ArgumentException){overflow=true;}Check(overflow,"capacity arithmetic overflow");
+    }
+    static int Main(){try{PendingSettlesAfterResults();AtomicEpochDenial();PreparedSessionInterleavings();AckFailureAndLateFirst();BeforeScoreIOFailure();RealProjection();PreparedRoundInterleavings();Console.WriteLine("PASS "+assertions+" R6 success assertions");return 0;}catch(Exception e){Console.WriteLine(e);return 1;}}
+}

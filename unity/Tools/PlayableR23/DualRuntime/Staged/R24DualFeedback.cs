@@ -1,0 +1,24 @@
+using System;using Ashfall.Core;
+namespace Ashfall.Integration.Playable.HandsWeapons {
+ // Source pose observation, one independent instance per gun. Never grants or
+ // consumes ammunition. Uzi uses frozen enabled071 endpoints, not inactive070.
+ public sealed class R24DualFeedback {
+  readonly bool uzi;readonly float[] ages=new float[8],bloomAges=new float[32];int pulses,index,bloomCount;long serial;float distance,pitch,yaw,idle=.8f,flash;
+  static readonly float[] PulseTimes={0,.09f,.21f,.28f,.43f},PulseValues={0,1,0,-.18f,0},PulseSlopes={20,0,2*(-1/.12f)*(-.18f/.07f)/(-1/.12f-.18f/.07f),0,0};static readonly float[] PatternYaw={0,-.12f,.18f,.10f,-.20f,-.08f};const float Rad=(float)Math.PI/180;
+  public R24DualFeedback(string profile){if(profile!="uzis"&&profile!="matadors")throw new ArgumentException("Dual feedback source profile");uzi=profile=="uzis";}
+  public float Distance{get{return distance*1.25f;}}public float Pitch{get{return pitch*1.25f;}}public float Yaw{get{return uzi?yaw*1.25f:0;}}public bool Flash{get{return flash>0;}}public long AcceptedShots{get{return serial;}}
+  public float Bloom{get{float sum=0;for(int i=0;i<bloomCount;i++){float a=bloomAges[i]/.055f;sum+=(uzi?30:56)*a*(float)Math.Exp(1-a);}return Math.Min(76,sum);}}
+  public void Advance(float dt){if(float.IsNaN(dt)||float.IsInfinity(dt)||dt<0||dt>.25f)throw new ArgumentOutOfRangeException("dt");for(int i=bloomCount-1;i>=0;i--){bloomAges[i]+=dt;if(bloomAges[i]>1.2f){for(int j=i+1;j<bloomCount;j++)bloomAges[j-1]=bloomAges[j];bloomCount--;}}idle+=dt;flash=Math.Max(0,flash-dt);float decay=(float)Math.Exp(-dt*9*(uzi?1:.85f));distance*=decay;if(uzi){if(idle>.18f){pitch*=decay;yaw*=decay;}}else{pitch=0;for(int i=pulses-1;i>=0;i--){ages[i]+=dt;if(ages[i]>=.43f){for(int k=i+1;k<pulses;k++)ages[k-1]=ages[k];pulses--;continue;}pitch+=7.7f*Rad*Pulse(ages[i]);}pitch=Math.Max(-7.7f*Rad*1.5f,Math.Min(7.7f*Rad*1.5f,pitch));}if(idle>=.8f){index=0;distance=pitch=yaw=0;}}
+  public bool Accepted(R24DualVolley shot){if(shot==null||shot.Serial<=serial)return false;serial=shot.Serial;if(bloomCount==32){for(int i=1;i<32;i++)bloomAges[i-1]=bloomAges[i];bloomCount--;}bloomAges[bloomCount++]=0;distance=Math.Min(.13f,distance+(uzi?.052f:.065f));idle=0;flash=uzi?.045f:.05f;if(uzi){index++;pitch=R24DualSourceData.UziPitch[Math.Min(index,R24DualSourceData.UziPitch.Length-1)]*Rad;yaw=Math.Max(-80*Rad,Math.Min(80*Rad,yaw+5.5f*Rad*PatternYaw[(index-1)%PatternYaw.Length]));}else{if(pulses==8){for(int i=1;i<8;i++)ages[i-1]=ages[i];pulses=7;}ages[pulses++]=0;}return true;}
+  public void Suspend(){pulses=0;if(!uzi)pitch=0;flash=0;}public void Reset(){pulses=index=bloomCount=0;serial=0;distance=pitch=yaw=flash=0;idle=.8f;}
+  public static float Pulse(float t){if(t<=0||t>=.43f)return 0;var times=PulseTimes;var values=PulseValues;var slopes=PulseSlopes;for(int i=0;i<4;i++)if(t<=times[i+1]){float span=times[i+1]-times[i],u=(t-times[i])/span;return(2*u*u*u-3*u*u+1)*values[i]+(u*u*u-2*u*u+u)*span*slopes[i]+(-2*u*u*u+3*u*u)*values[i+1]+(u*u*u-u*u)*span*slopes[i+1];}return 0;}
+ }
+ public struct R24DualContact {public string TargetId;public object WorldCollider;public Float3 Point;public bool Head;}
+ public interface IR24DualCombatPort {bool Trace(Float3 origin,Float3 direction,float maximumRange,int physicalHand,out R24DualContact contact);bool DamageTarget(string actualTarget,float amount,Float3 origin,bool head);void DamageWorld(object actualCollider,float amount,Float3 point,Float3 direction);}
+ // Accepted-volley binding only: same real Health/cover callback paths used by
+ // carried weapons. The private gallery never receives a combat port.
+ public sealed class R24DualCombat {
+  sealed class Group{internal float Amount;internal bool Head;}
+  public int Apply(R24DualVolley shot,IR24DualCombatPort port){if(shot==null||port==null||!shot.Claim())return 0;var groups=new System.Collections.Generic.Dictionary<string,Group>(StringComparer.Ordinal);int applied=0;for(int i=0;i<shot.PelletCount;i++){R24DualContact contact;var direction=shot.Direction(i);if(!port.Trace(shot.Pose.Origin,direction,180,shot.PhysicalHand,out contact)||!contact.Point.IsFinite)continue;var delta=R23WeaponPoseMath.Add(contact.Point,R23WeaponPoseMath.Scale(shot.Pose.Origin,-1));if(R23WeaponPoseMath.Dot(delta,delta)>180*180)continue;float amount=contact.Head?shot.HeadPerPellet:shot.BodyPerPellet;if(!String.IsNullOrEmpty(contact.TargetId)){Group g;if(!groups.TryGetValue(contact.TargetId,out g)){g=new Group();groups.Add(contact.TargetId,g);}g.Amount+=amount;g.Head|=contact.Head;}else if(contact.WorldCollider!=null)port.DamageWorld(contact.WorldCollider,amount,contact.Point,direction);}foreach(var pair in groups)if(port.DamageTarget(pair.Key,pair.Value.Amount,shot.Pose.Origin,pair.Value.Head))applied++;return applied;}
+ }
+}

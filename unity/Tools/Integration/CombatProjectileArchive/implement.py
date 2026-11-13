@@ -1,0 +1,17 @@
+from pathlib import Path
+R=Path.cwd();p=R/'unity/Assets/Ashfall/Modules/Combat/CheckpointState.cs';s=p.read_text()
+s=s.replace('private Dictionary<HostHit,int> WriteCheckpoint(BinaryWriter w,IEnumerable<HostHit> bindings)','private Dictionary<HostHit,int> WriteCheckpoint(BinaryWriter w,IEnumerable<HostHit> bindings)\n        {return WriteCheckpoint(w,bindings,false);}\n        private Dictionary<HostHit,int> WriteCheckpoint(BinaryWriter w,IEnumerable<HostHit> bindings,bool projectile)')
+s=s.replace('w.Write(1);w.Write(session);','w.Write(projectile?2:1);w.Write(session);')
+a='var x=e.SourceExplosion;w.Write(x!=null);if(x!=null){'
+s=s.replace(a,'var x=e.SourceExplosion;if(projectile){WriteProjectileMarker(w,x);continue;}w.Write(x!=null);if(x!=null){')
+s=s.replace('private HostHit[] ReadCheckpoint(BinaryReader r)','private HostHit[] ReadCheckpoint(BinaryReader r)\n        {return ReadCheckpoint(r,false);}\n        private HostHit[] ReadCheckpoint(BinaryReader r,bool projectile)')
+s=s.replace('if(r.ReadInt32()!=1||','if(r.ReadInt32()!=(projectile?2:1)||')
+s=s.replace('if(RecoveryWire.Bool(r)){var provenance=', 'if(projectile)radial=ReadProjectileMarker(r);\n                else if(RecoveryWire.Bool(r)){var provenance=')
+p.write_text(s)
+p=R/'unity/Assets/Ashfall/Modules/Combat/LaunchCapabilities.cs';s=p.read_text().replace('public sealed class LaunchedProjectileCapability','public sealed partial class LaunchedProjectileCapability')
+s=s.replace('bool validated,committed,aborted;','bool validated,committed,aborted;\n        bool archiveQuarantine;')
+s=s.replace('validated=false;\n            if(aborted', 'validated=false;\n            if(archiveQuarantine)return RuleResult.Reject("projectile-archive-quarantine");\n            if(aborted')
+s=s.replace('if(!committed||health==null','if(archiveQuarantine||!committed||health==null').replace('if(!committed||aborted||physicalSubhit','if(archiveQuarantine||!committed||aborted||physicalSubhit')
+s=s.replace('public void CommitValidated(){if(!aborted&&validated)', 'public void CommitValidated(){if(!archiveQuarantine&&!aborted&&validated)')
+s=s.replace('foreach(var ev in slots)events.Add(ev.Serial,ev);','TrackProjectileArchive(token);\n            foreach(var ev in slots)events.Add(ev.Serial,ev);')
+p.write_text(s)

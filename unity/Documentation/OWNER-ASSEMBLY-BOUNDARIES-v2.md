@@ -1,0 +1,12 @@
+# Candidate logical owner boundaries v2
+
+Root decision after CurrentOwnerAssemblyR9; staged proposals only. No live assembly/project/package/GUID changes follow from this document. Separate ownership is by logical component, not every physical folder. Do not merge unrelated service owners to conceal access failures.
+
+- All partial CombatHealthBridge source files, including Integration/CombatHealthBridge.cs and its CombatPublication parts, belong to the one CombatPublication integration assembly. Remove the bridge from an inferred generic parent Integration assembly. A partial class cannot be split into separate CLR assemblies. Combat and Health owner modules remain separate behind their real public archive interfaces.
+- Player module and its Engine implementation are one Player owner assembly. UnityPlayerDriver, UnityExclusivePlayerMotor and NativeRootPublication legitimately consume Player's internal mechanics helpers. Declare actual Input/OpenXR/XR dependencies for guarded profiles; guard-OFF CPU compilation remains separate evidence.
+- AudioRuntime and its Engine implementation are one AudioRuntime integration assembly. Internal VerifiedPcm helpers must not be widened or accepted Audio sources edited merely to satisfy an invented directory split.
+- DesktopPlaytest Context/Bootstrap and Arena/Pawn/Combat/Construction/Hud/optional Audio child implementation files are one prototype integration assembly with explicit real external owner/package edges. This is the logical desktop component, not a global all-owner amalgamation. The shipped candidate04 build remains unchanged.
+
+Framework64 C#5 diagnostics against Transport6.6 must be preserved. A compiler-only interoperability comparison may additionally invoke the actual already-installed Unity Roslyn toolchain with C#5 source language selection and the exact installed package references. Do not install or switch packages, run an engine/import or treat another compiler's PASS as erasing the original CS0570. Native UTP runtime evidence remains separate. Compiler reference edges must come from the actual declared proposal, never blanket references to all packages.
+
+Capture complete current source membership and all metadata/package preconditions once, pin externally and report later drift separately. Proposals remain unapplied until independently qualified, including API consumers and real Unity assembly compilation. M1/G2 remain OPEN.

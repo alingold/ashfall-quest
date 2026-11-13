@@ -1,0 +1,583 @@
+{
+  "mapId": "archive:aftermath-light-vs-dark-gods-badbar",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+    "cache_fingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+    "warmup": [
+      {
+        "center": [
+          -45.71216,
+          218.6776,
+          4.13939
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -48.25859,
+          218.6776,
+          4.13939
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -50.71215,
+          218.6776,
+          4.13938
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -50.70906,
+          218.91792,
+          -12.91008
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1e-05,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -45.70908,
+          218.91792,
+          -12.91008
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1e-05,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -48.16264,
+          218.91792,
+          -12.91008
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1e-05,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -45.71216,
+          218.68002,
+          3.30548
+        ],
+        "min": [
+          -46.07694,
+          218.65607,
+          2.99816
+        ],
+        "max": [
+          -45.34738,
+          218.70396,
+          3.6128
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -45.71216,
+          218.6776,
+          4.13939
+        ],
+        "min": [
+          -46.30017,
+          218.65607,
+          3.54948
+        ],
+        "max": [
+          -45.12414,
+          218.69914,
+          4.72929
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -48.25859,
+          218.68002,
+          3.30548
+        ],
+        "min": [
+          -48.62337,
+          218.65607,
+          2.99816
+        ],
+        "max": [
+          -47.89381,
+          218.70396,
+          3.6128
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -48.25859,
+          218.6776,
+          4.13939
+        ],
+        "min": [
+          -48.84661,
+          218.65607,
+          3.54948
+        ],
+        "max": [
+          -47.67057,
+          218.69914,
+          4.72929
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -50.71215,
+          218.68002,
+          3.30547
+        ],
+        "min": [
+          -51.07693,
+          218.65607,
+          2.99815
+        ],
+        "max": [
+          -50.34737,
+          218.70396,
+          3.61279
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -50.71215,
+          218.6776,
+          4.13938
+        ],
+        "min": [
+          -51.30016,
+          218.65607,
+          3.54948
+        ],
+        "max": [
+          -50.12413,
+          218.69914,
+          4.72929
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -50.70905,
+          218.92033,
+          -12.07617
+        ],
+        "min": [
+          -51.07383,
+          218.89638,
+          -12.38349
+        ],
+        "max": [
+          -50.34428,
+          218.94427,
+          -11.76885
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -50.70906,
+          218.91792,
+          -12.91008
+        ],
+        "min": [
+          -51.29708,
+          218.89638,
+          -13.49999
+        ],
+        "max": [
+          -50.12104,
+          218.93945,
+          -12.32018
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -45.70907,
+          218.92033,
+          -12.07617
+        ],
+        "min": [
+          -46.07385,
+          218.89638,
+          -12.38349
+        ],
+        "max": [
+          -45.3443,
+          218.94427,
+          -11.76885
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -45.70908,
+          218.91792,
+          -12.91008
+        ],
+        "min": [
+          -46.2971,
+          218.89638,
+          -13.49998
+        ],
+        "max": [
+          -45.12106,
+          218.93945,
+          -12.32017
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -48.16263,
+          218.92033,
+          -12.07617
+        ],
+        "min": [
+          -48.52741,
+          218.89638,
+          -12.38349
+        ],
+        "max": [
+          -47.79786,
+          218.94427,
+          -11.76885
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -48.16264,
+          218.91792,
+          -12.91008
+        ],
+        "min": [
+          -48.75066,
+          218.89638,
+          -13.49999
+        ],
+        "max": [
+          -47.57462,
+          218.93945,
+          -12.32017
+        ]
+      }
+    ],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 232,
+      "warmup": 6,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 12
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "killzone",
+      "sourceNode": "killzone",
+      "boundsMin": [
+        -167.9557647705078,
+        85.5,
+        -210.00025939941406
+      ],
+      "boundsMax": [
+        232.5,
+        218.0125732421875,
+        196.24252319335938
+      ],
+      "triangles": 6048
+    },
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        -356.838134765625,
+        -11.299835205078125,
+        -407.08685302734375
+      ],
+      "boundsMax": [
+        432.9932861328125,
+        289.49993896484375,
+        393.5749816894531
+      ],
+      "triangles": 48
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -47.249855041503906,
+        1.3616209030151367,
+        -29.24993896484375
+      ],
+      "boundsMax": [
+        2.7501449584960938,
+        19.999996185302734,
+        20.75006103515625
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:aftermath-light-vs-dark-gods-badbar",
+    "title": "AFTERMATH-LIGHT VS DARK",
+    "creator": "GODS_BADBAR",
+    "template": "MapEditorMoon",
+    "center": [
+      32.4754103906898,
+      96.0000077486038,
+      -27.861484609393
+    ],
+    "recorded_spawns": [
+      [
+        -145.15,
+        98.97,
+        4.91
+      ],
+      [
+        -144.91,
+        99.02,
+        -10.59
+      ],
+      [
+        206.64,
+        99.46,
+        4.45
+      ],
+      [
+        206.68,
+        99.45,
+        6.68
+      ],
+      [
+        -143.18,
+        99.09,
+        -8.76
+      ],
+      [
+        210.06,
+        99.45,
+        7.85
+      ],
+      [
+        -143.42,
+        99.03,
+        0.24
+      ],
+      [
+        -143.18,
+        99.02,
+        -3.09
+      ],
+      [
+        210.01,
+        99.46,
+        5.63
+      ],
+      [
+        -143.42,
+        99.03,
+        3.74
+      ],
+      [
+        -143.14,
+        99.03,
+        -5.81
+      ],
+      [
+        -143.18,
+        99.09,
+        -11.76
+      ],
+      [
+        -144.91,
+        99.02,
+        -7.59
+      ],
+      [
+        -144.87,
+        98.97,
+        -4.63
+      ],
+      [
+        -144.92,
+        98.96,
+        -1.91
+      ],
+      [
+        -145.15,
+        98.97,
+        1.41
+      ],
+      [
+        210.01,
+        99.46,
+        3.31
+      ],
+      [
+        208.42,
+        99.45,
+        7.85
+      ],
+      [
+        208.46,
+        99.45,
+        12.4
+      ],
+      [
+        206.68,
+        99.45,
+        14.13
+      ],
+      [
+        208.42,
+        99.45,
+        10.18
+      ],
+      [
+        206.64,
+        99.46,
+        11.91
+      ],
+      [
+        206.64,
+        99.46,
+        9.59
+      ],
+      [
+        206.64,
+        99.46,
+        2.13
+      ]
+    ],
+    "bounds_min": [
+      -413.806030273438,
+      29.5001430511475,
+      -449.999481201172
+    ],
+    "bounds_max": [
+      586.0,
+      136.000015258789,
+      518.0
+    ],
+    "solid_min": [
+      -300.0,
+      -1.85622024536133,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      298.143768310547,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/aftermath-light-vs-dark-gods-badbar/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "101a2b",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.6,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

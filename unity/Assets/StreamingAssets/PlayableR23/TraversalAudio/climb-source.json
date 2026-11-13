@@ -1,0 +1,28 @@
+{
+  "sourceRoot": "D:\\ashfall-r6-staging\\frozen-source-r6-v001\\source",
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/ambience.gd": "6fe938f064b471709ad7076794e344107a9dd193d76d64f7933305ecf7b79c3f",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5"
+  },
+  "method": "Unmodified source AudioBank.sample(climb,index), saved as WAV",
+  "files": [
+    {
+      "file": "climb_00.wav",
+      "sha256": "597de1ae52867f52fbba51bf5aa0459f3aee4088dcf27bb6887daa64d36f4296",
+      "pcmSha256": "c3eb8a913482b3198eeb4024b314f6519af400bc856a16e8c05fec862054dbf3",
+      "variant": 0
+    },
+    {
+      "file": "climb_01.wav",
+      "sha256": "a7be2b330bfa10e5e0350bf4b30d87678f40c51bc696a3f2d4831fd17d0370ad",
+      "pcmSha256": "4f2e80e713b4ac3cd4a831189022f7a4eb74cd9511854f29669bff6687f304cd",
+      "variant": 1
+    }
+  ],
+  "pcmProcessing": false,
+  "exportValidation": "D:\\ashfall-r6-staging\\traversal-climb-next\\POST-REAP-VALIDATION.json",
+  "qualification": "Actual waveform outputs and source identity independently verified AFTER own-tree deadline reap. Original bounded wrapper remains timeout/failure; no second engine run."
+}

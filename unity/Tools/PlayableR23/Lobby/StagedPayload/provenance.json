@@ -1,0 +1,15 @@
+{
+  "baseline": "quest-r24/source actual R23 snapshot",
+  "inputs": {
+    "scripts/lobby_map_091.gd": "c2f4d0164df67ba2de918935c46779fdb9e6a2c65fdd54a4574cfeb8a433383f",
+    "scripts/front_menu_091.gd": "26b7478a87f6a5524101bd9a22bc45fa42285d16e36c5026bba00227a655d3be",
+    "scripts/field_item_models.gd": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b",
+    "assets/materials/lobby_facade_091.gdshader": "6b2036c265eb14b386dccfe786cf3204320fcc17c5fc8d2dccfe4ba0143a297b"
+  },
+  "recipe": "Source rounded boxes/cylinder/torus, 28 PCG32 seed91091 towers and 112 bands. One Z and winding reflection. Source procedural colors/shader; no external textures.",
+  "rngReferences": [
+    "https://github.com/godotengine/godot/blob/master/core/math/random_pcg.h",
+    "https://github.com/godotengine/godot/blob/master/thirdparty/misc/pcg.cpp"
+  ],
+  "fire": "No lobby fire recipe or asset found; original Godot lobby capture contains skyline/deck and no fire."
+}

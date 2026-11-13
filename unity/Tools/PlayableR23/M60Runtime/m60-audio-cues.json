@@ -1,0 +1,61 @@
+{
+  "cues": [
+    {
+      "weapon": "m60",
+      "action": "shot",
+      "files": [
+        "m60-source-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "mag_eject",
+      "files": [
+        "m60-source-mag_eject-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "pouch",
+      "files": [
+        "m60-source-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "mag_insert",
+      "files": [
+        "m60-source-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "close",
+      "files": [
+        "m60-source-close-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "bolt",
+      "files": [
+        "m60-source-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "open",
+      "files": [
+        "m60-source-open-0.wav"
+      ]
+    },
+    {
+      "weapon": "m60",
+      "action": "dry",
+      "files": [
+        "m60-source-dry-0.wav",
+        "m60-source-dry-1.wav"
+      ]
+    }
+  ]
+}

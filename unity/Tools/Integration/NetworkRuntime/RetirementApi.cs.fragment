@@ -1,0 +1,40 @@
+        // ROOT REVIEW CANDIDATE. Insert inside SessionNetworkCoordinator; not live source.
+        // Opaque receipt captures the actual binding BEFORE an epoch can obsolete it.
+        public sealed class ObsoleteBindingReceipt
+        {
+            private readonly SessionNetworkCoordinator owner;
+            private readonly object binding;
+            private readonly long epoch;
+            private bool completed;
+            internal ObsoleteBindingReceipt(SessionNetworkCoordinator owner,object binding,long epoch)
+            { this.owner=owner; this.binding=binding; this.epoch=epoch; }
+            internal SessionNetworkCoordinator Owner { get { return owner; } }
+            internal object Binding { get { return binding; } }
+            internal long Epoch { get { return epoch; } }
+            internal bool Completed { get { return completed; } set { completed=value; } }
+        }
+        public int RetainedBindingCount { get { return bindings.Count; } }
+        public ObsoleteBindingReceipt CaptureBindingRetirement(string peer,long leaseGeneration,long authenticatedGeneration)
+        {
+            if(System.Threading.Thread.CurrentThread.ManagedThreadId!=hostThread || admitting || applying || dispatching)return null;
+            Binding b;
+            if(peer==null || !bindings.TryGetValue(peer,out b) || !b.Active || b.DispatchRevoked ||
+                b.Generation!=leaseGeneration || b.AuthenticatedGeneration!=authenticatedGeneration || authenticatedGeneration<=0 || b.Lease.Epoch!=Epoch)return null;
+            return new ObsoleteBindingReceipt(this,b,Epoch);
+        }
+        public RuleResult RetireObsoleteBinding(ObsoleteBindingReceipt receipt,long expectedCurrentEpoch)
+        {
+            if(System.Threading.Thread.CurrentThread.ManagedThreadId!=hostThread || admitting || applying || dispatching)return RuleResult.Reject("reentry");
+            if(receipt==null || receipt.Owner!=this)return RuleResult.Reject("retirement-owner");
+            if(receipt.Completed)return RuleResult.Accept();
+            Binding b=(Binding)receipt.Binding;
+            if(expectedCurrentEpoch!=Epoch || receipt.Epoch>=Epoch || b.Lease.Epoch!=receipt.Epoch || b.Active)return RuleResult.Reject("retirement-epoch");
+            // Finish has ALREADY advanced the real AuthorityHost and cleared both
+            // queues/leases. Never call Session.Disconnect on surviving membership.
+            // A replacement with the same key is a different Binding and survives.
+            Binding currentBinding;
+            b.DispatchRevoked=true;
+            if(bindings.TryGetValue(b.Lease.PeerId,out currentBinding) && Object.ReferenceEquals(b,currentBinding))bindings.Remove(b.Lease.PeerId);
+            receipt.Completed=true;
+            return RuleResult.Accept();
+        }

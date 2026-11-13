@@ -1,0 +1,339 @@
+using System;using System.Collections.Generic;using System.IO;using System.Text;using Ashfall.Core;using Ashfall.Modules.HealthStates;using Ashfall.Modules.Sessions;using Ashfall.Modules.Networking;using Ashfall.Integration.Playable.Networking;using Ashfall.Integration.Playable.Match;
+// 2026-11-08 multiplayer review regressions. Each group reproduces one defect
+// through the production lobby + simulated transport. Native UTP/Root unrun.
+partial class LobbyCases
+{
+    sealed class HazardWorld:IR24LanSpawnWorld,IR24LanWarmupFrame
+    {
+        internal int Picks;internal bool Frame=true;
+        public bool ReadyForSpawn(string map,bool warmup){return map=="range";}
+        public SpawnSite[] Sites(string map,bool warmup){Picks++;return new[]{new SpawnSite("hazard-a",new Float3(0,.12f,0),-1,false,false),new SpawnSite("hazard-b",new Float3(8,.12f,0),-1,false,false)};}
+        public bool IsSafe(string map,string actor,Float3 feet){return map=="range";}
+        // Declared map frame: represented Y equals source Y (no removed origin).
+        public bool TrySourceHeight(string map,Float3 feet,out float y){y=feet.Y;return Frame&&map=="range"&&feet.IsFinite;}
+    }
+    // Fixture world whose first source site is the fixture origin used by raw-pose helpers.
+    sealed class OriginSpawnWorld:IR24LanSpawnWorld
+    {
+        public bool ReadyForSpawn(string map,bool warmup){return map=="range";}
+        public SpawnSite[] Sites(string map,bool warmup){return new[]{new SpawnSite("a",new Float3(0,.12f,0),-1,false,false),new SpawnSite("b",new Float3(8,.12f,0),-1,false,false)};}
+        public bool IsSafe(string map,string actor,Float3 feet){return map=="range";}
+    }
+    static void StartRound(Pair pair,IR24LanSpawnWorld world,R24PlayableMatchRules rules,string hash)
+    {
+        for(int i=0;i<5;i++)pair.Tick();pair.Host.BindSpawnWorld(world);pair.Host.BindRawTrackingWorldQuery(Open);
+        Need(pair.Host.BeginRoundSelection(rules,hash,321)&&pair.Host.ReportMapLoaded(hash),"Regression round uses actual host selection/load");for(int i=0;i<3;i++)pair.Tick();
+        Need(pair.Client.ReportMapLoaded(hash),"Regression round actual guest load");for(int i=0;i<4;i++)pair.Tick();
+        pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
+        // Guest first: it takes the fixture-origin site; the host takes the farthest site.
+        Need(pair.Client.RequestSpawn(),"Regression round guest spawn request");for(int i=0;i<4;i++)pair.Tick();
+        Need(pair.Host.RequestSpawn(),"Regression round host spawn request");for(int i=0;i<4;i++)pair.Tick();
+        R24LanSpawn g;Need(pair.Client.TryReadSpawn(pair.Client.OwnActor,out g)&&Math.Abs(g.Feet.X)<.01f,"Guest anchored at fixture origin");
+    }
+    static void Descend(Pair pair,string hash,int revision,float from,float to,float step)
+    {for(float y=from;y>=to-.0001f;y-=step){Need(pair.Client.PublishRawTracking(WarmupPose(hash,y,revision)),"Continuous raw descent "+y);pair.Tick();pair.Tick();}}
+    static Packet Decode(byte[] bytes){Packet p;Need(Wire.TryDecode(bytes,out p),"Captured production frame decodes");return p;}
+    static byte[] NamePayload(string name){var bytes=new UTF8Encoding(false,true).GetBytes(name);using(var s=new MemoryStream())using(var w=new BinaryWriter(s)){w.Write((ushort)bytes.Length);w.Write(bytes);return s.ToArray();}}
+    static bool Throws(Action action,out string error){error=null;try{action();return false;}catch(Exception e){error=e.GetType().Name+": "+e.Message;return true;}}
+
+    // D1: Session.RecoverLoading can advance the epoch inside a late Loaded
+    // command, not only on the heartbeat. The lobby must rebind immediately.
+    static void LateLoadedAfterDeadline()
+    {
+        using(var pair=new Pair()){
+            for(int i=0;i<5;i++)pair.Tick();string hash=new string('c',64);double began=pair.Now;
+            Need(pair.Host.BeginMapSelection("range",hash)&&pair.Host.ReportMapLoaded(hash),"Timeout case starts actual host loading epoch");long epoch=pair.Host.Epoch;for(int i=0;i<3;i++)pair.Tick();
+            pair.Now=began+59.9;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
+            // A third transport that has not completed its hello when the epoch is recovered.
+            var pending=new Pipe();pair.HostPipe.Links.Add("pending",new Link{Remote=pending,Back="server"});pending.Links.Add("server",new Link{Remote=pair.HostPipe,Back="pending"});pair.Host.TransportConnected("pending");
+            Need(pair.Client.ReportMapLoaded(hash),"Guest acknowledgement queued just before the source deadline");
+            pair.Now=began+59.95;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
+            // Host processes the in-flight ack after the deadline, before its next heartbeat (60.15).
+            pair.Now=began+60.02;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
+            string error;Need(!Throws(delegate{for(int i=0;i<10;i++)pair.Tick();},out error),"Late acknowledgement after deadline cannot throw from host/guest pump: "+error);
+            Need(pair.Host.State==R24LanLobbyState.Hosting&&pair.Host.Members.Length==2&&pair.Host.Epoch==epoch+1&&pair.Host.SelectedMap!=null&&pair.Host.SelectedMap.Cancelled&&pair.Host.MapStage==SessionStage.Lobby,"Host adopts the actual recovered Session epoch and publishes cancellation (epoch="+pair.Host.Epoch+" cancelled="+(pair.Host.SelectedMap!=null&&pair.Host.SelectedMap.Cancelled)+")");
+            Need(pair.Client.State==R24LanLobbyState.Connected&&pair.Client.Epoch==epoch+1&&pair.Client.SelectedMap.Cancelled,"Guest receives the timeout cancellation and stays connected");
+            Need(!pair.HostPipe.Links.ContainsKey("pending"),"Unadmitted joiner holding an old-epoch offer is closed, not silently stranded");
+            Need(pair.Host.BeginMapSelection("range",hash)&&pair.Host.ReportMapLoaded(hash),"Recovered host can begin a fresh shared map");for(int i=0;i<3;i++)pair.Tick();
+            Need(pair.Client.ReportMapLoaded(hash),"Recovered guest acknowledges fresh map");for(int i=0;i<4;i++)pair.Tick();
+            Need(pair.Host.SelectedMap.Active&&pair.Client.SelectedMap.Active,"Fresh barrier completes on rebound bindings");
+            Need(!Throws(delegate{pair.ClientPipe.Close("server");},out error)&&pair.Host.Members.Length==1,"Departure after recovery uses an active binding: "+error);
+        }
+        using(var pair=new Pair()){
+            // Host's own late load after the deadline must also cancel, not wedge.
+            for(int i=0;i<5;i++)pair.Tick();string hash=new string('c',64);double began=pair.Now;
+            Need(pair.Host.BeginMapSelection("range",hash),"Host-late case starts actual loading");long epoch=pair.Host.Epoch;for(int i=0;i<2;i++)pair.Tick();
+            pair.Now=began+60.05;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
+            Need(pair.Host.Epoch==epoch+1&&pair.Host.SelectedMap.Cancelled,"Heartbeat control: recovery publishes cancellation");
+        }
+        using(var pair=new Pair()){
+            for(int i=0;i<5;i++)pair.Tick();string hash=new string('c',64);double began=pair.Now;
+            Need(pair.Host.BeginMapSelection("range",hash),"Host-late WorldReady case starts actual loading");long epoch=pair.Host.Epoch;
+            pair.Now=began+59.9;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);pair.Now=began+60.01;
+            // Clock advanced by an earlier frame owner; host's own ack lands after the deadline before its heartbeat.
+            pair.Host.Tick(pair.Now-.0001);
+            Need(!pair.Host.ReportMapLoaded(hash),"Host acknowledgement after the deadline is refused");
+            Need(pair.Host.Epoch==epoch+1&&pair.Host.SelectedMap.Cancelled&&pair.Host.State==R24LanLobbyState.Hosting,"Host's own late acknowledgement adopts recovered epoch");
+            string error;Need(!Throws(delegate{for(int i=0;i<6;i++)pair.Tick();},out error)&&pair.Client.Epoch==epoch+1&&pair.Client.SelectedMap.Cancelled,"Cancellation reaches guest without host fault: "+error);
+        }
+    }
+
+    // D2: unreliable frames are not ordered with the reliable map transition.
+    static void UnreliableNewEpochFrames()
+    {
+        using(var pair=new Pair()){
+            for(int i=0;i<5;i++)pair.Tick();string hash=new string('c',64);
+            Need(pair.Host.BeginMapSelection("range",hash),"Actual new map epoch");Need(pair.Host.PublishPresence(Pose(1)),"Host presence in new epoch");
+            pair.HostPipe.Pressure=1;pair.Tick();
+            Need(pair.Client.State==R24LanLobbyState.Connected,"New-epoch unreliable presence ahead of retained reliable map state cannot disconnect guest (status="+pair.Client.Status+")");
+            for(int i=0;i<4;i++)pair.Tick();
+            Need(pair.Client.Epoch==pair.Host.Epoch&&pair.Client.SelectedMap!=null&&pair.Host.Members.Length==2,"Guest converges on the reliable map transition");
+            var clock=new Packet{Kind=PacketKind.Snapshot,FeatureId="playable.clock/1",ActorId=pair.Host.OwnActor,SessionId=pair.Host.SessionId,ContentHash=new string('a',64),Epoch=pair.Host.Epoch+1,Sequence=0,BaseSequence=-1,Payload=new byte[16]};
+            pair.ClientPipe.Inbox.Enqueue(new Frame{Peer="server",Bytes=Wire.Encode(clock)});pair.Tick();Need(pair.Client.State==R24LanLobbyState.Connected,"Future-epoch unreliable clock reply is dropped, not a protocol kick");
+            var roster=new Packet{Kind=PacketKind.Snapshot,FeatureId="playable.lobby.roster/1",ActorId=pair.Host.OwnActor,SessionId=pair.Host.SessionId,ContentHash=new string('a',64),Epoch=pair.Host.Epoch+5,Sequence=999,BaseSequence=-1,Payload=new byte[0]};
+            pair.ClientPipe.Inbox.Enqueue(new Frame{Peer="server",Bytes=Wire.Encode(roster)});pair.Tick();Need(pair.Client.State==R24LanLobbyState.Offline,"Reliable out-of-order epoch frame still fails closed");
+        }
+        using(var pair=new Pair()){
+            // Host relays unreliable presence once a peer is admitted; the guest
+            // commits Connected only after the complete reliable roster arrives.
+            pair.HostPipe.HoldRoster=true;Need(pair.Host.PublishPresence(Pose(3)),"Host presence published before guest roster completes");
+            for(int i=0;i<3;i++)pair.Tick();
+            Need(pair.Client.State==R24LanLobbyState.Connecting&&pair.HostPipe.Held.Count==2,"Guest presence-before-roster window still connecting (state="+pair.Client.State+" status="+pair.Client.Status+")");
+            pair.HostPipe.HoldRoster=false;pair.HostPipe.Release(0);pair.HostPipe.Release(0);for(int i=0;i<3;i++)pair.Tick();R24LanPoseSnapshot seen;
+            Need(pair.Client.State==R24LanLobbyState.Connected&&pair.Host.Members.Length==2&&pair.Client.DroppedUnreliableFrames>0,"Guest completes the handshake after dropping early presence");
+            // Presence is replaceable 25Hz state: the host's next publish supersedes the dropped one.
+            Need(pair.Host.PublishPresence(Pose(4)),"Next host presence");for(int i=0;i<2;i++)pair.Tick();
+            Need(pair.Client.TryReadPresence(pair.Host.OwnActor,out seen)&&seen.Pose.Root.Position.X==4,"Guest accepts relayed presence once connected");
+        }
+    }
+
+    // D3: lobby text decoding throws InvalidDataException (not an IOException).
+    static void MalformedMessages()
+    {
+        foreach(var payload in new[]{new byte[]{0,0},new byte[]{65,0},new byte[]{200,0,1,2}}){
+            using(var pair=new Pair()){
+                pair.Host.Tick(.05);pair.Client.Tick(.05);Need(pair.HostPipe.Inbox.Count==1,"One real hello");var frame=pair.HostPipe.Inbox.Dequeue();var p=Decode(frame.Bytes);p.Payload=payload;pair.HostPipe.Inbox.Enqueue(new Frame{Peer=frame.Peer,Bytes=Wire.Encode(p)});
+                string error;Need(!Throws(delegate{pair.Host.Tick(.1);},out error),"Malformed unauthenticated hello cannot escape host pump: "+error);
+                Need(pair.Host.State==R24LanLobbyState.Hosting&&pair.Host.RejectedFrames==1&&pair.Host.Members.Length==1,"Malformed hello rejects only that transport");
+            }
+        }
+        Need(Session.CleanName(new string('a',23)+"\U0001F600")==new string('a',23),"Name cleaner never splits a surrogate pair at the 24-unit bound");
+        Need(Session.CleanName("\U0001F600 Ace")=="\U0001F600 Ace"&&Session.CleanName("\uD83D")=="Player"&&Session.CleanName("ab\uDE00cd")=="abcd","Name cleaner keeps whole pairs and drops lone surrogates");
+        Need(Session.CleanName("  Guest [1] <x>  ")=="Guest 1 x"&&Session.CleanName(new string('z',40))==new string('z',24),"Existing BMP cleaning unchanged");
+        using(var pair=new Pair()){
+            pair.Host.Tick(.05);pair.Client.Tick(.05);var frame=pair.HostPipe.Inbox.Dequeue();var p=Decode(frame.Bytes);p.Payload=NamePayload(new string('a',23)+"\U0001F600");pair.HostPipe.Inbox.Enqueue(new Frame{Peer=frame.Peer,Bytes=Wire.Encode(p)});
+            string error;Need(!Throws(delegate{for(int i=0;i<4;i++)pair.Tick();},out error),"Valid UTF-8 name ending in an emoji cannot crash roster publication: "+error);
+            Need(pair.Host.State==R24LanLobbyState.Hosting&&pair.Host.Members.Length==2&&pair.Client.State==R24LanLobbyState.Connected,"Emoji-bound guest admitted with a valid cleaned roster name");
+        }
+        foreach(string feature in new[]{"playable.spawn.state/1","playable.spawn.rejected/1","playable.lobby.roster/1"}){
+            using(var pair=new Pair()){
+                for(int i=0;i<5;i++)pair.Tick();
+                var bad=new Packet{Kind=PacketKind.Snapshot,FeatureId=feature,ActorId=pair.Host.OwnActor,SessionId=pair.Client.SessionId,ContentHash=new string('a',64),Epoch=pair.Client.Epoch,Sequence=9999,BaseSequence=-1,Payload=new byte[]{feature=="playable.spawn.state/1"?(byte)2:(byte)1,0,0}};
+                if(feature=="playable.lobby.roster/1")bad.Payload=new byte[]{0,2,0,0};
+                pair.ClientPipe.Inbox.Enqueue(new Frame{Peer="server",Bytes=Wire.Encode(bad)});
+                string error;Need(!Throws(delegate{pair.Client.Tick(pair.Now+.01);},out error),"Malformed host "+feature+" fails closed without escaping guest pump: "+error);
+                Need(pair.Client.State==R24LanLobbyState.Offline&&pair.Client.Status.Contains("rejected"),"Malformed host "+feature+" rejects the connection explicitly");
+            }
+        }
+    }
+
+    // D4: LAN members' match falls must be resolved by the Health owner (host).
+    static void RemoteMatchFall()
+    {
+        using(var pair=new Pair()){
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("protection",2f).With("respawn_delay",1f).With("zone_enabled",false);string hash=new string('b',64);
+            StartRound(pair,world,rules,hash);string guest=pair.Client.OwnActor,host=pair.Host.OwnActor;var g=Health(pair.Host,guest);var h=Health(pair.Host,host);
+            Need(g.Life==LifeState.Alive,"Guest alive at round start");Descend(pair,hash,g.SpawnRevision,0,-24.9f,8.3f);
+            Need(Health(pair.Host,guest).Life==LifeState.Alive&&pair.Host.CorrectedRawTracking==0,"Source fall line is strictly below minus25 (continuous accepted descent)");
+            Need(pair.Client.PublishRawTracking(WarmupPose(hash,-30,g.SpawnRevision)),"Guest raw tracking below the source fall line during protection");for(int i=0;i<3;i++)pair.Tick();
+            var dead=Health(pair.Host,guest);Need(dead.Life==LifeState.Dead&&dead.Deaths==1&&dead.Revision>g.Revision,"Host Health resolves a remote member's match fall (source: fatal even during protection)");
+            for(int i=0;i<3;i++)pair.Tick();Need(Health(pair.Client,guest).Life==LifeState.Dead,"Guest receives its host-owned fall death");
+            for(float y=0;y>=-30;y-=10){Need(pair.Host.PublishRawTracking(new R24LanRawTracking(hash,7,PoseAt(8,y,0),PoseAt(8,y+1.7f,0),PoseAt(7.7f,y+1.2f,.2f),PoseAt(8.3f,y+1.2f,.2f),0,0,h.SpawnRevision)),"Host own continuous raw "+y);pair.Tick();pair.Tick();}
+            Need(Health(pair.Host,host).Life==LifeState.Alive,"Listen host's own fall stays with its local Root owner (no duplicate remote path)");
+            pair.Now=dead.RespawnAt+.01;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);for(int i=0;i<5;i++)pair.Tick();
+            var back=Health(pair.Client,guest);Need(back.Life==LifeState.Alive&&back.SpawnRevision==g.SpawnRevision+1,"Existing host respawn follows the remote fall death");
+            Need(!pair.Client.PublishRawTracking(WarmupPose(hash,-30,g.SpawnRevision))&&Health(pair.Host,guest).Life==LifeState.Alive,"Old-revision fall pose cannot be replayed against the new life");
+        }
+        using(var pair=new Pair()){
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("respawn_delay",1f).With("zone_enabled",false);string hash=new string('b',64);
+            StartRound(pair,world,rules,hash);string guest=pair.Client.OwnActor;var g=Health(pair.Host,guest);
+            world.Frame=false;Descend(pair,hash,g.SpawnRevision,0,-30,10);
+            Need(Health(pair.Host,guest).Life==LifeState.Alive,"Unavailable authoritative map frame cannot kill");
+            pair.Now+=1.5;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);world.Frame=true;for(int i=0;i<3;i++)pair.Tick();
+            Need(Health(pair.Host,guest).Life==LifeState.Alive,"Stale (>1s) raw evidence never kills");
+        }
+    }
+
+#if !BEFORE_FIX
+    // D5: host zone damage for remote members through the bound host zone owner.
+    static void RemoteZoneDamage()
+    {
+        using(var pair=new Pair()){
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("protection",2f).With("starting_health",80).With("starting_shield",25);string hash=new string('b',64);
+            var asked=new List<string>();float owed=7;double lastProtection=-1;
+            for(int i=0;i<5;i++)pair.Tick();
+            bool refused=false;try{pair.Client.BindZoneDamageQuery(delegate(string a,Float3 r,double p,out float amount){amount=0;return false;});}catch(InvalidOperationException){refused=true;}Need(refused,"Guest cannot bind a zone damage oracle");
+            pair.Host.BindZoneDamageQuery(delegate(string actor,Float3 root,double protection,out float amount){asked.Add(actor);lastProtection=protection;amount=owed;return owed>0;});
+            refused=false;try{pair.Host.BindZoneDamageQuery(delegate(string a,Float3 r,double p,out float amount){amount=0;return false;});}catch(InvalidOperationException){refused=true;}Need(refused,"Host zone owner binding cannot be replaced");
+            StartRound(pair,world,rules,hash);string guest=pair.Client.OwnActor,host=pair.Host.OwnActor;var g=Health(pair.Host,guest);
+            Need(pair.Client.PublishRawTracking(WarmupPose(hash,0,g.SpawnRevision)),"Guest raw tracking");for(int i=0;i<3;i++)pair.Tick();
+            Need(Health(pair.Host,guest).Health==80&&!asked.Contains(host),"Spawn protection blocks zone damage; host actor never routed to remote path");
+            pair.Now=g.ProtectionUntil+.01;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);pair.Client.PublishRawTracking(WarmupPose(hash,.01f,g.SpawnRevision));for(int i=0;i<3;i++)pair.Tick();
+            var hurt=Health(pair.Host,guest);Need(hurt.Health<80&&hurt.Shield==25&&pair.Host.RemoteZoneDamageEvents>0,"Remote zone damage reaches host Health, bypassing shield (health="+hurt.Health+")");
+            Need(Math.Abs(lastProtection-Math.Max(0,g.ProtectionUntil-pair.Host.SelectedMap.StartsAt))<1e-9,"Zone owner receives round-relative protection deadline");
+            Need(!asked.Contains(host),"Listen host's own zone damage stays on its local Root step");
+            owed=0;for(int i=0;i<3;i++)pair.Tick();Need(Health(pair.Client,guest).Health==Health(pair.Host,guest).Health&&Health(pair.Client,guest).Health<80,"Guest receives host-owned zone damage");
+            int events=pair.Host.RemoteZoneDamageEvents;float before=Health(pair.Host,guest).Health;for(int i=0;i<4;i++)pair.Tick();Need(pair.Host.RemoteZoneDamageEvents==events&&Health(pair.Host,guest).Health==before,"No damage when the host zone owner owes none");
+            owed=7;pair.Now+=1.5;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);asked.Clear();for(int i=0;i<3;i++)pair.Tick();
+            Need(!asked.Contains(guest)&&Health(pair.Host,guest).Health==before,"Stale raw evidence (>1s) is never charged zone damage");
+            pair.Client.PublishRawTracking(WarmupPose(hash,.02f,g.SpawnRevision));owed=500;for(int i=0;i<3;i++)pair.Tick();
+            var down=Health(pair.Host,guest);Need(down.Life==LifeState.Dead&&down.Health==0,"Lethal zone damage uses the actual producer death transition");
+            asked.Clear();for(int i=0;i<3;i++)pair.Tick();Need(!asked.Contains(guest),"Dead members are not queried for further zone damage");
+        }
+    }
+
+    // D6: late joiner in a revive round is a Session waiting spectator.
+    static void LateJoinWaitsForNextRound()
+    {
+        using(var pair=new Pair()){
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("team_revive","range").With("time_limit",30).With("rounds",2).With("zone_enabled",false);string hash=new string('b',64);
+            StartRound(pair,world,rules,hash);Need(pair.Host.MapStage==SessionStage.Match,"Revive round active");
+            var pipe=new Pipe();var late=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));pipe.Lost=late.TransportDisconnected;
+            pair.HostPipe.Links.Add("late",new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=pair.HostPipe,Back="late"});late.StartClient("server","Late",pair.Now);pair.Host.TransportConnected("late");
+            Action tick=delegate{pair.Tick();late.Tick(pair.Now);};
+            try{
+                for(int i=0;i<8;i++)tick();Need(late.State==R24LanLobbyState.Connected&&late.SelectedMap!=null&&late.SelectedMap.Rules!=null&&pair.Host.Members.Length==3,"Late joiner admitted into the running revive round");
+                var member=pair.Host.ReadAuthorityMember(late.OwnActor);Need(member.Life==SessionLife.Spectator&&member.WaitingRound,"Actual Session waiting state for revive late join");
+                Need(late.ReportMapLoaded(hash),"Late joiner loads the shared map");for(int i=0;i<4;i++)tick();
+                Need(late.RequestSpawn(),"Late joiner requests placement");for(int i=0;i<5;i++)tick();
+                Need(late.SpawnFailure!=null&&late.SpawnWaitingForNextRound&&late.State==R24LanLobbyState.Connected,"Spectator refusal is reported as waiting for next round, connection retained");
+                pair.Now=pair.Host.SelectedMap.StartsAt+30.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);late.Tick(pair.Now);for(int i=0;i<4;i++)tick();
+                Need(pair.Host.SelectedMap.Round==2&&late.SelectedMap.Round==2&&!late.SpawnWaitingForNextRound,"Next host round clears the waiting state");
+                Need(pair.Host.ReportMapLoaded(hash)&&pair.Client.ReportMapLoaded(hash)&&late.ReportMapLoaded(hash),"All three acknowledge round two");for(int i=0;i<5;i++)tick();
+                pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);late.Tick(pair.Now);
+                Need(late.RequestSpawn(),"Waiting joiner requests round-two placement");for(int i=0;i<6;i++)tick();R24LanSpawn placed;
+                Need(late.TryReadSpawn(late.OwnActor,out placed)&&pair.Host.ReadAuthorityMember(late.OwnActor).Life==SessionLife.Alive&&Health(late,late.OwnActor).Life==LifeState.Alive,"Former late joiner plays round two with host Health");
+            }finally{late.Dispose();pipe.Dispose();}
+        }
+    }
+#endif
+
+    // D7: guest acceptance of host-authoritative placement/Health must not
+    // depend on the guest's own countdown estimate (spawns are sent once).
+    static void GuestAcceptsHostSnapshotsDuringOwnCountdownEstimate()
+    {
+        using(var pair=new Pair()){
+            for(int i=0;i<5;i++)pair.Tick();pair.Host.BindSpawnWorld(new HazardWorld());var rules=R24PlayableMatchRules.ForPreset("free_for_all","range");string hash=new string('b',64);
+            Need(pair.Host.BeginRoundSelection(rules,hash,99)&&pair.Host.ReportMapLoaded(hash),"Round selection");for(int i=0;i<3;i++)pair.Tick();pair.Client.ReportMapLoaded(hash);for(int i=0;i<4;i++)pair.Tick();
+            double starts=pair.Host.SelectedMap.StartsAt;pair.Host.Tick(starts+.1);Need(pair.Host.RequestSpawn(),"Host spawns at its countdown end");pair.Host.Tick(starts+.11);pair.Host.Tick(starts+.12);
+            pair.Client.Tick(starts-.1);Need(pair.Client.RoundCountdown>0,"Guest estimate still lags host countdown (countdown="+pair.Client.RoundCountdown+")");
+            pair.Client.Tick(starts+.2);R24LanSpawn hostSpawn;R24LanHealthState hostHealth;
+            Need(pair.Client.TryReadSpawn(pair.Host.OwnActor,out hostSpawn)&&pair.Client.TryReadHealth(pair.Host.OwnActor,out hostHealth),"Host placement/Health sent during guest's lagging estimate is retained, not dropped forever");
+        }
+    }
+
+    static void RegressionCases()
+    {
+        var failures=new List<string>();
+        var groups=new List<KeyValuePair<string,Action>>{
+            new KeyValuePair<string,Action>("N1 online room flow",OnlineRoomsCases),
+            new KeyValuePair<string,Action>("N3 friends UI",FriendsUiCases),
+            new KeyValuePair<string,Action>("P4b helicopter motor clearance and authority",HelicopterCases),
+            new KeyValuePair<string,Action>("V5 optional legacy policy and migration",LegacyCases),
+            new KeyValuePair<string,Action>("P4 kind-aware tank authority and motor",Vehicles3),
+            new KeyValuePair<string,Action>("detail selection/clamps/invalid",DetailSelection),
+            new KeyValuePair<string,Action>("detail real installed data",DetailShipped),
+            new KeyValuePair<string,Action>("P3b grapple pull host and motor",GrapplePullCases),
+            new KeyValuePair<string,Action>("P3 grapple gun input, custody and fallback",GrappleCases),
+            new KeyValuePair<string,Action>("P2 playfix reach and shipped-map fall planes",PlayfixCases),
+            new KeyValuePair<string,Action>("D1 late Loaded after loading deadline",LateLoadedAfterDeadline),
+            new KeyValuePair<string,Action>("D2 unreliable new-epoch frames",UnreliableNewEpochFrames),
+            new KeyValuePair<string,Action>("D3 malformed lobby messages",MalformedMessages),
+            new KeyValuePair<string,Action>("D4 remote match fall",RemoteMatchFall),
+#if !BEFORE_FIX
+            new KeyValuePair<string,Action>("D5 remote zone damage",RemoteZoneDamage),
+            new KeyValuePair<string,Action>("D6 revive late join waits",LateJoinWaitsForNextRound),
+#endif
+            new KeyValuePair<string,Action>("D7 guest countdown estimate",GuestAcceptsHostSnapshotsDuringOwnCountdownEstimate),
+            new KeyValuePair<string,Action>("D8 strict gap + spawn anchor (no pause bypass)",StrictGapAndAnchor),
+            new KeyValuePair<string,Action>("D9 host pod carrier/landing transition",HostPodTransition),
+            new KeyValuePair<string,Action>("D10 host PvP shots/custody/ammo/kills/scores",PvpShotsAndScores),
+            new KeyValuePair<string,Action>("D11 shared revive",SharedRevive),
+            new KeyValuePair<string,Action>("D12 Health receipt window",DamageReceiptWindow),
+            new KeyValuePair<string,Action>("D13 ballistic table vs rarity",BallisticTableMatchesRarity),
+            new KeyValuePair<string,Action>("D14 shared weapon loot/instance custody",SharedWeaponLoot),
+            new KeyValuePair<string,Action>("D15 shared ammo/backpack/food outcomes",SharedSuppliesAndFood),
+            new KeyValuePair<string,Action>("D16 gain receipt window",GainReceiptWindow),
+            new KeyValuePair<string,Action>("D17 remote loot/malformed frames/shutdown",RemoteLootAndMalformed),
+            new KeyValuePair<string,Action>("D18 authoritative pod presentation adoption",AdoptPodPresentation),
+            new KeyValuePair<string,Action>("D19 acknowledged native ammo reconciliation",AmmoReconciliation),
+            new KeyValuePair<string,Action>("D20 warmup and round inventory retention",WarmupAndRoundRetention),
+            new KeyValuePair<string,Action>("D21 shared construction/build supplies/reserve drops",ConstructionAndResources),
+            new KeyValuePair<string,Action>("D22 host source melee contacts/custody/world",MeleeAuthority),
+            new KeyValuePair<string,Action>("D23 host finite explosive custody/projectiles/PvP",ExplosiveAuthority),
+            new KeyValuePair<string,Action>("D24 host peel/open/mouth/hand/menu gestures",HostFoodGestures),
+            new KeyValuePair<string,Action>("D25 exact receipts/checkpoint pressure",ReceiptCheckpointPressure),
+            new KeyValuePair<string,Action>("D26 explosive retention/departure policy",GrenadeDepartureAndRetention),
+            new KeyValuePair<string,Action>("D27 catalogue custody/settled world/source slots",CatalogAndSettledWorld),
+            new KeyValuePair<string,Action>("D28 late shared world/backpressure/stale panels",LateSharedWorld),
+            new KeyValuePair<string,Action>("D29 native host lifetime identity isolation",NativeWorldIdentity),
+            new KeyValuePair<string,Action>("D30 owner preparation reset reconciliation",FoodResetReconciliation),
+            new KeyValuePair<string,Action>("D31 durable pressure/restart/manifest/epoch",DurablePressureRecovery),
+            new KeyValuePair<string,Action>("D32 durable quotas/prepared gain/recovery",DurableLimitsAndGains),
+            new KeyValuePair<string,Action>("D33 durable crash/corruption/retention",DurableCrashCorruption),
+            new KeyValuePair<string,Action>("D34 durable actual LAN composition",DurableLanComposition),
+            new KeyValuePair<string,Action>("D35 durable abrupt process exits",DurableProcessCrash),
+            new KeyValuePair<string,Action>("D36 durable stale tokens/partial writes/ownership",DurableStaleTokensAndPartial),
+            new KeyValuePair<string,Action>("D37 durable joint Session failure",DurableJointSessionFailure),
+            new KeyValuePair<string,Action>("D38 durable exact rejected/capped outcomes",DurableExactTerminalOutcomes),
+            new KeyValuePair<string,Action>("D39 durable stale writer/quota reopen",DurableSharedWriterAndReopen),
+            new KeyValuePair<string,Action>("D40 durable callback isolation",DurableCallbackIsolation),
+            new KeyValuePair<string,Action>("D41 durable shutdown failure",DurableShutdownFailure),
+            new KeyValuePair<string,Action>("D42 exclusion head-hull recovery policy",ExclusionHeadRecovery),
+            new KeyValuePair<string,Action>("D43 exclusion obstructed-view fade/eye radius",ExclusionFade),
+            new KeyValuePair<string,Action>("D44 exclusion walking body column/step limit",ExclusionBodyColumn),
+            new KeyValuePair<string,Action>("D45 exclusion obstructed weapon presentation",ExclusionWeaponObstruction),
+            new KeyValuePair<string,Action>("P1 head clearance",HeadfixClearance),
+            new KeyValuePair<string,Action>("D46 flash smoke FlashSmokeExposure",FlashSmokeExposure),
+            new KeyValuePair<string,Action>("D47 flash smoke FlashSmokeBlindness",FlashSmokeBlindness),
+            new KeyValuePair<string,Action>("D48 flash smoke FlashSmokeCloud",FlashSmokeCloud),
+            new KeyValuePair<string,Action>("D49 flash smoke FlashSmokeHostAuthority",FlashSmokeHostAuthority),
+            new KeyValuePair<string,Action>("D50 traversal jet",TraversalJet),
+            new KeyValuePair<string,Action>("D51 traversal ropes",TraversalRopes),
+            new KeyValuePair<string,Action>("D52 traversal wire",TraversalWire),
+            new KeyValuePair<string,Action>("D53 fist policy",MeleeGrabFists),
+            new KeyValuePair<string,Action>("D54 parry guard hull",MeleeGrabParryGuard),
+            new KeyValuePair<string,Action>("D55 host fists and feedback",MeleeGrabHostFists),
+            new KeyValuePair<string,Action>("D56 host blade parry",MeleeGrabHostParry),
+            new KeyValuePair<string,Action>("D57 transient melee wire",MeleeGrabTransientWire),
+            new KeyValuePair<string,Action>("D58 build tiers and upgrades",BuildTierPolicy),
+            new KeyValuePair<string,Action>("D59 build owner capacity",BuildOwnerCapacity),
+            new KeyValuePair<string,Action>("D60 build tier wire",BuildTierWire),
+            new KeyValuePair<string,Action>("D61 build legacy switch",BuildLegacyRule),
+            new KeyValuePair<string,Action>("D62 mapstyles defaults",MapStylesDefaults),
+            new KeyValuePair<string,Action>("D63 mapstyles merge and aliases",MapStylesMerge),
+            new KeyValuePair<string,Action>("D64 mapstyles clamps and invalid JSON",MapStylesClampAndInvalid),
+            new KeyValuePair<string,Action>("D65 mapstyles real 64 map profiles",MapStylesShipped),
+            new KeyValuePair<string,Action>("D66 mapsolids validation",MapSolidsValidation),
+            new KeyValuePair<string,Action>("D67 mapsolids largest-volume cap",MapSolidsCap),
+            new KeyValuePair<string,Action>("D68 mapsolids shipped and trimmed data",MapSolidsReal),
+            new KeyValuePair<string,Action>("D69 vehicle dynamics",VehicleDynamics),
+            new KeyValuePair<string,Action>("D70 vehicle authority and wire",VehicleAuthority),
+            new KeyValuePair<string,Action>("D71 vehicle spawn veto and rule off",VehicleSpawnRefusal),
+            new KeyValuePair<string,Action>("D72 vehicle combat and lifecycle",VehicleCombatAndLifecycle),
+            new KeyValuePair<string,Action>("D73 vehicle world and freshness admission",VehicleWorldAndFreshness),
+            new KeyValuePair<string,Action>("D74 vehicle rider holds",VehicleRiderHolds),
+            new KeyValuePair<string,Action>("D75 vehicle input and interlocks",VehicleRiderMapping),
+            new KeyValuePair<string,Action>("D76 vehicle remote pose and flag",VehicleRiderPose),
+            new KeyValuePair<string,Action>("D77 title moment timing and skips",TitleMomentTiming),
+            new KeyValuePair<string,Action>("D78 build compound geometry",BuildVariantGeometry),
+            new KeyValuePair<string,Action>("D79 build variant wire",BuildVariantWire),
+            new KeyValuePair<string,Action>("D80 build tap hold selection",BuildSelectionControls),
+            new KeyValuePair<string,Action>("D81 build dismantle ownership refund collapse",BuildDismantlePolicy),
+            new KeyValuePair<string,Action>("D82 build compound clearance host edit admission",Build2Admission),
+
+        };
+        foreach(var group in groups){try{group.Value();Console.WriteLine("REGRESSION PASS "+group.Key);}catch(Exception e){failures.Add(group.Key+": "+e.Message);Console.WriteLine("REGRESSION FAIL "+group.Key+": "+e.GetType().Name+": "+e.Message);}}
+        if(failures.Count>0)throw new Exception(failures.Count+" regression group(s) failed");
+    }
+}

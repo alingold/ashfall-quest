@@ -1,0 +1,362 @@
+[
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R23HandsWeapons.M60.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.M60.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R23RoundState.M60.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.M60.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Definition.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Definition.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Feedback.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Feedback.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Gallery.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24M60Gallery.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60GallerySession.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24M60GallerySession.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Mechanics.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Mechanics.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Owner.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Owner.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60RecoilData.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60RecoilData.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60Status.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Status.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Staged/R24M60View.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60View.cs",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23Audio.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23Audio.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23GunFeedback.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23GunFeedback.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23HandsWeapons.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23HandsWeapons.DisplayedPose.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.DisplayedPose.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23LobbyWeaponGallery.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Gallery/R23LobbyWeaponGallery.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23RoundState.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23SourceRifleOwner.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23SourceRifleOwner.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23WeaponFeedbackState.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponFeedbackState.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23WeaponInstances.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponInstances.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23WeaponPickupRules.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPickupRules.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23WeaponPoseMath.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPoseMath.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/R23WeaponWheelIcons.cs",
+    "destination": "unity/Assets/Ashfall/Integration/Playable/Input/R23WeaponWheelIcons.cs",
+    "new": false
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-arrow.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-arrow.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-arrow.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-arrow.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-audio-authored-PROVENANCE.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-authored-PROVENANCE.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-audio-reference097-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-reference097-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-audio-reference099-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-reference099-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-donor-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-donor-provenance.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor-provenance.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-donor.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-donor.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-icon.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-icon.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-0-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-0-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-0-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-1-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-1-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-1-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-2-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-2-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-2-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-3-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-3-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-3-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-4-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-4-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-4-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-5-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-5-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-5-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-6-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-6-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-6-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-7-baseColor.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-baseColor.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-7-metallic.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-metallic.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-7-normal.png",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-normal.png",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-ATTRIBUTION.txt",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-ATTRIBUTION.txt",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main-provenance.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-provenance.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-main.meshbin",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main.meshbin",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-bolt-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-bolt-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-close-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-close-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-dry-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-dry-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-dry-1.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-dry-1.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-fit.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-fit.json",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-mag_eject-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-mag_eject-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-mag_insert-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-mag_insert-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-open-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-open-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-pouch-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-pouch-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Payload/m60-source-shot-0.wav",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-shot-0.wav",
+    "new": true
+  },
+  {
+    "staged": "unity/Tools/PlayableR23/M60Runtime/Candidate/audio.json",
+    "destination": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/audio.json",
+    "new": false
+  }
+]

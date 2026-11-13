@@ -1,0 +1,27 @@
+from pathlib import Path
+T=Path(__file__).resolve().parent;R=T.parents[3];H=R/'unity/Assets/Ashfall/Integration/Playable/HandsWeapons';C=T/'Candidate'
+def save(n,s):(C/n).write_text(s)
+s=(H/'R23RoundState.cs').read_text();s=s.replace('public HandlingSnapshot ActiveSnapshot {get{return ','public HandlingSnapshot ActiveSnapshot {get{return selectedRifle=="dt11"?Dt11.Snapshot:').replace('public int ActiveLoaded {get{return ','public int ActiveLoaded {get{return selectedRifle=="dt11"?(Dt11.Snapshot.Phase==ReloadPhase.NeedsRack?Dt11.Snapshot.Seated:Dt11.Snapshot.Loaded):')
+s=s.replace('&&profile!="m1014"','&&profile!="dt11"&&profile!="m1014"');needle='if(R24MeleeProfiles.ForId(profile)!=null){knives.Add';s=s.replace(needle,'if(profile=="dt11"){dt11s.Add(actionId,new R24Dt11Owner(Command(),nativeId,reserves["shells"],this,stats.SpreadScale));instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;}'+needle)
+s=s.replace('if(actionId==null||actionId==selectedAction||!instances.ContainsKey(actionId))return false;','if(actionId==null||actionId==selectedAction||!instances.ContainsKey(actionId))return false;R24Dt11Owner dt;if(dt11s.TryGetValue(actionId,out dt)){dt.Retire();dt11s.Remove(actionId);}')
+s=s.replace('retiredRound=true;foreach','retiredRound=true;foreach(var dt in dt11s.Values)dt.Retire();foreach',1).replace('smaws.Clear();knives.Clear();','smaws.Clear();knives.Clear();dt11s.Clear();LastDt11Volley=null;')
+s=s.replace('RegisterWeaponInstance("m1014","m1014",1,"r23-loadout/m1014");','RegisterWeaponInstance("m1014","m1014",1,"r23-loadout/m1014");RegisterWeaponInstance("dt11","dt11",1,"r24-loadout/dt11");').replace('selectedRifle=="magnum"||selectedRifle=="m1014"','selectedRifle=="magnum"||selectedRifle=="dt11"||selectedRifle=="m1014"')
+s=s.replace('public HandlingSnapshot ReadWeapon(string id){','public HandlingSnapshot ReadWeapon(string id){R24Dt11Owner dt;if(id!=null&&dt11s.TryGetValue(id,out dt))return dt.Snapshot;')
+s=s.replace('if(knives.ContainsKey(id))return 0;','if(knives.ContainsKey(id))return 0;if(dt11s.ContainsKey(id))return reserves["shells"].Available;')
+s=s.replace('if(id==null)return false;bool found=false;','if(id==null)return false;bool found=false;R24Dt11Owner dt;if(dt11s.TryGetValue(id,out dt)){dt.SuspendControls();found=true;}')
+s=s.replace('foreach(var shotgun in shotguns.Values)shotgun.GripToggle=enabled;','foreach(var shotgun in shotguns.Values)shotgun.GripToggle=enabled;foreach(var dt in dt11s.Values)dt.GripToggle=enabled;')
+s=s.replace('public bool Step(float dt,HandlingInput input,bool reload,bool paused) {','public bool Step(float dt,HandlingInput input,bool reload,bool paused) {\n            if(selectedRifle=="dt11")return StepDt11(dt,input,reload?(input.Desktop?HandlingAction.ReloadStep:HandlingAction.Eject):HandlingAction.Sample,new R23M1014Pose{Forward=new Float3(0,0,1),Right=new Float3(1,0,0),Up=new Float3(0,1,0)},false,paused);')
+save('R23RoundState.cs',s)
+s=(H/'R23WeaponInstances.cs').read_text().replace('case "knife":','case "dt11":stats=new R23RarityStats(2,96,96,1,new float[]{1,.92f,.84f,.76f,.68f}[i]);return true;\n            case "knife":');save('R23WeaponInstances.cs',s)
+s=(H/'R23WeaponPickupRules.cs').read_text().replace('switch(id){','switch(id){case "dt11":return 1;',1);save('R23WeaponPickupRules.cs',s)
+# Reuse actual registered Health owner / immutable accepted volley validation, no fake pellet counters.
+s=(H/'R23RoundState.cs').read_text();a=s.index('        public int ApplyM1014Contacts');b=s.index('        public HealthSnapshot ReadTarget',a);part=s[a:b].replace('ApplyM1014Contacts','ApplyDt11Contacts').replace('R23M1014Volley','R24Dt11Volley').replace('selectedRifle!="m1014"','selectedRifle!="dt11"').replace('LastM1014Volley','LastDt11Volley').replace('M1014==null','Dt11==null').replace('M1014.InstanceId','Dt11.InstanceId').replace('R23M1014Definition.DamageAtDistance','R24Dt11Definition.DamageAtDistance')
+new='''using System;using System.Collections.Generic;using Ashfall.Core;using Ashfall.Modules.HealthStates;using Ashfall.Modules.WeaponHandling;
+namespace Ashfall.Integration.Playable.HandsWeapons {public sealed partial class R23RoundState {
+ readonly Dictionary<string,R24Dt11Owner> dt11s=new Dictionary<string,R24Dt11Owner>();
+ public R24Dt11Owner Dt11{get{R24Dt11Owner r;dt11s.TryGetValue(selectedRifle=="dt11"?selectedAction:"dt11",out r);return r;}}
+ public R24Dt11Owner ReadDt11Instance(string actionId){R24Dt11Owner r;return actionId!=null&&dt11s.TryGetValue(actionId,out r)?r:null;}
+ public R24Dt11Volley LastDt11Volley{get;private set;}
+ public bool StepDt11(float dt,HandlingInput input,HandlingAction action,R23M1014Pose pose,bool flickBlocked,bool paused){if(!sourceLoadout||selectedRifle!="dt11"||Dt11==null)return false;if(float.IsNaN(dt)||float.IsInfinity(dt)||dt<0||dt>.25f)throw new ArgumentOutOfRangeException("dt");bool suspended=paused||Health<=0;AdvanceSmawWorld(dt,suspended);input.Paused|=suspended;input.DeltaSeconds=dt;var c=Command();input.Sequence=c.Tick;R24Dt11Volley volley;Dt11.Apply(c,action,input,pose,out volley,flickBlocked);LastDt11Volley=volley;pendingShot=volley!=null;return pendingShot;}
+'''+part+'}}\n';(T/'Staged/R23RoundState.Dt11.cs').write_text(new)
+print('STAGED production Round actual DT11 native/pellet/Health family paths')

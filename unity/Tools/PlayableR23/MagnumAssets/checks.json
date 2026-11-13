@@ -1,0 +1,30 @@
+{
+  "passed": 386,
+  "source": "ORIGINAL Opus R23",
+  "assets": {
+    "magnum": {
+      "triangles": 5382,
+      "vertices": 16146,
+      "surfaces": 1
+    },
+    "magnum-cylinder": {
+      "triangles": 2462,
+      "vertices": 2501,
+      "surfaces": 18
+    },
+    "magnum-offer": {
+      "triangles": 6384,
+      "vertices": 4088,
+      "surfaces": 28
+    }
+  },
+  "totalTriangles": 14228,
+  "capacity": 7,
+  "modelScale": 0.84,
+  "sourceFinishPixelCrop": true,
+  "existingPayloadFilesPreserved": 169,
+  "engineRun": false,
+  "blenderRun": false,
+  "gpuRun": false,
+  "runtimeEdited": false
+}

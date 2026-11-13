@@ -1,0 +1,43 @@
+{
+  "payloads": [
+    {
+      "id": "cx4",
+      "parts": 4,
+      "triangles": 6188,
+      "sha256": "22d860abb8a085cb6e8a6c867c4cb76dc2e2f3fd0d953b2c8907baf5a686cd91"
+    },
+    {
+      "id": "px4",
+      "parts": 3,
+      "triangles": 5400,
+      "sha256": "0d95b5886dba3262658c40ea1b6bbced744bc139f14b629704e9e9e467ec50b7"
+    },
+    {
+      "id": "m1014",
+      "parts": 7,
+      "triangles": 76594,
+      "sha256": "aa029e398214aa2ef653eaada531b6a286512600b7b3d20deb0bd62c76466799"
+    },
+    {
+      "id": "m1014-bolt",
+      "parts": 1,
+      "triangles": 2548,
+      "sha256": "13139d96c4e0849ecd23f3a9ed59d0ff07fbd4b01e17ac2b3b39ba8b740a9276"
+    },
+    {
+      "id": "m1014-pack",
+      "parts": 4,
+      "triangles": 1584,
+      "sha256": "a1de00667c6a80045c8daee9679ef43db080ea9d7bc9422c1e84050b21c751c1"
+    },
+    {
+      "id": "m1014-arrow",
+      "parts": 1,
+      "triangles": 36,
+      "sha256": "3ac165f3f660a923d160137a52d85fcc4a82d7a4545a811f969484dc759abdc6"
+    }
+  ],
+  "actualFitProfiles": 3,
+  "exactM1014CueBindings": 6,
+  "engineRenderDevice": "UNRUN"
+}

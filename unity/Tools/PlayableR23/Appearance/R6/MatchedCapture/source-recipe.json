@@ -1,0 +1,338 @@
+{
+  "width": 960,
+  "height": 960,
+  "fov": 38,
+  "near": 0.02,
+  "far": 100,
+  "styles": [
+    {
+      "id": "prowler",
+      "sourceIndex": 81,
+      "label": "Prowler",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-front.png",
+          "referenceSha256": "69fad7c2fa2a2dac82cf1a4417a774efaf3162a72ac56abae963ec2f5c4969a3"
+        },
+        {
+          "name": "wrists",
+          "godotPosition": [
+            0,
+            1.05,
+            -1.9
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-wrists.png",
+          "referenceSha256": "2d3d2a41fb63dc3fd4eb2e0d2762dd6bebf1aa1b11feef9433e9aaa8e23beed2"
+        },
+        {
+          "name": "head",
+          "godotPosition": [
+            0,
+            1.65,
+            -1.05
+          ],
+          "godotTarget": [
+            0,
+            1.62,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-head.png",
+          "referenceSha256": "4f6edc69297c09eda4948ff5b2efefb598b5a634d0ce7913da2400cd9f0c9a6d"
+        }
+      ]
+    },
+    {
+      "id": "stacy_throwback",
+      "sourceIndex": 73,
+      "label": "Stacy Throwback",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-front.png",
+          "referenceSha256": "b32c5d3ed9b784540a56497e84af76d5dd4693e87fa6e1193b86b65952249f17"
+        },
+        {
+          "name": "wrists",
+          "godotPosition": [
+            0,
+            1.05,
+            -1.9
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-wrists.png",
+          "referenceSha256": "67ff47890ceaf18fa3f7303a60dd24f69789548b738f9f2118df0c333b539cec"
+        },
+        {
+          "name": "head",
+          "godotPosition": [
+            0,
+            1.65,
+            -1.05
+          ],
+          "godotTarget": [
+            0,
+            1.62,
+            0
+          ],
+          "classification": "matched-source-camera",
+          "reference": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-head.png",
+          "referenceSha256": "b7f8e20080dc2119898dbb4984be003df72d337daac9473c53834b0e5086eb01"
+        }
+      ]
+    },
+    {
+      "id": "anna_tabby",
+      "sourceIndex": 25,
+      "label": "Anna Tabby",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "source-labelled-probe",
+          "reference": "",
+          "referenceSha256": ""
+        }
+      ]
+    },
+    {
+      "id": "tox",
+      "sourceIndex": 42,
+      "label": "Tox",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "source-labelled-probe",
+          "reference": "",
+          "referenceSha256": ""
+        }
+      ]
+    },
+    {
+      "id": "haze_nuclear",
+      "sourceIndex": 36,
+      "label": "Haze Nuclear",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "source-labelled-probe",
+          "reference": "",
+          "referenceSha256": ""
+        }
+      ]
+    },
+    {
+      "id": "sir_box_a_lot",
+      "sourceIndex": 60,
+      "label": "Sir Box-a-lot",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "source-labelled-probe",
+          "reference": "",
+          "referenceSha256": ""
+        }
+      ]
+    },
+    {
+      "id": "pj_golden",
+      "sourceIndex": 103,
+      "label": "PJ Golden",
+      "shots": [
+        {
+          "name": "front",
+          "godotPosition": [
+            0,
+            1.1,
+            -3.7
+          ],
+          "godotTarget": [
+            0,
+            1,
+            0
+          ],
+          "classification": "source-labelled-probe",
+          "reference": "",
+          "referenceSha256": ""
+        }
+      ]
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/executed-capture_outfits.gd",
+      "sha256": "abb06da6c542a3e04ac8f0baf497ec988028b5eb28eef1fc0ea0e6df2459f448",
+      "bytes": 7435
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/receipt.json",
+      "sha256": "9a02be81126532f3ffbb805030f925074a10228de3fd53b1279d0b4421760e3f",
+      "bytes": 1306
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/result.json",
+      "sha256": "265728ac50e8a4a2a23df1843f2b349d8133838812a2d66204a1b4400eba09ad",
+      "bytes": 1375
+    },
+    {
+      "path": "D:/ashfall-r6-staging/frozen-source-r6-v001/SOURCE-MANIFEST.json",
+      "sha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+      "bytes": 1022046
+    },
+    {
+      "path": "D:/ashfall-r6-staging/frozen-source-r6-v001/source/scripts/gemini_player_models_099.gd",
+      "sha256": "bdfe832b771ea76400b2c69b0552677a67672b513921a5751c71fe8b5e23eef9",
+      "bytes": 31638
+    },
+    {
+      "path": "D:/ashfall-r6-staging/frozen-source-r6-v001/source/scripts/lobby_map_091.gd",
+      "sha256": "c2f4d0164df67ba2de918935c46779fdb9e6a2c65fdd54a4574cfeb8a433383f",
+      "bytes": 5505
+    },
+    {
+      "path": "D:/ashfall-r6-staging/frozen-source-r6-v001/source/scripts/player_body.gd",
+      "sha256": "4eff4106d19fbb6457c8f647181dbdcc220b67bd1bddf73b21dab8131f7b57fb",
+      "bytes": 7599
+    },
+    {
+      "path": "D:/ashfall-r6-staging/frozen-source-r6-v001/source/scripts/grip_hand_086.gd",
+      "sha256": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+      "bytes": 3904
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-front.png",
+      "sha256": "69fad7c2fa2a2dac82cf1a4417a774efaf3162a72ac56abae963ec2f5c4969a3",
+      "bytes": 100013
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-wrists.png",
+      "sha256": "2d3d2a41fb63dc3fd4eb2e0d2762dd6bebf1aa1b11feef9433e9aaa8e23beed2",
+      "bytes": 204530
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/prowler-light-after-head.png",
+      "sha256": "4f6edc69297c09eda4948ff5b2efefb598b5a634d0ce7913da2400cd9f0c9a6d",
+      "bytes": 206130
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-front.png",
+      "sha256": "b32c5d3ed9b784540a56497e84af76d5dd4693e87fa6e1193b86b65952249f17",
+      "bytes": 71530
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-wrists.png",
+      "sha256": "67ff47890ceaf18fa3f7303a60dd24f69789548b738f9f2118df0c333b539cec",
+      "bytes": 133506
+    },
+    {
+      "path": "campaign-staging/20261104-three-chats/world/morning-r5/r5/art-fixes-outfits-v001/stacy_throwback-light-after-head.png",
+      "sha256": "b7f8e20080dc2119898dbb4984be003df72d337daac9473c53834b0e5086eb01",
+      "bytes": 120620
+    }
+  ],
+  "sourceScriptSha256": "abb06da6c542a3e04ac8f0baf497ec988028b5eb28eef1fc0ea0e6df2459f448",
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "sourceLighting": {
+    "godotDirectionalEuler": [
+      -35,
+      -35,
+      0
+    ],
+    "directionalEnergy": 2,
+    "godotFillPosition": [
+      -2,
+      2,
+      -3
+    ],
+    "fillEnergy": 4,
+    "fillRange": 8,
+    "background": [
+      0.09,
+      0.105,
+      0.13
+    ],
+    "ambient": [
+      0.78,
+      0.84,
+      1
+    ],
+    "ambientEnergy": 0.8,
+    "tone": "FILMIC",
+    "exposure": 1,
+    "white": 1
+  },
+  "scope": "Executed source camera recipe and source numeric light settings; URP/Godot radiometry/material/tone differences and current source hand-pose changes remain visible, never qualified by this recipe."
+}

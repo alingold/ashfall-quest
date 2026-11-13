@@ -1,0 +1,220 @@
+using System;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Exclusion;
+
+// CPU cases for the 2026-11-09 "exclusion" feature pure policies
+// (head recovery, obstructed-view fade, walking body column, weapon obstruction).
+partial class LobbyCases
+{
+    static bool ExNear(float a, float b, float tolerance) { return Math.Abs(a - b) <= tolerance; }
+    static Float3 ExP(float x, float y, float z) { return new Float3(x, y, z); }
+
+    static void ExclusionHeadRecovery()
+    {
+        var p = new R25HeadRecoveryPolicy();
+        // History is time AND distance spaced.
+        Need(p.Tick(ExP(0, 1.6f, 0), true, false, 0) == R25RecoveryReason.None && p.HistoryCount == 1, "First clear head is recorded");
+        p.Tick(ExP(.2f, 1.6f, 0), true, false, .1f);
+        Need(p.HistoryCount == 1, "Too soon after the newest sample: not recorded");
+        p.Tick(ExP(.05f, 1.6f, 0), true, false, .3f);
+        Need(p.HistoryCount == 1, "Too close to the newest sample: not recorded");
+        p.Tick(ExP(.3f, 1.6f, 0), true, false, .6f);
+        Float3 newest;
+        Need(p.HistoryCount == 2 && p.TryFallback(ExP(.3f, 1.6f, 0), 0, out newest) && ExNear(newest.X, .3f, 1e-6f), "Spaced clear head is recorded as newest");
+        // Ring capacity keeps the newest eight.
+        p.ClearHistory();
+        for (int i = 0; i < 12; i++) p.Tick(ExP(i * .2f, 1.6f, 0), true, false, 10 + i);
+        Float3 oldest;
+        Need(p.HistoryCount == p.HistoryCapacity && p.TryFallback(ExP(2.2f, 1.6f, 0), p.HistoryCapacity - 1, out oldest) && ExNear(oldest.X, 4 * .2f, 1e-5f), "Ring buffer drops the oldest samples");
+        Need(!p.TryFallback(ExP(2.2f, 1.6f, 0), p.HistoryCapacity, out oldest), "Out-of-range age is refused");
+        // A teleport (respawn, map load) forgets nearby history.
+        p.Tick(ExP(50, 1.6f, 0), true, false, 30);
+        Need(p.HistoryCount == 1, "Single-frame jump beyond TeleportDistance clears history (count=" + p.HistoryCount + ")");
+        Float3 far;
+        Need(!p.TryFallback(ExP(50 + p.MaxFallbackDistance + 1, 1.6f, 0), 0, out far), "Fallback further than MaxFallbackDistance is refused");
+
+        // Stuck detection needs StuckFrames consecutive failed starting-clear tests.
+        var s = new R25HeadRecoveryPolicy();
+        s.Tick(ExP(0, 1.6f, 0), true, false, 0);
+        Need(s.Tick(ExP(0, 1.6f, 0), false, false, .01f) == R25RecoveryReason.None, "One blocked frame is not stuck");
+        Need(s.Tick(ExP(0, 1.6f, 0), false, false, .02f) == R25RecoveryReason.None, "Two blocked frames are not stuck");
+        Need(s.Tick(ExP(0, 1.6f, 0), false, false, .03f) == R25RecoveryReason.Stuck, "Third consecutive blocked frame attempts recovery");
+        s.Completed(false, .03f);
+        for (int i = 0; i < 10; i++) Need(s.Tick(ExP(0, 1.6f, 0), false, false, .04f + i * .01f) == R25RecoveryReason.None, "Failed attempt waits RetrySeconds");
+        Need(s.Tick(ExP(0, 1.6f, 0), false, false, .03f + s.RetrySeconds + .01f) == R25RecoveryReason.Stuck, "Retry after RetrySeconds");
+        s.Completed(true, 1);
+        Need(s.Tick(ExP(0, 1.6f, 0), true, false, 1.01f) == R25RecoveryReason.None && s.BlockedFrames == 0, "Clear head resets the counter");
+        Need(s.Tick(ExP(0, 1.6f, 0), false, false, 1.02f) == R25RecoveryReason.None, "A clear frame interrupts the stuck streak");
+
+        // Explicit requests (unswept pose accepted) are answered on the next blocked frame.
+        var r = new R25HeadRecoveryPolicy();
+        r.Request(R25RecoveryReason.Respawn);
+        Need(r.Tick(ExP(0, 1.6f, 0), false, false, 0) == R25RecoveryReason.Respawn, "Requested recovery is immediate");
+        r.Completed(true, 0);
+        r.Request(R25RecoveryReason.Calibration);
+        Need(r.Tick(ExP(0, 1.6f, 0), true, false, .1f) == R25RecoveryReason.None && !r.Pending, "Clear head satisfies a request without moving");
+        r.Request(R25RecoveryReason.CarrierExit);
+        r.Request(R25RecoveryReason.GhostMove);
+        Need(r.Tick(ExP(0, 1.6f, 0), false, false, .2f) == R25RecoveryReason.GhostMove, "Latest request reason is reported");
+
+        // Never fight the carrier; recover on carrier exit.
+        var c = new R25HeadRecoveryPolicy();
+        c.Tick(ExP(0, 1.6f, 0), true, false, 0);
+        for (int i = 0; i < 6; i++) Need(c.Tick(ExP(i, 20, 0), false, true, .1f * (i + 1)) == R25RecoveryReason.None, "Carrier-owned frames never recover");
+        Need(c.HistoryCount == 0, "Carrier launch clears pre-flight history");
+        Need(c.Tick(ExP(9, 1.6f, 0), false, false, 1) == R25RecoveryReason.CarrierExit, "Blocked head right after carrier exit recovers immediately");
+
+        // Bounded push-out budget.
+        var b = new R25HeadRecoveryPolicy();
+        Float3 offset = new Float3();
+        Need(b.AcceptPush(ref offset, ExP(2, 0, 0), .1f) && ExNear(offset.X, .1f + b.PushSkin, 1e-6f), "Away direction is normalized, depth plus skin");
+        Need(b.AcceptPush(ref offset, ExP(1, 0, 0), .1f) && b.AcceptPush(ref offset, ExP(1, 0, 0), .1f), "Pushes accumulate inside the budget");
+        Float3 kept = offset;
+        Need(!b.AcceptPush(ref offset, ExP(1, 0, 0), .1f) && ExNear(offset.X, kept.X, 1e-7f), "Push beyond MaxPushDistance is refused and offset kept");
+        Need(!b.AcceptPush(ref offset, ExP(0, 0, 0), .01f) && !b.AcceptPush(ref offset, ExP(0, 1, 0), float.NaN) && !b.AcceptPush(ref offset, ExP(0, 1, 0), -1), "Degenerate separations are refused");
+        Need(b.MaxPushIterations == 4 && ExNear(b.MaxPushDistance, .35f, 1e-6f), "Push-out bounds are the documented 4 passes / 0.35 m");
+
+        // Rate-limited logging.
+        int suppressed;
+        Need(b.ShouldLog(0, out suppressed) && suppressed == 0, "First recovery log is emitted");
+        Need(!b.ShouldLog(.5f, out suppressed), "Log inside LogSeconds is suppressed");
+        Need(b.ShouldLog(1.01f, out suppressed) && suppressed == 1, "Next log reports the suppressed count");
+    }
+
+    static void ExclusionFade()
+    {
+        var f = new R25ObstructionFade();
+        for (int i = 0; i < 5; i++) f.Step(true, false, .02f);
+        Need(f.Obstructed && !f.FullyFaded && f.Alpha > .5f, "Fade-in is under way (alpha=" + f.Alpha + ")");
+        f.Step(false, true, .02f);
+        Need(f.FullyFaded, "Full black after FadeInSeconds");
+        // No flicker at the threshold: alternating overlap keeps the fade solid.
+        float previous = f.Alpha;
+        for (int i = 0; i < 50; i++)
+        {
+            f.Step(false, i % 2 == 0, .011f);
+            Need(f.Alpha >= previous - 1e-6f && f.Obstructed, "Alternating exit overlap never lifts the fade (frame " + i + ")");
+            previous = f.Alpha;
+        }
+        // Spatial hysteresis: inside the exit sphere stays obstructed indefinitely.
+        for (int i = 0; i < 100; i++) f.Step(false, true, .05f);
+        Need(f.FullyFaded, "Exit sphere contact keeps the view faded");
+        // Temporal hold, then a bounded fade-out.
+        float held = 0;
+        while (held < f.HoldSeconds - .02f) { f.Step(false, false, .01f); held += .01f; }
+        Need(f.FullyFaded && f.Obstructed, "Hold time before lifting");
+        for (int i = 0; i < 4; i++) f.Step(false, false, .01f);
+        Need(!f.Obstructed && f.Alpha < 1 && f.Alpha > .8f, "Fade starts lifting after HoldSeconds (alpha=" + f.Alpha + ")");
+        float lift = 0;
+        while (f.Alpha > 0 && lift < 2) { f.Step(false, false, .01f); lift += .01f; }
+        Need(lift >= f.FadeOutSeconds - .05f && lift <= f.FadeOutSeconds + .05f, "Fade-out takes FadeOutSeconds (" + lift + ")");
+        // Clear view never starts from the exit flag alone (only the enter sphere).
+        f.Step(false, true, .05f);
+        Need(!f.Obstructed && f.Alpha == 0, "Exit flag alone does not start a fade");
+        // Hitches and bad time steps cannot jump the fade.
+        var g = new R25ObstructionFade();
+        g.Step(true, false, 10);
+        Need(ExNear(g.Alpha, g.MaxStepSeconds / g.FadeInSeconds, 1e-5f), "Long frame is clamped to MaxStepSeconds");
+        float a = g.Alpha;
+        g.Step(true, true, float.NaN);
+        g.Step(true, true, -1);
+        Need(g.Alpha == a, "NaN/negative time steps do nothing");
+        g.Reset();
+        Need(!g.Obstructed && g.Alpha == 0, "Reset clears the fade");
+
+        // Eye sphere radius from the actual near plane and frustum.
+        Need(ExNear(R25ObstructionFade.EyeRadius(.04f, 1, 1, 1.1f, .08f, .16f), .08f, 1e-6f), "Quest-like frustum uses the 0.08 m floor");
+        float wide = R25ObstructionFade.EyeRadius(.04f, 1.4f, 1.4f, 1.1f, .08f, .16f);
+        Need(ExNear(wide, .04f * (float)Math.Sqrt(1 + 2 * 1.96) * 1.1f, 1e-5f) && wide > .08f, "Wide frustum grows the radius (" + wide + ")");
+        Need(ExNear(R25ObstructionFade.EyeRadius(.2f, 3, 3, 1.1f, .08f, .16f), .16f, 1e-6f), "Radius is capped");
+        Need(ExNear(R25ObstructionFade.EyeRadius(0, 1, 1, 1.1f, .08f, .16f), .08f, 1e-6f) && ExNear(R25ObstructionFade.EyeRadius(float.NaN, 1, 1, 1.1f, .08f, .16f), .08f, 1e-6f), "Invalid near plane falls back to the minimum");
+        Need(ExNear(R25ObstructionFade.FrustumTangent(1, 0), 1, 1e-6f) && ExNear(R25ObstructionFade.FrustumTangent(.5f, -.2f), 2.4f, 1e-5f) && R25ObstructionFade.FrustumTangent(0, 0) == 0, "Asymmetric projection tangent uses the larger side");
+    }
+
+    static void ExclusionBodyColumn()
+    {
+        var rules = new R25BodyColumnRules();
+        float bottom, top;
+        Need(rules.TryColumn(0, 1.6f, out bottom, out top) && ExNear(bottom, .62f, 1e-5f) && ExNear(top, 1.4f, 1e-5f), "Standing column spans step height to just below the eye");
+        Need(rules.TryColumn(10, 10.83f, out bottom, out top) && ExNear(top - bottom, .01f, 1e-4f), "Short column is nearly one sphere");
+        Need(!rules.TryColumn(0, .8f, out bottom, out top), "Deep crouch skips the rule (unchanged behaviour)");
+        Need(!rules.TryColumn(float.NaN, 1, out bottom, out top), "Invalid stance skips the rule");
+        Need(!rules.Walking(ExP(.0001f, -.2f, 0)) && rules.Walking(ExP(.01f, 0, 0)), "Only real horizontal walk steps are governed");
+
+        Float3 slide;
+        var head = rules.Advance(ExP(.1f, 0, 0), .05f, ExP(-1, 0, 0), out slide);
+        Need(ExNear(head.X, .05f - rules.Skin, 1e-6f) && ExNear(slide.X, 0, 1e-6f) && ExNear(slide.Z, 0, 1e-6f), "Head-on obstacle stops the walk Skin before contact");
+        var oblique = rules.Advance(ExP(.1f, 0, .1f), .02f, ExP(-1, 0, 0), out slide);
+        Need(oblique.X > 0 && ExNear(slide.X, 0, 1e-6f) && slide.Z > .05f, "Oblique walk slides along the obstacle");
+        var away = rules.Advance(ExP(.1f, -.01f, 0), 0, ExP(1, 0, 0), out slide);
+        Need(ExNear(away.X, .1f, 1e-6f) && away.Y == 0 && slide.X == 0, "Moving away from a surface is never blocked");
+        var edge = rules.Advance(ExP(.1f, 0, .02f), .03f, ExP(0, 1, 0), out slide);
+        Need(ExNear((float)Math.Sqrt(edge.X * edge.X + edge.Z * edge.Z), .03f - rules.Skin, 1e-5f) && ExNear(slide.X, 0, 1e-6f) && ExNear(slide.Z, 0, 1e-6f), "Top edge just above step height blocks straight back");
+        var touching = rules.Advance(ExP(.1f, 0, 0), 0, ExP(-1, 0, 0), out slide);
+        Need(touching.X == 0, "Already touching: no further motion into the obstacle");
+
+        // Starting overlap: allow anything that does not deepen it (never trap).
+        var deeper = rules.RemoveInto(ExP(-.1f, 0, .05f), ExP(1, 0, 0));
+        Need(ExNear(deeper.X, 0, 1e-6f) && ExNear(deeper.Z, .05f, 1e-6f), "Overlap removes only the component into the obstacle");
+        var escape = rules.RemoveInto(ExP(.1f, 0, 0), ExP(1, .3f, 0));
+        Need(ExNear(escape.X, .1f, 1e-6f), "Walking out of an overlap is allowed");
+        Need(ExNear(rules.RemoveInto(ExP(-.1f, 0, 0), ExP(0, 1, 0)).X, -.1f, 1e-6f), "Vertical-only separation never blocks walking");
+        Need(ExNear(rules.RemoveInto(ExP(-.1f, 0, 0), ExP(.1f, 1, 0)).X, -.1f, 1e-6f), "Mostly vertical separation (ground bump) never blocks walking");
+        Need(ExNear(rules.RemoveInto(ExP(-.1f, 0, 0), ExP(.5f, .5f, 0)).X, 0, 1e-6f), "Sloped wall overlap still blocks the into component");
+
+        // Walking step-up limit.
+        Need(rules.RefuseStep(true, .5f) && rules.RefuseStep(true, 1.1f), "Walking does not pop onto railings or tables");
+        Need(!rules.RefuseStep(true, .44f) && !rules.RefuseStep(true, rules.StepHeight + rules.StepTolerance * .5f), "Stairs and kerbs still step up");
+        Need(!rules.RefuseStep(false, 1.5f) && !rules.RefuseStep(true, float.NaN), "Non-walk motion keeps today's support rise");
+        Need(ExNear(rules.Radius, .17f, 1e-6f) && ExNear(rules.StepHeight, .45f, 1e-6f), "Documented 0.17 m radius / 0.45 m step");
+        // R4 owner rule: walking mounts anything shorter than the chin (eye - 0.12 m).
+        Need(!rules.RefuseWalkStep(true, .2f, 1.7f) && !rules.RefuseWalkStep(true, 1.1f, 1.7f) && !rules.RefuseWalkStep(true, 1.575f, 1.7f), "Walking steps onto bumps, tables and anything below the chin");
+        Need(rules.RefuseWalkStep(true, 1.62f, 1.7f) && rules.RefuseWalkStep(true, 2.5f, 1.7f), "Walking refuses rises above the chin");
+        Need(!rules.RefuseWalkStep(true, .44f, .5f) && rules.RefuseWalkStep(true, .5f, .5f) && ExNear(rules.WalkStepLimit(float.NaN), .45f, 1e-6f), "Deep crouch and invalid stance keep the stair-sized minimum");
+    }
+
+    static void ExclusionWeaponObstruction()
+    {
+        var w = new R25WeaponObstruction();
+        bool haptic;
+        Need(w.Step(false, .6f, .6f, .01f, out haptic) == 0 && !haptic && !w.Blocked, "Clear muzzle is not retracted");
+        float r = w.Step(true, .6f, .45f, .01f, out haptic);
+        Need(ExNear(r, .15f + w.Margin, 1e-6f) && haptic && !w.Ghosted, "Blocked muzzle retracts instantly to Margin before the hit, with one haptic tick");
+        w.Step(true, .6f, .45f, .01f, out haptic);
+        Need(!haptic, "Haptic only on the first blocked frame");
+        r = w.Step(true, .6f, .5f, .01f, out haptic);
+        Need(r < .15f + w.Margin && r > .1f + w.Margin - 1e-6f, "Shallower wall extends smoothly, never instantly (" + r + ")");
+        // Extension after clearing is rate-limited.
+        var e = new R25WeaponObstruction();
+        e.Step(true, .6f, .42f, .01f, out haptic);
+        float start = e.Retract;
+        r = e.Step(false, .6f, .6f, .06f, out haptic);
+        Need(ExNear(r, Math.Max(0, start - .06f * e.MaxRetract / e.ExtendSeconds), 1e-5f), "Extension speed is MaxRetract per ExtendSeconds");
+        r = e.Step(false, .6f, .6f, .06f, out haptic);
+        Need(r == 0, "Fully extended after clearing");
+        // Too deep: hide instead of shoving the gun into the face.
+        var g = new R25WeaponObstruction();
+        g.Step(true, .7f, .2f, .01f, out haptic);
+        Need(g.Ghosted && g.Retract <= g.MaxRetract + 1e-6f, "Deep obstruction ghosts the weapon");
+        g.Step(true, .7f, .6f, .01f, out haptic);
+        Need(!g.Ghosted, "Ghost ends once the retraction fits");
+        // Haptic interval.
+        var h = new R25WeaponObstruction();
+        h.Step(true, .6f, .5f, .01f, out haptic);
+        h.Step(false, .6f, .6f, .1f, out haptic);
+        h.Step(true, .6f, .5f, .1f, out haptic);
+        Need(!haptic, "Re-block inside HapticInterval does not buzz again");
+        h.Step(false, .6f, .6f, .3f, out haptic);
+        h.Step(true, .6f, .5f, .01f, out haptic);
+        Need(haptic, "Re-block after HapticInterval ticks again");
+        h.Step(true, float.NaN, float.NaN, float.NaN, out haptic);
+        Need(!float.IsNaN(h.Retract), "Invalid inputs never produce NaN retraction");
+        h.Reset();
+        Need(h.Retract == 0 && !h.Blocked, "Reset clears the presentation state");
+
+        var latch = new R25ObstructionLatch();
+        Need(latch.Step(true, .01f), "Blocked glove hides immediately");
+        Need(latch.Step(false, .05f), "Glove stays hidden inside HoldSeconds");
+        Need(!latch.Step(false, .06f), "Glove reappears after HoldSeconds clear");
+    }
+}

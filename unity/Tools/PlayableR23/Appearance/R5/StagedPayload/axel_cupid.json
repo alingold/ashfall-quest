@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "axel_cupid",
+  "label": "AXEL (CUPID)",
+  "sourceIndex": 18,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-75887c028a0063945aa5a463.png",
+      "normal": "r5-normal-840e68baeffebc1b47c937b6.png",
+      "metallicMap": "r5-metallic-6017278828129e0abfd426fd.png",
+      "occlusion": "r5-occlusion-847b1ce4992cb475ee5459cf.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-f9e4481a54fc65f57ada2840.png",
+      "normal": "r5-normal-b0a12dd880ff59fe24f7e6bc.png",
+      "metallicMap": "r5-metallic-697696c71e214f81dcc24ca7.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

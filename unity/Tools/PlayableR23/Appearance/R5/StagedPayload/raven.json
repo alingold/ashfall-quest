@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "raven",
+  "label": "Raven",
+  "sourceIndex": 48,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-05fac6ba93eb97ba8a053616.png",
+      "normal": "r5-normal-ef797f0e5000c21d13f9423b.png",
+      "metallicMap": "r5-metallic-49f40ae4239d21ec8ebe67bf.png",
+      "occlusion": "r5-occlusion-916caaa8f49050c4cdf9826d.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-a9deb41b89635ecc32dfa116.png",
+      "normal": "r5-normal-422afa5b930f2e1c106df04e.png",
+      "metallicMap": "r5-metallic-a47a1139c38dd93c881dd64b.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

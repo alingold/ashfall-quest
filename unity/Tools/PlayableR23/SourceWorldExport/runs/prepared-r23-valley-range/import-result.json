@@ -1,0 +1,22 @@
+{
+  "phase": "import",
+  "command": [
+    "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\toolchain\\godot-isolated\\Godot_v4.7.2-stable_win64.exe",
+    "--headless",
+    "--audio-driver",
+    "Dummy",
+    "--xr-mode",
+    "off",
+    "--path",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\reference",
+    "--log-file",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\import-godot.log",
+    "--editor",
+    "--import",
+    "--quit"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 73.07800000000861,
+  "log": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\import-engine.log",
+  "boundedSeconds": 559.921282
+}

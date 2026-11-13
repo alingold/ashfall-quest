@@ -1,0 +1,292 @@
+{
+  "base_checkpoint": "354322f34adbf37ca7725007bd19b8926faf8725",
+  "branch": "standalone/r9-playtest-corrections",
+  "groups": {
+    "records": [
+      {
+        "path": "FEEDBACK-REGISTER-R9.md",
+        "sha256": "ff530597934feb3b6f1cd8643d60fd89b7a2eb0d03f56b6141665b20c16075db"
+      },
+      {
+        "path": "README-R9.md",
+        "sha256": "f42a5a908025bacc75376d08e1822daddd0db20b05d53ff803feca91407cac5d"
+      },
+      {
+        "path": "WORLD-OBJECT-COVERAGE-R9.csv",
+        "sha256": "9c7c137dc9a03a2bbf9a3a422ab495f3aaa789112410d486c728c5bb1c751fbd"
+      }
+    ],
+    "imported_maps_standalone": [
+      {
+        "path": "assets/data/archive_adapters_r9.json",
+        "sha256": "3464d34bbc416f39af74246f2e914d0805771a1b391360f37e6e2bde1a56cd6c"
+      },
+      {
+        "path": "assets/data/archive_semantics_r9.json",
+        "sha256": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a"
+      },
+      {
+        "path": "assets/materials/force_field_r9.gdshader",
+        "sha256": "bc8b5c9bf8ca838c4a361c1b93e1ee5fe1046481ebca7281dcc8f50b8bf46d97"
+      },
+      {
+        "path": "assets/materials/force_field_r9.gdshader.uid",
+        "sha256": "55d6f454adc9c4754924c1fb953b45a02d7ce90bffbceef2448768af6522adc8"
+      },
+      {
+        "path": "scripts/archive_catalog1003.gd",
+        "sha256": "feba82dfde9ccad36c442c5c88a9dabe86c4466d03a97ec23f4523fbe674f944"
+      },
+      {
+        "path": "scripts/archive_gameplay_r8.gd",
+        "sha256": "d8d37df7a939bf6d7d844f91990174c2c9aebe7bc0bacb9abb1e47c266fea643"
+      },
+      {
+        "path": "scripts/archive_map1003.gd",
+        "sha256": "cdc246e554fc63b90aa3dddef4ebab97273900f28b1816c81c3a5d0ef9484367"
+      },
+      {
+        "path": "scripts/archive_materials1004.gd",
+        "sha256": "f16ab489bae914ff502ce1ae03e04ab0a85aa980f574a207af02b953ea9dbb92"
+      },
+      {
+        "path": "scripts/archive_panel_r8.gd",
+        "sha256": "09217f70d537822551dc7b19999e7f5d6e12d26b45cd8f877f6f863f40aedeca"
+      },
+      {
+        "path": "scripts/archive_passage_cut_r9.gd",
+        "sha256": "99bc6c23e75fe155aca4d1fd24cc05fe3a9659a360e8ecdc05280053291c0778"
+      },
+      {
+        "path": "scripts/archive_passage_cut_r9.gd.uid",
+        "sha256": "f891d0cba854a71662a94fc16986db27ae79a26ff7c0b2cbb52fdea142ed569a"
+      },
+      {
+        "path": "scripts/archive_semantics_r8.gd",
+        "sha256": "56430205af17db3b1a601dba57f8a1d1f88289f5509718bbdb289d75d9877e41"
+      },
+      {
+        "path": "scripts/archive_semantics_r9.gd",
+        "sha256": "efeb4072bde41307303f3452408ce8bab1d0cacb07a788e48a385289fabdb020"
+      },
+      {
+        "path": "scripts/archive_semantics_r9.gd.uid",
+        "sha256": "51379699daad97bcc0afbc397c8d78f07932e23f2b5c44a8334218bf44e8e619"
+      },
+      {
+        "path": "scripts/archive_world_score_r9.gd",
+        "sha256": "24e9131702073d84abe6ea66b0016d4501d1ded3a82e1c46e48a96d32f9f8022"
+      },
+      {
+        "path": "scripts/archive_world_score_r9.gd.uid",
+        "sha256": "f47776e09b01c8b57b7bd5afe19716f49e5b7b42bfdb7bf3d597ba1f75f4337a"
+      }
+    ],
+    "build_identity": [
+      {
+        "path": "assets/data/network_content1000.json",
+        "sha256": "3d0f3b96d915b84320b6cd6d6a98618a2e8329a5be9aea4f934dad62746536a5"
+      },
+      {
+        "path": "export_presets.cfg",
+        "sha256": "948e7f20f02db9149c31c1c370e0d202c897d50bae3745c0f00dcea60d7499cb"
+      },
+      {
+        "path": "project.godot",
+        "sha256": "7abd42dc3783595fb06359e5cc05fad67daec1b71a44006aa3e9e257be9bca5f"
+      }
+    ],
+    "portable_combat_player_inventory": [
+      {
+        "path": "scripts/awp_scope.gd",
+        "sha256": "70b4a777abc7a5df4cc1acb8df4ddd34ba2bb48d262f12ff347411d9dd3c7995"
+      },
+      {
+        "path": "scripts/hand_wall_r2.gd",
+        "sha256": "04f1d634311f7808cd481a392ae67b7e140527f6bd130cb0890e3205be7c2503"
+      },
+      {
+        "path": "scripts/item_catalog_service_088.gd",
+        "sha256": "78deec146ddd439e9d8e601ecc3cb3cddc1d7c37ba8578d63e3aee3c254613c3"
+      },
+      {
+        "path": "scripts/longwatch_scope.gd",
+        "sha256": "0e63863586f337e3f5ea4192f7baae04840e3ec522ca0ac0fb92b709ea4d6fe3"
+      },
+      {
+        "path": "scripts/player.gd",
+        "sha256": "211a9b701b433444ea575d20a4d85a5be5d0d7b2d1e8c0da319e5fbce0dd5d37"
+      },
+      {
+        "path": "scripts/reference_audio_099.gd",
+        "sha256": "6dbb43fc1aac23d3f1ef7d7a29adc4dfaf43a577a71f400274eb03fd871d928e"
+      },
+      {
+        "path": "scripts/revive_paddles.gd",
+        "sha256": "bd72c2d906f79b81adb787ec1f333f05908b296dd3c6a514524ecb892923d090"
+      },
+      {
+        "path": "scripts/weapon.gd",
+        "sha256": "ebd61f0f0cdaf8d03539501199de340da8a9ddd2c054f839c7f9732692ab2fbb"
+      },
+      {
+        "path": "scripts/weapon_inventory.gd",
+        "sha256": "21278bdd6ef43418246b782d53d2f35858ea8dc4656c7520ef576019ea36bf5a"
+      },
+      {
+        "path": "scripts/weapon_rack.gd",
+        "sha256": "e001d7693066f2c16d68274453f24b3a618cdcfa9d3c77112748507ed3c0a91a"
+      },
+      {
+        "path": "scripts/weapon_rarity_r6.gd",
+        "sha256": "4b51cd0c0ba10224118995202741040d32300565a2dc7918429de3f92704c349"
+      }
+    ],
+    "world_menu_standalone": [
+      {
+        "path": "scripts/front_menu1000.gd",
+        "sha256": "05d121137a6d2a198d63bc4c875d9c30bab33a5d0334b100ac996c80e64da5ab"
+      },
+      {
+        "path": "scripts/front_menu_090.gd",
+        "sha256": "51ca00b133cd7a2d425984d38e5572b2eb40fd0ab7410f7575d70bfa363ff567"
+      },
+      {
+        "path": "scripts/front_menu_091.gd",
+        "sha256": "97b697be3cb0b2d5836c2516cd76c33b9a515bdf64ad6fbb7d3c5ecd0ff0d6e4"
+      },
+      {
+        "path": "scripts/lobby_gallery_091.gd",
+        "sha256": "79cbbcf6dcbd58068b6b0cbc031645e05a4db5797b6e966d0142bf3bbfbec5de"
+      },
+      {
+        "path": "scripts/lobby_map_091.gd",
+        "sha256": "c10b13d8b408bc72221b0e2dc9c126bbe7bf2d51601ae3fc675d529cc5db68fb"
+      }
+    ],
+    "network_rules": [
+      {
+        "path": "scripts/net_bridge1000.gd",
+        "sha256": "3d7c4e9335c8fdbf6c1afc603d6a8bbd5b02ab1bdb9f19987a5e6c0c517f73ba"
+      },
+      {
+        "path": "scripts/net_rules1000.gd",
+        "sha256": "e0a017e29f883281bb0ba4a20de426f36fbeb2ec8f4ca27d2da9d31db3a4b284"
+      },
+      {
+        "path": "scripts/net_session1000.gd",
+        "sha256": "a2a0dbb5f42c75793ea60995a1b8e453f106aa689b5274cf72da28fb40a3c284"
+      }
+    ],
+    "verification_and_rebuild": [
+      {
+        "path": "tests/audio_preservation_r9.gd",
+        "sha256": "502957598360773c6eeae81a44c33c2a3cbb8b22a95ec4e891be62ef208525e5"
+      },
+      {
+        "path": "tests/audio_preservation_r9.gd.uid",
+        "sha256": "bc1bbf39800d2e8d173e5aa521b43f618f16ff9fb7877156ea47720e494d95fc"
+      },
+      {
+        "path": "tests/bake_adapters_r9.gd",
+        "sha256": "e73dbba7379b7a5be99a9a8ba80a59ca9f9648e208280d2c98bcf7db6956d28c"
+      },
+      {
+        "path": "tests/bake_adapters_r9.gd.uid",
+        "sha256": "2b0883516451113dd75c644456ecf32083dd73088356c57c759a2f2cd2998a7f"
+      },
+      {
+        "path": "tests/capture_r9.gd",
+        "sha256": "0330327b514fae0ea85d2f6b88b406bbd7a9dd8c7f25d448045404c81b116d68"
+      },
+      {
+        "path": "tests/capture_r9.gd.uid",
+        "sha256": "bd837beef81c81deb59b3644d81e3f957ac23a8e83b7a55f20c6379eb9c9c0c2"
+      },
+      {
+        "path": "tests/game_r9.gd",
+        "sha256": "02cd6edb7426c41bd838fe91b36ab8f7d9b576c60d6922807d3cb2f3d9156f94"
+      },
+      {
+        "path": "tests/game_r9.gd.uid",
+        "sha256": "10a824cd60a2d650ffea895566d32a5f68f5418d199605704bd806f3f8d8c863"
+      },
+      {
+        "path": "tests/host_transition_r9.gd",
+        "sha256": "90cd4946859c63926cfd6691eace7015c407980cdab52cbdb1282ee39f3bfaed"
+      },
+      {
+        "path": "tests/host_transition_r9.gd.uid",
+        "sha256": "5391d11c389bfca768b4d99b3a6efa5050c2369a3f5d99a03ae3b7ad29311336"
+      },
+      {
+        "path": "tests/library_gameplay_r9.gd",
+        "sha256": "4fab2298d1227071773ff2f9d0d3718d1b4fd13233fe896790b3d550cd06655a"
+      },
+      {
+        "path": "tests/library_gameplay_r9.gd.uid",
+        "sha256": "64de323fdcc60cf30f9cae95deccd043476ad8a9da7dfea41e389c35e13598eb"
+      },
+      {
+        "path": "tests/library_menu_r9.gd",
+        "sha256": "074e664e3b7f5b1cc3bc38f0f82a6f0192fa2aa43064c8287b71604f02aedf12"
+      },
+      {
+        "path": "tests/library_menu_r9.gd.uid",
+        "sha256": "8232817e7e30627df7469f76042f25a8ec768f484cffa8ad2460908fb1ad7242"
+      },
+      {
+        "path": "tests/moving_muzzle_r9.gd",
+        "sha256": "fa4dbd4525f610d0f7a9ee30c9b3a09104143961a25be1bdfea7fa1676b886e6"
+      },
+      {
+        "path": "tests/moving_muzzle_r9.gd.uid",
+        "sha256": "c43cfce6da4fe673380123e21e56421ca201fe649d1aa52638b13fb705613bb5"
+      },
+      {
+        "path": "tests/passage_cut_r9.gd",
+        "sha256": "a3bb3144f724ca0225895786b79abe5b73967807b532ba0c7a5ffe5ed40f130c"
+      },
+      {
+        "path": "tests/passage_cut_r9.gd.uid",
+        "sha256": "adfb4725acc7ef47637c954d84ecfc9293bfff79750906c54b3075c2a1d13bf4"
+      },
+      {
+        "path": "tests/regression_r9.gd",
+        "sha256": "35fea116f6783e7d7f753ec2e92e494c2e9fb0e66c72d7a6602c3ac2bae0c01f"
+      },
+      {
+        "path": "tests/regression_r9.gd.uid",
+        "sha256": "70de90a053bc941ec259ef42c128230b75a3fbca3199d3b2f1d93b5060922c33"
+      },
+      {
+        "path": "tools/r9/index_adapters.cjs",
+        "sha256": "c6f2ffec4c42a970d181a48d2ea6cef01a398d0508c792f019b94d252161580b"
+      },
+      {
+        "path": "tools/r9/pack_adapters.gd",
+        "sha256": "fb10da097f132c56ffb910289be632d292175349f4fcf6ffa8d2c81d937888ce"
+      },
+      {
+        "path": "tools/r9/pack_adapters.gd.uid",
+        "sha256": "035fc32342b785404c2a73b020fecc095fe706e9cf5fd727ea7973e289da5cd4"
+      }
+    ]
+  },
+  "porting_notes": [
+    "Existing file line endings retained to keep integration changes small.",
+    "No Skyrim files or original donor assets were edited. Import portable combat/HUD changes deliberately; world menu and private archive adapters are standalone concerns.",
+    "Current-muzzle aiming shares visible damping; recoil/damage/reload numbers unchanged. Fixed-form melee/grenades intentionally no longer receive rarity levels.",
+    "Audio PCM unchanged from accepted R8; only revive playback/cache lifecycle changed.",
+    "Private prepared geometry remains outside Git and requires both adjacent map packs. See per-map coverage and remaining source gaps."
+  ],
+  "coverage_summary": {
+    "maps": 105,
+    "recognized_door_candidates": 3808,
+    "door_maps": 18,
+    "aperture_samples": 7,
+    "pad_sites": 1324,
+    "score_faces": 4
+  },
+  "xr_tested": false
+}

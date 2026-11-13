@@ -1,0 +1,15 @@
+using System;using Ashfall.Core;using Ashfall.Integration.Playable.Networking;using Ashfall.Integration.Playable.Match;
+partial class LobbyCases {
+ static void WarmupAndRoundRetention(){using(var pair=new Pair()){
+  for(int i=0;i<5;i++)pair.Tick();string hash=new string('b',64);pair.Host.BindSpawnWorld(new HazardWorld());pair.Host.BindRawTrackingWorldQuery(Open);pair.Host.BindCombatWorld(delegate(Float3 a,Float3 b,float range){return range;});
+  var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0f);
+  Need(pair.Host.BeginMapSelection("range",hash,rules)&&pair.Host.ReportMapLoaded(hash),"Warmup host loading");for(int i=0;i<3;i++)pair.Tick();Need(pair.Client.ReportMapLoaded(hash),"Warmup guest loaded");for(int i=0;i<4;i++)pair.Tick();pair.Client.RequestSpawn();for(int i=0;i<4;i++)pair.Tick();pair.Host.RequestSpawn();for(int i=0;i<4;i++)pair.Tick();R24LanSpawn placement;Need(pair.Host.TryReadSpawn(pair.Host.OwnActor,out placement),"Warmup actual placement");float hx=placement.Feet.X;
+  for(int i=0;i<3;i++)KeepRaw(pair,hash,0,hx);Need(pair.Host.SubmitShot("cx4",0,new Float3(hx,1.5f,0),new[]{new Float3(0,1,0)}),"Warmup shot debits actual host custody without PvP damage");
+  int loaded,reserve;Need(pair.Host.TryReadAmmo(pair.Host.OwnActor,"cx4",out loaded,out reserve)&&loaded==24,"Warmup magazine consumed exactly once");
+  Need(pair.Host.RegisterSharedSupply("warmup/bag","backpack",1,new Float3(hx,1.2f,0))&&pair.Host.RequestSupply("warmup/bag",1),"Warmup backpack custody");
+  Need(pair.Host.RegisterWorldWeapon("warmup/rare","awp",4,new Float3(hx,1.2f,0))&&pair.Host.RequestLoot("warmup/rare",1,false,new Float3()),"Warmup shared rare instance custody");
+  Need(pair.Host.BeginRoundSelection(rules,hash,99)&&pair.Host.ReportMapLoaded(hash),"Enter match from real warmup");for(int i=0;i<3;i++)pair.Tick();pair.Client.ReportMapLoaded(hash);for(int i=0;i<4;i++)pair.Tick();pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);pair.Client.RequestSpawn();for(int i=0;i<4;i++)pair.Tick();pair.Host.RequestSpawn();for(int i=0;i<4;i++)pair.Tick();
+  Need(pair.Host.TryReadAmmo(pair.Host.OwnActor,"cx4",out loaded,out reserve)&&loaded==24,"Round entry does not refill retained magazine");R24LanLootState item;Need(pair.Host.TryReadLoot("warmup/rare",out item)&&item.Owner==pair.Host.OwnActor&&item.Stars==4,"Round entry retains the exact rare owned instance");
+  Need(pair.Host.BeginRoundSelection(rules,hash,100)&&pair.Host.ReportMapLoaded(hash),"Subsequent readiness epoch");for(int i=0;i<3;i++)pair.Tick();pair.Client.ReportMapLoaded(hash);for(int i=0;i<4;i++)pair.Tick();pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);pair.Host.RequestSpawn();for(int i=0;i<4;i++)pair.Tick();Need(pair.Host.TryReadAmmo(pair.Host.OwnActor,"warmup/rare",out loaded,out reserve)&&loaded==3,"Subsequent round retains rare native magazine");
+ }}
+}

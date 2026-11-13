@@ -1,0 +1,33 @@
+Original Opus R23 appearance batch
+
+Added IDs/source indices: astra/3, sol/4, argon/5, claude/6, obsidian/7.
+AvailableStyles now returns eight styles. Existing SelectStyle(id), preview
+initialization and GloveMaterialChanged APIs work unchanged. No root/UI wiring
+changes are needed for consumers that enumerate AvailableStyles.
+
+All input is read from the preserved original source:
+C:/Users/aling/Documents/Codex/2026-11-03/ashfall-r23/source
+No R24 draft assets/scripts are used. provenance.json records original source
+hashes, exact GLB routes and shipped skin provenance. The original three styles'
+mesh, texture and manifest bytes are unchanged (baseline-three-hashes.json).
+
+Actual source differences retained:
+- Astra/Sol/Argon use original Witch Doctor fallback glove maps and .29/.12
+  eye-to-shoulder/body-rear profile. Their absent ChestPlate stays empty.
+- Claude uses its PCVR kit, own glove maps and .29/.12 body profile.
+- Obsidian uses its PCVR kit, own glove maps and .18/.06 body profile.
+- Multi-material body primitives share their source analytic part transform;
+  each original material surface remains present. Factor-only emission works.
+  Selected source GLBs have identity mesh nodes; no ignored node transform.
+- Tracked poses, collision, existing glove geometry and visual offsets remain
+  owned by their existing components. These five are not custom EXTRA_KITS,
+  so source custom lobby wrist/leg/chestplate pose exceptions do not apply.
+
+Validation: python unity/Tools/PlayableR23/Appearance/check.py
+Eight distinct meshes match every source vertex/normal/UV/index/material slot;
+all original image bytes and ORM channel conversions match, original glove
+routes/profile/IDs match, source hashes match, first three outputs unchanged.
+Installed Unity 6000.6.8f1 API compile passes with warnings as errors.
+No Unity/Godot/Blender, native build, GPU/render or device validation performed.
+Full source geometry retained: new meshes range 42,379 to 99,958 triangles.
+Appearance payload totals approximately 159 MiB for all eight source styles.

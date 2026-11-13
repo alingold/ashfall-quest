@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "id": "hattie_golden",
+  "label": "Hattie Golden (Draft)",
+  "sourceIndex": 74,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 5,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-c51916768baf29875488bec2.png",
+      "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+      "metallicMap": "r5-metallic-3b90cc5f7c6982681baad7c0.png",
+      "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-f1e5952477bfb7caf93ba4f6.png",
+      "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+      "metallicMap": "r5-metallic-709633893fcb30989e103ec6.png",
+      "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-79eec64c02f5906277c99b6c.png",
+      "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+      "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+      "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+      "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+      "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+      "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+      "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+      "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+      "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-25f1b5eaf0f74ddc46cf07be.png",
+      "normal": "r5-normal-072b54cf18c7b6527f75471c.png",
+      "metallicMap": "r5-metallic-25e8dab98c54a0b6e8fb17d2.png",
+      "occlusion": "r5-occlusion-a6c755060d880f6c589f07b6.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

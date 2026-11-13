@@ -1,0 +1,70 @@
+    sealed class Facts : Ashfall.Modules.Combat.ICombatEvidence
+    {
+        public Ashfall.Modules.Combat.HostHit Hit;
+        public bool TryResolve(CommandContext c,string id,out Ashfall.Modules.Combat.HitEvidence e)
+        {e=new Ashfall.Modules.Combat.HitEvidence{Identity=Hit,ActorInputReady=true,BaseDamage=200,DamageMultiplier=1,HeadRatio=1,MaximumRange=10};return true;}
+    }
+    static void PublicationCases()
+    {
+        string path=PathFor("real-publication");var scoreStore=new Ashfall.Modules.Persistence.AtomicSettingsStore(PathFor("scores"));Check(scoreStore.Load(false).Accepted,"load scores");
+        var r=new Rig("respawn",0,0,1,1,8,new ScoreReceiptJournal(scoreStore),true);r.Bind=false;r.Join("a",false,null);r.Join("b",false,null);r.Join("c",false,null);r.Load("a","b","c");
+        Check(r.D.AcknowledgeComplete().Reason=="producer-drain-required","missing producer fails closed");
+        var facts=new Facts();var bridge=new Ashfall.Integration.CombatHealthBridge(r.H,r.E,facts,r.E,r.E,"test",r.S.Epoch);
+        var lane=new Ashfall.Integration.CombatPublication.HealthPublicationLane(r.H,bridge,new Ashfall.Modules.Persistence.AtomicSettingsStore(path),"test",r.S.Epoch,"host",65,new string('a',64));
+        Check(r.D.BindProducer(r.H,r.C("host"),new string('a',64),lane).Accepted,"bind actual durable producer");
+        var weapon=bridge.Equip(r.C("host"),"gun","b","rifle",1,r.E.Tick);
+        for(int i=0;i<2;i++)
+        {
+            string target=i==0?"a":"c",id="hit"+i;
+            var ev=bridge.PublishEvent(r.C("host"),i+1,r.E.Tick+100,Ashfall.Modules.Combat.DamageSource.CurrentActorIntent,Ashfall.Modules.Combat.DamageKind.Bullet,weapon,r.E.Tick);
+            facts.Hit=bridge.PublishHit(r.C("host"),id,ev,"body",target,0,r.E.Tick);
+            var delivery=r.C("b");Check(lane.Combat(r.C("host"),delivery,id,r.E.Tick,false).Accepted,"actual Combat commits and durably publishes");
+            var receipt=bridge.Apply(delivery,id,r.E.Tick,false);
+            Check(r.E.Attribution.CapturePublication(r.C("host"),facts.Hit,receipt).Accepted,"bind actual Combat killer receipt");
+            if(i==0)Check(r.D.DrainProducer().Accepted,"drain first durable packet and ACK after score");
+        }
+        var pendingDeath=lane.Offer(r.C("host"));Check(pendingDeath.Length==1,"second actual death remains upstream");
+        string coldPath=PathFor("cold-loss-fork");System.IO.File.Copy(path,coldPath);
+        HealthService deathHealth;Ashfall.Integration.CombatHealthBridge deathBridge;Ashfall.Integration.CombatPublication.HealthPublicationLane deathLane;
+        Check(Ashfall.Integration.CombatPublication.HealthPublicationLane.TryRestoreCold(r.C("host"),new string('a',64),lane.CheckpointDigest,5,new Ashfall.Modules.Persistence.AtomicSettingsStore(coldPath),0,true,r.E,r.E,r.E,facts,out deathHealth,out deathBridge,out deathLane,60,1,0,65),"cold durable restart with second loss pending");
+        var coldDeath=deathLane.Offer(r.C("host"));Check(deathHealth.Read("c").Deaths==1&&coldDeath.Length==1&&coldDeath[0].Payload==pendingDeath[0].Payload,"cold original death identity and pending receipt preserved");
+        r.E.Now=1;Check(r.D.Heartbeat().Accepted,"actual publication Results");
+        Check(r.D.AcknowledgeComplete().Reason=="producer-undelivered"&&Score(r.D,"b")==1&&r.S.Get("c").Deaths==0,"final completion blocked by second actual upstream death");
+        var secondDrain=r.D.DrainProducer();Console.WriteLine("SECOND DRAIN "+secondDrain.Accepted+":"+secondDrain.Reason);Check(secondDrain.Accepted,"second upstream death reconciles in Results before ACK");
+        Console.WriteLine("PUBLICATION score="+Score(r.D,"b")+" deaths="+r.S.Get("a").Deaths+","+r.S.Get("c").Deaths);
+        Check(Score(r.D,"b")==2&&r.S.Get("a").Deaths==1&&r.S.Get("c").Deaths==1,"actual upstream totals and Session deaths exactly once");
+        Check(r.D.DrainProducer().Accepted&&Score(r.D,"b")==2,"repeat drain once");Check(r.D.AcknowledgeComplete().Accepted,"quiescent durable producer completes");
+        // New cold objects from the actual durable Health/Combat journal (no Register/Spawn restore).
+        var packets=lane.Offer(r.C("host"));Check(packets.Length==0,"durable publication ACK empty");
+        HealthService coldHealth;Ashfall.Integration.CombatHealthBridge coldBridge;Ashfall.Integration.CombatPublication.HealthPublicationLane coldLane;
+        Check(Ashfall.Integration.CombatPublication.HealthPublicationLane.TryRestoreCold(r.C("host"),new string('a',64),lane.CheckpointDigest,5,new Ashfall.Modules.Persistence.AtomicSettingsStore(path),0,true,r.E,r.E,r.E,facts,out coldHealth,out coldBridge,out coldLane,60,1,0,65),"actual cold durable producer restart");
+        Check(coldHealth.Read("a").Deaths==1&&coldHealth.Read("c").Deaths==1&&coldLane.Offer(r.C("host")).Length==0,"cold producer state and ACK preserved");
+        // Pressure before another producer: fill the 65-packet lane without deleting receipts.
+        string pressurePath=PathFor("pressure");var e=new Environment{InMatch=true};var h=new HealthService("test",1,0,true,e,e,e,60,1,0);var f=new Facts();var b=new Ashfall.Integration.CombatHealthBridge(h,e,f,e,e,"test",1);
+        var p=new Ashfall.Integration.CombatPublication.HealthPublicationLane(h,b,new Ashfall.Modules.Persistence.AtomicSettingsStore(pressurePath),"test",1,"host",65,new string('a',64));
+        for(int i=0;i<2;i++)
+        {
+            var c=new CommandContext("test","host","pressure"+i,1,1,true);var result=p.Register(c,"p"+i,-1,false);
+            Check(i==0?result.Accepted:!result.Accepted,"real producer pressure admission");
+        }
+        Check(h.Read("p1")==null&&p.Offer(new CommandContext("test","host","offer",1,1,true)).Length==1,"pressure retains pending and refuses mutation");
+        var host=new CommandContext("test","host","cold-pending",1,1,true);var original=p.Offer(host)[0];
+        HealthService pendingHealth;Ashfall.Integration.CombatHealthBridge pendingBridge;Ashfall.Integration.CombatPublication.HealthPublicationLane pendingLane;
+        Check(Ashfall.Integration.CombatPublication.HealthPublicationLane.TryRestoreCold(host,new string('a',64),p.CheckpointDigest,1,new Ashfall.Modules.Persistence.AtomicSettingsStore(pressurePath),0,true,e,e,e,f,out pendingHealth,out pendingBridge,out pendingLane,60,1,0,65),"cold restart with unacknowledged physical journal");
+        var restored=pendingLane.Offer(host);Check(restored.Length==1&&restored[0].Payload==original.Payload&&restored[0].Sequence==original.Sequence,"cold pending original identity survives pressure");
+        Check(pendingHealth.Read("p0")!=null&&pendingHealth.Read("p1")==null,"cold pressure state preserved without re-register");
+        // Do not ACK this packet: no Match projection has consumed it.
+        string orphanPath=PathFor("cold-score-journal");var orphanStore=new Ashfall.Modules.Persistence.AtomicSettingsStore(orphanPath);Check(orphanStore.Load(false).Accepted,"cold score store");
+        var orphan=new Rig("respawn",0,0,1,2,8);orphan.Join("a",false,null);orphan.Join("b",false,null);orphan.Load("a","b");var orphanDeath=Kill(orphan);
+        Check(new ScoreReceiptJournal(orphanStore).Retain(orphanDeath,"b",1,-1).Accepted,"physical score receipt retained");
+        var coldScoreStore=new Ashfall.Modules.Persistence.AtomicSettingsStore(orphanPath);Check(coldScoreStore.Load(false).Accepted,"cold score journal reopen");
+        var coldDirector=new Director(orphan.S,new ModeRules("respawn",0,0,1,2),"host",orphan.E,orphan.E,orphan.E,8,orphan.E,null,new ScoreReceiptJournal(coldScoreStore));
+        Check(coldDirector.BeginLoading().Reason=="pending-score"&&orphan.S.Epoch==1,"unrestored cold Director cannot discard journal via initial loading");
+        var reserved=new Rig("respawn",0,0,1,1,8);reserved.Join("a",false,null);reserved.Load("a");
+        var state=reserved.H.Read("a");HealthService.PreparedGain gain;
+        Check(reserved.H.PrepareGain(reserved.C("a"),"reserved", "a",state.Revision,state.LifeGeneration,state.ConnectionGeneration,1,0,out gain),"actual outstanding publication reservation");
+        reserved.E.Now=1;Check(reserved.D.Heartbeat().Accepted,"reservation Results");
+        Check(reserved.D.AcknowledgeComplete().Reason=="producer-not-quiescent","reservation blocks final settlement");gain.Abort();
+        Check(reserved.D.AcknowledgeComplete().Accepted,"explicit abort releases unpublished reservation");
+    }
+

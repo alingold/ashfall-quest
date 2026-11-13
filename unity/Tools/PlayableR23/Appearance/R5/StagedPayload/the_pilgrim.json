@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "the_pilgrim",
+  "label": "The Pilgrim",
+  "sourceIndex": 15,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-987534f5eb7f85dbf83c17fd.png",
+      "normal": "r5-normal-851b10ae369d23e8ad028ec4.png",
+      "metallicMap": "r5-metallic-58b83cfe415498898aea7cac.png",
+      "occlusion": "r5-occlusion-3aad3c0137577d7cc6086ada.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-e49c7d4932a3577797c4ed8e.png",
+      "normal": "r5-normal-e77ea931457991d14af88ac5.png",
+      "metallicMap": "r5-metallic-d8139d92f35702f353e3f75e.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

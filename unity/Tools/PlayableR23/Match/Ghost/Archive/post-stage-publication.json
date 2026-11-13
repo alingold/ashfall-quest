@@ -1,0 +1,18 @@
+{
+  "before": {
+    "payload": "409d0bd162abc527653afc00ca5375311f75bbde561095c981038744f93ebf92",
+    "reader": "cc638aef314c427dd5e61405c0176f91e61912cd00e07a4befde863a6af1724c"
+  },
+  "after": {
+    "payload": "72c1827251d48c02b35530ba7ff694abef5a7ff09b0938ae71fa9b9fb64dc8b7",
+    "reader": "2cfaecff102a7e1d04667d31c9c3822610e4a8f66b4958993eebc708333ee81f"
+  },
+  "changedFiles": [
+    "unity\\Assets\\StreamingAssets\\PlayableR23\\TeamLaunch\\ArchiveRecovery\\maps.json",
+    "unity\\Assets\\Ashfall\\Integration\\Playable\\Match\\R24ArchiveRecoveryCatalog.cs"
+  ],
+  "appendedPanels": 162,
+  "attachments": 90,
+  "warmupHints": 19,
+  "nativeExecuted": false
+}

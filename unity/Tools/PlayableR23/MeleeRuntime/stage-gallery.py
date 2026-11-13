@@ -1,0 +1,12 @@
+from pathlib import Path
+T=Path(__file__).resolve().parent;R=T.parents[3];P=R/'unity/Assets/Ashfall/Integration/Playable/Gallery';O=T/'Candidate'
+s=(P/'R23LobbyWeaponGallery.cs').read_text().replace('"s85","smaw"};','"s85","smaw","knife"};',1).replace('public bool IsWeaponReady(string id){', 'public bool IsWeaponReady(string id){if(id=="knife")return knifeReady;').replace('public string WeaponFailure(string id){', 'public string WeaponFailure(string id){if(id=="knife")return knifeFailure??Failure;').replace('public bool Active { get { return ', 'public bool Active { get { return knifeSelected?knifeActive:').replace('public string ViewedWeaponId { get { return ', 'public string ViewedWeaponId { get { return knifeSelected?"knife":').replace('if(SmawVisible)count++;','if(SmawVisible)count++;if(KnifeVisible)count++;').replace('if(VisiblePreviewCount!=1)return null;', 'if(VisiblePreviewCount!=1)return null;if(KnifeVisible)return "knife";').replace('public R23GalleryViewState ViewState { get {', 'public R23GalleryViewState ViewState { get {if(knifeSelected)return KnifeState;')
+s=s.replace('yield return LoadSmawGallerySafely();','yield return LoadSmawGallerySafely();yield return LoadKnifeGallerySafely();').replace('if(id!="smaw"&&id!="magnum"', 'if(id!="knife"&&id!="smaw"&&id!="magnum"')
+s=s.replace('smawSelected=id=="smaw";', 'knifeSelected=id=="knife";knifeActive=knifeSelected;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawSelected=id=="smaw";')
+s=s.replace('if(smawSelected){smawShots=0;}', 'if(knifeSelected){}else if(smawSelected){smawShots=0;}')
+s=s.replace('Release();smawActive=false;', 'Release();knifeActive=false;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawActive=false;')
+s=s.replace('void DisplayDock(){','void DisplayDock(){if(knifeSelected){DockKnife();return;}').replace('void Release(){int hand=holder;', 'void Release(){int hand=holder;ReleaseKnife();')
+s=s.replace('if(smawPreview!=null)smawPreview.SetSfxVolume(volume);', 'if(smawPreview!=null)smawPreview.SetSfxVolume(volume);if(knifeAudio!=null)knifeAudio.SetVolume(volume);')
+s=s.replace('if(smawSelected)return SampleSmaw', 'if(knifeSelected)return SampleKnife(seconds,input,focused,primaryHand);\n            if(smawSelected)return SampleSmaw')
+s=s.replace('StopAllCoroutines();ReleaseSmaw();', 'StopAllCoroutines();ReleaseKnife();if(knifeAudio!=null)knifeAudio.Dispose();ReleaseSmaw();')
+(O/'R23LobbyWeaponGallery.cs').write_text(s);print('Staged source knife gallery18 isolated owner/audio; no world damage or Assets writes')

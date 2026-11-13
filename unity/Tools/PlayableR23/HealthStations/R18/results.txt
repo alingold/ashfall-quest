@@ -1,0 +1,17 @@
+PASS source restores health+shield together
+PASS source starts shared15 seconds
+PASS cooldown does not reapply or call owner
+PASS per-station timers independent
+PASS full owner refuses without consuming timer
+PASS shield-only deficit restores
+PASS exact15s expiry accepts
+PASS new cooldown belongs to same station
+PASS dead owner refuses without cooldown
+PASS explicit refusal no consumption
+PASS unbound callback never consumes
+PASS invalid station denied
+PASS invalid time denied
+PASS refused ready station remains usable
+PASS wall clock continues independently of contact or pause
+PASS actual map replacement gets fresh stations
+PASS 16 R18 restore/refusal/per-station recharge production cases

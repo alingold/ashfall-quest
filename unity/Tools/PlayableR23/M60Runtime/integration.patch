@@ -1,0 +1,568 @@
+--- HandsWeapons/R23Audio.cs
++++ HandsWeapons/R23Audio.cs
+@@ -51,7 +51,7 @@
+             if(string.IsNullOrEmpty(action))return;
+             AudioClip[] choices;if(!clips.TryGetValue(weapon+"/"+action,out choices)&&!clips.TryGetValue("/"+action,out choices))return;
+             if(choices.Length==0)return;var source=shot?shots[cursor++%shots.Length]:(action=="hit"||action=="hurt"?feedback:mechanical);
+-            float gain=shot?(weapon=="awp"?.8912509f:.3548f):(weapon=="awp"?.31622777f:.1995f);sourceGains[source]=gain;source.volume=gain*sfxVolume;if(shot)source.maxDistance=weapon=="awp"?120:85;source.Stop();source.clip=choices[variant++%choices.Length];source.Play();
++            float gain=shot?(weapon=="m60"?.5623413f:weapon=="awp"?.8912509f:.3548f):(weapon=="m60"||weapon=="awp"?.31622777f:.1995f);sourceGains[source]=gain;source.volume=gain*sfxVolume;if(shot)source.maxDistance=weapon=="awp"?120:85;source.Stop();source.clip=choices[variant++%choices.Length];source.Play();
+         }
+         public void Stop() { foreach(var voice in voices)if(voice!=null){var source=voice.GetComponent<AudioSource>();source.Stop();source.clip=null;} }
+         public void Dispose() { Stop();foreach(var voice in voices)if(voice!=null)UnityEngine.Object.Destroy(voice);foreach(var clip in resources)UnityEngine.Object.Destroy(clip);voices.Clear();resources.Clear();clips.Clear();sourceGains.Clear(); }
+--- HandsWeapons/R23GunFeedback.cs
++++ HandsWeapons/R23GunFeedback.cs
+@@ -11,7 +11,7 @@
+     {
+         readonly List<UnityEngine.Object> owned=new List<UnityEngine.Object>();readonly Shader shader;readonly Font font;
+         readonly Transform panel,face,blue,hinge,flash,reticle;readonly TextMesh loaded,reserve;
+-        readonly Dictionary<int,Mesh> bracketMeshes=new Dictionary<int,Mesh>();
++        Transform reloadSymbol;readonly Dictionary<int,Mesh> bracketMeshes=new Dictionary<int,Mesh>();
+         readonly Transform[] arms=new Transform[8],impacts=new Transform[8];readonly float[] impactTimes=new float[8];
+         readonly Material loadedFont,reserveFont;readonly Mesh quad,cube;int impactCursor;string lastText="";float width=.033f;
+         public string AmmoText {get{return lastText;}}public Vector3 PanelPosition {get{return panel.position;}}
+@@ -43,13 +43,14 @@
+             panel.localPosition=new Vector3((lateralBase+width*.5f/modelScale)*(left?1:-1),.05f,depth);panel.localRotation=Quaternion.identity;panel.localScale=Vector3.one/modelScale;
+         }
+         public void PresentFlash(bool visible,Transform sourceBore=null,float physicalLength=.07f,float physicalRadius=.018f){if(sourceBore!=null&&flash.parent!=sourceBore)flash.SetParent(sourceBore,false);flash.localScale=new Vector3(physicalRadius/.018f,physicalRadius/.018f,physicalLength/.07f);flash.gameObject.SetActive(visible);}
+-        public void PresentReticle(Camera head,Vector3 point,Vector3 boreDirection,float widthPixels,bool visible,bool magnum=false,bool supported=false,bool bracket=false)
++        public void PresentReticle(Camera head,Vector3 point,Vector3 boreDirection,float widthPixels,bool visible,bool magnum=false,bool supported=false,bool bracket=false,bool yellowUnsupported=false,bool sourceReload=false)
+         {
+-            reticle.gameObject.SetActive(visible);if(!visible)return;
++            if(reloadSymbol!=null)reloadSymbol.gameObject.SetActive(false);reticle.gameObject.SetActive(visible);if(!visible)return;
+             Vector3 up=Vector3.up;if(Vector3.Cross(head.transform.forward,up).sqrMagnitude<.0001f)up=Vector3.forward;
+             reticle.SetPositionAndRotation(point-boreDirection*.015f,Quaternion.LookRotation(head.transform.forward,up));float size=Mathf.Clamp(Vector3.Distance(head.transform.position,point)*.010f,.010f,.60f)*4;reticle.localScale=Vector3.one*size;
+             const float unit=1/(1147.17f*.04f);
+-            arms[4].GetComponent<Renderer>().sharedMaterial.SetColor("_Color",magnum&&!supported?new Color(1,.86f,.08f):new Color(1,.045f,.025f));
++            if(sourceReload){if(reloadSymbol==null){var glyph=SourceReloadMesh();owned.Add(glyph);reloadSymbol=Part("source circular reload glyph",reticle,glyph,Material(new Color(1,.88f,0),true));}reloadSymbol.gameObject.SetActive(true);reloadSymbol.localPosition=new Vector3(0,0,-.01f/size);}
++            arms[4].GetComponent<Renderer>().sharedMaterial.SetColor("_Color",sourceReload||yellowUnsupported&&!supported?new Color(1,.88f,0):magnum&&!supported?new Color(1,.86f,.08f):new Color(1,.045f,.025f));
+             for(int i=0;i<8;i++){
+                 int n=i%4;float stroke=i<4?5:3;arms[i].localRotation=Quaternion.identity;arms[i].GetComponent<MeshFilter>().sharedMesh=quad;
+                 if(bracket){
+@@ -69,6 +70,7 @@
+                 }
+             }
+         }
++        Mesh SourceReloadMesh(){const float unit=1/(1147.17f*.04f);var vertices=new List<Vector3>();var indices=new List<int>();for(int i=0;i<28;i++){float aa=(45+i*285f/28)*Mathf.Deg2Rad,bb=(45+(i+1)*285f/28)*Mathf.Deg2Rad;Vector2 a=new Vector2(Mathf.Cos(aa),Mathf.Sin(aa))*12,b=new Vector2(Mathf.Cos(bb),Mathf.Sin(bb))*12,side=new Vector2(-(b-a).y,(b-a).x).normalized*1.5f;int start=vertices.Count;foreach(var v in new[]{a-side,a+side,b+side,a-side,b+side,b-side})vertices.Add(new Vector3(v.x*unit,v.y*unit,0));for(int n=0;n<6;n++)indices.Add(start+n);}int tri=vertices.Count;foreach(var p in new[]{new Vector2(13,5),new Vector2(4,6),new Vector2(11,14)})vertices.Add(new Vector3(p.x*unit,p.y*unit,0));indices.Add(tri);indices.Add(tri+1);indices.Add(tri+2);return Make(vertices.ToArray(),indices.ToArray(),null);}
+         Mesh BracketMesh(int stroke,float x,float y){int key=stroke*10+(x<0?0:2)+(y<0?0:1);Mesh mesh;if(bracketMeshes.TryGetValue(key,out mesh))return mesh;const float unit=1/(1147.17f*.04f);var vertices=new List<Vector3>();var indices=new List<int>();foreach(var end in new[]{new Vector2(-x*14,0),new Vector2(0,-y*14)}){var normal=new Vector2(-end.y,end.x).normalized*stroke*.5f;int start=vertices.Count;foreach(var point in new[]{-normal,normal,end+normal,end-normal})vertices.Add(new Vector3(point.x*unit,point.y*unit,0));foreach(int n in new[]{0,1,2,0,2,3})indices.Add(start+n);}mesh=Make(vertices.ToArray(),indices.ToArray(),null);owned.Add(mesh);bracketMeshes.Add(key,mesh);return mesh;}
+         public void Impact(Vector3 point,Vector3 normal,float now){int i=impactCursor++%impacts.Length;impacts[i].position=point+normal*.025f;impacts[i].localScale=Vector3.one;impacts[i].gameObject.SetActive(true);impactTimes[i]=now+R23WeaponFeedbackState.ImpactSeconds;}
+         public void Tick(float now){for(int i=0;i<impacts.Length;i++)if(now>=impactTimes[i])impacts[i].gameObject.SetActive(false);}
+--- HandsWeapons/R23HandsWeapons.cs
++++ HandsWeapons/R23HandsWeapons.cs
+@@ -16,11 +16,11 @@
+         public int SlotCapacity {get{return slotCapacity;}set{slotCapacity=Math.Max(3,Math.Min(6,value));}}
+         Transform player,left,right,weapon,muzzle,leftVisual,rightVisual,content;
+         readonly List<Transform> weaponModels=new List<Transform>();
+-        readonly List<Renderer>[] magazineParts={new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>()};
+-        readonly List<Transform>[] boltParts={new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>()};
++        readonly List<Renderer>[] magazineParts={new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>(),new List<Renderer>()};
++        readonly List<Transform>[] boltParts={new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>(),new List<Transform>()};
+         readonly Dictionary<Transform,Vector3> boltRestPositions=new Dictionary<Transform,Vector3>();
+-        readonly Transform[] offeredMagazines=new Transform[23],heldMagazines=new Transform[23];
+-        readonly Vector3[] magazineHomes={new Vector3(-.00045859f,-.0960232f,.17046988f),new Vector3(0,-.0897345f,.20337826f),new Vector3(0,-.05928609f,.11562737f),Vector3.zero,new Vector3(-.0000000174634852f,-.12042805f,-.0107801325f),new Vector3(0,-.0662978311f,.091493664f),Vector3.zero,new Vector3(9.047493905e-05f,-0.1478707243f,0.2143906034f),new Vector3(1.25047113e-08f,0.05543516979f,-0.09955194718f),new Vector3(-0.002643062233f,-0.1256524375f,0.2434360492f),new Vector3(-3.599971533e-05f,-0.09888900344f,0.03798250389f),new Vector3(-1.541333151e-05f,-0.1020505595f,0.03945997842f),new Vector3(-2.209026644e-09f,-0.1264717493f,0.208577757f),new Vector3(1.379053223e-05f,-0.08628115157f,-0.2188923141f),new Vector3(-0.0002909407327f,-0.03597471001f,0.1644864421f),new Vector3(8.975620269e-09f,-0.02506277805f,0.1307706665f),Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,new Vector3(.0002487176f,-.0128027467f,.1061082762f)};
++        readonly Transform[] offeredMagazines=new Transform[24],heldMagazines=new Transform[24];
++        readonly Vector3[] magazineHomes={new Vector3(-.00045859f,-.0960232f,.17046988f),new Vector3(0,-.0897345f,.20337826f),new Vector3(0,-.05928609f,.11562737f),Vector3.zero,new Vector3(-.0000000174634852f,-.12042805f,-.0107801325f),new Vector3(0,-.0662978311f,.091493664f),Vector3.zero,new Vector3(9.047493905e-05f,-0.1478707243f,0.2143906034f),new Vector3(1.25047113e-08f,0.05543516979f,-0.09955194718f),new Vector3(-0.002643062233f,-0.1256524375f,0.2434360492f),new Vector3(-3.599971533e-05f,-0.09888900344f,0.03798250389f),new Vector3(-1.541333151e-05f,-0.1020505595f,0.03945997842f),new Vector3(-2.209026644e-09f,-0.1264717493f,0.208577757f),new Vector3(1.379053223e-05f,-0.08628115157f,-0.2188923141f),new Vector3(-0.0002909407327f,-0.03597471001f,0.1644864421f),new Vector3(8.975620269e-09f,-0.02506277805f,0.1307706665f),Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,Vector3.zero,new Vector3(.0002487176f,-.0128027467f,.1061082762f),new Vector3(-.04931006848f,.01512533089f,.04920581269f)};
+         readonly HashSet<string> ownedWeapons=new HashSet<string>(new[]{"cx4","px4","m1014"});
+         readonly List<string> ownedWeaponOrder=new List<string>(new[]{"cx4","px4","m1014"});
+         sealed class WorldWeapon {internal Vector3 Position;internal Quaternion Rotation;internal Transform Visual;internal bool Visible,CenterSet;internal Vector3 LocalCenter;}
+@@ -36,15 +36,15 @@
+         public string[] WorldWeaponActionIds {get{var result=new List<string>();if(round!=null)foreach(string id in round.WeaponActionIds)if(droppedWeapons.ContainsKey(id)||starterPickup&&!holstered&&id==activeActionId)result.Add(id);return result.ToArray();}}
+         bool holstered,starterPickup=true,presentationSuppressed,sourceArtReady;
+         readonly HashSet<string> starterWorldAtHome=new HashSet<string>();
+-        readonly Dictionary<string,Vector3> starterWorldOffsets=new Dictionary<string,Vector3>{{"magnum",Vector3.right*.5f},{"mk18",Vector3.right*.85f},{"akm",Vector3.right*1.2f},{"spr",Vector3.right*1.55f},{"ump",Vector3.left*.5f},{"p90",Vector3.left*.85f},{"mp5",Vector3.left*1.2f},{"mp9",Vector3.left*1.55f},{"1911",new Vector3(-0.5f,0,.45f)},{"tec9",new Vector3(-0.85f,0,.45f)},{"rfb",new Vector3(-1.2f,0,.45f)},{"fal",new Vector3(-1.55f,0,.45f)},{"s85",new Vector3(-1.9f,0,.45f)},{"smaw",new Vector3(.85f,0,.75f)},{"knife",new Vector3(.50f,0,.75f)},{"katana",new Vector3(.15f,0,.75f)},{"excalibur",new Vector3(-.2f,0,.75f)},{"cyberblade",new Vector3(-.55f,0,.75f)},{"dt11",new Vector3(1.2f,0,.75f)},{"awp",new Vector3(1.55f,0,.75f)}};
++        readonly Dictionary<string,Vector3> starterWorldOffsets=new Dictionary<string,Vector3>{{"magnum",Vector3.right*.5f},{"mk18",Vector3.right*.85f},{"akm",Vector3.right*1.2f},{"spr",Vector3.right*1.55f},{"ump",Vector3.left*.5f},{"p90",Vector3.left*.85f},{"mp5",Vector3.left*1.2f},{"mp9",Vector3.left*1.55f},{"1911",new Vector3(-0.5f,0,.45f)},{"tec9",new Vector3(-0.85f,0,.45f)},{"rfb",new Vector3(-1.2f,0,.45f)},{"fal",new Vector3(-1.55f,0,.45f)},{"s85",new Vector3(-1.9f,0,.45f)},{"smaw",new Vector3(.85f,0,.75f)},{"knife",new Vector3(.50f,0,.75f)},{"katana",new Vector3(.15f,0,.75f)},{"excalibur",new Vector3(-.2f,0,.75f)},{"cyberblade",new Vector3(-.55f,0,.75f)},{"dt11",new Vector3(1.2f,0,.75f)},{"awp",new Vector3(1.55f,0,.75f)},{"m60",new Vector3(1.9f,0,.75f)}};
+         R23MagnumView magnumView;R23M1014View m1014View;readonly R23M1014Controls m1014Controls=new R23M1014Controls();
+         readonly bool[] pickupRearmRequired=new bool[2];
+         int primaryHand=1;
+-        readonly string[] weaponIds={"mk18","akm","spr","magnum","cx4","px4","m1014","ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85","smaw","knife","katana","excalibur","cyberblade","dt11","awp"};
++        readonly string[] weaponIds={"mk18","akm","spr","magnum","cx4","px4","m1014","ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85","smaw","knife","katana","excalibur","cyberblade","dt11","awp","m60"};
+         static readonly string[] StarterWeaponIds={"cx4","px4","m1014"};
+         public string[] InitialOwnedWeaponIds {get{return (string[])StarterWeaponIds.Clone();}}
+-        readonly float[] modelScales={.92f,.945f,1.32f,R23MagnumRuntime.ModelScale,.855f,.7f,1,0.7182f,0.72f,0.684f,1f,0.55f,0.72f,0.8f,1.037875f,1.12f,1.6f,1f,1f,1f,1f,1.6f,1f};
+-        readonly Vector3[] sourceMuzzles={new Vector3(0,.045f,.69f),new Vector3(0,.045f,.76f),new Vector3(0,.045f,.69f),new Vector3(0,.065f,.392f),new Vector3(0,.045f,.62f),new Vector3(0,.045f,.29f),new Vector3(0,.045f,.77f),new Vector3(0f,0.045f,0.46f),new Vector3(0f,0.01555242941f,0.2433011482f),new Vector3(0f,0.045f,0.62f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.62f),new Vector3(0f,0.045f,0.76f),new Vector3(0f,0.045f,0.76f),new Vector3(0,.045f,.85f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,.04f,.65f),new Vector3(0,.047f,1.01f)};
++        readonly float[] modelScales={.92f,.945f,1.32f,R23MagnumRuntime.ModelScale,.855f,.7f,1,0.7182f,0.72f,0.684f,1f,0.55f,0.72f,0.8f,1.037875f,1.12f,1.6f,1f,1f,1f,1f,1.6f,1f,1f};
++        readonly Vector3[] sourceMuzzles={new Vector3(0,.045f,.69f),new Vector3(0,.045f,.76f),new Vector3(0,.045f,.69f),new Vector3(0,.065f,.392f),new Vector3(0,.045f,.62f),new Vector3(0,.045f,.29f),new Vector3(0,.045f,.77f),new Vector3(0f,0.045f,0.46f),new Vector3(0f,0.01555242941f,0.2433011482f),new Vector3(0f,0.045f,0.62f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.42f),new Vector3(0f,0.045f,0.62f),new Vector3(0f,0.045f,0.76f),new Vector3(0f,0.045f,0.76f),new Vector3(0,.045f,.85f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,-.057f,-.025f),new Vector3(0,.04f,.65f),new Vector3(0,.047f,1.01f),new Vector3(0,.04f,.91f)};
+         int selectedWeapon=4;
+         Camera head;
+         R23Visuals visuals;
+@@ -81,7 +81,7 @@
+ #if UNITY_EDITOR
+         public void AdvanceImpactMarksForFixture(float seconds){if(impactMarks!=null)impactMarks.Advance(seconds);}
+ #endif
+-        readonly R23WeaponFeedbackState[] feedbackStates={new R23WeaponFeedbackState("mk18"),new R23WeaponFeedbackState("akm"),new R23WeaponFeedbackState("spr"),new R23WeaponFeedbackState("magnum"),new R23WeaponFeedbackState("cx4"),new R23WeaponFeedbackState("px4"),new R23WeaponFeedbackState("m1014"),new R23WeaponFeedbackState("ump"),new R23WeaponFeedbackState("p90"),new R23WeaponFeedbackState("mp5"),new R23WeaponFeedbackState("mp9"),new R23WeaponFeedbackState("1911"),new R23WeaponFeedbackState("tec9"),new R23WeaponFeedbackState("rfb"),new R23WeaponFeedbackState("fal"),new R23WeaponFeedbackState("s85"),new R23WeaponFeedbackState("smaw"),new R23WeaponFeedbackState("knife"),new R23WeaponFeedbackState("katana"),new R23WeaponFeedbackState("excalibur"),new R23WeaponFeedbackState("cyberblade"),new R23WeaponFeedbackState("dt11"),new R23WeaponFeedbackState("awp")};
++        readonly R23WeaponFeedbackState[] feedbackStates={new R23WeaponFeedbackState("mk18"),new R23WeaponFeedbackState("akm"),new R23WeaponFeedbackState("spr"),new R23WeaponFeedbackState("magnum"),new R23WeaponFeedbackState("cx4"),new R23WeaponFeedbackState("px4"),new R23WeaponFeedbackState("m1014"),new R23WeaponFeedbackState("ump"),new R23WeaponFeedbackState("p90"),new R23WeaponFeedbackState("mp5"),new R23WeaponFeedbackState("mp9"),new R23WeaponFeedbackState("1911"),new R23WeaponFeedbackState("tec9"),new R23WeaponFeedbackState("rfb"),new R23WeaponFeedbackState("fal"),new R23WeaponFeedbackState("s85"),new R23WeaponFeedbackState("smaw"),new R23WeaponFeedbackState("knife"),new R23WeaponFeedbackState("katana"),new R23WeaponFeedbackState("excalibur"),new R23WeaponFeedbackState("cyberblade"),new R23WeaponFeedbackState("dt11"),new R23WeaponFeedbackState("awp"),new R23WeaponFeedbackState("m60")};
+         int feedbackAdvancedFrame=-1,shotgunPresentedFrame=-1;
+         public bool GunAmmoPanelReady {get{return gunFeedback!=null;}}
+         public bool GunAmmoPanelVisible {get{return IsSmaw?smawView!=null&&smawView.AmmoPanelVisible:gunFeedback!=null&&gunFeedback.PanelVisible;}}
+@@ -96,7 +96,7 @@
+         public Vector3 TracerWorldStart {get{return tracer==null?Vector3.zero:tracer.GetPosition(0);}}
+         public Vector3 TracerWorldEnd {get{return tracer==null?Vector3.zero:tracer.GetPosition(1);}}
+         public event Action<int,float,float> HapticRequested;
+-        readonly Transform[] feedbackLenses=new Transform[23],feedbackRearSights=new Transform[23],feedbackFrontSights=new Transform[23];
++        readonly Transform[] feedbackLenses=new Transform[24],feedbackRearSights=new Transform[24],feedbackFrontSights=new Transform[24];
+         float sfxVolume=1;
+         readonly R23MagazineControls magazineControls=new R23MagazineControls();
+         Transform p90InsertArrow,p90ChargeArrow;R23Mp9Laser mp9Laser;
+@@ -133,7 +133,7 @@
+         bool IsMagnum {get{return ActiveWeaponId=="magnum";}}
+         float ActiveRange {get{return IsDt11?40:IsMelee?2.5f:IsSmaw?180:IsShotgun?40:IsMagnum?R23MagnumRuntime.MaximumRange:WeaponDefinition(ActiveWeaponId).MaximumRange;}}
+         float ActiveBodyDamage {get{R23WeaponInstanceInfo info;return round!=null&&round.TryReadWeaponInstance(activeActionId,out info)?info.BodyDamage:IsShotgun?77:IsMagnum?R23MagnumRuntime.BodyDamage:WeaponDefinition(ActiveWeaponId).BodyDamage;}}
+-        bool TransientWeaponArt(int index,Transform item){return index==AwpIndex&&awpView!=null&&awpView.IsTransient(item)||index==21&&dt11View!=null&&dt11View.IsTransient(item)||BladeTransient(index,item)||index==3&&magnumView!=null&&magnumView.IsTransient(item)||index==6&&m1014View!=null&&m1014View.IsTransient(item)||index==8&&(p90InsertArrow!=null&&(item==p90InsertArrow||item.IsChildOf(p90InsertArrow))||p90ChargeArrow!=null&&(item==p90ChargeArrow||item.IsChildOf(p90ChargeArrow)));}
++        bool TransientWeaponArt(int index,Transform item){return index==M60Index&&m60View!=null&&m60View.IsTransient(item)||index==AwpIndex&&awpView!=null&&awpView.IsTransient(item)||index==21&&dt11View!=null&&dt11View.IsTransient(item)||BladeTransient(index,item)||index==3&&magnumView!=null&&magnumView.IsTransient(item)||index==6&&m1014View!=null&&m1014View.IsTransient(item)||index==8&&(p90InsertArrow!=null&&(item==p90InsertArrow||item.IsChildOf(p90InsertArrow))||p90ChargeArrow!=null&&(item==p90ChargeArrow||item.IsChildOf(p90ChargeArrow)));}
+         public bool ScopeActive { get { return sprScope!=null&&sprScope.Active; } }
+ #if UNITY_EDITOR
+         internal R23SprScope SprScopeFixture { get { return sprScope; } }
+@@ -156,10 +156,10 @@
+         }
+         public bool TryGetDroppedPose(string id,out Vector3 position,out Quaternion rotation) { WorldWeapon drop;if(id!=null&&droppedWeapons.TryGetValue(id,out drop)){position=drop.Position;rotation=drop.Rotation;return true;}position=Vector3.zero;rotation=Quaternion.identity;return false; }
+         public string MechanicsDescription { get { return "First rarity: MK18 18-round burst / AKM 20-round automatic / SPR 4-round semi; source rifle/sniper pools / MAGNUM 7-round semi / CX4 25-round auto / PX4 16-round semi; shared finite pistol pool"; } }
+-        public void SetGameplayPaused(bool value){if(value&&!gameplayPaused&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();}gameplayPaused=value;if(value)pickupRearmRequired[0]=pickupRearmRequired[1]=true;if(impactMarks!=null)impactMarks.SetPaused(value||!hadFocus);if(value&&audioCues!=null)audioCues.Stop();UpdateWeaponPresentation();}
+-        public void NotifyFocus(bool value){hadFocus=value;if(!value)pickupRearmRequired[0]=pickupRearmRequired[1]=true;if(impactMarks!=null)impactMarks.SetPaused(gameplayPaused||!value);if(!value&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();}if(!value&&audioCues!=null)audioCues.Stop();UpdateWeaponPresentation();}
++        public void SetGameplayPaused(bool value){if(value&&!gameplayPaused&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();}gameplayPaused=value;if(value)pickupRearmRequired[0]=pickupRearmRequired[1]=true;if(impactMarks!=null)impactMarks.SetPaused(value||!hadFocus);if(value&&audioCues!=null)audioCues.Stop();UpdateWeaponPresentation();}
++        public void NotifyFocus(bool value){hadFocus=value;if(!value)pickupRearmRequired[0]=pickupRearmRequired[1]=true;if(impactMarks!=null)impactMarks.SetPaused(gameplayPaused||!value);if(!value&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();}if(!value&&audioCues!=null)audioCues.Stop();UpdateWeaponPresentation();}
+         // A lobby inspection owns a separate weapon; retain carried inventory without drawing it.
+-        public void SetWeaponPresentationSuppressed(bool value){if(value&&!presentationSuppressed&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();}presentationSuppressed=value;UpdateWeaponPresentation();if(value&&tracer!=null)tracer.enabled=false;}
++        public void SetWeaponPresentationSuppressed(bool value){if(value&&!presentationSuppressed&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();}presentationSuppressed=value;UpdateWeaponPresentation();if(value&&tracer!=null)tracer.enabled=false;}
+         float flashUntil,muzzleFlashUntil;
+         readonly List<LineRenderer> pelletTracers=new List<LineRenderer>();
+         public int LastShotgunPelletCount {get;private set;}public int LastShotgunTargetGroups {get;private set;}
+@@ -178,7 +178,7 @@
+         public int MagazineCapacity { get { return round==null?WeaponCapacity(ActiveWeaponId):round.ActiveCapacity; } }
+         public ReloadPhase ReloadStage { get { return round==null?ReloadPhase.Ready:round.ActiveSnapshot.Phase; } }
+         public bool SupportHandOccupied { get { return HasWeapon&&round!=null&&(IsShotgun?round.M1014.ReloadGripInProgress||round.ActiveSnapshot.Supported:round.ActiveSnapshot.ClaimsSupport); } }
+-        public string ReloadInstruction { get { if(IsAwp)return ReloadStage==ReloadPhase.NeedsBolt?"RELEASE / GRIP BOLT / PULL BACK":ReloadStage==ReloadPhase.NeedsMagazine?"GRIP OFFERED MAGAZINE / PUSH UP":ReloadStage==ReloadPhase.HeldMagazine?"PUSH MAGAZINE UP":"RIGHT STICK CLICK: RELOAD";if(IsDt11)return ReloadStage==ReloadPhase.Ready?"TRIGGER: ONE BARREL / RIGHT STICK CLICK: OPEN":ReloadStage==ReloadPhase.NeedsRack?"SWIPE UP TO CLOSE / OR FLICK GUN UP":"GRIP SHELL PAIR / SWIPE DOWN THEN UP";if(IsMelee)return "";if(IsSmaw)return ReloadStage==ReloadPhase.Ready?"TRIGGER: LAUNCH ROCKET":ReloadStage==ReloadPhase.HeldMagazine?"PUSH ROCKET NOSE INTO LAUNCHER":"GRIP OFFERED ROCKET / PUSH INTO FRONT";if(IsShotgun)return ReloadStage==ReloadPhase.NeedsMagazine?"GRIP SIX-SHELL PACK / PUSH UP":ReloadStage==ReloadPhase.NeedsRack?"RELEASE / GRIP HANDLE / PULL BACK":"RIGHT STICK CLICK: EJECT";if(IsMagnum&&round!=null&&round.Magnum!=null)return round.Magnum.ReloadInstruction;var definition=WeaponDefinition(ActiveWeaponId);if(definition!=null&&definition.VrOpeningOnly){switch(ReloadStage){case ReloadPhase.NeedsMagazine:return definition.TopFeed?"GRIP TOP MAGAZINE / PUSH FORWARD":"GRIP FRESH MAGAZINE / PUSH UP";case ReloadPhase.HeldMagazine:return definition.TopFeed?"PUSH MAGAZINE FORWARD INTO TOP SEAT":"PUSH MAGAZINE INTO WELL";case ReloadPhase.NeedsRack:return definition.Pistol?"RELEASE GRIP / GRIP SLIDE / PULL BACK":"RELEASE GRIP / GRIP HANDLE / PULL BACK";default:return "RIGHT STICK CLICK: EJECT";}}string button="Right stick click";switch(ReloadStage){case ReloadPhase.NeedsMagazine:return "Grip fresh magazine below rifle; push upward. "+button+": insert.";case ReloadPhase.HeldMagazine:return "Push magazine into the well. "+button+": insert.";case ReloadPhase.NeedsRack:return "Release grip, then pull charging handle back. "+button+": charge.";default:return "";} } }
++        public string ReloadInstruction { get { if(IsAwp)return ReloadStage==ReloadPhase.NeedsBolt?"RELEASE / GRIP BOLT / PULL BACK":ReloadStage==ReloadPhase.NeedsMagazine?"GRIP OFFERED MAGAZINE / PUSH UP":ReloadStage==ReloadPhase.HeldMagazine?"PUSH MAGAZINE UP":"RIGHT STICK CLICK: RELOAD";if(IsM60)return R24M60Status.Instruction(round.M60);if(IsDt11)return ReloadStage==ReloadPhase.Ready?"TRIGGER: ONE BARREL / RIGHT STICK CLICK: OPEN":ReloadStage==ReloadPhase.NeedsRack?"SWIPE UP TO CLOSE / OR FLICK GUN UP":"GRIP SHELL PAIR / SWIPE DOWN THEN UP";if(IsMelee)return "";if(IsSmaw)return ReloadStage==ReloadPhase.Ready?"TRIGGER: LAUNCH ROCKET":ReloadStage==ReloadPhase.HeldMagazine?"PUSH ROCKET NOSE INTO LAUNCHER":"GRIP OFFERED ROCKET / PUSH INTO FRONT";if(IsShotgun)return ReloadStage==ReloadPhase.NeedsMagazine?"GRIP SIX-SHELL PACK / PUSH UP":ReloadStage==ReloadPhase.NeedsRack?"RELEASE / GRIP HANDLE / PULL BACK":"RIGHT STICK CLICK: EJECT";if(IsMagnum&&round!=null&&round.Magnum!=null)return round.Magnum.ReloadInstruction;var definition=WeaponDefinition(ActiveWeaponId);if(definition!=null&&definition.VrOpeningOnly){switch(ReloadStage){case ReloadPhase.NeedsMagazine:return definition.TopFeed?"GRIP TOP MAGAZINE / PUSH FORWARD":"GRIP FRESH MAGAZINE / PUSH UP";case ReloadPhase.HeldMagazine:return definition.TopFeed?"PUSH MAGAZINE FORWARD INTO TOP SEAT":"PUSH MAGAZINE INTO WELL";case ReloadPhase.NeedsRack:return definition.Pistol?"RELEASE GRIP / GRIP SLIDE / PULL BACK":"RELEASE GRIP / GRIP HANDLE / PULL BACK";default:return "RIGHT STICK CLICK: EJECT";}}string button="Right stick click";switch(ReloadStage){case ReloadPhase.NeedsMagazine:return "Grip fresh magazine below rifle; push upward. "+button+": insert.";case ReloadPhase.HeldMagazine:return "Push magazine into the well. "+button+": insert.";case ReloadPhase.NeedsRack:return "Release grip, then pull charging handle back. "+button+": charge.";default:return "";} } }
+         public string WeaponInstanceId { get { return round==null?"":round.ActiveInstanceId; } }
+         public Vector3 ReloadOfferPosition { get { return IsDt11&&round!=null?weapon.TransformPoint(From(R24Dt11Definition.Offer(round.Dt11.Snapshot.BoltTravel))*R24Dt11Definition.Scale):IsMelee?WeaponGripPosition:IsSmaw&&smawView!=null?smawView.ReloadOfferPosition:weapon==null?Vector3.zero:weapon.TransformPoint(From(IsShotgun?R23M1014Definition.Offer:IsMagnum?R23MagnumRuntime.Offer(primaryHand==0):SourceRifleDefinition.ForId(ActiveWeaponId).Offer)*LogicalReloadScale); } }
+         public Vector3 ReloadInsertionPosition { get { return IsDt11&&round!=null?weapon.TransformPoint(From(R24Dt11Definition.Chamber(round.Dt11.Snapshot.BoltTravel))*R24Dt11Definition.Scale):IsMelee?WeaponGripPosition:IsSmaw&&smawView!=null?smawView.ReloadInsertionPosition:weapon==null?Vector3.zero:weapon.TransformPoint(From(IsShotgun?R23M1014Definition.Socket:IsMagnum?R23MagnumRuntime.OpenPoint(primaryHand==0):SourceRifleDefinition.ForId(ActiveWeaponId).ReloadGuide)*LogicalReloadScale); } }
+@@ -187,7 +187,7 @@
+         public int MagnumChamberMask {get{return round==null||round.Magnum==null?0:round.Magnum.ChamberMask;}}
+         public int MagnumOfferedRounds {get{return round==null||round.Magnum==null?0:round.Magnum.OfferedRoundCount;}}
+         public bool MagnumVisualReady {get{return magnumView!=null&&magnumView.Ready;}}
+-        public bool ReloadHandOccupied {get{return HasWeapon&&round!=null&&(IsAwp?round.Awp.ReloadGripInProgress:IsDt11?round.Dt11.ReloadGripInProgress:IsSmaw?round.Smaw.ReloadHandOccupied:IsShotgun?round.M1014.ReloadGripInProgress:IsMagnum?round.Magnum.ReloadHandOccupied:ReloadStage==ReloadPhase.HeldMagazine||ReloadStage==ReloadPhase.NeedsRack&&round.ActiveSnapshot.ClaimsSupport);}}
++        public bool ReloadHandOccupied {get{return HasWeapon&&round!=null&&(IsM60?round.M60.ReloadGripInProgress:IsAwp?round.Awp.ReloadGripInProgress:IsDt11?round.Dt11.ReloadGripInProgress:IsSmaw?round.Smaw.ReloadHandOccupied:IsShotgun?round.M1014.ReloadGripInProgress:IsMagnum?round.Magnum.ReloadHandOccupied:ReloadStage==ReloadPhase.HeldMagazine||ReloadStage==ReloadPhase.NeedsRack&&round.ActiveSnapshot.ClaimsSupport);}}
+         public bool Reloading { get { return round!=null&&round.ActiveSnapshot.Phase!=ReloadPhase.Ready; } }
+         public event Action Restarted;
+         public event Action<string,bool,float,float> TargetDamaged;
+@@ -276,7 +276,7 @@
+         IEnumerator LoadVisuals() {
+             yield return visuals.Load("left",leftVisual);yield return visuals.Load("right",rightVisual);
+             ApplyGloveStyle(leftGloveStyle,rightGloveStyle);
+-            for(int i=0;i<weaponIds.Length;i++)if(WeaponDefinition(weaponIds[i])!=null&&weaponIds[i]!="awp")yield return visuals.Load(weaponIds[i],weaponModels[i]);
++            for(int i=0;i<weaponIds.Length;i++)if(WeaponDefinition(weaponIds[i])!=null&&weaponIds[i]!="awp"&&weaponIds[i]!="m60")yield return visuals.Load(weaponIds[i],weaponModels[i]);
+             magnumView=gameObject.AddComponent<R23MagnumView>();magnumView.InitializeModel(weaponModels[3]);
+             while(magnumView.Loading)yield return null;
+             if(!magnumView.Ready)throw new InvalidOperationException("Source Magnum art unavailable: "+magnumView.Failure);
+@@ -319,11 +319,11 @@
+             for(int i=0;i<weaponModels.Count;i++)foreach(var renderer in weaponModels[i].GetComponentsInChildren<Renderer>(true)){if(renderer.name=="Clear reflex window and stereo bore dot")feedbackLenses[i]=renderer.transform;else if(renderer.name=="Source rear luminous alignment ring")feedbackRearSights[i]=renderer.transform;else if(renderer.name=="Source solid red front bead")feedbackFrontSights[i]=renderer.transform;}
+             gunFeedback=new R23GunFeedback(content,muzzle);
+             audioCues=new R23Audio(weapon,muzzle);audioCues.SetSfxVolume(sfxVolume);yield return audioCues.Load();
+-            yield return LoadSmawPresentation();yield return LoadKnifePresentation();yield return LoadBladePresentation();yield return LoadDt11Presentation();yield return LoadAwpPresentation();visuals.ReleaseLoadedBytes();sourceArtReady=true;CreateWorldStarterPickups();ApplyWeaponSelection();Ready=true;UpdateWeaponPresentation();
++            yield return LoadSmawPresentation();yield return LoadKnifePresentation();yield return LoadBladePresentation();yield return LoadDt11Presentation();yield return LoadAwpPresentation();yield return LoadM60Presentation();visuals.ReleaseLoadedBytes();sourceArtReady=true;CreateWorldStarterPickups();ApplyWeaponSelection();Ready=true;UpdateWeaponPresentation();
+         }
+         void BuildMagazinePresentation() {
+             for(int i=0;i<weaponIds.Length;i++) {
+-                if(WeaponDefinition(weaponIds[i])==null||weaponIds[i]=="awp")continue;
++                if(WeaponDefinition(weaponIds[i])==null||weaponIds[i]=="awp"||weaponIds[i]=="m60")continue;
+                 var offered=new GameObject("Source offered magazine "+weaponIds[i]).transform;offered.SetParent(weapon,false);offered.localScale=Vector3.one*modelScales[i];offered.localPosition=From(SourceRifleDefinition.ForId(weaponIds[i]).Offer)*SourceRifleDefinition.ForId(weaponIds[i]).ReloadScale;offeredMagazines[i]=offered;
+                 var held=new GameObject("Source support-hand magazine "+weaponIds[i]).transform;held.SetParent(SupportTransform,false);held.localScale=Vector3.one*modelScales[i];heldMagazines[i]=held;
+                 foreach(var renderer in weaponModels[i].GetComponentsInChildren<MeshRenderer>(true)) {
+@@ -344,9 +344,9 @@
+         void UpdateWeaponPresentation() {
+             SyncBladePresentation();
+             if(round==null||content==null||weapon==null||heldMagazines.Length!=weaponModels.Count)return;
+-            PresentDt11(0);PresentAwp();if(weapon!=null)weapon.gameObject.SetActive(!presentationSuppressed&&!holstered);
++            PresentDt11(0);PresentAwp();PresentM60();if(weapon!=null)weapon.gameObject.SetActive(!presentationSuppressed&&!holstered);
+             for(int i=0;i<weaponIds.Length;i++) {
+-                if(WeaponDefinition(weaponIds[i])==null||weaponIds[i]=="awp")continue;
++                if(WeaponDefinition(weaponIds[i])==null||weaponIds[i]=="awp"||weaponIds[i]=="m60")continue;
+                 var state=round.ReadWeapon(i==selectedWeapon?activeActionId:weaponIds[i]);bool selected=i==selectedWeapon&&HasWeapon&&!presentationSuppressed&&!gameplayPaused&&hadFocus&&isActiveAndEnabled;
+                 foreach(var renderer in magazineParts[i])if(renderer!=null)renderer.enabled=weaponIds[i]!="s85"&&(state.Phase==ReloadPhase.Ready||state.Phase==ReloadPhase.NeedsRack);
+                 foreach(var part in boltParts[i])if(part!=null)part.localPosition=boltRestPositions[part]+new Vector3(weaponIds[i]=="p90"&&primaryHand==0?.1f:0,0,-state.BoltTravel-((weaponIds[i]=="px4"||weaponIds[i]=="1911")&&state.Phase==ReloadPhase.Ready?(i==selectedWeapon?ActiveFeedback:feedbackStates[i]).SlideTravel:0));
+@@ -366,13 +366,13 @@
+         public bool SelectWeapon(string id) {
+             if(!Ready||gameplayPaused||!hadFocus||Health<=0)return false;
+             int index=Array.IndexOf(weaponIds,ResolveWeaponProfile(id));if(index<0||!ownedWeapons.Contains(id))return false;
+-            if(id!=activeActionId){if(!round.SelectWeapon(id))return false;ClearFeedbackPresentation();if(audioCues!=null)audioCues.Stop();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();activeActionId=id;selectedWeapon=index;if(IsShotgun&&m1014View!=null)m1014View.SynchronizeInstance(round.ActiveSnapshot);ApplyWeaponSelection();UpdateWeaponPresentation();}
++            if(id!=activeActionId){if(!round.SelectWeapon(id))return false;ClearFeedbackPresentation();if(audioCues!=null)audioCues.Stop();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();activeActionId=id;selectedWeapon=index;if(IsShotgun&&m1014View!=null)m1014View.SynchronizeInstance(round.ActiveSnapshot);ApplyWeaponSelection();UpdateWeaponPresentation();}
+             return holstered?EquipOwned(id,primaryHand):true;
+         }
+         public bool SelectNextWeapon(){var ids=OwnedWeaponActionIds;if(ids.Length==0)return false;int current=Array.IndexOf(ids,activeActionId);return SelectWeapon(ids[(current+1)%ids.Length]);}
+         // These are custody/presentation changes over persistent instances, never new grants.
+         public bool HolsterCurrent() {
+-            if(!Ready||!HasWeapon)return false;round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();if(audioCues!=null)audioCues.Stop();HasWeapon=false;holstered=true;starterPickup=false;weapon.SetParent(content,true);weapon.gameObject.SetActive(false);if(tracer!=null)tracer.enabled=false;UpdateWeaponPresentation();return true;
++            if(!Ready||!HasWeapon)return false;round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();if(audioCues!=null)audioCues.Stop();HasWeapon=false;holstered=true;starterPickup=false;weapon.SetParent(content,true);weapon.gameObject.SetActive(false);if(tracer!=null)tracer.enabled=false;UpdateWeaponPresentation();return true;
+         }
+         bool HandAvailable(int hand) { return hand>=0&&hand<=1&&(!haveInputSnapshot||lastInput.Hand(hand).Tracked&&!lastInput.Hand(hand).Reserved); }
+         void AttachWeapon(int hand) {
+@@ -385,7 +385,7 @@
+         public bool EquipOwned(string id,int hand) {
+             int index=Array.IndexOf(weaponIds,ResolveWeaponProfile(id));
+             if(!Ready||index<0||!ownedWeapons.Contains(id)||gameplayPaused||!hadFocus||!HandAvailable(hand)||Health<=0)return false;
+-            if(!round.SelectWeapon(id))return false;round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();activeActionId=id;selectedWeapon=index;if(IsShotgun&&m1014View!=null)m1014View.SynchronizeInstance(round.ActiveSnapshot);AttachWeapon(hand);return true;
++            if(!round.SelectWeapon(id))return false;round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();activeActionId=id;selectedWeapon=index;if(IsShotgun&&m1014View!=null)m1014View.SynchronizeInstance(round.ActiveSnapshot);AttachWeapon(hand);return true;
+         }
+         public bool DropCurrent(Vector3 position,Quaternion rotation) { return HasWeapon&&DropOwned(activeActionId,position,rotation); }
+         public bool DropOwned(string id,Vector3 position,Quaternion rotation) {
+@@ -411,12 +411,12 @@
+         }
+         Transform CreateWorldWeaponVisual(string actionId,int index,Vector3 position,Quaternion rotation) {
+             string profile=ResolveWeaponProfile(actionId);var state=round.ReadWeapon(actionId);
+-            if(profile=="awp")awpView.Present(state,null,false);if(profile=="dt11"){dt11View.SynchronizeInstance(round.ReadDt11Instance(actionId));dt11View.Present(round.ReadDt11Instance(actionId),null,false,0,false);}if(profile=="magnum")magnumView.Present(round.ReadMagnumInstance(actionId),true,false,1,null);
++            if(profile=="awp")awpView.Present(state,null,false);if(profile=="m60")m60View.Present(round.ReadM60Instance(actionId),null,false,false);if(profile=="dt11"){dt11View.SynchronizeInstance(round.ReadDt11Instance(actionId));dt11View.Present(round.ReadDt11Instance(actionId),null,false,0,false);}if(profile=="magnum")magnumView.Present(round.ReadMagnumInstance(actionId),true,false,1,null);
+             if(profile=="m1014"){m1014View.SynchronizeInstance(state);m1014View.Present(state,round.ReadReserve(actionId),false,true,0);}
+             var drop=new GameObject("R23 dropped source instance "+round.WeaponInstanceId(actionId)).transform;drop.SetParent(content,false);drop.position=position;drop.rotation=rotation;
+             foreach(var renderer in weaponModels[index].GetComponentsInChildren<MeshRenderer>(true)) {
+                 if(renderer.name.StartsWith("R23 feedback")||TransientWeaponArt(index,renderer.transform)||renderer.name=="Source live 2x SPR aperture")continue;
+-                bool magazine=magazineParts[index].Contains(renderer);if(magazine&&profile=="s85")continue;if(magazine&&state.Phase!=ReloadPhase.Ready&&state.Phase!=ReloadPhase.NeedsRack)continue;
++                if(profile=="m60"&&!m60View.PartVisible(renderer.transform))continue;bool magazine=magazineParts[index].Contains(renderer);if(magazine&&profile=="s85")continue;if(magazine&&state.Phase!=ReloadPhase.Ready&&state.Phase!=ReloadPhase.NeedsRack)continue;
+                 if(!magazine&&!renderer.enabled&&!(profile=="spr"&&renderer.name.StartsWith("RearOcularGlass/")))continue;
+                 var mesh=renderer.GetComponent<MeshFilter>();if(mesh==null)continue;
+                 // Strip active-instance visual recoil. The actual copy retains only its own
+@@ -427,7 +427,7 @@
+                 visible.layer=18;visible.AddComponent<MeshFilter>().sharedMesh=mesh.sharedMesh;var copy=visible.AddComponent<MeshRenderer>();copy.sharedMaterials=renderer.sharedMaterials;copy.shadowCastingMode=renderer.shadowCastingMode;copy.receiveShadows=renderer.receiveShadows;
+             }
+             R23WeaponInstanceInfo info;if(round.TryReadWeaponInstance(actionId,out info))ApplyGroundRarity(drop,info.Stars);
+-            if(profile=="awp")PresentAwp();if(profile=="dt11")dt11View.SynchronizeInstance(round.Dt11);if(profile=="m1014")m1014View.SynchronizeInstance(round.ReadWeapon(IsShotgun?activeActionId:"m1014"));
++            if(profile=="awp")PresentAwp();if(profile=="m60")PresentM60();if(profile=="dt11")dt11View.SynchronizeInstance(round.Dt11);if(profile=="m1014")m1014View.SynchronizeInstance(round.ReadWeapon(IsShotgun?activeActionId:"m1014"));
+             return drop;
+         }
+         void CreateWorldStarterPickups(){
+@@ -445,7 +445,7 @@
+             if(!initialized)return;if(smawView!=null){smawView.Holster();smawView.ClearProjectiles();}
+             foreach(var drop in droppedWeapons.Values)if(drop.Visual!=null){drop.Visual.gameObject.SetActive(false);Destroy(drop.Visual.gameObject);}droppedWeapons.Clear();ownedWeapons.Clear();ownedWeaponOrder.Clear();foreach(var id in StarterWeaponIds){ownedWeapons.Add(id);ownedWeaponOrder.Add(id);}starterWorldAtHome.Clear();holstered=false;starterPickup=true;pickupRearmRequired[0]=pickupRearmRequired[1]=haveInputSnapshot;primaryHand=1;weapon.gameObject.SetActive(true);
+             lastAcceptedPoseValid=displayedPoseValid=false;LastAcceptedShotActionId=null;LastAcceptedNativeShot=0;ClearImpactMarks();round.Reset();round.EnsureMagnumState("r23-world/magnum");if(!ownedWeapons.Contains(activeActionId))selectedWeapon=Array.IndexOf(weaponIds,"cx4");activeActionId=ActiveWeaponId;round.SelectWeapon(activeActionId);HasWeapon=false;weapon.SetParent(content,true);weapon.position=pickupPosition;weapon.rotation=pickupRotation;weapon.localScale=Vector3.one;ApplyWeaponSelection();
+-            pickupIntentSampled=false;previousReload=previousRestart=previousSelection=previousTrigger=false;sprTrigger.Reset();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();awpControls.Reset();LastShotgunPelletCount=LastShotgunTargetGroups=0;if(tracer!=null)tracer.enabled=false;if(audioCues!=null)audioCues.Stop();
++            pickupIntentSampled=false;previousReload=previousRestart=previousSelection=previousTrigger=false;sprTrigger.Reset();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();LastShotgunPelletCount=LastShotgunTargetGroups=0;if(tracer!=null)tracer.enabled=false;if(audioCues!=null)audioCues.Stop();
+             leftContactDelta=rightContactDelta=Vector3.zero;ApplyFreeHandContactOffsets();
+             foreach(var feedback in feedbackStates)feedback.Reset();instanceFeedback.Clear();ClearFeedbackPresentation();
+             foreach(var target in targets)target.Refresh(round);
+@@ -504,7 +504,7 @@
+         public bool ApplyPlayerGain(float healthGain,float shieldGain) { return Ready&&round!=null&&round.ApplyPlayerGain(healthGain,shieldGain); }
+         public bool TickControls(float dt,bool fire,bool reload) {
+             if(round==null)return false;if(float.IsNaN(dt)||float.IsInfinity(dt)||dt<0||dt>.25f)throw new ArgumentOutOfRangeException("dt");
+-            AdvanceSmawProjectiles(dt);if(IsAwp)return TickAwp(dt,fire,reload);if(IsDt11)return TickDt11(dt,fire,reload);if(IsMelee)return TickKnife(dt);if(IsSmaw)return TickSmaw(dt,fire,reload);
++            AdvanceSmawProjectiles(dt);if(IsM60)return TickM60(dt,fire,reload);if(IsAwp)return TickAwp(dt,fire,reload);if(IsDt11)return TickDt11(dt,fire,reload);if(IsMelee)return TickKnife(dt);if(IsSmaw)return TickSmaw(dt,fire,reload);
+             bool semi=ActiveWeaponId=="spr";
+             if(semi){sprTrigger.Sample(haveInputSnapshot?lastInput.Hand(primaryHand).TriggerReleased:!fire);fire=sprTrigger.Allows(fire);}
+             bool suspended=!Ready||!HasWeapon||!hadFocus||gameplayPaused||presentationSuppressed||inputTrackingUnavailable||weaponHandReserved||!isActiveAndEnabled;
+@@ -593,7 +593,7 @@
+             var device=InputDevices.GetDeviceAtXRNode(hand==0?XRNode.LeftHand:XRNode.RightHand);HapticCapabilities capabilities;
+             if(device.isValid&&device.TryGetHapticCapabilities(out capabilities)&&capabilities.supportsImpulse&&capabilities.numChannels>0)device.SendHapticImpulse(0,amplitude,duration);
+         }
+-        void ClearFeedbackPresentation(){if(awpView!=null)awpView.ClearTransient();displayedPoseValid=false;if(mp9Laser!=null)mp9Laser.Hide();if(gunFeedback!=null)gunFeedback.Hide();if(tracer!=null)tracer.enabled=false;foreach(var line in pelletTracers)line.enabled=false;flashUntil=muzzleFlashUntil=0;foreach(var feedback in feedbackStates)feedback.ClearPresentation();foreach(var feedback in instanceFeedback.Values)feedback.ClearPresentation();foreach(var model in weaponModels){model.localPosition=Vector3.zero;model.localRotation=Quaternion.identity;}}
++        void ClearFeedbackPresentation(){if(m60View!=null)m60View.ClearTransient();if(awpView!=null)awpView.ClearTransient();displayedPoseValid=false;if(mp9Laser!=null)mp9Laser.Hide();if(gunFeedback!=null)gunFeedback.Hide();if(tracer!=null)tracer.enabled=false;foreach(var line in pelletTracers)line.enabled=false;flashUntil=muzzleFlashUntil=0;foreach(var feedback in feedbackStates)feedback.ClearPresentation();foreach(var feedback in instanceFeedback.Values)feedback.ClearPresentation();foreach(var model in weaponModels){model.localPosition=Vector3.zero;model.localRotation=Quaternion.identity;}}
+         // A native fixture may render synchronously before Unity's first LateUpdate.
+         public void RefreshFeedbackPresentation(){LateUpdate();}
+         void LateUpdate()
+@@ -604,8 +604,8 @@
+             if(IsMelee){SyncKnifePresentation();ApplyFreeHandContactOffsets();return;}if(IsSmaw){SyncSmawPresentation();ApplyFreeHandContactOffsets();return;}var feedback=ActiveFeedback;feedback.SetSupported(round.ActiveSnapshot.Supported);if(feedbackAdvancedFrame!=Time.frameCount){feedback.Advance(Mathf.Clamp(Time.unscaledDeltaTime,0,.25f));feedbackAdvancedFrame=Time.frameCount;}
+             if(IsShotgun){float seconds=shotgunPresentedFrame==Time.frameCount?0:Mathf.Clamp(Time.unscaledDeltaTime,0,.25f);shotgunPresentedFrame=Time.frameCount;PresentShotgun(seconds);}
+             RenderDisplayedPose();ApplyFreeHandContactOffsets();
+-            var model=weaponModels[selectedWeapon];gunFeedback.PresentAmmo(model,modelScales[selectedWeapon],Ammo,Reserve,primaryHand==0,true);bool fitted=selectedWeapon>=7,compact=ActiveWeaponId=="ump"||ActiveWeaponId=="p90";float flashScale=fitted?modelScales[selectedWeapon]:1;gunFeedback.PresentFlash(Time.unscaledTime<muzzleFlashUntil,muzzle,(fitted&&compact?.055f:.07f)*flashScale,(fitted&&compact?.015f:.018f)*flashScale);
+-            ResolveDisplayedAim();PresentAwp();PresentDisplayedAim();
++            var model=weaponModels[selectedWeapon];gunFeedback.PresentAmmo(model,modelScales[selectedWeapon],Ammo,Reserve,primaryHand==0,true);bool fitted=selectedWeapon>=7,compact=ActiveWeaponId=="ump"||ActiveWeaponId=="p90";float flashScale=fitted?modelScales[selectedWeapon]:1;gunFeedback.PresentFlash(Time.unscaledTime<muzzleFlashUntil,IsM60&&M60Ready?m60View.Flash:muzzle,(fitted&&compact?.055f:.07f)*flashScale,(fitted&&compact?.015f:.018f)*flashScale);
++            ResolveDisplayedAim();PresentAwp();PresentM60();PresentDisplayedAim();
+         }
+         bool ViewingSight(Vector3 point)
+         {
+@@ -692,7 +692,7 @@
+         void OnEnable(){if(impactMarks!=null){impactMarks.SetVisible(true);impactMarks.SetPaused(gameplayPaused||!hadFocus);}}
+         void OnDisable() { if(impactMarks!=null){impactMarks.SetVisible(false);impactMarks.SetPaused(true);}if(round!=null)round.SuspendActiveWeapon();if(audioCues!=null)audioCues.Stop();UpdateWeaponPresentation(); }
+         void OnDestroy() {
+-            Ready=false;if(awpView!=null)awpView.ClearTransient();if(dt11View!=null)dt11View.ClearTransient();DisposeBladePresentation();if(knifePhysics!=null)knifePhysics.Dispose();if(knifeAudio!=null)knifeAudio.Dispose();Application.onBeforeRender-=RefreshLateTrackedPresentation;
++            Ready=false;if(m60View!=null)m60View.ClearTransient();if(awpView!=null)awpView.ClearTransient();if(dt11View!=null)dt11View.ClearTransient();DisposeBladePresentation();if(knifePhysics!=null)knifePhysics.Dispose();if(knifeAudio!=null)knifeAudio.Dispose();Application.onBeforeRender-=RefreshLateTrackedPresentation;
+             if(mp9Laser!=null){mp9Laser.Dispose();mp9Laser=null;}
+             if(impactMarks!=null){impactMarks.Dispose();impactMarks=null;}
+             if(gunFeedback!=null){gunFeedback.Dispose();gunFeedback=null;}
+--- HandsWeapons/R23HandsWeapons.DisplayedPose.cs
++++ HandsWeapons/R23HandsWeapons.DisplayedPose.cs
+@@ -26,7 +26,7 @@
+         R23ShotPose NeutralGunFrame(){var rotation=SourceAimRotation;return new R23ShotPose(To(weapon.position),To(rotation*Vector3.right),To(rotation*Vector3.up),To(rotation*Vector3.forward));}
+         void RenderDisplayedPose(){
+             if(weapon==null||muzzle==null||selectedWeapon>=weaponModels.Count)return;
+-            if(IsAwp){RenderAwpPose();return;}if(IsMelee){RenderKnifePose();return;}if(IsSmaw){RenderSmawPose();return;}var feedback=ActiveFeedback;feedback.SetSupported(round!=null&&round.ActiveSnapshot.Supported);
++            if(IsAwp){RenderAwpPose();return;}if(IsM60){RenderM60Pose();return;}if(IsMelee){RenderKnifePose();return;}if(IsSmaw){RenderSmawPose();return;}var feedback=ActiveFeedback;feedback.SetSupported(round!=null&&round.ActiveSnapshot.Supported);
+             R23ShotPose model;R23WeaponPoseMath.Resolve(NeutralGunFrame(),To(sourceMuzzles[selectedWeapon]),modelScales[selectedWeapon],feedback.Distance*ActiveRecoilScale,feedback.PitchRadians*ActiveRecoilScale,feedback.YawRadians*ActiveRecoilScale,R23WeaponPoseMath.UprightPulse(ActiveWeaponId),out model,out displayedShot);
+             weaponModels[selectedWeapon].SetPositionAndRotation(From(model.Origin),Quaternion.LookRotation(From(model.Forward),From(model.Up)));
+             // One published unit muzzle drives accepted bullets, reticles, optics, laser and flash.
+@@ -50,8 +50,8 @@
+             Vector3 origin=From(displayedShot.Origin),direction=From(displayedShot.Forward);var feedback=ActiveFeedback;
+             if(mp9Laser!=null)mp9Laser.Present(origin,displayedAimPoint,head.transform.position,From(displayedShot.Right),ActiveWeaponId=="mp9"&&!displayedAimBlocked);
+             bool sight=ViewingSight(displayedAimPoint);
+-            bool visible=!displayedAimBlocked&&ActiveWeaponId!="awp"&&ActiveWeaponId!="spr"&&ActiveWeaponId!="mp9"&&ActiveWeaponId!="s85"&&ReloadStage==Ashfall.Modules.WeaponHandling.ReloadPhase.Ready&&Ammo>0&&!sight;
+-            gunFeedback.PresentReticle(head,displayedAimPoint,direction,feedback.ReticleWidth(round.ActiveSnapshot.Supported),visible,IsMagnum,round.ActiveSnapshot.Supported,IsPelletGun);
++            bool visible=!displayedAimBlocked&&ActiveWeaponId!="awp"&&ActiveWeaponId!="spr"&&ActiveWeaponId!="mp9"&&ActiveWeaponId!="s85"&&(IsM60||ReloadStage==Ashfall.Modules.WeaponHandling.ReloadPhase.Ready&&Ammo>0)&&!sight;
++            gunFeedback.PresentReticle(head,displayedAimPoint,direction,feedback.ReticleWidth(round.ActiveSnapshot.Supported),visible,IsMagnum,round.ActiveSnapshot.Supported,IsPelletGun||IsM60,IsM60,IsM60&&(ReloadStage!=Ashfall.Modules.WeaponHandling.ReloadPhase.Ready||Ammo<=0));
+         }
+     }
+ }
+--- Gallery/R23LobbyWeaponGallery.cs
++++ Gallery/R23LobbyWeaponGallery.cs
+@@ -21,7 +21,7 @@
+     // This component never calls carried gameplay, inventory, health or world-damage mutation APIs.
+     public sealed partial class R23LobbyWeaponGallery:MonoBehaviour
+     {
+-        readonly string[] ids={"mk18","akm","spr","magnum","cx4","px4","m1014","ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85","smaw","knife","katana","excalibur","cyberblade","dt11","awp"};
++        readonly string[] ids={"mk18","akm","spr","magnum","cx4","px4","m1014","ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85","smaw","knife","katana","excalibur","cyberblade","dt11","awp","m60"};
+         readonly Dictionary<string,string> extraFailures=new Dictionary<string,string>();
+         readonly Dictionary<string,R23GalleryModel> models=new Dictionary<string,R23GalleryModel>();
+         readonly List<R23GalleryModel> pendingModels=new List<R23GalleryModel>();
+@@ -37,25 +37,25 @@
+         Vector3 dockPosition;Quaternion dockRotation;int holder=-1;bool initialized,previousReload;float traceUntil,volume=1;string lastStatus="";
+         public bool Ready { get; private set; }
+         public bool Loading {get{return initialized&&!IsWeaponReady(ViewedWeaponId)&&string.IsNullOrEmpty(WeaponFailure(ViewedWeaponId));}}
+-        public bool IsWeaponReady(string id){if(id=="awp")return AwpReady;if(id=="dt11")return Dt11Ready;if(R24MeleeProfiles.ForId(id)!=null)return knifeReady;if(id=="smaw")return SmawReady;if(id=="magnum")return MagnumReady;if(id=="m1014")return M1014Ready;if(id==null)return Ready;return Ready&&models.ContainsKey(id);}
+-        public string WeaponFailure(string id){if(id=="awp")return awpFailure??Failure;if(id=="dt11")return dt11Failure??Failure;if(R24MeleeProfiles.ForId(id)!=null)return knifeFailure??Failure;if(id=="smaw")return smawFailure??Failure;if(id=="magnum")return magnumFailure??Failure;if(id=="m1014")return m1014Failure??Failure;string issue;return id!=null&&extraFailures.TryGetValue(id,out issue)?issue:Failure;}
++        public bool IsWeaponReady(string id){if(id=="m60")return M60Ready;if(id=="awp")return AwpReady;if(id=="dt11")return Dt11Ready;if(R24MeleeProfiles.ForId(id)!=null)return knifeReady;if(id=="smaw")return SmawReady;if(id=="magnum")return MagnumReady;if(id=="m1014")return M1014Ready;if(id==null)return Ready;return Ready&&models.ContainsKey(id);}
++        public string WeaponFailure(string id){if(id=="m60")return m60Failure??Failure;if(id=="awp")return awpFailure??Failure;if(id=="dt11")return dt11Failure??Failure;if(R24MeleeProfiles.ForId(id)!=null)return knifeFailure??Failure;if(id=="smaw")return smawFailure??Failure;if(id=="magnum")return magnumFailure??Failure;if(id=="m1014")return m1014Failure??Failure;string issue;return id!=null&&extraFailures.TryGetValue(id,out issue)?issue:Failure;}
+         public string Failure { get; private set; }
+-        public bool Active { get { return awpSelected?awpSession.Active:dt11Selected?dt11Session.Active:knifeSelected?knifeActive:smawSelected?smawActive:m1014Selected?m1014Session.Active:magnumSelected?magnumSession.Active:session.Active; } }
++        public bool Active { get { return m60Selected?m60Session.Active:awpSelected?awpSession.Active:dt11Selected?dt11Session.Active:knifeSelected?knifeActive:smawSelected?smawActive:m1014Selected?m1014Session.Active:magnumSelected?magnumSession.Active:session.Active; } }
+         public int HoldingHand { get { return holder; } }
+-        public string ViewedWeaponId { get { return awpSelected?"awp":dt11Selected?"dt11":knifeSelected?knifeProfile:smawSelected?"smaw":m1014Selected?R23M1014Definition.Id:magnumSelected?R23MagnumRuntime.Id:session.Definition==null?null:session.Definition.Id; } }
++        public string ViewedWeaponId { get { return m60Selected?"m60":awpSelected?"awp":dt11Selected?"dt11":knifeSelected?knifeProfile:smawSelected?"smaw":m1014Selected?R23M1014Definition.Id:magnumSelected?R23MagnumRuntime.Id:session.Definition==null?null:session.Definition.Id; } }
+         public bool MagnumReady {get{return magnumModel!=null&&magnumModel.Ready;}}
+         public bool MagnumPreviewVisible {get{return magnumModel!=null&&magnumModel.Visible;}}
+         public string MagnumFailure {get{return magnumFailure;}}
+         public bool M1014Ready {get{return m1014Model!=null&&m1014Model.Ready;}}
+         public bool M1014PreviewVisible {get{return m1014Model!=null&&m1014Model.Visible;}}
+-        public int VisiblePreviewCount {get{int count=(AwpVisible?1:0)+(Dt11Visible?1:0);foreach(var model in models.Values)if(model.Root.gameObject.activeInHierarchy)count++;if(MagnumPreviewVisible)count++;if(M1014PreviewVisible)count++;if(SmawVisible)count++;if(KnifeVisible)count++;return count;}}
+-        public string VisiblePreviewId {get{if(VisiblePreviewCount!=1)return null;if(AwpVisible)return "awp";if(Dt11Visible)return "dt11";if(KnifeVisible)return knifeProfile;if(SmawVisible)return "smaw";if(MagnumPreviewVisible)return "magnum";if(M1014PreviewVisible)return "m1014";foreach(var pair in models)if(pair.Value.Root.gameObject.activeInHierarchy)return pair.Key;return null;}}
++        public int VisiblePreviewCount {get{int count=(M60Visible?1:0)+(AwpVisible?1:0)+(Dt11Visible?1:0);foreach(var model in models.Values)if(model.Root.gameObject.activeInHierarchy)count++;if(MagnumPreviewVisible)count++;if(M1014PreviewVisible)count++;if(SmawVisible)count++;if(KnifeVisible)count++;return count;}}
++        public string VisiblePreviewId {get{if(VisiblePreviewCount!=1)return null;if(AwpVisible)return "awp";if(M60Visible)return "m60";if(Dt11Visible)return "dt11";if(KnifeVisible)return knifeProfile;if(SmawVisible)return "smaw";if(MagnumPreviewVisible)return "magnum";if(M1014PreviewVisible)return "m1014";foreach(var pair in models)if(pair.Value.Root.gameObject.activeInHierarchy)return pair.Key;return null;}}
+         public string[] AvailableWeaponIds { get { return (string[])ids.Clone(); } }
+         public event Action<string> ViewedWeaponChanged;
+         public event Action<bool> ActiveChanged;
+         public event Action<int,bool> HoldingChanged;
+         public event Action<R23GalleryViewState> ViewStateChanged;
+-        public R23GalleryViewState ViewState { get {if(awpSelected)return AwpState;if(dt11Selected)return Dt11State;if(knifeSelected)return KnifeState;if(smawSelected)return SmawState;
++        public R23GalleryViewState ViewState { get {if(m60Selected)return M60State;if(awpSelected)return AwpState;if(dt11Selected)return Dt11State;if(knifeSelected)return KnifeState;if(smawSelected)return SmawState;
+             if(m1014Selected)
+             {
+                 var owner=m1014Session.Owner;string issue=m1014Failure??Failure,message=issue;
+@@ -80,7 +80,7 @@
+             trace=new GameObject("Source harmless preview097 trace").AddComponent<LineRenderer>();trace.transform.SetParent(content,false);trace.positionCount=2;trace.useWorldSpace=true;trace.startWidth=.0025f;trace.endWidth=.0025f;
+             traceMaterial=new Material(Shader.Find("Universal Render Pipeline/Unlit"));traceMaterial.SetColor("_BaseColor",new Color(1,.894f,.627f));trace.sharedMaterial=traceMaterial;trace.enabled=false;StartCoroutine(LoadSafely());
+         }
+-        IEnumerator LoadAll(){foreach(string id in new[]{"mk18","akm","spr"}){var model=new R23GalleryModel(SourceRifleDefinition.ForId(id),content);models.Add(id,model);yield return model.Load(visuals,head,content,Clear,volume,Nearest);model.Hide();}visuals.ReleaseLoadedBytes();Ready=true;if(Active)DisplayDock();Publish();yield return LoadMagnum();yield return LoadExtra("cx4");yield return LoadExtra("px4");yield return LoadM1014();foreach(string id in new[]{"ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85"})yield return LoadExtra(id);yield return LoadSmawGallerySafely();yield return LoadKnifeGallerySafely();yield return LoadDt11GallerySafely();yield return LoadAwpGallerySafely();}
++        IEnumerator LoadAll(){foreach(string id in new[]{"mk18","akm","spr"}){var model=new R23GalleryModel(SourceRifleDefinition.ForId(id),content);models.Add(id,model);yield return model.Load(visuals,head,content,Clear,volume,Nearest);model.Hide();}visuals.ReleaseLoadedBytes();Ready=true;if(Active)DisplayDock();Publish();yield return LoadMagnum();yield return LoadExtra("cx4");yield return LoadExtra("px4");yield return LoadM1014();foreach(string id in new[]{"ump","p90","mp5","mp9","1911","tec9","rfb","fal","s85"})yield return LoadExtra(id);yield return LoadSmawGallerySafely();yield return LoadKnifeGallerySafely();yield return LoadDt11GallerySafely();yield return LoadAwpGallerySafely();yield return LoadM60GallerySafely();}
+         IEnumerator LoadMagnum()
+         {
+             var jobs=new Stack<IEnumerator>();
+@@ -129,19 +129,19 @@
+         public bool Show(string id) {
+             if(!initialized)throw new InvalidOperationException("Initialize gallery first");if(id!="dt11"&&R24MeleeProfiles.ForId(id)==null&&id!="smaw"&&id!="magnum"&&id!="m1014"&&SourceRifleDefinition.ForId(id)==null){Hide();return false;}if(Active&&ViewedWeaponId==id)return true;
+             bool wasActive=Active;Release();foreach(var model in models.Values)model.Hide();if(magnumModel!=null)magnumModel.Hide();if(m1014Model!=null)m1014Model.Hide();
+-            awpSelected=id=="awp";awpSession.Hide();if(awpSelected)awpSession.Show();if(awpRoot!=null)awpRoot.gameObject.SetActive(false);dt11Selected=id=="dt11";dt11Session.Hide();if(dt11Selected)dt11Session.Show();if(dt11Root!=null)dt11Root.gameObject.SetActive(false);knifeSelected=R24MeleeProfiles.ForId(id)!=null;if(knifeSelected){knifeProfile=id;knifeRoot=knifeRoots.ContainsKey(id)?knifeRoots[id]:null;}knifeActive=knifeSelected;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawSelected=id=="smaw";smawActive=smawSelected;if(smawDock!=null)smawDock.gameObject.SetActive(false);magnumSelected=id=="magnum";m1014Selected=id=="m1014";session.Hide();magnumSession.Hide();m1014Session.Hide();if(awpSelected){}else if(dt11Selected){}else if(knifeSelected){}else if(smawSelected){smawShots=0;}else if(m1014Selected)m1014Session.Show();else if(magnumSelected)magnumSession.Show();else if(!session.Show(id))return false;
++            awpSelected=id=="awp";awpSession.Hide();if(awpSelected)awpSession.Show();if(awpRoot!=null)awpRoot.gameObject.SetActive(false);m60Selected=id=="m60";m60Session.Hide();if(m60Selected)m60Session.Show();if(m60Root!=null)m60Root.gameObject.SetActive(false);dt11Selected=id=="dt11";dt11Session.Hide();if(dt11Selected)dt11Session.Show();if(dt11Root!=null)dt11Root.gameObject.SetActive(false);knifeSelected=R24MeleeProfiles.ForId(id)!=null;if(knifeSelected){knifeProfile=id;knifeRoot=knifeRoots.ContainsKey(id)?knifeRoots[id]:null;}knifeActive=knifeSelected;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawSelected=id=="smaw";smawActive=smawSelected;if(smawDock!=null)smawDock.gameObject.SetActive(false);magnumSelected=id=="magnum";m1014Selected=id=="m1014";session.Hide();magnumSession.Hide();m1014Session.Hide();if(m60Selected){}else if(awpSelected){}else if(dt11Selected){}else if(knifeSelected){}else if(smawSelected){smawShots=0;}else if(m1014Selected)m1014Session.Show();else if(magnumSelected)magnumSession.Show();else if(!session.Show(id))return false;
+             Vector3 forward=head.transform.forward;Vector3 up=U(R23GalleryRules.ViewUp(F(forward)));dockPosition=head.transform.position+U(R23GalleryRules.DockOffset(F(forward)));dockRotation=Quaternion.LookRotation(forward,up)*Quaternion.AngleAxis(R23GalleryRules.UnityYawDegrees,Vector3.up);
+             previousGrip[0]=previousGrip[1]=true;previousReload=true;if(Ready)DisplayDock();if(!wasActive&&ActiveChanged!=null)ActiveChanged(true);if(ViewedWeaponChanged!=null)ViewedWeaponChanged(id);Publish();return true;
+         }
+-        public void Hide(){bool wasActive=Active;Release();awpSession.Hide();if(awpRoot!=null)awpRoot.gameObject.SetActive(false);dt11Session.Hide();if(dt11Root!=null)dt11Root.gameObject.SetActive(false);knifeActive=false;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawActive=false;if(smawDock!=null)smawDock.gameObject.SetActive(false);session.Hide();magnumSession.Hide();m1014Session.Hide();foreach(var model in models.Values)model.Hide();if(magnumModel!=null)magnumModel.Hide();if(m1014Model!=null)m1014Model.Hide();ClearTraces();if(wasActive&&ActiveChanged!=null)ActiveChanged(false);if(wasActive&&ViewedWeaponChanged!=null)ViewedWeaponChanged(null);Publish();}
+-        void DisplayDock(){if(awpSelected){DockAwp();return;}if(dt11Selected){DockDt11();return;}if(knifeSelected){DockKnife();return;}if(smawSelected){DockSmaw();return;}if(m1014Selected){if(M1014Ready)m1014Model.Dock(content,dockPosition,dockRotation);return;}if(magnumSelected){if(MagnumReady)magnumModel.Dock(content,dockPosition,dockRotation);return;}R23GalleryModel model;if(ViewedWeaponId!=null&&models.TryGetValue(ViewedWeaponId,out model))model.Dock(content,dockPosition,dockRotation);}
+-        void Release(){int hand=holder;ReleaseAwp();ReleaseDt11();ReleaseKnife();ReleaseSmaw();session.Release();magnumSession.Release();m1014Session.Release();ClearTraces();holder=-1;if(Ready&&Active)DisplayDock();if(hand>=0&&HoldingChanged!=null)HoldingChanged(hand,false);}
+-        public void SetSfxVolume(float value){if(float.IsNaN(value)||float.IsInfinity(value))throw new ArgumentOutOfRangeException("value");volume=Mathf.Clamp01(value);foreach(var model in models.Values)model.SetVolume(volume);if(magnumModel!=null)magnumModel.SetVolume(volume);if(m1014Model!=null)m1014Model.SetVolume(volume);if(smawPreview!=null)smawPreview.SetSfxVolume(volume);if(knifeAudio!=null)knifeAudio.SetVolume(volume);if(dt11Audio!=null)dt11Audio.SetSfxVolume(volume);if(awpAudio!=null)awpAudio.SetSfxVolume(volume);}
++        public void Hide(){bool wasActive=Active;Release();m60Session.Hide();if(m60Root!=null)m60Root.gameObject.SetActive(false);awpSession.Hide();if(awpRoot!=null)awpRoot.gameObject.SetActive(false);dt11Session.Hide();if(dt11Root!=null)dt11Root.gameObject.SetActive(false);knifeActive=false;if(knifeRoot!=null)knifeRoot.gameObject.SetActive(false);smawActive=false;if(smawDock!=null)smawDock.gameObject.SetActive(false);session.Hide();magnumSession.Hide();m1014Session.Hide();foreach(var model in models.Values)model.Hide();if(magnumModel!=null)magnumModel.Hide();if(m1014Model!=null)m1014Model.Hide();ClearTraces();if(wasActive&&ActiveChanged!=null)ActiveChanged(false);if(wasActive&&ViewedWeaponChanged!=null)ViewedWeaponChanged(null);Publish();}
++        void DisplayDock(){if(m60Selected){DockM60();return;}if(awpSelected){DockAwp();return;}if(dt11Selected){DockDt11();return;}if(knifeSelected){DockKnife();return;}if(smawSelected){DockSmaw();return;}if(m1014Selected){if(M1014Ready)m1014Model.Dock(content,dockPosition,dockRotation);return;}if(magnumSelected){if(MagnumReady)magnumModel.Dock(content,dockPosition,dockRotation);return;}R23GalleryModel model;if(ViewedWeaponId!=null&&models.TryGetValue(ViewedWeaponId,out model))model.Dock(content,dockPosition,dockRotation);}
++        void Release(){int hand=holder;ReleaseM60();ReleaseAwp();ReleaseDt11();ReleaseKnife();ReleaseSmaw();session.Release();magnumSession.Release();m1014Session.Release();ClearTraces();holder=-1;if(Ready&&Active)DisplayDock();if(hand>=0&&HoldingChanged!=null)HoldingChanged(hand,false);}
++        public void SetSfxVolume(float value){if(float.IsNaN(value)||float.IsInfinity(value))throw new ArgumentOutOfRangeException("value");volume=Mathf.Clamp01(value);foreach(var model in models.Values)model.SetVolume(volume);if(magnumModel!=null)magnumModel.SetVolume(volume);if(m1014Model!=null)m1014Model.SetVolume(volume);if(smawPreview!=null)smawPreview.SetSfxVolume(volume);if(knifeAudio!=null)knifeAudio.SetVolume(volume);if(dt11Audio!=null)dt11Audio.SetSfxVolume(volume);if(m60Audio!=null)m60Audio.SetSfxVolume(volume);if(awpAudio!=null)awpAudio.SetSfxVolume(volume);}
+         public bool Sample(float seconds,R23HandsInputFrame input,bool focused=true,int primaryHand=1){return Sample(seconds,input.Snapshot,focused,primaryHand);}
+         public bool Sample(float seconds,R23HandsInputSnapshot input,bool focused=true,int primaryHand=1) {
+             if(float.IsNaN(seconds)||float.IsInfinity(seconds)||seconds<0||seconds>.25f||primaryHand<0||primaryHand>1)throw new ArgumentOutOfRangeException("seconds/primaryHand");
+             if(!Active||!Ready||!IsWeaponReady(ViewedWeaponId)){previousGrip[0]=input.Left.GripHeld;previousGrip[1]=input.Right.GripHeld;return false;}
+-            if(awpSelected)return SampleAwp(seconds,input,focused,primaryHand);if(dt11Selected)return SampleDt11(seconds,input,focused,primaryHand);
++            if(awpSelected)return SampleAwp(seconds,input,focused,primaryHand);if(m60Selected)return SampleM60(seconds,input,focused,primaryHand);if(dt11Selected)return SampleDt11(seconds,input,focused,primaryHand);
+             if(knifeSelected)return SampleKnife(seconds,input,focused,primaryHand);
+             if(smawSelected)return SampleSmaw(seconds,input,focused,primaryHand);
+             if(m1014Selected)return SampleM1014(seconds,input,focused,primaryHand);
+@@ -223,7 +223,7 @@
+         void Publish(){var state=ViewState;string key=state.WeaponId+"|"+state.Status+"|"+state.HoldingHand+"|"+state.PreviewShots+"|"+state.ScopeActive;if(key==lastStatus)return;lastStatus=key;if(ViewStateChanged!=null)ViewStateChanged(state);}
+         void Update(){if(Time.unscaledTime>=traceUntil)ClearTraces();}
+         void OnDisable(){if(initialized)Hide();}
+-        void OnDestroy(){StopAllCoroutines();DisposeAwp();DisposeDt11();ReleaseKnife();DisposeKnifeGallery();if(knifeAudio!=null)knifeAudio.Dispose();ReleaseSmaw();session.Hide();magnumSession.Hide();m1014Session.Hide();if(m1014Model!=null)m1014Model.Dispose();if(magnumModel!=null)magnumModel.Dispose();foreach(var model in pendingModels)model.Dispose();pendingModels.Clear();foreach(var model in models.Values)model.Dispose();if(visuals!=null)visuals.Dispose();if(content!=null)Destroy(content.gameObject);if(traceMaterial!=null)Destroy(traceMaterial);}
++        void OnDestroy(){StopAllCoroutines();DisposeM60();DisposeAwp();DisposeDt11();ReleaseKnife();DisposeKnifeGallery();if(knifeAudio!=null)knifeAudio.Dispose();ReleaseSmaw();session.Hide();magnumSession.Hide();m1014Session.Hide();if(m1014Model!=null)m1014Model.Dispose();if(magnumModel!=null)magnumModel.Dispose();foreach(var model in pendingModels)model.Dispose();pendingModels.Clear();foreach(var model in models.Values)model.Dispose();if(visuals!=null)visuals.Dispose();if(content!=null)Destroy(content.gameObject);if(traceMaterial!=null)Destroy(traceMaterial);}
+         static Float3 F(Vector3 value){return new Float3(value.x,value.y,value.z);}static Vector3 U(Float3 value){return new Vector3(value.X,value.Y,value.Z);}
+     }
+ }
+--- HandsWeapons/R23RoundState.cs
++++ HandsWeapons/R23RoundState.cs
+@@ -27,8 +27,8 @@
+         public R23M1014Volley LastM1014Volley {get;private set;}
+         public string ActiveWeaponId {get{return sourceLoadout?selectedRifle:"service_rifle";}}
+         public string ActiveActionId {get{return sourceLoadout?selectedAction:"service_rifle";}}
+-        public HandlingSnapshot ActiveSnapshot {get{return selectedRifle=="awp"?Awp.Snapshot:selectedRifle=="dt11"?Dt11.Snapshot:R24MeleeProfiles.ForId(selectedRifle)!=null?Melee.Snapshot:selectedRifle=="smaw"?Smaw.HandlingSnapshot:selectedRifle=="m1014"&&M1014!=null?M1014.Snapshot:selectedRifle=="magnum"&&Magnum!=null?Magnum.Snapshot:Rifle.Snapshot;}}
+-        public int ActiveLoaded {get{return selectedRifle=="awp"?Awp.Snapshot.Loaded:selectedRifle=="dt11"?(Dt11.Snapshot.Phase==ReloadPhase.NeedsRack?Dt11.Snapshot.Seated:Dt11.Snapshot.Loaded):R24MeleeProfiles.ForId(selectedRifle)!=null?0:selectedRifle=="smaw"?Smaw.Loaded:selectedRifle=="m1014"&&M1014!=null?(M1014.Snapshot.Phase==ReloadPhase.NeedsRack?M1014.Snapshot.Seated:M1014.Snapshot.Loaded):selectedRifle=="magnum"&&Magnum!=null?Magnum.Loaded:Rifle.LoadedRounds;}}
++        public HandlingSnapshot ActiveSnapshot {get{return selectedRifle=="m60"?M60.Snapshot:selectedRifle=="awp"?Awp.Snapshot:selectedRifle=="dt11"?Dt11.Snapshot:R24MeleeProfiles.ForId(selectedRifle)!=null?Melee.Snapshot:selectedRifle=="smaw"?Smaw.HandlingSnapshot:selectedRifle=="m1014"&&M1014!=null?M1014.Snapshot:selectedRifle=="magnum"&&Magnum!=null?Magnum.Snapshot:Rifle.Snapshot;}}
++        public int ActiveLoaded {get{return selectedRifle=="m60"?M60.Loaded:selectedRifle=="awp"?Awp.Snapshot.Loaded:selectedRifle=="dt11"?(Dt11.Snapshot.Phase==ReloadPhase.NeedsRack?Dt11.Snapshot.Seated:Dt11.Snapshot.Loaded):R24MeleeProfiles.ForId(selectedRifle)!=null?0:selectedRifle=="smaw"?Smaw.Loaded:selectedRifle=="m1014"&&M1014!=null?(M1014.Snapshot.Phase==ReloadPhase.NeedsRack?M1014.Snapshot.Seated:M1014.Snapshot.Loaded):selectedRifle=="magnum"&&Magnum!=null?Magnum.Loaded:Rifle.LoadedRounds;}}
+         public int ActiveCapacity {get{R23WeaponInstanceInfo info;return instances.TryGetValue(selectedAction,out info)?info.Capacity:Rifle.MagazineCapacity;}}
+         public int ActiveReserve {get{return ReadReserve(selectedAction);}}
+         public string ActiveInstanceId {get{return sourceLoadout?instances[selectedAction].InstanceId:Rifle.InstanceId;}}
+@@ -36,7 +36,7 @@
+         public bool TryReadWeaponInstance(string actionId,out R23WeaponInstanceInfo info){info=null;return actionId!=null&&instances.TryGetValue(actionId,out info);}
+         public string[] WeaponActionIds {get{return instanceOrder.ToArray();}}
+         // Construction is the sole initial magazine entitlement. Custody changes retain it.
+-        public void SetGripToggle(bool enabled){gripToggle=enabled;foreach(var rifle in rifles.Values)rifle.GripToggle=enabled;foreach(var magnum in magnums.Values)magnum.GripToggle=enabled;foreach(var shotgun in shotguns.Values)shotgun.GripToggle=enabled;foreach(var dt in dt11s.Values)dt.GripToggle=enabled;foreach(var awp in awps.Values)awp.GripToggle=enabled;}
++        public void SetGripToggle(bool enabled){gripToggle=enabled;foreach(var rifle in rifles.Values)rifle.GripToggle=enabled;foreach(var magnum in magnums.Values)magnum.GripToggle=enabled;foreach(var shotgun in shotguns.Values)shotgun.GripToggle=enabled;foreach(var dt in dt11s.Values)dt.GripToggle=enabled;foreach(var m60 in m60s.Values)m60.GripToggle=enabled;foreach(var awp in awps.Values)awp.GripToggle=enabled;}
+         public bool TryReadAmmoReserveFamily(string family,out int available){available=0;IRevisionedAmmoReserve reserve;if(!sourceLoadout||family==null||!reserves.TryGetValue(family,out reserve))return false;available=reserve.Available;return true;}
+         public int ApplyReserveSupply(string eventId,string family,int requested){IRevisionedAmmoReserve reserve;if(retiredRound||string.IsNullOrEmpty(eventId)||eventId.Length>256||requested<=0||family==null||appliedSupplyEvents.Contains(eventId)||!reserves.TryGetValue(family,out reserve))return 0;int accepted=reserve.Refund(requested);if(accepted>0)appliedSupplyEvents.Add(eventId);return accepted;}
+         public int WithdrawReserveSupply(string family,int requested){IRevisionedAmmoReserve reserve;return retiredRound||requested<=0||family==null||!reserves.TryGetValue(family,out reserve)?0:reserve.Take(requested);}
+@@ -48,16 +48,16 @@
+             var definition=SourceRifleDefinition.ForId(profile);if(definition==null&&profile!="magnum"&&profile!="dt11"&&profile!="m1014"&&profile!="smaw"&&R24MeleeProfiles.ForId(profile)==null)return false;
+             if(profile=="dt11"){dt11s.Add(actionId,new R24Dt11Owner(Command(),nativeId,reserves["shells"],this,stats.SpreadScale));dt11s[actionId].GripToggle=gripToggle;instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;}if(R24MeleeProfiles.ForId(profile)!=null){knives.Add(actionId,profile=="knife"?(R24MeleeRuntime)new R24KnifeRuntime(nativeId):new R24MeleeRuntime(nativeId,R24MeleeProfiles.ForId(profile)));instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;}if(profile=="smaw"){smaws.Add(actionId,new R24SmawRuntime(nativeId,stars));instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;}
+             string family=profile=="magnum"?"pistol":profile=="m1014"?"shells":definition.AmmoFamily;IRevisionedAmmoReserve reserve;if(!reserves.TryGetValue(family,out reserve))return false;
+-            if(profile=="awp")awps.Add(actionId,new R24AwpOwner(Command(),nativeId,reserve,this));else if(profile=="magnum")magnums.Add(actionId,new R23MagnumRuntime(reserve,nativeId,stats.Capacity,stars));
++            if(profile=="awp")awps.Add(actionId,new R24AwpOwner(Command(),nativeId,reserve,this));else if(profile=="m60")m60s.Add(actionId,new R24M60Owner(Command(),nativeId,reserve,this,stars));else if(profile=="magnum")magnums.Add(actionId,new R23MagnumRuntime(reserve,nativeId,stats.Capacity,stars));
+             else if(profile=="m1014")shotguns.Add(actionId,new R23M1014Owner(Command(),nativeId,reserve,this,stats.SpreadScale));
+             else rifles.Add(actionId,new LocalRifleSandbox(new string[0],query,definition.WithRarity(stats.Capacity,stats.BodyDamage,stats.HeadDamage),reserve,nativeId));
+             LocalRifleSandbox configuredRifle;R23MagnumRuntime configuredMagnum;R23M1014Owner configuredShotgun;if(rifles.TryGetValue(actionId,out configuredRifle))configuredRifle.GripToggle=gripToggle;if(magnums.TryGetValue(actionId,out configuredMagnum))configuredMagnum.GripToggle=gripToggle;if(shotguns.TryGetValue(actionId,out configuredShotgun))configuredShotgun.GripToggle=gripToggle;
+-            R24AwpOwner configuredAwp;if(awps.TryGetValue(actionId,out configuredAwp))configuredAwp.GripToggle=gripToggle;instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;
++            R24AwpOwner configuredAwp;if(awps.TryGetValue(actionId,out configuredAwp))configuredAwp.GripToggle=gripToggle;R24M60Owner configuredM60;if(m60s.TryGetValue(actionId,out configuredM60))configuredM60.GripToggle=gripToggle;instances.Add(actionId,new R23WeaponInstanceInfo(actionId,nativeId,profile,stars,stats));instanceOrder.Add(actionId);usedActions.Add(actionId);usedNativeIds.Add(nativeId);return true;
+         }
+-        public bool RetireWeaponInstance(string actionId){if(actionId==null||actionId==selectedAction||!instances.ContainsKey(actionId))return false;R24Dt11Owner dt;if(dt11s.TryGetValue(actionId,out dt)){dt.Retire();dt11s.Remove(actionId);}R24MeleeRuntime knife;if(knives.TryGetValue(actionId,out knife)){knife.Retire();knives.Remove(actionId);}R24SmawRuntime smaw;if(smaws.TryGetValue(actionId,out smaw)){smaw.Retire();smaws.Remove(actionId);}LocalRifleSandbox rifle;R23MagnumRuntime magnum;R23M1014Owner shotgun;if(rifles.TryGetValue(actionId,out rifle)){rifle.Retire();rifles.Remove(actionId);}if(magnums.TryGetValue(actionId,out magnum)){magnum.Retire();magnums.Remove(actionId);}if(shotguns.TryGetValue(actionId,out shotgun)){shotgun.Retire();shotguns.Remove(actionId);}R24AwpOwner removedAwp;if(awps.TryGetValue(actionId,out removedAwp)){removedAwp.Retire();awps.Remove(actionId);}instances.Remove(actionId);instanceOrder.Remove(actionId);return true;}
++        public bool RetireWeaponInstance(string actionId){if(actionId==null||actionId==selectedAction||!instances.ContainsKey(actionId))return false;R24Dt11Owner dt;if(dt11s.TryGetValue(actionId,out dt)){dt.Retire();dt11s.Remove(actionId);}R24MeleeRuntime knife;if(knives.TryGetValue(actionId,out knife)){knife.Retire();knives.Remove(actionId);}R24SmawRuntime smaw;if(smaws.TryGetValue(actionId,out smaw)){smaw.Retire();smaws.Remove(actionId);}LocalRifleSandbox rifle;R23MagnumRuntime magnum;R23M1014Owner shotgun;if(rifles.TryGetValue(actionId,out rifle)){rifle.Retire();rifles.Remove(actionId);}if(magnums.TryGetValue(actionId,out magnum)){magnum.Retire();magnums.Remove(actionId);}if(shotguns.TryGetValue(actionId,out shotgun)){shotgun.Retire();shotguns.Remove(actionId);}R24AwpOwner removedAwp;if(awps.TryGetValue(actionId,out removedAwp)){removedAwp.Retire();awps.Remove(actionId);}R24M60Owner removedM60;if(m60s.TryGetValue(actionId,out removedM60)){removedM60.Retire();m60s.Remove(actionId);}instances.Remove(actionId);instanceOrder.Remove(actionId);return true;}
+         public bool EnsureMagnumState(string stableId){if(!sourceLoadout||string.IsNullOrEmpty(stableId)||stableId.Length>128)return false;R23WeaponInstanceInfo info;if(instances.TryGetValue("magnum",out info))return info.InstanceId==stableId;if(!RegisterWeaponInstance("magnum","magnum",1,stableId))return false;magnumInstanceId=stableId;return true;}
+         public void SuspendActiveWeapon(){LastDt11Volley=null;LastM1014Volley=null;if(!sourceLoadout){if(Rifle!=null)Rifle.SuspendControls();}else SuspendWeapon(selectedAction);pendingShot=false;}
+-        public void Retire(){retiredRound=true;foreach(var awp in awps.Values)awp.Retire();foreach(var dt in dt11s.Values)dt.Retire();foreach(var weapon in rifles.Values)weapon.Retire();if(!sourceLoadout&&Rifle!=null)Rifle.Retire();foreach(var weapon in magnums.Values)weapon.Retire();foreach(var weapon in shotguns.Values)weapon.Retire();foreach(var weapon in smaws.Values)weapon.Retire();foreach(var weapon in knives.Values)weapon.Retire();LastM1014Volley=null;pendingShot=false;}
++        public void Retire(){retiredRound=true;LastM60Shot=null;foreach(var m60 in m60s.Values)m60.Retire();foreach(var awp in awps.Values)awp.Retire();foreach(var dt in dt11s.Values)dt.Retire();foreach(var weapon in rifles.Values)weapon.Retire();if(!sourceLoadout&&Rifle!=null)Rifle.Retire();foreach(var weapon in magnums.Values)weapon.Retire();foreach(var weapon in shotguns.Values)weapon.Retire();foreach(var weapon in smaws.Values)weapon.Retire();foreach(var weapon in knives.Values)weapon.Retire();LastM1014Volley=null;pendingShot=false;}
+         HealthService health;
+         long sequence;
+         double now;
+@@ -79,13 +79,13 @@
+         public bool TeamChangesAllowed { get { return false; } }
+         public bool TryGetPose(string id,out RescuePose pose) { pose=currentPaddlePose;if(id=="player")return havePaddlePose;R24ReviveTarget contact;if(!reviveContacts.TryGetValue(id,out contact))return false;pose=new RescuePose{Tracked=true,Chest=R23WeaponPoseMath.Scale(R23WeaponPoseMath.Add(contact.LeftPad,contact.RightPad),.5f)};return true; }
+         public void Reset() {
+-            Retire();awps.Clear();LastAwpShot=null;havePaddlePose=false;reviveContacts.Clear();appliedSupplyEvents.Clear();rifles.Clear();magnums.Clear();shotguns.Clear();smaws.Clear();knives.Clear();dt11s.Clear();LastDt11Volley=null;instances.Clear();usedActions.Clear();usedNativeIds.Clear();instanceOrder.Clear();reserves.Clear();retiredRound=false;LastM1014Volley=null;
++            Retire();m60s.Clear();LastM60Shot=null;awps.Clear();LastAwpShot=null;havePaddlePose=false;reviveContacts.Clear();appliedSupplyEvents.Clear();rifles.Clear();magnums.Clear();shotguns.Clear();smaws.Clear();knives.Clear();dt11s.Clear();LastDt11Volley=null;instances.Clear();usedActions.Clear();usedNativeIds.Clear();instanceOrder.Clear();reserves.Clear();retiredRound=false;LastM1014Volley=null;
+             now=0;sequence=0;Hits=0;pendingShot=false;practice.Clear();
+             if(sourceLoadout){
+                 reserves.Add("rifle",new R23RifleReserve());reserves.Add("sniper",new R23RifleReserve());reserves.Add("smg",new R23RifleReserve(1200));reserves.Add("pistol",R23MagnumRuntime.CreatePistolReserve());reserves.Add("shells",new R23RifleReserve(480));
+                 foreach(var definition in SourceRifleDefinition.All)RegisterWeaponInstance(definition.Id,definition.Id,1,"r23-loadout/"+definition.Id);
+                 RegisterWeaponInstance("m1014","m1014",1,"r23-loadout/m1014");RegisterWeaponInstance("dt11","dt11",1,"r24-loadout/dt11");RegisterWeaponInstance("smaw","smaw",1,"r24-loadout/smaw");RegisterWeaponInstance("knife","knife",1,"r24-loadout/knife");foreach(var blade in new[]{"katana","excalibur","cyberblade"})RegisterWeaponInstance(blade,blade,1,"r24-loadout/"+blade);if(magnumInstanceId!=null)EnsureMagnumState(magnumInstanceId);
+-                if(!instances.ContainsKey(selectedRifle))selectedRifle="mk18";selectedAction=selectedRifle;Rifle=rifles[selectedRifle=="awp"||selectedRifle=="magnum"||selectedRifle=="dt11"||selectedRifle=="m1014"||selectedRifle=="smaw"||R24MeleeProfiles.ForId(selectedRifle)!=null?"mk18":selectedRifle];
++                if(!instances.ContainsKey(selectedRifle))selectedRifle="mk18";selectedAction=selectedRifle;Rifle=rifles[selectedRifle=="m60"||selectedRifle=="awp"||selectedRifle=="magnum"||selectedRifle=="dt11"||selectedRifle=="m1014"||selectedRifle=="smaw"||R24MeleeProfiles.ForId(selectedRifle)!=null?"mk18":selectedRifle];
+             }else Rifle=new LocalRifleSandbox(new string[0],query);
+             health=new HealthService("r23-player",0,0,false,this,this,query,60,5,0);
+             health.Register(Command(),"player",-1,false);
+@@ -97,13 +97,14 @@
+             return Step(dt,new HandlingInput{Enabled=true,PrimaryTracked=true,SupportTracked=true,Desktop=true,Trigger=trigger},reload,paused);
+         }
+         public bool SelectWeapon(string id){R23WeaponInstanceInfo info;if(!sourceLoadout||id==null||!instances.TryGetValue(id,out info))return false;if(selectedAction==id)return true;SuspendActiveWeapon();selectedAction=id;selectedRifle=info.ProfileId;LocalRifleSandbox next;if(rifles.TryGetValue(id,out next))Rifle=next;SuspendActiveWeapon();return true;}
+-        public HandlingSnapshot ReadWeapon(string id){R24AwpOwner awp;if(id!=null&&awps.TryGetValue(id,out awp))return awp.Snapshot;R24Dt11Owner dt;if(id!=null&&dt11s.TryGetValue(id,out dt))return dt.Snapshot;R24MeleeRuntime knife;if(id!=null&&knives.TryGetValue(id,out knife))return knife.Snapshot;R24SmawRuntime smaw;if(id!=null&&smaws.TryGetValue(id,out smaw))return smaw.HandlingSnapshot;R23MagnumRuntime magnum;R23M1014Owner shotgun;LocalRifleSandbox rifle;if(id!=null&&magnums.TryGetValue(id,out magnum))return magnum.Snapshot;if(id!=null&&shotguns.TryGetValue(id,out shotgun))return shotgun.Snapshot;if(id!=null&&rifles.TryGetValue(id,out rifle))return rifle.Snapshot;throw new ArgumentException("Unknown source weapon instance");}
++        public HandlingSnapshot ReadWeapon(string id){R24M60Owner m60;if(id!=null&&m60s.TryGetValue(id,out m60))return m60.Snapshot;R24AwpOwner awp;if(id!=null&&awps.TryGetValue(id,out awp))return awp.Snapshot;R24Dt11Owner dt;if(id!=null&&dt11s.TryGetValue(id,out dt))return dt.Snapshot;R24MeleeRuntime knife;if(id!=null&&knives.TryGetValue(id,out knife))return knife.Snapshot;R24SmawRuntime smaw;if(id!=null&&smaws.TryGetValue(id,out smaw))return smaw.HandlingSnapshot;R23MagnumRuntime magnum;R23M1014Owner shotgun;LocalRifleSandbox rifle;if(id!=null&&magnums.TryGetValue(id,out magnum))return magnum.Snapshot;if(id!=null&&shotguns.TryGetValue(id,out shotgun))return shotgun.Snapshot;if(id!=null&&rifles.TryGetValue(id,out rifle))return rifle.Snapshot;throw new ArgumentException("Unknown source weapon instance");}
+         public string WeaponInstanceId(string id){R23WeaponInstanceInfo info;if(id==null||!instances.TryGetValue(id,out info))throw new ArgumentException("Unknown source weapon instance");return info.InstanceId;}
+         public int ReadReserve(string id){if(!sourceLoadout)return Rifle.Reserve;R23WeaponInstanceInfo info;if(id==null||!instances.TryGetValue(id,out info))throw new ArgumentException("Unknown source weapon instance");if(knives.ContainsKey(id))return 0;if(dt11s.ContainsKey(id))return reserves["shells"].Available;R24SmawRuntime smaw;if(smaws.TryGetValue(id,out smaw))return smaw.Reloads;string family=info.ProfileId=="magnum"?"pistol":info.ProfileId=="m1014"?"shells":SourceRifleDefinition.ForId(info.ProfileId).AmmoFamily;return reserves[family].Available;}
+-        public bool SuspendWeapon(string id){LocalRifleSandbox rifle;R23MagnumRuntime magnum;R23M1014Owner shotgun;if(id==null)return false;bool found=false;R24AwpOwner awp;if(awps.TryGetValue(id,out awp)){awp.SuspendControls();found=true;}R24Dt11Owner dt;if(dt11s.TryGetValue(id,out dt)){dt.SuspendControls();found=true;}R24MeleeRuntime knife;if(knives.TryGetValue(id,out knife)){knife.SuspendControls();found=true;}R24SmawRuntime smaw;if(smaws.TryGetValue(id,out smaw)){smaw.SuspendControls();found=true;}if(rifles.TryGetValue(id,out rifle)){rifle.SuspendControls();found=true;}if(magnums.TryGetValue(id,out magnum)){magnum.SuspendControls();found=true;}if(shotguns.TryGetValue(id,out shotgun)){shotgun.SuspendControls();found=true;}if(id==selectedAction){pendingShot=false;LastM1014Volley=null;LastDt11Volley=null;}return found;}
++        public bool SuspendWeapon(string id){LocalRifleSandbox rifle;R23MagnumRuntime magnum;R23M1014Owner shotgun;if(id==null)return false;bool found=false;R24M60Owner m60;if(m60s.TryGetValue(id,out m60)){m60.SuspendControls();found=true;}R24AwpOwner awp;if(awps.TryGetValue(id,out awp)){awp.SuspendControls();found=true;}R24Dt11Owner dt;if(dt11s.TryGetValue(id,out dt)){dt.SuspendControls();found=true;}R24MeleeRuntime knife;if(knives.TryGetValue(id,out knife)){knife.SuspendControls();found=true;}R24SmawRuntime smaw;if(smaws.TryGetValue(id,out smaw)){smaw.SuspendControls();found=true;}if(rifles.TryGetValue(id,out rifle)){rifle.SuspendControls();found=true;}if(magnums.TryGetValue(id,out magnum)){magnum.SuspendControls();found=true;}if(shotguns.TryGetValue(id,out shotgun)){shotgun.SuspendControls();found=true;}if(id==selectedAction){LastM60Shot=null;pendingShot=false;LastM1014Volley=null;LastDt11Volley=null;}return found;}
+         public bool Step(float dt,HandlingInput input,bool reload,bool paused) {
+             if(selectedRifle=="dt11")return StepDt11(dt,input,reload?(input.Desktop?HandlingAction.ReloadStep:HandlingAction.Eject):HandlingAction.Sample,new R23M1014Pose{Forward=new Float3(0,0,1),Right=new Float3(1,0,0),Up=new Float3(0,1,0)},false,paused);
+             if(selectedRifle=="awp")return StepAwp(dt,input,reload?(input.Desktop?HandlingAction.ReloadStep:HandlingAction.Eject):HandlingAction.Sample,new R23ShotPose(new Float3(),new Float3(1,0,0),new Float3(0,1,0),new Float3(0,0,1)),paused);
++            if(selectedRifle=="m60")return StepM60(dt,input,reload?(input.Desktop?HandlingAction.ReloadStep:HandlingAction.Eject):HandlingAction.Sample,new R23ShotPose(new Float3(),new Float3(1,0,0),new Float3(0,1,0),new Float3(0,0,1)),paused);
+             if(R24MeleeProfiles.ForId(selectedRifle)!=null){AdvanceSmawWorld(dt,paused);return false;}
+             if(selectedRifle=="smaw")return StepSmaw(dt,input,new R23ShotPose(new Float3(),new Float3(1,0,0),new Float3(0,1,0),new Float3(0,0,1)),true,reload&&input.Desktop,paused)!=null;
+             if(selectedRifle=="m1014")return StepM1014(dt,input,reload?(input.Desktop?HandlingAction.ReloadStep:HandlingAction.Eject):HandlingAction.Sample,new R23M1014Pose{Forward=new Float3(0,0,1),Right=new Float3(1,0,0),Up=new Float3(0,1,0)},false,paused);
+--- HandsWeapons/R23SourceRifleOwner.cs
++++ HandsWeapons/R23SourceRifleOwner.cs
+@@ -31,8 +31,8 @@
+         public static readonly SourceRifleDefinition Mp9=new SourceRifleDefinition("mp9",24,1,1f/12.5f,0,1f,new Float3(0f,-0.278f,0.03798250389f),new Float3(0f,-0.18f,0.03798250389f),new Float3(-0.045f,0.064f,0.1f),"SILENCED MP9","smg",false,21,26,180,1f,false);
+         public Float3 ReloadGuide {get{return S85Insertion?new Float3(Offer.X,Offer.Y+.20f/ReloadScale,Offer.Z):Insert;}}
+         public Float3 ChargingPoint(bool left){return TopFeed&&left?new Float3(-Charging.X,Charging.Y,Charging.Z):Charging;}
+-        public static SourceRifleDefinition ForId(string id) { var result=id=="awp"?Awp:id=="mk18"?Mk18:id=="akm"?Akm:id=="spr"?Spr:id=="cx4"?Cx4:id=="px4"?Px4:id=="ump"?Ump:id=="p90"?P90:id=="mp5"?Mp5:id=="mp9"?Mp9:null; if(result==null)ResolveCatalogProfile(id,ref result);return result; }
+-        public static SourceRifleDefinition[] All {get{var profiles=new List<SourceRifleDefinition>(new[]{Mk18,Akm,Spr,Cx4,Px4,Ump,P90,Mp5,Mp9,Awp});AppendCatalogProfiles(profiles);return profiles.ToArray();}}
++        public static SourceRifleDefinition ForId(string id) { var result=id=="m60"?M60:id=="awp"?Awp:id=="mk18"?Mk18:id=="akm"?Akm:id=="spr"?Spr:id=="cx4"?Cx4:id=="px4"?Px4:id=="ump"?Ump:id=="p90"?P90:id=="mp5"?Mp5:id=="mp9"?Mp9:null; if(result==null)ResolveCatalogProfile(id,ref result);return result; }
++        public static SourceRifleDefinition[] All {get{var profiles=new List<SourceRifleDefinition>(new[]{Mk18,Akm,Spr,Cx4,Px4,Ump,P90,Mp5,Mp9,Awp,M60});AppendCatalogProfiles(profiles);return profiles.ToArray();}}
+         static partial void ResolveCatalogProfile(string id,ref SourceRifleDefinition result);
+         static partial void AppendCatalogProfiles(List<SourceRifleDefinition> profiles);
+         public SourceRifleDefinition WithRarity(int capacity,float body,float head){return new SourceRifleDefinition(this,capacity,body,head);}
+--- HandsWeapons/R23WeaponFeedbackState.cs
++++ HandsWeapons/R23WeaponFeedbackState.cs
+@@ -7,27 +7,27 @@
+     public sealed class R23WeaponFeedbackState
+     {
+         public const float FlashSeconds=.045f,TracerSeconds=.045f,ImpactSeconds=.11f,Gain=1.25f;
+-        readonly R24AwpFeedback awp;readonly SourceCatalog5Feedback catalog;readonly string id;readonly List<float> stamps=new List<float>(),pulsePeaks=new List<float>(),bloomImpulses=new List<float>();
++        readonly R24M60Feedback m60;readonly R24AwpFeedback awp;readonly SourceCatalog5Feedback catalog;readonly string id;readonly List<float> stamps=new List<float>(),pulsePeaks=new List<float>(),bloomImpulses=new List<float>();
+         float clock,idle,recoil,pitch,yaw,flashUntil,observedTime;bool observedActive,observedSupported;int index;long lastShot;
+         static readonly float[] BurstVertical={1,.44f,.28f,.50f,.34f,.42f},PatternYaw={0,-.12f,.18f,.10f,-.20f,-.08f};
+-        public R23WeaponFeedbackState(string weaponId){bool extra=weaponId=="1911"||weaponId=="tec9"||weaponId=="rfb"||weaponId=="fal"||weaponId=="s85";if(weaponId=="awp")awp=new R24AwpFeedback();if(extra)catalog=new SourceCatalog5Feedback(weaponId);else if(weaponId!="awp"&&weaponId!="mk18"&&weaponId!="akm"&&weaponId!="spr"&&weaponId!="magnum"&&weaponId!="cx4"&&weaponId!="px4"&&weaponId!="m1014"&&weaponId!="ump"&&weaponId!="p90"&&weaponId!="mp5"&&weaponId!="mp9"&&weaponId!="dt11"&&weaponId!="smaw"&&R24MeleeProfiles.ForId(weaponId)==null)throw new ArgumentException("Source feedback profile");id=weaponId;}
++        public R23WeaponFeedbackState(string weaponId){bool extra=weaponId=="1911"||weaponId=="tec9"||weaponId=="rfb"||weaponId=="fal"||weaponId=="s85";if(weaponId=="awp")awp=new R24AwpFeedback();if(weaponId=="m60")m60=new R24M60Feedback();if(extra)catalog=new SourceCatalog5Feedback(weaponId);else if(weaponId!="m60"&&weaponId!="awp"&&weaponId!="mk18"&&weaponId!="akm"&&weaponId!="spr"&&weaponId!="magnum"&&weaponId!="cx4"&&weaponId!="px4"&&weaponId!="m1014"&&weaponId!="ump"&&weaponId!="p90"&&weaponId!="mp5"&&weaponId!="mp9"&&weaponId!="dt11"&&weaponId!="smaw"&&R24MeleeProfiles.ForId(weaponId)==null)throw new ArgumentException("Source feedback profile");id=weaponId;}
+         public void SetSupported(bool held){if(catalog!=null)catalog.SetSupported(held);}
+         bool Observed {get{return id=="cx4"||id=="mp5"||id=="mp9";}}
+         public float CarrierTravel {get{return id=="ump"&&idle<.095f?(float)Math.Sin(idle/.095f*Math.PI)*.038f:0;}}
+         bool SignedPulse {get{return id=="dt11"||id=="spr"||id=="magnum"||id=="px4";}}
+         float Peak {get{return id=="dt11"?17.6f:id=="magnum"?8.47f:id=="px4"?6.655f:6.776f;}}
+         public float SlideTravel {get{return catalog!=null?catalog.SlideTravel:id=="px4"&&idle<.095f?(float)Math.Sin(idle/.095f*Math.PI)*.035f:0;}}
+-        public float Distance {get{return awp!=null?awp.Distance:catalog!=null?catalog.Distance:recoil*Gain;}}
+-        public float PitchRadians {get{return awp!=null?awp.PitchRadians:catalog!=null?catalog.PitchRadians:pitch*Gain;}}
+-        public float YawRadians {get{return awp!=null?awp.YawRadians:catalog!=null?catalog.YawRadians:yaw*Gain;}}
+-        public bool Flash {get{return awp!=null?awp.Flash:catalog!=null?catalog.Flash:clock<flashUntil;}}
+-        public long AcceptedShots {get{return awp!=null?awp.AcceptedShots:catalog!=null?catalog.AcceptedShots:lastShot;}}
+-        public float ReticleWidth(bool supported){return catalog!=null?catalog.ReticleWidth(supported):(id=="magnum"?(supported?88:134):id=="dt11"||id=="m1014"?(supported?58:98):(supported?58:70))+Bloom;}
+-        public float Bloom {get{if(id=="dt11")return 0; // shotgun._process bypasses weapon reference-clock advancement in frozenR6.
++        public float Distance {get{return m60!=null?m60.Distance:awp!=null?awp.Distance:catalog!=null?catalog.Distance:recoil*Gain;}}
++        public float PitchRadians {get{return m60!=null?m60.PitchRadians:awp!=null?awp.PitchRadians:catalog!=null?catalog.PitchRadians:pitch*Gain;}}
++        public float YawRadians {get{return m60!=null?m60.YawRadians:awp!=null?awp.YawRadians:catalog!=null?catalog.YawRadians:yaw*Gain;}}
++        public bool Flash {get{return m60!=null?m60.Flash:awp!=null?awp.Flash:catalog!=null?catalog.Flash:clock<flashUntil;}}
++        public long AcceptedShots {get{return m60!=null?m60.AcceptedShots:awp!=null?awp.AcceptedShots:catalog!=null?catalog.AcceptedShots:lastShot;}}
++        public float ReticleWidth(bool supported){return m60!=null?m60.ReticleWidth(supported):catalog!=null?catalog.ReticleWidth(supported):(id=="magnum"?(supported?88:134):id=="dt11"||id=="m1014"?(supported?58:98):(supported?58:70))+Bloom;}
++        public float Bloom {get{if(m60!=null)return m60.Bloom;if(id=="dt11")return 0; // shotgun._process bypasses weapon reference-clock advancement in frozenR6.
+             if(catalog!=null)return catalog.Bloom;float result=0;for(int i=0;i<stamps.Count;i++){float age=(clock-stamps[i])/(id=="magnum"?.062f:.055f);result+=bloomImpulses[i]*age*(float)Math.Exp(1-age);}return Math.Min(id=="magnum"?250:76,result);}}
+         public void Advance(float seconds)
+         {
+-            if(awp!=null){awp.Advance(seconds);return;}if(catalog!=null){catalog.Advance(seconds);return;}
++            if(awp!=null){awp.Advance(seconds);return;}if(m60!=null){m60.Advance(seconds);return;}if(catalog!=null){catalog.Advance(seconds);return;}
+             if(float.IsNaN(seconds)||float.IsInfinity(seconds)||seconds<0||seconds>.25f)throw new ArgumentOutOfRangeException("seconds");
+             clock+=seconds;idle+=seconds;float decay=(float)Math.Exp(-seconds*9);recoil*=decay;
+             while(stamps.Count>0&&clock-stamps[0]>1.2f){stamps.RemoveAt(0);bloomImpulses.RemoveAt(0);if(SignedPulse)pulsePeaks.RemoveAt(0);}
+@@ -41,7 +41,7 @@
+         }
+         public bool AcceptedShot(long nativeShots,bool supported)
+         {
+-            if(awp!=null)return awp.AcceptedShot(nativeShots,supported);if(catalog!=null)return catalog.AcceptedShot(nativeShots,supported);
++            if(awp!=null)return awp.AcceptedShot(nativeShots,supported);if(m60!=null)return m60.AcceptedShot(nativeShots,supported);if(catalog!=null)return catalog.AcceptedShot(nativeShots,supported);
+             if(nativeShots<=lastShot)return false;lastShot=nativeShots;if(id=="smaw"||R24MeleeProfiles.ForId(id)!=null)return true;float priorIdle=idle;float reduction=supported?.38f:1;
+             recoil=Math.Min(.13f,recoil+(id=="magnum"?.039f:id=="px4"?.0312f:id=="dt11"?.095f:.052f*(id=="spr"?1.1f:1))*reduction);idle=0;
+             if(Observed){if(!observedActive||priorIdle>.32f)observedTime=0;observedActive=true;observedSupported=supported;SampleCx4();}
+@@ -51,8 +51,8 @@
+             while(stamps.Count>32){stamps.RemoveAt(0);bloomImpulses.RemoveAt(0);if(SignedPulse)pulsePeaks.RemoveAt(0);}flashUntil=clock+FlashSeconds;return true;
+         }
+         public void SetAcceptedSourceRecoil(float distance,float sourcePitch,float sourceYaw){if(id!="m1014")throw new InvalidOperationException("M1014 source pose observation only");recoil=distance/Gain;pitch=sourcePitch/Gain;yaw=sourceYaw/Gain;}
+-        public void ClearPresentation(){if(awp!=null){awp.ClearPresentation();return;}if(catalog!=null){catalog.ClearPresentation();return;}stamps.Clear();bloomImpulses.Clear();pulsePeaks.Clear();recoil=pitch=yaw=0;idle=.8f;index=0;observedTime=0;observedActive=false;flashUntil=clock;}
+-        public void Reset(){if(awp!=null){awp.Reset();return;}if(catalog!=null){catalog.Reset();return;}lastShot=0;clock=0;ClearPresentation();}
++        public void ClearPresentation(){if(awp!=null){awp.ClearPresentation();return;}if(m60!=null){m60.ClearPresentation();return;}if(catalog!=null){catalog.ClearPresentation();return;}stamps.Clear();bloomImpulses.Clear();pulsePeaks.Clear();recoil=pitch=yaw=0;idle=.8f;index=0;observedTime=0;observedActive=false;flashUntil=clock;}
++        public void Reset(){if(awp!=null){awp.Reset();return;}if(m60!=null){m60.Reset();return;}if(catalog!=null){catalog.Reset();return;}lastShot=0;clock=0;ClearPresentation();}
+         public static string ReserveText(int reserve){return reserve>=0&&reserve<100000?reserve.ToString():"\u221e";}
+         void SampleCx4(){
+             var values=id=="mp5"?(observedSupported?R23FeedbackSourceData.Mp5Two:R23FeedbackSourceData.Mp5One):id=="mp9"?(observedSupported?R23FeedbackSourceData.Mp9Two:R23FeedbackSourceData.Mp9One):(observedSupported?R23FeedbackSourceData.Cx4Two:R23FeedbackSourceData.Cx4One);
+--- HandsWeapons/R23WeaponInstances.cs
++++ HandsWeapons/R23WeaponInstances.cs
+@@ -22,6 +22,7 @@
+             case "knife":stats=new R23RarityStats(0,35,35,1,1);return true;
+             case "smaw":stats=new R23RarityStats(1,new float[]{60,84,109,134,160}[i],new float[]{60,84,109,134,160}[i],1,1);return true;
+             case "awp":stats=new R23RarityStats(3,new float[]{70,78,87,95,104}[i],new float[]{117,132,148,164,180}[i],1,1);return true;
++            case "m60":stats=new R23RarityStats(new int[]{75,90,105,120,135}[i],27,33,1,1);return true;
+             case "mk18":stats=new R23RarityStats((int)(new float[]{18f,24f,30f,36f,42f})[i],(new float[]{22f,22f,22f,22f,22f})[i],(new float[]{33f,33f,33f,33f,33f})[i],(new float[]{1f,0.85f,0.7f,0.55f,0.4f})[i],(new float[]{1f,1f,1f,1f,1f})[i]);return true;
+             case "akm":stats=new R23RarityStats((int)(new float[]{20f,24f,28f,32f,36f})[i],(new float[]{20f,20f,20f,20f,20f})[i],(new float[]{30f,30f,30f,30f,30f})[i],(new float[]{1f,0.89f,0.78f,0.67f,0.56f})[i],(new float[]{1f,1f,1f,1f,1f})[i]);return true;
+             case "spr":stats=new R23RarityStats((int)(new float[]{4f,4f,4f,4f,4f})[i],(new float[]{55f,59f,63f,67f,71f})[i],(new float[]{92f,106f,121f,137f,154f})[i],(new float[]{1f,1f,1f,1f,1f})[i],(new float[]{1f,1f,1f,1f,1f})[i]);return true;
+--- HandsWeapons/R23WeaponPickupRules.cs
++++ HandsWeapons/R23WeaponPickupRules.cs
+@@ -10,6 +10,6 @@
+         public static bool GripClaim(R23HandInput input){return WorldGrip(input)>=.65f;}
+         public const float Reach=2,Proximity=.35f,AimDot=.94f;
+         public static bool TryScore(float distance,float alignment,bool headClear,bool handClear,out float score){score=float.NegativeInfinity;if(!headClear||!handClear||float.IsNaN(distance)||float.IsInfinity(distance)||float.IsNaN(alignment)||float.IsInfinity(alignment)||distance<0||distance>Reach||distance>Proximity&&alignment<=AimDot)return false;score=distance<=Proximity?2+(Proximity-distance):alignment-distance*.025f;return true;}
+-        public static int CatalogIndex(string id){switch(id){case "awp":return 5;case "dt11":return 1;case "katana":return 14;case "excalibur":return 15;case "cyberblade":return 16;case "knife":return 29;case "smaw":return 27;case "1911":return 19;case "tec9":return 20;case "rfb":return 23;case "fal":return 24;case "s85":return 25;case "ump":return 6;case "p90":return 10;case "mp5":return 17;case "mp9":return 18;case "m1014":return 9;case "cx4":return 0;case "px4":return 2;case "akm":return 21;case "spr":return 13;case "magnum":return 7;case "mk18":return 3;default:return int.MaxValue;}}
++        public static int CatalogIndex(string id){switch(id){case "m60":return 8;case "awp":return 5;case "dt11":return 1;case "katana":return 14;case "excalibur":return 15;case "cyberblade":return 16;case "knife":return 29;case "smaw":return 27;case "1911":return 19;case "tec9":return 20;case "rfb":return 23;case "fal":return 24;case "s85":return 25;case "ump":return 6;case "p90":return 10;case "mp5":return 17;case "mp9":return 18;case "m1014":return 9;case "cx4":return 0;case "px4":return 2;case "akm":return 21;case "spr":return 13;case "magnum":return 7;case "mk18":return 3;default:return int.MaxValue;}}
+     }
+ }
+--- HandsWeapons/R23WeaponPoseMath.cs
++++ HandsWeapons/R23WeaponPoseMath.cs
+@@ -46,8 +46,8 @@
+         // player.gd get_hand_art_contact + downloaded_firearm_model overrides + playtest_fit_088.
+         // These are glove contact points. The gun root itself is exactly corrected tracked grip.
+         public static R23WeaponGripFit ForProfile(string id){
+-            var point=id=="smaw"?R24SmawRuntime.Grip:id=="px4"?new Float3(0,-.065f,.13f):id=="magnum"?new Float3(0,-.045f,.065f):id=="tec9"?new Float3(0,-.057f,.025f):new Float3(0,-.057f,-.025f);
+-            var offset=id=="dt11"?new Float3(0,.127f*(float)Math.Cos(35*Math.PI/180),.127f*(float)Math.Sin(35*Math.PI/180)-.0127f):id=="knife"?new Float3(0,0,-.0508f):id=="smaw"?new Float3(0,.0254f,-.0508f):id=="awp"||id=="katana"||id=="excalibur"||id=="cyberblade"||id=="px4"||id=="p90"?new Float3(0,0,-.0381f):id=="magnum"?new Float3(0,0,-.05715f):id=="m1014"?new Float3(0,.0381f,-.0381f):id=="mp5"?new Float3(0,-.0635f,0):id=="1911"?new Float3(0,-.0254f,0):id=="s85"?new Float3(0,.0762f,-.0508f):id=="mp9"?new Float3(0,0,.01905f):id=="mk18"?new Float3(0,-.0127f,-.0127f):id=="akm"?new Float3(0,0,-.0127f):new Float3();
++            var point=id=="m60"?R24M60Definition.PrimaryGrip:id=="smaw"?R24SmawRuntime.Grip:id=="px4"?new Float3(0,-.065f,.13f):id=="magnum"?new Float3(0,-.045f,.065f):id=="tec9"?new Float3(0,-.057f,.025f):new Float3(0,-.057f,-.025f);
++            var offset=id=="dt11"?new Float3(0,.127f*(float)Math.Cos(35*Math.PI/180),.127f*(float)Math.Sin(35*Math.PI/180)-.0127f):id=="knife"?new Float3(0,0,-.0508f):id=="smaw"?new Float3(0,.0254f,-.0508f):id=="m60"||id=="awp"||id=="katana"||id=="excalibur"||id=="cyberblade"||id=="px4"||id=="p90"?new Float3(0,0,-.0381f):id=="magnum"?new Float3(0,0,-.05715f):id=="m1014"?new Float3(0,.0381f,-.0381f):id=="mp5"?new Float3(0,-.0635f,0):id=="1911"?new Float3(0,-.0254f,0):id=="s85"?new Float3(0,.0762f,-.0508f):id=="mp9"?new Float3(0,0,.01905f):id=="mk18"?new Float3(0,-.0127f,-.0127f):id=="akm"?new Float3(0,0,-.0127f):new Float3();
+             return new R23WeaponGripFit(point,offset,id=="s85"||id=="dt11"?35*(float)Math.PI/180:0);
+         }
+         public Float3 ModelContact(float modelScale){if(float.IsNaN(modelScale)||float.IsInfinity(modelScale)||modelScale<=0)throw new ArgumentOutOfRangeException("modelScale");return R23WeaponPoseMath.Add(PrimaryModelPoint,R23WeaponPoseMath.Scale(PhysicalOffset,1/modelScale));}

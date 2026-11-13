@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "anna_tabby",
+  "label": "Anna (Tabby)",
+  "sourceIndex": 25,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-ea95229efcc25ebb681a7cfe.png",
+      "normal": "r5-normal-6efe881c7815d3d0f6611028.png",
+      "metallicMap": "r5-metallic-303731f5d1561dd31138900a.png",
+      "occlusion": "r5-occlusion-429852c399f43d70e2005dc4.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-15afe38e1ba84ea0bc3ce3fb.png",
+      "normal": "r5-normal-f24b6bfe26aabca9d4cea8f8.png",
+      "metallicMap": "r5-metallic-d657d16f177479543ad764a4.png",
+      "occlusion": "r5-occlusion-c429ec482b7dac9c7ed2e1dd.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ],
+  "stabilizePreviewLegs": true
+}

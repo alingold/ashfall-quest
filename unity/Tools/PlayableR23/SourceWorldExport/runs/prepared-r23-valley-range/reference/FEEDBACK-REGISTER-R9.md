@@ -1,0 +1,48 @@
+# ASHFALL R9 feedback register
+
+New feedback recorded before implementation. Base: completed R8 checkpoint `354322f34adbf37ca7725007bd19b8926faf8725`; isolated source/candidate only. Prior deliveries, active standalone workspace, original map/model assets, Skyrim and other running games remain untouched. No VR launch/stop.
+
+| ID | User comment / required result | Status |
+| --- | --- | --- |
+| MENU-01 | Actual-size character preview, rotating slowly without needing a grab. | Implemented: full-size scale 1 and slow rotation. REGRESSION-R9.json; native world-fixed selector. |
+| MENU-02 | Remove the two side pedestals and their characters; one selected character only, slightly right. | Implemented: one podium/avatar, selected style slightly right. Regression and native capture. |
+| MENU-03 | Character fixed in world, not in front of/above tracked headset. | Implemented: gallery reuses fixed world avatar; controller/head motion does not relocate it. |
+| MENU-04 | Main-menu UI fixed in world in front of remaining podium; no head-follow positioning. | Implemented: main board world-fixed. In-map host overlay retains its separate reachable anchor. |
+| MODEL-01 | Astra/Sol/Argon appear lower-poly than Claude; Claude looks best. | Observation retained; preserve supplied variants/provenance. |
+| OVERLAP-01 | Banana Land and Bamboo confirmed by user. | Existing raw-source overlap evidence; remains source issue. |
+| OVERLAP-02 | Inspect Beast Mode, Chem X, Coldhearted, Dark Carnival for apparent overlapping maps. | Reproduced mixed scenery from independent raw geometry for all four, without Main/converter/previous maps. Source layout retained; author intent not inferred. RAW-SOURCE-R9.json and five native diagnostics. |
+| OVERLAP-03 | G-Spot ultimately looked fine; Phoenix fine. Melly Pop also not overlapped. | Do not flag these as broken without evidence. |
+| OVERLAP-04 | Melie's Cafe appears overlapped with Banana Land, absent in thumbnail; inspect actual loaded geometry. | Raw Melie’s Cafe includes Bamboo/Banana letter geometry and mixed scenery. Present before ASHFALL loading; retained, source repair unresolved. |
+| AUDIO-01 | User confirms general sounds now much better. Preserve accepted updated audio. | Retain R8 restoration; regressions separately tracked. |
+| HAND-01 | Hands sometimes still reach through walls, preventing climbing; verify accepted collision change carried over. | Shared proxy now applies to all worlds and accepts clamped near-side climb contact. Real hollow concave-wall regression passes; physical tracked-hand acceptance pending. |
+| RARITY-01 | Swords/knives have no rarity stars; fixed form. Grenades/zone grenades also have no stars. | Implemented fixed form/no rarity decoration for swords, knives, frag and zone grenades. Firearm levels retained; exported selector regression covers both classes. |
+| VIEW-01 | Sharp render cutoff changes with head angle; render whole map sensibly. | Main and scoped camera far planes cover solid map bounds with margin. No distance cutoff introduced in chunks. Actual head-motion/performance acceptance pending. |
+| MATERIAL-01 | Phoenix signs pink; signs and vehicle textures missing on many maps. | UNRESOLVED: source signs/vehicles lack reliable original artwork bindings. Rejected a visually incorrect substitute; it is not shipped. Retained distance filtering and original geometry. |
+| PAD-01 | Phoenix jump pads still nonfunctional; previous claim was too broad. | Shared source jump-pad material recognition across library; Phoenix and Classic have twelve explicitly new orange octagonal pads each, with real launch velocity/cooldown. Native review rejected crane footings and a factory object; no color-only detection is shipped. Exact original official-map pad locations remain unrecovered. Unknown untagged bespoke pads remain a source coverage limit. |
+| REVIVE-01 | Revive paddles ready sound loops although previously fixed to one-shot. Check latest accepted behavior, not just file names. | Implemented one-shot stream/cache and per-charge-episode cue, no automatic frame restart or synthetic loop. Accepted PCM preserved; real audio cue lifecycle tested offline. |
+| REVIVE-02 | Revive-paddle HUD still occluded by world geometry. | Meter background/fill/label render above world geometry. Regression and native wall-occlusion view. |
+| AWP-01 | Firing drops scope while left grip remains held; stay scoped until grip release. | Physical support grip latches scope across shot/bolt cycle and releases on grip-up. Actual AWP fire plus synthetic tracker regression; no OpenXR/headset test. |
+| CHAOS-01 | Chaos Magnum is Magnum-only. | Both Chaos Magnum maps enforce Magnum-only authoritative starting inventory, catalog, caches and solo drops. |
+| CHAOS-02 | Falling 20m below platform level auto-respawns above center platform. | Measured arena spawn baseline minus 20m; server publishes a fresh respawn above center floor. HOST-TRANSITION-R9.json tests actual host and player relocation. |
+| FORCE-01 | Smaller hexagons optional; hexagonal force fields should be translucent. | Shared LaserCurtain material uses translucent small hexagons, original pattern texture, no dynamic lights. Native appearance/headset comfort remain separate. |
+| BREAK-01 | Vortex window-like texture breaks incorrectly; distinguish forcefields/decorations from breakable windows. | Vortex decorative glass excluded from breakable classification; eight recovered source-material pads remain functional. |
+| BREAK-02 | Real doors still unbreakable. | PRIORITY: all-map door classification, leaf/frame assembly and welded-strip aperture splitting. Intact geometry retained; break removes rendering and collision inside doorway. PASSAGE-CUT-R9.json tests full player capsule and retained surrounding wall; full-library coverage receipt records recognized and unrecognized cases. |
+| BREAK-03 | Cross-shaped window framing should disappear with window. | Recognized official pane crosspieces attach to and disappear with pane and collision. Native before/after assembly captures and actual walk-trigger checks. |
+| POPPY-01 | Warmup currently spawns in arena instead of separate lobby. | Recovered source high lobby floor is solid and used for gathering. Actual host enters it above Y=100. |
+| POPPY-02 | Start match spawns outside Poppy map. | Arena spawn list excludes high lobby; actual host START uses supported arena below Y=90, then round end returns to high lobby. Calibration origin retained. |
+| UI-01 | Remove HUD text “Warm Up Menu Start Match”. | Removed redundant warmup HUD hint. |
+| UI-02 | Remove main-menu instructional text “Choose a map and ready for solo exploration, or host/join”. | Removed redundant inactive-session main-menu instructions. |
+| SCORE-01 | Remove R8 floating scoreboard implementation. | Removed R8 freestanding board creation and refresh code. |
+| SCORE-02 | Inspect Melly Pop central four-faced gray scoreboard megatron for original scoreboard metadata; use intended surfaces. | No explicit scoreboard tags exist in flattened metadata. Hash-bound Melly Pop central source cube has four real world scoreboard faces, one shared texture at 1Hz. Other unknown scoreboard surfaces remain unresolved; no blanket restoration claim. |
+| WEAPONS-01 | Melly Pop “weapons” boards should have one of each weapon below; inspect original marker metadata. | No explicit weapon-board tags found. Two measured Melly Pop source boards have 28 actual grabbable weapons each. Common six-random-weapon cache markers use shared all-map resolver. |
+| AIM-01 | Bullets lag behind moving gun; shots must follow current physical muzzle pose, not damped history. | Current physical muzzle drives shots and reticle; visible gun and aim use the same damping. MOVING-MUZZLE-R9.json: 784 actual-emission/grip checks at 30/72/90/120Hz; CX4 preservation separately checked. |
+| APP-01 | App voice-to-text receiving indicator disappeared. | User explicitly says no fix needed; outside game scope. |
+| PROCESS-01 | Do not omit previous feedback or overstate validation. | Keep prior registers; report source limitations, implementation gaps and offline/headset tests separately. |
+
+Initial scope: inspect source semantics before adding heuristic replacements. No blanket claim that all imported-map objects are fixed. Native screenshots and exported checks required for the delivered candidate; actual headset acceptance remains separate.
+
+| LIBRARY-01 | Apply pads, weapon positions and scoreboard work across all maps, not only named examples; doors especially. | Shared resolver rebuilt across all 105 maps. Per-map coverage records pads/cache sites/door assemblies and actual aperture tests. Original metadata has no gameplay object tags; bespoke pads/doors/scoreboards with no recognized geometry remain explicitly unverified. |
+
+R9 release evidence is recorded in VALIDATION-R9.json. Offline runtime checks, native XR-OFF captures, and real headset acceptance are separate. Earlier comments and accepted behavior remain in FEEDBACK-REGISTER-R8.md and prior registers; R9 supersedes their approximate scoreboard placements and partial door handling. Missing source artwork, exact unknown scoreboard locations, and mixed-source geometry remain open.
+
+Final offline release pass: all 105 actual READY/unload cycles, 4605 library checks, selector/rarity 768, accepted audio 604, CX4 6391, current moving muzzle/AWP grip 784, core regression 35, player-capsule aperture 21, inherited interactions 116 and real host transitions 59. Replay/reload/fault-order checks and packaged two-process networking are recorded separately. Native captures use XR OFF. See VALIDATION-R9.json for the exact final artifact hashes and scopes.

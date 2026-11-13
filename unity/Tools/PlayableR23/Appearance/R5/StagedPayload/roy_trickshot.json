@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "roy_trickshot",
+  "label": "Roy (Trickshot)",
+  "sourceIndex": 23,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.02,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-01fbca9c2f65ff6606a6577b.png",
+      "normal": "r5-normal-a271f320412ee7bdb2dcc64e.png",
+      "metallicMap": "r5-metallic-92632595a9e694c9275dd670.png",
+      "occlusion": "r5-occlusion-e3f05726f74f50c10a7386a2.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-b8242dbd7dabe1fd8cfacae3.png",
+      "normal": "r5-normal-fc8e5a6768f90514ed723690.png",
+      "metallicMap": "r5-metallic-70192dec6edaaf830dffd1ba.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

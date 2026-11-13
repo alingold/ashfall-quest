@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "id": "anna_golden",
+  "label": "Anna Golden (Draft)",
+  "sourceIndex": 76,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 5,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-2f2ce36e60d411aa8255f933.png",
+      "normal": "r5-normal-9e6d90958918c5da7517a20f.png",
+      "metallicMap": "r5-metallic-7e2843aa745b7c66c43ceb65.png",
+      "occlusion": "r5-occlusion-040fc19a8692d52dfe16de76.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-d1f075b831eda1b222da447c.png",
+      "normal": "r5-normal-9e6d90958918c5da7517a20f.png",
+      "metallicMap": "r5-metallic-8a11c5ba404cc6081ef0d747.png",
+      "occlusion": "r5-occlusion-040fc19a8692d52dfe16de76.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-d5a72bf4110c0a8b9abb49ef.png",
+      "normal": "r5-normal-9e6d90958918c5da7517a20f.png",
+      "metallicMap": "r5-metallic-9f3c3aae2691e9dda1e0f193.png",
+      "occlusion": "r5-occlusion-040fc19a8692d52dfe16de76.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-ce26bd0c4b5950079d8159f2.png",
+      "normal": "r5-normal-9e6d90958918c5da7517a20f.png",
+      "metallicMap": "r5-metallic-f455b8ecbe2a058bd2da0849.png",
+      "occlusion": "r5-occlusion-040fc19a8692d52dfe16de76.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-fb88ee5f755e0a0d01832f1a.png",
+      "normal": "r5-normal-9e6d90958918c5da7517a20f.png",
+      "metallicMap": "r5-metallic-11984e0e2b87592547eae21e.png",
+      "occlusion": "r5-occlusion-040fc19a8692d52dfe16de76.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-25f1b5eaf0f74ddc46cf07be.png",
+      "normal": "r5-normal-072b54cf18c7b6527f75471c.png",
+      "metallicMap": "r5-metallic-25e8dab98c54a0b6e8fb17d2.png",
+      "occlusion": "r5-occlusion-a6c755060d880f6c589f07b6.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

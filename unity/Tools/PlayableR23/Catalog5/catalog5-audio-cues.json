@@ -1,0 +1,74 @@
+{
+  "cues": [
+    {
+      "weapon": "1911",
+      "action": "shot",
+      "files": [
+        "1911-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "tec9",
+      "action": "shot",
+      "files": [
+        "tec9-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "rfb",
+      "action": "shot",
+      "files": [
+        "rfb-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "shot",
+      "files": [
+        "fal-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "mag_insert",
+      "files": [
+        "fal-audio-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "fal",
+      "action": "bolt",
+      "files": [
+        "fal-audio-bolt-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "shot",
+      "files": [
+        "s85-audio-shot-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "pouch",
+      "files": [
+        "s85-audio-pouch-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "mag_insert",
+      "files": [
+        "s85-audio-mag_insert-0.wav"
+      ]
+    },
+    {
+      "weapon": "s85",
+      "action": "bolt",
+      "files": [
+        "s85-audio-bolt-0.wav"
+      ]
+    }
+  ]
+}

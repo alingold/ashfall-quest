@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "observedSourceCases": 588,
+  "foodDeltaMax": 0,
+  "ammoXZDeltaMax": 1.5258789005656581e-05,
+  "ammoYDeltaMin": -0.07983016967780543,
+  "ammoYDeltaMax": -0.07975387573240056,
+  "policy": "direct12food/bag positions; defer72ammo; hide6base",
+  "qualification": "Genuine source XR-off reference only; strictPassed false (missing optional food amount metadata and known shutdown errors). No Unity physics acceptance."
+}

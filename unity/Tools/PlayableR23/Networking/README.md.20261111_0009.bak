@@ -1,0 +1,74 @@
+# Unity LAN multiplayer
+
+Native hosting/joining is composed by `R24LanSession` and `R24LanPeer`; the protocol
+owner is `R24LanLobby` and the membership owner is `SessionNetworkCoordinator`.
+The current compatibility baseline is **lobby-v16** (2026-11-10 playtest round 2: the
+grapple gun item and its rules, an optional firing-hand byte on `playable.web.state/1`,
+`playable.grapple.pull/1`, vehicle kinds tank and helicopter with turret/fire fields on
+`vehicle.state/1`, `vehicle.fire/1`, the shell projectile kind, and the appearance style
+bound raised to 139; feature notes in `maintenance/20261110-playtest/features/`). It
+builds on lobby-v15 (2026-11-10 expansion: flash/smoke grenade kinds, web-line state, melee
+hit events, build tier/variant/dismantle frames, hover-bike features, new match rules, pose
+flag bits 32 "jetting" and 64 "riding"; notes in `maintenance/20261109-expansion/features/`). Host and client sources must
+match; Godot ENet clients do not interoperate with this protocol.
+
+The current source connects host/join and loading barriers, shared round clocks,
+validated spawning and pod transitions, player presence/raw tracking, host-resolved
+firearms/melee/explosives, weapon/ammo/item custody, shared loot/construction,
+consumable gestures, revives and kills/scoring. Native weapon/HUD reconciliation
+and round inventory retention use acknowledged host state. Render avatars remain
+collider-free; combat authorization uses accepted raw history and host world queries.
+Tracking gaps retain movement/world validation.
+
+## Tests
+
+```powershell
+python unity/Tools/check.py lan --output-root maintenance/lan-check-20261109
+```
+
+`Current/check_lan_current.py` compiles live production sources from
+`Current/sources.txt`, current case files and the retained Map/Presence/Round/Spawn
+fixtures. All C# warnings are errors. Tests use simulated transport/ports and cover
+malformed/stale/duplicate messages, authority, custody, lifecycle and crash recovery.
+`--define BEFORE_FIX` on the underlying harness is reserved for historical
+reproductions; normal verification runs use the default full suite.
+
+## Durable Health storage
+
+Every native host binds storage at
+`Application.persistentDataPath/LanHealthReceipts-v1`. Exact receipts, Health and
+pending producer transitions commit together through two complete image slots
+and a checksummed atomic generation manifest. No receipt eviction or probabilistic
+replay filter is used. Existing partial files/corruption cause explicit failure.
+
+Default bounds are 4,096 damage/gain/command receipt keys, a 64 MiB conservative
+resident-state allowance, 2 MiB per image, 64 MiB managed-file payload quota and
+128 retained epoch directories. The MonoBehaviour exposes each limit. The image
+limit can be lowered but cannot exceed the typed codec's 2 MiB bound. Serialized
+state can fill before the key quota. Finite storage cannot provide unlimited
+arbitrary-ID history with unlimited availability: new mutations stop and the room
+closes with a visible error. Historical epoch/user data is not automatically deleted.
+
+Trusted-host recovery/reopen requires the exact current manifest. Inspect and
+explicitly preserve/quarantine partial files before retrying. Never replace the
+current head with an older image to regain availability. Archive only complete
+ended-room directories, outside the managed root, after their owner is closed.
+Health recovery alone cannot restore a live Session, inventory or transport
+acknowledgment history; native restart creates a fresh room/identity. Checksums
+assume trusted local storage and cannot detect wholesale malicious cold rollback
+without an external monotonic anchor.
+
+The durable implementation and CPU crash evidence are recorded in
+`campaign-staging/20261104-three-chats/unity/mp-receipts-r4/REPORT.txt` and
+`STORAGE-POLICY-AND-AUDIT.txt` from the repository root. Full-image writes are
+synchronous: native performance, Android replacement semantics and power-loss
+behavior still require validation after the engine/build/device hold is lifted.
+
+## Supported scope
+
+LAN keeps explicit unicast IPv4 entry on UDP 24760. Online rooms use Unity Relay
+(DTLS) with a short room code, anonymous Authentication and at most eight players;
+a linked Unity cloud project with Relay enabled is required. Both paths use the
+same lobby-v16 datagrams. Host migration, identity-preserving reconnect and
+whole-room restart recovery remain separate contracts. CPU/source/API checks establish the behavior of their tested source;
+actual native peer, Physics/UI and headset checks require separate evidence.

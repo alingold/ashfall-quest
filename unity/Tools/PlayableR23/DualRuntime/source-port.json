@@ -1,0 +1,293 @@
+{
+  "contentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "inputs": {
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/weapon_rarity_r6.json": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/models/download_uzi/model.glb": "febf84472d4e97d7629d829dcf75638aa2acdc9dda010b64d5c2a2777c19dfd5",
+    "assets/models/download_uzi/asset-provenance.json": "5b8cab9dd82e6a098bbbf0dc05a2df9f364093ba3170ada0b57d7088bc9c2ea8",
+    "assets/models/download_uzi/ATTRIBUTION.txt": "719a105b64c58a4be47b70d36efb3d98f228ddb5518917217b53b986c95afeb1",
+    "assets/ui/catalog094/weapon_11.png": "fd456f94437f86e4c4915cc0a140b6f1a4c8eefd1274ddefb85bd96a95a0cc0f",
+    "assets/audio/reference097/shot_uzis_last_00.wav": "5cada4b8d32cf39cddb4f9be6b3b173fb15594719c8dbd7ca82f535a37efb0b7",
+    "assets/audio/reference096/uzi_flick_reload_00.wav": "fc678e8973fd8a84d6fafdaa1f4c4652930e76b9fba86666b0c97710261e225e",
+    "assets/audio/reference096/uzi_flick_reload_01.wav": "be3a76e3ef4828e365f3e607b20c76a7052424a78560a4bbd6705562944808de",
+    "assets/audio/reference096/ATTRIBUTION.txt": "9adf8f7b2a50f1394806585e04eca1fad6f6d491e77a7f7423ebc630684f9697",
+    "assets/audio/reference097/ATTRIBUTION.txt": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/models/download_matadors/model.glb": "25009b2a8e82f8e34d34d50eaa33f80d1c92da8124ab78f1c67792084e361a6d",
+    "assets/models/download_matadors/asset-provenance.json": "68355494e066d39f6067252f81ca2bc4a37031dc73e1a466b5342b1aeef4ece9",
+    "assets/models/download_matadors/ATTRIBUTION.txt": "379e9bac51ff0f19bf82bc43e736ba22b3c2221b81e4ba2f5c7a9fe3a365b321",
+    "assets/ui/catalog094/weapon_12.png": "05c061a57ee717cc5094b024d85c322e77f58ec55cfe16c809af3bb98fcbb302",
+    "assets/audio/reference097/shot_matadors_last_00.wav": "3e468b7ed509379c8457d902ac77ed705464a68cd69d1d6c41f150b790fb4f54",
+    "assets/audio/reference099/isolated_s85_mag_insert_00.wav": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+    "scripts/dual_pistols.gd": "45318dce819f24c9b0b60c9b37904fe831c1f8b231deeaa1f7a4a79f49c9d675",
+    "scripts/dual_matadors.gd": "f0c984e3a15353ce942a835d574fb4bb8de24820717c19da2a5cdcf1124cb583",
+    "scripts/compact_smg.gd": "213eabb15a7d3c4a3ed4d6fd8ade36188a773e12c36db451a3f7084330d7bf4f",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/downloaded_pair_model.gd": "03512f05745775ebd0ff26ba3de278da8e57a814f12f4336beb1eb5d61f31297",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "scripts/one_star0991.gd": "edc394c49f27cd9ec8c625d9e8055cb84c638cd768b32ca941886f764b98ec65",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/recoil_endpoint_experiment.gd": "e4b76469429c8e9c22f12083168f2bc28b1539e8b27d8f1013e1e429ce998c05",
+    "scripts/uzi_vertical_prefix.gd": "a27001c9d82f48d90a9ce2568535a0dd8e3f3e257102a952ad9663b97cce80f9",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5",
+    "scripts/matador_secret_094.gd": "349ca405322535fd0a805c4ac49f77e8158b32958369ecefd9b8cdc01431d7ef",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "assets/data/recoil_endpoint_experiment_071.json": "56a7d2bb33106adbbb85bb1ba0f8e1ac115c0051248b3f25691698cbc14c9cc0",
+    "scripts/weapon_inventory.gd": "593e9f573dbb5ae2d1aa08f1d9155ee64914927350abcc780e36907851192e84"
+  },
+  "geometry": [
+    {
+      "id": "uzis",
+      "geometry": {
+        "name": "dual-uzis",
+        "vertices": 10575,
+        "triangles": 3525
+      },
+      "source": "assets/models/download_uzi/model.glb",
+      "sha256": "febf84472d4e97d7629d829dcf75638aa2acdc9dda010b64d5c2a2777c19dfd5",
+      "legacyProvenanceOutputMatches": true,
+      "fit": {
+        "id": "uzis",
+        "catalogIndex": 11,
+        "catalogId": "twin_meridian",
+        "modelName": "dual-uzis",
+        "modelScale": 0.65436,
+        "weaponGripOrigin": [
+          0,
+          0,
+          0
+        ],
+        "primaryGrip": [
+          0,
+          -0.057,
+          -0.025
+        ],
+        "spinPivot": [
+          0,
+          -0.057,
+          -0.025
+        ],
+        "muzzle": [
+          0.0,
+          0.045,
+          0.46
+        ],
+        "spinSeconds": 0.36,
+        "roundsPerHand": [
+          20,
+          24,
+          28,
+          32,
+          36
+        ],
+        "bodyPerVolley": [
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "headPerVolley": [
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "pellets": 1,
+        "interval": 0.07692307692307693,
+        "ammoFamily": "smg",
+        "initialReserve": 1200,
+        "physicalGloveOffset": [
+          0,
+          0,
+          -0.0127
+        ],
+        "glovePitchDegrees": 0,
+        "sourcePerHandOnly": true,
+        "reticleLaser": true,
+        "sourceTriangles": 3525
+      },
+      "profile": {
+        "index": 11,
+        "id": "uzis",
+        "name": "DUAL UZIS",
+        "rarity": 1,
+        "magazine_per_hand": 20,
+        "hands": 2,
+        "fire_mode": "auto",
+        "rounds_per_second": 13,
+        "rate_confidence": "dated_2024_analysis_table_not_live_verified",
+        "rate_source_date": "2024-05-17",
+        "rate_source": "https://www.youtube.com/watch?v=3wUBqKTdfOY&t=159s",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "pistol",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "notes": "13rps EACH,26combined explicitly stated in2024analysis2:41\u00e2\u20ac\u201c2:46; original reload thresholds remain unchanged",
+        "audit_052": "Visible one-star table at2:39 inspected; author analysis, not raw frame-count measurement"
+      },
+      "damage": {
+        "body": 14.0,
+        "head": 14.0,
+        "pellets": 1,
+        "head_policy": "No separate head damage listed; same as body",
+        "wiki_name": "Uzis"
+      }
+    },
+    {
+      "id": "matadors",
+      "geometry": {
+        "name": "dual-matadors",
+        "vertices": 9438,
+        "triangles": 3146
+      },
+      "source": "assets/models/download_matadors/model.glb",
+      "sha256": "25009b2a8e82f8e34d34d50eaa33f80d1c92da8124ab78f1c67792084e361a6d",
+      "legacyProvenanceOutputMatches": true,
+      "fit": {
+        "id": "matadors",
+        "catalogIndex": 12,
+        "catalogId": "twin_matadors",
+        "modelName": "dual-matadors",
+        "modelScale": 0.9,
+        "weaponGripOrigin": [
+          0,
+          0,
+          0
+        ],
+        "primaryGrip": [
+          0,
+          -0.057,
+          -0.025
+        ],
+        "spinPivot": [
+          0,
+          -0.057,
+          -0.025
+        ],
+        "muzzle": [
+          0.0,
+          0.045,
+          0.37
+        ],
+        "spinSeconds": 0.36,
+        "roundsPerHand": [
+          8,
+          8,
+          8,
+          8,
+          8
+        ],
+        "bodyPerVolley": [
+          20,
+          24,
+          28,
+          32,
+          36
+        ],
+        "headPerVolley": [
+          20,
+          24,
+          28,
+          32,
+          36
+        ],
+        "pellets": 8,
+        "interval": 0.26666666666666666,
+        "ammoFamily": "shells",
+        "initialReserve": 480,
+        "physicalGloveOffset": [
+          0,
+          0.06917415230023845,
+          -0.05827536593326628
+        ],
+        "glovePitchDegrees": 35,
+        "sourcePerHandOnly": true,
+        "reticleLaser": false,
+        "sourceTriangles": 3146
+      },
+      "profile": {
+        "index": 12,
+        "id": "matadors",
+        "name": "DUAL MATADORS",
+        "rarity": 1,
+        "magazine_per_hand": 8,
+        "hands": 2,
+        "fire_mode": "semi",
+        "rounds_per_second": 3.125,
+        "rate_confidence": "uncertain_original_configurable",
+        "rate_source_date": "unverified",
+        "rate_source": "",
+        "capacity_source": "https://www.pop1stats.com/items",
+        "capacity_confidence": "parent_researched_community_catalog",
+        "family": "shells",
+        "damage_confidence": "ASHFALL_existing_or_original_not_parity",
+        "audit_052": "Reviewed; retained candidate assumption pending credible rate evidence"
+      },
+      "damage": {
+        "body": 20.0,
+        "head": 20.0,
+        "pellets": 8,
+        "head_policy": "No separate head damage listed; same as body",
+        "wiki_name": "Matadors"
+      }
+    }
+  ],
+  "audio": [
+    {
+      "file": "dual-uzis-shot-0.wav",
+      "source": "res://assets/audio/reference097/shot_uzis_last_00.wav",
+      "sha256": "5cada4b8d32cf39cddb4f9be6b3b173fb15594719c8dbd7ca82f535a37efb0b7",
+      "pcmSha256": "e7bc1003ab10ff0a63b62c42580628ad46d88bef45773bf4615e218fc3f7591f",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 34656
+    },
+    {
+      "file": "dual-uzis-mag_insert-0.wav",
+      "source": "res://assets/audio/reference096/uzi_flick_reload_00.wav",
+      "sha256": "fc678e8973fd8a84d6fafdaa1f4c4652930e76b9fba86666b0c97710261e225e",
+      "pcmSha256": "0449d06167c8f300d80b26f9526b86a5cd5c024d411c87bac547548ae0a5ad5c",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 32784
+    },
+    {
+      "file": "dual-uzis-mag_insert-1.wav",
+      "source": "res://assets/audio/reference096/uzi_flick_reload_01.wav",
+      "sha256": "be3a76e3ef4828e365f3e607b20c76a7052424a78560a4bbd6705562944808de",
+      "pcmSha256": "5fba08a8c472b0052a41c926f171d749a270620c0584f0a5d1603b52cfef2b1f",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 31824
+    },
+    {
+      "file": "dual-matadors-shot-0.wav",
+      "source": "res://assets/audio/reference097/shot_matadors_last_00.wav",
+      "sha256": "3e468b7ed509379c8457d902ac77ed705464a68cd69d1d6c41f150b790fb4f54",
+      "pcmSha256": "bcade12676b6b8b52c2fe5d1a4644e8092bd626e1b03c7219c3bfd68d5f1ea0b",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 51456
+    },
+    {
+      "file": "dual-matadors-mag_insert-0.wav",
+      "source": "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "pcmSha256": "a45938b90cc1e32c8dd70371b957844789765c99a2efa9c652ac6fda0658887f",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 26880
+    }
+  ],
+  "converterSha256": "ffbe1d63ddd9dd4f642f57a44e3c83dab534bf6026f8e61770013da0e969b4c4",
+  "conversion": "Full authentic fitted source GLBs; no decimation. Node transforms, source magazine/bolt homes, inverse-transpose normals, Z/winding/UV reflection once. Display scale is applied once by the view.",
+  "assetsWritten": false
+}

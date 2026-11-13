@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "clips": [
+    {
+      "kind": "wind",
+      "variant": 0,
+      "file": "wind_00.wav",
+      "source": "assets/audio/sfx/wind_00.wav",
+      "sha256": "58e323bc2e66972afb6705ba0c697c5ef52c280769b5d0b7d3bf76f32d96bb29",
+      "bytes": 512044,
+      "pcmSha256": "3e1c6718ea88a56d7d7c214e4206ebdb6412412deb9df9352d9a75fc47cb0512",
+      "channels": 1,
+      "rate": 32000,
+      "frames": 256000
+    },
+    {
+      "kind": "turbine",
+      "variant": 0,
+      "file": "turbine_00.wav",
+      "source": "assets/audio/sfx/turbine_00.wav",
+      "sha256": "d1af12b3e0076a23cc3ac459c4b5021f8b30cbe50f356e7344b1118bcc0a4400",
+      "bytes": 384044,
+      "pcmSha256": "fd05d16e7f80fabeafedec43ba2ba88dbff49232239b1be1bb5f630a005fa2a6",
+      "channels": 1,
+      "rate": 32000,
+      "frames": 192000
+    },
+    {
+      "kind": "creak",
+      "variant": 0,
+      "file": "creak_00.wav",
+      "source": "assets/audio/sfx/creak_00.wav",
+      "sha256": "be568f35ca63739042955f8c1e9519c15c22b6cb95970f51cf8be21944de1999",
+      "bytes": 108844,
+      "pcmSha256": "90558d2329ac07e24db7c61618167c5681373f77af5089930970f169b359f5f4",
+      "channels": 1,
+      "rate": 32000,
+      "frames": 54400
+    },
+    {
+      "kind": "creak",
+      "variant": 1,
+      "file": "creak_01.wav",
+      "source": "assets/audio/sfx/creak_01.wav",
+      "sha256": "760645f04bd1aa496185858e9a97b0b7b20faeb34792a3c4f86df63a9361f97e",
+      "bytes": 108844,
+      "pcmSha256": "7b6afd60197d206e224c65377abaafe4e928fcce1fe9fbb0ad59a5ff92023043",
+      "channels": 1,
+      "rate": 32000,
+      "frames": 54400
+    },
+    {
+      "kind": "creak",
+      "variant": 2,
+      "file": "creak_02.wav",
+      "source": "assets/audio/sfx/creak_02.wav",
+      "sha256": "2f640005cf707737b777a49282c1cfdc02e24d005e160d95cb3c49b28e9eb07c",
+      "bytes": 108844,
+      "pcmSha256": "e63acd12cea0eecfdcb61e3da9b456ec298f360ce3f916162f91864e9870b917",
+      "channels": 1,
+      "rate": 32000,
+      "frames": 54400
+    },
+    {
+      "kind": "music",
+      "variant": 0,
+      "file": "exploration.wav",
+      "source": "assets/audio/music/exploration.wav",
+      "sha256": "0197e2678ddd463bfa3ec79043013c47d9b629ef2964acaf8c463f88852d042b",
+      "bytes": 7680044,
+      "pcmSha256": "fd2ad34947caf796f09aab6b590858141ee6e4e58f293621e570a684a1a12352",
+      "channels": 2,
+      "rate": 48000,
+      "frames": 1920000
+    },
+    {
+      "kind": "music",
+      "variant": 1,
+      "file": "combat.wav",
+      "source": "assets/audio/music/combat.wav",
+      "sha256": "4cb43b38ad4eb072d5389e140ec719ce682512f7c7e562022f227f7c7e961fdb",
+      "bytes": 7680044,
+      "pcmSha256": "12ab027ebadadae648eef5fef3cb2f7d41d25bdef470104f23c70cb286978526",
+      "channels": 2,
+      "rate": 48000,
+      "frames": 1920000
+    },
+    {
+      "kind": "music",
+      "variant": 2,
+      "file": "extraction.wav",
+      "source": "assets/audio/music/extraction.wav",
+      "sha256": "5593dae9c93700d3883848a0c33dcdb23d1d37cda2414a06c9234e272d0cca83",
+      "bytes": 7680044,
+      "pcmSha256": "c2ced104303bc21aacb7fdf93c87d917760432606d301a347c89d4552b4b0a59",
+      "channels": 2,
+      "rate": 48000,
+      "frames": 1920000
+    }
+  ]
+}

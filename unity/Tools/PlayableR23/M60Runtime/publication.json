@@ -1,0 +1,382 @@
+{
+  "published": true,
+  "baseline": {
+    "HandsWeapons/R23SourceRifleOwner.cs": "70fed24b3fa9d872bfaffb118d76e373c20ba76518f66abaae13a42e6e30d7e1",
+    "HandsWeapons/R23RoundState.cs": "78991bb6c6495eb410868604243df17d45e0b605aea90c78aba059ac49cad346",
+    "HandsWeapons/R23WeaponInstances.cs": "d8ff68f8914fae6258679bfdf29c3817b906d027d3815cf1f44d6f9de016bdcc",
+    "HandsWeapons/R23WeaponPickupRules.cs": "0ca63e99d6954669889499bf8c4b93da19d3822939662fc7cafb360487a9af7f",
+    "HandsWeapons/R23WeaponPoseMath.cs": "2fd93e99f7ce75cfa97f7f159de163f891d643c23ff7a5b5b2af91eeecf1b090",
+    "HandsWeapons/R23WeaponFeedbackState.cs": "4f2ae75953c7b52ff8a0bf1198f6d28bc99281c4afda8a5498dd5403086f02e9",
+    "HandsWeapons/R23Audio.cs": "6895eb9ffed2eb7b114a1260bfe1dc1c6f90ddc81fa084632d2c122420cab6e0",
+    "HandsWeapons/R23HandsWeapons.cs": "35808965044f9fe8e089d14e980ec5ab11dd3389a08b671cc78f2bb684aac176",
+    "HandsWeapons/R23HandsWeapons.DisplayedPose.cs": "79041ef01c89c0c501132ed826d73c40b739a59d29520605263593464369f11a",
+    "Gallery/R23LobbyWeaponGallery.cs": "a80c380f1b429095462d286f9bf5c195050767d19317135005f15fa958202b2b",
+    "Input/R23WeaponWheelIcons.cs": "c23637acceadb992f7d22cc6ac81ef1da26671ca2be27049d40cafde248fa73c",
+    "STREAMING/audio.json": "d7a86a962f979564be0ad12b56f32bd3044853d9df657c463bad7058927ff8a8",
+    "HandsWeapons/R23GunFeedback.cs": "724c7d89fe9f6385f036846f6ecd9645e48c7e9df28bfa38fab6bec11ffc25a6"
+  },
+  "files": [
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.M60.cs",
+      "sha256": "b65d17e116ced8dd8f5467cfbbd07b1340fe7b4299223e7e3bec80e5ff58e43d",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.M60.cs",
+      "sha256": "a52fecd7a1b82ffc59022ccce3638b0b9fd8d8d38de307cc07347be77d8ab248",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Definition.cs",
+      "sha256": "f4ac2c850043f91bbfc5fc0af60cc5dc2cabaeda4802a795afbd833c7162fe05",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Feedback.cs",
+      "sha256": "7af1158e3b6e0be52908cb3b859da4e03dd817c74dce60f94f5d7744d2e0477a",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24M60Gallery.cs",
+      "sha256": "7c258830b2555554dc6f769792727fa2cbcc7f3ae6535bce930127a4c9921790",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R24M60GallerySession.cs",
+      "sha256": "2da30480a0e7f987a7295b936f2ce4473ec5b2f9453f78d7b6d0624c63d76eaa",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Mechanics.cs",
+      "sha256": "3ad5875d4e58c58dad228209eae6a811cf5647e60e78359848a8e013fbf9e866",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Owner.cs",
+      "sha256": "79f689cac7cbf70a843633af28d722bd7aed9ddf4cc0e3a82abb8219b7ac8d0c",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60RecoilData.cs",
+      "sha256": "b8ccceb613d4cae49a1a132d60a839ebd860b4b6384cb58f6b559a2bd864d0b5",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60Status.cs",
+      "sha256": "4b61d337ad159c69a09885f194a21c71b63b2b23fa95094fc8e0a0cae859db1b",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R24M60View.cs",
+      "sha256": "84923bd18fa06003cec468c904ad7059d6f937c35845c22e1d5d92380d254b6e",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23Audio.cs",
+      "sha256": "bf84b6b086a470f52aa9dc1992997f826f274ffde335214fa2365dc23f5a770c",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23GunFeedback.cs",
+      "sha256": "092ad4e072d10c2010005c7fc023a4635ebae25958c753346a7179f7ad5ecad2",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.cs",
+      "sha256": "9756d55f6d1184ced419c071dbf30692a1169111faf80571c44d058126142b67",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23HandsWeapons.DisplayedPose.cs",
+      "sha256": "bff7c643e2c4001aa00852286940a070a748734bf271be28008fcb4c4254b22a",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Gallery/R23LobbyWeaponGallery.cs",
+      "sha256": "b5052fa9a95d9222706f1b0a56cdbf2ea334b2d9e1a12a913c3bad09e3e37585",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23RoundState.cs",
+      "sha256": "c669ea17e8291c6de8596213d593add2407e1144f0871bc6a45f9bfbe876e8c8",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23SourceRifleOwner.cs",
+      "sha256": "4cd37bc7247b85e0f201b47b7e11df1511e33eeb007cc16dea1beb45d848245f",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponFeedbackState.cs",
+      "sha256": "48bb4fb2734fac98393a9ca310b56fa3d6d4f2eecf12672760794a2246a1485f",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponInstances.cs",
+      "sha256": "7f6491a20f385cc4f7d1b93b24e3573a1d58dd1654dee4d91f88fc0bf1c11d28",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPickupRules.cs",
+      "sha256": "c5a5f42a75eb524dcd37a379997f87300d8538cacaca9e285f360f9852745957",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R23WeaponPoseMath.cs",
+      "sha256": "479e0b4881b01922b480cf04eddeb28362e87434e57b0c10dd2d7acee292615f",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/Ashfall/Integration/Playable/Input/R23WeaponWheelIcons.cs",
+      "sha256": "205d550b8c6da7763194d748b182a09916aab31f3c29f35c95594cc9b8a80c45",
+      "new": false
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-arrow.json",
+      "sha256": "79877e8709e5fa16d40653ba0f08f857a4b5f9ade15ecff708ca944b5437acc5",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-arrow.meshbin",
+      "sha256": "2765484ed1d1482af4a95bdf6c0413aa5b47ac2b9f3c039d47f1e42cb7c42e22",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-authored-PROVENANCE.txt",
+      "sha256": "35783ab25ae2863bb2aaa327002402bd42919b88a245374451af49224f619426",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-reference097-ATTRIBUTION.txt",
+      "sha256": "680b659308887a8a4a8dacfcf5cdc2f10d34d1e242f414c1de8404c469cb3241",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-audio-reference099-ATTRIBUTION.txt",
+      "sha256": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor-ATTRIBUTION.txt",
+      "sha256": "4470ff75fb641fe40da53959d9f6bee28160952bb4428aa768a51eecd446411c",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor-provenance.json",
+      "sha256": "1f61d0129640e1ebf06fd3ad4622318af09bf8c2aa2b4baadb71f0762cd52a48",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor.json",
+      "sha256": "ed874e86a43ba95e2b3e8b943fa3e3869e18beb6bca002a365a327202bc050b4",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-donor.meshbin",
+      "sha256": "d1fc74277f0ce33e7a12ae4e6c2c43af8533610c9d82ea7a60453419818a2d56",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-icon.png",
+      "sha256": "bc23a1db869c84a4bf1f18b0cb303c4b40b04c2a425968b7e773c23e1a13300e",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-baseColor.png",
+      "sha256": "7def3ceb75bee910fb498529c4c59740d9a2b9a74957460b7469e12229d8890e",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-metallic.png",
+      "sha256": "2c90a98acf837259ae54c4a9ce27361a36b77248408e83bd546e6791d9761bdc",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-0-normal.png",
+      "sha256": "5c367ae5606aa06b42108cb5d1940b075ede420688629d9958e2756a0ed9f343",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-baseColor.png",
+      "sha256": "e1ef520a8de279436fb68ed30d5eabbb9e20ee260cc0bb7bcd4920978963ac41",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-metallic.png",
+      "sha256": "19db41b652b4edaba89ea3a5696c8734d0041b379721da17612b95f6d4f9aa2b",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-1-normal.png",
+      "sha256": "f9e56a1d4075cc627e3104d383bdbc23fee5165f76849d8aaaf0d23532a27230",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-baseColor.png",
+      "sha256": "f61c3749d5581c071dc622ecf758aaa24649d7efa9e2f9f156bdbc790854d702",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-metallic.png",
+      "sha256": "3cc6358fa1799abd2a7038bd8695fdf1eadb433d52a15e0a44003b66f4bf2065",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-2-normal.png",
+      "sha256": "a96bd74e36f80ff7ef08dd92284805705e6c303b153f7d0cb65e950d508bc714",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-baseColor.png",
+      "sha256": "07d1d821ac3d9ca2c77af4b817373b22f80a256d987e2a31352759eae9f94825",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-metallic.png",
+      "sha256": "240dddd4850548c602aac93cc739d88e022d4faac1a1bdfa7444118e501477cc",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-3-normal.png",
+      "sha256": "9ff340e2c238b73d2a44eb7a3ca20123467e0f527cede940ae17816473c014c0",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-baseColor.png",
+      "sha256": "e69de6284342edc1e4e0824c9e11a4037af4ec25b546df6e936e78a4f481ee34",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-metallic.png",
+      "sha256": "f382f9be12c6f4bf4fbaeb14dfa4139af5631c29806782a400bebe7ded7c501e",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-4-normal.png",
+      "sha256": "4f6ff3c06a7cf6d8731de89cccde346b52fe20a41f2a141e2f7d3a82c79b883f",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-baseColor.png",
+      "sha256": "60285f0930ffeb7c86d6be1811888b96f8a5fd08ea5d831a2a3690e0ab767bea",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-metallic.png",
+      "sha256": "4ec385e0e7c5537fdc416312a74f69438b3f147a54ad82918c09261e4fc80210",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-5-normal.png",
+      "sha256": "3de2e803591f14b2ad9228d7a82f347c02e8717abf43f3f9b781e7f52463e769",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-baseColor.png",
+      "sha256": "bf2d44760909209a0464909303e81f2f56d083ce735dfc779aaf02ddd7883dd4",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-metallic.png",
+      "sha256": "1fca94e1c8f93f052242a3da514253d15e80b40b3bda1e24e1ca873219b57074",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-6-normal.png",
+      "sha256": "00456b145c66955a238a8a3cf1010900133e670bb06497dac1db64a52cacb47f",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-baseColor.png",
+      "sha256": "d58429c4e982534cc898060ab2b2e16bff2058e3f4462f3bcdbbd7ec32579f1a",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-metallic.png",
+      "sha256": "ecaedeccf378dbff58f1dc87ab8c541e9c66c8b527b75ae65a4259700c25442a",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-7-normal.png",
+      "sha256": "b32bdfe21216d83c814a1de5e804ea265c9b131deb3a79619d08c4678cbf62c0",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-ATTRIBUTION.txt",
+      "sha256": "47ced9ee91023796c1bb0641403df7661a79f38283cbcd5e5b081aba7adb1773",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main-provenance.json",
+      "sha256": "fc177a612f29589ea49ce8260c6b6749a2d55186c1dc6d0465801c683fa3a3f2",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main.json",
+      "sha256": "992711cf465491a02db540e15fa4415efd3b25eb9f292cafdc9f63ebf80237ff",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-main.meshbin",
+      "sha256": "3a8b6a917a4ad91275b71e02cfa06e479d5116061e7125809ba4b26fd2f989e1",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-bolt-0.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-close-0.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-dry-0.wav",
+      "sha256": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-dry-1.wav",
+      "sha256": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-fit.json",
+      "sha256": "703a9dd9358056aef89f8cb7855e22069583ab8ec176d8c13c81e3700b80b6e6",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-mag_eject-0.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-mag_insert-0.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-open-0.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-pouch-0.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/m60-source-shot-0.wav",
+      "sha256": "9033458ea5d5444b3fe15011529fb7720fead28a3e3ecd45d0e20a5224c5f87f",
+      "new": true
+    },
+    {
+      "path": "unity/Assets/StreamingAssets/PlayableR23/HandsWeapons/audio.json",
+      "sha256": "2b68ac6481d64250741a49fe7837f49f20974d94bc699d5b58ff7b7ff76a4fe9",
+      "new": false
+    }
+  ],
+  "nativeExecuted": false,
+  "headsetVerified": false
+}

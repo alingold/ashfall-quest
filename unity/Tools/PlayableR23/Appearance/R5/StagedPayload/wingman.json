@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "wingman",
+  "label": "Wingman",
+  "sourceIndex": 44,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-2e95c709d126fbd492a2de59.png",
+      "normal": "r5-normal-8b143bbde77f7b4e2db54126.png",
+      "metallicMap": "r5-metallic-754e920f22fab53f9254061b.png",
+      "occlusion": "r5-occlusion-562969aa41c9b50fef258702.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-97884693e44cbd08b031afc5.png",
+      "normal": "r5-normal-3fcb593f107879080c351a97.png",
+      "metallicMap": "r5-metallic-8ee63710bf07124b1ee342ae.png",
+      "occlusion": "r5-occlusion-c429ec482b7dac9c7ed2e1dd.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

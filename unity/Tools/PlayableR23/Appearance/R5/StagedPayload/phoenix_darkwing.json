@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "id": "phoenix_darkwing",
+  "label": "Phoenix Darkwing (Draft)",
+  "sourceIndex": 84,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 0,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        0.012510408647358418,
+        0.043233636766672134,
+        0.1259673833847046,
+        1
+      ],
+      "metallic": 0.7200000286102295,
+      "roughness": 0.28999999165534973,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.24286681413650513,
+        0.3546920716762543,
+        0.5225215554237366,
+        1
+      ],
+      "metallic": 0.8500000238418579,
+      "roughness": 0.27000001072883606,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.006571403704583645,
+        0.0134117491543293,
+        0.0300741046667099,
+        1
+      ],
+      "metallic": 0.15000000596046448,
+      "roughness": 0.5600000023841858,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.5070785284042358,
+        0.17064493894577026,
+        0.0134117491543293,
+        1
+      ],
+      "metallic": 0.8199999928474426,
+      "roughness": 0.23000000417232513,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.295699805021286,
+        0.3546920716762543,
+        0.4479884207248688,
+        1
+      ],
+      "metallic": 0.800000011920929,
+      "roughness": 0.25,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.4479884207248688,
+        0.5704815983772278,
+        0.7293471097946167,
+        1
+      ],
+      "metallic": 0.75,
+      "roughness": 0.30000001192092896,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "target": "verified R24 R5",
+  "files": [
+    {
+      "file": "glass.wav",
+      "source": "assets/audio/sfx/glass_break_r8.wav",
+      "sha256": "b7ee9252585ca90487160fc073da69453060d4fb2b14700eaa1f37c54b447eb6",
+      "bytes": 134444
+    },
+    {
+      "file": "wood.wav",
+      "source": "assets/audio/sfx/wood_break_r10.wav",
+      "sha256": "4f778f5ded92982d7f66326d5e98980659f08d360b855f0a9e04cde44eb9d50c",
+      "bytes": 67244
+    },
+    {
+      "file": "metal.wav",
+      "source": "assets/audio/sfx/r18/metal_grate.wav",
+      "sha256": "9504e1c1c130addaadb6f99c04ccd42f2bf2f88cd603d65ef25714957682a615",
+      "bytes": 33644
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+PASS production round selects real source six-round M1014 and finite480-shell pool
+PASS neutral-armed M1014 source first shot is accepted
+PASS accepted immutable eight-pellet volley debits ONE real shell only
+PASS shotgun cannot apply a fake single-rifle hit path
+PASS eight physical pellet contacts group once into exact77 real Health damage
+PASS same accepted source volley cannot apply target damage twice
+PASS M1014 held auto trigger respects source.2907166667 cadence
+PASS M1014 next held-trigger discharge follows same actual automatic owner
+PASS production source M1014 accepts one real discharge
+PASS M1014 source body/head total remains77, no invented head multiplier
+PASS production source M1014 accepts one real discharge
+PASS one actual volley groups four pellets each into two real targets exactly once
+PASS production source M1014 accepts one real discharge
+PASS production real Health uses source25percent falloff at25m
+PASS production source M1014 accepts one real discharge
+PASS actual world occlusion refuses target damage after real shell debit
+PASS source actual shell discharge0
+PASS source actual shell discharge1
+PASS source actual shell discharge2
+PASS source actual shell discharge3
+PASS source actual shell discharge4
+PASS source actual shell discharge5
+PASS six native shells empty into actual source UP-pack reload, no fake reserve debit
+PASS fresh source pack contact claims actual support hand without spending shells
+PASS short UP stroke cannot seat or mint pack ammunition
+PASS completed UP pack moves six real finite shells into native seated state
+PASS M1014 BACK handle cannot be acquired with stale pack grip
+PASS actual mirrored left-primary fresh BACK stroke chambers existing six shells
+PASS equip round trip preserves exact shotgun owner, seated/loaded state and finite reserve
+PASS production source M1014 accepts one real discharge
+PASS XR head-to-muzzle blockage consumes actual discharge but denies all pellet target damage
+PASS blocked discharge cannot be retried after obstruction clears
+PASS production source M1014 accepts one real discharge
+PASS duplicate pellet evidence cannot multiply one source volley or partially apply groups
+PASS production source M1014 accepts one real discharge
+PASS production M1014 never damages beyond actual40m pellet range
+PASS pause freezes M1014 real owner and requires trigger release on resume
+PASS round restart retires previous actual shotgun owner instead of allowing stale fire
+PASS explicit round restart regrants source six-shell starter and finite shell pool only once
+PASS world grip cannot rearm or claim at partially relaxed.54 even if support button stays down
+PASS source world neutral<=.2 and fresh>=.65 remain distinct from.55 support grip
+PASS legacy digital-only controller fallback claims once and stays down until release
+PASS shotgun shell spending never borrows pistol/rifle reserve or changes source logical identity
+43 production arsenal/real-health/grouped-pellet cases passed

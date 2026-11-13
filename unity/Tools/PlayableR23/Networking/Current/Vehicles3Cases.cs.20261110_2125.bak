@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using Ashfall.Core;
+using Ashfall.Integration.Playable.Vehicles;
+using Ashfall.Integration.Playable.Networking;
+using Ashfall.Integration.Playable.Match;
+partial class LobbyCases
+{
+    static void Vehicles3()
+    {
+        var motor=new R25TankDynamics();var up=new Float3(0,1,0);
+        for(int i=0;i<200;i++)motor.Step(.02f,1,0,true,.55f,up);
+        Need(Near(motor.Velocity.Z,7,.001f),"Tank forward 7 cap");
+        for(int i=0;i<200;i++)motor.Step(.02f,-1,0,true,.55f,up);
+        Need(Near(motor.Velocity.Z,-3,.001f),"Tank reverse 3 cap");
+        motor.Reset(0,new Float3());motor.Step(.1f,0,180,true,.55f,up);
+        Need(Near(motor.Yaw,3.5f,.001f)&&motor.Velocity.Equals(new Float3()),"Tank turns in place at bounded yaw without hop");
+        motor.Reset(0,new Float3(0,0,4));motor.Step(.1f,1,0,true,.55f,new Float3(0,1,-.577f));Need(motor.Velocity.Y>0,"Thirty degree slope climbs");
+        motor.Reset(0,new Float3());motor.Step(.1f,0,0,true,.55f,new Float3(0,.5f,-1));Need(motor.Velocity.Y<0,"Steep slope gravity");
+        var prior=motor.Velocity;motor.Step(float.NaN,1,0,true,.55f,up);Need(motor.Displacement.Equals(new Float3())&&prior.Equals(motor.Velocity),"Malformed motor inert");
+        Need(R25VehicleKinds.LargeMap("valley",100,100)&&!R25VehicleKinds.LargeMap("paintball",1000,1000)&&!R25VehicleKinds.LargeMap("indoor",1000,1000)&&!R25VehicleKinds.LargeMap("small",99,500),"Large-map exclusion policy");
+        Need(R24PlayableMatchRules.ForPreset("practice").With("helicopters",true).Helicopters,"Completed helicopter rule enables");
+        using(var pair=new Pair()){
+            pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleTankClear=delegate(Float3 p){return true;};pair.Host.BindSupplyDropWorld(new DropWorld());var world=new ProjectileWorld();pair.Host.BindProjectileWorld(world);
+            string hash=new string('b',64);StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0f),hash);
+            BikeRaw(pair,hash,0,8);Need(pair.Host.Vehicles.Length==3&&pair.Client.Vehicles.Length==3,"One tank alongside unchanged two bikes");
+            R25VehicleState tank=null;foreach(var row in pair.Host.Vehicles)if(row.Kind=="tank")tank=row;
+            Need(tank!=null&&tank.Health==1800,"Kind health replicated");
+            for(int n=1;n<=10;n++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),tank.Rest.X*n/10,0,tank.Rest.Z*n/10));pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),8,0,0));pair.Tick();}
+            Need(pair.Client.RequestVehicleMount(tank.Id,1),"Tank mount queues");
+            for(int i=0;i<4;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),tank.Rest.X,0,tank.Rest.Z));pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),8,0,0));pair.Tick();}
+            foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;
+            Need(tank.Rider==pair.Client.OwnActor,"Tank custody admitted from accepted tracking");
+            pair.Client.RequestTankFire(tank.Id);
+            for(int i=0;i<3;i++){pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),tank.Rest.X,0,tank.Rest.Z));pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),8,0,0));pair.Tick();}
+            Need(pair.Host.SharedProjectiles.Length==1&&pair.Client.SharedProjectiles.Length==1&&pair.Client.SharedProjectiles[0].Kind=="shell","Host shell roundtrip");
+            pair.Client.RequestTankFire(tank.Id);pair.Tick();Need(pair.Host.SharedProjectiles.Length==1,"Reload prevents second shell");
+            Need(!pair.Host.RequestTankFire(tank.Id),"Noncustodian host cannot fire guest tank");
+            world.Contact=true;pair.Tick();world.Contact=false;
+            foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;
+            Need(tank.Health<1800&&pair.Host.SharedProjectiles[0].Ended,"Actual host shell collision blasts own tank");float initial=tank.Health;
+            pair.Host.DamageVehicle(tank.Id,100,true);foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;Need(Near(tank.Health,initial-25,.01f),"Small arms quarter damage");
+            pair.Host.DamageVehicle(tank.Id,100);foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;Need(Near(tank.Health,initial-125,.01f),"Explosive full damage");
+            pair.Host.DamageVehicle(tank.Id,2000);foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;Need(tank.Destroyed&&tank.Rider==""&&tank.RespawnAt>pair.Now,"Destruction ejects and schedules respawn");
+            var pipe=new Pipe();var late=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));pipe.Lost=late.TransportDisconnected;
+            pair.HostPipe.Links.Add("tank-late",new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=pair.HostPipe,Back="tank-late"});late.StartClient("server","TankLate",pair.Now);pair.Host.TransportConnected("tank-late");
+            try{for(int i=0;i<12;i++){pair.Tick();late.Tick(pair.Now);}R25VehicleState replay=null;foreach(var row in late.Vehicles)if(row.Kind=="tank")replay=row;Need(replay!=null&&replay.Destroyed&&replay.Rider==""&&replay.RespawnAt==tank.RespawnAt,"Late join replays destroyed kind-specific row");}finally{late.Dispose();pipe.Dispose();}
+            world.Contact=true;pair.Tick();Need(world.Sweeps>0,"Shell uses actual host sweep resolver");
+            pair.Now=tank.RespawnAt+.01;pair.Tick();foreach(var row in pair.Host.Vehicles)if(row.Id==tank.Id)tank=row;Need(tank.Kind=="tank"&&tank.Health==1800&&tank.Rest.Equals(tank.Home),"Tank respawns with kind health");
+        }
+        using(var pair=new Pair()){
+            pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleTankClear=delegate(Float3 p){return true;};pair.Host.BindSupplyDropWorld(new DropWorld());
+            StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("tanks",false),new string('b',64));Need(pair.Host.Vehicles.Length==2,"Tank rule OFF retains bikes only");
+        }
+    }
+}

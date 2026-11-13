@@ -1,0 +1,650 @@
+{
+  "mapId": "archive:light-vs-dark-gods-badbar",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "ce6a8ddeeffd755b8d2b82d68f741ebd183ebca7e199f85855256f17b99a8ed5",
+    "cache_fingerprint": "719c86e8f0a24c3bdb25334313d28c01013e5b6ded8a914b508a323e5aeac5d4",
+    "warmup": [
+      {
+        "center": [
+          -29.41198,
+          79.47363,
+          -18.41009
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -24.41199,
+          79.47363,
+          -18.41008
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -26.86557,
+          79.47363,
+          -18.41008
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -24.58802,
+          79.47363,
+          -8.85877
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -26.58802,
+          79.47363,
+          -8.85877
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -28.91198,
+          79.47363,
+          -8.85877
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -34.7587,
+          12.5229,
+          7.8938
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -9.39378,
+          12.5229,
+          5.25872
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -56.616844177246094,
+          28.63935089111328,
+          -135.81492614746094
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 0.300567626953125,
+        "speed": 45,
+        "evidence": "R30 exact source 12-face thin pad rim plus paired 52-face chevrons; already registered R10 fallback suppressed by mixed semantic setup",
+        "tilted": false
+      },
+      {
+        "center": [
+          10.420361518859863,
+          28.63935089111328,
+          111.64849090576172
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 0.27780914306640625,
+        "speed": 45,
+        "evidence": "R30 exact source 12-face thin pad rim plus paired 52-face chevrons; already registered R10 fallback suppressed by mixed semantic setup",
+        "tilted": false
+      }
+    ],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -29.41198,
+          79.47604,
+          -17.57618
+        ],
+        "min": [
+          -29.77676,
+          79.45209,
+          -17.8835
+        ],
+        "max": [
+          -29.0472,
+          79.49999,
+          -17.26887
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -29.41198,
+          79.47363,
+          -18.41009
+        ],
+        "min": [
+          -30,
+          79.45209,
+          -19
+        ],
+        "max": [
+          -28.82397,
+          79.49518,
+          -17.82018
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -24.41199,
+          79.47604,
+          -17.57617
+        ],
+        "min": [
+          -24.77677,
+          79.45209,
+          -17.88348
+        ],
+        "max": [
+          -24.04721,
+          79.49999,
+          -17.26885
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -24.41199,
+          79.47363,
+          -18.41008
+        ],
+        "min": [
+          -25,
+          79.45209,
+          -18.99998
+        ],
+        "max": [
+          -23.82397,
+          79.49518,
+          -17.82017
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -26.86557,
+          79.47604,
+          -17.57617
+        ],
+        "min": [
+          -27.23035,
+          79.45209,
+          -17.88349
+        ],
+        "max": [
+          -26.50079,
+          79.49999,
+          -17.26886
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -26.86557,
+          79.47363,
+          -18.41008
+        ],
+        "min": [
+          -27.45358,
+          79.45209,
+          -18.99999
+        ],
+        "max": [
+          -26.27755,
+          79.49518,
+          -17.82018
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -24.58802,
+          79.47604,
+          -9.69268
+        ],
+        "min": [
+          -24.9528,
+          79.45209,
+          -10
+        ],
+        "max": [
+          -24.22324,
+          79.49999,
+          -9.38536
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -24.58802,
+          79.47363,
+          -8.85877
+        ],
+        "min": [
+          -25.17603,
+          79.45209,
+          -9.44868
+        ],
+        "max": [
+          -24,
+          79.49518,
+          -8.26887
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -26.58802,
+          79.47604,
+          -9.69268
+        ],
+        "min": [
+          -26.9528,
+          79.45209,
+          -10
+        ],
+        "max": [
+          -26.22324,
+          79.49999,
+          -9.38537
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -26.58802,
+          79.47363,
+          -8.85877
+        ],
+        "min": [
+          -27.17603,
+          79.45209,
+          -9.44868
+        ],
+        "max": [
+          -26,
+          79.49518,
+          -8.26887
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -28.91198,
+          79.47604,
+          -9.69268
+        ],
+        "min": [
+          -29.27676,
+          79.45209,
+          -10
+        ],
+        "max": [
+          -28.5472,
+          79.49999,
+          -9.38536
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -28.91198,
+          79.47363,
+          -8.85877
+        ],
+        "min": [
+          -29.5,
+          79.45209,
+          -9.44868
+        ],
+        "max": [
+          -28.32397,
+          79.49518,
+          -8.26887
+        ]
+      }
+    ],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -34.7587,
+          12.90205,
+          7.34577
+        ],
+        "min": [
+          -35.10108,
+          12.86559,
+          7.03629
+        ],
+        "max": [
+          -34.41632,
+          12.93851,
+          7.65525
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -34.7587,
+          12.90205,
+          7.83688
+        ],
+        "min": [
+          -35.10108,
+          12.86559,
+          7.5274
+        ],
+        "max": [
+          -34.41632,
+          12.93851,
+          8.14636
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -9.94183,
+          12.90205,
+          5.25872
+        ],
+        "min": [
+          -10.25131,
+          12.86559,
+          4.91634
+        ],
+        "max": [
+          -9.63234,
+          12.93851,
+          5.60111
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -9.45071,
+          12.90205,
+          5.25872
+        ],
+        "min": [
+          -9.76019,
+          12.86559,
+          4.91634
+        ],
+        "max": [
+          -9.14122,
+          12.93851,
+          5.60111
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 310,
+      "warmup": 6,
+      "deathmatch": 0,
+      "jump": 4,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 12
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "719c86e8f0a24c3bdb25334313d28c01013e5b6ded8a914b508a323e5aeac5d4",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "killzone",
+      "sourceNode": "killzone",
+      "boundsMin": [
+        -175.50057983398438,
+        35.88594055175781,
+        -146.44168090820312
+      ],
+      "boundsMax": [
+        132.4542236328125,
+        88.0,
+        123.7823486328125
+      ],
+      "triangles": 832
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -47.249855041503906,
+        1.3616209030151367,
+        -29.24993896484375
+      ],
+      "boundsMax": [
+        2.7501449584960938,
+        19.999996185302734,
+        20.75006103515625
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:light-vs-dark-gods-badbar",
+    "title": "LIGHT  VS  DARK",
+    "creator": "GODS_BADBAR",
+    "template": "MapEditorMoon",
+    "center": [
+      -14.9791768395329,
+      30.5560226327498,
+      -3.4995052377227
+    ],
+    "recorded_spawns": [
+      [
+        -140.22,
+        50.37,
+        -97.06
+      ],
+      [
+        -137.7,
+        51.52,
+        80.09
+      ],
+      [
+        -137.7,
+        51.52,
+        77.91
+      ],
+      [
+        -140.22,
+        50.37,
+        -92.1
+      ],
+      [
+        -140.22,
+        50.37,
+        -94.6
+      ],
+      [
+        -137.7,
+        51.52,
+        82.41
+      ],
+      [
+        113.56,
+        44.65,
+        57.81
+      ],
+      [
+        112.89,
+        44.65,
+        55.3
+      ],
+      [
+        112.15,
+        44.69,
+        52.78
+      ],
+      [
+        111.76,
+        50.4,
+        -93.29
+      ],
+      [
+        110.0,
+        50.4,
+        -95.04
+      ],
+      [
+        108.04,
+        50.49,
+        -96.67
+      ]
+    ],
+    "bounds_min": [
+      -388.0,
+      -1.00000023841858,
+      -342.5
+    ],
+    "bounds_max": [
+      336.498107910156,
+      12.0000057220459,
+      326.0
+    ],
+    "solid_min": [
+      -300.0,
+      -12.4050483703613,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      298.143768310547,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/light-vs-dark-gods-badbar/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "101a2b",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.6,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

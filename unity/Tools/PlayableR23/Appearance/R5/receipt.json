@@ -1,0 +1,684 @@
+{
+  "contentId": "da1db74984ea1b82a8b60b7cb8baae9d31dc5483f387fdcf105f3dd0a308895c",
+  "sourceManifestSha256": "d4fb1053acfbaa7f3eb285879472bfdd136e09bf2f7e1f2dc6478f23d8f12bc7",
+  "styles": [
+    {
+      "id": "polymer_gold",
+      "sourceIndex": 53,
+      "label": "Polymer Gold (Draft)",
+      "sourceModel": "assets/models/custom_skins/polymer_gold/player_kit_polymer_gold_light.glb",
+      "tier": "light",
+      "triangles": 51896,
+      "vertices": 39015,
+      "parts": [
+        "AvatarHead",
+        "AvatarHead",
+        "AvatarHead",
+        "AvatarHead",
+        "Belt",
+        "Belt",
+        "ChestPlate",
+        "ChestPlate",
+        "Jacket",
+        "Jacket",
+        "Jacket",
+        "LBoot",
+        "LBoot",
+        "LForearm",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RBoot",
+        "RForearm",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "gloveFromBody": "LForearm"
+    },
+    {
+      "id": "hattie_golden",
+      "sourceIndex": 74,
+      "label": "Hattie Golden (Draft)",
+      "sourceModel": "assets/models/custom_skins/hattie_golden/player_kit_hattie_golden_light.glb",
+      "tier": "light",
+      "triangles": 30012,
+      "vertices": 49978,
+      "parts": [
+        "AvatarHead",
+        "AvatarHead",
+        "AvatarHead",
+        "Belt",
+        "Belt",
+        "ChestPlate",
+        "ChestPlate",
+        "Jacket",
+        "Jacket",
+        "Jacket",
+        "LBoot",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "gloveFromBody": null
+    },
+    {
+      "id": "roy_golden",
+      "sourceIndex": 75,
+      "label": "Roy Golden (Draft)",
+      "sourceModel": "assets/models/custom_skins/roy_golden/player_kit_roy_golden_light.glb",
+      "tier": "light",
+      "triangles": 27900,
+      "vertices": 50166,
+      "parts": [
+        "AvatarHead",
+        "AvatarHead",
+        "AvatarHead",
+        "Belt",
+        "Belt",
+        "ChestPlate",
+        "Jacket",
+        "Jacket",
+        "Jacket",
+        "LBoot",
+        "LBoot",
+        "LForearm",
+        "LForearm",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RBoot",
+        "RForearm",
+        "RForearm",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "gloveFromBody": null
+    },
+    {
+      "id": "anna_golden",
+      "sourceIndex": 76,
+      "label": "Anna Golden (Draft)",
+      "sourceModel": "assets/models/custom_skins/anna_golden/player_kit_anna_golden_light.glb",
+      "tier": "light",
+      "triangles": 38704,
+      "vertices": 58269,
+      "parts": [
+        "AvatarHead",
+        "AvatarHead",
+        "AvatarHead",
+        "Belt",
+        "ChestPlate",
+        "Jacket",
+        "Jacket",
+        "LBoot",
+        "LBoot",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RBoot",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "gloveFromBody": null
+    }
+  ],
+  "inputs": {
+    "scripts/gemini_player_models_099.gd": "2b5ad36e789269aac2ada1073c37e97e3c48108721452365d0a0a29b3d3a9dee",
+    "assets/data/draft_styles_r24.json": "f372b7dab78d3f91c23176312db590cd4eff08d265bc7b2d70a48f03170f8b5f",
+    "assets/models/custom_skins/polymer_gold/player_kit_polymer_gold_light.glb": "208caa65145009bb78d277a1ca599ac304b48166a513693fdfe11e4263f29f15",
+    "assets/hands/xrtools086/Hand_Glove_low_L.gltf": "8010745a3d60329a828361a19a8e52233788ccf3e7654c1b4f5c8fa694b6202c",
+    "assets/hands/xrtools086/Hand_Glove_low_R.gltf": "0719afd3184871240ddb65f359bdf60740a330cccb4179b1335b3da1b00370de",
+    "assets/models/custom_skins/hattie_golden/player_kit_hattie_golden_light.glb": "d6ba1e2dce9074b0cfd4ca41b50db0670202c2fa6d1cef188d8b1183c72db484",
+    "assets/models/custom_skins/hattie_golden/glove_hattie_golden_albedo.png": "5b44ed92e1e323def308f40ee61cf46eed9a9792ee6a5703cfd3c1724f96f1e6",
+    "assets/models/custom_skins/hattie_golden/glove_hattie_golden_normal.png": "c0c6d8ab78e6ba3a3a7b6115b30500e34a7645c0cb988b589a4ee6c44ce367a9",
+    "assets/models/custom_skins/hattie_golden/glove_hattie_golden_orm.png": "b39cc03aa600769feb1e45d7645e96346700bacf267a8ad8a87717d741d39bb2",
+    "assets/models/custom_skins/roy_golden/player_kit_roy_golden_light.glb": "885b61d12020625b37478de26c5cc32ea506d4c3ba5d15fc03a380fe49cf8a1b",
+    "assets/models/custom_skins/roy_golden/glove_roy_golden_albedo.png": "5b44ed92e1e323def308f40ee61cf46eed9a9792ee6a5703cfd3c1724f96f1e6",
+    "assets/models/custom_skins/roy_golden/glove_roy_golden_normal.png": "c0c6d8ab78e6ba3a3a7b6115b30500e34a7645c0cb988b589a4ee6c44ce367a9",
+    "assets/models/custom_skins/roy_golden/glove_roy_golden_orm.png": "b39cc03aa600769feb1e45d7645e96346700bacf267a8ad8a87717d741d39bb2",
+    "assets/models/custom_skins/anna_golden/player_kit_anna_golden_light.glb": "2cf2f6e409a58ebdeb8209cc9708f9ccc30747dfdeb3255b57e66b70ad8a4e85",
+    "assets/models/custom_skins/anna_golden/glove_anna_golden_albedo.png": "5b44ed92e1e323def308f40ee61cf46eed9a9792ee6a5703cfd3c1724f96f1e6",
+    "assets/models/custom_skins/anna_golden/glove_anna_golden_normal.png": "c0c6d8ab78e6ba3a3a7b6115b30500e34a7645c0cb988b589a4ee6c44ce367a9",
+    "assets/models/custom_skins/anna_golden/glove_anna_golden_orm.png": "b39cc03aa600769feb1e45d7645e96346700bacf267a8ad8a87717d741d39bb2"
+  },
+  "textures": {
+    "r5-albedo-c51916768baf29875488bec2.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c51916768baf29875488bec2ccd471e42f83d6e616d8bf154acee95537a2dc81"
+    },
+    "r5-normal-c5d0859b89f9e4317d3e8dc3.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "c5d0859b89f9e4317d3e8dc330608d2aa843582dc5f61af3d923edb453db5852"
+    },
+    "r5-emission-cd35d58f304b8d8fad68411d.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "cd35d58f304b8d8fad68411d5b2fb0f210d656a61d07c87f3b62086981ec2bec"
+    },
+    "r5-metallic-3b90cc5f7c6982681baad7c0.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3b90cc5f7c6982681baad7c07e01b0f6de1d1a7f8559f801ebfe7327c3789560"
+    },
+    "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "fa00bc6b27a94ba3f55c4cf91205143de10b5b0347ea6db416996860297a03a3"
+    },
+    "r5-albedo-f1e5952477bfb7caf93ba4f6.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f1e5952477bfb7caf93ba4f648cd892d66b24672026061cbf3260fbe0e64e9ec"
+    },
+    "r5-metallic-709633893fcb30989e103ec6.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "709633893fcb30989e103ec6ffc6ae9bf6e07fa0136f74d63179cb4835895a1f"
+    },
+    "r5-albedo-79eec64c02f5906277c99b6c.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "79eec64c02f5906277c99b6cd6d8ee045d571fb98f22d444bd179975d68cb4aa"
+    },
+    "r5-metallic-9f0f905848b47b5cc4dfe44c.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9f0f905848b47b5cc4dfe44c4b75dcbe73f5bc42be907c9b3fe51aaddfae951b"
+    },
+    "r5-albedo-30aa6785464226ce0f58d638.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "30aa6785464226ce0f58d6381455a34a6cf150c8fe291a0a7f91321fc4b3afbf"
+    },
+    "r5-albedo-183fae60fa5606e5a1fc1dda.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "183fae60fa5606e5a1fc1dda53f56d19666b5a15d92c99703244c30f38339bd6"
+    },
+    "r5-metallic-8aab2acbee95b7bfb650befe.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8aab2acbee95b7bfb650befea701ffafa7034f384d7f412a043744890c5af18b"
+    },
+    "r5-albedo-25f1b5eaf0f74ddc46cf07be.png": {
+      "sourceDimensions": [
+        64,
+        64
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "25f1b5eaf0f74ddc46cf07be073db1c45ccd58922a3d445890a59d03eb0d9981"
+    },
+    "r5-normal-072b54cf18c7b6527f75471c.png": {
+      "sourceDimensions": [
+        64,
+        64
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "072b54cf18c7b6527f75471c798c9fd23e7ba7163f0a2f02e651f8caa08f30b5"
+    },
+    "r5-metallic-25e8dab98c54a0b6e8fb17d2.png": {
+      "sourceDimensions": [
+        64,
+        64
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "25e8dab98c54a0b6e8fb17d2e595cb2cb7950eb7dc9cfa2df6d0f8bb9d1c71a5"
+    },
+    "r5-occlusion-a6c755060d880f6c589f07b6.png": {
+      "sourceDimensions": [
+        64,
+        64
+      ],
+      "dimensions": [
+        64,
+        64
+      ],
+      "sha256": "a6c755060d880f6c589f07b6aebee210b65c2f2330494a81af74e418b603eecd"
+    },
+    "r5-albedo-9bf54b4672fd775b2031b3d2.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9bf54b4672fd775b2031b3d20fb1e2dcb1802141faa43b0b0db72ef6181a7f36"
+    },
+    "r5-normal-350d52dc03d4660758ac1df3.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "350d52dc03d4660758ac1df31c44f124f82476f4336f4ea1dc57debf7a5f5e54"
+    },
+    "r5-metallic-e54c402a104347acf5018a46.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e54c402a104347acf5018a4618c2f7f64dbc580e02dbb9fa46f36b6f423d4b84"
+    },
+    "r5-occlusion-8ab7b73643146e0bf05d0b94.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8ab7b73643146e0bf05d0b94672e76ca9b9b4e5e5dea4a92394607ddc7998722"
+    },
+    "r5-albedo-e230f89db33ec6843174e797.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "e230f89db33ec6843174e797d3f21def674d3f8ad91db664f26b5020ef17a74c"
+    },
+    "r5-metallic-b7c615bad810195df10a5bda.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "b7c615bad810195df10a5bda66619287eebcf67026547cac6c112de5291e3028"
+    },
+    "r5-albedo-3ff4873494116a6bb311044b.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "3ff4873494116a6bb311044b8a23ac11ceaa919156dd72392338cc781fd48cfc"
+    },
+    "r5-metallic-5d66f983f1d68ba23f58a4ea.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "5d66f983f1d68ba23f58a4ea3bdb690c6efd90c23da46b5379323426d3151b6e"
+    },
+    "r5-albedo-7a1b1f238d882e060df4ba7c.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "7a1b1f238d882e060df4ba7caa7a6db2eb003f115c209bcbe17829991769bb7f"
+    },
+    "r5-metallic-a415761b61198735fe4ac0f4.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "a415761b61198735fe4ac0f4bf0c74bbe4a4291385bb42bb0c88629c15e19dac"
+    },
+    "r5-albedo-744c6d41345f4f1265041827.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "744c6d41345f4f1265041827f45a8c48c9da0dca5a8aa26353f163adebf9414b"
+    },
+    "r5-metallic-8699fff74ac97e82d94bb8e7.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8699fff74ac97e82d94bb8e715479fafeaefcc265cad858467924df1a14ee8ca"
+    },
+    "r5-albedo-2f2ce36e60d411aa8255f933.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "2f2ce36e60d411aa8255f9339bbdd8ab78c5a79392b42478acf0a5a8cb587d14"
+    },
+    "r5-normal-9e6d90958918c5da7517a20f.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9e6d90958918c5da7517a20f155bc2ef7a5fca5a6454464e07581a3737a3f0cb"
+    },
+    "r5-metallic-7e2843aa745b7c66c43ceb65.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "7e2843aa745b7c66c43ceb6503ba4e221bb4fb0bde4c724a98273cf6971bbf98"
+    },
+    "r5-occlusion-040fc19a8692d52dfe16de76.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "040fc19a8692d52dfe16de766cd374493cb5daee75c3d58fc44be8c5201a7acc"
+    },
+    "r5-albedo-d1f075b831eda1b222da447c.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "d1f075b831eda1b222da447c79fd0219efe9439d55276c0401f175dcb2dde027"
+    },
+    "r5-metallic-8a11c5ba404cc6081ef0d747.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "8a11c5ba404cc6081ef0d7473306fe5ab7c0a97ad21fd277ee176f35847f3d47"
+    },
+    "r5-albedo-d5a72bf4110c0a8b9abb49ef.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "d5a72bf4110c0a8b9abb49ef33e992cae9432910de6b9deea989d5fde0f3c084"
+    },
+    "r5-metallic-9f3c3aae2691e9dda1e0f193.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "9f3c3aae2691e9dda1e0f1936b8e414328014474e18fcf4abc25f667ad728ca5"
+    },
+    "r5-albedo-ce26bd0c4b5950079d8159f2.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "ce26bd0c4b5950079d8159f281840266fe1232204cca9327293ab52813e0c7ca"
+    },
+    "r5-metallic-f455b8ecbe2a058bd2da0849.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "f455b8ecbe2a058bd2da084950f66c5a5c35b6e9780623b5d6622759a748e3ca"
+    },
+    "r5-albedo-fb88ee5f755e0a0d01832f1a.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "fb88ee5f755e0a0d01832f1a505b09f2b171b6493bfe75583ef12b75b29d8259"
+    },
+    "r5-metallic-11984e0e2b87592547eae21e.png": {
+      "sourceDimensions": [
+        1024,
+        1024
+      ],
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "sha256": "11984e0e2b87592547eae21e2285d056289f789d9465f173c632bb5b16447dfd"
+    }
+  },
+  "newPayloadBytes": 28799096,
+  "textureCap": 1024,
+  "sharedTextures": true,
+  "existingFilesUnchanged": 132,
+  "remainingIndices": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "limits": "CPU conversion only; shader/normal tangent response/import/device unrun. Actual supplied LIGHT routes, no geometry decimation or invented outfit. Per-instance existing current+pending kit bound2; no retained idle caches."
+}

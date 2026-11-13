@@ -1,0 +1,7 @@
+import json,subprocess,hashlib
+from pathlib import Path
+R=Path.cwd();B=R/'campaign-staging/20261104-three-chats/unity/ConstructionRuntimeOwnerR5/run02';O=B/'native03';O.mkdir(exist_ok=False)
+managed=Path('C:/Program Files/Unity/Hub/Editor/6000.6.8f1/Editor/Data/Managed');refs=[managed/'UnityEngine'/n for n in ['UnityEngine.CoreModule.dll','UnityEngine.PhysicsModule.dll','UnityEngine.dll']]+[managed.parent/'MonoBleedingEdge/lib/mono/4.5/Facades/netstandard.dll']+list((B/'cpu08').glob('*.dll'))+[B/'cpu08/OwnerTests.exe']
+sources=[B/'sources/unity/Assets/Ashfall/Integration/ConstructionRuntime/Engine/ConstructionView.cs'];q=O/'NativeFixture.cs';q.write_bytes((R/'unity/Tools/Integration/ConstructionRuntimeOwner/NativeFixture.cs').read_bytes());sources.append(q)
+rsp=O/'compile.rsp';rsp.write_text('/nologo\n/langversion:5\n/warnaserror+\n/define:UNITY_6000_0_OR_NEWER\n/target:library\n/out:"'+str(O/'NativeFixture.dll')+'"\n'+'\n'.join('/r:"'+str(p)+'"' for p in refs)+'\n'+'\n'.join('"'+str(p)+'"' for p in sources))
+cmd=[r'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe','/noconfig','@'+str(rsp)];t=subprocess.run(cmd,capture_output=True,text=True);(O/'compile.log').write_text(t.stdout+t.stderr);(O/'results.json').write_text(json.dumps(dict(command=cmd,compileExit=t.returncode,executed=False,inputs=[dict(path=str(p),sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in refs+sources]),indent=2));print(t.returncode,t.stdout+t.stderr);assert t.returncode==0

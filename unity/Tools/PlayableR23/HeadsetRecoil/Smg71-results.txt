@@ -1,0 +1,72 @@
+PASS ump actual current catalog/rate/0991 damage and live sharedSMG family
+PASS ump selected native instance requires neutral trigger
+PASS ump actual native accepted discharge consumes one round
+PASS ump source cadence refuses early held-trigger shot
+PASS ump actual automatic interval continues held trigger
+PASS ump pause/custody cannot consume ammo or resume held firing
+PASS ump real VR Eject refunds native loaded rounds to finite shared family
+PASS p90 actual current catalog/rate/0991 damage and live sharedSMG family
+PASS p90 selected native instance requires neutral trigger
+PASS p90 actual native accepted discharge consumes one round
+PASS p90 source cadence refuses early held-trigger shot
+PASS p90 actual automatic interval continues held trigger
+PASS p90 pause/custody cannot consume ammo or resume held firing
+PASS p90 real VR Eject refunds native loaded rounds to finite shared family
+PASS mp5 actual current catalog/rate/0991 damage and live sharedSMG family
+PASS mp5 selected native instance requires neutral trigger
+PASS mp5 actual native accepted discharge consumes one round
+PASS mp5 source cadence refuses early held-trigger shot
+PASS mp5 actual automatic interval continues held trigger
+PASS mp5 pause/custody cannot consume ammo or resume held firing
+PASS mp5 real VR Eject refunds native loaded rounds to finite shared family
+PASS mp9 actual current catalog/rate/0991 damage and live sharedSMG family
+PASS mp9 selected native instance requires neutral trigger
+PASS mp9 actual native accepted discharge consumes one round
+PASS mp9 source cadence refuses early held-trigger shot
+PASS mp9 actual automatic interval continues held trigger
+PASS mp9 pause/custody cannot consume ammo or resume held firing
+PASS mp9 real VR Eject refunds native loaded rounds to finite shared family
+PASS UMP logical reload scale1 remains distinct from Aggressor display.7182
+PASS UMP actual physical magazine acquisition uses scaled source physical offer
+PASS UMP upward source stroke seats real28-round native magazine without double scale
+PASS UMP separate physical charging handle chambers actual seated rounds
+PASS P90 actual raised/back top offer acquires native magazine
+PASS P90 upward gesture cannot masquerade as required FORWARD reload
+PASS P90 less-than.10 forward travel cannot seat top magazine
+PASS P90 source FORWARD stroke seats actual45 rounds through native owner
+PASS P90 real Eject while seated refunds magazine instead of false desktop auto-charge
+PASS P90 source manual handle X mirrors only with dominance
+PASS P90 released/regripped mirrored BACK stroke chambers same finite magazine
+PASS mp5 actual source magazine-home Z/scale supports physical upward seating
+PASS mp5 real released/regripped BACK handle chambers finite source magazine
+PASS mp9 actual source magazine-home Z/scale supports physical upward seating
+PASS mp9 real released/regripped BACK handle chambers finite source magazine
+PASS ump production round observes actual sharedSMG1200 pool
+PASS p90 production round observes actual sharedSMG1200 pool
+PASS mp5 production round observes actual sharedSMG1200 pool
+PASS mp9 production round observes actual sharedSMG1200 pool
+PASS P90 accepted native shot applies exact source body20 through real HealthService at150m
+PASS production SMG tactical refund is shared only by actual SMG family, never rifle/pistol
+PASS explicit desktop shortcut still seats source top magazine with actual reserve debit
+PASS production Round VR P90 reload requests real Eject from seated stage
+PASS mp5 production headshot uses source listed0991 damage and real health
+PASS mp9 production headshot uses source listed0991 damage and real health
+PASS switching returns exact SMG instance/native magazine/family reserve without refill
+PASS new source controls refuse recovered held click/stick before neutral
+PASS source physical click requests Eject once, not repeated stage advance
+PASS source stick-down eject is neutral-rearmed and single-use
+PASS pause/tracking controls reset prevents held stick/click eject on resume
+PASS ump source feedback follows accepted native serial once
+PASS ump source recoil and bloom are render observations over actual shot
+PASS ump holster/focus clears effects without changing shot identity
+PASS p90 source feedback follows accepted native serial once
+PASS p90 source recoil and bloom are render observations over actual shot
+PASS p90 holster/focus clears effects without changing shot identity
+PASS mp5 source feedback follows accepted native serial once
+PASS mp5 source recoil and bloom are render observations over actual shot
+PASS mp5 holster/focus clears effects without changing shot identity
+PASS mp9 source feedback follows accepted native serial once
+PASS mp9 source recoil and bloom are render observations over actual shot
+PASS mp9 holster/focus clears effects without changing shot identity
+PASS new world pickup tie identities match actual source catalog
+71 focused real-owner four-SMG cases passed

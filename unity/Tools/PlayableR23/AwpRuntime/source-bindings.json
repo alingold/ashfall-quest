@@ -1,0 +1,323 @@
+{
+  "inputs": {
+    "scripts/precision_rifle.gd": "78e70249e1499686e87a2aad1ec27262818fb0030b33b86c67329a6092a005b3",
+    "scripts/weapon.gd": "c4434d4c923b9696b93a56a78ce8a47a859adf4877be00a9e00be5a800486b7a",
+    "scripts/weapon_rack.gd": "7798de3ae23125e3659d99053cd2804a1c771fb9fd9de973e0f9cff34dcc8ae9",
+    "scripts/awp_scope.gd": "e4925ef96153c06f288022a8058cff2d7db7604a0efb46c9e10a14d56bd04c77",
+    "scripts/longwatch_scope.gd": "0e63863586f337e3f5ea4192f7baae04840e3ec522ca0ac0fb92b709ea4d6fe3",
+    "scripts/downloaded_awp_model.gd": "9cb3df8791098d8ff7dafc2bab8bc074d66ded047e0d6971867270ae1065a7aa",
+    "scripts/downloaded_firearm_model.gd": "9b3f25e8b2f33e49cd51884188e745b251afcbe4a6912ce7b7f0b9d2c374b3e0",
+    "scripts/model_scale_084.gd": "675b92d834b522ac2c54d0dbeaab6e0be755e324236afe39e501bdf710bbdbd3",
+    "scripts/playtest_fit_088.gd": "ed5c1e150ed56141ea5066f2e7b1d8536d122f3ffc47b066032ddeacff49ad3a",
+    "scripts/arsenal_data.gd": "f047ce00680e160c95f6978fbf5118179e90fb3a1cd61d7bc21d265b30c6ff98",
+    "scripts/weapon_rarity_r6.gd": "ab23ece4258700d140d71f9a91a39af2d350084b8e2baaecebdf3a9b1fbada7d",
+    "scripts/reference_audio_099.gd": "a312c90a9fa3553fc4896fbbb32209d67a58b936c5e68376618c2d0018822b72",
+    "scripts/audio_bank.gd": "80acd1129c4a59ff4781fe9f69220e1b07f64d4e4c811fef1feff1fab4f05b34",
+    "scripts/reticle_bounce_071.gd": "5586e999e26f986257f4cbecdaf55a8ad326cbeef487afbabc2484e28859a1c5",
+    "scripts/reference_response.gd": "ddc085cd9c7264aab0f331e5955a5a9b47e1da274ff3cade62f87e02ed73a333",
+    "scripts/grip_hand_086.gd": "9f6e4ecd32921e1117ff8d040c75b0c25101e22cdf9513b1ba47798b32c79c1c",
+    "scripts/player.gd": "6bdc208101b450f51225fb666df45a759ef1282a578d044aa3a8ce7a12c2ac47",
+    "scripts/menu.gd": "a69ced37ab2299d433cea2db268f645182393f431977a69aa32853f5fc203c43",
+    "project.godot": "525644531df1018622fc9907ecb7f4d0b90f5c546bc1fb2791e2bf911fbbe0cc",
+    "assets/data/one_star_050.json": "fd665c932c001ce9005693bbe14cf0183cd7674a185bff500fde95d06e7138eb",
+    "assets/data/one_star0991.json": "59b823856aab6127dd4133a04ee88524ba1982d47ae0f39a519bceecf1cb7acb",
+    "assets/data/weapon_rarity_r6.json": "fdf8727803a6b278b1acddeb7c5ae1faed2f89e15a42151d46a3792207054428",
+    "assets/data/reference_062.json": "dfa6ff2272756e0553722cb20ed580aaeb6d08454b368c73dfd375569c71789f",
+    "assets/data/recoil_observed_067.json": "cb494da42fc7900d049d4104e1c680e775fff43e2fe4b84f4e6f1f5627b83930",
+    "assets/data/recoil_endpoint_experiment_071.json": "56a7d2bb33106adbbb85bb1ba0f8e1ac115c0051248b3f25691698cbc14c9cc0",
+    "assets/audio/reference0992/manifest.json": "5c6a4777fd19eaefdbae698fcdcc9714f6307fda9c6e935219a8333568287ba5",
+    "assets/models/download_awp/model.glb": "2d6100a939a02e848732dd20fc3b1726ad67d2b8c5a43e8cf7e788506f2a3afb",
+    "assets/models/download_awp/asset-provenance.json": "7570fffbbb4d7821f1985270e6979a5fc23cc22d1a8dc7eb170449e34cd16e78",
+    "assets/models/download_awp/ATTRIBUTION.txt": "699c2e14b6a9b66d415134fdcbe1fc1fa4c4ca257abc084e6564efd78e0a75eb",
+    "assets/ui/catalog094/weapon_5.png": "23ac6cca43d562db9e846835b1fe26a2c4f081340924b3ae02211f6a8e149e24",
+    "assets/audio/reference099/isolated_awp_shot_00.wav": "5ad78dabecdcae42fb607439eb2f820cec0f0f13e0f8b6c0505a5b6d381318c5",
+    "assets/audio/reference099/isolated_s85_bolt_00.wav": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+    "assets/audio/reference099/isolated_spr_mag_eject_00.wav": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+    "assets/audio/reference099/isolated_s85_pouch_00.wav": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+    "assets/audio/reference099/isolated_s85_mag_insert_00.wav": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+    "assets/audio/sfx/dry_00.wav": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+    "assets/audio/sfx/dry_01.wav": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+    "assets/audio/reference099/ATTRIBUTION.txt": "146952bb73b5de4653f257ae3f977052898f9ef7d8aeedf5a165cfcd7570b562",
+    "assets/audio/sfx/PROVENANCE.txt": "35783ab25ae2863bb2aaa327002402bd42919b88a245374451af49224f619426"
+  },
+  "geometry": {
+    "name": "awp",
+    "vertices": 65748,
+    "triangles": 21916
+  },
+  "arrows": [
+    {
+      "name": "awp-insert-arrow",
+      "vertices": 111,
+      "triangles": 108,
+      "surfaces": 3,
+      "parts": [
+        {
+          "part": "SourceRod0",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            0.0,
+            0.045,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SourceRod1",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            -0.006,
+            0.078,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              -0.8944271909999144,
+              -0.44721359549995804,
+              0.0
+            ],
+            [
+              0.44721359549995804,
+              -0.8944271909999144,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SourceRod2",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            0.006,
+            0.078,
+            0.0
+          ],
+          "sourceRotation": [
+            [
+              -0.8944271909999144,
+              0.44721359549995804,
+              0.0
+            ],
+            [
+              -0.44721359549995804,
+              -0.8944271909999144,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    },
+    {
+      "name": "awp-charge-arrow",
+      "vertices": 111,
+      "triangles": 108,
+      "surfaces": 3,
+      "parts": [
+        {
+          "part": "SourceRod0",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            0.0,
+            0.0,
+            0.0525
+          ],
+          "sourceRotation": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SourceRod1",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            -0.007,
+            0.0,
+            0.092
+          ],
+          "sourceRotation": [
+            [
+              0.775229357798165,
+              -0.4740998230350175,
+              -0.41743119266055057
+            ],
+            [
+              0.4740998230350175,
+              -2.220446049250313e-16,
+              0.8804710999221753
+            ],
+            [
+              -0.41743119266055057,
+              -0.8804710999221753,
+              0.22477064220183474
+            ]
+          ],
+          "sourceFit": null
+        },
+        {
+          "part": "SourceRod2",
+          "recipe": "weapon.gd exact functional arrow .0018radius/6radial/1ring",
+          "triangles": 36,
+          "sourcePosition": [
+            0.007,
+            0.0,
+            0.092
+          ],
+          "sourceRotation": [
+            [
+              0.775229357798165,
+              0.4740998230350175,
+              0.41743119266055057
+            ],
+            [
+              -0.4740998230350175,
+              -2.220446049250313e-16,
+              0.8804710999221753
+            ],
+            [
+              0.41743119266055057,
+              -0.8804710999221753,
+              0.22477064220183474
+            ]
+          ],
+          "sourceFit": null
+        }
+      ]
+    }
+  ],
+  "retained": {
+    "name": "awp-chamber",
+    "vertices": 24,
+    "triangles": 12,
+    "surfaces": 1,
+    "parts": [
+      {
+        "part": "SourceRetainedBrassChamber",
+        "recipe": "precision_rifle.gd retained chamber_window; downloaded_awp_model.gd moves only x=.022",
+        "triangles": 12,
+        "sourcePosition": [
+          0.022,
+          0.05,
+          -0.12
+        ],
+        "sourceRotation": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "sourceFit": null
+      }
+    ]
+  },
+  "audio": [
+    {
+      "file": "awp-source-shot-0.wav",
+      "sha256": "5ad78dabecdcae42fb607439eb2f820cec0f0f13e0f8b6c0505a5b6d381318c5",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 197040
+    },
+    {
+      "file": "awp-source-bolt-0.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 31200
+    },
+    {
+      "file": "awp-source-mag_eject-0.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 29280
+    },
+    {
+      "file": "awp-source-pouch-0.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 29760
+    },
+    {
+      "file": "awp-source-mag_insert-0.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 26880
+    },
+    {
+      "file": "awp-source-dry-0.wav",
+      "sha256": "aa15f3d399b84d58eef142e80adecc31af556255e363d7ffc02f1173fd684776",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 10560
+    },
+    {
+      "file": "awp-source-dry-1.wav",
+      "sha256": "c097dde06536fdce1c09867d52ee8dacbce7b9465478e5d18b598e09713d3228",
+      "channels": 1,
+      "rate": 48000,
+      "frames": 10560
+    }
+  ],
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "newPayloadBytes": 4570070
+}

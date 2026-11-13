@@ -1,0 +1,22 @@
+INSTANCE COPIES + LIVE CATALOG16 — source ownership released after CPU checks
+
+Caller contract
+- AvailableWeaponIds remains PROFILE catalog ids: mk18,akm,spr,magnum,cx4,px4,m1014,ump,p90,mp5,mp9,1911,tec9,rfb,fal,s85. InitialOwnedWeaponIds remains cx4/px4/m1014; total inventory cap3 remains real.
+- OwnedWeaponActionIds / OwnedWeaponIds return exact owned action IDs, ordered like source owned.append after pickup; ActiveWeaponActionId is exact selected copy. ActiveWeaponId remains its profile for assets/audio/optic routing.
+- ResolveWeaponProfile(actionId); TryReadWeaponInstance(actionId,out R23WeaponInstanceInfo) returns immutable ActionId,InstanceId,ProfileId,Stars,Capacity,BodyDamage,HeadDamage,RecoilScale,SpreadScale. WeaponCatalogIndex(profile) maps actual source indices for all16.
+- SpawnWorldWeapon(profile,stars,position,rotation,out actionId,bool visible=true). RegisterWorldWeapon(actionId,profile,stars,position,rotation,bool visible=true) for caller-issued stable identities. Invalid/unsupported rarity/profile, duplicate action/native identities rejected. Retired identities cannot remint in the same round. Auto IDs remain monotonic through restart.
+- SetWorldWeaponVisible(actionId,bool) is ART streaming only; no second magazine grant. Source archive dormant props remain aimed-pickup candidates, using cached origin center until art materializes. Visible copies cache mesh center once. DespawnWorldWeapon removes unowned world copy and retires native owner, never an owned slot.
+- ReadWeaponState(actionId),ReadReserve(actionId),OwnsWeapon(actionId),EquipOwned(actionId,hand),SelectWeapon(actionId),DropOwned(actionId,pose),TryGetWeaponBounds(actionId),TryGetDroppedPose(actionId),TryReadWorldWeapon(actionId,...) accept exact action IDs. Existing default actions still equal profile ids for old probes. TryReadAimedWorldWeapon and both pickup callbacks pass exact action ID.
+- IsWorldWeaponVisible(actionId) reports cloned art presence. TryReadWorldWeapon also works while dormant and retains native identity/pose/center. Physical pickup remains the real reach/LOS/fresh-grip/three-slot path, including same-profile copies. No equip/catalog grant API was added.
+
+Production mechanics
+Each new copy has its own existing native LocalRifleSandbox, Magnum, or M1014 owner, with separate magazine/seated/chamber/reload/replay/lifetime state. Rifle2400/sniper2400/SMG1200/pistol1200/shell480 pools are shared by family. Drop, recollect, equip, holster and visibility never refill. Feedback shot serials also belong to exact instance. Source rarity1..5 changes true capacities/damage, visual recoil amplitude and M1014 eight-pellet angular spread. The original JSON documents its own higher-tier adaptation confidence; no new cadence assumptions were added.
+
+Live new5:1911 semi8/5rps;TEC9 auto12/14.4rps;RFB auto25/9.5rps with custom fire-before-click eject and no stick-down;FAL semi15/5rps;S85 bolt5/1.4rps with retained remainder behind NeedsRack after every nonfinal shot, raised physical insertion and hidden seated clip. Exact payloads/scales/homes/irons/RFB reflex/S85 floating rings/source feedback/audio composed. Source1911/S85 extra rendered-glove deltas apply only to art; tracked poses/bore and previous11 glove calibrations remain intact. Additive default desktop rifle behavior retained.
+
+Validation
+python unity/Tools/PlayableR23/InstanceCopies/check.py
+222 real instance/rarity/native-owner cases; retained97 rifle/hand/gain/SPR +71SMG +43shotgun +48CX/PX +48Magnum +19feedback;100 Catalog5 real owner/health/reload/feedback cases;100 exact source rarity/live-fit/audio bindings. Runtime + UNITY_EDITOR compile against installed Unity6000.6.8f1 API. Root owns integrated compile/native fixture. No engine, shader/render/GPU, headset or device run; new world streaming/copy pickup/rendering and new5 fit still need native/headset validation. Installed7430 fallback untouched.
+
+Changed owner paths
+HandsWeapons/R23HandsWeapons.cs,R23RoundState.cs,R23SourceRifleOwner.cs,R23WeaponFeedbackState.cs,R23WeaponPickupRules.cs,R23MagnumRuntime.cs,R23M1014Owner.cs,R23M1014View.cs; new R23WeaponInstances.cs + R23HandsWeapons.Instances.cs + Resources/R23GroundRarity.shader (+metas); shared StreamingAssets/HandsWeapons/audio.json adds only exact10 Catalog5 fragment routes. Tools/HandsWeapons/sources.txt adds pure-source dependencies. Flight-owned SourceCatalog5 definitions/feedback/optics/art remain unchanged by this agent. Root/UI/Gallery/Rig untouched.

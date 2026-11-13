@@ -1,0 +1,90 @@
+{
+  "id": "frag",
+  "file": "sci-fi_granade.glb",
+  "scale": 0.0006188860127684562,
+  "anchor": [
+    7.29252602110672,
+    -5.8022242948632154,
+    2.6091596421196073e-05
+  ],
+  "target": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0,
+    0,
+    0
+  ],
+  "visual_only": true,
+  "fit_height_m": 0.14,
+  "variant": "Sci-fi visual for normal frag only. Shared held/pickup/projectile mesh; original projectile display ratio and .035m physics collider unchanged. No pin/trigger/fuse/throw behavior changes.",
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    -0.004513242352212953,
+    0.003590915459036163,
+    -1.614772407587776e-08
+  ],
+  "source": "[local development path]",
+  "source_sha256": "d19d33987f00540d8bf0209bc4fa0b0edbaafaf4e919b34b329962c34b716208",
+  "output_sha256": "3656f72288d34ccf0857f98641203807ad014cb86a7a00b8f1babb78b1af5ede",
+  "asset": {
+    "author": "petersoon (https://sketchfab.com/petersoon)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/sci-fi-granade-c2b229ee2f0a4ea39a55f90eb9d90960",
+    "title": "Sci-Fi Granade"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 2434,
+  "body_triangles": 2434,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.0322717670683738,
+    -0.07000000000000002,
+    -0.02778190887932213
+  ],
+  "bounds_max": [
+    0.0322717670683738,
+    0.07,
+    0.027781908879322133
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 2434,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

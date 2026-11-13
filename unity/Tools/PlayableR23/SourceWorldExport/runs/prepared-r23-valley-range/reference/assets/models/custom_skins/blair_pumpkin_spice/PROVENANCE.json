@@ -1,0 +1,32 @@
+{
+  "key": "blair_pumpkin_spice",
+  "display_name": "Blair (Pumpkin Spice)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\player_kit_blair_pumpkin_spice_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\player_kit_blair_pumpkin_spice_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\gloves_pcvr\\glove_blair_pumpkin_spice_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\gloves_pcvr\\glove_blair_pumpkin_spice_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\gloves_pcvr\\glove_blair_pumpkin_spice_normal.png",
+  "eye_to_shoulder": 0.21,
+  "body_rear": 0.0,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\040_blair_pumpkin_spice\\exports\\INTEGRATION.json",
+  "source_manifest_sha256": "3bc8186adbb7464efcc3c3eb970051cc8ad63690f9a9209fbf003c64b47ab139",
+  "verified_triangles": {
+    "pcvr": 83236,
+    "light": 27324
+  },
+  "verified_source_hashes": {
+    "pcvr": "0b4ad757e044e1c0892c7accfa4e16a0396aef774f86ef2d6ba147481f0f5462",
+    "light": "0714f75a87fe014c0a2f3125ace4a3db75e6d77ee17fb0e78327a46f18683986",
+    "glove_albedo": "d9c4acb9bd1f090294c83858d1d7537ebaa5d01fb8bd7780ed6f04447b2a54c6",
+    "glove_orm": "1bbb487011c3ebad5bf5bcf6f39f69e8e5a3ed5b79864dad719f84e41c846796",
+    "glove_normal": "4e5800c023c485259a24d793d1ce6be8ec7a2636c648fd77f7861912a3cc953e"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "chestplate_follow_jacket": true,
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\040_blair_pumpkin_spice\\exports\\gloves_light\\glove_blair_pumpkin_spice_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\040_blair_pumpkin_spice\\exports\\gloves_light\\glove_blair_pumpkin_spice_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\040_blair_pumpkin_spice\\exports\\gloves_light\\glove_blair_pumpkin_spice_normal.png"
+  }
+}

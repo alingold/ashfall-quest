@@ -1,0 +1,2740 @@
+{
+  "version": "099",
+  "enabled_by_default": true,
+  "authored_fallback_argument": "--authored-audio",
+  "generic": {
+    "metal_step": [
+      "res://assets/audio/reference096/metal_step_00.wav",
+      "res://assets/audio/reference096/metal_step_01.wav",
+      "res://assets/audio/reference096/metal_step_02.wav",
+      "res://assets/audio/reference096/metal_step_03.wav",
+      "res://assets/audio/reference096/metal_step_04.wav",
+      "res://assets/audio/reference096/metal_step_05.wav"
+    ],
+    "build_place": [
+      "res://assets/audio/reference099/isolated_build_place_00.wav",
+      "res://assets/audio/reference099/isolated_build_place_01.wav"
+    ],
+    "katana_shield_raise": [
+      "res://assets/audio/reference096/katana_shield_raise_00.wav"
+    ],
+    "katana_shield": [
+      "res://assets/audio/reference097/katana_shield_sustain_00.wav"
+    ],
+    "menu_click": [
+      "res://assets/audio/reference099/isolated_menu_click_00.wav"
+    ],
+    "menu_hover": [
+      "res://assets/audio/reference099/isolated_menu_hover_00.wav"
+    ],
+    "game_start_music": [
+      "res://assets/audio/reference099/isolated_game_start_music_00.wav"
+    ],
+    "vr_initialize": [
+      "res://assets/audio/reference099/isolated_vr_initialize_00.wav"
+    ],
+    "item_pickup": [
+      "res://assets/audio/reference099/isolated_item_pickup_00.wav"
+    ],
+    "item_highlight": [
+      "res://assets/audio/reference099/isolated_item_highlight_00.wav"
+    ],
+    "concrete_step": [
+      "res://assets/audio/reference099/isolated_concrete_step_00.wav",
+      "res://assets/audio/reference099/isolated_concrete_step_01.wav"
+    ],
+    "concrete_run_step": [
+      "res://assets/audio/reference099/isolated_concrete_run_step_00.wav",
+      "res://assets/audio/reference099/isolated_concrete_run_step_01.wav",
+      "res://assets/audio/reference099/isolated_concrete_run_step_02.wav"
+    ],
+    "glide": [
+      "res://assets/audio/reference0991/flight_continuous0991.wav"
+    ],
+    "sword_swing": [
+      "res://assets/audio/reference099/isolated_sword_swing_00.wav",
+      "res://assets/audio/reference099/isolated_sword_swing_01.wav",
+      "res://assets/audio/reference099/isolated_sword_swing_02.wav"
+    ],
+    "zone_bloom": [
+      "res://assets/audio/reference099/isolated_zone_bloom_00.wav"
+    ],
+    "frag_blast": [
+      "res://assets/audio/reference099/isolated_frag_blast_00.wav"
+    ],
+    "grenade_throw": [
+      "res://assets/audio/reference099/isolated_grenade_throw_00.wav"
+    ],
+    "build_lightning": [
+      "res://assets/audio/reference099/isolated_build_lightning_00.wav"
+    ],
+    "revive_facing": [
+      "res://assets/audio/reference099/isolated_revive_facing_00.wav"
+    ],
+    "revive_ready": [
+      "res://assets/audio/reference099/isolated_revive_ready_00.wav"
+    ],
+    "revive_charge": [
+      "res://assets/audio/reference099/isolated_revive_charge_00.wav",
+      "res://assets/audio/reference099/isolated_revive_charge_01.wav",
+      "res://assets/audio/reference099/isolated_revive_charge_02.wav"
+    ],
+    "revive_discharge": [
+      "res://assets/audio/reference099/isolated_revive_discharge_00.wav"
+    ],
+    "harmonica": [
+      "res://assets/audio/reference099/isolated_harmonica_00.wav",
+      "res://assets/audio/reference099/isolated_harmonica_01.wav",
+      "res://assets/audio/reference099/isolated_harmonica_02.wav"
+    ],
+    "ammo_pickup": [
+      "res://assets/audio/reference099/isolated_item_pickup_00.wav"
+    ],
+    "build_pickup": [
+      "res://assets/audio/reference099/isolated_item_pickup_00.wav"
+    ],
+    "item_equip": [
+      "res://assets/audio/reference099/isolated_item_pickup_00.wav"
+    ],
+    "mag_eject": [
+      "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav"
+    ],
+    "pouch": [
+      "res://assets/audio/reference099/isolated_s85_pouch_00.wav"
+    ],
+    "mag_insert": [
+      "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav"
+    ],
+    "bolt": [
+      "res://assets/audio/reference099/isolated_s85_bolt_00.wav"
+    ],
+    "open": [
+      "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav"
+    ],
+    "close": [
+      "res://assets/audio/reference099/isolated_s85_bolt_00.wav"
+    ],
+    "insert": [
+      "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav"
+    ],
+    "latch": [
+      "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav"
+    ],
+    "pump": [
+      "res://assets/audio/reference099/isolated_s85_bolt_00.wav"
+    ],
+    "shell_insert": [
+      "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav"
+    ],
+    "item_stow": [
+      "res://assets/audio/reference099/isolated_item_pickup_00.wav"
+    ]
+  },
+  "weapons": {
+    "1911": {
+      "shot": [
+        "res://assets/audio/reference097/shot_1911_last_00.wav"
+      ]
+    },
+    "akm": {
+      "shot": [
+        "res://assets/audio/reference097/shot_akm_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference099/akm_mag_insert_00.wav",
+        "res://assets/audio/reference099/akm_mag_insert_01.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference099/akm_bolt_00.wav",
+        "res://assets/audio/reference099/akm_bolt_01.wav"
+      ]
+    },
+    "cx4": {
+      "shot": [
+        "res://assets/audio/reference097/shot_cx4_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference099/cx4_mag_insert_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference099/cx4_bolt_00.wav"
+      ]
+    },
+    "fal": {
+      "shot": [
+        "res://assets/audio/reference097/shot_fal_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference097/fal_mag_insert_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference097/fal_bolt_00.wav"
+      ]
+    },
+    "m60": {
+      "shot": [
+        "res://assets/audio/reference097/shot_m60_last_00.wav"
+      ]
+    },
+    "mk18": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mk18_last_00.wav"
+      ]
+    },
+    "rfb": {
+      "shot": [
+        "res://assets/audio/reference097/shot_rfb_last_00.wav"
+      ]
+    },
+    "magnum": {
+      "shot": [
+        "res://assets/audio/reference097/shot_magnum_last_00.wav"
+      ]
+    },
+    "px4": {
+      "shot": [
+        "res://assets/audio/reference097/shot_px4_last_00.wav"
+      ]
+    },
+    "tec9": {
+      "shot": [
+        "res://assets/audio/reference097/shot_tec9_last_00.wav"
+      ]
+    },
+    "dt11": {
+      "shot": [
+        "res://assets/audio/reference097/shot_dt11_last_00.wav"
+      ]
+    },
+    "m1014": {
+      "shot": [
+        "res://assets/audio/reference097/shot_m1014_last_00.wav"
+      ]
+    },
+    "matadors": {
+      "shot": [
+        "res://assets/audio/reference097/shot_matadors_last_00.wav"
+      ]
+    },
+    "mp5": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mp5_last_00.wav"
+      ]
+    },
+    "mp9": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mp9_last_00.wav"
+      ]
+    },
+    "p90": {
+      "shot": [
+        "res://assets/audio/reference097/shot_p90_last_00.wav"
+      ]
+    },
+    "ump": {
+      "shot": [
+        "res://assets/audio/reference097/shot_ump_last_00.wav"
+      ]
+    },
+    "uzis": {
+      "shot": [
+        "res://assets/audio/reference097/shot_uzis_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference096/uzi_flick_reload_00.wav",
+        "res://assets/audio/reference096/uzi_flick_reload_01.wav"
+      ]
+    },
+    "awp": {
+      "shot": [
+        "res://assets/audio/reference099/isolated_awp_shot_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference099/awp_bolt_00.wav"
+      ]
+    },
+    "spr": {
+      "shot": [
+        "res://assets/audio/reference099/isolated_spr_shot_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference099/isolated_spr_bolt_00.wav"
+      ],
+      "mag_eject": [
+        "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference099/isolated_spr_mag_insert_00.wav"
+      ]
+    },
+    "s85": {
+      "shot": [
+        "res://assets/audio/reference099/isolated_s85_shot_00.wav"
+      ],
+      "pouch": [
+        "res://assets/audio/reference099/isolated_s85_pouch_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference099/isolated_s85_bolt_00.wav"
+      ]
+    }
+  },
+  "actions": {
+    "shaker": {
+      "consume_drink": [
+        "res://assets/audio/reference099/isolated_shaker_consume_drink_00.wav"
+      ],
+      "consume_open": [
+        "res://assets/audio/reference097/shaker_open_00.wav"
+      ],
+      "consume_shake": [
+        "res://assets/audio/reference099/isolated_shaker_consume_shake_00.wav",
+        "res://assets/audio/reference099/isolated_shaker_consume_shake_01.wav"
+      ],
+      "consume_ready": [
+        "res://assets/audio/reference099/isolated_shaker_consume_ready_00.wav"
+      ]
+    },
+    "soda": {
+      "consume_drink": [
+        "res://assets/audio/reference099/isolated_soda_consume_drink_00.wav"
+      ],
+      "consume_open": [
+        "res://assets/audio/reference099/isolated_soda_consume_open_00.wav"
+      ]
+    },
+    "cyberblade": {
+      "shield_sustain": [
+        "res://assets/audio/reference099/isolated_cyberblade_shield_sustain_00.wav"
+      ]
+    },
+    "banana": {
+      "consume_open": [
+        "res://assets/audio/reference099/isolated_banana_consume_open_00.wav"
+      ]
+    }
+  },
+  "files": [
+    {
+      "file": "res://assets/audio/reference096/metal_step_00.wav",
+      "sha256": "ccc9c401534000a237e9bd60b565d5b838eacd17d8ddd0b93ea368b358c5dcee",
+      "source_index": 283,
+      "source_sample_id": "metal_footstep_01_loco_0114p439",
+      "source_sample_sha256": "4b3a8b91343a7dba707f40a0ee152d4cb2e691c632092831e2b9c07e822aa910",
+      "source": "loco",
+      "master_start_seconds": 114.439,
+      "master_end_seconds": 114.65799999999999,
+      "visual_action_time_approx_seconds": 114.14699999999999,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.219,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.03440302237868309,
+      "gain_db": 11.500599207459326,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_01.wav",
+      "sha256": "3ca841b9ab4321cdfb7a62e1948438b3bfccc119f2068c8f2699beea203d2f0f",
+      "source_index": 284,
+      "source_sample_id": "metal_footstep_02_loco_0240p509",
+      "source_sample_sha256": "cf6584664f8289f707e2b45b812c0cb39d431cd5a92135cb9d182a537044ebfc",
+      "source": "loco",
+      "master_start_seconds": 240.509,
+      "master_end_seconds": 240.72799999999998,
+      "visual_action_time_approx_seconds": 240.217,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.219,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.0353633388876915,
+      "gain_db": 14.704488830200654,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_02.wav",
+      "sha256": "e00fc64ea527cb091c148c096453ad4f366c452511799969b8a0f02eecb51e27",
+      "source_index": 294,
+      "source_sample_id": "metal_footstep_12_loco_0234p729",
+      "source_sample_sha256": "7dd3c8513bffa8365e26e041a65c87a621adf07fb8062e5be00f663f6c37f7af",
+      "source": "loco",
+      "master_start_seconds": 234.729,
+      "master_end_seconds": 234.93800000000002,
+      "visual_action_time_approx_seconds": 234.437,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.025552701205015182,
+      "gain_db": 16.470125949226897,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_03.wav",
+      "sha256": "d8893e08148b5ba95bbdd2645b66b5cdfb4a555509842d6d5434f0ab71be0b17",
+      "source_index": 296,
+      "source_sample_id": "metal_footstep_14_loco_0234p239",
+      "source_sample_sha256": "5a1b8f436b2bb1cc8eb722ad16dd14b81539050ed4e7ce13bba862203faab167",
+      "source": "loco",
+      "master_start_seconds": 234.239,
+      "master_end_seconds": 234.448,
+      "visual_action_time_approx_seconds": 233.947,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.040265873074531555,
+      "gain_db": 21.094089060773538,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_04.wav",
+      "sha256": "b903b963279680308d4b7315b5328c98b1c471b819a45bb63ad1c324f9d57573",
+      "source_index": 297,
+      "source_sample_id": "metal_footstep_15_loco_0231p979",
+      "source_sample_sha256": "ea2d8bf916d0f9f8f5c9160e3abcb401cf13bce510ce0875042fdc53da7f05f4",
+      "source": "loco",
+      "master_start_seconds": 231.979,
+      "master_end_seconds": 232.17800000000003,
+      "visual_action_time_approx_seconds": 231.687,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.199,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.029224421828985214,
+      "gain_db": 18.02781852076499,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_05.wav",
+      "sha256": "63fbff0356c14ad11d3a6554b441e8e392b5c35b26358691be1b65765af15355",
+      "source_index": 298,
+      "source_sample_id": "metal_footstep_16_loco_0238p989",
+      "source_sample_sha256": "56e1f395ed3cab53d26b47c5048c975a3f58481ab25552ff1a7e9e4708ecbece",
+      "source": "loco",
+      "master_start_seconds": 238.989,
+      "master_end_seconds": 239.198,
+      "visual_action_time_approx_seconds": 238.697,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.0408066064119339,
+      "gain_db": 21.13342163454602,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/katana_shield_raise_00.wav",
+      "sha256": "a3bf49991f9b104d0b241543e9e35a601c814c5d24ec7979e5a66798f6c58327",
+      "source_index": 233,
+      "source_sample_id": "katana_shield_activate_01_loco_0041p270",
+      "source_sample_sha256": "05cd9507b99c7fac862d7f4d4dd61033e1db1d26933da6642b1a611fa362d5e5",
+      "source": "loco",
+      "master_start_seconds": 41.285000000000004,
+      "master_end_seconds": 41.73500000000001,
+      "visual_action_time_approx_seconds": 40.992999999999995,
+      "original_label": "Katana shield activate",
+      "assigned_action": "katana defensive shield activation",
+      "duration_seconds": 0.45,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.54998779296875,
+      "early250ms_rms": 0.11707043647766113,
+      "gain_db": 7.973141073435588,
+      "leading_trim_seconds": 0.015,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/uzi_flick_reload_00.wav",
+      "sha256": "fc678e8973fd8a84d6fafdaa1f4c4652930e76b9fba86666b0c97710261e225e",
+      "source_index": 197,
+      "source_sample_id": "uzis_handling_candidate_01_recoil_0535p916",
+      "source_sample_sha256": "23930ecaa25d1e72ab5df98dc33feacb55429d33165888aa643dfc2a35fa3129",
+      "source": "recoil",
+      "master_start_seconds": 535.928,
+      "master_end_seconds": 536.6110000000001,
+      "visual_action_time_approx_seconds": 535.654,
+      "original_label": "uzis handling candidate",
+      "assigned_action": "occupied Uzi hand flip reload",
+      "duration_seconds": 0.683,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.08128143101930618,
+      "gain_db": 6.225711943164606,
+      "leading_trim_seconds": 0.012,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/uzi_flick_reload_01.wav",
+      "sha256": "be3a76e3ef4828e365f3e607b20c76a7052424a78560a4bbd6705562944808de",
+      "source_index": 198,
+      "source_sample_id": "uzis_handling_candidate_02_recoil_0545p646",
+      "source_sample_sha256": "df0d86f30481c37cae5382d6752135aa72951219ae696af8b40132cd8ea9dd2b",
+      "source": "recoil",
+      "master_start_seconds": 545.6579999999999,
+      "master_end_seconds": 546.3209999999999,
+      "visual_action_time_approx_seconds": 545.384,
+      "original_label": "uzis handling candidate",
+      "assigned_action": "occupied Uzi hand flip reload",
+      "duration_seconds": 0.663,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.09836282581090927,
+      "gain_db": 8.810708935786831,
+      "leading_trim_seconds": 0.012,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_akm_last_00.wav",
+      "sha256": "bd5dcf6f92084374565ec449cca6cfad7af9c3e4c595f200e9c6b9ba5120e652",
+      "source": "recoil",
+      "master_start_seconds": 45.204,
+      "master_end_seconds": 46.176,
+      "raw_master_pcm_sha256": "e54b8107dfd14130c01191f73a186a633162d2bfdc53ff387bf1c6632a4e20d0",
+      "assigned_action": "akm final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.6890375035272593,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14876002073287964,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_cx4_last_00.wav",
+      "sha256": "a24145be567c3d9b98285c4cbf8d2dfacb68054dd12b346d522958302b48becb",
+      "source": "recoil",
+      "master_start_seconds": 101.544,
+      "master_end_seconds": 102.516,
+      "raw_master_pcm_sha256": "43fdec165ebec9edd2bcb5fc85bb0c0bee6fe0d4d56b4fe55a31612fb7bf7bc5",
+      "assigned_action": "cx4 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.641641370684026,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.13635370135307312,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_fal_last_00.wav",
+      "sha256": "e51d687288d89bf18c7fb28c7be1f5d6cf7f6f4a3a8dbbb8ea29d493f9eaef66",
+      "source": "recoil",
+      "master_start_seconds": 133.484,
+      "master_end_seconds": 134.556,
+      "raw_master_pcm_sha256": "1ddff35efebe419f30af60ca20416559855ec406b9248e4772367c6db09ad62f",
+      "assigned_action": "fal final discharge with recorded decay",
+      "duration_seconds": 1.072,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 1.4707926893897443,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14384619891643524,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_m60_last_00.wav",
+      "sha256": "9033458ea5d5444b3fe15011529fb7720fead28a3e3ecd45d0e20a5224c5f87f",
+      "source": "recoil",
+      "master_start_seconds": 202.884,
+      "master_end_seconds": 204.056,
+      "raw_master_pcm_sha256": "687bd250b4e6a92aad7a14e4e1dc16cbab5699dba13cf08456fd9965b2d773c3",
+      "assigned_action": "m60 final discharge with recorded decay",
+      "duration_seconds": 1.172,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.893404866846199,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.17053337395191193,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mk18_last_00.wav",
+      "sha256": "8c7bbd92284fe7c11720eb59a39e86dc09ccab4649e772951872253f3642852f",
+      "source": "recoil",
+      "master_start_seconds": 225.204,
+      "master_end_seconds": 226.176,
+      "raw_master_pcm_sha256": "f1ec74c66ae3cca7d673a2a45c8338861c987b9eade4f92e94a7e42bbde68bb6",
+      "assigned_action": "mk18 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.82676800490302,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1689499467611313,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_rfb_last_00.wav",
+      "sha256": "b34b94b155bfcf53eb27e0fe1a0af25bd40f4895a21e9f9e01f293b9ba82c4ac",
+      "source": "recoil",
+      "master_start_seconds": 245.234,
+      "master_end_seconds": 246.206,
+      "raw_master_pcm_sha256": "94a1dd7e53968dc8bc2cc7710e13670f1379c0cc5db089fc97441601deb08d97",
+      "assigned_action": "rfb final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.387272352793313,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1551537811756134,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_magnum_last_00.wav",
+      "sha256": "6f67cc43ba3f4dc403d6e719f0bcb4a7e5c0bbcadd90ff800795e05bfd1bce4c",
+      "source": "recoil",
+      "master_start_seconds": 260.534,
+      "master_end_seconds": 261.156,
+      "raw_master_pcm_sha256": "9f562b85b0ee7709d5b3ac01963cc8faa54d3bfceb42a09ae6f8606a59642080",
+      "assigned_action": "magnum final discharge with recorded decay",
+      "duration_seconds": 0.622,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.4182751530694278,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14253754913806915,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_1911_last_00.wav",
+      "sha256": "20ef8d24abeb2f42fe40ea893c45815bf18e960c6230b21fbc36a5bb8fc09368",
+      "source": "recoil",
+      "master_start_seconds": 277.584,
+      "master_end_seconds": 278.556,
+      "raw_master_pcm_sha256": "bc35a414a031e8175ef451af5e00b24f38a4474c26f75f4f7acbc0abbdcf4791",
+      "assigned_action": "1911 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.138996622175177,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1008961945772171,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_px4_last_00.wav",
+      "sha256": "9e66c4c3d66091ff4a8aadfd1e95b7d63d0e7b5e2eae436a4357eb2a4e124ed0",
+      "source": "recoil",
+      "master_start_seconds": 305.594,
+      "master_end_seconds": 306.516,
+      "raw_master_pcm_sha256": "5a875f0d7403c459c544b78b42edfbc967295bbfb8b8e091558e764e4d90b978",
+      "assigned_action": "px4 final discharge with recorded decay",
+      "duration_seconds": 0.922,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.78959147135918,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12810391187667847,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_tec9_last_00.wav",
+      "sha256": "5a8348ee4856520a946bd1a6c8c75987b6b8d5eaf1d5ee91765dff577ddd5876",
+      "source": "recoil",
+      "master_start_seconds": 324.124,
+      "master_end_seconds": 324.946,
+      "raw_master_pcm_sha256": "547737537a4340211d86194dcac75cecc008b7020cfb354babb7329915c5232f",
+      "assigned_action": "tec9 final discharge with recorded decay",
+      "duration_seconds": 0.822,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.832402737704344,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.09283873438835144,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_dt11_last_00.wav",
+      "sha256": "e6b9ecf16f5539aba263ec1453820dc3eee620e0991ceb8a821b8784ee7b2966",
+      "source": "recoil",
+      "master_start_seconds": 353.624,
+      "master_end_seconds": 354.296,
+      "raw_master_pcm_sha256": "dbb4baba4eeaa04f2ad4c04422f919c98ca8f99929eb9d890427dca23ba90d00",
+      "assigned_action": "dt11 final discharge with recorded decay",
+      "duration_seconds": 0.672,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 0.5097552776781601,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.168783038854599,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_m1014_last_00.wav",
+      "sha256": "50187ee41b6202b83a27c80a1e39256eb555bbde5d23ce7f16a0c4d95e8fa903",
+      "source": "recoil",
+      "master_start_seconds": 382.234,
+      "master_end_seconds": 382.806,
+      "raw_master_pcm_sha256": "37dcc34f7ef69564d4860843ace66dfa9f1682908f24a1ee1738cd09ed703530",
+      "assigned_action": "m1014 final discharge with recorded decay",
+      "duration_seconds": 0.572,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.532590303069441,
+      "peak": 0.569976806640625,
+      "early250ms_rms": 0.20389463007450104,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_matadors_last_00.wav",
+      "sha256": "3e468b7ed509379c8457d902ac77ed705464a68cd69d1d6c41f150b790fb4f54",
+      "source": "recoil",
+      "master_start_seconds": 422.664,
+      "master_end_seconds": 423.736,
+      "raw_master_pcm_sha256": "996f4169cab25e97fa44deda45f7b05d6b92fe6a3062e46ec8905d2d68d1bf98",
+      "assigned_action": "matadors final discharge with recorded decay",
+      "duration_seconds": 1.072,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.331932761550244,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.20365291833877563,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mp5_last_00.wav",
+      "sha256": "a9bdc7f081522af673d3e147fa480343ca7e3eaf751067a4a74cc5143da55736",
+      "source": "recoil",
+      "master_start_seconds": 457.554,
+      "master_end_seconds": 458.676,
+      "raw_master_pcm_sha256": "b9f0631dc52c0b5bea383bc1e61e58ef9c95f417bd3364c7358150b436e8e1a6",
+      "assigned_action": "mp5 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.496584642029348,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14965805411338806,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mp9_last_00.wav",
+      "sha256": "fb07162b30b3485a47211c5890fe7f149099c84e42f4df20752863389f5d9696",
+      "source": "recoil",
+      "master_start_seconds": 482.834,
+      "master_end_seconds": 483.956,
+      "raw_master_pcm_sha256": "93ebf6d1615f0816abc7d80fd54e718bf097ad14fb16bd5e4e15ed41cb6060e7",
+      "assigned_action": "mp9 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 5.723674750261598,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.15699830651283264,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_p90_last_00.wav",
+      "sha256": "8a72bc171a8cf98b0ec728bf1680fce5f978eebaf8a6cefe8ee469b3ba0d6ba0",
+      "source": "recoil",
+      "master_start_seconds": 1011.164,
+      "master_end_seconds": 1012.286,
+      "raw_master_pcm_sha256": "3dc64ad7768e3118332fe73e2cb7d8e67f2f30ce45c6e392f10410bbf178dd6b",
+      "assigned_action": "p90 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.63117119594954,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.13608331978321075,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_ump_last_00.wav",
+      "sha256": "44be078b5ae3682702488b28dfcb3f59f9231f3733590bf6538004c77d1af159",
+      "source": "recoil",
+      "master_start_seconds": 988.704,
+      "master_end_seconds": 989.676,
+      "raw_master_pcm_sha256": "a52befa79ea939325a380cf2da5f7f05c91ad2172bb853d5347c4e01825c7e58",
+      "assigned_action": "ump final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.3835157883005684,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12796643376350403,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_uzis_last_00.wav",
+      "sha256": "5cada4b8d32cf39cddb4f9be6b3b173fb15594719c8dbd7ca82f535a37efb0b7",
+      "source": "recoil",
+      "master_start_seconds": 544.664,
+      "master_end_seconds": 545.386,
+      "raw_master_pcm_sha256": "9cbe780d75bc2025d940c800ab355d29097e7afca98eafb4cccface1a6135f78",
+      "assigned_action": "uzis final discharge with recorded decay",
+      "duration_seconds": 0.722,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.363751856280346,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12263285368680954,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/fal_mag_insert_00.wav",
+      "sha256": "e8b7129b13650f0e3f0a41cc4e40284bce7df203a22f1bb30dc169dc8f8497b8",
+      "source": "recoil",
+      "master_start_seconds": 144.362,
+      "master_end_seconds": 144.647,
+      "raw_master_pcm_sha256": "e787f688864c105f2ebdc6bd16c5cb6cc53fd11fc6fd6733fd715d0afd4edd99",
+      "assigned_action": "fal mag_insert single reload stroke",
+      "duration_seconds": 0.285,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.2867905573568126,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.04482302814722061,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/fal_bolt_00.wav",
+      "sha256": "f89b74edd8e638a89cda592050907d3250b2b252cb4c2b228089b7b0426d04ee",
+      "source": "recoil",
+      "master_start_seconds": 161.072,
+      "master_end_seconds": 161.377,
+      "raw_master_pcm_sha256": "40e0153bb332cc4a4cd4b5dd3157e42c641540c68ea3c17be3ee15dbe1fcc5c3",
+      "assigned_action": "fal bolt single reload stroke",
+      "duration_seconds": 0.305,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.8123807111413655,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.06375858187675476,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shaker_open_00.wav",
+      "sha256": "4ac9844686a44dd3e52788dcdf0c8dc620a6570aa96a9d7228942c3fe3f1dc53",
+      "source": "loco",
+      "master_start_seconds": 142.205,
+      "master_end_seconds": 142.54,
+      "raw_master_pcm_sha256": "6b46bbaa6e074d21b00085bd8392b2ba9371185baa244a0491bc3c9526c87bce",
+      "assigned_action": "shaker preparation / cap opening",
+      "duration_seconds": 0.335,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 19.139192559311272,
+      "peak": 0.29998779296875,
+      "early250ms_rms": 0.03385688364505768,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/katana_shield_sustain_00.wav",
+      "sha256": "21c14e02ad188a6b9b6264c713719e6b2773e421d5cd58d9fd58907285403c12",
+      "source": "loco",
+      "master_start_seconds": 42.1,
+      "master_end_seconds": 51,
+      "raw_master_pcm_sha256": "4eb1a48c3f1df8ee12c90dd9152aac50e51174068b66ead7e44e776cf6c3b2d1",
+      "assigned_action": "continuous katana shield sustain",
+      "duration_seconds": 8.65,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "gain_db": 6.626665308098624,
+      "peak": 0.47998046875,
+      "early250ms_rms": 0.09905149787664413,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "250ms wrap crossfade and 256-sample seam correction of continuous shield recording."
+    },
+    {
+      "file": "res://assets/audio/reference099/akm_mag_insert_00.wav",
+      "sha256": "e7a124d21e39bffb2fb0b77f249045f35ee1b81557525635eb6ae1b186a73509",
+      "source": "recoil",
+      "master_start_seconds": 27.985,
+      "master_end_seconds": 28.4,
+      "raw_master_pcm_sha256": "9c4d130a1166bbfeed280dc6f5a0041a172c9285e07788f555aeeeb2c944bea5",
+      "assigned_action": "akm mag_insert",
+      "duration_seconds": 0.415,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 8.243443513050433,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "AK first insert; magazine counter changes0->20, hand leaves well.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "df6e7e04329ee4be78a32ea493d36f4e45035f543c5ee2b83d9466098df25268"
+    },
+    {
+      "file": "res://assets/audio/reference099/akm_bolt_00.wav",
+      "sha256": "8234e4c9774cb16dd3bb204915a866f5dbcf2af8e3a71f03cc945bcfd7831016",
+      "source": "recoil",
+      "master_start_seconds": 29.16,
+      "master_end_seconds": 29.88,
+      "raw_master_pcm_sha256": "d2a7e59602f282e68de4357af52828ded5a74afe97fa643338d185c6f8ff2e25",
+      "assigned_action": "akm bolt",
+      "duration_seconds": 0.72,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.706819086955972,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "AK first charging stroke; hand moves across receiver then retracts.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "c8304b812b65e861f76baed353d5e06c977c6a6a66c3b791a854df3915cfb0ba"
+    },
+    {
+      "file": "res://assets/audio/reference099/akm_mag_insert_01.wav",
+      "sha256": "21e73232902584d734ac472a473d4af99dcff7c1287ae1d95d2a79123be4e2ab",
+      "source": "recoil",
+      "master_start_seconds": 37.99,
+      "master_end_seconds": 38.4,
+      "raw_master_pcm_sha256": "f4c90c743ba2052e914a1b423716ec1c8b2051209a40a9ba82d816149a78cdde",
+      "assigned_action": "akm mag_insert",
+      "duration_seconds": 0.41,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 6.192665887222213,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "AK second insert; counter0->20 at37.9 video.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "ee60743b2fbc32dd1078e3f7ffd553ccdc78c0f5c3e001a5768faa61c71dd4f9"
+    },
+    {
+      "file": "res://assets/audio/reference099/akm_bolt_01.wav",
+      "sha256": "4040727cf86c080abb75657996ea1d6ac948254cfe1087b767ebc7fa127d1d11",
+      "source": "recoil",
+      "master_start_seconds": 39.72,
+      "master_end_seconds": 40.4,
+      "raw_master_pcm_sha256": "834eecc82527a2d60698aa85b9ef425e6a60178c2c7aac8e064b8127df6fbf16",
+      "assigned_action": "akm bolt",
+      "duration_seconds": 0.68,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 6.161747742744829,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "AK second charging stroke at39.4-39.8 video.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "a61570c48faa0c92a488f89a1abd917f1cb3ea4a49c5bd38fcebcbd711deb664"
+    },
+    {
+      "file": "res://assets/audio/reference099/cx4_mag_insert_00.wav",
+      "sha256": "cc9d173388e238ec87e4592d430d2291ffa3e60782d13fa3b8650942f9fee392",
+      "source": "recoil",
+      "master_start_seconds": 104.01,
+      "master_end_seconds": 104.52,
+      "raw_master_pcm_sha256": "ea2af8183682eb9d836f21f305413a09f6ca38b956bc33cbff2e2bab7b247246",
+      "assigned_action": "cx4 mag_insert",
+      "duration_seconds": 0.51,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 8.432094503470502,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "CX4 magazine seating; counter0->35 by104.006 video.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "cc631b1da5d33f72509e2baac8a2e70959b11e664941e718834b8507ad5ab4db"
+    },
+    {
+      "file": "res://assets/audio/reference099/cx4_bolt_00.wav",
+      "sha256": "113c22760fc30de7e0c46a81a3bc16d149bc656e73429b24b0a87ffedc8dab34",
+      "source": "recoil",
+      "master_start_seconds": 105.06,
+      "master_end_seconds": 105.91,
+      "raw_master_pcm_sha256": "bae087bc7fc39044baa6a29e944e3612e8e9909037fed88f199e73cc619133b1",
+      "assigned_action": "cx4 bolt",
+      "duration_seconds": 0.85,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 5.2158613101959705,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "CX4 charging handle pull/return; yellow back arrow disappears after105.0 video.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "235b21d3eee86e3512d0a104118e28a2e64ef83307b09402933e0d55af9c833c"
+    },
+    {
+      "file": "res://assets/audio/reference099/awp_bolt_00.wav",
+      "sha256": "cd593b91daf4873082fca84a51c61191e22e05fee4403e1ffdf6bd44032328d9",
+      "source": "recoil",
+      "master_start_seconds": 570.98,
+      "master_end_seconds": 572.42,
+      "raw_master_pcm_sha256": "066f3898966bcb77a300b00d5a03e772fe651039a79953be7e94a92ab8adefd0",
+      "assigned_action": "awp bolt",
+      "duration_seconds": 1.44,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.538352090294696,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "evidence": "AWP support hand cycles bolt after569.24 video discharge; no following shot inside cut.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms attack and15ms end fade. Original single-stroke decay retained, no synthetic tail or source separation.",
+      "pcm_sha256": "5ffdd5d87b97bdfe4019bc526dc84aa8570cf3183ddd29e57938500354111068"
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_menu_click_00.wav",
+      "sha256": "8c5862645532f3efc5548f78bf14c3e13fbbec83a57c9fe94a617d4b40545d7b",
+      "pcm_sha256": "4af76c307cba3a1b63774f24fa81ad609104c6aa77234eb79b3d501f3a90d605",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 2.922,
+      "master_end_seconds": 3.52,
+      "raw_master_pcm_sha256": "2408bef213009598a5053303fa2dcb448905c4f08bf56dd98fd884ebc2f5b642",
+      "assigned_action": "menu_click",
+      "duration_seconds": 0.598,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 2.4918558796999717,
+      "peak": 0.279998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_menu_hover_00.wav",
+      "sha256": "8502587630362fe0f7aa2fda9deeb0ffd86229930d60c70e400f8a4eb32711ac",
+      "pcm_sha256": "60c4142ea483621a70ada258f7632cf2f981b10ae28cb4677c777af3ea13c79f",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 2.245,
+      "master_end_seconds": 2.42,
+      "raw_master_pcm_sha256": "8fa935b7f0d562a2c68c77576cb8aa3eead587cd2e03143f6a5597306bf43620",
+      "assigned_action": "menu_hover",
+      "duration_seconds": 0.175,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 18.06179973983887,
+      "peak": 0.0638427734375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_game_start_music_00.wav",
+      "sha256": "704213f90a98f584cd3cb6ec5a735a8adf94348aeb9be9fa45903bc4898f05fa",
+      "pcm_sha256": "c12dc6ec81416f34774edf31f5f585c9b246473a1d1644d2d52b97cfb997771d",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 16.6,
+      "master_end_seconds": 22.65,
+      "raw_master_pcm_sha256": "5710c0c018cd3be2b6170f4a8c6984648590421c2c10110e275d9e42c1f8fbd7",
+      "assigned_action": "game_start_music",
+      "duration_seconds": 6.05,
+      "mono": false,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.4510828044577154,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_vr_initialize_00.wav",
+      "sha256": "cb6742bd259eb4e0da9980c59f272682ae1344842c4e070787aabb43646262b5",
+      "pcm_sha256": "a6476ef336cf49b5c0265e5cfff61fad8e090854477492dc18fb10a8f5b52077",
+      "source": "extra-a",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234528-0.mp4",
+      "source_sha256": "cbd1d840733f66f2341942cf968dada332737e7100c203f76468ef52febf83d3",
+      "master_start_seconds": 22.85,
+      "master_end_seconds": 25.55,
+      "raw_master_pcm_sha256": "f8225b5764d0cee51d95ded8505577260333ef3b7f34cbf70dfd642f33ee3f62",
+      "assigned_action": "vr_initialize",
+      "duration_seconds": 2.7,
+      "mono": false,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -3.054192495254627,
+      "peak": 0.379974365234375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-a; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_item_pickup_00.wav",
+      "sha256": "71ee3ba31171f5e34c70f5f1182e8ffa7862fa3aa1a32e5a99b8342649daa304",
+      "pcm_sha256": "876eeb7519e02258a59733bc69c36bd152550e6943e67f5b98395416ea545aa8",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 43.72,
+      "master_end_seconds": 44.4,
+      "raw_master_pcm_sha256": "26f11b615ca054c97d596a5362c254af313774d0b9337f985cafbe338712605e",
+      "assigned_action": "item_pickup",
+      "duration_seconds": 0.68,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 1.7252978944163198,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_item_highlight_00.wav",
+      "sha256": "81601bf694f00c768fcf6ea97631f11efe619e86f727696cfb071c5aa61f05f6",
+      "pcm_sha256": "674c87d7c3ddb4a3b9addfef5b7805d7e20b20cba43bc4a81f386c053458381a",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 343.17,
+      "master_end_seconds": 343.4,
+      "raw_master_pcm_sha256": "4b5940079fb5bd19c7b8d0c00629a88e4b7b52517efb32d5a164f5c7822bf224",
+      "assigned_action": "item_highlight",
+      "duration_seconds": 0.23,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 12.692500217827956,
+      "peak": 0.139984130859375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_concrete_step_00.wav",
+      "sha256": "a551219e0a43953760d7688ee8bf16b43abe9b4c2b3829af7d96e78070bfedcf",
+      "pcm_sha256": "f5687c1d6a8c7496c1fb72351aa0787bc0310143cde38202347cae508b569276",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 36.19,
+      "master_end_seconds": 36.48,
+      "raw_master_pcm_sha256": "28cd55f3bedcc30e55c178ca26241005e9de89e5b4ba9ee54fc0716f1ee6fef0",
+      "assigned_action": "concrete_step",
+      "duration_seconds": 0.29,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 16.052174952054695,
+      "peak": 0.339996337890625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_concrete_step_01.wav",
+      "sha256": "37831ee5f9637780a89fb6d49209da36b25d29e727d11053ab20529c1bb7f0a3",
+      "pcm_sha256": "ed8eb0d134a29149ae3775ad89fe73e326b3ebfb8ed4fff041b39db35757e66f",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 37.0,
+      "master_end_seconds": 37.26,
+      "raw_master_pcm_sha256": "6f862a22541f78ab3fa96ded00ee730b0e3d2fba42d95c97ba4139b0d7720e46",
+      "assigned_action": "concrete_step",
+      "duration_seconds": 0.26,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 15.31501582807925,
+      "peak": 0.339996337890625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_concrete_run_step_00.wav",
+      "sha256": "049c6d4d01810cd3c8844500e86a8df3479c58aeb670ecae2f9a9c62d174a597",
+      "pcm_sha256": "363065fecc99cb44d7690091e8bd9b192e4a6d843fc29e12ba44c468eaa5dbd8",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 40.4,
+      "master_end_seconds": 40.66,
+      "raw_master_pcm_sha256": "26cd4b3eb3abc8dbd13458ed845d6cabfcdae2925377d7efd305b33c2c302fc1",
+      "assigned_action": "concrete_run_step",
+      "duration_seconds": 0.26,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 15.235135689968454,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_concrete_run_step_01.wav",
+      "sha256": "b3f129e049b3e88890f6c6c0d1270b17538bfe0e8127cdb7806e3884edfdb7e1",
+      "pcm_sha256": "93fb5f42ad41bf276229aee18c91efe4dae797bbe667d721c432999316c093e1",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 40.73,
+      "master_end_seconds": 40.99,
+      "raw_master_pcm_sha256": "46d00fd0e121fa9a2144777474791f5ed6f443bc0bfa58b0ba843533d8f802e2",
+      "assigned_action": "concrete_run_step",
+      "duration_seconds": 0.26,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 18.06179973983887,
+      "peak": 0.3677978515625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_concrete_run_step_02.wav",
+      "sha256": "350d09d0df6cbc01c50d4f91d62396a7642efaa575574d92bfe80f245fb2d875",
+      "pcm_sha256": "a96512cf6c82a2a90e7883cea3451d0253e0a8234d52788d61d3c324714fbb6c",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 41.05,
+      "master_end_seconds": 41.31,
+      "raw_master_pcm_sha256": "c08821913383474b084018308b5b60d9526c78e2c72e1868d5533fec68e42c78",
+      "assigned_action": "concrete_run_step",
+      "duration_seconds": 0.26,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 15.544433306191126,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_glide_00.wav",
+      "sha256": "f8be359bc44b59049da9d9374d786948a0f2aa83bd1cb7dcf4c76bec87cf4901",
+      "pcm_sha256": "45a26e8dcbfa09716b6d1cbaf5eeadad114108f07d69cbbb9b5c02f9a0231074",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 457.85,
+      "master_end_seconds": 459.24,
+      "raw_master_pcm_sha256": "1f9bbecde5fe1e46bb5f0a451d86c8341e45bbcad9b8c21c0ff3ca6beec45f64",
+      "assigned_action": "glide",
+      "duration_seconds": 1.21625,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "crossfade_samples": 8340,
+      "gain_db": 5.124991795713548,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_sword_swing_00.wav",
+      "sha256": "4119e56ba8017eb5d20ccebc6bafb39c261ad1a37c0562b3df2172daff526b2e",
+      "pcm_sha256": "bb57e56d32d5be94e56e966740678f0a61f7f85a1564c8171cd9607a3f1ce880",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 46.8,
+      "master_end_seconds": 47.44,
+      "raw_master_pcm_sha256": "0fce59f134a5618d5b56824109cf1083b6076c4d61da0a495d65d7cca0024b39",
+      "assigned_action": "sword_swing",
+      "duration_seconds": 0.64,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 10.811011918564134,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_sword_swing_01.wav",
+      "sha256": "7967865cba1401d61be6e0765eb581038d1ed97dea5f720a594ab82ea451988d",
+      "pcm_sha256": "6674bd6a60458baee4ea4b2fe93301703949a093e0ad417b4f13aae6f6e05c1e",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 48.3,
+      "master_end_seconds": 48.87,
+      "raw_master_pcm_sha256": "6f4423433976a20734f4862ab8ba6cb55d5e543730cd902f5163da74686cd3c4",
+      "assigned_action": "sword_swing",
+      "duration_seconds": 0.57,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 13.014293191327734,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_sword_swing_02.wav",
+      "sha256": "cb31bc2c56184b8aaf93059009ed19e0b34672ae5252c417a54dfe1e820454d1",
+      "pcm_sha256": "3f191aa6f87f6e1716a0eb1230e82af3e4ff1b5bacbb0c1fa5c81604567aeff4",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 48.88,
+      "master_end_seconds": 49.43,
+      "raw_master_pcm_sha256": "62391668fcfd2b95b39063e78d981f235d2d9cad597152d563da9a0d3e2483b6",
+      "assigned_action": "sword_swing",
+      "duration_seconds": 0.55,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 14.034749307108918,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_cyberblade_shield_sustain_00.wav",
+      "sha256": "6af71ea95031dfcf03caecde20901c920dbfe38e83b6ad17d12164dd824f778e",
+      "pcm_sha256": "f32529eeb32df217a1c1dcdad84fe0a6c61e851de1fbda081733babeebe39b4f",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 52.3,
+      "master_end_seconds": 62.4,
+      "raw_master_pcm_sha256": "b058999247226315b7d4854703062560bd10619c3b7d73b9804f5332198d804e",
+      "assigned_action": "cyberblade shield_sustain",
+      "duration_seconds": 9.85,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "crossfade_samples": 12000,
+      "gain_db": 3.0833167673212363,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_zone_bloom_00.wav",
+      "sha256": "e967392c8c6d14cac8c57163ca26abec0bdc4b9f74c01bf652cfc52545aeb90d",
+      "pcm_sha256": "da5e288254cf9f364a6e83dfcfa31858f3ff7e5bf57fe0eed980d49dc323998c",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 91.78,
+      "master_end_seconds": 95.2,
+      "raw_master_pcm_sha256": "42f5b5671be2ef38d984347a90623c982d84636fc304d381598a9226eb0b2fcc",
+      "assigned_action": "zone_bloom",
+      "duration_seconds": 3.42,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 2.4149234975481226,
+      "peak": 0.649993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_frag_blast_00.wav",
+      "sha256": "efb7467b2289ee8cf94b7bc5c230312985b11344047bfacc3400a1df08ba7c4b",
+      "pcm_sha256": "9cba0f753e69530797e5082c50534039c3a4bd385aeee2c5e41553e776bbce09",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 108.96,
+      "master_end_seconds": 112.0,
+      "raw_master_pcm_sha256": "ac1abeee6865f7633a11a75a13988555ac4d2b0f39031e2f5f20ba371e1738e0",
+      "assigned_action": "frag_blast",
+      "duration_seconds": 3.04,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 5.253644398661298,
+      "peak": 0.739990234375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_grenade_throw_00.wav",
+      "sha256": "02fb9af54810080bcc36953ef806d6771ed452b500aff8b165096f864b751249",
+      "pcm_sha256": "83a06425a5577ac9301a056be4a3a0abbae2d13937a8ec0207dd475772715024",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 106.135,
+      "master_end_seconds": 106.51,
+      "raw_master_pcm_sha256": "267299d63811422b7f789189155c3506ba640d8e6e11d87cb01c7be19a6acbb6",
+      "assigned_action": "grenade_throw",
+      "duration_seconds": 0.375,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 11.858815617022149,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_build_lightning_00.wav",
+      "sha256": "8bf8e4add8296eb811de45c1dbfc15ad3313643eba989710b696c8873f5acf7c",
+      "pcm_sha256": "e669a8b6127d9648df6194720377d02d7ec19d5872dce8d245e2fe1cae8c311e",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 441.0,
+      "master_end_seconds": 444.2,
+      "raw_master_pcm_sha256": "52ca4e169f5685004e20d5b9a2fa0211c5c13ac1b4e9187907f344925829070d",
+      "assigned_action": "build_lightning",
+      "duration_seconds": 2.95,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "crossfade_samples": 12000,
+      "gain_db": 14.064038838635554,
+      "peak": 0.279998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_build_place_00.wav",
+      "sha256": "155092b03fd308d8f6566936cc9ff89971ed45a9c9e14e1f36cfeee783abfc5a",
+      "pcm_sha256": "c3a66f965594a676a139fb907ca46432254310f26b4773910c92213c90483561",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 446.24,
+      "master_end_seconds": 447.2,
+      "raw_master_pcm_sha256": "b8cd8bfc55097cd5e98064038bbb6db70183c9309d31aebd3baada1bac63dc0d",
+      "assigned_action": "build_place",
+      "duration_seconds": 0.96,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 4.020944579039258,
+      "peak": 0.47998046875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_build_place_01.wav",
+      "sha256": "521e834fe508537a1b2995bf5a5969f61d7723a0b92f0c2799354684b7ecc79b",
+      "pcm_sha256": "e56ee0c35bd6b62a30c29d470777c32247a390f715759a06d637f25beb7a7cd9",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 453.76,
+      "master_end_seconds": 454.65,
+      "raw_master_pcm_sha256": "2b8aef341a5198c1c43a29105ec8e72c23f009e5ae0f03039ee8336c21b28e8e",
+      "assigned_action": "build_place",
+      "duration_seconds": 0.89,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 2.027947222801231,
+      "peak": 0.47998046875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_banana_consume_open_00.wav",
+      "sha256": "a368bc4919602b683636ca2a47a2457065bda74d7ec6615ee396c677e7dd241f",
+      "pcm_sha256": "53d2a699564282adaa47a9624e1cacbbd0bcaa6b3c7d149f357836dffef21365",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 172.41,
+      "master_end_seconds": 172.91,
+      "raw_master_pcm_sha256": "9185307098305bc4cceae67dfea927785afb824b0cf93988b29bf35dd980e6ba",
+      "assigned_action": "banana consume_open",
+      "duration_seconds": 0.5,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 4.650155644162399,
+      "peak": 0.239990234375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_shaker_consume_shake_00.wav",
+      "sha256": "43e14d8ca80d579f69d901cabbec9a59e42634f22a83ab2bbc66127719c3827e",
+      "pcm_sha256": "a9f26824fa2985298cfc4313395ccbd9cb1fda41c2cd49b87851fc5d19f2b5af",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 48.55,
+      "master_end_seconds": 48.91,
+      "raw_master_pcm_sha256": "f0a266edc68d2b0c621c7183bd8c734c7d8326dee11f7f642cc2eb8057c634bb",
+      "assigned_action": "shaker consume_shake",
+      "duration_seconds": 0.36,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.8079308897877786,
+      "peak": 0.199981689453125,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_shaker_consume_shake_01.wav",
+      "sha256": "fc0203e1de83b5d4572e4b75000f08f3a47949a69435667e073d8b011f42de89",
+      "pcm_sha256": "4929a73b299b05660f92397f0067ec3ebe52f4b3823e38a853e23f6db4b4e351",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 49.28,
+      "master_end_seconds": 49.64,
+      "raw_master_pcm_sha256": "aefca7c731f580f4cf7a5459c8e3e82c313296bdd06d0541d13d63bc1297ce15",
+      "assigned_action": "shaker consume_shake",
+      "duration_seconds": 0.36,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 7.561374173820997,
+      "peak": 0.199981689453125,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_shaker_consume_ready_00.wav",
+      "sha256": "b84f734af1722c3ed51a9421f3182d840ee6016ace53fc7ea1a1c75fccd108c6",
+      "pcm_sha256": "e721c17ef0327a2a5f8bff67b9a5aba944372a4376b33d6838c221573fe74b6e",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 51.58,
+      "master_end_seconds": 52.25,
+      "raw_master_pcm_sha256": "069379cdd5e9f2e49f3a805b7ddacfe92311f786ce4a0e4c650df7089eaf3b9f",
+      "assigned_action": "shaker consume_ready",
+      "duration_seconds": 0.67,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.03195569139406754,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_shaker_consume_drink_00.wav",
+      "sha256": "20dc459a9f0948fb78ff9ae7e675f9f92c057695e10c3010274181c0bf9570ed",
+      "pcm_sha256": "2246c9b42f640f42756f3b404c367597452dc2db9a726be02d8b4b1e88a5f313",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 53.27,
+      "master_end_seconds": 54.5,
+      "raw_master_pcm_sha256": "9b5ee7691cf98b551f1722fc00a0e57a4ee68a2f75ea5d95868eb5f5a08ff75e",
+      "assigned_action": "shaker consume_drink",
+      "duration_seconds": 1.23,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -1.5716306047909354,
+      "peak": 0.41998291015625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_soda_consume_open_00.wav",
+      "sha256": "fff7f50e08da8ddffb2c96e59c1f9085f2f2a5059c02d46aa3d322d1cd22d9cc",
+      "pcm_sha256": "1d2108e9e923f1317f47a7cdef9f6b834200739acc2075ee395586d886547f00",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 201.14,
+      "master_end_seconds": 201.73,
+      "raw_master_pcm_sha256": "19656b41416987b2193197edbc8618ea4c0f3fcd61121b6c22483ab974bb7fa0",
+      "assigned_action": "soda consume_open",
+      "duration_seconds": 0.59,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.6369406715368131,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_soda_consume_drink_00.wav",
+      "sha256": "c2f9b2c33da43063fe5fbbc96f509412b0ab33648eb55959592ab77908ad4d53",
+      "pcm_sha256": "6bfeca4625f7f33bd22fb23d4a1e4d647fe51cc131dfd32f8a9fd83d86869ef8",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 204.18,
+      "master_end_seconds": 206.0,
+      "raw_master_pcm_sha256": "b4a565c678a3472c877a1622ded1868ecc041867168622bde714466984cc24bf",
+      "assigned_action": "soda consume_drink",
+      "duration_seconds": 1.82,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -1.1382929934909647,
+      "peak": 0.41998291015625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_s85_shot_00.wav",
+      "sha256": "c9ced7d6fb6b4687aa6887b9e80ce233efdbacba0613720068b0a4e79924cb67",
+      "pcm_sha256": "9e05e28902203996f7e22dcef42634f0947dc46c764c11e3487af720ca34ad5c",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 121.92,
+      "master_end_seconds": 125.2,
+      "raw_master_pcm_sha256": "caba0759d304eb8bc74298d87106b854a494e331f7c3d1299da4825587c08c82",
+      "assigned_action": "s85 shot",
+      "duration_seconds": 3.28,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 1.7275536035014407,
+      "peak": 0.579986572265625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_s85_pouch_00.wav",
+      "sha256": "85bc1b13f0cdc6180cec7208d3eb3c8f6cf1589c550ad40c2c46b48433ba39bd",
+      "pcm_sha256": "14a1671d24f24a2a8740e8a067c3cd9cf9a0c2b2d3860c789e37e39e04a1f20e",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 140.22,
+      "master_end_seconds": 140.84,
+      "raw_master_pcm_sha256": "a7ce90e0e800a94f89e5605053e39a40c62aba0d66368b32415167fa6f592dd9",
+      "assigned_action": "s85 pouch",
+      "duration_seconds": 0.62,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 5.378722070302201,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_s85_mag_insert_00.wav",
+      "sha256": "29c6e2bb7d98bf22278bf64e7e5d513acc3194b71660e7c332b31e96a7b77e26",
+      "pcm_sha256": "a45938b90cc1e32c8dd70371b957844789765c99a2efa9c652ac6fda0658887f",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 141.64,
+      "master_end_seconds": 142.2,
+      "raw_master_pcm_sha256": "c9e338caae147a3232b5a93eaea3bb4e30d5d3c66526554c9e8e446b998630d8",
+      "assigned_action": "s85 mag_insert",
+      "duration_seconds": 0.56,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 4.002909881562489,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_s85_bolt_00.wav",
+      "sha256": "1e5f05d200630ec23cc88c280eee80ac49b8c53d80601be4a56cb522b05c54c7",
+      "pcm_sha256": "b4e825f5067065ec6e57f6617f9149f4db8295ad5d101b6cd47cb9755a5e23b4",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 143.37,
+      "master_end_seconds": 144.02,
+      "raw_master_pcm_sha256": "58c089ee015ba0b284ad311785e0bd26639866e48a391752b5b4123987f7e7e1",
+      "assigned_action": "s85 bolt",
+      "duration_seconds": 0.65,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 4.168667044919086,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_spr_shot_00.wav",
+      "sha256": "857a5f394071361df79978ca718b53c0268ec30d78928326665299afabb3681d",
+      "pcm_sha256": "ac3583ddaa6c2e914874c438c4c7f4320ba6750818c6f33580a1a98d61916e76",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 149.31,
+      "master_end_seconds": 152.3,
+      "raw_master_pcm_sha256": "20722b5be3aace7684b11f2dd8554ddfc0d55c24704a5a226bda72d44a0a9162",
+      "assigned_action": "spr shot",
+      "duration_seconds": 2.99,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.4682703671836341,
+      "peak": 0.579986572265625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_spr_mag_eject_00.wav",
+      "sha256": "10abb752309729897d96414fa11fc5fba4a9f2fa8518a179e3cd11858ac0cbb3",
+      "pcm_sha256": "c6683aae37251360262df864b8546c286492d78d5087014b6959cf04e13aa668",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 153.64,
+      "master_end_seconds": 154.25,
+      "raw_master_pcm_sha256": "a39d38939f0406ebe611fcb7e53a4836bed0bd4a7bab7c27f035eacded0ee482",
+      "assigned_action": "spr mag_eject",
+      "duration_seconds": 0.61,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 4.99844837476884,
+      "peak": 0.29998779296875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_spr_mag_insert_00.wav",
+      "sha256": "d3c820339da031d75e1d39c0cc7a92e548452948725ec77eb477b26225ea106f",
+      "pcm_sha256": "12e50d2cf7a0517bc04e100b462ba309c79631a1ccfae7972ebce486c8a39433",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 155.62,
+      "master_end_seconds": 156.14,
+      "raw_master_pcm_sha256": "753418f27ca35fc53c4f0f198a14a8f121def2f9af2a667b7ac7ad690fbde3ba",
+      "assigned_action": "spr mag_insert",
+      "duration_seconds": 0.52,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 5.403157761111519,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_spr_bolt_00.wav",
+      "sha256": "22746f175548e36c87afe41f54dcd1c890069d24d612b2e0c2cd955042fa141d",
+      "pcm_sha256": "0a052ed1ae45d9861d59c117dba42a27ca9710817a486c2f2dceff6287d75416",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 157.67,
+      "master_end_seconds": 158.35,
+      "raw_master_pcm_sha256": "38cd77f225f863029630ddd7e828f85a6204ecbfbf326549e17a983c9955ef49",
+      "assigned_action": "spr bolt",
+      "duration_seconds": 0.68,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 2.3384742241608096,
+      "peak": 0.399993896484375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_awp_shot_00.wav",
+      "sha256": "5ad78dabecdcae42fb607439eb2f820cec0f0f13e0f8b6c0505a5b6d381318c5",
+      "pcm_sha256": "8d7e0d0b9561eadfa6e83bfc96511026b4acb7c01d9f5586dbd5d229418ba7ba",
+      "source": "new-video",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "source_sha256": "ada1b3dbe68ade26a5ceed0e4332587c64458d1417b7bd9ffa790a68420ce2ab",
+      "master_start_seconds": 214.045,
+      "master_end_seconds": 218.15,
+      "raw_master_pcm_sha256": "469ccc52cfc7a8fc5b8b5610d4bbaab7d9526d24b3a3debf56940ca32bf4dbb3",
+      "assigned_action": "awp shot",
+      "duration_seconds": 4.105,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 3.7150592470614003,
+      "peak": 0.939971923828125,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/new-video; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_facing_00.wav",
+      "sha256": "f9157bec07fc16a28e61bce0d975baebba18e96434ce1041fe1b8002e029962c",
+      "pcm_sha256": "c379472f0090f4072e4d0f98d2d5e92e7d446a4cb4826602c4be682ebda55fb6",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 23.1,
+      "master_end_seconds": 25.2,
+      "raw_master_pcm_sha256": "8bb3c6a2c32734d2b72d80e5bdc9a5f325c74dac68f80bcf49ea026c493723f9",
+      "assigned_action": "revive_facing",
+      "duration_seconds": 1.85,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "crossfade_samples": 12000,
+      "gain_db": 3.70291760464574,
+      "peak": 0.260223388671875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_ready_00.wav",
+      "sha256": "d4031439ea45978ca2e9063413b39305b0a1a3fc425385160b944d60da442e9d",
+      "pcm_sha256": "ebe3ca06b02727b4a847d622403739ca4b1d4525dccff4fff581cf6a8bd80d26",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 27.15,
+      "master_end_seconds": 29.35,
+      "raw_master_pcm_sha256": "e23241ec55bee768c1586fe8ecdf69698f6338c3a17c0983499c0ecbe9eb5f75",
+      "assigned_action": "revive_ready",
+      "duration_seconds": 1.95,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "crossfade_samples": 12000,
+      "gain_db": 14.9696589267063,
+      "peak": 0.319976806640625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_charge_00.wav",
+      "sha256": "89cb65a1ba329da1f85b0420239dcf40e86a11d264548ee73f18434f87e52ad7",
+      "pcm_sha256": "8022a627bd3be769db56132d0f2caa8d472cda780218d03b49241c8e8a413f3f",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 22.0,
+      "master_end_seconds": 22.23,
+      "raw_master_pcm_sha256": "383a0dbe79738896493a1668cd833131b8de1837cc8120f16c6164402316305a",
+      "assigned_action": "revive_charge",
+      "duration_seconds": 0.23,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -0.6163279683688156,
+      "peak": 0.16998291015625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_charge_01.wav",
+      "sha256": "bf71cdba6a8083262766843d682eb82d46baaefdf076fceb194ef268ef5f3d80",
+      "pcm_sha256": "b0470f477cecf9f7b3367755f4cd1d765d86b6fdbbd8255ef6cbac68b3f87802",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 24.35,
+      "master_end_seconds": 24.58,
+      "raw_master_pcm_sha256": "382e874f203936e1c26b384f0aa7907fbe4ec3eac526055a81cd5e2fb1a2e7bc",
+      "assigned_action": "revive_charge",
+      "duration_seconds": 0.23,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.0017075595195860111,
+      "peak": 0.16998291015625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_charge_02.wav",
+      "sha256": "267da1f934ad370d87acd8918145cb910ea325a9bed4b515f7f707ddca1ca94e",
+      "pcm_sha256": "6896d593f291a34796cbc63cb0b8eedf6a692d80ba69b48fffc91ca12e121f9d",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 25.63,
+      "master_end_seconds": 25.86,
+      "raw_master_pcm_sha256": "b77c37f8a871392c3f2ad4c669596254b3c52246adbe1e3190311ef37e712bea",
+      "assigned_action": "revive_charge",
+      "duration_seconds": 0.23,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.002646592638197052,
+      "peak": 0.16998291015625,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_revive_discharge_00.wav",
+      "sha256": "7f751d2bdc98aa95fcc39519642b5284ed999cdc2c5f6cd86dfd3955a02c8a6e",
+      "pcm_sha256": "1bf016267fe18520431dde5f516bd11bc30b88f4fb2bee6f469aa31b30429dd8",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 26.51,
+      "master_end_seconds": 27.12,
+      "raw_master_pcm_sha256": "8d07360515a7d0481c5503af2dcf178b774ee104b7ede0c3d96d578978aa5a69",
+      "assigned_action": "revive_discharge",
+      "duration_seconds": 0.61,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": 0.8817496006218606,
+      "peak": 0.47998046875,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_harmonica_00.wav",
+      "sha256": "e083b64767a0b5902ea2c053fa223c14d5422a79da13145e40769cfb9fb331da",
+      "pcm_sha256": "c5d57efe6268ce865caa58c00bc84342b21cd5cc9a2c417083e32b85631dd3d6",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 64.2,
+      "master_end_seconds": 65.28,
+      "raw_master_pcm_sha256": "5884a931e5f676db94c69f6a9b1e85e73a18066de235e378d77ccd07c73f172b",
+      "assigned_action": "harmonica",
+      "duration_seconds": 1.08,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -1.219611714478221,
+      "peak": 0.3499755859375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_harmonica_01.wav",
+      "sha256": "b8d6f629e407ca240d58cdd2476e81eb2c8cbcef5ed4c1d18b1a6dcb56e69420",
+      "pcm_sha256": "917806841eff5abb7b7f19f522615859fcd5222ab1abbf1ee01445eb3f86e7f6",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 65.62,
+      "master_end_seconds": 66.52,
+      "raw_master_pcm_sha256": "f61cd424f37de9f4e7ad48b3ae541a39da1dc920ae8958f93799587084c97e69",
+      "assigned_action": "harmonica",
+      "duration_seconds": 0.9,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -1.7116789857877626,
+      "peak": 0.3499755859375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference099/isolated_harmonica_02.wav",
+      "sha256": "8e4f15b1b0dcaef3007509791d3199dd5fe5683c85206d296ca1acb9e2ea4606",
+      "pcm_sha256": "50e7bd3e21abd8248c5616eacb3f1117279e2dfb9fa723caef44c83d84eac95d",
+      "source": "extra-b",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 67.15,
+      "master_end_seconds": 68.9,
+      "raw_master_pcm_sha256": "703b674ac56dfcb3acc8359dcf36b787aebe56868faf52040abca578226f8bf9",
+      "assigned_action": "harmonica",
+      "duration_seconds": 1.75,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "crossfade_samples": 0,
+      "gain_db": -1.8000147800977049,
+      "peak": 0.3499755859375,
+      "listening_approved": false,
+      "processing": "Fixed gain, DC removal; mono spatial effect or retained stereo music. 1ms/20ms endpoint fades for one-shots; bounded250ms wrap crossfade/seam correction for sustained loops. No source separation or fabricated decay.",
+      "evidence": "Native action sheets and source timing in evidence/extra-b; new main recording audio trails visual action by approximately0.24s (+/- one recorded frame)."
+    },
+    {
+      "file": "res://assets/audio/reference0991/flight_continuous0991.wav",
+      "sha256": "c877635e36c8fc482e4417206d6dcae420c43504da13686aea4176b2a80cbb50",
+      "pcm_sha256": "8ebd8dd8bc7af9ca537a827f20ce7c744e75833ef0e174e6655a963a35eaa65e",
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "duration_seconds": 16,
+      "source_file": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone099-playtest\\evidence\\new-video\\master-48k-stereo.wav",
+      "source_video": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-232701-0.mp4",
+      "master_start_seconds": 457.85,
+      "master_end_seconds": 459.24,
+      "raw_master_pcm_sha256": "1f9bbecde5fe1e46bb5f0a451d86c8341e45bbcad9b8c21c0ff3ca6beec45f64",
+      "processing": "Seed991 circular Hann-window overlap-add of112 randomized contiguous recorded-wind grains; fixed RMS matched to099 flight bed.16second cycle; no hard cut, landing sound, generated wind or master gain change.",
+      "gain": 3.010117166864276,
+      "peak": 0.25897216796875,
+      "rms": 0.05591181743506796,
+      "previous_rms": 0.055913507314138,
+      "seam_step": 0.010223388671875,
+      "seam_slope_error": 6.103515625e-05,
+      "grains": [
+        {
+          "source_start_sample": 24538,
+          "samples": 31562,
+          "loop_start_sample": 1047
+        },
+        {
+          "source_start_sample": 1041,
+          "samples": 36797,
+          "loop_start_sample": 7046
+        },
+        {
+          "source_start_sample": 40835,
+          "samples": 23078,
+          "loop_start_sample": 13686
+        },
+        {
+          "source_start_sample": 10364,
+          "samples": 39551,
+          "loop_start_sample": 21147
+        },
+        {
+          "source_start_sample": 33869,
+          "samples": 22008,
+          "loop_start_sample": 27805
+        },
+        {
+          "source_start_sample": 15134,
+          "samples": 36224,
+          "loop_start_sample": 34671
+        },
+        {
+          "source_start_sample": 27923,
+          "samples": 38525,
+          "loop_start_sample": 40338
+        },
+        {
+          "source_start_sample": 26430,
+          "samples": 29031,
+          "loop_start_sample": 48528
+        },
+        {
+          "source_start_sample": 20661,
+          "samples": 36434,
+          "loop_start_sample": 54829
+        },
+        {
+          "source_start_sample": 1473,
+          "samples": 26229,
+          "loop_start_sample": 60978
+        },
+        {
+          "source_start_sample": 23063,
+          "samples": 24100,
+          "loop_start_sample": 68456
+        },
+        {
+          "source_start_sample": 17979,
+          "samples": 22796,
+          "loop_start_sample": 75341
+        },
+        {
+          "source_start_sample": 25360,
+          "samples": 35784,
+          "loop_start_sample": 81275
+        },
+        {
+          "source_start_sample": 34465,
+          "samples": 24460,
+          "loop_start_sample": 88967
+        },
+        {
+          "source_start_sample": 20971,
+          "samples": 37880,
+          "loop_start_sample": 96308
+        },
+        {
+          "source_start_sample": 9712,
+          "samples": 33196,
+          "loop_start_sample": 102910
+        },
+        {
+          "source_start_sample": 6948,
+          "samples": 32259,
+          "loop_start_sample": 110752
+        },
+        {
+          "source_start_sample": 18575,
+          "samples": 25612,
+          "loop_start_sample": 117049
+        },
+        {
+          "source_start_sample": 27816,
+          "samples": 38692,
+          "loop_start_sample": 122258
+        },
+        {
+          "source_start_sample": 14791,
+          "samples": 34755,
+          "loop_start_sample": 130360
+        },
+        {
+          "source_start_sample": 21822,
+          "samples": 37704,
+          "loop_start_sample": 136286
+        },
+        {
+          "source_start_sample": 16369,
+          "samples": 26768,
+          "loop_start_sample": 143661
+        },
+        {
+          "source_start_sample": 33144,
+          "samples": 27635,
+          "loop_start_sample": 151500
+        },
+        {
+          "source_start_sample": 7007,
+          "samples": 39238,
+          "loop_start_sample": 157983
+        },
+        {
+          "source_start_sample": 36660,
+          "samples": 29793,
+          "loop_start_sample": 165102
+        },
+        {
+          "source_start_sample": 17415,
+          "samples": 23964,
+          "loop_start_sample": 171672
+        },
+        {
+          "source_start_sample": 30605,
+          "samples": 31512,
+          "loop_start_sample": 178647
+        },
+        {
+          "source_start_sample": 25128,
+          "samples": 28928,
+          "loop_start_sample": 186150
+        },
+        {
+          "source_start_sample": 33734,
+          "samples": 26233,
+          "loop_start_sample": 192458
+        },
+        {
+          "source_start_sample": 15911,
+          "samples": 35268,
+          "loop_start_sample": 200004
+        },
+        {
+          "source_start_sample": 29860,
+          "samples": 35680,
+          "loop_start_sample": 205712
+        },
+        {
+          "source_start_sample": 13562,
+          "samples": 38357,
+          "loop_start_sample": 212253
+        },
+        {
+          "source_start_sample": 25881,
+          "samples": 38303,
+          "loop_start_sample": 218590
+        },
+        {
+          "source_start_sample": 25657,
+          "samples": 33713,
+          "loop_start_sample": 226205
+        },
+        {
+          "source_start_sample": 13342,
+          "samples": 40298,
+          "loop_start_sample": 233853
+        },
+        {
+          "source_start_sample": 951,
+          "samples": 32595,
+          "loop_start_sample": 239798
+        },
+        {
+          "source_start_sample": 33231,
+          "samples": 28421,
+          "loop_start_sample": 247689
+        },
+        {
+          "source_start_sample": 6693,
+          "samples": 25365,
+          "loop_start_sample": 253039
+        },
+        {
+          "source_start_sample": 17626,
+          "samples": 35637,
+          "loop_start_sample": 260326
+        },
+        {
+          "source_start_sample": 15701,
+          "samples": 23575,
+          "loop_start_sample": 267912
+        },
+        {
+          "source_start_sample": 20731,
+          "samples": 22153,
+          "loop_start_sample": 274244
+        },
+        {
+          "source_start_sample": 6768,
+          "samples": 23440,
+          "loop_start_sample": 281463
+        },
+        {
+          "source_start_sample": 21104,
+          "samples": 40240,
+          "loop_start_sample": 287170
+        },
+        {
+          "source_start_sample": 3555,
+          "samples": 22613,
+          "loop_start_sample": 295755
+        },
+        {
+          "source_start_sample": 3708,
+          "samples": 29180,
+          "loop_start_sample": 301119
+        },
+        {
+          "source_start_sample": 16288,
+          "samples": 25483,
+          "loop_start_sample": 307762
+        },
+        {
+          "source_start_sample": 14254,
+          "samples": 25082,
+          "loop_start_sample": 314806
+        },
+        {
+          "source_start_sample": 12972,
+          "samples": 38322,
+          "loop_start_sample": 321340
+        },
+        {
+          "source_start_sample": 7575,
+          "samples": 30323,
+          "loop_start_sample": 328887
+        },
+        {
+          "source_start_sample": 10526,
+          "samples": 27851,
+          "loop_start_sample": 335399
+        },
+        {
+          "source_start_sample": 7122,
+          "samples": 26388,
+          "loop_start_sample": 342260
+        },
+        {
+          "source_start_sample": 5341,
+          "samples": 38142,
+          "loop_start_sample": 350599
+        },
+        {
+          "source_start_sample": 28509,
+          "samples": 30279,
+          "loop_start_sample": 356877
+        },
+        {
+          "source_start_sample": 12280,
+          "samples": 35812,
+          "loop_start_sample": 363927
+        },
+        {
+          "source_start_sample": 20102,
+          "samples": 37998,
+          "loop_start_sample": 371261
+        },
+        {
+          "source_start_sample": 41233,
+          "samples": 24522,
+          "loop_start_sample": 376990
+        },
+        {
+          "source_start_sample": 7829,
+          "samples": 28900,
+          "loop_start_sample": 383793
+        },
+        {
+          "source_start_sample": 3585,
+          "samples": 34339,
+          "loop_start_sample": 391550
+        },
+        {
+          "source_start_sample": 561,
+          "samples": 24555,
+          "loop_start_sample": 396891
+        },
+        {
+          "source_start_sample": 3691,
+          "samples": 34573,
+          "loop_start_sample": 404035
+        },
+        {
+          "source_start_sample": 18269,
+          "samples": 38805,
+          "loop_start_sample": 411803
+        },
+        {
+          "source_start_sample": 7738,
+          "samples": 37360,
+          "loop_start_sample": 417539
+        },
+        {
+          "source_start_sample": 22388,
+          "samples": 40617,
+          "loop_start_sample": 424879
+        },
+        {
+          "source_start_sample": 25076,
+          "samples": 38777,
+          "loop_start_sample": 432316
+        },
+        {
+          "source_start_sample": 31272,
+          "samples": 25474,
+          "loop_start_sample": 438103
+        },
+        {
+          "source_start_sample": 15398,
+          "samples": 29943,
+          "loop_start_sample": 445509
+        },
+        {
+          "source_start_sample": 21756,
+          "samples": 40003,
+          "loop_start_sample": 451472
+        },
+        {
+          "source_start_sample": 25353,
+          "samples": 26207,
+          "loop_start_sample": 460193
+        },
+        {
+          "source_start_sample": 8661,
+          "samples": 39748,
+          "loop_start_sample": 466772
+        },
+        {
+          "source_start_sample": 379,
+          "samples": 37480,
+          "loop_start_sample": 472100
+        },
+        {
+          "source_start_sample": 22857,
+          "samples": 23233,
+          "loop_start_sample": 480375
+        },
+        {
+          "source_start_sample": 21909,
+          "samples": 23272,
+          "loop_start_sample": 486008
+        },
+        {
+          "source_start_sample": 26022,
+          "samples": 24410,
+          "loop_start_sample": 493743
+        },
+        {
+          "source_start_sample": 6623,
+          "samples": 29575,
+          "loop_start_sample": 499504
+        },
+        {
+          "source_start_sample": 17230,
+          "samples": 36746,
+          "loop_start_sample": 508277
+        },
+        {
+          "source_start_sample": 13821,
+          "samples": 23933,
+          "loop_start_sample": 514050
+        },
+        {
+          "source_start_sample": 34352,
+          "samples": 23221,
+          "loop_start_sample": 521721
+        },
+        {
+          "source_start_sample": 25086,
+          "samples": 28359,
+          "loop_start_sample": 528173
+        },
+        {
+          "source_start_sample": 24216,
+          "samples": 38974,
+          "loop_start_sample": 534653
+        },
+        {
+          "source_start_sample": 9180,
+          "samples": 30150,
+          "loop_start_sample": 541022
+        },
+        {
+          "source_start_sample": 9638,
+          "samples": 24428,
+          "loop_start_sample": 547744
+        },
+        {
+          "source_start_sample": 5164,
+          "samples": 40929,
+          "loop_start_sample": 556086
+        },
+        {
+          "source_start_sample": 11485,
+          "samples": 26814,
+          "loop_start_sample": 563481
+        },
+        {
+          "source_start_sample": 2906,
+          "samples": 38600,
+          "loop_start_sample": 569747
+        },
+        {
+          "source_start_sample": 25440,
+          "samples": 37037,
+          "loop_start_sample": 576617
+        },
+        {
+          "source_start_sample": 19317,
+          "samples": 38035,
+          "loop_start_sample": 581692
+        },
+        {
+          "source_start_sample": 11747,
+          "samples": 28631,
+          "loop_start_sample": 589648
+        },
+        {
+          "source_start_sample": 31121,
+          "samples": 34425,
+          "loop_start_sample": 596598
+        },
+        {
+          "source_start_sample": 12081,
+          "samples": 26169,
+          "loop_start_sample": 603334
+        },
+        {
+          "source_start_sample": 22973,
+          "samples": 26369,
+          "loop_start_sample": 609088
+        },
+        {
+          "source_start_sample": 18207,
+          "samples": 30561,
+          "loop_start_sample": 617201
+        },
+        {
+          "source_start_sample": 15535,
+          "samples": 23084,
+          "loop_start_sample": 624568
+        },
+        {
+          "source_start_sample": 31738,
+          "samples": 33279,
+          "loop_start_sample": 629829
+        },
+        {
+          "source_start_sample": 35624,
+          "samples": 27863,
+          "loop_start_sample": 636643
+        },
+        {
+          "source_start_sample": 28650,
+          "samples": 33262,
+          "loop_start_sample": 644517
+        },
+        {
+          "source_start_sample": 11847,
+          "samples": 29951,
+          "loop_start_sample": 651559
+        },
+        {
+          "source_start_sample": 1534,
+          "samples": 27898,
+          "loop_start_sample": 659461
+        },
+        {
+          "source_start_sample": 25646,
+          "samples": 23741,
+          "loop_start_sample": 664118
+        },
+        {
+          "source_start_sample": 13526,
+          "samples": 34013,
+          "loop_start_sample": 673120
+        },
+        {
+          "source_start_sample": 17657,
+          "samples": 39178,
+          "loop_start_sample": 678873
+        },
+        {
+          "source_start_sample": 24691,
+          "samples": 23389,
+          "loop_start_sample": 685338
+        },
+        {
+          "source_start_sample": 14042,
+          "samples": 29932,
+          "loop_start_sample": 692470
+        },
+        {
+          "source_start_sample": 30334,
+          "samples": 29858,
+          "loop_start_sample": 698881
+        },
+        {
+          "source_start_sample": 9053,
+          "samples": 34026,
+          "loop_start_sample": 705874
+        },
+        {
+          "source_start_sample": 26769,
+          "samples": 28259,
+          "loop_start_sample": 713456
+        },
+        {
+          "source_start_sample": 13596,
+          "samples": 33673,
+          "loop_start_sample": 721067
+        },
+        {
+          "source_start_sample": 18974,
+          "samples": 28293,
+          "loop_start_sample": 726207
+        },
+        {
+          "source_start_sample": 7980,
+          "samples": 35661,
+          "loop_start_sample": 734274
+        },
+        {
+          "source_start_sample": 4021,
+          "samples": 29061,
+          "loop_start_sample": 740236
+        },
+        {
+          "source_start_sample": 29236,
+          "samples": 27938,
+          "loop_start_sample": 746593
+        },
+        {
+          "source_start_sample": 30656,
+          "samples": 27151,
+          "loop_start_sample": 754568
+        },
+        {
+          "source_start_sample": 7824,
+          "samples": 35161,
+          "loop_start_sample": 760035
+        }
+      ],
+      "listening_approved": false
+    }
+  ],
+  "source_recordings": [
+    {
+      "id": "recoil",
+      "path": "C:\\Users\\aling\\Downloads\\recoil.mp4",
+      "bytes": 536031595,
+      "sha256": "56cf1d1b42f6510c231f753e8294a29a3e05fd1b6a5a751d7b167a658f445b31",
+      "decoded_master": "masters/recoil-48k-stereo.wav",
+      "master_sha256": "379004aa2a739240ffed83a77cb2aee6204c26bae6c0f47415ebe8b603dc5d7d",
+      "duration_seconds": 1108.3673333333334,
+      "audio_stream_start_seconds": 0.006,
+      "timestamp_basis": "Decoded master time starts at first decoded audio sample; add audio_stream_start_seconds for container video time."
+    },
+    {
+      "id": "loco",
+      "path": "C:\\Users\\aling\\Downloads\\loco_build_nade_sword_magnum.mp4",
+      "bytes": 304190448,
+      "sha256": "05f05c24fd1009ca599f16ddb5927bde9657cee63e84e9be88a5b444bd7d637c",
+      "decoded_master": "masters/loco-48k-stereo.wav",
+      "master_sha256": "c41b2b681bb69ee277f1732c829fb2f99758167df2dac464f3cf40735a14a242",
+      "duration_seconds": 626.3683333333333,
+      "audio_stream_start_seconds": 0.021,
+      "timestamp_basis": "Decoded master time starts at first decoded audio sample; add audio_stream_start_seconds for container video time."
+    }
+  ],
+  "credit": "Locally sampled Population: One gameplay from Al's two supplied recordings; rights remain with the original game/audio owners. These recordings are not newly authored ASHFALL assets.",
+  "scope": "Isolated standalone099 only; previous source/video/audio assets immutable.",
+  "rules": [
+    "Final discharges replace short first-shot attack cuts; tails stop before later handling where necessary.",
+    "Per-gun reload strokes stay matched to the visible action; whole reload sequences are never one cue.",
+    "Unverified S85 / reload / consumable preparation events retain authored fallbacks.",
+    "A sustained sampled katana loop remains active for the entire shield hold.",
+    "Reference videos and previous source/audio libraries remain immutable.",
+    "Rocket launch remains the accepted authored cue: the candidate reference launch overlaps its impact and was withheld.",
+    "099: eight additional cuts across AK magazine/bolt, CX4 magazine/bolt, AWP bolt and SPR bolt. Action labels reviewed against native frames and A/V offset.",
+    "Failed/abandoned DT11, M1014, M60, MK18, MP5 and P90 reload demonstrations are not assigned as complete reload sounds.",
+    "Dedicated October23 recordings cover menu/start/initialization, gait, flight, pickups/highlights, swords, grenades, builds, heals, S85 and revive charging/ready effects.",
+    "Harmonica excerpts are packaged in the bank for the future harmonica item; never substituted for a gun, heal or revive cue.",
+    "0991: all unverified mechanical reload callbacks borrow an explicitly recorded matching ejection/insertion/charging action. Dry-fire clicks retain accepted authored sound; verified gun-specific actions take priority.",
+    "0991 flight uses a16second circular recorded-grain bed at the same RMS as099. Other volume and sniper tails unchanged."
+  ],
+  "listening_approval": "Native video, waveform, PCM, routing and loop behavior checked offline. Physical headset mix and by-ear acceptance remain unverified.",
+  "temporary_s85_shot": "Replaced by dedicated isolated S85 recording in099."
+}

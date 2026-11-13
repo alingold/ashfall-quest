@@ -1,0 +1,31 @@
+{
+  "key": "anna",
+  "display_name": "Anna",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\exports\\player_kit_anna_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\exports\\player_kit_anna_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\exports\\gloves\\glove_anna_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\exports\\gloves\\glove_anna_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\exports\\gloves\\glove_anna_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\027_anna\\INTEGRATION.json",
+  "source_manifest_sha256": "fcc2c11d80e78a04cbfdade9f8d2d7cf4f1fc6fdb0065f88a9d7adf5d2fcf416",
+  "verified_triangles": {
+    "pcvr": 102436,
+    "light": 28804
+  },
+  "verified_source_hashes": {
+    "pcvr": "1892a891ab3c4dd34bce99fcbc83a877327314e45d295c5671e7231c3414c4df",
+    "light": "62d642b9735e038b07384be11bb17041f28caca83a695003174e9da61596a4b3",
+    "glove_albedo": "a09ef2890c30a83dcec69065aafa97815b1a935ca26c98fd36a8d8feeb4e11a1",
+    "glove_orm": "049d89f4915de3d97f7ac1697e4535827e45db319839e49e36d87736d014c0e0",
+    "glove_normal": "7e58396145369ca5939e3dafef644ff96f8636f59c8fb908bcd250187d4ace24"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\027_anna\\exports\\gloves_light\\glove_anna_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\027_anna\\exports\\gloves_light\\glove_anna_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\027_anna\\exports\\gloves_light\\glove_anna_normal.png"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "key": "grog_swiller",
+  "display_name": "Grog Swiller",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\player_kit_grog_swiller_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\player_kit_grog_swiller_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\gloves\\glove_grog_swiller_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\gloves\\glove_grog_swiller_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\gloves\\glove_grog_swiller_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\033_grog_swiller\\exports\\INTEGRATION.json",
+  "source_manifest_sha256": "ffe2c50438aeeb14e1c705b0eb06ca823d81cb62f92b60059520cfa87396b776",
+  "verified_triangles": {
+    "pcvr": 94128,
+    "light": 38544
+  },
+  "verified_source_hashes": {
+    "pcvr": "948cd2899353c05a08c561ff5ed22507e309728adb81ed60d07ec091d9d1df5b",
+    "light": "8163b0b8476eb6e72303247c2944337011f6b7e15a15a60aec602e5922fa1447",
+    "glove_albedo": "265646d0aefde5ad1c6487a42149f3d2e870200e3bfbbd5d0443a9d8f5970c1d",
+    "glove_orm": "0951e81dfd1f177aa5974407fa755bffe3a9064331bbb88d04c1bf4fbf4fec7d",
+    "glove_normal": "d446f8f12440ffe5abd1692d76644b15bcce5f415f397b84d4483adfbd728ad5"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\033_grog_swiller\\exports\\gloves_light\\glove_grog_swiller_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\033_grog_swiller\\exports\\gloves_light\\glove_grog_swiller_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\033_grog_swiller\\exports\\gloves_light\\glove_grog_swiller_normal.png"
+  }
+}

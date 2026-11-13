@@ -1,0 +1,25 @@
+{
+  "key": "axel_cupid",
+  "display_name": "AXEL (CUPID)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\exports\\player_kit_axel_cupid_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\exports\\player_kit_axel_cupid_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\exports\\gloves\\glove_axel_cupid_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\exports\\gloves\\glove_axel_cupid_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\exports\\gloves\\glove_axel_cupid_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\011_axel_cupid\\INTEGRATION.json",
+  "source_manifest_sha256": "260e3cdd403c7d7b2c740140c2b35ce51c00adaf62d9a638b76baf3868826ee0",
+  "verified_triangles": {
+    "pcvr": 73422,
+    "light": 29016
+  },
+  "verified_source_hashes": {
+    "pcvr": "81dbdad1d8740a346794de08b726caa8b1147aaacc09d8b1a264a9a8b71f5fad",
+    "light": "bf8c6da70779f48e16271c3156d577328262d7b5b477d064038d0c8a7d6c97d1",
+    "glove_albedo": "c37ffca8820d4a2477324fa90f83a0e320a1f2de08e28d36246e700b67cea93a",
+    "glove_orm": "dd834da24ee9c353686aed6e75a4ff192d29b9007975f121e1a3e9a6fb4f4830",
+    "glove_normal": "c8df9edd69826d8398647030f1546e60efe6b24f60bcffef7872368a174d15d5"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

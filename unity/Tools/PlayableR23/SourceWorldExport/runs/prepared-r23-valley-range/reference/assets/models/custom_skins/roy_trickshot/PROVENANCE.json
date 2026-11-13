@@ -1,0 +1,31 @@
+{
+  "key": "roy_trickshot",
+  "display_name": "Roy (Trickshot)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\exports\\player_kit_roy_trickshot_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\exports\\player_kit_roy_trickshot_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\exports\\gloves\\glove_roy_trickshot_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\exports\\gloves\\glove_roy_trickshot_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\exports\\gloves\\glove_roy_trickshot_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.02,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\016_roy_trickshot\\INTEGRATION.json",
+  "source_manifest_sha256": "908ddb682a70dc8e5a180fd690f90bde4d0a45b420a9fe37f90c27cbd4c01f1c",
+  "verified_triangles": {
+    "pcvr": 73334,
+    "light": 27900
+  },
+  "verified_source_hashes": {
+    "pcvr": "c5cd592af84bbd07cf8b65c76ccb82fd052e39d87fec412ddc0e03d1a15e30e9",
+    "light": "66114eaec909c8537ff3f1cf17d587828532f4a9ea169fbb3500130caa0ffec7",
+    "glove_albedo": "7361e279240e1515de4859a2d1025481c0cb116813a725e8356ad23f539bbd93",
+    "glove_orm": "8b9e64d391185432a993c97fec07d6811b6ca7afa7246989db4cdfcce261d08c",
+    "glove_normal": "11e56af4303f150dd1c6ec5ac9a8798dd52d43e90e188e0e36511b5227b85ded"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/016_roy_trickshot/exports/gloves_light/glove_roy_trickshot_albedo.png",
+    "orm": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/016_roy_trickshot/exports/gloves_light/glove_roy_trickshot_orm.png",
+    "normal": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/016_roy_trickshot/exports/gloves_light/glove_roy_trickshot_normal.png"
+  }
+}

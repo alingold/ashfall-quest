@@ -1,0 +1,120 @@
+{
+  "title": "CYBER BIRD original avian traffic asset \u2014 Raven Taxi Argon variant",
+  "author": "Gemini Argon",
+  "provider": {
+    "author": "Gemini Argon",
+    "provider": "antigravity",
+    "model": "gemini-4-argon-high",
+    "baseline_credit": "Original CC0-1.0 baseline procedural generator and palette by Codex (2026)."
+  },
+  "license": "CC0-1.0",
+  "coordinate_contract": {
+    "units": "metres",
+    "up": "+Y",
+    "forward": "-Z",
+    "ground_y": 0.0,
+    "wheel_rotation_axis": "+X",
+    "length_range_m": [
+      4.4,
+      4.9
+    ],
+    "max_width_m": 1.9,
+    "max_height_m": 1.85,
+    "preferred_max_triangles": 5000,
+    "hard_max_triangles": 8000,
+    "max_mesh_parts": 24,
+    "max_materials": 12
+  },
+  "materials": {
+    "count": 11,
+    "textures": 0,
+    "opaque": true,
+    "double_sided": false,
+    "dynamic_lights": 0,
+    "reuse_by_name": [
+      "Paint_Obsidian",
+      "Paint_Plum",
+      "Paint_Ivory",
+      "Paint_Amber",
+      "Metal_Chassis",
+      "Rubber",
+      "Glass_Opaque",
+      "Neon_Cyan",
+      "Neon_Magenta",
+      "Lamp_Amber",
+      "Lamp_Red"
+    ]
+  },
+  "model": {
+    "file": "raven_taxi_argon.glb",
+    "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\CYBER-BIRD-R5-Source\\assets\\cyber_bird\\traffic_r5\\raven_taxi_argon.glb",
+    "sha256": "293e3b02562fa4d5f6fb5235e5c34f94fce64ad7c8708b11db9b66b7af5f36ef",
+    "triangles": 4836,
+    "degenerate_faces": 0,
+    "mesh_parts": 21,
+    "materials_defined": 11,
+    "materials_used": 9,
+    "dimensions_m": [
+      1.844,
+      1.658,
+      4.7556
+    ],
+    "width_m": 1.844,
+    "height_m": 1.658,
+    "length_m": 4.7556,
+    "bounds_min": [
+      -0.922,
+      0.0,
+      -2.38061
+    ],
+    "bounds_max": [
+      0.922,
+      1.658,
+      2.375
+    ],
+    "wheel_pivots": [
+      "Wheel_FL",
+      "Wheel_FR",
+      "Wheel_RL",
+      "Wheel_RR"
+    ],
+    "bytes": 422176
+  },
+  "models": [
+    {
+      "file": "raven_taxi_argon.glb",
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\CYBER-BIRD-R5-Source\\assets\\cyber_bird\\traffic_r5\\raven_taxi_argon.glb",
+      "sha256": "293e3b02562fa4d5f6fb5235e5c34f94fce64ad7c8708b11db9b66b7af5f36ef",
+      "triangles": 4836,
+      "degenerate_faces": 0,
+      "mesh_parts": 21,
+      "materials_defined": 11,
+      "materials_used": 9,
+      "dimensions_m": [
+        1.844,
+        1.658,
+        4.7556
+      ],
+      "width_m": 1.844,
+      "height_m": 1.658,
+      "length_m": 4.7556,
+      "bounds_min": [
+        -0.922,
+        0.0,
+        -2.38061
+      ],
+      "bounds_max": [
+        0.922,
+        1.658,
+        2.375
+      ],
+      "wheel_pivots": [
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "bytes": 422176
+    }
+  ]
+}

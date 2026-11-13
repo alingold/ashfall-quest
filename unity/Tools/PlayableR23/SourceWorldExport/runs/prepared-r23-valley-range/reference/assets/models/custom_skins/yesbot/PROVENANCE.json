@@ -1,0 +1,25 @@
+{
+  "key": "yesbot",
+  "display_name": "Yesbot",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\exports\\player_kit_yesbot_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\exports\\player_kit_yesbot_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\exports\\gloves\\glove_yesbot_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\exports\\gloves\\glove_yesbot_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\exports\\gloves\\glove_yesbot_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\014_yesbot\\INTEGRATION.json",
+  "source_manifest_sha256": "058280c306578aa175ccb0eb4d6f924d30d41cf4c42b7e4f7742883b090ba907",
+  "verified_triangles": {
+    "pcvr": 78614,
+    "light": 24536
+  },
+  "verified_source_hashes": {
+    "pcvr": "b41e649b8df6194badf67c82812707fa308ea28e37950676f40951ff49365b35",
+    "light": "7eac673ed060581c75213a64cf154b3d7d619d52967a0660d4d769db9c8eec34",
+    "glove_albedo": "3617c09c2d3dfdcfe0a0394fd4091d29c4beaa6b809458ff4df001ed6cef86cf",
+    "glove_orm": "44a663d52baa96edc21ddf6066b8f6b04b2a2154ea20f3c05c61b4ce02e06bae",
+    "glove_normal": "d0ea7ca97857fe71eb9d555e13527297d7c59924b6a648d4001507caade1cc6e"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

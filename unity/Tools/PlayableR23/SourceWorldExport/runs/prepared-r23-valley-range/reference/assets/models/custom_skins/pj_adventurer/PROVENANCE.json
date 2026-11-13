@@ -1,0 +1,32 @@
+{
+  "key": "pj_adventurer",
+  "display_name": "PJ (Adventurer)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\exports\\player_kit_pj_adventurer_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\exports\\player_kit_pj_adventurer_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\exports\\gloves\\glove_pj_adventurer_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\exports\\gloves\\glove_pj_adventurer_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\exports\\gloves\\glove_pj_adventurer_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\022_pj_adventurer\\INTEGRATION.json",
+  "source_manifest_sha256": "e20b522cbb8922720bf7c8bda69cb9e19583ea36404bab7428a81767ad7986da",
+  "verified_triangles": {
+    "pcvr": 113898,
+    "light": 35814
+  },
+  "verified_source_hashes": {
+    "pcvr": "086fc576637eea60e8d539137fb0e6ed77df3a9078463a82adcf1316465495e9",
+    "light": "b732649344f9d84ee8ec284502a6450be578686d19bc4b985a2152e4eb81b161",
+    "glove_albedo": "5d81ecd1c2a44eaa0a4809d558b901673b45c4c28b366d22f42a97ea407c267e",
+    "glove_orm": "49e120d50fb6aff8124d423db50441de7b6fefa3b1e5032d0521ad6bb0824cf8",
+    "glove_normal": "59af3668ec1c0ce5682f11c254f5dfcd651f1ccb3e812995dc6aff1f32349a6f"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\022_pj_adventurer\\exports\\gloves_light\\glove_pj_adventurer_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\022_pj_adventurer\\exports\\gloves_light\\glove_pj_adventurer_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\022_pj_adventurer\\exports\\gloves_light\\glove_pj_adventurer_normal.png",
+    "note": "Identical fixed original XRTools meshes/UVs on both body tiers; separate deliverable copies. Both hands occupy different regions of this combined atlas."
+  }
+}

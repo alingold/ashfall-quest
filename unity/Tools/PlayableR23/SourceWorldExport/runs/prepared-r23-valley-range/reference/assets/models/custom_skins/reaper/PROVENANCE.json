@@ -1,0 +1,25 @@
+{
+  "key": "reaper",
+  "display_name": "Reaper",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\exports\\player_kit_reaper_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\exports\\player_kit_reaper_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\exports\\gloves\\glove_reaper_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\exports\\gloves\\glove_reaper_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\exports\\gloves\\glove_reaper_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\046_reaper\\INTEGRATION.json",
+  "source_manifest_sha256": "5b9ad96c9c775802be97564c6491d986016ac7ea6c3d6f3c254a079e7ac1a3e1",
+  "verified_triangles": {
+    "pcvr": 87748,
+    "light": 32644
+  },
+  "verified_source_hashes": {
+    "pcvr": "d77560d2951f027e6e2cf41650b3cfd908127d540e13747ece735536e0ac372c",
+    "light": "259cb8c64c325f1a2d641ce68ad869cd64b778d56746825a8f416aa27eb0770a",
+    "glove_albedo": "f1da742c05aacb7a7051f00d7593a5068816c3708e89aab357e657363508c9bd",
+    "glove_orm": "83dddc23505e338a1fa4eb1c61c5acf6919e43cbd334568f0c7059ead7e01363",
+    "glove_normal": "1c2745635c0e1f68e95ba14b7d4d0c5da26bc8b27f8516142ef505abdeb1e861"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

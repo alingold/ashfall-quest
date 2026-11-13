@@ -1,0 +1,43 @@
+{
+  "key": "smiley",
+  "display_name": "Smiley",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\exports\\player_kit_smiley_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\exports\\player_kit_smiley_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\exports\\gloves\\glove_smiley_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\exports\\gloves\\glove_smiley_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\exports\\gloves\\glove_smiley_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\028_smiley\\INTEGRATION.json",
+  "source_manifest_sha256": "10fd53656a8965ed8704ebf58ab2d5731fbb8985f74637871a702f73ba6ad7f2",
+  "verified_triangles": {
+    "pcvr": 86608,
+    "light": 26934
+  },
+  "verified_source_hashes": {
+    "pcvr": "d12ad5ba85f026ec262eab17dd0138a1c19d582eb9932eb622edcd45c66f7cb6",
+    "light": "13baa22b406d7aedf21e7040c0b70ba3c491b72c69aa8dececea55d0f3243938",
+    "glove_albedo": "3f86b889f042bd6d902c7e087d3fc4b47340fe30fde9a0aeaad79dc2d246ea34",
+    "glove_orm": "6f7a7cd7b7892b33d1810e92e3d562f7a3d8dfd6a41d2424c41c4a2d89524ebe",
+    "glove_normal": "1304de7fb3b6983f33fe0da5e126810379a7544c746f2d34b4e8aed9f05e7ce0"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\028_smiley\\exports\\gloves_light\\glove_smiley_albedo.png",
+      "bytes": 104617,
+      "sha256": "d4522210250de986fc492d98c3f0a70b45571dfb46878b5b251a5e9a196c51dc"
+    },
+    "orm": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\028_smiley\\exports\\gloves_light\\glove_smiley_orm.png",
+      "bytes": 102767,
+      "sha256": "ab2529c27b7498949687ff7d4a02449261f2ff4b3880a15d1cba2806fc43c5d8"
+    },
+    "normal": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\028_smiley\\exports\\gloves_light\\glove_smiley_normal.png",
+      "bytes": 108351,
+      "sha256": "315972f31fd65880851e320f617f1cbd63bac1e506bb7ff2036d4d239c65474f"
+    }
+  }
+}

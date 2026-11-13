@@ -1,0 +1,25 @@
+{
+  "key": "anna_tabby",
+  "display_name": "Anna (Tabby)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\exports\\player_kit_anna_tabby_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\exports\\player_kit_anna_tabby_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\exports\\gloves\\glove_anna_tabby_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\exports\\gloves\\glove_anna_tabby_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\exports\\gloves\\glove_anna_tabby_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\018_anna_tabby\\INTEGRATION.json",
+  "source_manifest_sha256": "ee56ef18fd81c631648c18fde1648fb3f5d740fbe50c98e55f1d793344955576",
+  "verified_triangles": {
+    "pcvr": 92370,
+    "light": 35976
+  },
+  "verified_source_hashes": {
+    "pcvr": "e71bb406e1c0ce8802cbf27a9be36119d98837efc46bb79f0ce9ea3507314bb3",
+    "light": "f25e6864b01d248ac1c70a0f77c849a6bdcd02454f296b81db1a93f757f47cfb",
+    "glove_albedo": "8eee8730ba5be23d1cc67f6a20a032a99eccec44b11e28bbd8be87ee96cb34a3",
+    "glove_orm": "ed35278a520ebdeae1862d5e96916c398156314e88af7dc6db5a89eaf53846a3",
+    "glove_normal": "adcdb1b5571acf532a36cfdfcee8108cc5d47ef5244a7261a2eee802581530e5"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

@@ -1,0 +1,31 @@
+{
+  "key": "roy_daring",
+  "display_name": "Roy (Daring)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\exports\\player_kit_roy_daring_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\exports\\player_kit_roy_daring_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\exports\\gloves\\glove_roy_daring_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\exports\\gloves\\glove_roy_daring_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\exports\\gloves\\glove_roy_daring_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\023_roy_daring\\INTEGRATION.json",
+  "source_manifest_sha256": "09464c184a536a5d81200f2029faee6a35176414a52fa4a7e2ce9a3cd019db4a",
+  "verified_triangles": {
+    "pcvr": 66266,
+    "light": 34740
+  },
+  "verified_source_hashes": {
+    "pcvr": "b2903fbeb60abc34cf2a928ed8f6a83cdcb96fde7e1ac8425a7a4de57a78cc89",
+    "light": "b2e7f84c8a342ad544622b301476598d9eedacd8b9629923fa1751eab2ff8912",
+    "glove_albedo": "cf2f4d164427612c67150e39d42378c64f919c41516343c0c1e3f90b9602f596",
+    "glove_orm": "ddeb62238ec3b07de4c42e91ba959a57c8c5ee35fc814e2a744e0c9077aeb750",
+    "glove_normal": "7656814fefe2434dde50a04a6318eaa018dd64dd84478fadaffaa14c3ce45db2"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\023_roy_daring\\exports\\gloves_light\\glove_roy_daring_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\023_roy_daring\\exports\\gloves_light\\glove_roy_daring_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\023_roy_daring\\exports\\gloves_light\\glove_roy_daring_normal.png"
+  }
+}

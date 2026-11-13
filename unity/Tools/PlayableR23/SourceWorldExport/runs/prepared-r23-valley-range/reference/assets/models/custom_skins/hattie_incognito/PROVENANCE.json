@@ -1,0 +1,25 @@
+{
+  "key": "hattie_incognito",
+  "display_name": "Hattie (Incognito)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\exports\\player_kit_hattie_incognito_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\exports\\player_kit_hattie_incognito_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\exports\\glove_hattie_incognito_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\exports\\glove_hattie_incognito_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\exports\\glove_hattie_incognito_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\025_hattie_incognito\\INTEGRATION.json",
+  "source_manifest_sha256": "524031cef697a95b8373ec0a6df408fea1650201bf48e2ebbd363f3e0d974700",
+  "verified_triangles": {
+    "pcvr": 79036,
+    "light": 30012
+  },
+  "verified_source_hashes": {
+    "pcvr": "dc5d090749d4b5849620b1bb90e61b779d298ccc8cd87d0926fc2c086a12075f",
+    "light": "01527be69e54656466943692340616631b2da8af2327062abca0ba9900801a7a",
+    "glove_albedo": "cc1f7b171a8c8af1748e3d715bf3fbb89347eb898d7b0741b59689dbc1e5d28f",
+    "glove_orm": "405beff44590b927045b5f258340b3ce00a996a7087d416636a601e59a7ca396",
+    "glove_normal": "bd68ed47edf3dbbc0a246b8950b054a634841cad09223194c3a622f8038f91ec"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

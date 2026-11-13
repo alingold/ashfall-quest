@@ -1,0 +1,15 @@
+{
+  "version": "r17",
+  "native_center_render_target_preserved": true,
+  "android_mesh_lod_pixels": 6.0,
+  "hard_distance_cutoff": false,
+  "texture_max_dimension": 1024,
+  "texture_mipmaps": true,
+  "texture_compression": "Basis Universal, device-native GPU transcode",
+  "texture_maps": 105,
+  "texture_records": 821,
+  "unique_texture_artifacts": 519,
+  "breakable_geometry": "Exact source triangles, grouped by shared material in 48x24x48m tiles. Only the affected tile rebuilds after breaking/reset. Source collision preserved.",
+  "map_owned_caches": true,
+  "headset_acceptance": "pending"
+}

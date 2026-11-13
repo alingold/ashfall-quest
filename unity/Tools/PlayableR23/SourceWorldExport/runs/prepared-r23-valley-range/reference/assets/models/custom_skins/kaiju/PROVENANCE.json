@@ -1,0 +1,25 @@
+{
+  "key": "kaiju",
+  "display_name": "Kaiju",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\exports\\player_kit_kaiju_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\exports\\player_kit_kaiju_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\exports\\gloves\\glove_kaiju_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\exports\\gloves\\glove_kaiju_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\exports\\gloves\\glove_kaiju_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\045_kaiju\\INTEGRATION.json",
+  "source_manifest_sha256": "51b9d790dacf73d386c99f32e4b19fc056e26090dcfade6edf96060d6f0e198c",
+  "verified_triangles": {
+    "pcvr": 99988,
+    "light": 41724
+  },
+  "verified_source_hashes": {
+    "pcvr": "3ef8edb3cbcf7eb0e912cc759757c85cda86e2532297c5e2e5806be983245197",
+    "light": "8d1247b3aa5bcc8320c676f53efb683ce26e2cb4953347b96274f12b31902062",
+    "glove_albedo": "398e04897b30b118032fcf96cfef4e44e1356795655e62d5d81f708aee8b76aa",
+    "glove_orm": "160e24d8d7f82b3c8320dba11bf1b956d170b9bf6ee39f989708538f21137616",
+    "glove_normal": "78a51b0b265c1fd6ea68cd4b29dc0eccb98a3e3cfba93e39ae6eb6c35c3c947b"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

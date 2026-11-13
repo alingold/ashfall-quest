@@ -1,0 +1,31 @@
+{
+  "key": "headless_horseman",
+  "display_name": "Headless Horseman",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\player_kit_headless_horseman_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\player_kit_headless_horseman_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\gloves\\glove_headless_horseman_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\gloves\\glove_headless_horseman_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\gloves\\glove_headless_horseman_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.02,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\034_headless_horseman\\exports\\INTEGRATION.json",
+  "source_manifest_sha256": "f7294a79acdaa251a6fe086f296be9c63e76dcdc9c2cbb104429fdc526109848",
+  "verified_triangles": {
+    "pcvr": 72388,
+    "light": 34910
+  },
+  "verified_source_hashes": {
+    "pcvr": "186bd3bc4662820f8ec53b470554f698559e2bbaf15e1baa5c5eb7616d246e95",
+    "light": "d50dbb48498e5e08e6a97b6ee955d04abd55e80c55af35b2951999d7198d78ed",
+    "glove_albedo": "e62cd161b17e22d2c5d23142e60eaf3e756b2beb59870858cc52d23cd8c6c790",
+    "glove_orm": "08c39067c7aed864ccf0509d111e8eca07bb33c4b469ffbe30bdbf1b68dd9d76",
+    "glove_normal": "5f0cf36d61a0193ca8b68b5129b610ebf1a970008172699f1d91f94f730d7502"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/034_headless_horseman/exports/gloves_light/glove_headless_horseman_albedo.png",
+    "orm": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/034_headless_horseman/exports/gloves_light/glove_headless_horseman_orm.png",
+    "normal": "C:/Users/aling/Documents/ashfall/skins_pipeline/characters/034_headless_horseman/exports/gloves_light/glove_headless_horseman_normal.png"
+  }
+}

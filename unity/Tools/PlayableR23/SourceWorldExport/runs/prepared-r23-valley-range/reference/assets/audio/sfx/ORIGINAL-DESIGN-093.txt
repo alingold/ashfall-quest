@@ -1,0 +1,39 @@
+{
+  "authorship": "Original ASHFALL deterministic synthesis. No external recordings.",
+  "design": "Three heavyweight AWP variants: sharp broad-band crack, 51Hz pressure body, gas burst, irregular low-pass reflections, dry metallic action and a decaying outdoor tail. Existing accepted gunshot assets remain unchanged.",
+  "format": "48kHz mono16bit PCM, lossless import",
+  "runtimeGainDb": -1,
+  "entries": [
+    {
+      "file": "shot_awp_00.wav",
+      "sha256": "323f63b45c3f4bf4816ecee24746d9fb4b10b39eb1ccf7e9e3f047d874d16961",
+      "duration": 1.9,
+      "peak": 0.92,
+      "rms": 0.1831884343735726,
+      "first250msRms": 0.48830230050635415,
+      "dc": 0.0000031526547260217126,
+      "clippedSamples": 0
+    },
+    {
+      "file": "shot_awp_01.wav",
+      "sha256": "b69e53977a483ea589845a076870291988983af2504150d0070f1e207605ceda",
+      "duration": 1.9,
+      "peak": 0.92,
+      "rms": 0.18594597086316242,
+      "first250msRms": 0.49711451405912266,
+      "dc": 0.0000030799520712676993,
+      "clippedSamples": 0
+    },
+    {
+      "file": "shot_awp_02.wav",
+      "sha256": "3a0bcf0785aec6c93544c0ac96b28cae88d6391523fb857339d79d5f8aa09c28",
+      "duration": 1.9,
+      "peak": 0.92,
+      "rms": 0.18672522718001375,
+      "first250msRms": 0.4983231807617033,
+      "dc": 0.000002878922465897186,
+      "clippedSamples": 0
+    }
+  ],
+  "subjectiveHeadsetMixVerified": false
+}

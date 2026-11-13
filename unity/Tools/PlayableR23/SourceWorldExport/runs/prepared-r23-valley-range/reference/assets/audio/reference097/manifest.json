@@ -1,0 +1,1008 @@
+{
+  "version": "097",
+  "enabled_by_default": true,
+  "authored_fallback_argument": "--authored-audio",
+  "generic": {
+    "metal_step": [
+      "res://assets/audio/reference096/metal_step_00.wav",
+      "res://assets/audio/reference096/metal_step_01.wav",
+      "res://assets/audio/reference096/metal_step_02.wav",
+      "res://assets/audio/reference096/metal_step_03.wav",
+      "res://assets/audio/reference096/metal_step_04.wav",
+      "res://assets/audio/reference096/metal_step_05.wav"
+    ],
+    "build_place": [
+      "res://assets/audio/reference096/build_place_00.wav",
+      "res://assets/audio/reference096/build_place_01.wav",
+      "res://assets/audio/reference096/build_place_02.wav"
+    ],
+    "katana_shield_raise": [
+      "res://assets/audio/reference096/katana_shield_raise_00.wav"
+    ],
+    "katana_shield": [
+      "res://assets/audio/reference097/katana_shield_sustain_00.wav"
+    ]
+  },
+  "weapons": {
+    "1911": {
+      "shot": [
+        "res://assets/audio/reference097/shot_1911_last_00.wav"
+      ]
+    },
+    "akm": {
+      "shot": [
+        "res://assets/audio/reference097/shot_akm_last_00.wav"
+      ]
+    },
+    "cx4": {
+      "shot": [
+        "res://assets/audio/reference097/shot_cx4_last_00.wav"
+      ]
+    },
+    "fal": {
+      "shot": [
+        "res://assets/audio/reference097/shot_fal_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference097/fal_mag_insert_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference097/fal_bolt_00.wav"
+      ]
+    },
+    "m60": {
+      "shot": [
+        "res://assets/audio/reference097/shot_m60_last_00.wav"
+      ]
+    },
+    "mk18": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mk18_last_00.wav"
+      ]
+    },
+    "rfb": {
+      "shot": [
+        "res://assets/audio/reference097/shot_rfb_last_00.wav"
+      ]
+    },
+    "magnum": {
+      "shot": [
+        "res://assets/audio/reference097/shot_magnum_last_00.wav"
+      ]
+    },
+    "px4": {
+      "shot": [
+        "res://assets/audio/reference097/shot_px4_last_00.wav"
+      ]
+    },
+    "tec9": {
+      "shot": [
+        "res://assets/audio/reference097/shot_tec9_last_00.wav"
+      ]
+    },
+    "dt11": {
+      "shot": [
+        "res://assets/audio/reference097/shot_dt11_last_00.wav"
+      ]
+    },
+    "m1014": {
+      "shot": [
+        "res://assets/audio/reference097/shot_m1014_last_00.wav"
+      ]
+    },
+    "matadors": {
+      "shot": [
+        "res://assets/audio/reference097/shot_matadors_last_00.wav"
+      ]
+    },
+    "mp5": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mp5_last_00.wav"
+      ]
+    },
+    "mp9": {
+      "shot": [
+        "res://assets/audio/reference097/shot_mp9_last_00.wav"
+      ]
+    },
+    "p90": {
+      "shot": [
+        "res://assets/audio/reference097/shot_p90_last_00.wav"
+      ]
+    },
+    "ump": {
+      "shot": [
+        "res://assets/audio/reference097/shot_ump_last_00.wav"
+      ]
+    },
+    "uzis": {
+      "shot": [
+        "res://assets/audio/reference097/shot_uzis_last_00.wav"
+      ],
+      "mag_insert": [
+        "res://assets/audio/reference096/uzi_flick_reload_00.wav",
+        "res://assets/audio/reference096/uzi_flick_reload_01.wav"
+      ]
+    },
+    "awp": {
+      "shot": [
+        "res://assets/audio/reference097/shot_awp_last_00.wav"
+      ]
+    },
+    "spr": {
+      "shot": [
+        "res://assets/audio/reference097/shot_spr_last_00.wav"
+      ],
+      "bolt": [
+        "res://assets/audio/reference097/spr_bolt_00.wav"
+      ]
+    }
+  },
+  "actions": {
+    "shaker": {
+      "consume_drink": [
+        "res://assets/audio/reference096/shaker_drink_00.wav"
+      ],
+      "consume_open": [
+        "res://assets/audio/reference097/shaker_open_00.wav"
+      ]
+    },
+    "soda": {
+      "consume_drink": [
+        "res://assets/audio/reference097/soda_drink_00.wav"
+      ],
+      "consume_open": [
+        "res://assets/audio/reference097/soda_open_00.wav"
+      ]
+    }
+  },
+  "files": [
+    {
+      "file": "res://assets/audio/reference096/metal_step_00.wav",
+      "sha256": "ccc9c401534000a237e9bd60b565d5b838eacd17d8ddd0b93ea368b358c5dcee",
+      "source_index": 283,
+      "source_sample_id": "metal_footstep_01_loco_0114p439",
+      "source_sample_sha256": "4b3a8b91343a7dba707f40a0ee152d4cb2e691c632092831e2b9c07e822aa910",
+      "source": "loco",
+      "master_start_seconds": 114.439,
+      "master_end_seconds": 114.65799999999999,
+      "visual_action_time_approx_seconds": 114.14699999999999,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.219,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.03440302237868309,
+      "gain_db": 11.500599207459326,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_01.wav",
+      "sha256": "3ca841b9ab4321cdfb7a62e1948438b3bfccc119f2068c8f2699beea203d2f0f",
+      "source_index": 284,
+      "source_sample_id": "metal_footstep_02_loco_0240p509",
+      "source_sample_sha256": "cf6584664f8289f707e2b45b812c0cb39d431cd5a92135cb9d182a537044ebfc",
+      "source": "loco",
+      "master_start_seconds": 240.509,
+      "master_end_seconds": 240.72799999999998,
+      "visual_action_time_approx_seconds": 240.217,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.219,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.0353633388876915,
+      "gain_db": 14.704488830200654,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_02.wav",
+      "sha256": "e00fc64ea527cb091c148c096453ad4f366c452511799969b8a0f02eecb51e27",
+      "source_index": 294,
+      "source_sample_id": "metal_footstep_12_loco_0234p729",
+      "source_sample_sha256": "7dd3c8513bffa8365e26e041a65c87a621adf07fb8062e5be00f663f6c37f7af",
+      "source": "loco",
+      "master_start_seconds": 234.729,
+      "master_end_seconds": 234.93800000000002,
+      "visual_action_time_approx_seconds": 234.437,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.025552701205015182,
+      "gain_db": 16.470125949226897,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_03.wav",
+      "sha256": "d8893e08148b5ba95bbdd2645b66b5cdfb4a555509842d6d5434f0ab71be0b17",
+      "source_index": 296,
+      "source_sample_id": "metal_footstep_14_loco_0234p239",
+      "source_sample_sha256": "5a1b8f436b2bb1cc8eb722ad16dd14b81539050ed4e7ce13bba862203faab167",
+      "source": "loco",
+      "master_start_seconds": 234.239,
+      "master_end_seconds": 234.448,
+      "visual_action_time_approx_seconds": 233.947,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.040265873074531555,
+      "gain_db": 21.094089060773538,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_04.wav",
+      "sha256": "b903b963279680308d4b7315b5328c98b1c471b819a45bb63ad1c324f9d57573",
+      "source_index": 297,
+      "source_sample_id": "metal_footstep_15_loco_0231p979",
+      "source_sample_sha256": "ea2d8bf916d0f9f8f5c9160e3abcb401cf13bce510ce0875042fdc53da7f05f4",
+      "source": "loco",
+      "master_start_seconds": 231.979,
+      "master_end_seconds": 232.17800000000003,
+      "visual_action_time_approx_seconds": 231.687,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.199,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.029224421828985214,
+      "gain_db": 18.02781852076499,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/metal_step_05.wav",
+      "sha256": "63fbff0356c14ad11d3a6554b441e8e392b5c35b26358691be1b65765af15355",
+      "source_index": 298,
+      "source_sample_id": "metal_footstep_16_loco_0238p989",
+      "source_sample_sha256": "56e1f395ed3cab53d26b47c5048c975a3f58481ab25552ff1a7e9e4708ecbece",
+      "source": "loco",
+      "master_start_seconds": 238.989,
+      "master_end_seconds": 239.198,
+      "visual_action_time_approx_seconds": 238.697,
+      "original_label": "Metal footstep",
+      "assigned_action": "single metal footstep",
+      "duration_seconds": 0.209,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.3599853515625,
+      "early250ms_rms": 0.0408066064119339,
+      "gain_db": 21.13342163454602,
+      "leading_trim_seconds": 0,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/build_place_00.wav",
+      "sha256": "378bf8a8bf7d25342a30d5ebf42aa478d442544f6837eeaa131117fd7246de56",
+      "source_index": 323,
+      "source_sample_id": "build_placement_transient_01_loco_0193p566",
+      "source_sample_sha256": "b2b102efc9d038b904685623c4bf520d63c81bb5c29860c7b30d164a392bf914",
+      "source": "loco",
+      "master_start_seconds": 193.574,
+      "master_end_seconds": 193.91400000000002,
+      "visual_action_time_approx_seconds": 193.282,
+      "original_label": "Build placement transient",
+      "assigned_action": "single construction placement",
+      "duration_seconds": 0.34,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.15255238115787506,
+      "gain_db": 2.571558881284743,
+      "leading_trim_seconds": 0.008,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/build_place_01.wav",
+      "sha256": "e86378f0624c5845d826adcd4bb6c7ef1557b7854c40fc912272461d4e953fd3",
+      "source_index": 329,
+      "source_sample_id": "build_placement_transient_07_loco_0243p596",
+      "source_sample_sha256": "75e4bde01fdaf8a0c6c548aa916d567dbade77fa1fb011039f76682234a7db29",
+      "source": "loco",
+      "master_start_seconds": 243.604,
+      "master_end_seconds": 243.94400000000002,
+      "visual_action_time_approx_seconds": 243.312,
+      "original_label": "Build placement transient",
+      "assigned_action": "single construction placement",
+      "duration_seconds": 0.34,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14621847867965698,
+      "gain_db": 3.58623517331518,
+      "leading_trim_seconds": 0.008,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/build_place_02.wav",
+      "sha256": "e6ba3c15a80e904c563bfd5a6f897981500d50cec93132d1a584f8b39387ae65",
+      "source_index": 333,
+      "source_sample_id": "build_placement_transient_11_loco_0423p566",
+      "source_sample_sha256": "934c4ffc4fa15e9e126023ee9a166e9a3eb5694e3cbc82acdce693598f3c7368",
+      "source": "loco",
+      "master_start_seconds": 423.57399999999996,
+      "master_end_seconds": 423.914,
+      "visual_action_time_approx_seconds": 423.282,
+      "original_label": "Build placement transient",
+      "assigned_action": "single construction placement",
+      "duration_seconds": 0.34,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.17435391247272491,
+      "gain_db": 3.608945834411607,
+      "leading_trim_seconds": 0.008,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/katana_shield_raise_00.wav",
+      "sha256": "a3bf49991f9b104d0b241543e9e35a601c814c5d24ec7979e5a66798f6c58327",
+      "source_index": 233,
+      "source_sample_id": "katana_shield_activate_01_loco_0041p270",
+      "source_sample_sha256": "05cd9507b99c7fac862d7f4d4dd61033e1db1d26933da6642b1a611fa362d5e5",
+      "source": "loco",
+      "master_start_seconds": 41.285000000000004,
+      "master_end_seconds": 41.73500000000001,
+      "visual_action_time_approx_seconds": 40.992999999999995,
+      "original_label": "Katana shield activate",
+      "assigned_action": "katana defensive shield activation",
+      "duration_seconds": 0.45,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.54998779296875,
+      "early250ms_rms": 0.11707043647766113,
+      "gain_db": 7.973141073435588,
+      "leading_trim_seconds": 0.015,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/uzi_flick_reload_00.wav",
+      "sha256": "fc678e8973fd8a84d6fafdaa1f4c4652930e76b9fba86666b0c97710261e225e",
+      "source_index": 197,
+      "source_sample_id": "uzis_handling_candidate_01_recoil_0535p916",
+      "source_sample_sha256": "23930ecaa25d1e72ab5df98dc33feacb55429d33165888aa643dfc2a35fa3129",
+      "source": "recoil",
+      "master_start_seconds": 535.928,
+      "master_end_seconds": 536.6110000000001,
+      "visual_action_time_approx_seconds": 535.654,
+      "original_label": "uzis handling candidate",
+      "assigned_action": "occupied Uzi hand flip reload",
+      "duration_seconds": 0.683,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.08128143101930618,
+      "gain_db": 6.225711943164606,
+      "leading_trim_seconds": 0.012,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/uzi_flick_reload_01.wav",
+      "sha256": "be3a76e3ef4828e365f3e607b20c76a7052424a78560a4bbd6705562944808de",
+      "source_index": 198,
+      "source_sample_id": "uzis_handling_candidate_02_recoil_0545p646",
+      "source_sample_sha256": "df0d86f30481c37cae5382d6752135aa72951219ae696af8b40132cd8ea9dd2b",
+      "source": "recoil",
+      "master_start_seconds": 545.6579999999999,
+      "master_end_seconds": 546.3209999999999,
+      "visual_action_time_approx_seconds": 545.384,
+      "original_label": "uzis handling candidate",
+      "assigned_action": "occupied Uzi hand flip reload",
+      "duration_seconds": 0.663,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.09836282581090927,
+      "gain_db": 8.810708935786831,
+      "leading_trim_seconds": 0.012,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference096/shaker_drink_00.wav",
+      "sha256": "55bd402e11dda5ebadccf78f00e6632f5dce8b563fc157b11999a252fb418215",
+      "source_index": 242,
+      "source_sample_id": "grenade_throw_and_activation_01_loco_0142p120",
+      "source_sample_sha256": "743b81b12581dcaa8a6da19ed8c26db90fdbeb0c1ae1bb2ec2778e92f5ac6474",
+      "source": "loco",
+      "master_start_seconds": 143,
+      "master_end_seconds": 145.20000000000002,
+      "visual_action_time_approx_seconds": 142.708,
+      "original_label": "Grenade throw and activation",
+      "assigned_action": "shield shaker drink and shield gain",
+      "duration_seconds": 2.2,
+      "mono": true,
+      "sample_rate": 48000,
+      "peak": 0.47998046875,
+      "early250ms_rms": 0.08822476118803024,
+      "gain_db": -0.029953728379470045,
+      "leading_trim_seconds": 0.88,
+      "loop": false,
+      "evidence": "Native frames in evidence/review-synced; source PCM and alignment independently checked. No by-ear approval is claimed.",
+      "listening_approved": false
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_akm_last_00.wav",
+      "sha256": "bd5dcf6f92084374565ec449cca6cfad7af9c3e4c595f200e9c6b9ba5120e652",
+      "source": "recoil",
+      "master_start_seconds": 45.204,
+      "master_end_seconds": 46.176,
+      "raw_master_pcm_sha256": "e54b8107dfd14130c01191f73a186a633162d2bfdc53ff387bf1c6632a4e20d0",
+      "assigned_action": "akm final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.6890375035272593,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14876002073287964,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_cx4_last_00.wav",
+      "sha256": "a24145be567c3d9b98285c4cbf8d2dfacb68054dd12b346d522958302b48becb",
+      "source": "recoil",
+      "master_start_seconds": 101.544,
+      "master_end_seconds": 102.516,
+      "raw_master_pcm_sha256": "43fdec165ebec9edd2bcb5fc85bb0c0bee6fe0d4d56b4fe55a31612fb7bf7bc5",
+      "assigned_action": "cx4 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.641641370684026,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.13635370135307312,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_fal_last_00.wav",
+      "sha256": "e51d687288d89bf18c7fb28c7be1f5d6cf7f6f4a3a8dbbb8ea29d493f9eaef66",
+      "source": "recoil",
+      "master_start_seconds": 133.484,
+      "master_end_seconds": 134.556,
+      "raw_master_pcm_sha256": "1ddff35efebe419f30af60ca20416559855ec406b9248e4772367c6db09ad62f",
+      "assigned_action": "fal final discharge with recorded decay",
+      "duration_seconds": 1.072,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 1.4707926893897443,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14384619891643524,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_m60_last_00.wav",
+      "sha256": "9033458ea5d5444b3fe15011529fb7720fead28a3e3ecd45d0e20a5224c5f87f",
+      "source": "recoil",
+      "master_start_seconds": 202.884,
+      "master_end_seconds": 204.056,
+      "raw_master_pcm_sha256": "687bd250b4e6a92aad7a14e4e1dc16cbab5699dba13cf08456fd9965b2d773c3",
+      "assigned_action": "m60 final discharge with recorded decay",
+      "duration_seconds": 1.172,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.893404866846199,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.17053337395191193,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mk18_last_00.wav",
+      "sha256": "8c7bbd92284fe7c11720eb59a39e86dc09ccab4649e772951872253f3642852f",
+      "source": "recoil",
+      "master_start_seconds": 225.204,
+      "master_end_seconds": 226.176,
+      "raw_master_pcm_sha256": "f1ec74c66ae3cca7d673a2a45c8338861c987b9eade4f92e94a7e42bbde68bb6",
+      "assigned_action": "mk18 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.82676800490302,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1689499467611313,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_rfb_last_00.wav",
+      "sha256": "b34b94b155bfcf53eb27e0fe1a0af25bd40f4895a21e9f9e01f293b9ba82c4ac",
+      "source": "recoil",
+      "master_start_seconds": 245.234,
+      "master_end_seconds": 246.206,
+      "raw_master_pcm_sha256": "94a1dd7e53968dc8bc2cc7710e13670f1379c0cc5db089fc97441601deb08d97",
+      "assigned_action": "rfb final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.387272352793313,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1551537811756134,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_magnum_last_00.wav",
+      "sha256": "6f67cc43ba3f4dc403d6e719f0bcb4a7e5c0bbcadd90ff800795e05bfd1bce4c",
+      "source": "recoil",
+      "master_start_seconds": 260.534,
+      "master_end_seconds": 261.156,
+      "raw_master_pcm_sha256": "9f562b85b0ee7709d5b3ac01963cc8faa54d3bfceb42a09ae6f8606a59642080",
+      "assigned_action": "magnum final discharge with recorded decay",
+      "duration_seconds": 0.622,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.4182751530694278,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14253754913806915,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_1911_last_00.wav",
+      "sha256": "20ef8d24abeb2f42fe40ea893c45815bf18e960c6230b21fbc36a5bb8fc09368",
+      "source": "recoil",
+      "master_start_seconds": 277.584,
+      "master_end_seconds": 278.556,
+      "raw_master_pcm_sha256": "bc35a414a031e8175ef451af5e00b24f38a4474c26f75f4f7acbc0abbdcf4791",
+      "assigned_action": "1911 final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.138996622175177,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.1008961945772171,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_px4_last_00.wav",
+      "sha256": "9e66c4c3d66091ff4a8aadfd1e95b7d63d0e7b5e2eae436a4357eb2a4e124ed0",
+      "source": "recoil",
+      "master_start_seconds": 305.594,
+      "master_end_seconds": 306.516,
+      "raw_master_pcm_sha256": "5a875f0d7403c459c544b78b42edfbc967295bbfb8b8e091558e764e4d90b978",
+      "assigned_action": "px4 final discharge with recorded decay",
+      "duration_seconds": 0.922,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.78959147135918,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12810391187667847,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_tec9_last_00.wav",
+      "sha256": "5a8348ee4856520a946bd1a6c8c75987b6b8d5eaf1d5ee91765dff577ddd5876",
+      "source": "recoil",
+      "master_start_seconds": 324.124,
+      "master_end_seconds": 324.946,
+      "raw_master_pcm_sha256": "547737537a4340211d86194dcac75cecc008b7020cfb354babb7329915c5232f",
+      "assigned_action": "tec9 final discharge with recorded decay",
+      "duration_seconds": 0.822,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.832402737704344,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.09283873438835144,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_dt11_last_00.wav",
+      "sha256": "e6b9ecf16f5539aba263ec1453820dc3eee620e0991ceb8a821b8784ee7b2966",
+      "source": "recoil",
+      "master_start_seconds": 353.624,
+      "master_end_seconds": 354.296,
+      "raw_master_pcm_sha256": "dbb4baba4eeaa04f2ad4c04422f919c98ca8f99929eb9d890427dca23ba90d00",
+      "assigned_action": "dt11 final discharge with recorded decay",
+      "duration_seconds": 0.672,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 0.5097552776781601,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.168783038854599,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_m1014_last_00.wav",
+      "sha256": "50187ee41b6202b83a27c80a1e39256eb555bbde5d23ce7f16a0c4d95e8fa903",
+      "source": "recoil",
+      "master_start_seconds": 382.234,
+      "master_end_seconds": 382.806,
+      "raw_master_pcm_sha256": "37dcc34f7ef69564d4860843ace66dfa9f1682908f24a1ee1738cd09ed703530",
+      "assigned_action": "m1014 final discharge with recorded decay",
+      "duration_seconds": 0.572,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.532590303069441,
+      "peak": 0.569976806640625,
+      "early250ms_rms": 0.20389463007450104,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_matadors_last_00.wav",
+      "sha256": "3e468b7ed509379c8457d902ac77ed705464a68cd69d1d6c41f150b790fb4f54",
+      "source": "recoil",
+      "master_start_seconds": 422.664,
+      "master_end_seconds": 423.736,
+      "raw_master_pcm_sha256": "996f4169cab25e97fa44deda45f7b05d6b92fe6a3062e46ec8905d2d68d1bf98",
+      "assigned_action": "matadors final discharge with recorded decay",
+      "duration_seconds": 1.072,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.331932761550244,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.20365291833877563,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mp5_last_00.wav",
+      "sha256": "a9bdc7f081522af673d3e147fa480343ca7e3eaf751067a4a74cc5143da55736",
+      "source": "recoil",
+      "master_start_seconds": 457.554,
+      "master_end_seconds": 458.676,
+      "raw_master_pcm_sha256": "b9f0631dc52c0b5bea383bc1e61e58ef9c95f417bd3364c7358150b436e8e1a6",
+      "assigned_action": "mp5 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.496584642029348,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.14965805411338806,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_mp9_last_00.wav",
+      "sha256": "fb07162b30b3485a47211c5890fe7f149099c84e42f4df20752863389f5d9696",
+      "source": "recoil",
+      "master_start_seconds": 482.834,
+      "master_end_seconds": 483.956,
+      "raw_master_pcm_sha256": "93ebf6d1615f0816abc7d80fd54e718bf097ad14fb16bd5e4e15ed41cb6060e7",
+      "assigned_action": "mp9 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 5.723674750261598,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.15699830651283264,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_p90_last_00.wav",
+      "sha256": "8a72bc171a8cf98b0ec728bf1680fce5f978eebaf8a6cefe8ee469b3ba0d6ba0",
+      "source": "recoil",
+      "master_start_seconds": 1011.164,
+      "master_end_seconds": 1012.286,
+      "raw_master_pcm_sha256": "3dc64ad7768e3118332fe73e2cb7d8e67f2f30ce45c6e392f10410bbf178dd6b",
+      "assigned_action": "p90 final discharge with recorded decay",
+      "duration_seconds": 1.122,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.63117119594954,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.13608331978321075,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_ump_last_00.wav",
+      "sha256": "44be078b5ae3682702488b28dfcb3f59f9231f3733590bf6538004c77d1af159",
+      "source": "recoil",
+      "master_start_seconds": 988.704,
+      "master_end_seconds": 989.676,
+      "raw_master_pcm_sha256": "a52befa79ea939325a380cf2da5f7f05c91ad2172bb853d5347c4e01825c7e58",
+      "assigned_action": "ump final discharge with recorded decay",
+      "duration_seconds": 0.972,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.3835157883005684,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12796643376350403,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_uzis_last_00.wav",
+      "sha256": "5cada4b8d32cf39cddb4f9be6b3b173fb15594719c8dbd7ca82f535a37efb0b7",
+      "source": "recoil",
+      "master_start_seconds": 544.664,
+      "master_end_seconds": 545.386,
+      "raw_master_pcm_sha256": "9cbe780d75bc2025d940c800ab355d29097e7afca98eafb4cccface1a6135f78",
+      "assigned_action": "uzis final discharge with recorded decay",
+      "duration_seconds": 0.722,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 3.363751856280346,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.12263285368680954,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_awp_last_00.wav",
+      "sha256": "2863d71ba8e4962630775cd5ce9d9c3cbe6cdc93a761d7d3ecbf9f0eb1f55e39",
+      "source": "recoil",
+      "master_start_seconds": 569.494,
+      "master_end_seconds": 570.416,
+      "raw_master_pcm_sha256": "f01b59bb8665db85c8f2de44414fe85650a1366dfb57b2f0603f424baa44d5f6",
+      "assigned_action": "awp final discharge with recorded decay",
+      "duration_seconds": 0.922,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 1.5022756059623255,
+      "peak": 0.939971923828125,
+      "early250ms_rms": 0.18191111087799072,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shot_spr_last_00.wav",
+      "sha256": "5083428f4cd46b58c2f0b1f6a87b502518c37a54be1a882bfa3544d8175f7f1d",
+      "source": "recoil",
+      "master_start_seconds": 1074.154,
+      "master_end_seconds": 1075.376,
+      "raw_master_pcm_sha256": "ed539fa31c5aba02c8e1c0b28e9e004e7d53f75988fd8e1122b3155c6b6a987a",
+      "assigned_action": "spr final discharge with recorded decay",
+      "duration_seconds": 1.222,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 1.8946196419978387,
+      "peak": 0.579986572265625,
+      "early250ms_rms": 0.19317251443862915,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/fal_mag_insert_00.wav",
+      "sha256": "e8b7129b13650f0e3f0a41cc4e40284bce7df203a22f1bb30dc169dc8f8497b8",
+      "source": "recoil",
+      "master_start_seconds": 144.362,
+      "master_end_seconds": 144.647,
+      "raw_master_pcm_sha256": "e787f688864c105f2ebdc6bd16c5cb6cc53fd11fc6fd6733fd715d0afd4edd99",
+      "assigned_action": "fal mag_insert single reload stroke",
+      "duration_seconds": 0.285,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.2867905573568126,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.04482302814722061,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/fal_bolt_00.wav",
+      "sha256": "f89b74edd8e638a89cda592050907d3250b2b252cb4c2b228089b7b0426d04ee",
+      "source": "recoil",
+      "master_start_seconds": 161.072,
+      "master_end_seconds": 161.377,
+      "raw_master_pcm_sha256": "40e0153bb332cc4a4cd4b5dd3157e42c641540c68ea3c17be3ee15dbe1fcc5c3",
+      "assigned_action": "fal bolt single reload stroke",
+      "duration_seconds": 0.305,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 4.8123807111413655,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.06375858187675476,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/spr_bolt_00.wav",
+      "sha256": "6abee4d0402f4f063fb1ac51c197794c561237adf7fcd7a630f4fd4ccbfd16ae",
+      "source": "recoil",
+      "master_start_seconds": 1053.878,
+      "master_end_seconds": 1054.173,
+      "raw_master_pcm_sha256": "2703524d62a7918246e2212e52b7a1b457eed35764b641b3363c04af16f1343d",
+      "assigned_action": "spr bolt single reload stroke",
+      "duration_seconds": 0.295,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 6.574283398518106,
+      "peak": 0.449981689453125,
+      "early250ms_rms": 0.04630551487207413,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/soda_drink_00.wav",
+      "sha256": "a6240aed069d0ecb7f59b1fce0b31dec0dcb32df09198bdebfddc232c57ab908",
+      "source": "loco",
+      "master_start_seconds": 158.935,
+      "master_end_seconds": 161.08,
+      "raw_master_pcm_sha256": "0f9d2a006fb5d1536c489365964088ff258cfb6d5f7ac08f302c808c761f0b04",
+      "assigned_action": "shield soda drink / shield gain",
+      "duration_seconds": 2.145,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": -0.1759790524242958,
+      "peak": 0.47998046875,
+      "early250ms_rms": 0.08509476482868195,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/shaker_open_00.wav",
+      "sha256": "4ac9844686a44dd3e52788dcdf0c8dc620a6570aa96a9d7228942c3fe3f1dc53",
+      "source": "loco",
+      "master_start_seconds": 142.205,
+      "master_end_seconds": 142.54,
+      "raw_master_pcm_sha256": "6b46bbaa6e074d21b00085bd8392b2ba9371185baa244a0491bc3c9526c87bce",
+      "assigned_action": "shaker preparation / cap opening",
+      "duration_seconds": 0.335,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 19.139192559311272,
+      "peak": 0.29998779296875,
+      "early250ms_rms": 0.03385688364505768,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/soda_open_00.wav",
+      "sha256": "92dc5c3f8193bdb80bdc9e35d9facfaa240ecc95b38456eb7352d60701a8f385",
+      "source": "loco",
+      "master_start_seconds": 157.875,
+      "master_end_seconds": 158.4,
+      "raw_master_pcm_sha256": "9721eba7e1306ddc1b3c23bb7685eca6e2323c50816c1ca7d22d4090691dd147",
+      "assigned_action": "shield soda opening before drinking",
+      "duration_seconds": 0.525,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": false,
+      "gain_db": 2.849483391129451,
+      "peak": 0.29998779296875,
+      "early250ms_rms": 0.01726883091032505,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "Mono downmix, DC removal, fixed gain, 1ms/15ms edge fades. Natural recorded decay retained; no fabricated tail."
+    },
+    {
+      "file": "res://assets/audio/reference097/katana_shield_sustain_00.wav",
+      "sha256": "21c14e02ad188a6b9b6264c713719e6b2773e421d5cd58d9fd58907285403c12",
+      "source": "loco",
+      "master_start_seconds": 42.1,
+      "master_end_seconds": 51,
+      "raw_master_pcm_sha256": "4eb1a48c3f1df8ee12c90dd9152aac50e51174068b66ead7e44e776cf6c3b2d1",
+      "assigned_action": "continuous katana shield sustain",
+      "duration_seconds": 8.65,
+      "mono": true,
+      "sample_rate": 48000,
+      "loop": true,
+      "gain_db": 6.626665308098624,
+      "peak": 0.47998046875,
+      "early250ms_rms": 0.09905149787664413,
+      "listening_approved": false,
+      "evidence": "curated native frames in evidence/audio-review; recording A/V offset compensated before action review.",
+      "processing": "250ms wrap crossfade and 256-sample seam correction of continuous shield recording."
+    }
+  ],
+  "source_recordings": [
+    {
+      "id": "recoil",
+      "path": "C:\\Users\\aling\\Downloads\\recoil.mp4",
+      "bytes": 536031595,
+      "sha256": "56cf1d1b42f6510c231f753e8294a29a3e05fd1b6a5a751d7b167a658f445b31",
+      "decoded_master": "masters/recoil-48k-stereo.wav",
+      "master_sha256": "379004aa2a739240ffed83a77cb2aee6204c26bae6c0f47415ebe8b603dc5d7d",
+      "duration_seconds": 1108.3673333333334,
+      "audio_stream_start_seconds": 0.006,
+      "timestamp_basis": "Decoded master time starts at first decoded audio sample; add audio_stream_start_seconds for container video time."
+    },
+    {
+      "id": "loco",
+      "path": "C:\\Users\\aling\\Downloads\\loco_build_nade_sword_magnum.mp4",
+      "bytes": 304190448,
+      "sha256": "05f05c24fd1009ca599f16ddb5927bde9657cee63e84e9be88a5b444bd7d637c",
+      "decoded_master": "masters/loco-48k-stereo.wav",
+      "master_sha256": "c41b2b681bb69ee277f1732c829fb2f99758167df2dac464f3cf40735a14a242",
+      "duration_seconds": 626.3683333333333,
+      "audio_stream_start_seconds": 0.021,
+      "timestamp_basis": "Decoded master time starts at first decoded audio sample; add audio_stream_start_seconds for container video time."
+    }
+  ],
+  "credit": "Locally sampled Population: One gameplay from Al's two supplied recordings; rights remain with the original game/audio owners. These recordings are not newly authored ASHFALL assets.",
+  "scope": "Isolated standalone097 only; no Skyrim or old-version edits.",
+  "rules": [
+    "Final discharges replace short first-shot attack cuts; tails stop before later handling where necessary.",
+    "Per-gun reload strokes stay matched to the visible action; whole reload sequences are never one cue.",
+    "Unverified S85 / reload / consumable preparation events retain authored fallbacks.",
+    "A sustained sampled katana loop remains active for the entire shield hold.",
+    "Reference videos and previous source/audio libraries remain immutable.",
+    "Rocket launch remains the accepted authored cue: the candidate reference launch overlaps its impact and was withheld."
+  ],
+  "listening_approval": "Native video, waveform, PCM, routing and loop behavior checked offline. Physical headset mix and by-ear acceptance remain unverified."
+}

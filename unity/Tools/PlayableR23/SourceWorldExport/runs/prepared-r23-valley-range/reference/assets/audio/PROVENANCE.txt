@@ -1,0 +1,7 @@
+MARA RADIO AUDIO PROVENANCE
+Generated locally on 2026-10-18 using the installed Microsoft Zira Desktop en-US Windows speech synthesizer via System.Speech.
+Original ASHFALL story dialogue from scripts/main.gd. No external voice service, downloaded recording, cloned voice, or game audio used.
+Files: mara_01.wav, mara_02.wav, mara_03.wav, mara_04.wav, mara_finish.wav.
+Format: PCM WAV, 22050 Hz, 16-bit, mono. Apply radio EQ in the game audio bus; original WAVs preserve clarity.
+Reproduction: reports/generate-radio.ps1 in the workspace reads the dialogue and uses the already installed voice. It does not install voices or play audio.
+This records the asset source; Microsoft voice software remains subject to its installed license.

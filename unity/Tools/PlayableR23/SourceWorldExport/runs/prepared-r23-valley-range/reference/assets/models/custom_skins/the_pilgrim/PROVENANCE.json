@@ -1,0 +1,25 @@
+{
+  "key": "the_pilgrim",
+  "display_name": "The Pilgrim",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\exports\\player_kit_the_pilgrim_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\exports\\player_kit_the_pilgrim_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\exports\\gloves\\glove_the_pilgrim_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\exports\\gloves\\glove_the_pilgrim_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\exports\\gloves\\glove_the_pilgrim_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\008_the_pilgrim\\INTEGRATION.json",
+  "source_manifest_sha256": "42c7572b210303d4bc1d405b13a06d3fd1d583a16fadae69b33bdd3d211a6255",
+  "verified_triangles": {
+    "pcvr": 76742,
+    "light": 26330
+  },
+  "verified_source_hashes": {
+    "pcvr": "537abab71f065d4dfeb2f68c7addd205e46ab7fa0c6943ccc0d33b30a3837a15",
+    "light": "dfa06e08e816ebe9b05c0407f0ca41de3bc5ed216d4fa569c7e705b48c6afdde",
+    "glove_albedo": "28dfc8e80f03f28ba24ff816f31a20cd3a8c38c424cd7215ee77c682708a47fa",
+    "glove_orm": "2815850119cb57c30c62e01f57017bc1ba4022bd2aedb5912da68c3b81bf89ba",
+    "glove_normal": "afae869a4763464370f2b85ae321f01d2639b6a3636e67ee12bf08dba6155ec8"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

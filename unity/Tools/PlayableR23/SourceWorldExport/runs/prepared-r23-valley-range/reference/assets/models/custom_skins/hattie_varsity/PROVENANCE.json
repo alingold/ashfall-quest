@@ -1,0 +1,25 @@
+{
+  "key": "hattie_varsity",
+  "display_name": "Hattie (Varsity)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\exports\\player_kit_hattie_varsity_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\exports\\player_kit_hattie_varsity_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\exports\\gloves\\glove_hattie_varsity_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\exports\\gloves\\glove_hattie_varsity_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\exports\\gloves\\glove_hattie_varsity_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\021_hattie_varsity\\INTEGRATION.json",
+  "source_manifest_sha256": "7b9b028cc8ca976bbb5879a19c9f0fcafe6e193df082e1cc42b508299f81d830",
+  "verified_triangles": {
+    "pcvr": 92466,
+    "light": 26768
+  },
+  "verified_source_hashes": {
+    "pcvr": "d6e69f711bcce66953ba07b49e409a7d45fc9c882a56ab3db2c94474a03a1a81",
+    "light": "10bd8e07dce429be65618369c6a098dba665c62bc31ae257cf290a11c02f2423",
+    "glove_albedo": "ddd894090ee7485291facfbb8c9a46c794a5b44a8b9c801f54ae27abf083900c",
+    "glove_orm": "5eed35838f455fb0f50b5c66e9db72e5ef51762c9935cc403f9c5a573bc4dd82",
+    "glove_normal": "8ea19345f4f83ab36e5d1c956f2aa0e9e4372f15829fd909a59b5f0cd766cde8"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

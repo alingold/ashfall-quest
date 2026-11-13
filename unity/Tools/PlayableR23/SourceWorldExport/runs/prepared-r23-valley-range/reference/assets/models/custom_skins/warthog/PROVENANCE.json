@@ -1,0 +1,25 @@
+{
+  "key": "warthog",
+  "display_name": "Warthog",
+  "pcvr": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\exports\\player_kit_warthog_pcvr.glb",
+  "light": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\exports\\player_kit_warthog_light.glb",
+  "glove_albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\exports\\gloves\\glove_warthog_albedo.png",
+  "glove_orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\exports\\gloves\\glove_warthog_orm.png",
+  "glove_normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\exports\\gloves\\glove_warthog_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\005_warthog\\INTEGRATION.json",
+  "source_manifest_sha256": "b13d73dc2c7a17dfe479b1d047c7566cd483b76d65e8503fa854e00458f2e164",
+  "verified_triangles": {
+    "pcvr": 81446,
+    "light": 38220
+  },
+  "verified_source_hashes": {
+    "pcvr": "cc05898f7033204701fe7d0f58fd05544bb7ab7f5170ff81a67221145eb7a445",
+    "light": "f1e6ac2ffabffba530f3b510beee791d314b1633dba8ec8e35f2c5a0fde90558",
+    "glove_albedo": "aa9b164336944b72d2fe705cc4a7c82977d712c060b2bfd9b0baaaf6c7061fd3",
+    "glove_orm": "364583098a912a7f4a489f29ac55730772547ac057a9e0f2543ebc6edc934426",
+    "glove_normal": "4fdcd272745387e62dee164106225ce40c37d1cd130e709e8101c7d21c1ee63b"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

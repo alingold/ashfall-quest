@@ -1,0 +1,117 @@
+{
+  "shots": [
+    {
+      "error": 0,
+      "eye": [
+        74,
+        65,
+        60
+      ],
+      "map": "valley",
+      "orthographic": false,
+      "path": "C:/Users/aling/Documents/Codex/2026-10-22/task-2/standalone1000-multiplayer/candidate/assets/maps1000/valley.png",
+      "size": 100,
+      "target": [
+        0,
+        8,
+        -32
+      ]
+    },
+    {
+      "error": 0,
+      "eye": [
+        0,
+        230,
+        -30
+      ],
+      "map": "valley",
+      "orthographic": true,
+      "path": "C:/Users/aling/Documents/Codex/2026-10-22/task-2/standalone1000-multiplayer/candidate/assets/maps1000/valley_top.png",
+      "size": 200,
+      "target": [
+        0,
+        0,
+        -30
+      ]
+    },
+    {
+      "error": 0,
+      "eye": [
+        10,
+        5,
+        613
+      ],
+      "map": "range",
+      "orthographic": false,
+      "path": "C:/Users/aling/Documents/Codex/2026-10-22/task-2/standalone1000-multiplayer/candidate/assets/maps1000/range.png",
+      "size": 100,
+      "target": [
+        0,
+        1,
+        604
+      ]
+    },
+    {
+      "error": 0,
+      "eye": [
+        0,
+        150,
+        600
+      ],
+      "map": "range",
+      "orthographic": true,
+      "path": "C:/Users/aling/Documents/Codex/2026-10-22/task-2/standalone1000-multiplayer/candidate/assets/maps1000/range_top.png",
+      "size": 100,
+      "target": [
+        0,
+        0,
+        600
+      ]
+    },
+    {
+      "map": "cyber_bird",
+      "edition": "R2",
+      "path": "assets/maps1000/cyber_bird.png",
+      "eye": [
+        280,
+        180,
+        320
+      ],
+      "target": [
+        -20,
+        12,
+        -10
+      ],
+      "orthographic": false,
+      "source": "Native Godot Vulkan Mobile screenshot, original city geometry, 144 buildings; no image compositing"
+    },
+    {
+      "map": "cyber_bird",
+      "edition": "R2",
+      "path": "assets/maps1000/cyber_bird_top.png",
+      "eye": [
+        0,
+        300,
+        0
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "size": 800,
+      "resolution": [
+        1024,
+        1024
+      ],
+      "orthographic": true,
+      "up": [
+        0,
+        0,
+        -1
+      ],
+      "source": "Native Godot Vulkan Mobile north-up render"
+    }
+  ],
+  "source": "Native Godot Vulkan Mobile render of integrated ASHFALL 1000 maps; original game geometry"
+}

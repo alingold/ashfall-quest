@@ -1,0 +1,24 @@
+{
+  "source": "[local development path]",
+  "source_sha256": "025f71949bb45de71bf9e20b6ef9bb8a159562a01c752e11ed8954b612ff44ae",
+  "source_size": [
+    812,
+    799
+  ],
+  "quad_top_left_bottom_left_bottom_right_top_right": [
+    23,
+    22,
+    9,
+    788,
+    790,
+    788,
+    770,
+    22
+  ],
+  "output_size": [
+    768,
+    768
+  ],
+  "output_sha256": "30aa22e75d16ec540d9234a05e7d228e3aa720f67ab6414cd719a60e3ffdc9a3",
+  "method": "Crop and quadrilateral rectification of supplied pixels only; no generated/repainted details. Original retained. One tile per BoxMesh face using3x2 repeat."
+}

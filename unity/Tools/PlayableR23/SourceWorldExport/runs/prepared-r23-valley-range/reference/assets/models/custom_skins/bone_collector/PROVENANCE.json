@@ -1,0 +1,52 @@
+{
+  "key": "bone_collector",
+  "display_name": "Bone Collector",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\exports\\player_kit_bone_collector_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\exports\\player_kit_bone_collector_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\exports\\gloves\\glove_bone_collector_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\exports\\gloves\\glove_bone_collector_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\exports\\gloves\\glove_bone_collector_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\009_bone_collector\\INTEGRATION.json",
+  "source_manifest_sha256": "4e0faca3a131cd904b12af364a824a5b96afdf7a7abe5721355496d5da586c3a",
+  "verified_triangles": {
+    "pcvr": 75740,
+    "light": 29052
+  },
+  "verified_source_hashes": {
+    "pcvr": "9ce4e1886cf91886bea299a994097a9aa7f1d4557d2df43894956ce5081d040d",
+    "light": "9853fe65489f5a7dad98139576662c71a9aff95fb57b05ba89627bbadfcf1dd8",
+    "glove_albedo": "b53866047eb10afaee81610e1e012076031efa2a57fbe962c3ead54474443c4a",
+    "glove_orm": "41ba75e4769e5e2689622e01a5e36b1adf7ca69ba55c2778d24cd502de09d846",
+    "glove_normal": "c9dece0936758557ee0cc8365c0f62e01a83fa76c41a93bad620dea1ebb667a7"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\009_bone_collector\\exports\\gloves_light\\glove_bone_collector_albedo.png",
+      "sha256": "0b0f70cf983a634855c19d0a1cb9089a3c5175934ced7a8d806161c40eaea8ae",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "orm": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\009_bone_collector\\exports\\gloves_light\\glove_bone_collector_orm.png",
+      "sha256": "b8edff29d412311b179f458ffa3532ac8addbe275615421d4dc4d82120bd8ba4",
+      "size": [
+        512,
+        512
+      ]
+    },
+    "normal": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\009_bone_collector\\exports\\gloves_light\\glove_bone_collector_normal.png",
+      "sha256": "83f6b4d9221614afcb20f022e682ba601b7f9cb9bada48dbd847ee8ede366150",
+      "size": [
+        512,
+        512
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "katana",
+  "file": "genjis_katana_v2.glb",
+  "scale": 0.13485633600567376,
+  "anchor": [
+    -5.788004511260987,
+    -0.14760655414632393,
+    -3.277523899976574e-17
+  ],
+  "target": [
+    0.0,
+    -0.29202650602409636,
+    0.025
+  ],
+  "muzzle": [
+    0.0,
+    1.115057390147468,
+    -0.06807747501332542
+  ],
+  "source_pommel": [
+    -5.788004511260987,
+    -0.14760655414632393,
+    -3.277523899976574e-17
+  ],
+  "source_tip": [
+    4.6358123107910165,
+    0.681652357196808,
+    1.5136365829708046e-16
+  ],
+  "contact_tip": [
+    0.0,
+    1.115057390147468,
+    -0.06807747501332542
+  ],
+  "target_chord": 1.4101590361445784,
+  "rotation": [
+    [
+      1.7563421334592858e-17,
+      1.2794683566458278e-18,
+      -1.0
+    ],
+    [
+      0.999911102430103,
+      0.01333368805005243,
+      1.7578920021054563e-17
+    ],
+    [
+      0.01333368805005243,
+      -0.999911102430103,
+      -1.0451694338510652e-18
+    ]
+  ],
+  "offset": [
+    9.314632428229612e-18,
+    0.48871860234741443,
+    0.015503688460014878
+  ],
+  "source": "[local development path]",
+  "source_sha256": "0be6baab64b16c0236696019e795110e6e397c1c2d012b6b838c8a0637027409",
+  "output_sha256": "194dae5ab2f13aaa197905ea49475256bf7983b4a006f190a14aa7c4ba19f87d",
+  "asset": {
+    "author": "TheDwarf (https://sketchfab.com/TheDwarf)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/genjis-katana-v2-ed11897d917f48f7bfed7c3e2fa051e0",
+    "title": "Genji's Katana V2"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 3972,
+  "body_triangles": 3972,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.031164400826851877,
+    -0.29214180270385953,
+    -0.06807747501332546
+  ],
+  "bounds_max": [
+    0.031164400826851898,
+    1.1150573901474683,
+    0.11777523198542988
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": false
+}

@@ -1,0 +1,49 @@
+{
+  "key": "wingman",
+  "display_name": "Wingman",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\exports\\player_kit_wingman_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\exports\\player_kit_wingman_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\exports\\gloves\\glove_wingman_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\exports\\gloves\\glove_wingman_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\exports\\gloves\\glove_wingman_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\038_wingman\\INTEGRATION.json",
+  "source_manifest_sha256": "60149f3b7a739a9aa2780135d76a6d09059fc360a7250133c30b032819821f94",
+  "verified_triangles": {
+    "pcvr": 78076,
+    "light": 32626
+  },
+  "verified_source_hashes": {
+    "pcvr": "0483bc24f512c1a25b160c2f8f16a3a0509887f74de1ace7fbcce559f4601e6d",
+    "light": "8b4274f08c0a3f27d1dcba6756cd5e4064bae4c408b15ecd6e9c400e1ab8be32",
+    "glove_albedo": "51cf0af894b0e453a6718ebc3ac0945c203cd89349136bccab7e05bd1fa849f3",
+    "glove_orm": "2dd874d6dc7955e7e01148bd96516c61874f4bbeaf3cc23287ab4176c952935b",
+    "glove_normal": "9f65d0020495c6c24ba7ee081a89e86eea5e0d6fad889b462d0506d13a50945b"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\038_wingman\\exports\\gloves_light\\glove_wingman_albedo.png",
+      "sha256": "51cf0af894b0e453a6718ebc3ac0945c203cd89349136bccab7e05bd1fa849f3"
+    },
+    "orm": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\038_wingman\\exports\\gloves_light\\glove_wingman_orm.png",
+      "sha256": "2dd874d6dc7955e7e01148bd96516c61874f4bbeaf3cc23287ab4176c952935b"
+    },
+    "normal": {
+      "path": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\038_wingman\\exports\\gloves_light\\glove_wingman_normal.png",
+      "sha256": "9f65d0020495c6c24ba7ee081a89e86eea5e0d6fad889b462d0506d13a50945b"
+    },
+    "native_regions": [
+      "L",
+      "R"
+    ],
+    "size": [
+      1024,
+      1024
+    ],
+    "appearance": "closed ivory mascot gloves; no bare human skin"
+  }
+}

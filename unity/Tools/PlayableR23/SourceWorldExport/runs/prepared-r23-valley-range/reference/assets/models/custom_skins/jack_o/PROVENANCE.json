@@ -1,0 +1,25 @@
+{
+  "key": "jack_o",
+  "display_name": "Jack-O",
+  "pcvr": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\exports\\player_kit_jack_o_pcvr.glb",
+  "light": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\exports\\player_kit_jack_o_light.glb",
+  "glove_albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\exports\\gloves\\glove_jack_o_albedo.png",
+  "glove_orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\exports\\gloves\\glove_jack_o_orm.png",
+  "glove_normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\exports\\gloves\\glove_jack_o_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\006_jack_o\\INTEGRATION.json",
+  "source_manifest_sha256": "6326b8592d9fea47bb1f0b0cad1114c843822780da70ea95a19fd1a507d2f1bd",
+  "verified_triangles": {
+    "pcvr": 95542,
+    "light": 28808
+  },
+  "verified_source_hashes": {
+    "pcvr": "7a43ebd3ead6dc411a9e59b1c4aa979d34abfc126523a9ee03dccaaacb3d99b5",
+    "light": "ee80d2775f3c00c6879aba4102f38e194807886dad5c5e3dbf78b22b3c10bdff",
+    "glove_albedo": "7081a0876a2a446f9a1829b64dbd7ee8f8e8f3f3fd84b2e144e5321c881c8f44",
+    "glove_orm": "e7a402f08265f2f6db677973e580d54dfe77fc7e19a00759d2254d647435a092",
+    "glove_normal": "f354e8833e4d7bcec3aec9cf8fff12cb07efc98c70d2acf01d68a125c5c468a3"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

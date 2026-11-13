@@ -1,0 +1,9 @@
+ASHFALL standalone 091 original audio addition
+
+katana_shield_raise_00.wav is original deterministic mono 48 kHz / 16-bit synthesis.
+The source is finish_edits091.cjs in the isolated standalone 091 checkpoint.
+It combines a short filtered noise transient with decaying 178, 356, 623 and
+1246 Hz partials, normalizes to 0.65 peak and fades both endpoints.
+No downloaded recording, music sample, voice or reference-game sound is used.
+The accepted gunshot files, prior Shepard loop and prior sword loop are preserved.
+The shield loop gain changes in code; a new distinct cue plays on activation.

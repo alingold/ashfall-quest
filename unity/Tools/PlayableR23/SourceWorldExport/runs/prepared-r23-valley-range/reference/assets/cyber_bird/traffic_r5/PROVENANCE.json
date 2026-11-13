@@ -1,0 +1,123 @@
+{
+  "title": "CYBER BIRD original avian traffic assets R5",
+  "author": "Codex original procedural geometry",
+  "license": "CC0-1.0",
+  "coordinate_contract": {
+    "units": "metres",
+    "up": "+Y",
+    "forward": "-Z",
+    "ground_y": 0,
+    "wheel_rotation_axis": "+X"
+  },
+  "provider": {
+    "requested": "Gemini Argon via T3 Code",
+    "used": "local original Python procedural geometry",
+    "reason": "These fallback models were authored locally before T3 orchestration access was verified. A later isolated read/prompt bridge test successfully reached Gemini 4 Argon (High) through Antigravity; these particular models remain original Codex procedural geometry. No originals modified."
+  },
+  "materials": {
+    "count": 11,
+    "textures": 0,
+    "opaque": true,
+    "double_sided": false,
+    "dynamic_lights": 0,
+    "reuse_by_name": [
+      "Paint_Obsidian",
+      "Paint_Plum",
+      "Paint_Ivory",
+      "Paint_Amber",
+      "Metal_Chassis",
+      "Rubber",
+      "Glass_Opaque",
+      "Neon_Cyan",
+      "Neon_Magenta",
+      "Lamp_Amber",
+      "Lamp_Red"
+    ]
+  },
+  "models": [
+    {
+      "file": "raven_taxi.glb",
+      "sha256": "49c22acd72e7bbe91f25f15dc5f07f8e23bb096184f33533975bd5ee93437791",
+      "triangles": 1920,
+      "mesh_parts": 20,
+      "dimensions_m": [
+        1.8965,
+        1.7339,
+        4.808
+      ],
+      "bounds_min": [
+        -0.94825,
+        0.0,
+        -2.4234999999999998
+      ],
+      "bounds_max": [
+        0.94825,
+        1.7338859095142416,
+        2.3845
+      ],
+      "wheel_pivots": [
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "bytes": 176404
+    },
+    {
+      "file": "heron_van.glb",
+      "sha256": "ff1bc47d5054e2ab375c698f3c6fab9ae2a5088bf911af1c46b3a616be8e2896",
+      "triangles": 2120,
+      "mesh_parts": 20,
+      "dimensions_m": [
+        1.8975,
+        2.22,
+        4.768
+      ],
+      "bounds_min": [
+        -0.94875,
+        0.0,
+        -2.4034999999999997
+      ],
+      "bounds_max": [
+        0.94875,
+        2.22,
+        2.3645
+      ],
+      "wheel_pivots": [
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "bytes": 193064
+    },
+    {
+      "file": "kestrel_compact.glb",
+      "sha256": "ba092a596b9fc89a9b6984e18d50783f993c646971ecf68afe822dd60619bdb2",
+      "triangles": 1868,
+      "mesh_parts": 20,
+      "dimensions_m": [
+        1.88,
+        1.45,
+        3.748
+      ],
+      "bounds_min": [
+        -0.94,
+        0.0,
+        -1.8935000000000002
+      ],
+      "bounds_max": [
+        0.94,
+        1.4499830184643547,
+        1.8545
+      ],
+      "wheel_pivots": [
+        "Wheel_FL",
+        "Wheel_FR",
+        "Wheel_RL",
+        "Wheel_RR"
+      ],
+      "bytes": 171960
+    }
+  ]
+}

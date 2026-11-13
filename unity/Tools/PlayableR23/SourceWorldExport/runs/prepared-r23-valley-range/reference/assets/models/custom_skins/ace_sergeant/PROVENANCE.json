@@ -1,0 +1,25 @@
+{
+  "key": "ace_sergeant",
+  "display_name": "Ace (Sergeant)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\exports\\player_kit_ace_sergeant_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\exports\\player_kit_ace_sergeant_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\exports\\gloves\\glove_ace_sergeant_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\exports\\gloves\\glove_ace_sergeant_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\exports\\gloves\\glove_ace_sergeant_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\019_ace_sergeant\\INTEGRATION.json",
+  "source_manifest_sha256": "467c1ec3d0a5b591189171fa2c4578a933a82232669b67eb239a7a15fb6b19bc",
+  "verified_triangles": {
+    "pcvr": 76306,
+    "light": 35582
+  },
+  "verified_source_hashes": {
+    "pcvr": "2ca3655b330ad8922c9770192b8981c012110cd82f856e1adae29c7cb000db64",
+    "light": "6ce8adf2efeb7a792a05e04722d08f101b6b2e7993a2ea378bcd43a0e2573ede",
+    "glove_albedo": "d01037253f37250b148b59d1303e26c4ddd9f7dfe0b474a070475a7030aa092a",
+    "glove_orm": "6e49b8d1dc6a84f9b969ac7d26b2436b585d58883c24be134485ee6d989a0d62",
+    "glove_normal": "7d516dc65c88c0fb5c300ae3eb1aea7af03e943c2d33f12e62e8f213b63c06f1"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

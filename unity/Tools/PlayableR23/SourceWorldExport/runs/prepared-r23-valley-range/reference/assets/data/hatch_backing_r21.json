@@ -1,0 +1,51 @@
+{
+  "maps": {
+    "alfa-aglae-souza": {
+      "fingerprint": "4bdb9eb629b352982c4d161ea9937b33eb320df341f56146970c0a5fbf56ca92",
+      "path": "res://assets/data/hatch_backing_r21/alfa-aglae-souza.res",
+      "sha256": "3f0380cd31424bae8abde9bd555e6b9dc36b161e45e467cc2f030acf6d7b1c4f"
+    },
+    "bigbabyjesuz-classic-kiki-80": {
+      "fingerprint": "274a6630b96fad5e7ae1ff07dd753f117d7858a95656aedfc0a34effa2874570",
+      "path": "res://assets/data/hatch_backing_r21/bigbabyjesuz-classic-kiki-80.res",
+      "sha256": "a835d4698392c8689abab324c59563bdb0eefe61fae317860a2118d865cde4e0"
+    },
+    "classic-bigbox-vr": {
+      "fingerprint": "f720f430ea1b84a6c32a3c7d8723859db193982bd6570f32562646a6a716c10a",
+      "path": "res://assets/data/hatch_backing_r21/classic-bigbox-vr.res",
+      "sha256": "6d087709e14c6f348f027b770c6dc3a9f31e3195b4992db3809647c98f9f1ef9"
+    },
+    "classic-bw-187norvis": {
+      "fingerprint": "e6474f5307a45ff2584e11417904ef48cfc9c506e2741d1eedde620074b2eb02",
+      "path": "res://assets/data/hatch_backing_r21/classic-bw-187norvis.res",
+      "sha256": "b977fdbcc590d87902d8200975913da1ff9495b757fe7256f13b404c194e878c"
+    },
+    "cont-cl-er-ssd-cjcoops": {
+      "fingerprint": "bd0817ea4aab5fe77c2bb2b24993e6e631364c9f8a56cf59530d8c6b28364d8d",
+      "path": "res://assets/data/hatch_backing_r21/cont-cl-er-ssd-cjcoops.res",
+      "sha256": "8df923c509ec169e9f5933b494eab01282a47b585d16c24cb1ef91f18e650570"
+    },
+    "cont-cl-ssd-cjcoops": {
+      "fingerprint": "b342c347ba6a2d24cad88ab994241ce305d9f4413c42fa5468f19c89b3278496",
+      "path": "res://assets/data/hatch_backing_r21/cont-cl-ssd-cjcoops.res",
+      "sha256": "5d1a64a21b7f468478c3aa89cea5645d794e04484adf54db9e0473d46e0f33e6"
+    },
+    "evolving-map-bigbox": {
+      "fingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+      "path": "res://assets/data/hatch_backing_r21/evolving-map-bigbox.res",
+      "sha256": "e25ce1d79a7e563f87d920eccf5135216e1aacf51d2786b95e057fb6c8bf2c6d"
+    },
+    "statmaster-classic-soulsmight": {
+      "fingerprint": "78e9d46aa694036fc2dc4fcdd79716b40bbc8770d1b60677406048ba5c14b0f0",
+      "path": "res://assets/data/hatch_backing_r21/statmaster-classic-soulsmight.res",
+      "sha256": "b645f8bebf7e4cd59451557fa522cfdecd6e16f32389fd484c01338a317167b5"
+    },
+    "statmaster-evolving-soulsmight": {
+      "fingerprint": "28d3e23ab6a9abfcc37b9cfad707e2c135179eff7ac6ed97c4b1a67b46f8376f",
+      "path": "res://assets/data/hatch_backing_r21/statmaster-evolving-soulsmight.res",
+      "sha256": "ff28f7fcfadfbb71d613af23fd502e498c802303de7109979010dd9d6d609ab0"
+    }
+  },
+  "schema": 1,
+  "scope": "Exact octagonal backing patches, plus public ImporterMesh index LODs for affected wall/frame chunks. No private renderer data or runtime clipping."
+}

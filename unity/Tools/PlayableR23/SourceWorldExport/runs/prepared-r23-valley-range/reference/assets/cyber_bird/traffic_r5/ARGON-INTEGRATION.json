@@ -1,0 +1,21 @@
+{
+  "provider": "antigravity",
+  "model": "gemini-4-argon-high",
+  "author": "Gemini Argon",
+  "baseline_credit": "Original CC0-1.0 procedural framework and material palette by Codex",
+  "thread_id": "33a35d17-688e-44fb-8a54-b6a415acdd6f",
+  "thread_title": "CYBER BIRD Argon raven taxi original variant",
+  "status": "completed",
+  "completed_at": "2026-10-25T04:07:16.196Z",
+  "raw_argon_glb_sha256": "6d12a8319d104181ad420e54712050a17a6c3c6f5dcdc5a92e025a8857c92de1",
+  "adopted_glb_sha256": "293e3b02562fa4d5f6fb5235e5c34f94fce64ad7c8708b11db9b66b7af5f36ef",
+  "integration_edits_by_Codex": [
+    "generator output directory moved to its asset directory",
+    "sidecar files named ARGON-PROVENANCE.json / ARGON-LICENSE.txt to preserve fallback credits",
+    "emissiveFactor normalized by emissiveStrength to retain intended neon/amber hue; geometry unchanged",
+    "isolated-output cleanup loop removed so reproducing the Argon model preserves all fallback GLBs"
+  ],
+  "no_original_assets_modified": true,
+  "no_ongoing_agent_work": true,
+  "reproduction_test": "Passed in scratch: adopted Argon bytes reproduced exactly, all three fallback hashes unchanged, no generic credit files written."
+}

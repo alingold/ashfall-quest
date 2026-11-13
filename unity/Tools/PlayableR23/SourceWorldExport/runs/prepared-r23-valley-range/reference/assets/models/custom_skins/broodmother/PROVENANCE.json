@@ -1,0 +1,25 @@
+{
+  "key": "broodmother",
+  "display_name": "BROODMOTHER",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\exports\\player_kit_broodmother_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\exports\\player_kit_broodmother_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\exports\\gloves\\glove_broodmother_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\exports\\gloves\\glove_broodmother_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\exports\\gloves\\glove_broodmother_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\007_broodmother\\INTEGRATION.json",
+  "source_manifest_sha256": "33f4c2d782b8e629fd6f0aba9a559a1cab13a6185eb81258dec479c2545a7265",
+  "verified_triangles": {
+    "pcvr": 99592,
+    "light": 38882
+  },
+  "verified_source_hashes": {
+    "pcvr": "1b7c924c460ed628e9c1371c33465bdc324f088183e791839a9181eebd8717c1",
+    "light": "2eb175a564cf1c5cb43a6cfeec79b16188f04033d2549a08edf043a8550d46da",
+    "glove_albedo": "9e34c6c14dad1760986cc6ed47de4357a87c9ab9893d0ee65d0e8a34a0a8c615",
+    "glove_orm": "6ca3ccb840c2d50ea3826b92d469e51b5d6640ba135a35be162a5acd97299d6d",
+    "glove_normal": "5110733a0a437e33fb925ac6d4138379c46c45ff331f8caa700a1a89e0c73123"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

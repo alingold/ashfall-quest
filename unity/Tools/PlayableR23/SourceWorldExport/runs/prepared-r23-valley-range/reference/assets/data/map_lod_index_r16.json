@@ -1,0 +1,951 @@
+{
+	"maps": {
+		"10000-days-gods-crazytrain": {
+			"base_triangles": 148668,
+			"coarsest_triangles": 7493,
+			"meshes": 67,
+			"path": "res://assets/data/lods_r16/10000-days-gods-crazytrain.res",
+			"sha256": "daf377dd6f14341f511e33219ef716b1626b8048d55e53e044975055074c274c",
+			"source_fingerprint": "98164a326adc61c3e03c3bc14232a126958711880f0c24ea1f03df8eb92a9a95",
+			"surfaces": 67
+		},
+		"5-levels-zyro": {
+			"base_triangles": 71981,
+			"coarsest_triangles": 7370,
+			"meshes": 64,
+			"path": "res://assets/data/lods_r16/5-levels-zyro.res",
+			"sha256": "e8dd63e9e4c1e1dc19ed52625c306ec648d8781f4c9e6ff0de50b7cedb674301",
+			"source_fingerprint": "23d33a09bbcb4af61801319eab40801b37b0d73667e08a3c6cf9744618b84a38",
+			"surfaces": 64
+		},
+		"aaa-tree-house-oldschoolshyit": {
+			"base_triangles": 284402,
+			"coarsest_triangles": 14102,
+			"meshes": 214,
+			"path": "res://assets/data/lods_r16/aaa-tree-house-oldschoolshyit.res",
+			"sha256": "2c7a11520a54c5dddecd8944d62da53bd94aa68315a6385d1a32056e41ddede6",
+			"source_fingerprint": "ebf9e9d7ce7b4b321f3aa25f2262fbe5b6097e71d8d17bbcd11195b7f2519431",
+			"surfaces": 214
+		},
+		"aethelgard-solstis-kiki-80-bbb": {
+			"base_triangles": 214821,
+			"coarsest_triangles": 12314,
+			"meshes": 88,
+			"path": "res://assets/data/lods_r16/aethelgard-solstis-kiki-80-bbb.res",
+			"sha256": "0b62b1fa36d81d045a4673cb0eb21fb30f4187568641fb8acf2c0208f49ff79c",
+			"source_fingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+			"surfaces": 88
+		},
+		"afterlife-gods-alamo-hank": {
+			"base_triangles": 242538,
+			"coarsest_triangles": 13199,
+			"meshes": 217,
+			"path": "res://assets/data/lods_r16/afterlife-gods-alamo-hank.res",
+			"sha256": "a1cf77e9e1026c05b5cbe36f00e40733323af88490802b217b8add9f6c15dacf",
+			"source_fingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+			"surfaces": 217
+		},
+		"aftermath-light-vs-dark-gods-badbar": {
+			"base_triangles": 249553,
+			"coarsest_triangles": 13590,
+			"meshes": 147,
+			"path": "res://assets/data/lods_r16/aftermath-light-vs-dark-gods-badbar.res",
+			"sha256": "e9d3e6421a489e37314b4fcd890c98757b77a4b83cf28fd9922354e070b6884b",
+			"source_fingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+			"surfaces": 147
+		},
+		"alfa-aglae-souza": {
+			"base_triangles": 720221,
+			"coarsest_triangles": 38284,
+			"meshes": 396,
+			"path": "res://assets/data/lods_r16/alfa-aglae-souza.res",
+			"sha256": "67114db76794056a55ff6870c96fe54fc176bcc9dcfd969798884e636306d065",
+			"source_fingerprint": "4bdb9eb629b352982c4d161ea9937b33eb320df341f56146970c0a5fbf56ca92",
+			"surfaces": 396
+		},
+		"asylum-gods-pitdevil": {
+			"base_triangles": 305252,
+			"coarsest_triangles": 11769,
+			"meshes": 87,
+			"path": "res://assets/data/lods_r16/asylum-gods-pitdevil.res",
+			"sha256": "76e317054e995fd68c86827400bbd52ad6581c03955edae75f6f491a6077bf0a",
+			"source_fingerprint": "89575a87ea632469ba8601eb1c48c106f94f9c156f07ba83fa4321de720e0fc0",
+			"surfaces": 87
+		},
+		"atrocious-gods-trashpandakiller": {
+			"base_triangles": 197552,
+			"coarsest_triangles": 10433,
+			"meshes": 106,
+			"path": "res://assets/data/lods_r16/atrocious-gods-trashpandakiller.res",
+			"sha256": "f6094835f470e065bf08cef09cf3a99549fc3f05b99af768d6792f8294908558",
+			"source_fingerprint": "23d58ed183b2bbde48b1747a04c59db564b823143fc0059468852db2906ac89d",
+			"surfaces": 106
+		},
+		"badlands-gods-pitdevil": {
+			"base_triangles": 387449,
+			"coarsest_triangles": 13904,
+			"meshes": 158,
+			"path": "res://assets/data/lods_r16/badlands-gods-pitdevil.res",
+			"sha256": "53a1b7a48b69b5e3132a1f9c52513d8b6b667192729f972e1ff906b4ab5c0204",
+			"source_fingerprint": "492d43301e0d1111d3617c5e1b29fc5a910516398ff9f8ea095124bcf7d4e295",
+			"surfaces": 158
+		},
+		"bamboo-gods-pitdevil": {
+			"base_triangles": 555033,
+			"coarsest_triangles": 19772,
+			"meshes": 223,
+			"path": "res://assets/data/lods_r16/bamboo-gods-pitdevil.res",
+			"sha256": "a93b6a648a9f0be6ef14b73ae08ec632f31b561706dbabd9f67b1f6f73238996",
+			"source_fingerprint": "5445e4c336ca42fa646e36801c6239b1d1e8d91ca68edf2db48e6a28b484c3bf",
+			"surfaces": 223
+		},
+		"banana-land-gods-pitdevil": {
+			"base_triangles": 979293,
+			"coarsest_triangles": 40296,
+			"meshes": 452,
+			"path": "res://assets/data/lods_r16/banana-land-gods-pitdevil.res",
+			"sha256": "035ca89a23a11384ae821066029adda647572c0eed462885cc73ecd1a4851ef9",
+			"source_fingerprint": "256aa11ad7fd5f0a599079f323f3475c8d1014a0844d9338742968f0563d0b54",
+			"surfaces": 452
+		},
+		"battlefield-paintball-gods-pitdevil": {
+			"base_triangles": 100175,
+			"coarsest_triangles": 9388,
+			"meshes": 73,
+			"path": "res://assets/data/lods_r16/battlefield-paintball-gods-pitdevil.res",
+			"sha256": "2db002df81685e596ac9b1cbebc0c788077ac10fad8b8371af071032b9c0e375",
+			"source_fingerprint": "17a3c47f028fae76404f3aa12d8b9b905ae1306d6bb60ed0cc9357ad214ef76c",
+			"surfaces": 73
+		},
+		"beast-mode-gods-pitdevil": {
+			"base_triangles": 651300,
+			"coarsest_triangles": 23809,
+			"meshes": 334,
+			"path": "res://assets/data/lods_r16/beast-mode-gods-pitdevil.res",
+			"sha256": "94560643157286f0506088281e69172576571f070d8dfff7550283fd9e72069c",
+			"source_fingerprint": "e1259d0fa01a9cce1e2c0df3f903e2b5b56d05e27abd1eb99b0dd855501fd875",
+			"surfaces": 334
+		},
+		"bi-polar-gods-trashpandakiller": {
+			"base_triangles": 255856,
+			"coarsest_triangles": 19620,
+			"meshes": 157,
+			"path": "res://assets/data/lods_r16/bi-polar-gods-trashpandakiller.res",
+			"sha256": "bc68ee71f6fa4ba4a4154e6eb5e22bf524618e457d6610d4d0ff10a00f69267b",
+			"source_fingerprint": "ae27c5ff40fb46ad919ddba0f50fdc4bcc8bd400093a027130eab52ced53a6d4",
+			"surfaces": 157
+		},
+		"bigbabyjesuz-classic-kiki-80": {
+			"base_triangles": 578239,
+			"coarsest_triangles": 24143,
+			"meshes": 269,
+			"path": "res://assets/data/lods_r16/bigbabyjesuz-classic-kiki-80.res",
+			"sha256": "4a0fe90aa4a8a244785b627a6ab250124f379b67838c3da506ac1754c9e52648",
+			"source_fingerprint": "274a6630b96fad5e7ae1ff07dd753f117d7858a95656aedfc0a34effa2874570",
+			"surfaces": 269
+		},
+		"blue-gods-quietowl": {
+			"base_triangles": 115799,
+			"coarsest_triangles": 16602,
+			"meshes": 107,
+			"path": "res://assets/data/lods_r16/blue-gods-quietowl.res",
+			"sha256": "7ad6dc11412f00ba537180e16289ee48e4aca623961a7876eee47f9889ff4c10",
+			"source_fingerprint": "c7369cb759c3b4746cbbf1f744634e8dd32782e15f7913ab0766abd624a328e7",
+			"surfaces": 107
+		},
+		"candle-magic-gods-goodwitch": {
+			"base_triangles": 323963,
+			"coarsest_triangles": 13714,
+			"meshes": 159,
+			"path": "res://assets/data/lods_r16/candle-magic-gods-goodwitch.res",
+			"sha256": "22573696dd28a438f69c35f700565edb47ce9297ed32430cd347c28958323da9",
+			"source_fingerprint": "b7874a2060c7f7ec78eb6e9f0527d2f2b1d2033aa35c7d22535eb94149d360d6",
+			"surfaces": 159
+		},
+		"caskades-gods-alamo-hank": {
+			"base_triangles": 184381,
+			"coarsest_triangles": 8173,
+			"meshes": 127,
+			"path": "res://assets/data/lods_r16/caskades-gods-alamo-hank.res",
+			"sha256": "9f73cc208b1ff831f2d1d72aeb7252a697e3aee9b6a66e01aa71145fc5b7f782",
+			"source_fingerprint": "e38d1bae62dc208404a86fb20c03939f42e508a514d5cf3667b7ae9c18f3df6c",
+			"surfaces": 127
+		},
+		"chaotic-gods-alamo-hank": {
+			"base_triangles": 395162,
+			"coarsest_triangles": 18257,
+			"meshes": 223,
+			"path": "res://assets/data/lods_r16/chaotic-gods-alamo-hank.res",
+			"sha256": "417bc2a8d2ddf9759ebdcc284f5b2d4ef4e2c5840b7e1fc353ddc1e6b6f8a58b",
+			"source_fingerprint": "8eca9e377d9f6347bc1556109765203ad7bf1e690db30256c813196218c6eba5",
+			"surfaces": 223
+		},
+		"chem-x-template": {
+			"base_triangles": 381176,
+			"coarsest_triangles": 15580,
+			"meshes": 215,
+			"path": "res://assets/data/lods_r16/chem-x-template.res",
+			"sha256": "207b001cf2eedd234dcd887626a5512a3abf18a104b6dafc26cc1faf4f5639fa",
+			"source_fingerprint": "048473a1616d5d72d3df48bdf4333dd36837dc2bccb81e50a8ac39cbb3ccc671",
+			"surfaces": 215
+		},
+		"chess-ifun": {
+			"base_triangles": 109250,
+			"coarsest_triangles": 6382,
+			"meshes": 45,
+			"path": "res://assets/data/lods_r16/chess-ifun.res",
+			"sha256": "f43f3e127af8f1c405661a42c38598a37deebb8df12d85d5e9d3da5fddfe6bf0",
+			"source_fingerprint": "b0f1ef9b49f03801ae2bd63013a32f7ac924a0395d3fd00ac9324a8f5d3afd77",
+			"surfaces": 45
+		},
+		"chill-gods-pitdevil": {
+			"base_triangles": 240322,
+			"coarsest_triangles": 11523,
+			"meshes": 207,
+			"path": "res://assets/data/lods_r16/chill-gods-pitdevil.res",
+			"sha256": "9d1edb8d36372e89fadc1438c467770ca6051e69e4a3e622b98a07466230b0ad",
+			"source_fingerprint": "e7a179a93b7a79ee9629ca8f21812960109f57abfe55980bc7b6e5e4fb7a960f",
+			"surfaces": 207
+		},
+		"classic-bigbox-vr": {
+			"base_triangles": 1311515,
+			"coarsest_triangles": 44503,
+			"meshes": 283,
+			"path": "res://assets/data/lods_r16/classic-bigbox-vr.res",
+			"sha256": "9f7f2bc1f024c177e64f716976decf8882989ff0483ac38e190e31fff83fa570",
+			"source_fingerprint": "f720f430ea1b84a6c32a3c7d8723859db193982bd6570f32562646a6a716c10a",
+			"surfaces": 283
+		},
+		"classic-bw-187norvis": {
+			"base_triangles": 575032,
+			"coarsest_triangles": 27771,
+			"meshes": 294,
+			"path": "res://assets/data/lods_r16/classic-bw-187norvis.res",
+			"sha256": "6915c47cf8e0aa5cca78dd39891ee1a6ea1abc08e0229e69564aef03697bd98a",
+			"source_fingerprint": "e6474f5307a45ff2584e11417904ef48cfc9c506e2741d1eedde620074b2eb02",
+			"surfaces": 294
+		},
+		"cold-hearted-gods-pitdevil": {
+			"base_triangles": 648919,
+			"coarsest_triangles": 32690,
+			"meshes": 466,
+			"path": "res://assets/data/lods_r16/cold-hearted-gods-pitdevil.res",
+			"sha256": "9f01d849b5133b834090c6f90f2d87b3124ae67763d5e0e40e7231f3930e8bab",
+			"source_fingerprint": "b9ecbbeef4ea11f6ed0dbac659b93403e3a2fc3e84bda87a96395ce9940075ff",
+			"surfaces": 466
+		},
+		"cont-cl-er-ssd-cjcoops": {
+			"base_triangles": 594020,
+			"coarsest_triangles": 29709,
+			"meshes": 318,
+			"path": "res://assets/data/lods_r16/cont-cl-er-ssd-cjcoops.res",
+			"sha256": "b4689022596416eebc43f140f7eafd7a251fc8be0e656fe171a35b29d2869ad0",
+			"source_fingerprint": "bd0817ea4aab5fe77c2bb2b24993e6e631364c9f8a56cf59530d8c6b28364d8d",
+			"surfaces": 318
+		},
+		"cont-cl-ssd-cjcoops": {
+			"base_triangles": 637243,
+			"coarsest_triangles": 30412,
+			"meshes": 345,
+			"path": "res://assets/data/lods_r16/cont-cl-ssd-cjcoops.res",
+			"sha256": "01ba4bfbcf2c5e5888cb4532b93185c8bcd11644a476da198ae78755d7e4ebba",
+			"source_fingerprint": "b342c347ba6a2d24cad88ab994241ce305d9f4413c42fa5468f19c89b3278496",
+			"surfaces": 345
+		},
+		"dark-carnival-gods-pitdevil": {
+			"base_triangles": 997658,
+			"coarsest_triangles": 25182,
+			"meshes": 422,
+			"path": "res://assets/data/lods_r16/dark-carnival-gods-pitdevil.res",
+			"sha256": "b65e8fcf83f1624cbea30046b870fe7c5360af8d41e3b699f93fe3fd4216d45c",
+			"source_fingerprint": "f870798f90064946289d55f8bebcd0de5eb268221518c37c3ebeeae631693b1e",
+			"surfaces": 422
+		},
+		"deep-space-5-stand-alone-pro-yt": {
+			"base_triangles": 228984,
+			"coarsest_triangles": 10635,
+			"meshes": 128,
+			"path": "res://assets/data/lods_r16/deep-space-5-stand-alone-pro-yt.res",
+			"sha256": "ea73428a67d08c75de312604bbcf5492f28ade3d5a1616ec3b0e504ed761d7ee",
+			"source_fingerprint": "fe51b0649cf0d7fe0e61e37a7fdb9b3f54547f0b0e35c85199dbd73734444299",
+			"surfaces": 128
+		},
+		"ereptile-disfunction-gods-pitdevil": {
+			"base_triangles": 206660,
+			"coarsest_triangles": 9000,
+			"meshes": 83,
+			"path": "res://assets/data/lods_r16/ereptile-disfunction-gods-pitdevil.res",
+			"sha256": "43dbfbf8f26f5edd7d0a3825d3b3e52c8d9c60170d2cfc10c65d27f295cbae8d",
+			"source_fingerprint": "0e92a3c1e7b87fad303a201229ece2d3f858c927c182d753c607f871e64cc10e",
+			"surfaces": 83
+		},
+		"evolving-map-bigbox": {
+			"base_triangles": 1311515,
+			"coarsest_triangles": 44503,
+			"meshes": 283,
+			"path": "res://assets/data/lods_r16/evolving-map-bigbox.res",
+			"sha256": "f61dc3e51666d40c12cb1d9834026905e84db5e751731cad88ea26443c028638",
+			"source_fingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+			"surfaces": 283
+		},
+		"fear-thy-neighbor-oitc-steve-qc": {
+			"base_triangles": 189824,
+			"coarsest_triangles": 10003,
+			"meshes": 130,
+			"path": "res://assets/data/lods_r16/fear-thy-neighbor-oitc-steve-qc.res",
+			"sha256": "bfa63db502d71848502c36480b78d60889c3790c0407aef6678607d7dc40d2bd",
+			"source_fingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+			"surfaces": 130
+		},
+		"flash-gods-pitdevil": {
+			"base_triangles": 220838,
+			"coarsest_triangles": 7940,
+			"meshes": 102,
+			"path": "res://assets/data/lods_r16/flash-gods-pitdevil.res",
+			"sha256": "3fe7dfb0bfc2e701fd889e1df7db1ec73c63022380e0511e3149744494da2800",
+			"source_fingerprint": "9698c43334aa81f0aa5ef826cbcd418ffc11f6735c90dfa653c2d2b2fd5b9fd9",
+			"surfaces": 102
+		},
+		"fortress-gods-putangfreyja": {
+			"base_triangles": 173393,
+			"coarsest_triangles": 14976,
+			"meshes": 187,
+			"path": "res://assets/data/lods_r16/fortress-gods-putangfreyja.res",
+			"sha256": "f9316fc65d4896889c2eb28976654c8e69e73a43f7801a990acce9adc4184078",
+			"source_fingerprint": "1d3657a77fe8b7653bbd9dda027645d79e95f84965b3a567123202be16130238",
+			"surfaces": 187
+		},
+		"g-spot-gods-pitdevil": {
+			"base_triangles": 217882,
+			"coarsest_triangles": 8514,
+			"meshes": 151,
+			"path": "res://assets/data/lods_r16/g-spot-gods-pitdevil.res",
+			"sha256": "c65b13c29fcb80190b593acf2e42d9b51ff5317aa283913eb761bcdd88f2dca3",
+			"source_fingerprint": "f10467954a2c2281d6eee1745eb573e1b471428a52201bcf4377a54d5ee46a7a",
+			"surfaces": 151
+		},
+		"g0dtham-gods-poplightning": {
+			"base_triangles": 383356,
+			"coarsest_triangles": 11081,
+			"meshes": 189,
+			"path": "res://assets/data/lods_r16/g0dtham-gods-poplightning.res",
+			"sha256": "2b3b50cb45aa04a61f091b49f6a4e64faaded1df6fa92ffd1e1fbef6ec917809",
+			"source_fingerprint": "3f72c46ce6661473e869c654c0dbdcb71d99ff952dde80fe5775a0e9e847b2ed",
+			"surfaces": 189
+		},
+		"ga-fenix-ga-hikesa": {
+			"base_triangles": 2191258,
+			"coarsest_triangles": 64539,
+			"meshes": 405,
+			"path": "res://assets/data/lods_r16/ga-fenix-ga-hikesa.res",
+			"sha256": "78b0b9f664f1586367b891611e26b4696a7dcd0ab6198303c6b5556214d33561",
+			"source_fingerprint": "3915a3096049812ec9c0ab4bca3ee1b9f6a3cd79922496d00a0e21b5ea8557ce",
+			"surfaces": 405
+		},
+		"ghost-ship-wintersoldier-egy": {
+			"base_triangles": 279494,
+			"coarsest_triangles": 10553,
+			"meshes": 72,
+			"path": "res://assets/data/lods_r16/ghost-ship-wintersoldier-egy.res",
+			"sha256": "bce82ce29dfce8f461e191b234c686ed67aa87fc83f0ec789ef0152c340c6a31",
+			"source_fingerprint": "2a2c03586d5f6340db12da7f166810d9b3565ea9e91cf8d9a40968caaf09dbe6",
+			"surfaces": 72
+		},
+		"gun-game-star-wars-by-sam-sam": {
+			"base_triangles": 366500,
+			"coarsest_triangles": 14181,
+			"meshes": 145,
+			"path": "res://assets/data/lods_r16/gun-game-star-wars-by-sam-sam.res",
+			"sha256": "d85fc93521ed38bcd7f57646558af9963f5e538b2ca291694a3cfacc4616ecef",
+			"source_fingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+			"surfaces": 145
+		},
+		"halloween-5-level-x-ifun-ifun": {
+			"base_triangles": 297312,
+			"coarsest_triangles": 11331,
+			"meshes": 176,
+			"path": "res://assets/data/lods_r16/halloween-5-level-x-ifun-ifun.res",
+			"sha256": "acfd3fe4ae519721722bd1a4bdd0b51cf71a264bea4620968117ea930c2d89d9",
+			"source_fingerprint": "7eaa7fb88d8c977f7f403ca83580e2a167fff8154a3840868a87e75508d243ce",
+			"surfaces": 176
+		},
+		"heavens-arena-big-battles-swa-wildbarnacle": {
+			"base_triangles": 363254,
+			"coarsest_triangles": 11028,
+			"meshes": 210,
+			"path": "res://assets/data/lods_r16/heavens-arena-big-battles-swa-wildbarnacle.res",
+			"sha256": "323bcbad471ae1cb568b79fa5176da3987e18c3d7300f400b27391d5a4d2c908",
+			"source_fingerprint": "608b455a642c311b0df8fc90651c7318cecab2f2e682db3ba6b102f64f2bf542",
+			"surfaces": 210
+		},
+		"high-ground-gods-thor": {
+			"base_triangles": 225231,
+			"coarsest_triangles": 10142,
+			"meshes": 99,
+			"path": "res://assets/data/lods_r16/high-ground-gods-thor.res",
+			"sha256": "90b2238d7c19edf31ca7eef9e7aa4654da5f9e98026d981b32d59af9eab21a80",
+			"source_fingerprint": "dc4fdeaac8818fe1e0ebcffff8313d15aa1399298417afd23730855b55278ee3",
+			"surfaces": 99
+		},
+		"hildrs-echo-gods-pitdevil": {
+			"base_triangles": 208822,
+			"coarsest_triangles": 10617,
+			"meshes": 123,
+			"path": "res://assets/data/lods_r16/hildrs-echo-gods-pitdevil.res",
+			"sha256": "64c38dca59129ea216e8eaa0a54802edb48896314c769b3df3bdaca6e495ae50",
+			"source_fingerprint": "2e13b3ccb616b9c2d0eb9a4db5654c8c27c4d9fec7b340aebdebc1d6c425445a",
+			"surfaces": 123
+		},
+		"holy-ground-gods-pitdevil": {
+			"base_triangles": 232739,
+			"coarsest_triangles": 15057,
+			"meshes": 138,
+			"path": "res://assets/data/lods_r16/holy-ground-gods-pitdevil.res",
+			"sha256": "374f26cbb3abc1cde2c5c8f609eac0bee3a592978a83f948095019e32792e8e4",
+			"source_fingerprint": "41b7dc529fe9934dd9afe03c21a9d2120891ad0a9e1f81cbf69e0fffd6e48152",
+			"surfaces": 138
+		},
+		"home-town-sir-dave-sir-dave": {
+			"base_triangles": 282085,
+			"coarsest_triangles": 24625,
+			"meshes": 224,
+			"path": "res://assets/data/lods_r16/home-town-sir-dave-sir-dave.res",
+			"sha256": "4fbdedb09ab9944ba15608a19df9516e2af18e0f95a6c8897ee8e0a8ae9080ae",
+			"source_fingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+			"surfaces": 224
+		},
+		"hunted-gods-pitdevil": {
+			"base_triangles": 181632,
+			"coarsest_triangles": 10534,
+			"meshes": 149,
+			"path": "res://assets/data/lods_r16/hunted-gods-pitdevil.res",
+			"sha256": "f8702e259899c27321e2a00b3f18e494dc94dad5d80a2d0d92a3b6745fc02560",
+			"source_fingerprint": "cbcf63ec63c41506ea0a9de51c2f0abf272f003c3de60691e2c1aadeefefceda",
+			"surfaces": 149
+		},
+		"hypnosis-gods-pitdevil": {
+			"base_triangles": 235034,
+			"coarsest_triangles": 7229,
+			"meshes": 111,
+			"path": "res://assets/data/lods_r16/hypnosis-gods-pitdevil.res",
+			"sha256": "6f8ad00a375164672acfde2cf0cca421ac10780a068c5a52585d9f1770fd0700",
+			"source_fingerprint": "0ca12562b3483b596016767be5e8fb9cb1a9b8bc57363cfc103559182e6947a7",
+			"surfaces": 111
+		},
+		"ivars-village-trigger-apex": {
+			"base_triangles": 214297,
+			"coarsest_triangles": 10789,
+			"meshes": 111,
+			"path": "res://assets/data/lods_r16/ivars-village-trigger-apex.res",
+			"sha256": "cacd833aa9b55dc845a71e9a79dfb767a2f8945f2b5febfa17c14066edf6476a",
+			"source_fingerprint": "e92eeb8b42f8db67cf41b454a8159347387d0354f5bd0b930103f99b3d27deed",
+			"surfaces": 111
+		},
+		"king-of-the-balz-st1-spaceteam1": {
+			"base_triangles": 198522,
+			"coarsest_triangles": 3847,
+			"meshes": 38,
+			"path": "res://assets/data/lods_r16/king-of-the-balz-st1-spaceteam1.res",
+			"sha256": "af3172cce6994ae03d59d93290ec5f05c0cda00e63656d0d1b4c73519f631b7e",
+			"source_fingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+			"surfaces": 38
+		},
+		"kokiri-forest-atc-garden-porfavortiktok": {
+			"base_triangles": 238176,
+			"coarsest_triangles": 13144,
+			"meshes": 246,
+			"path": "res://assets/data/lods_r16/kokiri-forest-atc-garden-porfavortiktok.res",
+			"sha256": "4cb47b0d5cc1394d593c9935bd169fec77d4c2a1dcc10f376edc003793cdf982",
+			"source_fingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+			"surfaces": 246
+		},
+		"la-la-la-gods-trashpandakiller": {
+			"base_triangles": 242888,
+			"coarsest_triangles": 12200,
+			"meshes": 226,
+			"path": "res://assets/data/lods_r16/la-la-la-gods-trashpandakiller.res",
+			"sha256": "df39440bb96d2e8d3ab184ca57edf15dbba596cfd930bf12f1ac318d829390d7",
+			"source_fingerprint": "b19a789f380015d76f3df5c313cf09e3c39f4e9b944d200b2bd23a0a15813a04",
+			"surfaces": 226
+		},
+		"light-vs-dark-gods-badbar": {
+			"base_triangles": 131550,
+			"coarsest_triangles": 10065,
+			"meshes": 61,
+			"path": "res://assets/data/lods_r16/light-vs-dark-gods-badbar.res",
+			"sha256": "4c17198be89a6150905e15fe87840dbb741517c416bf443c78e96ac3ba3e2a83",
+			"source_fingerprint": "719c86e8f0a24c3bdb25334313d28c01013e5b6ded8a914b508a323e5aeac5d4",
+			"surfaces": 61
+		},
+		"magnum-3-chaosvr": {
+			"base_triangles": 101014,
+			"coarsest_triangles": 28753,
+			"meshes": 40,
+			"path": "res://assets/data/lods_r16/magnum-3-chaosvr.res",
+			"sha256": "9fb179fd0963832f76b3d9d068598765300087895de484f7600edf23e28f52be",
+			"source_fingerprint": "8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",
+			"surfaces": 40
+		},
+		"magnum-chaosvr": {
+			"base_triangles": 106370,
+			"coarsest_triangles": 38196,
+			"meshes": 30,
+			"path": "res://assets/data/lods_r16/magnum-chaosvr.res",
+			"sha256": "4eb154ab31f7a55673cd297ef38607b93cee4e6477114534a485e785c599cb94",
+			"source_fingerprint": "1a3aad846543d24f6c20d5d2a96cfc3c7e7d0e93fca429f1427f89f8f2728dca",
+			"surfaces": 30
+		},
+		"marksman-remarkabled": {
+			"base_triangles": 281531,
+			"coarsest_triangles": 14177,
+			"meshes": 151,
+			"path": "res://assets/data/lods_r16/marksman-remarkabled.res",
+			"sha256": "48f15f05045e73bc617ce281851f384c042fcd981b97ea4cf59f7ab367f1c92e",
+			"source_fingerprint": "c76c9e1d9788d60b0ee271a620a11f2c7999e6486d2355524543aaa34e236361",
+			"surfaces": 151
+		},
+		"melipop-gods-poplightning": {
+			"base_triangles": 150316,
+			"coarsest_triangles": 9262,
+			"meshes": 98,
+			"path": "res://assets/data/lods_r16/melipop-gods-poplightning.res",
+			"sha256": "3982891a6d69a11831f35090eddec121d1c7e5fb6c110ee9a2fa58628f24c25b",
+			"source_fingerprint": "6e2f16dea7e1b592369479a99fd5c38df5331202958e98a76e03920cdb04548b",
+			"surfaces": 98
+		},
+		"melis-cafe-gods-pitdevil": {
+			"base_triangles": 960032,
+			"coarsest_triangles": 33992,
+			"meshes": 497,
+			"path": "res://assets/data/lods_r16/melis-cafe-gods-pitdevil.res",
+			"sha256": "d89bfd667fdfa47da692cced4d95cf7690e74327272e64322d527dec011f215f",
+			"source_fingerprint": "2348ab8b3b1c625289aeaa111ce4939568224527052f35b90fec1a86e6f5c319",
+			"surfaces": 497
+		},
+		"metal-mayhem-ghostlymostly88": {
+			"base_triangles": 161611,
+			"coarsest_triangles": 4979,
+			"meshes": 46,
+			"path": "res://assets/data/lods_r16/metal-mayhem-ghostlymostly88.res",
+			"sha256": "e09df18fca59df127005af0b3bdbaf33ef1fa98aa0fc04ab731156d80887276e",
+			"source_fingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+			"surfaces": 46
+		},
+		"mortal-kombat-bwaynecs": {
+			"base_triangles": 260790,
+			"coarsest_triangles": 12837,
+			"meshes": 125,
+			"path": "res://assets/data/lods_r16/mortal-kombat-bwaynecs.res",
+			"sha256": "af10db5fc5c1d2b67e21af740aab748d5586c045a876b4496195e077b706e843",
+			"source_fingerprint": "4682e46b32d63449145c14d9c5faf4b54aa07872dc1edd1b834cf0cb72776a11",
+			"surfaces": 125
+		},
+		"muddy26-muddyfartz": {
+			"base_triangles": 1531897,
+			"coarsest_triangles": 26823,
+			"meshes": 359,
+			"path": "res://assets/data/lods_r16/muddy26-muddyfartz.res",
+			"sha256": "d00ca3019ec1abb4b0cd0503da9c1bc387a4f58acb0af35714b88586936252d5",
+			"source_fingerprint": "34bf91aaad3cdeeef8ef18ba50485adbb1691c16c4bde68a93ff2ab2248be257",
+			"surfaces": 359
+		},
+		"mushy-2-gods-putangfreyja": {
+			"base_triangles": 246663,
+			"coarsest_triangles": 10513,
+			"meshes": 164,
+			"path": "res://assets/data/lods_r16/mushy-2-gods-putangfreyja.res",
+			"sha256": "23d9d0f6baf97f9df83e4da0374fad3e5eb11a8fe958535ffa321ca938dc268f",
+			"source_fingerprint": "2a0f32fdc2f424a0bf20edcbdfa6a0abf3323e381b9e0785b94a2ec1ad045abb",
+			"surfaces": 164
+		},
+		"mushy-gods-putangfreyja": {
+			"base_triangles": 272914,
+			"coarsest_triangles": 11622,
+			"meshes": 183,
+			"path": "res://assets/data/lods_r16/mushy-gods-putangfreyja.res",
+			"sha256": "6ba769418f6646b1013f1686047e238055304d6408e8e485b1c2f60304feffd7",
+			"source_fingerprint": "7adee4e08041f636149724c607a791a0827d3954cbe116f5fa102a522360ce8a",
+			"surfaces": 183
+		},
+		"odf-5-level-odf-birdshot": {
+			"base_triangles": 521220,
+			"coarsest_triangles": 12609,
+			"meshes": 208,
+			"path": "res://assets/data/lods_r16/odf-5-level-odf-birdshot.res",
+			"sha256": "e859bc65ff08bfab96f6cfb52f9f9ed381f467443b26a5cf3fb4888092ecd89a",
+			"source_fingerprint": "0783b53e72e350495d69665481f237a9abb128837c03ec1b6036cec7876be665",
+			"surfaces": 208
+		},
+		"oppression-gods-thor": {
+			"base_triangles": 192680,
+			"coarsest_triangles": 17998,
+			"meshes": 104,
+			"path": "res://assets/data/lods_r16/oppression-gods-thor.res",
+			"sha256": "448f59f8597b8ccf10b3a5b99121acefa9d3da6dfa8939847d57948b5d4014a7",
+			"source_fingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+			"surfaces": 104
+		},
+		"phantom-gods-badbar": {
+			"base_triangles": 306723,
+			"coarsest_triangles": 13462,
+			"meshes": 114,
+			"path": "res://assets/data/lods_r16/phantom-gods-badbar.res",
+			"sha256": "a7963d95a65b7e8fa542e1cf19a615c658f5b5021288c39d03501f5d9405c5be",
+			"source_fingerprint": "96bf3b704641483428768a6f6ab338543c742b88f945677817bb4fe0a21345ce",
+			"surfaces": 114
+		},
+		"phoenix-bigbox-vr": {
+			"base_triangles": 1790607,
+			"coarsest_triangles": 56826,
+			"meshes": 364,
+			"path": "res://assets/data/lods_r16/phoenix-bigbox-vr.res",
+			"sha256": "e5f38956ebc160c78a743cf5697fc3f2b5c0a7a4e7522fafcfdc1f603496c79b",
+			"source_fingerprint": "3f85b40b45bc7562b9b6d0654860d717498eb8c39b45e78d8617745e703def80",
+			"surfaces": 364
+		},
+		"plan-b-gods-pitdevil": {
+			"base_triangles": 418347,
+			"coarsest_triangles": 23606,
+			"meshes": 283,
+			"path": "res://assets/data/lods_r16/plan-b-gods-pitdevil.res",
+			"sha256": "00501cfaf1860bbd1923edeb78c0ede3194f33c2cc2d507e4e0e1b0fd681576d",
+			"source_fingerprint": "58b4908281af9f62d94dc8afcb31ed79e57088cda6eef0653819688327fa7d75",
+			"surfaces": 283
+		},
+		"pollen-panic-kiki-80": {
+			"base_triangles": 310082,
+			"coarsest_triangles": 9171,
+			"meshes": 90,
+			"path": "res://assets/data/lods_r16/pollen-panic-kiki-80.res",
+			"sha256": "4220186c161e00184fe0b71d703a2e3d0431bfdbb7d1ddd8b1f367a2874381a8",
+			"source_fingerprint": "211c6ca637183aeef05163854f0a4cd4006d5442ef76df7bbfa40612e1fa0c1a",
+			"surfaces": 90
+		},
+		"poppy-gods-poplightning": {
+			"base_triangles": 160312,
+			"coarsest_triangles": 7951,
+			"meshes": 125,
+			"path": "res://assets/data/lods_r16/poppy-gods-poplightning.res",
+			"sha256": "a83a006612d3314c90196b2ceb8dc7b8812d9b785d57a880d9c5e4ae3eb8123d",
+			"source_fingerprint": "4cdbb885696a4a0802739662f136b8bdd7199f2cad564c3712a604b08ab56717",
+			"surfaces": 125
+		},
+		"quantum-city-gods-pitdevil": {
+			"base_triangles": 157752,
+			"coarsest_triangles": 12303,
+			"meshes": 137,
+			"path": "res://assets/data/lods_r16/quantum-city-gods-pitdevil.res",
+			"sha256": "af4413b785c6db7093b7111a8196b995ed37bf62404273667b1e2a37ad152152",
+			"source_fingerprint": "cd673075bf3a826b3d62fb77b0635973926cc533b3a4275d10d814453c35cbd3",
+			"surfaces": 137
+		},
+		"quietowl-gods-pitdevil": {
+			"base_triangles": 456769,
+			"coarsest_triangles": 20060,
+			"meshes": 175,
+			"path": "res://assets/data/lods_r16/quietowl-gods-pitdevil.res",
+			"sha256": "4a02adc5a24c169b578984af82f9af826504cf7092fe87e88b26d92728ea1083",
+			"source_fingerprint": "fc232fdb25946f471759f88d9a43f157d54392d348f4f0812c6b46ec4dffd551",
+			"surfaces": 175
+		},
+		"realtree-gods-poplightning": {
+			"base_triangles": 200638,
+			"coarsest_triangles": 7955,
+			"meshes": 66,
+			"path": "res://assets/data/lods_r16/realtree-gods-poplightning.res",
+			"sha256": "a40453180b7712d18a1472d40c4d0787d5a1f1846e40627ec6c47e8635301762",
+			"source_fingerprint": "b1c82e56989fb6d6848a3a38c7fc4616e171d4d52d2539c339fbffd74d2319b0",
+			"surfaces": 66
+		},
+		"rip-respect-integrity-pop1-armsreach": {
+			"base_triangles": 212567,
+			"coarsest_triangles": 9502,
+			"meshes": 109,
+			"path": "res://assets/data/lods_r16/rip-respect-integrity-pop1-armsreach.res",
+			"sha256": "e1454e7e5ebae915313f8e9eac26019462fd21bf8262cba02a4feb793d229d40",
+			"source_fingerprint": "276be5d1d64573c8e4f50ab1989ddc682603f078a6297f39f02cf9c9d67a8eca",
+			"surfaces": 109
+		},
+		"robotics-2-gods-pitdevil": {
+			"base_triangles": 1353157,
+			"coarsest_triangles": 25250,
+			"meshes": 400,
+			"path": "res://assets/data/lods_r16/robotics-2-gods-pitdevil.res",
+			"sha256": "de897199fa7ec0d1ad8c7402ab0968a094c1ce412eb06f5cda472db52f31dc14",
+			"source_fingerprint": "6137c8596b7a98e4e7f1809237276940af484d3de17d54419d8b97b3e229fa08",
+			"surfaces": 400
+		},
+		"romulus-gods-skblong": {
+			"base_triangles": 304710,
+			"coarsest_triangles": 13375,
+			"meshes": 116,
+			"path": "res://assets/data/lods_r16/romulus-gods-skblong.res",
+			"sha256": "5cd6587f182410b4292799b166ae924ee1db910568910d22b8044b1da08a795b",
+			"source_fingerprint": "1218f0d8968694992581fe934bc764c59d5edbe8897c28e3b0466a8f5948034b",
+			"surfaces": 116
+		},
+		"sean0311-gods-sean0311": {
+			"base_triangles": 166612,
+			"coarsest_triangles": 6648,
+			"meshes": 85,
+			"path": "res://assets/data/lods_r16/sean0311-gods-sean0311.res",
+			"sha256": "13a4464ceb4a69649fda6c6bf699012ab553c0f58c204037fdd91ff75173644c",
+			"source_fingerprint": "7e7d4bc3cf8792d90d0b799a46bd313312471f307a0282695ead054e83c31c87",
+			"surfaces": 85
+		},
+		"sharp-objects-kiwishade": {
+			"base_triangles": 110312,
+			"coarsest_triangles": 17928,
+			"meshes": 42,
+			"path": "res://assets/data/lods_r16/sharp-objects-kiwishade.res",
+			"sha256": "ea4ac3532d340373b81d348ef89d63f9ea020c1e73097c11c2f3b44cb2901a7f",
+			"source_fingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+			"surfaces": 42
+		},
+		"showdown-gods-crazytrain": {
+			"base_triangles": 140715,
+			"coarsest_triangles": 9135,
+			"meshes": 140,
+			"path": "res://assets/data/lods_r16/showdown-gods-crazytrain.res",
+			"sha256": "91e71111d3f15c4d1f437307c089d2c56eaa0e3db5fff31c0975cf1fe14ddb63",
+			"source_fingerprint": "7a985234fac33219ddaa1a825431f8920f3f04a770eac7136c5d369dce0a49bb",
+			"surfaces": 140
+		},
+		"skb-paintball-gods-skblong": {
+			"base_triangles": 1169135,
+			"coarsest_triangles": 10160,
+			"meshes": 92,
+			"path": "res://assets/data/lods_r16/skb-paintball-gods-skblong.res",
+			"sha256": "b4f6bfdf4ec31367c02fdf2618da10948d200763df2070851f634ed72c7fdb77",
+			"source_fingerprint": "68390f92cd69204e09c4ef38543e7b6c023db21c0ff12c85de9313932dbb01fd",
+			"surfaces": 92
+		},
+		"stacked-gods-trashpandakiller": {
+			"base_triangles": 129998,
+			"coarsest_triangles": 8106,
+			"meshes": 97,
+			"path": "res://assets/data/lods_r16/stacked-gods-trashpandakiller.res",
+			"sha256": "4939674c42a4af04410b54961c44882b04ea3d3c90ff7f2b1955566c1bd531df",
+			"source_fingerprint": "4c510e447dfb224943afe432a47c6fb5e5e0490847232c966047e33afa667882",
+			"surfaces": 97
+		},
+		"statmaster-classic-soulsmight": {
+			"base_triangles": 547768,
+			"coarsest_triangles": 20617,
+			"meshes": 257,
+			"path": "res://assets/data/lods_r16/statmaster-classic-soulsmight.res",
+			"sha256": "252ddef6609f3740927017319c5aa9a22d41a53a4a2c8d47b5aa253251dac46e",
+			"source_fingerprint": "78e9d46aa694036fc2dc4fcdd79716b40bbc8770d1b60677406048ba5c14b0f0",
+			"surfaces": 257
+		},
+		"statmaster-evolving-soulsmight": {
+			"base_triangles": 1334295,
+			"coarsest_triangles": 50628,
+			"meshes": 326,
+			"path": "res://assets/data/lods_r16/statmaster-evolving-soulsmight.res",
+			"sha256": "1a8478737e6b5269f6e26d7d3301061ad6a7638239d4931d87596b3b2c4a953d",
+			"source_fingerprint": "28d3e23ab6a9abfcc37b9cfad707e2c135179eff7ac6ed97c4b1a67b46f8376f",
+			"surfaces": 326
+		},
+		"suffering-gods-thor": {
+			"base_triangles": 165926,
+			"coarsest_triangles": 10405,
+			"meshes": 90,
+			"path": "res://assets/data/lods_r16/suffering-gods-thor.res",
+			"sha256": "7f08e42660f2e9f71522c3b997503908dbe231a768b6f94c24927a01eb140953",
+			"source_fingerprint": "e77d8e1240b866dc18a563758ce6e1fd8c328c7d8baf3921a453f1f52df4f4fe",
+			"surfaces": 90
+		},
+		"sunflower-city-kiki-80-bbb": {
+			"base_triangles": 347843,
+			"coarsest_triangles": 15225,
+			"meshes": 144,
+			"path": "res://assets/data/lods_r16/sunflower-city-kiki-80-bbb.res",
+			"sha256": "7c2fa22d15c8d0aeaf7c2f71610d1c88d90a303cef2c4db8eb11ab03e4eaec01",
+			"source_fingerprint": "7e5154445ef622c817fc6dc7843f3842a4c4cbf89e63294b259d572564426594",
+			"surfaces": 144
+		},
+		"survive-gods-goodwitch": {
+			"base_triangles": 291867,
+			"coarsest_triangles": 23617,
+			"meshes": 332,
+			"path": "res://assets/data/lods_r16/survive-gods-goodwitch.res",
+			"sha256": "8ea6e1a175449b09b71d2acea36de3455c6281fb9072cf3ffa5e2236343fcc5b",
+			"source_fingerprint": "fd160dc9c9f0c4f26100929a5a1a0eb32bbd3cad1dffd42f8f4f753636bdaff1",
+			"surfaces": 332
+		},
+		"swarm-gods-chriso": {
+			"base_triangles": 330684,
+			"coarsest_triangles": 11603,
+			"meshes": 90,
+			"path": "res://assets/data/lods_r16/swarm-gods-chriso.res",
+			"sha256": "856c7cfd09366d1b4330ce3fddfb9e91b27c17a7c620c936ddf7b1e7f510fc1d",
+			"source_fingerprint": "4b8f5307cca865be0f69c4fae48cf5508a46a63e05e9e74a6cc20598027a5ea2",
+			"surfaces": 90
+		},
+		"sweet-dreams-gods-badbar": {
+			"base_triangles": 329040,
+			"coarsest_triangles": 20517,
+			"meshes": 136,
+			"path": "res://assets/data/lods_r16/sweet-dreams-gods-badbar.res",
+			"sha256": "0b15d58a837592677aeacbdb475bc84fa0b3ebab54862819b6ac047eac20e1a9",
+			"source_fingerprint": "3ff8734088fce2b3676d0224e51777a2590f5a341030317d303e720074284c7c",
+			"surfaces": 136
+		},
+		"tagd-gods-pitdevil": {
+			"base_triangles": 234612,
+			"coarsest_triangles": 7666,
+			"meshes": 111,
+			"path": "res://assets/data/lods_r16/tagd-gods-pitdevil.res",
+			"sha256": "cc3863e2b19481388172b23bba961ff33a38088d3d5173fae594d941bc0df78b",
+			"source_fingerprint": "5626d0d5eaa4bce94d90be82e8ae7981f007e6520b63c1db7dbfd22081118909",
+			"surfaces": 111
+		},
+		"the-citadel-gods-thor": {
+			"base_triangles": 127980,
+			"coarsest_triangles": 7588,
+			"meshes": 115,
+			"path": "res://assets/data/lods_r16/the-citadel-gods-thor.res",
+			"sha256": "311bc1c33e2b3a96ceb29d8104500a9702b19dfeda671567e1532e0da38408cc",
+			"source_fingerprint": "9cfd917759d54c00372a30fe9aefcca1ed04576402896c3c332383429520985d",
+			"surfaces": 115
+		},
+		"the-fortress-gods-alamo-hank": {
+			"base_triangles": 135336,
+			"coarsest_triangles": 7899,
+			"meshes": 37,
+			"path": "res://assets/data/lods_r16/the-fortress-gods-alamo-hank.res",
+			"sha256": "4cd9c59decfdfd9b39cac454232b2171d2886680f821eb87aa87490b38041c24",
+			"source_fingerprint": "3b36a7afb62d7383634893eadded99b61986012e3a0a481dede3c9579ebb75a7",
+			"surfaces": 37
+		},
+		"the-holler-gods-alamo-hank": {
+			"base_triangles": 326669,
+			"coarsest_triangles": 15821,
+			"meshes": 166,
+			"path": "res://assets/data/lods_r16/the-holler-gods-alamo-hank.res",
+			"sha256": "911fb241d0ea38c59c54dcff43697c4a1602c4e45e32c1ae565c3ff8d54a64c5",
+			"source_fingerprint": "6705aa80bf82042f36748a9a02ee19c0ca0cacf5dedcd14677d53ba2862274b8",
+			"surfaces": 166
+		},
+		"the-powerpuff-g0ds-gods-meli": {
+			"base_triangles": 300829,
+			"coarsest_triangles": 10526,
+			"meshes": 181,
+			"path": "res://assets/data/lods_r16/the-powerpuff-g0ds-gods-meli.res",
+			"sha256": "0b8f9edc3910787b4cc7f43d82c655a07ea7735bb6c6889dba680e94cf63d37d",
+			"source_fingerprint": "65ecd7d807303db41396e75c3deaf969380f57bb44ab85958ce9713def280d0b",
+			"surfaces": 181
+		},
+		"the-shining-gods-ghostlymostly88": {
+			"base_triangles": 248010,
+			"coarsest_triangles": 14148,
+			"meshes": 124,
+			"path": "res://assets/data/lods_r16/the-shining-gods-ghostlymostly88.res",
+			"sha256": "0d89ddc21412ec2392163735d771363e40478c797a06ac54030982a229352dde",
+			"source_fingerprint": "d9f41688944129186004944c55e391399747b8bac818087a1c7784d0ecdba85f",
+			"surfaces": 124
+		},
+		"the-swamp-taffy-dragon-vr": {
+			"base_triangles": 228313,
+			"coarsest_triangles": 17672,
+			"meshes": 117,
+			"path": "res://assets/data/lods_r16/the-swamp-taffy-dragon-vr.res",
+			"sha256": "60ca9f3f46470aedb6c2f622e935575cc17e6e0d00ff3672f3a98cd2d7836603",
+			"source_fingerprint": "77847af39a60aad2ca8364c487fb60ef6ea7bc8808460db9a46f179ce5f17165",
+			"surfaces": 117
+		},
+		"the-white-house-gods-osprey-kat": {
+			"base_triangles": 119882,
+			"coarsest_triangles": 13140,
+			"meshes": 85,
+			"path": "res://assets/data/lods_r16/the-white-house-gods-osprey-kat.res",
+			"sha256": "c59809cacac4c4e8b239a5bb9ef80abcfaf344a881811907851bef34ab928cbd",
+			"source_fingerprint": "d8f5714de7aa8b37e48feb1be9aefb8fb4106d126fde67dadd69d28d61bb8ec1",
+			"surfaces": 85
+		},
+		"thor-city-gods-thor": {
+			"base_triangles": 217181,
+			"coarsest_triangles": 9577,
+			"meshes": 149,
+			"path": "res://assets/data/lods_r16/thor-city-gods-thor.res",
+			"sha256": "995a230a99835ebcea06bc0da1a4c834474b0f56fd1cf5425ea8551d03c50c95",
+			"source_fingerprint": "0af52069fdbbd35bef8d700ee689c9faa0b54048a47af06711d9d23058500b47",
+			"surfaces": 149
+		},
+		"train-rmx-armsreach": {
+			"base_triangles": 273099,
+			"coarsest_triangles": 12454,
+			"meshes": 135,
+			"path": "res://assets/data/lods_r16/train-rmx-armsreach.res",
+			"sha256": "556eab439664e594a7a1619e067d783b8eae50f8025b2d8c9157db77237dd810",
+			"source_fingerprint": "a128d44a4c036529d61d094f7c2a24233ece0ee311f295266545dd212b8550d9",
+			"surfaces": 135
+		},
+		"trashed-gods-pitdevil": {
+			"base_triangles": 284780,
+			"coarsest_triangles": 15026,
+			"meshes": 184,
+			"path": "res://assets/data/lods_r16/trashed-gods-pitdevil.res",
+			"sha256": "db1dd4f87856ccb585727a1dc480f96b16eb3cecb8ec1064785050d13dbe7f7b",
+			"source_fingerprint": "5aff40c123cd65e46798ebc2342384ce107a3872936bccaa702d3b1db5353d73",
+			"surfaces": 184
+		},
+		"trauma-gods-pitdevil": {
+			"base_triangles": 416902,
+			"coarsest_triangles": 28573,
+			"meshes": 367,
+			"path": "res://assets/data/lods_r16/trauma-gods-pitdevil.res",
+			"sha256": "244e76994a325444ab82bf47f25e15e412d20cc2c4380cad3ca237f72ecccb05",
+			"source_fingerprint": "21ffbd967193a5c31b7bc75635c5fcebccf10f53d60888787a7fe9309b2025ac",
+			"surfaces": 367
+		},
+		"ultimate-5-levels-rexryan": {
+			"base_triangles": 260780,
+			"coarsest_triangles": 21799,
+			"meshes": 146,
+			"path": "res://assets/data/lods_r16/ultimate-5-levels-rexryan.res",
+			"sha256": "6a563220bc7be68e6fb26ed3ac969699490ec21e2f9c271927f0218fdebe2993",
+			"source_fingerprint": "4c6bb7726162dfe2d5ab41365db5d1ec0f29aa2fcec9430f8d1d2763fa531da3",
+			"surfaces": 146
+		},
+		"unbroken-gods-thor": {
+			"base_triangles": 128632,
+			"coarsest_triangles": 6135,
+			"meshes": 113,
+			"path": "res://assets/data/lods_r16/unbroken-gods-thor.res",
+			"sha256": "f313187ce11bbce1c366313b5866a7c872e73a07a7379c08c06f132ba3d58d13",
+			"source_fingerprint": "f00b4fe83d948e4b94aaad81612de20cf9b4f3d1ac7000abf4db7b8f62eab979",
+			"surfaces": 113
+		},
+		"viral-gods-ghostlymostly88": {
+			"base_triangles": 208356,
+			"coarsest_triangles": 19076,
+			"meshes": 162,
+			"path": "res://assets/data/lods_r16/viral-gods-ghostlymostly88.res",
+			"sha256": "d02f379a9236b21d0f03e725946120c8e7a8871c0ae60e8ab1a5021dd5063ba7",
+			"source_fingerprint": "eb6ccc1dbd1b9b3b2434db8ad89fd562dd0ff2afc11e8c260ac9665d1081880d",
+			"surfaces": 162
+		},
+		"vortex-sd-stumpdawg": {
+			"base_triangles": 127688,
+			"coarsest_triangles": 22130,
+			"meshes": 75,
+			"path": "res://assets/data/lods_r16/vortex-sd-stumpdawg.res",
+			"sha256": "e0930ca9d1742ecd37ca2a31c63db2f305c7fd838b0a35aac7ffc31bfbe8b2ad",
+			"source_fingerprint": "466946c954308d5b16eb4221c54a0fba2e3055d41989e329b7a1a9ab321eb91b",
+			"surfaces": 75
+		},
+		"zelda-kokiri-forest-solos-ilikepies1211": {
+			"base_triangles": 319010,
+			"coarsest_triangles": 13000,
+			"meshes": 195,
+			"path": "res://assets/data/lods_r16/zelda-kokiri-forest-solos-ilikepies1211.res",
+			"sha256": "fe38bc7a492a92e8e5b92adaf964cb452d7441d68bdb78d2f95a127d926be1da",
+			"source_fingerprint": "9c456feb8d525d218b872fca489d598eb592b98236f743ad3b27da7e61951a3e",
+			"surfaces": 195
+		}
+	},
+	"schema": 1,
+	"scope": "Render index LODs only. Original base vertices/indices, materials, collision and map bounds are unchanged."
+}

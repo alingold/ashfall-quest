@@ -1,0 +1,104 @@
+{
+  "id": "dt11",
+  "file": "12_gauge_double_barrel_shotgun_custom.glb",
+  "scale": 0.4269203091911859,
+  "anchor": [
+    0,
+    0.14756700774707282,
+    1.0
+  ],
+  "target": [
+    0,
+    0.04,
+    -0.65
+  ],
+  "bolt": [
+    1,
+    5,
+    14
+  ],
+  "bolt_home": [
+    0,
+    -0.135,
+    -0.13
+  ],
+  "moving_mesh_name": "Barrels",
+  "moving_kind": "break_action_barrels",
+  "omit": [
+    6
+  ],
+  "omission_reason": "Source242-triangle fore-end replaced by retained authored contoured fore-end at existing support/closing hand datum, with a visual bridge to fitted narrower barrels. Original source retained.",
+  "muzzle": [
+    0,
+    0.04,
+    -0.65
+  ],
+  "chamber_visual_y_shift": 0.02,
+  "variant": "Downloaded stock/receiver and separate break-barrel cluster on original hinge. Functional shell visuals/chamber markers fitted to narrower source bores, same two-shell down/up mechanism, timing and firing ray. Existing support/close hand marker and authored contoured fore-end retained.",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.022999352573798447,
+    -0.22307969080881412
+  ],
+  "source": "[local development path]",
+  "source_sha256": "8eea07fd232a79e12473126bfb8ab6af6330e34d6199c5a607c539f8e3d0c74d",
+  "output_sha256": "ab122decaa2a83de32c464ae11ad876edae2ab9a794e95b1e1635b283175b72c",
+  "asset": {
+    "author": "SchrisArt (https://sketchfab.com/SchrisArt)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/12-gauge-double-barrel-shotgun-custom-1e03c51ebc454aeba36ba1c575cff067",
+    "title": "12 Gauge Double Barrel Shotgun [Custom]"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "source_triangles": 6088,
+  "body_triangles": 4262,
+  "magazine_triangles": 0,
+  "moving_triangles": 1584,
+  "bounds_min": [
+    -0.023000587407053793,
+    -0.0997809506238942,
+    -0.6500000032034883
+  ],
+  "bounds_max": [
+    0.023000587407053793,
+    0.0537822454810001,
+    0.20384061761782984
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 242,
+  "visible_source_triangles": 5846,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.0,
+    0.031070607548086823,
+    -0.38150000160174413
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "key": "millie_defiant",
+  "display_name": "Millie (Defiant)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\exports\\player_kit_millie_defiant_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\exports\\player_kit_millie_defiant_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\exports\\glove_millie_defiant_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\exports\\glove_millie_defiant_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\exports\\glove_millie_defiant_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\026_millie_defiant\\INTEGRATION.json",
+  "source_manifest_sha256": "0464d86909f8d31dce2ab2475ef91013020a786f32e3ae35102c8126ee6a4d28",
+  "verified_triangles": {
+    "pcvr": 85898,
+    "light": 27962
+  },
+  "verified_source_hashes": {
+    "pcvr": "ec01b447497596dea327fbd81f6e3ae9430218169c6b90896fa0985a60badfa3",
+    "light": "d68ac19f1586b759cab83ed2e9fa1dd45ffc207835d5fab99ad12603504a98ea",
+    "glove_albedo": "85897d4fcf92d5826c98105be96c58c61fadde4d11ba529c1f36da8c41544ccb",
+    "glove_orm": "11185d7c18eb99cea25f42996601d834d8360412d71507a6c902174761774506",
+    "glove_normal": "7262ef34be9c05696aa30bee8d4fb98d775aa2c2dcea47f07566eeee79002148"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

@@ -1,0 +1,34 @@
+{
+  "sample_rate": 48000,
+  "bpm": 96,
+  "bars": 16,
+  "seconds": 40.0,
+  "seed": 714203,
+  "shared_scale": 1.335153450720855,
+  "stems": {
+    "exploration": {
+      "peak_dbfs": -9.760659484824878,
+      "rms_dbfs": -22.251320188314093,
+      "boundary_step_pcm": 0,
+      "max_adjacent_step_pcm": 1124,
+      "frames": 1920000,
+      "sha256": "0197e2678ddd463bfa3ec79043013c47d9b629ef2964acaf8c463f88852d042b"
+    },
+    "combat": {
+      "peak_dbfs": -4.237606304169797,
+      "rms_dbfs": -22.60223778219592,
+      "boundary_step_pcm": 0,
+      "max_adjacent_step_pcm": 15045,
+      "frames": 1920000,
+      "sha256": "4cb43b38ad4eb072d5389e140ec719ce682512f7c7e562022f227f7c7e961fdb"
+    },
+    "extraction": {
+      "peak_dbfs": -12.264253940806313,
+      "rms_dbfs": -26.130721320493933,
+      "boundary_step_pcm": 0,
+      "max_adjacent_step_pcm": 565,
+      "frames": 1920000,
+      "sha256": "5593dae9c93700d3883848a0c33dcdb23d1d37cda2414a06c9234e272d0cca83"
+    }
+  }
+}

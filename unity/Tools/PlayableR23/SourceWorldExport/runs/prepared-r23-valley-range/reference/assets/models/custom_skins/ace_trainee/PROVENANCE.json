@@ -1,0 +1,31 @@
+{
+  "key": "ace_trainee",
+  "display_name": "Ace (Trainee)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\exports\\player_kit_ace_trainee_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\exports\\player_kit_ace_trainee_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\exports\\gloves_pcvr\\glove_ace_trainee_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\exports\\gloves_pcvr\\glove_ace_trainee_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\exports\\gloves_pcvr\\glove_ace_trainee_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\020_ace_trainee\\INTEGRATION.json",
+  "source_manifest_sha256": "0fc14b15de516d1fbe70ae0d1c55b1c5a22f714ebb125b372ff357de87d4a290",
+  "verified_triangles": {
+    "pcvr": 98542,
+    "light": 33292
+  },
+  "verified_source_hashes": {
+    "pcvr": "13d8a1c9e30e15710f0e00b75b91ef53c16d41fca653a78b11f642a93563e312",
+    "light": "87cdec7b544a4a9607770d0c35eadebe20c8ada966c6f93fcd232cc2db6c5ea5",
+    "glove_albedo": "577d2e0efbf195f03e8c97b2e4bc43e272abad268b84712bcf9ae09777426306",
+    "glove_orm": "b6e3589dd3271535293968122d7ad8d774b2f98811eddcdc8314870177dd13f6",
+    "glove_normal": "c4aa625c4fb72572872325180e436690dadb26f7c61004fc220088b819310e35"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\020_ace_trainee\\exports\\gloves_light\\glove_ace_trainee_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\020_ace_trainee\\exports\\gloves_light\\glove_ace_trainee_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\020_ace_trainee\\exports\\gloves_light\\glove_ace_trainee_normal.png"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "key": "kringle_beach_boy",
+  "display_name": "Kringle (Beach Boy)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\player_kit_kringle_beach_boy_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\player_kit_kringle_beach_boy_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves\\glove_kringle_beach_boy_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves\\glove_kringle_beach_boy_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves\\glove_kringle_beach_boy_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\INTEGRATION.json",
+  "source_manifest_sha256": "da4758805d62f2cd07ca19d2e72270a2e772aeb5598dbf50a84782cc53cb51bb",
+  "verified_triangles": {
+    "pcvr": 67108,
+    "light": 29614
+  },
+  "verified_source_hashes": {
+    "pcvr": "2a2451802e8dc82f73c374e5fe52aaa6bbb84d0089059746b8e1bfb6897c71a6",
+    "light": "e56e6aa18f913418824efb4c0c725cb8307e023181ed0b597f23f0cbd0d99be8",
+    "glove_albedo": "2d72d8ebe12175389f2ffc22b915bba569cef1862c2c79f4aa35c2a1f2f89f45",
+    "glove_orm": "6f396c9f92a0d9c6a22535ce34a36956d4d4c695294fb551303eb2d77cad9560",
+    "glove_normal": "c6616762526aadb18be28e5fb4408c6d3ddb2de456e16ea4b169f81d12540a38"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves_light\\glove_kringle_beach_boy_albedo.png",
+    "orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves_light\\glove_kringle_beach_boy_orm.png",
+    "normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\013_kringle_beach_boy\\exports\\gloves_light\\glove_kringle_beach_boy_normal.png"
+  }
+}

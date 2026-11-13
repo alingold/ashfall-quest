@@ -1,0 +1,333 @@
+{
+  "source": "Al local recoil.mp4 and loco_build_nade_sword_magnum.mp4",
+  "sourceFilesUnmodified": true,
+  "nativePts": true,
+  "method": "Per-frame color/geometry reticle centers; planar background optical-flow registration; derivative-gated onset intervals; repeated native-timestamp pulses normalized by each pre-shot baseline. Audio peaks rejected as exact onset authority. No motion-interpolated frames presented as evidence.",
+  "pooled": [
+    {
+      "weapon": "fal",
+      "usable_pulses": 5,
+      "medians": {
+        "peak_s": 0.12498999999999683,
+        "zero_s": 0.2797427661923564,
+        "undershoot_s": 0.3333099999999831,
+        "undershoot_ratio": 0.08753488826286565,
+        "amplitude_px": 81.52224819937692
+      },
+      "fits": [
+        {
+          "onset_interval": [
+            129.50382000000002,
+            129.54548
+          ],
+          "peak_s": 0.13888000000000034,
+          "zero_s": 0.25718712719111636,
+          "undershoot_s": 0.3333099999999831,
+          "undershoot_ratio": 0.22145138984382048,
+          "amplitude_px": 71.90130560688974
+        },
+        {
+          "onset_interval": [
+            129.93434000000002,
+            129.976
+          ],
+          "peak_s": 0.11109999999999332,
+          "zero_s": 0.2797427661923564,
+          "undershoot_s": 0.3333099999999831,
+          "undershoot_ratio": 0.08753488826286565,
+          "amplitude_px": 78.83760819022172
+        },
+        {
+          "onset_interval": [
+            131.97586,
+            132.00363000000002
+          ],
+          "peak_s": 0.12498999999999683,
+          "zero_s": 0.27533484307141975,
+          "undershoot_s": 0.33330000000000837,
+          "undershoot_ratio": 0.10242398677822312,
+          "amplitude_px": 81.52224819937692
+        },
+        {
+          "onset_interval": [
+            132.76745000000003,
+            132.80912
+          ],
+          "peak_s": 0.13887999999997191,
+          "zero_s": 0.29784348763001844,
+          "undershoot_s": 0.3333099999999831,
+          "undershoot_ratio": 0.06420086821124896,
+          "amplitude_px": 82.4893031169384
+        },
+        {
+          "onset_interval": [
+            136.21164000000002,
+            136.23942000000002
+          ],
+          "peak_s": 0.12498999999999683,
+          "zero_s": 0.28695233596181424,
+          "undershoot_s": 0.3333099999999831,
+          "undershoot_ratio": 0.06586470666890279,
+          "amplitude_px": 84.89336137892556
+        }
+      ],
+      "native_gap_max_s": 0.04167000000001053,
+      "method": "Derivative-gated pulse onsets, onset constrained between neighboring native frame PTS, per-shot pre-onset baseline, normalized pooled timing; exclude missing zero / excessive registration residual / truncated pulse."
+    },
+    {
+      "weapon": "1911",
+      "usable_pulses": 6,
+      "medians": {
+        "peak_s": 0.09721499999997718,
+        "zero_s": 0.200601488415856,
+        "undershoot_s": 0.26386999999999716,
+        "undershoot_ratio": 0.2989094481976524,
+        "amplitude_px": 25.022417926037747
+      },
+      "fits": [
+        {
+          "onset_interval": [
+            274.17310000000003,
+            274.20087
+          ],
+          "peak_s": 0.09720999999996138,
+          "zero_s": 0.20838606831216566,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.2862472932202385,
+          "amplitude_px": 26.296769902314196
+        },
+        {
+          "onset_interval": [
+            274.77027000000004,
+            274.81194000000005
+          ],
+          "peak_s": 0.09721999999999298,
+          "zero_s": 0.21993261607252634,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.3028434651316941,
+          "amplitude_px": 24.408983672278282
+        },
+        {
+          "onset_interval": [
+            275.36745,
+            275.40911
+          ],
+          "peak_s": 0.11110000000002174,
+          "zero_s": 0.20761799622601984,
+          "undershoot_s": 0.2777600000000007,
+          "undershoot_ratio": 0.3015554919087166,
+          "amplitude_px": 24.888845991982976
+        },
+        {
+          "onset_interval": [
+            276.0063,
+            276.03407000000004
+          ],
+          "peak_s": 0.06943999999998596,
+          "zero_s": 0.1903389447411996,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.3198099166846644,
+          "amplitude_px": 24.59105765106827
+        },
+        {
+          "onset_interval": [
+            276.6729,
+            276.70068000000003
+          ],
+          "peak_s": 0.09721999999999298,
+          "zero_s": 0.19116108100104157,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.29626340448658817,
+          "amplitude_px": 25.155989860092518
+        },
+        {
+          "onset_interval": [
+            277.33952000000005,
+            277.36729
+          ],
+          "peak_s": 0.09720999999996138,
+          "zero_s": 0.19358498060569218,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.2631585022110815,
+          "amplitude_px": 25.42075938359409
+        }
+      ],
+      "native_gap_max_s": 0.041670000000067375,
+      "method": "Derivative-gated pulse onsets, onset constrained between neighboring native frame PTS, per-shot pre-onset baseline, normalized pooled timing; exclude missing zero / excessive registration residual / truncated pulse."
+    },
+    {
+      "weapon": "px4",
+      "usable_pulses": 13,
+      "medians": {
+        "peak_s": 0.09722000000004982,
+        "zero_s": 0.22619468438983859,
+        "undershoot_s": 0.2777600000000007,
+        "undershoot_ratio": 0.17271783245521571,
+        "amplitude_px": 24.682233753223244
+      },
+      "fits": [
+        {
+          "onset_interval": [
+            295.50476000000003,
+            295.5742
+          ],
+          "peak_s": 0.09721999999999298,
+          "zero_s": 0.21912645634995442,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.19468261519964628,
+          "amplitude_px": 24.504232557968095
+        },
+        {
+          "onset_interval": [
+            296.10194,
+            296.14360000000005
+          ],
+          "peak_s": 0.13888000000002876,
+          "zero_s": 0.22619468438983859,
+          "undershoot_s": 0.30553000000003294,
+          "undershoot_ratio": 0.24414596255224433,
+          "amplitude_px": 22.88156143477258
+        },
+        {
+          "onset_interval": [
+            296.69911,
+            296.74078000000003
+          ],
+          "peak_s": 0.11110999999999649,
+          "zero_s": 0.2040667854831213,
+          "undershoot_s": 0.2777600000000007,
+          "undershoot_ratio": 0.17521861459562402,
+          "amplitude_px": 24.36857879479635
+        },
+        {
+          "onset_interval": [
+            297.31018,
+            297.4074
+          ],
+          "peak_s": 0.12499000000002525,
+          "zero_s": 0.25558304267741505,
+          "undershoot_s": 0.2916500000000042,
+          "undershoot_ratio": 0.14234910050140812,
+          "amplitude_px": 26.60042227760175
+        },
+        {
+          "onset_interval": [
+            298.00457,
+            298.03234000000003
+          ],
+          "peak_s": 0.09721000000001823,
+          "zero_s": 0.20366224213955775,
+          "undershoot_s": 0.2638600000000224,
+          "undershoot_ratio": 0.19978084659572162,
+          "amplitude_px": 24.3874856327904
+        },
+        {
+          "onset_interval": [
+            298.5323,
+            298.57397000000003
+          ],
+          "peak_s": 0.11110000000002174,
+          "zero_s": 0.22742316831403286,
+          "undershoot_s": 0.2777600000000007,
+          "undershoot_ratio": 0.11752761926901537,
+          "amplitude_px": 26.83205622065873
+        },
+        {
+          "onset_interval": [
+            299.07394000000005,
+            299.10171
+          ],
+          "peak_s": 0.09720999999996138,
+          "zero_s": 0.28224669805678104,
+          "undershoot_s": 0.2916399999999726,
+          "undershoot_ratio": 0.18045203540537919,
+          "amplitude_px": 24.682233753223244
+        },
+        {
+          "onset_interval": [
+            299.67111,
+            299.69889
+          ],
+          "peak_s": 0.09722000000004982,
+          "zero_s": 0.22722545146694983,
+          "undershoot_s": 0.263870000000054,
+          "undershoot_ratio": 0.14026152066620345,
+          "amplitude_px": 24.705142603069675
+        },
+        {
+          "onset_interval": [
+            300.86545,
+            300.90712
+          ],
+          "peak_s": 0.11112000000002809,
+          "zero_s": 0.22472819557049206,
+          "undershoot_s": 0.3333200000000147,
+          "undershoot_ratio": 0.14318639527410318,
+          "amplitude_px": 25.497110067701755
+        },
+        {
+          "onset_interval": [
+            301.43487000000005,
+            301.47653
+          ],
+          "peak_s": 0.13886999999999716,
+          "zero_s": 0.23134397363463677,
+          "undershoot_s": 0.3055299999999761,
+          "undershoot_ratio": 0.17271783245521571,
+          "amplitude_px": 23.68537278766101
+        },
+        {
+          "onset_interval": [
+            302.07370000000003,
+            302.14314
+          ],
+          "peak_s": 0.09721000000001823,
+          "zero_s": 0.2282733212890662,
+          "undershoot_s": 0.2916399999999726,
+          "undershoot_ratio": 0.13044833805905176,
+          "amplitude_px": 25.1516776851239
+        },
+        {
+          "onset_interval": [
+            303.768,
+            303.80966
+          ],
+          "peak_s": 0.09722000000004982,
+          "zero_s": 0.21606598428996904,
+          "undershoot_s": 0.263870000000054,
+          "undershoot_ratio": 0.09844695897651216,
+          "amplitude_px": 26.327955540618206
+        },
+        {
+          "onset_interval": [
+            304.30963,
+            304.33741000000003
+          ],
+          "peak_s": 0.09721999999999298,
+          "zero_s": 0.20045709291150615,
+          "undershoot_s": 0.26386999999999716,
+          "undershoot_ratio": 0.20813625502213243,
+          "amplitude_px": 24.657263947935064
+        }
+      ],
+      "native_gap_max_s": 0.09721999999999298,
+      "method": "Derivative-gated pulse onsets, onset constrained between neighboring native frame PTS, per-shot pre-onset baseline, normalized pooled timing; exclude missing zero / excessive registration residual / truncated pulse."
+    }
+  ],
+  "peaks": "Prior requested peak magnitudes and +25% output gain retained; this revision fits motion timing and signed undershoot, not hidden spread or automatic recoil endpoint patterns.",
+  "confidence": {
+    "1911": "6 usable pulses; .097/.205/.264s; undershoot .28.",
+    "fal": "5 usable pulses; rise .125s, first zero about .27s, undershoot .333s; amplitude of undershoot bracketed .09-.22 from drift; .16 chosen.",
+    "px4": "13 usable pulses; .097/.226/.278s; undershoot .18.",
+    "dt11": "Sparse/large bloom and a camera movement censor peak; .11/.235/.31/.48s is authored within visible rise-return envelope, not measured precision.",
+    "magnum": "Yellow chevrons reviewed, expansion and missing peak frames censor angular peak; .09/.24/.31/.50s remains authored.",
+    "matadors": "Paired / occluded reticles cannot isolate a reliable single-hand pulse; conservative .09/.21/.28/.43s authored fallback.",
+    "spr": "Scope footage cannot isolate motion; authored .09s peak, .22s crossing, .33s undershoot, .48s settle extends beyond .32s fire interval so maximum cadence retains visible aim displacement. Prior peak gain and .30 undershoot ratio retained. This follows Al explicit motion requirement, not a measured timing claim."
+  },
+  "limits": [
+    "30fps average is irregular native PTS, not 30Hz exact. Onset only constrained between adjacent captured frames.",
+    "Wrist correction and headset camera motion cannot be uniquely separated from game recoil.",
+    "No claim of exact reference-game internals or headset acceptance."
+  ],
+  "automaticWeaponsUnchanged": true
+}

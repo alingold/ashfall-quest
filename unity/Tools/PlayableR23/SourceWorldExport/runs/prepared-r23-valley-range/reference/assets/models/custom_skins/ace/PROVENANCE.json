@@ -1,0 +1,31 @@
+{
+  "key": "ace",
+  "display_name": "Ace",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\exports\\player_kit_ace_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\exports\\player_kit_ace_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\exports\\glove_ace_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\exports\\glove_ace_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\exports\\glove_ace_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\030_ace\\INTEGRATION.json",
+  "source_manifest_sha256": "58cc7d8fd4356b7de0a609a46429aee3891f92eb3574f93416643c8eccac1cbb",
+  "verified_triangles": {
+    "pcvr": 85740,
+    "light": 31544
+  },
+  "verified_source_hashes": {
+    "pcvr": "b0c4cdb9bcee7631d5d888a3f829159cba9cc338b9581a49a7643814d1bb17a6",
+    "light": "2a6bf9cd34aac4f6fe65dbb77f1034bd41990a2b116049bf8b6e8b1f1eac2911",
+    "glove_albedo": "9da63f48483d4f4c9ad140a3cdc6e0d0353788363a2bba6fd8df23f6fbf463f7",
+    "glove_orm": "7c446ebe6a552d7db493e083374f19a0581e5c2cb84cb4ab06277780ade6eb0a",
+    "glove_normal": "ec23c8b9d482d10f243f11761cf5f2ab53626fe8b741433420036822579355f7"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\030_ace\\exports\\gloves_light\\glove_ace_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\030_ace\\exports\\gloves_light\\glove_ace_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\030_ace\\exports\\gloves_light\\glove_ace_normal.png"
+  }
+}

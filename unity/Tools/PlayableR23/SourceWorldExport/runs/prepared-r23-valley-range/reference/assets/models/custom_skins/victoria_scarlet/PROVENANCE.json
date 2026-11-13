@@ -1,0 +1,25 @@
+{
+  "key": "victoria_scarlet",
+  "display_name": "Victoria (Scarlet)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\exports\\player_kit_victoria_scarlet_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\exports\\player_kit_victoria_scarlet_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\exports\\gloves\\glove_victoria_scarlet_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\exports\\gloves\\glove_victoria_scarlet_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\exports\\gloves\\glove_victoria_scarlet_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\041_victoria_scarlet\\INTEGRATION.json",
+  "source_manifest_sha256": "f7348b1cc8f1a8abbb703a4563b908c86a029a8226d6369b7b4ae9f5fb9f102a",
+  "verified_triangles": {
+    "pcvr": 81324,
+    "light": 27396
+  },
+  "verified_source_hashes": {
+    "pcvr": "ad0aa9dbc9d43fed86655f11817f846aac31b3ed325cad4432b0e7009f2c98aa",
+    "light": "50e76a19f793064f82fc07116f5db756a86cae6e2d3d85ff576f8d3cea198042",
+    "glove_albedo": "639a97c6133ebeba7c124a94db982ef51ced9a2b98dbbc373aee545fed6bbe28",
+    "glove_orm": "1face16911dd29095cba01479026e41124e0a31e8110ca58681f4008c4375610",
+    "glove_normal": "9152bb85c9f6c597bc607e485b677eb0db030ec751ea6e32c3c655ef2de2cbc4"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

@@ -1,0 +1,9 @@
+ASHFALL standalone 089 sound design
+
+72 original deterministic PCM sound files, authored for this project from oscillators and seeded noise. No external recordings, samples or reference-game audio were used. Existing third-party music/voice credits remain applicable to the unchanged assets they identify.
+
+48 kHz, 16-bit mono supports positional AudioStreamPlayer3D voices. Firearm families combine short high-frequency transients, low pressure/body, mechanical cycles and staggered reflected tails. Reload cues combine latch impacts with cloth/metal movement. Construction adds a quiet irregular electrical loop, placement transients and debris breakup. Resource pickups and consumables have separate tactile cues.
+
+Revive charge beeps use paired carriers in a 5:4 relation with a faint difference-frequency component, inspired by Tartini tones. Pitch and beep rate increase with charge; ready/discharge cues are distinct. The target charge duration is 10 seconds at rest and 5.5 seconds with energetic valid paddle motion.
+
+Files are generated once and cached by the audio bank. Output samples have faded endpoints, no clipped samples, and controlled DC/peak levels. The build loop has a quiet boundary. SFX voices use the existing SFX bus and master peak limiter. Headset loudness, localization and subjective mix acceptance still require a playtest.

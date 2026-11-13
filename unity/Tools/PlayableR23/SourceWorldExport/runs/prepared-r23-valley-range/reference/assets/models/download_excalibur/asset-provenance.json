@@ -1,0 +1,101 @@
+{
+  "id": "excalibur",
+  "file": "sword.glb",
+  "scale": 0.006152502627488989,
+  "anchor": [
+    88.27578171896701,
+    73.43838339553758,
+    6.1631726382405105e-06
+  ],
+  "target": [
+    0.0,
+    -0.29202650602409636,
+    0.025
+  ],
+  "muzzle": [
+    0.0,
+    1.118132530120482,
+    0.025
+  ],
+  "source_pommel": [
+    88.27578171896701,
+    73.43838339553758,
+    6.1631726382405105e-06
+  ],
+  "source_tip": [
+    -88.2763325005428,
+    -72.72042005741166,
+    -1.0886124816922305e-05
+  ],
+  "contact_tip": [
+    0.0,
+    1.118132530120482,
+    0.025
+  ],
+  "target_chord": 1.4101590361445784,
+  "rotation": [
+    [
+      -7.438582791095627e-08,
+      2.065032822366153e-07,
+      -0.9999999999999759
+    ],
+    [
+      -0.7702942141859965,
+      -0.637688657254912,
+      -7.438582791095627e-08
+    ],
+    [
+      -0.637688657254912,
+      0.7702942141859725,
+      2.065032822366153e-07
+    ]
+  ],
+  "offset": [
+    -1.4985204392989744e-08,
+    0.4144601288156808,
+    0.02329762026519607
+  ],
+  "source": "[local development path]",
+  "source_sha256": "4db74f2e0fb45001b7df6734078529ba0e71825a69fc0c724eb249b992cb8318",
+  "output_sha256": "29828083bd22ad6073c33be7936e52a28e38cdf651db25c345b85b30f06376b8",
+  "asset": {
+    "author": "minghauLoh (https://sketchfab.com/minghau)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/sword-07463a2658e04d6ab8a42b5639a35d63",
+    "title": "Sword"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 1020,
+  "body_triangles": 1020,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.014477947122606116,
+    -0.29202650602409624,
+    -0.10863362255165113
+  ],
+  "bounds_max": [
+    0.014477951592823668,
+    1.1181325301204819,
+    0.15863360494919826
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

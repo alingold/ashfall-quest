@@ -1,0 +1,26 @@
+{
+  "key": "tox",
+  "display_name": "Tox",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\exports\\player_kit_tox_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\exports\\player_kit_tox_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\exports\\gloves\\glove_tox_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\exports\\gloves\\glove_tox_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\exports\\gloves\\glove_tox_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.02,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\036_tox\\INTEGRATION.json",
+  "source_manifest_sha256": "51275823708c6ccab2d37b789959163237a9abf367d671af72917111a602fd6b",
+  "verified_triangles": {
+    "pcvr": 98576,
+    "light": 33768
+  },
+  "verified_source_hashes": {
+    "pcvr": "c01453a4ea18f18993849f951dec97e88a9e0ae02d22673f14bad87be192c79a",
+    "light": "6e41978d10d2842d360615204db406697fb71591629bc2422b637a76c5fd4516",
+    "glove_albedo": "a475d4d62223119606ec1c3817076644c2a02e622edf9a67a72109926a05812a",
+    "glove_orm": "343b4bd6616841eccaf89c7d22a09e45580a4468ad8a8968bd27073ac94b14ae",
+    "glove_normal": "bdb21a2c9353df4b119d356f1cabb16ccae3c31d5efa0c078199b29edbd0a990"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "chestplate_follow_jacket": true
+}

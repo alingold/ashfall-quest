@@ -1,0 +1,25 @@
+{
+  "key": "valentina_cupid",
+  "display_name": "Valentina (Cupid)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\exports\\player_kit_valentina_cupid_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\exports\\player_kit_valentina_cupid_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\exports\\gloves\\glove_valentina_cupid_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\exports\\gloves\\glove_valentina_cupid_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\exports\\gloves\\glove_valentina_cupid_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\012_valentina_cupid\\INTEGRATION.json",
+  "source_manifest_sha256": "f289d2c2f29184d0b79b0cfc07735372bccc6cf9321e8a72ad4504a3db6f21de",
+  "verified_triangles": {
+    "pcvr": 101116,
+    "light": 44756
+  },
+  "verified_source_hashes": {
+    "pcvr": "e0e90e0cb26e25c6f9019e3d5e9f26f68c97e7d2d4f3f33e925d1b4f837e424f",
+    "light": "693f3df8ef043923a050bc2860bcfdc1a1dd94136af8af6f977426da59881f44",
+    "glove_albedo": "9b64c314b60c6455aff134258d196a8d1716e32aac373bf8bb07e658dcba0bfa",
+    "glove_orm": "e7691d2552992e60a7a8e8bf2c8388dd365ac46239098093ddf570451cda9486",
+    "glove_normal": "c9e1f1fff00ecc0c70b6023bda308404b1401276064b8f19106e9fd4e1b536f0"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

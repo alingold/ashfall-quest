@@ -1,0 +1,467 @@
+{
+  "schema": 1,
+  "source": {
+    "recoil_file": "recoil.mp4",
+    "sha256": "56CF1D1B42F6510C231F753E8294A29A3E05FD1B6A5A751D7B167A658F445B31",
+    "frames": 33252,
+    "seconds": 1108.4,
+    "loco_file": "loco_build_nade_sword_magnum.mp4",
+    "loco_sha256": "05F05C24FD1009CA599F16DDB5927BDE9657CEE63E84E9BE88A5B444BD7D637C"
+  },
+  "camera": {
+    "focal_px": 1147.17,
+    "principal_px": [
+      957.71,
+      419.02
+    ],
+    "focal_range_px": [
+      1135.61,
+      1148.55
+    ],
+    "method": "Three consistent Manhattan vanishing-point calibrations at52.01,327.00,594.01s; zero skew/square pixels assumption. Not device telemetry."
+  },
+  "movement": {
+    "walk_mps": 3.9624,
+    "run_mps": 4.572,
+    "sprint_mps": 5.7912,
+    "fly_horizontal_mps": 7.3152,
+    "glide_horizontal_per_vertical": 7.0,
+    "source": "Al blanket correction2026-10-20: each formerly metre-labelled measurement is2feet=.6096m; speeds converted once, timings retained.",
+    "xr_policy": "Al confirmed5ft to TOP of head. VCS translates XR origin to eye1.404m plus authored upper collider/rig offset.120m = head-top1.524m; physical tracking stays1:1.",
+    "player_head_top_height_m": 1.524,
+    "player_eye_height_m": 1.404,
+    "authored_head_top_to_eye_m": 0.12,
+    "height_source": "Al2026-10-20: top of the head at5feet. Explicit later stature supersedes pending2m/1.2192m interpretation. Numeric eye offset is authored collision policy, not individual anatomy."
+  },
+  "dimensions": {
+    "construction_side_m": 2.4384,
+    "sword_overall_height_m": 1.2192,
+    "katana_shield_m": [
+      0.97536,
+      1.2192
+    ],
+    "grenade_reference_flat_range_m": 29.2608,
+    "source": "Corrected user grid:2foot blocks. Sword4feet/build8feet/shield1.6x2referenceunits/12buildgrenadefirstlanding.",
+    "sword_grip_from_outer_pommel_m": 0.2032
+  },
+  "limits": [
+    "Video cannot uniquely separate wrist/controller motion from game recoil.",
+    "Reticle width quantiles include shot bloom and selected grip states; inferred per-shot profiles outside M60 remain provisional output matching.",
+    "Weapon rarity differs; magazine capacities retained.",
+    "No rendered/headset parity claim from CPU tests."
+  ],
+  "reticles": {
+    "akm": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        5,
+        49
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "cx4": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        94,
+        120
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "fal": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        124,
+        174
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "m60": {
+      "shape": "bracket",
+      "rest_px": 98,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 67,
+      "bloom_tau_s": 0.063,
+      "bloom_cap_px": 106,
+      "sample_seconds": [
+        178,
+        209
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "counter_aligned_fit_onehand_RMS3.18px_twohand1.23px",
+      "unsupported_yellow": true,
+      "supported_sample_seconds": [
+        788,
+        803
+      ]
+    },
+    "mk18": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        214,
+        233
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "rfb": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        237,
+        249
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "magnum": {
+      "shape": "chevron",
+      "rest_px": 134,
+      "supported_rest_px": 88,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 32,
+      "bloom_impulse_px": 225,
+      "bloom_tau_s": 0.062,
+      "bloom_cap_px": 250,
+      "sample_seconds": [
+        252,
+        265
+      ],
+      "shape_confidence": "outward_chevrons_observed_second_video_652_frames",
+      "bloom_confidence": "second_video_visible_width_fit_15_red_events_2_yellow_decay_windows_not_hidden_spread",
+      "unsupported_yellow": true,
+      "second_video_colour_seconds": [
+        286,
+        302
+      ],
+      "colour_evidence": "Yellow one hand at286s; red supported at302s in loco recording.",
+      "chevron_depth_px": 15,
+      "supported_bloom_impulse_px": 200,
+      "followup_060": {
+        "source": "loco_build_nade_sword_magnum.mp4",
+        "window_s": [
+          275,
+          323
+        ],
+        "red_rest_px": 88,
+        "yellow_rest_px": 134,
+        "chevrons": "left < / right >",
+        "empty": "yellow chevrons retained with circular reload arrow at303.004,311.031,319.003s",
+        "red_fit_median_tau_s": 0.062,
+        "red_fit_amplitude_px": 200,
+        "yellow_inferred_peak_impulse_px": 225,
+        "limits": [
+          "Yellow peak partly missing;225px inferred from two decay fits219.6-230.2, not direct peak.",
+          "No new angular recoil, gun tilt or hidden trigger/button rule inferred.",
+          "Reload glyph is original simple geometry from visible shape; button rules unchanged."
+        ]
+      }
+    },
+    "1911": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        268,
+        281
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "px4": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        288,
+        307
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "tec9": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        313,
+        325
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "smaw": {
+      "shape": "bracket",
+      "rest_px": 98,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 30,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        330,
+        345
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "dt11": {
+      "shape": "bracket",
+      "rest_px": 98,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 30,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        348,
+        356
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "m1014": {
+      "shape": "bracket",
+      "rest_px": 98,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 56,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        362,
+        383
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "matadors": {
+      "shape": "bracket",
+      "rest_px": 98,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 56,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        404,
+        430
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "mp5": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        435,
+        468
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "mp9": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        473,
+        501
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "p90": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 32,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        1005,
+        1017
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    },
+    "ump": {
+      "shape": "cross",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 21,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 0,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        976,
+        1001
+      ],
+      "shape_confidence": "late_laser_skin_reticle_inference",
+      "bloom_confidence": "unresolved_laser_skin_obscures_trace; original response retained"
+    },
+    "uzis": {
+      "shape": "laser",
+      "rest_px": 70,
+      "supported_rest_px": 58,
+      "gap_px": 28,
+      "stroke_px": 3,
+      "arm_px": 14,
+      "chevron_height_px": 36,
+      "bloom_impulse_px": 30,
+      "bloom_tau_s": 0.055,
+      "bloom_cap_px": 76,
+      "sample_seconds": [
+        503,
+        549
+      ],
+      "shape_confidence": "video_observed",
+      "bloom_confidence": "provisional_peak_envelope_from_video_not_unique_impulse_fit"
+    }
+  },
+  "recoil_fits": {
+    "m60": {
+      "source_window_s": [
+        191.5,
+        193.77
+      ],
+      "starting_pitch_removed_deg": 2.2089406451942764,
+      "rise_time_constant_s": 0.035,
+      "per_shot_pitch_increment_deg": [
+        1.1651,
+        0.9375,
+        1.4111,
+        1.4314,
+        2.025,
+        2.569,
+        1.9092,
+        3.1182,
+        2.5789,
+        2.0312
+      ],
+      "observed_fit_rms_deg": 0.1966902907651791,
+      "extrapolation": "After10 measured shots repeat final increment, retaining45degree safety cap. Supported gain0.05 is an approximate first3shot ratio, not identified controller-independent physics.",
+      "physical_wrist_motion_removed": false,
+      "supported_gain": 0.05,
+      "release_hold_s": 0.32,
+      "release_decay": 9.0,
+      "supported_cap_deg": 6.0
+    }
+  },
+  "calibration_062": {
+    "factor_applied_once": 0.6096,
+    "wall_distance_m": 9.7536,
+    "angular_traces_rescaled": false,
+    "camera_fit_uses_world_lengths": false,
+    "player_normalization_pending": true,
+    "sword_grip_datum_pending": true,
+    "source_evidence": "Sentinel_b07c567f12a88191a94bfe096beca2ef"
+  }
+}

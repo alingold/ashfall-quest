@@ -1,0 +1,31 @@
+{
+  "key": "logan_maverick",
+  "display_name": "Logan (Maverick)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\player_kit_logan_maverick_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\player_kit_logan_maverick_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves\\glove_logan_maverick_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves\\glove_logan_maverick_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves\\glove_logan_maverick_normal.png",
+  "eye_to_shoulder": 0.21,
+  "body_rear": 0.04,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\INTEGRATION.json",
+  "source_manifest_sha256": "f31c7b40258114b92ea247e7a66dac42e73595f120ee1ff6367cb3e630166a29",
+  "verified_triangles": {
+    "pcvr": 81106,
+    "light": 29134
+  },
+  "verified_source_hashes": {
+    "pcvr": "2fd474ed75551e763f3ad7d69215c0f5cf26ef8d0bb5f7a47e669287b02bf0cc",
+    "light": "c23fcd1d743a4deee71fa45afb7668466a120e36b0bdfca58811d38cfcceb841",
+    "glove_albedo": "c9de65851022d0ac42b5a81f526558cef0eb637fa51c7c30c52b225e497e41f3",
+    "glove_orm": "e6b739db6ffe70070b48e1fa897198a25384ede56f818004890e527ab1d6f2a6",
+    "glove_normal": "1e637123e47c50554c65b4d808c7e80f9b1472fd22f451aea3756270dbd6be71"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves_light\\glove_logan_maverick_albedo.png",
+    "orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves_light\\glove_logan_maverick_orm.png",
+    "normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\043_logan_maverick\\exports\\gloves_light\\glove_logan_maverick_normal.png"
+  }
+}

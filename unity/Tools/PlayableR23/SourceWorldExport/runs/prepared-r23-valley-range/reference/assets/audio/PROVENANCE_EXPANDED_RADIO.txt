@@ -1,0 +1,24 @@
+MARA EXPANDED MISSION RADIO — SOURCE AND TRANSCRIPT
+
+Generated locally on 2026-10-18 using the already installed Microsoft Zira Desktop en-US voice through System.Speech.Synthesis.SpeechSynthesizer. Original ASHFALL dialogue authored for this project. No voice download, external speech service, cloned voice, recording from another game, or audible playback was used.
+
+Settings match the existing MARA workflow: Rate 0; Volume 100; PCM WAV, 22050 Hz, 16-bit, mono. No normalization or additional processing was applied. The game's Voice bus remains responsible for radio processing and playback level.
+
+mara_uplink_extended.wav
+Power is holding. Get to the summit uplink. I need a clean channel before we can bring anyone into this valley.
+
+mara_dam_crown.wav
+I have your signal, but security is drowning it out. Two interference units on the dam crown. Break both antenna cores. You do not need to clear every patrol. Keep moving.
+
+mara_spillway.wav
+That is a clean channel. There is a maintenance route back to the pad. Reach the isolator on the lower spillway deck, release the gate, and get through.
+
+Captions use the speaker prefix MARA:, which is not spoken in these files.
+
+Validation: RIFF/WAVE headers and complete data chunks checked; all three match PCM 16-bit mono at 22050 Hz. Durations are 8.128, 13.887 and 10.538 seconds respectively (see audit for exact reported values). No samples reach full scale. Waveform peaks and RMS are close to existing mara_01.wav. This is numerical validation, not an assessment from listening or a headset test.
+
+Reproduction source: reports/generate-expanded-radio.ps1 contains the exact text and speech settings. The legacy Windows PowerShell file invocation was refused by its script execution policy. Generation succeeded through ordinary System.Speech API commands in the already permitted current PowerShell host. No execution policy change or bypass flag was used.
+
+Asset checksums, durations and measured levels: reports/expanded-radio-audit.json.
+
+License provenance: the dialogue is original project content. The voice was generated using the installed Microsoft speech synthesizer; Microsoft voice software remains subject to its installed license. This record identifies the source and does not assign a separate open-content license to Microsoft software or claim a purchased voice license.

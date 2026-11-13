@@ -1,0 +1,35 @@
+{
+  "key": "haze_nuclear",
+  "display_name": "Haze (Nuclear)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\exports\\player_kit_haze_nuclear_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\exports\\player_kit_haze_nuclear_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\exports\\gloves\\glove_haze_nuclear_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\exports\\gloves\\glove_haze_nuclear_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\exports\\gloves\\glove_haze_nuclear_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\029_haze_nuclear\\INTEGRATION.json",
+  "source_manifest_sha256": "b2d60d0cdafe4ee8d64ff94e477f4933ab42c96095844aaaa4537fcfa2c4236f",
+  "verified_triangles": {
+    "pcvr": 88058,
+    "light": 30688
+  },
+  "verified_source_hashes": {
+    "pcvr": "50ed78957391ae00ffafc58bae087579e0bd364def42570837ddc1dca702f8bc",
+    "light": "d304f95a54ff7dffcb76ea5aa41676e5cd5ed79c39c9a109deac226f97886f4d",
+    "glove_albedo": "bd060a804d14f344017226c60d5da43de6cbafc877756556e7d9329b369b406f",
+    "glove_orm": "bd5a109cc01af7b8e52b416568d1ad9163af79d1a39d49315709782db218ed98",
+    "glove_normal": "717db367e41e3d51a97fa539b73572d08f5d0dc47d587e1093e9d0c858b32cd4"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "glove_material_parameters": {
+    "metallic_specular": 0.16,
+    "normal_scale": 1.0
+  },
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\029_haze_nuclear\\exports\\gloves_light\\glove_haze_nuclear_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\029_haze_nuclear\\exports\\gloves_light\\glove_haze_nuclear_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\029_haze_nuclear\\exports\\gloves_light\\glove_haze_nuclear_normal.png"
+  }
+}

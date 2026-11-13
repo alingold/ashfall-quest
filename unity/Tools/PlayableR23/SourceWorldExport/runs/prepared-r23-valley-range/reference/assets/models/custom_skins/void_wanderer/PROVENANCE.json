@@ -1,0 +1,31 @@
+{
+  "key": "void_wanderer",
+  "display_name": "Void Wanderer",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\exports\\player_kit_void_wanderer_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\exports\\player_kit_void_wanderer_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\exports\\gloves_pcvr\\glove_void_wanderer_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\exports\\gloves_pcvr\\glove_void_wanderer_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\exports\\gloves_pcvr\\glove_void_wanderer_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\037_void_wanderer\\INTEGRATION.json",
+  "source_manifest_sha256": "7a8d2148951629d3e4cb5f92ac72459e9fd555716a924234302cbcab0259355d",
+  "verified_triangles": {
+    "pcvr": 122680,
+    "light": 36592
+  },
+  "verified_source_hashes": {
+    "pcvr": "e5da5d55dcf4f96fcf346f29ff16869bf88cc19c308554ce15aac7c0c8f1d7da",
+    "light": "3a9aa81db1a5bc7547d04d08c301fda703573e7c40d165b77de26f5ca0543718",
+    "glove_albedo": "81f588f14ec8888df70c95980b043ae29a27cc8303c3c449dcb33d91a4d7d628",
+    "glove_orm": "4eede46de1841dcced6aad91831673f43028588c15737d70b521e6777975d655",
+    "glove_normal": "87bcd56749863e38b2d70aabb65eb24c0db00bdd0dbf4198e262a7cdd96cf31e"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\037_void_wanderer\\exports\\gloves_light\\glove_void_wanderer_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\037_void_wanderer\\exports\\gloves_light\\glove_void_wanderer_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\037_void_wanderer\\exports\\gloves_light\\glove_void_wanderer_normal.png"
+  }
+}

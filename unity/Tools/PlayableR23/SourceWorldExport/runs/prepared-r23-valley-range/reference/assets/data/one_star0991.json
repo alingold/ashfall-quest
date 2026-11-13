@@ -1,0 +1,157 @@
+{
+  "source": "[local development path]",
+  "source_sha256": "547d3d94582cc76703bd1f87b3b20267f89f44dad7f4addbe7d4441e8fb582e5",
+  "canonical_url": "https://population-one-vr.fandom.com/wiki/Weapons",
+  "rarity": "gray one-star, explicit user selection",
+  "data_date": "Saved wiki describes damage from April2025 update; range/RPS may be outdated and are not imported.",
+  "policy": "Use exact listed head/body numbers, rather than rounded display multipliers. Only gun damage and gray one-star metadata change; existing magazines, reload timing, recoil and falloff remain. Empty head cells mean no bonus.",
+  "weapons": {
+    "px4": {
+      "body": 30.0,
+      "head": 45.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "Px4"
+    },
+    "1911": {
+      "body": 44.0,
+      "head": 61.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "1911"
+    },
+    "magnum": {
+      "body": 63.0,
+      "head": 81.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": ".357 Magnum"
+    },
+    "tec9": {
+      "body": 25.0,
+      "head": 30.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "Tec9"
+    },
+    "mp9": {
+      "body": 21.0,
+      "head": 26.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "Silenced MP9"
+    },
+    "ump": {
+      "body": 19.0,
+      "head": 23.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "UMP"
+    },
+    "mp5": {
+      "body": 22.0,
+      "head": 33.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "MP5"
+    },
+    "p90": {
+      "body": 20.0,
+      "head": 22.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "P90"
+    },
+    "uzis": {
+      "body": 14.0,
+      "head": 14.0,
+      "pellets": 1,
+      "head_policy": "No separate head damage listed; same as body",
+      "wiki_name": "Uzis"
+    },
+    "mk18": {
+      "body": 22.0,
+      "head": 33.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "MK18"
+    },
+    "akm": {
+      "body": 20.0,
+      "head": 30.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "AKM"
+    },
+    "cx4": {
+      "body": 19.0,
+      "head": 23.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "CX4"
+    },
+    "m60": {
+      "body": 27.0,
+      "head": 33.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "M60"
+    },
+    "rfb": {
+      "body": 19.0,
+      "head": 23.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "RFB"
+    },
+    "fal": {
+      "body": 33.0,
+      "head": 44.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "FAL"
+    },
+    "dt11": {
+      "body": 96.0,
+      "head": 96.0,
+      "pellets": 8,
+      "head_policy": "No separate head damage listed; same as body",
+      "wiki_name": "DT11"
+    },
+    "m1014": {
+      "body": 77.0,
+      "head": 77.0,
+      "pellets": 8,
+      "head_policy": "No separate head damage listed; same as body",
+      "wiki_name": "M1014"
+    },
+    "matadors": {
+      "body": 20.0,
+      "head": 20.0,
+      "pellets": 8,
+      "head_policy": "No separate head damage listed; same as body",
+      "wiki_name": "Matadors"
+    },
+    "spr": {
+      "body": 55.0,
+      "head": 92.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "SPR"
+    },
+    "s85": {
+      "body": 65.0,
+      "head": 105.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "S85 | (Sako 85)"
+    },
+    "awp": {
+      "body": 70.0,
+      "head": 117.0,
+      "pellets": 1,
+      "head_policy": "Exact first-rarity listed head damage",
+      "wiki_name": "AWP"
+    }
+  }
+}

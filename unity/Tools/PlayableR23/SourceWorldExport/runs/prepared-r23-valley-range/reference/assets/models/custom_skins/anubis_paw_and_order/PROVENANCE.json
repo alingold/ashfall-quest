@@ -1,0 +1,25 @@
+{
+  "key": "anubis_paw_and_order",
+  "display_name": "Anubis (Paw and Order)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\exports\\player_kit_anubis_paw_and_order_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\exports\\player_kit_anubis_paw_and_order_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\exports\\gloves\\glove_anubis_paw_and_order_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\exports\\gloves\\glove_anubis_paw_and_order_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\exports\\gloves\\glove_anubis_paw_and_order_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\015_anubis_paw_and_order\\INTEGRATION.json",
+  "source_manifest_sha256": "c1ed115c9e3914f41a7021083c3eaa2904f02f372cfb993e1dfe9966a1fc9962",
+  "verified_triangles": {
+    "pcvr": 81216,
+    "light": 32866
+  },
+  "verified_source_hashes": {
+    "pcvr": "d5b62aaea4e943fe71a01efdb3576ef7d790a0eb9a7f2927dc2498a9a0cc0300",
+    "light": "210141269ef93394f78fd6df240398d4b20686995657f4aef48c9d1b7c4b91e6",
+    "glove_albedo": "aceae4c81d805afba1e74fcbd5d9eecc2cfc619f3c867401f426ee5c4eb09ba4",
+    "glove_orm": "cffa29a327c69bde15eeb62a37e1819f59e24c11ddc151ec0813cacc9a842322",
+    "glove_normal": "35c3f26118094d83afbd07485f468d319cc112a956bbd5605e49bfad373c9f1f"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

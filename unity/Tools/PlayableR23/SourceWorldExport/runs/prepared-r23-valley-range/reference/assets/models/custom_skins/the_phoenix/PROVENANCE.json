@@ -1,0 +1,25 @@
+{
+  "key": "the_phoenix",
+  "display_name": "The Phoenix",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\exports\\player_kit_the_phoenix_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\exports\\player_kit_the_phoenix_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\exports\\gloves\\glove_the_phoenix_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\exports\\gloves\\glove_the_phoenix_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\exports\\gloves\\glove_the_phoenix_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\044_the_phoenix\\INTEGRATION.json",
+  "source_manifest_sha256": "eaf24ae1cbc1c661b32f5037e08664f1f192cfcfd4ab69dc8d89df30e8f05c86",
+  "verified_triangles": {
+    "pcvr": 90184,
+    "light": 30088
+  },
+  "verified_source_hashes": {
+    "pcvr": "e64fc4878a6bc6977ef32621bfa01fd1f3fbc14510ba7767b6526bd6d98ddc0f",
+    "light": "78582dda136024d2e67a3caced1d74b5ffaf7d32f602396ae803b9de9332d5fd",
+    "glove_albedo": "f07d210d93776f231ee904be3809cc9d475c2912deea8702eebef7491cf798e5",
+    "glove_orm": "b42d34865b2df3f9ffaa42e1672202eda6bf5797339ccd1f9682990f630c724e",
+    "glove_normal": "4924687078fcdc30aaecb9a284ccbe2acfe2a37dc48d12f077dea2315f1bdb04"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

@@ -1,0 +1,25 @@
+{
+  "key": "pj",
+  "display_name": "PJ",
+  "pcvr": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\exports\\player_kit_pj_pcvr.glb",
+  "light": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\exports\\player_kit_pj_light.glb",
+  "glove_albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\exports\\gloves\\glove_pj_albedo.png",
+  "glove_orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\exports\\gloves\\glove_pj_orm.png",
+  "glove_normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\exports\\gloves\\glove_pj_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\002_pj\\INTEGRATION.json",
+  "source_manifest_sha256": "2746436af279cf56d58567ef7c55e74bea5cc61fa95627f71c7ab82cccdea91c",
+  "verified_triangles": {
+    "pcvr": 106090,
+    "light": 32714
+  },
+  "verified_source_hashes": {
+    "pcvr": "9122f341c3b7f840534c366ec2ff418e066be4b593f1fc68feb4d86d7e77d91a",
+    "light": "9ba1341097e6f489a8c92864b79b77087345607e71b4c7a4fc378670c9de8007",
+    "glove_albedo": "71cf947bf6998c6984d543ace6111635e30ecf2e2f9fc61b4808fb807fddff00",
+    "glove_orm": "4505850534ede2acb0d243c99f4d8d555391df774b864f22246ed62b09cd24ed",
+    "glove_normal": "59af3668ec1c0ce5682f11c254f5dfcd651f1ccb3e812995dc6aff1f32349a6f"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

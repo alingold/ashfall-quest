@@ -1,0 +1,99 @@
+{
+  "id": "fal_alt",
+  "file": "fn_fal.glb",
+  "scale": 0.5255089212363706,
+  "anchor": [
+    0.4,
+    0.0949758,
+    -0.0078567
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    9
+  ],
+  "bolt": [
+    8
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.76
+  ],
+  "variant": "Selectable higher-detail FN FAL alternative to retained SA58 and authored fallback. Moving source knob and magazine, unchanged FAL archetype firing datum, recoil and reload.",
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    -0.004128765941477793,
+    -0.004910630201561288,
+    -0.18520356849454825
+  ],
+  "source": "[local development path]",
+  "source_sha256": "b2383cc0cfc1e67b561b41af172c39fa515515d213a17a8e9d4b38084305cb97",
+  "output_sha256": "44ff4f1e2fc6176a6ae1093ff25efd60182c2aac94c081a0960e32c7351a8b4b",
+  "asset": {
+    "author": "The Unknown... (https://sketchfab.com/1514112)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/fn-fal-7f548d1f79f7418fad852f3d7293ec2c",
+    "title": "FN FAL"
+  },
+  "magazine_center": [
+    2.3842562994758065e-07,
+    -0.029427199077179757,
+    -0.14380041009319422
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 14194,
+  "body_triangles": 13518,
+  "magazine_triangles": 328,
+  "moving_triangles": 348,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.04817703197930772,
+    -0.11415290313312093,
+    -0.76
+  ],
+  "bounds_max": [
+    0.039919495728829274,
+    0.10433216732680609,
+    0.3403053527418224
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 14194,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    -0.03442039011163557,
+    0.0429620485980919,
+    -0.1716047111652899
+  ]
+}

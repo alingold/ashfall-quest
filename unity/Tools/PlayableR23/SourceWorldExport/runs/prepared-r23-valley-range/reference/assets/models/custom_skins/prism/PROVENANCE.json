@@ -1,0 +1,25 @@
+{
+  "key": "prism",
+  "display_name": "Prism",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\player_kit_prism_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\player_kit_prism_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\glove_prism_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\glove_prism_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\glove_prism_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\039_prism\\exports\\INTEGRATION.json",
+  "source_manifest_sha256": "225b70b02bf9fb811a51eeb348dd55cf7cbdb05befde07f84a160e3e17d4332c",
+  "verified_triangles": {
+    "pcvr": 84792,
+    "light": 37348
+  },
+  "verified_source_hashes": {
+    "pcvr": "ed6d64e6b8ad0109d315831d4f269c9b76388dfe04d47cecf886016021041340",
+    "light": "54d719b04191b33b8eeeb05e57106b4a5e874df0e0d750c94a5bbd4223fbe93e",
+    "glove_albedo": "49582ea75f18d896dacaa8c7af63d7ec732ac3eec5cc7bfd2440eba532af1e19",
+    "glove_orm": "515c3a7573c8df8aa1934547b360515099304791c3e96aa25ecc7287a6307b58",
+    "glove_normal": "6655613fed6cc2a04843db126e94186dcac92d9cc46a2080d60dd269dced346a"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

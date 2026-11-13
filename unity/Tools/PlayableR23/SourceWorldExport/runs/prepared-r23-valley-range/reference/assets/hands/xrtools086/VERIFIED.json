@@ -1,0 +1,104 @@
+{
+  "repo": "GodotVR/godot-xr-tools",
+  "license": "CC0-1.0",
+  "author": "DigitalN8m4r3 / Miodrag Sejic",
+  "files": [
+    {
+      "path": "addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf",
+      "sha": "3a8781c6a0762ee0b9c82ce14e82cb5e22f6a2e4",
+      "bytes": 86613,
+      "sha256": "be42754af31f621bdaed59220031d57e69fb717e2d2dec9148f6bfe5c2743945"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf",
+      "sha": "172c78c6fa0c481197f46d71a5d316d65d8b0629",
+      "encoding": "utf-8",
+      "bytes": 86616,
+      "sha256": "b5e547ef49a1e6d25787c8f011e45c4888ca8a474450e3552845069b0ec4af50"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/textures/glove_caucasian_dark_camo.png",
+      "sha": "edb1e09a1bacb8f9dc3c054e97bddae112abe92a",
+      "encoding": "base64",
+      "bytes": 1025489,
+      "sha256": "720b2d1fcb1f64a3eb18fd021a8216ecb3a0650fdfe9feffa92c38b69d8c1e2d"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/textures/glove_fingerless_occlusionRoughnessMetallic.png",
+      "sha": "eaa8851b41a84df2e13ed41679170d50f06f5bf8",
+      "encoding": "base64",
+      "bytes": 958275,
+      "sha256": "0e727de9ccc79eb2377e5f7bd7acaf6b39f33dbf495818bcbf55ce9d05e0225c"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/left/Default pose.res",
+      "sha": "ac2acd596645a724580675c1f7880fed7ed9cf86",
+      "encoding": "base64",
+      "bytes": 6029,
+      "sha256": "886912640396744da20c831c5e8a79226aa86c2a1a4eb7a04477851b60f5e20f"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/left/Grip.res",
+      "sha": "5a0e52431f6be173c2d4d96a9efdcb714900f13c",
+      "encoding": "base64",
+      "bytes": 6013,
+      "sha256": "5f0ad88d3f9127ba37508731752b62ac44e1d731ac35e62c5ef9a27c6a74efbf"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/left/Grip Shaft.res",
+      "sha": "65bbbe2fc5c2ff5d17bbcc47f272d4a8c27d973d",
+      "encoding": "base64",
+      "bytes": 6025,
+      "sha256": "2be04356f76f516afc4453d8c88febb5022a17f1bb18ccb89e5a04e5261e8dee"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/left/Grip 1.res",
+      "sha": "690ade767ce8b5aa522d414d23e2a439ae8e0056",
+      "encoding": "base64",
+      "bytes": 6017,
+      "sha256": "51eddaf434948f951c3d3a34b26ad7c0afa934e79b44f0d19f8ac95459d7fd85"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/left/Grip 5.res",
+      "sha": "4eb375a0786496af1d6abfa77e4307fd20c08200",
+      "encoding": "base64",
+      "bytes": 6017,
+      "sha256": "08d4d5ba821cdb8441a43b52fa296aad753077a940813cd16d79a419aa90fc00"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/right/Default pose.res",
+      "sha": "04330644a24674394aca53eb473a62c5ac809212",
+      "encoding": "base64",
+      "bytes": 6030,
+      "sha256": "7bc2e8d32eb5def5b0cdf08fdae54c29266213833719d8276de4699c5d27a4ac"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/right/Grip.res",
+      "sha": "601dcf75953fd02a829e94cbd3b0b8461a35fede",
+      "encoding": "base64",
+      "bytes": 6014,
+      "sha256": "f32e8d70d384732e8f5281b1eb4819e4ae5f1cd59228ec1f9d2587e1b6282966"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/right/Grip Shaft.res",
+      "sha": "af238ac6b095e42a5fd00ca8be37098f68cf5b0b",
+      "encoding": "base64",
+      "bytes": 6026,
+      "sha256": "e10c5eaebe5e6678e7673827e1f122d64859f439b19d349b04bb924b4ee1f433"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/right/Grip 1.res",
+      "sha": "a948e075e44c01411762a883907f0342ad7ff57c",
+      "encoding": "base64",
+      "bytes": 6018,
+      "sha256": "b026b270fc0050ea6c5d9507c292b507a90f6a562747d6de5d10e8cc261a00e9"
+    },
+    {
+      "path": "addons/godot-xr-tools/hands/animations/right/Grip 5.res",
+      "sha": "c8564347e92abbd0caac6a5c6ffeb965a5b6fa8f",
+      "encoding": "base64",
+      "bytes": 6018,
+      "sha256": "1525f2dcc06a864910c75ef3fac3ff5a3b85e250a6fe204ba1f5f5b017000538"
+    }
+  ]
+}

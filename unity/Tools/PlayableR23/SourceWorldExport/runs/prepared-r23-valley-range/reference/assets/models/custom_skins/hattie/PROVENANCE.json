@@ -1,0 +1,25 @@
+{
+  "key": "hattie",
+  "display_name": "Hattie",
+  "pcvr": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\exports\\player_kit_hattie_pcvr.glb",
+  "light": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\exports\\player_kit_hattie_light.glb",
+  "glove_albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\exports\\gloves\\glove_hattie_albedo.png",
+  "glove_orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\exports\\gloves\\glove_hattie_orm.png",
+  "glove_normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\exports\\gloves\\glove_hattie_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\004_hattie\\INTEGRATION.json",
+  "source_manifest_sha256": "b256c9e06daa92b7faab8698fae5f3be2c3d6a544f1c49966b0af23caf4756f4",
+  "verified_triangles": {
+    "pcvr": 111400,
+    "light": 38422
+  },
+  "verified_source_hashes": {
+    "pcvr": "7bc49e664e3e8351ea93065845fa00d8440faf59757ce369897cd014fee54231",
+    "light": "5a1a428d497491fe8fdd03fb132ef4f42a79ca17d320c6c614454c94dfe3b17c",
+    "glove_albedo": "6cc2c3d80d203ee8ac137c79788e5f08e1c6a6977545a5d52d2fe949071fbf76",
+    "glove_orm": "7819d5b85b44cecf85b14c3aa767fda15692cd22476c1e63232afd5077e9a866",
+    "glove_normal": "c58828e2610fd4f971d287b56a10615e6841c015cc7bb298eeb697904365a96d"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

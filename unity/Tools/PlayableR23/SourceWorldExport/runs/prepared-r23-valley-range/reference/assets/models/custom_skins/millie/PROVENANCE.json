@@ -1,0 +1,32 @@
+{
+  "key": "millie",
+  "display_name": "Millie",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\exports\\player_kit_millie_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\exports\\player_kit_millie_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\exports\\gloves\\glove_millie_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\exports\\gloves\\glove_millie_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\exports\\gloves\\glove_millie_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\031_millie\\INTEGRATION.json",
+  "source_manifest_sha256": "49ecbce23049f5b25a8ec2bda4cd9e61624a9b3a7927843c6ab69e33776a9a87",
+  "verified_triangles": {
+    "pcvr": 100266,
+    "light": 33628
+  },
+  "verified_source_hashes": {
+    "pcvr": "6771bf2c20049dd84764d8e219036642e20a08d0e6ee97b72071e91ac7062b30",
+    "light": "45cdd5da2e20fc6430d8b42972c8f3a2ac9f457356282428f34bfae8dc87e277",
+    "glove_albedo": "51cf7a2b186c36542023fdee31384196858bd9dc569ad5152f2616b8e37e6651",
+    "glove_orm": "8fad8b152459f644af8189024c0987846a66114532935cab24f543e370ae602d",
+    "glove_normal": "fc3379937ed9ab1a324e18aca9d5461483df2cceaba7bfd265e79c0dd03f1548"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\031_millie\\exports\\gloves_light\\glove_millie_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\031_millie\\exports\\gloves_light\\glove_millie_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\031_millie\\exports\\gloves_light\\glove_millie_normal.png",
+    "note": "Both actual native hand UV regions. Bare skin; unchanged CC0 mesh, weights and actual Grip5/Grip articulation. Same hand topology on both body tiers."
+  }
+}

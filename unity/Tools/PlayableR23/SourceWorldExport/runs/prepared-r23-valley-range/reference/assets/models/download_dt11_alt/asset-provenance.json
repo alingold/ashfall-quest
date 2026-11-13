@@ -1,0 +1,110 @@
+{
+  "id": "dt11_alt",
+  "file": "sawed-off_low_poly.glb",
+  "scale": 0.00025091005678338065,
+  "anchor": [
+    0,
+    0,
+    -9.790847428603467
+  ],
+  "target": [
+    0,
+    0.04,
+    -0.65
+  ],
+  "bolt": [
+    3,
+    6,
+    8,
+    10,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "bolt_home": [
+    0,
+    -0.135,
+    -0.13
+  ],
+  "moving_mesh_name": "Barrels",
+  "moving_kind": "break_action_barrels",
+  "muzzle": [
+    0,
+    0.04,
+    -0.65
+  ],
+  "chamber_visual_factor": 1.1424747045013401,
+  "chamber_visual_y_shift": 0.02,
+  "keep_authored_foreend": false,
+  "variant": "Selectable sawed-off source style normalized to unchanged DT11 gameplay muzzle/breech datums. Original source fore-end travels with barrels on existing hinge. Existing two-round down/up mechanism and support grip unchanged; no separate sawed-off tuning.",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.04,
+    -0.6524566220842684
+  ],
+  "source": "[local development path]",
+  "source_sha256": "f754c6a216e0f1647751b368013484af84e483b85f354fd024137523832cde8c",
+  "output_sha256": "a03e7f9957c9b9d04e8ae96153be561d1f68bcd0cef66e1374c150654a0486d4",
+  "asset": {
+    "author": "Berk Gedik (https://sketchfab.com/berkgedik)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/sawed-off-low-poly-05c564f20178457783189dfe8bed6801",
+    "title": "Sawed-off (Low Poly)"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "source_triangles": 14458,
+  "body_triangles": 10688,
+  "magazine_triangles": 0,
+  "moving_triangles": 3770,
+  "bounds_min": [
+    -0.05895284180896925,
+    -0.13180974124028533,
+    -0.65
+  ],
+  "bounds_max": [
+    0.05895284180896925,
+    0.0743300183095456,
+    0.31057584686872486
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 14458,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.0,
+    0.01383904637851444,
+    -0.37266225412734316
+  ]
+}

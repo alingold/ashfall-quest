@@ -1,0 +1,40 @@
+{
+  "base_checkpoint": "b70460622e678b55ee104f284c80bf803c3fc90d",
+  "quest_fork_head": "334e8f9315e43630f78f4993ad68e14117998870",
+  "pull_request": "https://github.com/alingold/ashfall/pull/1",
+  "engine": "4.7.2",
+  "openxr_vendors_version": "5.1.0-stable",
+  "openxr_vendors_zip_sha256": "6a838dbdf4115549e4511ebee0da9a5dcc8f9f6258d4cc2f2ee57a907a3e2911",
+  "archive_packs_are_external": true,
+  "android_archive_directory": "user://map-packs",
+  "archive_packs": {
+    "ASHFALL-Local-Maps.pck": "6629ae3ee53b8ffa3a3a0d60fd0f0c6103924295c8bab1d2e1992e783a8ed2d6",
+    "ASHFALL-Map-Adapters-R10.pck": "38afd14770fd010d39613d3ab6a74b7dcd23125c66563c697f9f1d252ecc04a9"
+  },
+  "new_headset_verification": false,
+  "initialize_is_manual": false,
+  "android_package": "org.alingold.ashfallquest",
+  "android_version": "1.0.0.17-r23",
+  "android_version_code": 23,
+  "android_microphone": "Permission requested only when microphone is enabled in-map",
+  "startup_initialization": "R19: automatic once tracking and height stabilize; manual recalibration remains available.",
+  "recovery_r20": {
+    "postcut_lods_enabled": false,
+    "diagnostics_default": false,
+    "loading_material": "R18 StandardMaterial3D physical panel",
+    "image_quality_policy": "R18 unchanged"
+  },
+  "r21": {
+    "base_completed_source": "056168cc4cf6743c1b91ea8c4fb951e91b287b9d",
+    "ground_item_distance_m": 60,
+    "tracking_basis_guard": true,
+    "ping_world_anchor_preserved": true,
+    "middle_hatches": 90,
+    "middle_hatch_maps": 9,
+    "backing_geometry_prebaked": true,
+    "runtime_polygon_clipping": false,
+    "public_mesh_lods_only": true,
+    "global_resolution_policy": "R20 unchanged",
+    "headset_acceptance": false
+  }
+}

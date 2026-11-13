@@ -1,0 +1,51 @@
+{
+  "id": "frag_alt",
+  "file": "red_grenade_toy_speaker.glb",
+  "source": "[local development path]",
+  "source_sha256": "ee915f2fb652863c2e58c8615645edd1ad58fb8408d145122fdce9f942ae0d3f",
+  "output_sha256": "18b346eb034c7bed624de14d0cfca6655a943a5ee90f530c00e67ed3a115918c",
+  "asset": {
+    "author": "3dUVpro (https://sketchfab.com/3dUVpro)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/red-grenade-toy-speaker-2ddf71b8fb6b4fbeb3a144012d2f6b60",
+    "title": "Red Grenade Toy Speaker"
+  },
+  "source_triangles": 277095,
+  "body_triangles": 34634,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "omitted_triangles": 242461,
+  "visible_source_triangles": 34634,
+  "decimated_triangles": 242461,
+  "bounds_min": [
+    -0.0537360116372189,
+    -0.07,
+    -0.05060147633736199
+  ],
+  "bounds_max": [
+    0.05409616969345663,
+    0.07,
+    0.05066141130619502
+  ],
+  "scale": 0.06996421349655862,
+  "target": [
+    0,
+    0,
+    0
+  ],
+  "muzzle": [
+    0,
+    0,
+    0
+  ],
+  "visual_only": true,
+  "fit_height_m": 0.14,
+  "cell_m": 0.002,
+  "maximum_source_vertex_displacement_m": 0.002197070298773281,
+  "rms_source_vertex_displacement_m": 0.0007790165468596912,
+  "maximum_uv_vertex_error": 0.008367203452937006,
+  "rms_uv_vertex_error": 0.0010009258115406074,
+  "output_vertices": 45710,
+  "original_texture_bytes_preserved": true,
+  "method": "Seam-aware normal/UV attribute splits with shared voxel position centroids, degenerate/duplicate face removal, fixed14cm extent. Original source preserved. Vertex displacement reports are clustering bounds, not a held-out surface/Hausdorff or headset acceptance claim. Optional skin only; original sci-fi frag default and authored fallback retained."
+}

@@ -1,0 +1,189 @@
+{
+  "id": "katana_alt",
+  "file": "katana.glb",
+  "scale": 1.0,
+  "anchor": [
+    0,
+    0,
+    0
+  ],
+  "target": [
+    0,
+    0,
+    0
+  ],
+  "omit": [
+    1,
+    2,
+    5,
+    6,
+    8,
+    11,
+    12,
+    13,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "muzzle": [
+    0.0,
+    1.115057390147468,
+    -0.06807747501332542
+  ],
+  "omission_reason": "Display stands, lower scabbard and fittings omitted by inspected connected component minimumY<=.15. Upper unsheathed katana retained. Original2410 triangles retained outside package.",
+  "source_pommel": [
+    -2.98170161594129,
+    0.36774825761227703,
+    -0.03086816317487967
+  ],
+  "source_tip": [
+    2.9498231033201705,
+    0.24659744691142294,
+    -0.02202856051956023
+  ],
+  "source_guard_u": -1.35,
+  "source_guard_y": 0.515,
+  "cross_section_scale": 0.19,
+  "target_pommel": [
+    0,
+    -0.29202650602409636,
+    0.025
+  ],
+  "contact_tip": [
+    0.0,
+    1.115057390147468,
+    -0.06807747501332542
+  ],
+  "target_chord": 1.4101590361445784,
+  "fit_method": "Continuous piecewise longitudinal asset adaptation to accepted pommel/guard/tip datums; cross-section0.19m/sourceunit. Normal inverse-transpose Jacobian, UV and finishes retained. Original scabbard/display omitted explicitly, no gameplay scale or contact changes.",
+  "variant": "Selectable traditional katana alternative to retained Genji and authored fallback. Same calibrated length, primary/support grips, accepted contact semantics and velocity damage.",
+  "guard_correction_086": {
+    "source_component": 0,
+    "degrees_before": 9.57193389190772,
+    "degrees_after": 0.0,
+    "method": "Rigidly rotate only original connected guard component around its own centroid so its PCA mean plane is perpendicular to handle. Preserve all blade/handle vertices, endpoints, cross-section and texture coordinates. Natural blade curvature remains.",
+    "probe_positions": [
+      [
+        -0.021338593648132075,
+        0.08796221560606751,
+        -0.0007334512186224044
+      ],
+      [
+        -0.004093493172643929,
+        0.08510904521788128,
+        0.0632087372991787
+      ],
+      [
+        -0.001483180029243207,
+        0.0856789169576749,
+        -0.014023812986292516
+      ],
+      [
+        -0.0360915364045324,
+        0.08505673584869788,
+        0.02494030727396876
+      ],
+      [
+        0.03558179316618446,
+        0.08532581345581189,
+        0.02766431196940182
+      ],
+      [
+        -0.004776166141026618,
+        0.07950288708481382,
+        0.02798857236994832
+      ]
+    ],
+    "center": [
+      -0.0002267198259148355,
+      0.08444733813057904,
+      0.02530149577587637
+    ],
+    "rotation": [
+      [
+        0.9925194132097902,
+        0.12188940040880174,
+        -0.006941791532200851
+      ],
+      [
+        -0.12188940040880174,
+        0.9860776097753856,
+        -0.11311021867030951
+      ],
+      [
+        -0.006941791532200851,
+        0.11311021867030951,
+        0.9935581965655954
+      ]
+    ]
+  },
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "source": "[local development path]",
+  "source_sha256": "d2de1bfe9c9eaf97dc9873c80583ba5cf487d5da92a7695326f00664b1e24445",
+  "output_sha256": "3d73c2755762b910e007c736634cdd5af6330aa19c295abb448a30c953ffe8cd",
+  "asset": {
+    "author": "aneeqayounas (https://sketchfab.com/aneeqayounas)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/katana-b061754e94ce434cbe1396b3bb6d8abc",
+    "title": "Katana"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 2410,
+  "body_triangles": 1388,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.0360915364045324,
+    -0.29202650602409636,
+    -0.09107291032906006
+  ],
+  "bounds_max": [
+    0.03558179316618446,
+    1.115057390147468,
+    0.0632087372991787
+  ],
+  "method": "Continuous piecewise longitudinal asset adaptation to accepted pommel/guard/tip datums; cross-section0.19m/sourceunit. Normal inverse-transpose Jacobian, UV and finishes retained. Original scabbard/display omitted explicitly, no gameplay scale or contact changes.",
+  "omitted_triangles": 1022,
+  "visible_source_triangles": 1388,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": false
+}

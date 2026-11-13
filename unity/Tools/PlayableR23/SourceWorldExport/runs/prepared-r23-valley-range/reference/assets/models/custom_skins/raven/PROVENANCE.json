@@ -1,0 +1,25 @@
+{
+  "key": "raven",
+  "display_name": "Raven",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\exports\\player_kit_raven_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\exports\\player_kit_raven_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\exports\\gloves\\glove_raven_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\exports\\gloves\\glove_raven_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\exports\\gloves\\glove_raven_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\042_raven\\INTEGRATION.json",
+  "source_manifest_sha256": "6278f6b448c37ab915a992d73628d6a31f244c20f081ae714ecfb271f7e4dd63",
+  "verified_triangles": {
+    "pcvr": 132210,
+    "light": 43816
+  },
+  "verified_source_hashes": {
+    "pcvr": "2afe38931baf016484ee26d1ad8a94ca0faf83b55c90961b248481992323bcc2",
+    "light": "8903841e869f04c603f4bdf362764d4903cdc9d89764345b67ad4ae96e4aa00a",
+    "glove_albedo": "80ae008af4d02b8962e2a0240e532aea519d7188a4b2a78cd345e1fdb6971891",
+    "glove_orm": "a3e355ac4e9050554ba8cc811513ebe9ec96b156d3ff5d7f5a810be9132ab523",
+    "glove_normal": "78f668df87f26a13d2afa7eab4fc5b4a72d0649548c3dfa79c1f5a13136dd934"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

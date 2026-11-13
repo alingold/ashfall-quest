@@ -1,0 +1,31 @@
+{
+  "key": "tormentus",
+  "display_name": "Tormentus",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\player_kit_tormentus_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\player_kit_tormentus_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves\\glove_tormentus_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves\\glove_tormentus_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves\\glove_tormentus_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\INTEGRATION.json",
+  "source_manifest_sha256": "8e335b5a02d6897d8bed1208f957c7e1f831a4b8fef61ca7a7a218902bfc1166",
+  "verified_triangles": {
+    "pcvr": 80748,
+    "light": 31638
+  },
+  "verified_source_hashes": {
+    "pcvr": "13040899ad2525ca0da01c19d67d3ee85a5cf96629575894f599cdbe11097714",
+    "light": "4e5bedad5a47243d5180aa6c0c925855c61b5da9d95b21b88366f22b9d34c9bc",
+    "glove_albedo": "152a544852bc3a6a1fd2884544798030a27976088791dddbc83cbc88599d0417",
+    "glove_orm": "e8d552cd745e269d169d88ca2d3b91aad92baaebbf9977c641f7184739f7d465",
+    "glove_normal": "7e164746f542ade1965bc4c458f58bae6b00501eda6be8a475a6558cb7a061a5"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves_light\\glove_tormentus_albedo.png",
+    "orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves_light\\glove_tormentus_orm.png",
+    "normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\010_tormentus\\exports\\gloves_light\\glove_tormentus_normal.png"
+  }
+}

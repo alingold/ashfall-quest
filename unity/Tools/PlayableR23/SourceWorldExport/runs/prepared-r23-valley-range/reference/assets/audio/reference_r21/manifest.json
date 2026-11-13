@@ -1,0 +1,27 @@
+{
+  "files": [
+    {
+      "file": "res://assets/audio/reference_r21/revive_charge_full.wav",
+      "source_file": "C:\\Users\\aling\\Downloads\\com.BigBoxVR.PopulationONE-20261023-234813-0.mp4",
+      "source_sha256": "d55f00f7d91ddc866edd07cb9a1f39f72d6aca41930a023cd2f350f1cc2e8a5b",
+      "master_start_seconds": 16.98,
+      "master_end_seconds": 26.51,
+      "duration_seconds": 9.529916666666667,
+      "sample_rate": 48000,
+      "mono": true,
+      "loop": false,
+      "sha256": "27ddb7aa453236c5477c7c7be0d2c59991f2ecbdc4e70d5826fd876741bb307f",
+      "pcm_sha256": "49b1a68d4595d124a468f9416a07fde058356fd0a58caa182a060885071bd9d2",
+      "processing": "Mono mean, DC removal, constant gain to0.28peak,5ms endpoint fades. Continuous original charging rise with no repeated tick cuts or synthetic layer. Playback rate follows charge duration.",
+      "gain_db": 1.0505290118711084,
+      "visual_assignment_verified": true,
+      "listening_approved": false,
+      "reference": "Native frames16\u201326 show the full charge, completion at26.2s plus approximately0.24s recording audio delay. Ready and discharge routes remain unchanged."
+    }
+  ],
+  "awp_override": {
+    "cue": "bolt",
+    "source": "res://assets/audio/reference099/isolated_s85_bolt_00.wav",
+    "reason": "User authorizes borrowing a clean other-gun reload to remove AWP shot echo. Original AWP report and old sample bytes retained."
+  }
+}

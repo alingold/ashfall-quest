@@ -1,0 +1,31 @@
+{
+  "key": "dani_checkers",
+  "display_name": "Dani (Checkers)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\exports\\player_kit_dani_checkers_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\exports\\player_kit_dani_checkers_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\exports\\gloves\\pcvr\\glove_dani_checkers_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\exports\\gloves\\pcvr\\glove_dani_checkers_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\exports\\gloves\\pcvr\\glove_dani_checkers_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\032_dani_checkers\\INTEGRATION.json",
+  "source_manifest_sha256": "0f4fa05dd959180b37e36be34cb2c59d0ecb4f41e73665e0ebb5f96c18e08d7d",
+  "verified_triangles": {
+    "pcvr": 79634,
+    "light": 37430
+  },
+  "verified_source_hashes": {
+    "pcvr": "cd92173fe96e8072e533fe7e6ca64db8c1d023a1b6edc3f46196bd003779fa9a",
+    "light": "ea19190eb90e0fccb0ed079d6ab0323ab779821c83f7d23fd2111446f1add294",
+    "glove_albedo": "380976afe032f5b73ce88e653610b2ac055ecf8ba2322a36da722dd3f8d13488",
+    "glove_orm": "4ae78d3c285da550c17518616f06bba05b7e89ed0f5c0cbb249b6c16835286eb",
+    "glove_normal": "b5ff37007f4f3410350e33333ddda8d8efd15318f6ebbc11f29b8e57efa43046"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved.",
+  "hand_tier_policy": "Existing runtime uses one material set per skin for both hand rigs and body tiers; use delivered PCVR glove maps. Additional light glove maps remain in the source handoff.",
+  "retained_light_glove_maps": {
+    "albedo": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\032_dani_checkers\\exports\\gloves\\light\\glove_dani_checkers_albedo.png",
+    "orm": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\032_dani_checkers\\exports\\gloves\\light\\glove_dani_checkers_orm.png",
+    "normal": "C:\\Users\\aling\\Documents\\ashfall\\skins_pipeline\\characters\\032_dani_checkers\\exports\\gloves\\light\\glove_dani_checkers_normal.png"
+  }
+}

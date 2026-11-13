@@ -1,0 +1,25 @@
+{
+  "key": "millie_punk",
+  "display_name": "Millie (Punk)",
+  "pcvr": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\exports\\player_kit_millie_punk_pcvr.glb",
+  "light": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\exports\\player_kit_millie_punk_light.glb",
+  "glove_albedo": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\exports\\gloves\\glove_millie_punk_albedo.png",
+  "glove_orm": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\exports\\gloves\\glove_millie_punk_orm.png",
+  "glove_normal": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\exports\\gloves\\glove_millie_punk_normal.png",
+  "eye_to_shoulder": 0.18,
+  "body_rear": 0.06,
+  "source_manifest": "D:\\Codex\\ashfall-skins-2026-11-01\\characters\\017_millie_punk\\INTEGRATION.json",
+  "source_manifest_sha256": "27d65c79bd0849b10bd7aa6fb9a7a81e0b001aa26770bae7d5436cea885fd8ad",
+  "verified_triangles": {
+    "pcvr": 102866,
+    "light": 33936
+  },
+  "verified_source_hashes": {
+    "pcvr": "b353174fe67d96cd9a70ce778aa8c1625267b392013f58595c3d014167d8f8cb",
+    "light": "d4792389a522e3b47f9ed79be1bb00036b3421b0a5c7297e31ea54a257827efd",
+    "glove_albedo": "012dbfc857dd2195dec004599773fe2e5a3f6c2b0828b049527c5ffc40b5c674",
+    "glove_orm": "b71aa1cd2f983a30f999868ba4f27d4d68102c336cd7e1d15bb086b4eaa492c8",
+    "glove_normal": "3963f8800af73c0a264b0d240d8fce7c7e3e69076e8c1a44b8f5dcfe5e68d1e0"
+  },
+  "provenance": "Stylized recreation from user-supplied skins.mp4; original scripts and procedural geometry; existing XRTools hand rigs preserved."
+}

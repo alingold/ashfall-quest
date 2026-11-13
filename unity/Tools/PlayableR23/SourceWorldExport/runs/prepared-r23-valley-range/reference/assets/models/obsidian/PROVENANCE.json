@@ -1,0 +1,8 @@
+{
+  "name": "Obsidian",
+  "reference": "User-provided skins.mp4, 9:18\u20139:29; no extracted game model",
+  "geometry": "Procedural reconstruction authored for this request. Physical shapes, separately generated source/PCVR/light tiers.",
+  "helper_provenance": "wd_geo.py, kitpose.py, wd_render.py and bake framework adapted from the user-supplied accepted Opus Witch Doctor workflow. Obsidian geometry and material specifications are newly authored.",
+  "hands": "Existing CC0 Godot XRTools hand rigs preserved; new black/gold fingerless UV textures generated from both rest meshes.",
+  "integration": "R12 source snapshot with skin 7 appended to the shared kit loader; original seven IDs preserved. New installations default to Obsidian; user settings use a separate directory."
+}

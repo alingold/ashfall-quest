@@ -1,0 +1,35 @@
+{
+  "id": "archive:flash-gods-pitdevil",
+  "slug": "flash-gods-pitdevil",
+  "title": "FLASH",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/flash-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\flash-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+  "cacheFingerprint": "9698c43334aa81f0aa5ef826cbcd418ffc11f6735c90dfa653c2d2b2fd5b9fd9",
+  "spawn": [
+    6.29,
+    77.86032417671656,
+    155.41
+  ],
+  "warmupSpawn": [
+    25.49827,
+    209.41042053222657,
+    83.53218
+  ],
+  "chunks": 152,
+  "renderTriangles": 217188,
+  "collisionTriangles": 214976,
+  "payloadBytes": 19377112,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\flash-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

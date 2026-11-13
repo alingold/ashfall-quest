@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-citadel-gods-thor",
+  "slug": "the-citadel-gods-thor",
+  "title": "THE CITADEL",
+  "creator": "GODS_THOR",
+  "relativeFolder": "Maps/the-citadel-gods-thor",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-citadel-gods-thor\\source\\thumb.jpg",
+  "sourceSha256": "bd7182b904229b1d3b7982c92dd47d89dda66dd22e94af0782cbbf766a9403f0",
+  "cacheFingerprint": "9cfd917759d54c00372a30fe9aefcca1ed04576402896c3c332383429520985d",
+  "spawn": [
+    0.0,
+    14.120030517578124,
+    -2.7598266601564774
+  ],
+  "warmupSpawn": [
+    0.0,
+    14.120030517578124,
+    -2.7598266601564774
+  ],
+  "chunks": 122,
+  "renderTriangles": 136438,
+  "collisionTriangles": 135402,
+  "payloadBytes": 11833572,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-citadel-gods-thor",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

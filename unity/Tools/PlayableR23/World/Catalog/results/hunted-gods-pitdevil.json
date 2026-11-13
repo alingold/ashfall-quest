@@ -1,0 +1,35 @@
+{
+  "id": "archive:hunted-gods-pitdevil",
+  "slug": "hunted-gods-pitdevil",
+  "title": "HUNTED",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/hunted-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hunted-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "69b8ac120f6f0f2e72bcbcd40b705bb9bb9a7c751d029f88cc5c0932c47910b7",
+  "cacheFingerprint": "cbcf63ec63c41506ea0a9de51c2f0abf272f003c3de60691e2c1aadeefefceda",
+  "spawn": [
+    -184.41,
+    77.83734298059879,
+    188.78
+  ],
+  "warmupSpawn": [
+    23.83265,
+    58.86283624004921,
+    -72.25307
+  ],
+  "chunks": 198,
+  "renderTriangles": 175422,
+  "collisionTriangles": 167792,
+  "payloadBytes": 16408444,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hunted-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

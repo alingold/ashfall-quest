@@ -1,0 +1,35 @@
+{
+  "id": "archive:sunflower-city-kiki-80-bbb",
+  "slug": "sunflower-city-kiki-80-bbb",
+  "title": "SUNFLOWER CITY",
+  "creator": "Kiki.80_BBB",
+  "relativeFolder": "Maps/sunflower-city-kiki-80-bbb",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sunflower-city-kiki-80-bbb\\source\\thumb.jpg",
+  "sourceSha256": "cef6add47ad1f752e04e96fe7abf8d4d9f2ab734d4423fe0fd3099e4d006c13b",
+  "cacheFingerprint": "7e5154445ef622c817fc6dc7843f3842a4c4cbf89e63294b259d572564426594",
+  "spawn": [
+    47.48,
+    43.381293362662284,
+    7.2
+  ],
+  "warmupSpawn": [
+    60.22936,
+    60.708701598266714,
+    51.53851
+  ],
+  "chunks": 187,
+  "renderTriangles": 347891,
+  "collisionTriangles": 345449,
+  "payloadBytes": 27710061,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sunflower-city-kiki-80-bbb",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

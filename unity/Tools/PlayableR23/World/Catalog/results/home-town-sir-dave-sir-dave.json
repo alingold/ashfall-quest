@@ -1,0 +1,35 @@
+{
+  "id": "archive:home-town-sir-dave-sir-dave",
+  "slug": "home-town-sir-dave-sir-dave",
+  "title": "HOME TOWN SIR DAVE",
+  "creator": "SIR-DAVE",
+  "relativeFolder": "Maps/home-town-sir-dave-sir-dave",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\home-town-sir-dave-sir-dave\\source\\thumb.jpg",
+  "sourceSha256": "a4c93cd39a87134623aae864ee41c926e970334f85d118b90ab860687feb2b27",
+  "cacheFingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+  "spawn": [
+    -84.1,
+    41.87492477416992,
+    32.64
+  ],
+  "warmupSpawn": [
+    -53.2,
+    42.49175369262695,
+    -42.87
+  ],
+  "chunks": 277,
+  "renderTriangles": 282173,
+  "collisionTriangles": 277173,
+  "payloadBytes": 32137166,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\home-town-sir-dave-sir-dave",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

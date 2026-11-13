@@ -1,0 +1,867 @@
+{
+  "schema": "ASHFALL-SPR-SCOPE-COLLABORATION-v1",
+  "author": "Gemini Argon",
+  "isolated_output_root": "[local development path]",
+  "source_files_modified": false,
+  "inputs_read_only": [
+    {
+      "path": "[local development path]",
+      "sha256": "e104178daebac65fc3af45da04061b1afd7c586167aece6fafea2fd245cb0327",
+      "role": "Accepted standalone097 SPR donor rifle (Body 7278 tris, Magazine 220 tris, Bolt rear T-handle 646 tris)"
+    },
+    {
+      "path": "[local development path]",
+      "sha256": "b96526bf72fd2e3a901337d745c5bb6169571f590fd831ff899bfc2ea67e9205",
+      "role": "Accepted SPR scale, muzzle firing datum, grip, and 090 charging handle partition provenance"
+    },
+    {
+      "path": "[local development path]",
+      "sha256": "75fc9d279ac67be4884b3b5076169ebc60e3e70b0c56a793ebe1bcbb6a259d31",
+      "role": "User reference image for compact low-mount rectangular ocular + stadium objective SPR scope"
+    }
+  ],
+  "coordinate_conventions": {
+    "units": "metres",
+    "model_space_to_held_weapon_scale": 1.32,
+    "axes_godot_gltf": {
+      "right": "+X",
+      "up": "+Y",
+      "forward_bore": "-Z",
+      "eye_facing_normal": "+Z"
+    },
+    "preserved_firing_datum_model_m": {
+      "origin": [
+        0.0,
+        0.045,
+        -0.69
+      ],
+      "forward": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "preserved_primary_grip_model_m": [
+      0.0,
+      -0.057,
+      0.025
+    ],
+    "preserved_magazine_home_model_m": [
+      0.0,
+      -0.05928609,
+      -0.11562737
+    ],
+    "preserved_charging_handle_rest_model_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preserved_charging_handle_grip_center_model_m": [
+      0.01385265,
+      0.04472095,
+      0.00505518
+    ],
+    "receiver_top_picatinny_rail_y_model_m": 0.07482
+  },
+  "optical_contract": {
+    "optical_axis_center_model_m": [
+      0.0,
+      0.098,
+      0.0185
+    ],
+    "optical_axis_center_weapon_world_m": [
+      0.0,
+      0.12936,
+      0.02442
+    ],
+    "height_above_top_rail_model_mm": 23.18,
+    "height_above_top_rail_world_mm": 30.6,
+    "old_094_height_above_top_rail_model_mm": 51.01,
+    "height_reduction_vs_094_percent": 54.56,
+    "optical_forward_direction": [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    "eye_facing_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "unobstructed_aperture_model_m": [
+      0.044,
+      0.026
+    ],
+    "unobstructed_aperture_weapon_world_m": [
+      0.05808,
+      0.03432
+    ],
+    "aperture_aspect_ratio": 1.692308,
+    "source_097_window_aspect_ratio": 1.692308,
+    "viewport_resolution": [
+      520,
+      307
+    ],
+    "magnification": 2.0,
+    "virtual_reticle_depth_metres": 1.0,
+    "rear_ocular_bezel_z_model_m": 0.022,
+    "rear_ocular_glass_z_model_m": 0.018,
+    "rear_glass_recess_depth_mm": 4.0,
+    "reticle_view_plane_z_model_m": 0.0185,
+    "front_hood_rim_z_model_m": -0.27,
+    "front_objective_glass_z_model_m": -0.256,
+    "front_glass_recess_depth_mm": 14.0,
+    "charging_handle_vertical_clearance_model_mm": 6.37
+  },
+  "named_parts_pcvr": {
+    "ScopeMount": {
+      "vertices": 2724,
+      "triangles": 1504,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.039250001311302185,
+        0.07020000368356705,
+        -0.17499999701976776
+      ],
+      "bounds_max_model_m": [
+        0.039250001311302185,
+        0.11500000208616257,
+        -0.0430000014603138
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.05181000009179115,
+        0.09266400337219238,
+        -0.23100000619888306
+      ],
+      "bounds_max_weapon_world_m": [
+        0.05181000009179115,
+        0.1518000066280365,
+        -0.056759998202323914
+      ]
+    },
+    "ScopeHousing": {
+      "vertices": 9518,
+      "triangles": 5384,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.05909999832510948,
+        0.08009999990463257,
+        -0.27000001072883606
+      ],
+      "bounds_max_model_m": [
+        0.05909999832510948,
+        0.11999999731779099,
+        0.02199999988079071
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.07801199704408646,
+        0.10573200136423111,
+        -0.3564000129699707
+      ],
+      "bounds_max_weapon_world_m": [
+        0.07801199704408646,
+        0.15839999914169312,
+        0.029039999470114708
+      ]
+    },
+    "ScopeDarkInterior": {
+      "vertices": 562,
+      "triangles": 320,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.022261999547481537,
+        0.08340000361204147,
+        -0.27000001072883606
+      ],
+      "bounds_max_model_m": [
+        0.022261999547481537,
+        0.11259999871253967,
+        0.01720000058412552
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.029386000707745552,
+        0.11008799821138382,
+        -0.3564000129699707
+      ],
+      "bounds_max_weapon_world_m": [
+        0.029386000707745552,
+        0.1486320048570633,
+        0.022703999653458595
+      ]
+    },
+    "FrontObjectiveGlass": {
+      "vertices": 366,
+      "triangles": 240,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.01759999990463257,
+        0.08579999953508377,
+        -0.2565999925136566
+      ],
+      "bounds_max_model_m": [
+        0.01769999973475933,
+        0.11020000278949738,
+        -0.25540000200271606
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.023231999948620796,
+        0.11325599998235703,
+        -0.33871200680732727
+      ],
+      "bounds_max_weapon_world_m": [
+        0.023364000022411346,
+        0.1454640030860901,
+        -0.33712801337242126
+      ]
+    },
+    "RearOcularGlass": {
+      "vertices": 4,
+      "triangles": 2,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.02199999988079071,
+        0.08500000089406967,
+        0.017999999225139618
+      ],
+      "bounds_max_model_m": [
+        0.02199999988079071,
+        0.11100000143051147,
+        0.017999999225139618
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.029039999470114708,
+        0.11219999939203262,
+        0.023760000243782997
+      ],
+      "bounds_max_weapon_world_m": [
+        0.029039999470114708,
+        0.1465200036764145,
+        0.023760000243782997
+      ]
+    },
+    "ReticleViewPlane": {
+      "vertices": 4,
+      "triangles": 2,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.02199999988079071,
+        0.08500000089406967,
+        0.01850000023841858
+      ],
+      "bounds_max_model_m": [
+        0.02199999988079071,
+        0.11100000143051147,
+        0.01850000023841858
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.029039999470114708,
+        0.11219999939203262,
+        0.02442000061273575
+      ],
+      "bounds_max_weapon_world_m": [
+        0.029039999470114708,
+        0.1465200036764145,
+        0.02442000061273575
+      ]
+    }
+  },
+  "named_parts_light": {
+    "ScopeMount": {
+      "vertices": 1948,
+      "triangles": 1072,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.039250001311302185,
+        0.07020000368356705,
+        -0.17499999701976776
+      ],
+      "bounds_max_model_m": [
+        0.039250001311302185,
+        0.11500000208616257,
+        -0.0430000014603138
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.05181000009179115,
+        0.09266400337219238,
+        -0.23100000619888306
+      ],
+      "bounds_max_weapon_world_m": [
+        0.05181000009179115,
+        0.1518000066280365,
+        -0.056759998202323914
+      ]
+    },
+    "ScopeHousing": {
+      "vertices": 3926,
+      "triangles": 2212,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.05909999832510948,
+        0.08009999990463257,
+        -0.27000001072883606
+      ],
+      "bounds_max_model_m": [
+        0.05909999832510948,
+        0.11999999731779099,
+        0.02199999988079071
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.07801199704408646,
+        0.10573200136423111,
+        -0.3564000129699707
+      ],
+      "bounds_max_weapon_world_m": [
+        0.07801199704408646,
+        0.15839999914169312,
+        0.029039999470114708
+      ]
+    },
+    "ScopeDarkInterior": {
+      "vertices": 282,
+      "triangles": 160,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.02208700031042099,
+        0.08340000361204147,
+        -0.27000001072883606
+      ],
+      "bounds_max_model_m": [
+        0.02208700031042099,
+        0.11259999871253967,
+        0.01720000058412552
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.02915400080382824,
+        0.11008799821138382,
+        -0.3564000129699707
+      ],
+      "bounds_max_weapon_world_m": [
+        0.02915400080382824,
+        0.1486320048570633,
+        0.022703999653458595
+      ]
+    },
+    "FrontObjectiveGlass": {
+      "vertices": 210,
+      "triangles": 136,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.01759999990463257,
+        0.08610600233078003,
+        -0.2565999925136566
+      ],
+      "bounds_max_model_m": [
+        0.01769999973475933,
+        0.10989399999380112,
+        -0.25540000200271606
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.023231999948620796,
+        0.11366000026464462,
+        -0.33871200680732727
+      ],
+      "bounds_max_weapon_world_m": [
+        0.023364000022411346,
+        0.1450600028038025,
+        -0.33712801337242126
+      ]
+    },
+    "RearOcularGlass": {
+      "vertices": 4,
+      "triangles": 2,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.02199999988079071,
+        0.08500000089406967,
+        0.017999999225139618
+      ],
+      "bounds_max_model_m": [
+        0.02199999988079071,
+        0.11100000143051147,
+        0.017999999225139618
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.029039999470114708,
+        0.11219999939203262,
+        0.023760000243782997
+      ],
+      "bounds_max_weapon_world_m": [
+        0.029039999470114708,
+        0.1465200036764145,
+        0.023760000243782997
+      ]
+    },
+    "ReticleViewPlane": {
+      "vertices": 4,
+      "triangles": 2,
+      "local_transform": {
+        "origin": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "bounds_min_model_m": [
+        -0.02199999988079071,
+        0.08500000089406967,
+        0.01850000023841858
+      ],
+      "bounds_max_model_m": [
+        0.02199999988079071,
+        0.11100000143051147,
+        0.01850000023841858
+      ],
+      "bounds_min_weapon_world_m": [
+        -0.029039999470114708,
+        0.11219999939203262,
+        0.02442000061273575
+      ],
+      "bounds_max_weapon_world_m": [
+        0.029039999470114708,
+        0.1465200036764145,
+        0.02442000061273575
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "path": "models/spr_scope_pcvr.glb",
+      "bytes": 783820,
+      "sha256": "23c84e1b2c356c3b648bd1604b3281b97460aa87a9f521b227093cc9a89ae52c"
+    },
+    {
+      "path": "models/spr_scope_light.glb",
+      "bytes": 519660,
+      "sha256": "d9045a9ca886950e2d4623c3f2567faa6698f41cca24a18d3da823c1fedb8e62"
+    },
+    {
+      "path": "models/spr_rifle_with_scope_pcvr.glb",
+      "bytes": 7881328,
+      "sha256": "7a3dd472b14a9097bfc34e485db7faafea5692fb50da824a1810fecc5f584e98"
+    },
+    {
+      "path": "models/spr_rifle_with_scope_light.glb",
+      "bytes": 7617172,
+      "sha256": "c091c02a0f8708d513ef7663e90153d5372a4be0731861329aed3439f01e5ddc"
+    },
+    {
+      "path": "previews/spr_scope_three_quarter.png",
+      "bytes": 450956,
+      "sha256": "8205670a63c2cc4ca5f04f80473fffb17f46796a63b31584b94025015608e4cc"
+    },
+    {
+      "path": "previews/spr_scope_side_comparison.png",
+      "bytes": 170073,
+      "sha256": "8c0e8fb905718d1c8cc1544f83fe7fdb808a83de9f439900f6be023f9b30388a"
+    },
+    {
+      "path": "previews/spr_scope_front_rear_side.png",
+      "bytes": 306949,
+      "sha256": "0a93129e8eac796cc307e846e3415fa3d6a4960c8422bf7db04c5b257fa7b395"
+    },
+    {
+      "path": "previews/spr_scope_lens_closeup.png",
+      "bytes": 335977,
+      "sha256": "0017d44d44aed160b5a3d1a51ce2b78bd895224055ab5075530ddd8f8296774b"
+    },
+    {
+      "path": "previews/spr_scope_wireframe.png",
+      "bytes": 286291,
+      "sha256": "882382dbac831506ab16893ef47c19f33aaec54cb0715ea0badcf20993d4089a"
+    },
+    {
+      "path": "previews/spr_scope_first_person_ads.png",
+      "bytes": 204101,
+      "sha256": "5f6fc10754dfbd77a3a10281ee1222b0a0209f927b9e70f01b6122f1bca3f8e9"
+    },
+    {
+      "path": "godot_prototype/spr_housing_094.gd",
+      "bytes": 4992,
+      "sha256": "b399842da75c087ba905ab4b0bbda73ec531df4fcd634de8c55683096847365d"
+    },
+    {
+      "path": "godot_prototype/spr_scope.gd",
+      "bytes": 3193,
+      "sha256": "8ed6fd8cee54916242f7082012cd68a6e4497a028bae5f9d502ac72cae0396c1"
+    },
+    {
+      "path": "godot_prototype/spr.gd",
+      "bytes": 1195,
+      "sha256": "3db67b92bdf134d7df6031b2ba026ef62b7c4658c8b89af5d4974db1fe75c28f"
+    },
+    {
+      "path": "godot_prototype/spr_scope_prototype.tscn",
+      "bytes": 245,
+      "sha256": "53cb1569c57194c41efcfa262265783810a46dd3eb612f160226b56befce99a9"
+    },
+    {
+      "path": "licenses/DONOR_RIFLE_ATTRIBUTION.txt",
+      "bytes": 718,
+      "sha256": "bc446480262ef356fec59d9022e9d2dcb3c64688290899e2e29ad64e78171576"
+    },
+    {
+      "path": "licenses/SCOPE_ATTRIBUTION.txt",
+      "bytes": 565,
+      "sha256": "24d524da8cdd6b6cf96e08b4b63fe63e6d4c04c8a9738f0cacce07bf268d0253"
+    }
+  ],
+  "statistics": {
+    "spr_scope_pcvr": {
+      "vertices": 13178,
+      "triangles": 7452,
+      "materials": 6,
+      "embedded_png_textures": 6
+    },
+    "spr_scope_light": {
+      "vertices": 6374,
+      "triangles": 3584,
+      "materials": 6,
+      "embedded_png_textures": 6
+    },
+    "spr_rifle_with_scope_pcvr": {
+      "vertices": 37610,
+      "triangles": 15596,
+      "materials": 10
+    },
+    "spr_rifle_with_scope_light": {
+      "vertices": 30806,
+      "triangles": 11728,
+      "materials": 10
+    }
+  }
+}

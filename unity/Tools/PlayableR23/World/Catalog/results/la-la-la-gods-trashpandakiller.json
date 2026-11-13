@@ -1,0 +1,35 @@
+{
+  "id": "archive:la-la-la-gods-trashpandakiller",
+  "slug": "la-la-la-gods-trashpandakiller",
+  "title": "LA LA LA",
+  "creator": "GODS_TrashPandaKiller",
+  "relativeFolder": "Maps/la-la-la-gods-trashpandakiller",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\la-la-la-gods-trashpandakiller\\source\\thumb.jpg",
+  "sourceSha256": "dfd4d287711e0fd9105c034131562084baeef7616c99666cdd413364eb062bcf",
+  "cacheFingerprint": "b19a789f380015d76f3df5c313cf09e3c39f4e9b944d200b2bd23a0a15813a04",
+  "spawn": [
+    173.5,
+    2.6170961691538497,
+    -72.94
+  ],
+  "warmupSpawn": [
+    6.06333,
+    204.12009155273438,
+    280.83798
+  ],
+  "chunks": 252,
+  "renderTriangles": 237570,
+  "collisionTriangles": 235124,
+  "payloadBytes": 20509637,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\la-la-la-gods-trashpandakiller",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

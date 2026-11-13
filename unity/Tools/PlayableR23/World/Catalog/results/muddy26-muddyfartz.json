@@ -1,0 +1,35 @@
+{
+  "id": "archive:muddy26-muddyfartz",
+  "slug": "muddy26-muddyfartz",
+  "title": "MUDDY26",
+  "creator": "MuddyFartz",
+  "relativeFolder": "Maps/muddy26-muddyfartz",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\muddy26-muddyfartz\\source\\thumb.jpg",
+  "sourceSha256": "622c9257a7748b9aa0d854f7a7cf418098d56626b196e7033479f2bdedc3287f",
+  "cacheFingerprint": "34bf91aaad3cdeeef8ef18ba50485adbb1691c16c4bde68a93ff2ab2248be257",
+  "spawn": [
+    196.7477276049162,
+    106.96176635742188,
+    -199.04351935135708
+  ],
+  "warmupSpawn": [
+    196.7477276049162,
+    106.96176635742188,
+    -199.04351935135708
+  ],
+  "chunks": 616,
+  "renderTriangles": 1532652,
+  "collisionTriangles": 1528114,
+  "payloadBytes": 123589230,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\muddy26-muddyfartz",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

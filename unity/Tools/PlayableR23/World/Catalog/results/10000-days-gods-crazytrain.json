@@ -1,0 +1,35 @@
+{
+  "id": "archive:10000-days-gods-crazytrain",
+  "slug": "10000-days-gods-crazytrain",
+  "title": "10000 DAYS",
+  "creator": "GODS_CRAZYTRAIN",
+  "relativeFolder": "Maps/10000-days-gods-crazytrain",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\10000-days-gods-crazytrain\\source\\thumb.jpg",
+  "sourceSha256": "372abb96a7a8ca0e97e9586e6d5b537b92a2c09615633b7d1f5a00c1822fb35c",
+  "cacheFingerprint": "98164a326adc61c3e03c3bc14232a126958711880f0c24ea1f03df8eb92a9a95",
+  "spawn": [
+    -203.28,
+    108.32327836458107,
+    -156.78
+  ],
+  "warmupSpawn": [
+    -71.08987,
+    118.47691833496094,
+    23.26407
+  ],
+  "chunks": 99,
+  "renderTriangles": 146456,
+  "collisionTriangles": 145140,
+  "payloadBytes": 12159184,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\10000-days-gods-crazytrain",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:statmaster-evolving-soulsmight",
+  "slug": "statmaster-evolving-soulsmight",
+  "title": "STATMASTER EVOLVING",
+  "creator": "Soulsmight",
+  "relativeFolder": "Maps/statmaster-evolving-soulsmight",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\statmaster-evolving-soulsmight\\source\\thumb.jpg",
+  "sourceSha256": "795a32676af36833b747ff2a5617dab5e31a3e927535b72a7d6c0043d4ab19f3",
+  "cacheFingerprint": "28d3e23ab6a9abfcc37b9cfad707e2c135179eff7ac6ed97c4b1a67b46f8376f",
+  "spawn": [
+    83.85394672594589,
+    20.46377686886286,
+    40.666259765625
+  ],
+  "warmupSpawn": [
+    63.5899,
+    23.502676476482833,
+    -53.08802
+  ],
+  "chunks": 363,
+  "renderTriangles": 1342569,
+  "collisionTriangles": 1315581,
+  "payloadBytes": 103929145,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\statmaster-evolving-soulsmight",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

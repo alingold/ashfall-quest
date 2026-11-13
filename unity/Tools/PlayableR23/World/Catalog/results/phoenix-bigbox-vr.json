@@ -1,0 +1,35 @@
+{
+  "id": "archive:phoenix-bigbox-vr",
+  "slug": "phoenix-bigbox-vr",
+  "title": "Phoenix",
+  "creator": "BigBox VR",
+  "relativeFolder": "Maps/phoenix-bigbox-vr",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\phoenix-bigbox-vr\\source\\thumb.jpg",
+  "sourceSha256": "915590b61ba40e7b7b5f0ae28b238b79aff3f36314ac788b6f41e501a250b3c5",
+  "cacheFingerprint": "3f85b40b45bc7562b9b6d0654860d717498eb8c39b45e78d8617745e703def80",
+  "spawn": [
+    137.714965820315,
+    24.905842685102993,
+    27.59521484375
+  ],
+  "warmupSpawn": [
+    -1.8026354337971497,
+    37.69397842407226,
+    27.59521484375
+  ],
+  "chunks": 403,
+  "renderTriangles": 1800853,
+  "collisionTriangles": 1800853,
+  "payloadBytes": 138556818,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\phoenix-bigbox-vr",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

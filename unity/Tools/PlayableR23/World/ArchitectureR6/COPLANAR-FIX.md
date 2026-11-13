@@ -1,0 +1,19 @@
+Farm-wall regression fixed in the two live architecture.json payloads. Runtime, shaders, map manifests, geometry/collision bytes and frozen source remain unchanged.
+
+The paired map-iteration0/1 sheets were personally viewed. Classic farm front lost its brick while roof/side and the corrected stair treatments remain valuable. Raw270/17925 has different source triangulation: a source split corner differs by17.5mm along the wall, despite source plane agreement around0.144mm. Raising whole-corner tolerance or painting by material would be incorrect.
+
+The existing oriented5mm whole-face/RGB/normal matcher is preserved. Only unmatched faces reach a fallback with these conditions:
+
+- Same source material, all three uniform original RGBs and oriented normals. Geometric normals must agree within dot0.9999; every source corner must be within5mm of the actual raw triangle's plane.
+- Actual source triangles grouped by last-corner source kind and source welded connected component. Source255 and other kinds participate in overlap rejection.
+- Subtract covering source triangles from a disjoint partition of the raw target polygon. Repeated/overlapping polygons cannot increase union coverage twice. No convex hull, bounding rectangle, radius paint, hole fill or source dilation.
+- Require at least99.99% full-target coverage, a fully covered7.5mm inset core (within numerical epsilon), and no competing-kind/255 union overlap beyond numerical precision. This permits the measured edge-only re-tessellation sliver but rejects interior openings.
+- Work is bounded by spatial cells, candidate count, actual overlapping polygon count and remainder-fragment count; exceeding those bounds leaves rendering unchanged. Gradient-color, curved/smooth-normal and degenerate targets remain on the strict original path.
+
+Actual farm union covers99.9989221%, class1. Added source-covered faces: Classic113 (108class1,5class3); ALFA1954 (929class1,1025class3). All43,799 previously accepted Classic and30,280 ALFA faces retain exactly their class. Source family/material/texture definitions are unchanged.
+
+Checks pass: actual farm270/17925→1; roof270/17478→4; side270/17921→1; stairs266/{3617,3322,3963}→1. Twelve focused polygon/source controls cover duplicate union, real farm, coplanar rectangle, outside rectangle, wrong material/RGB/normal/plane, competing kind/255, central window hole and small interior hole. Complete previous-face preservation and original geometry binding pass for both maps. `transfer-checks.json` records published payload hashes.
+
+Reproduce with installed Python: `check_footprint.py`; `prepare.py --map <slug>` stages only; `check_transfers.py` compares staged selectors with published selectors. `--publish` atomically updates only the selected architecture.json. It no longer rewrites map.json or texture files. No engine/GPU/device/render run here; native visual confirmation remains for Root. Other central maps were not changed.
+
+Root follow-up: the first native render restored17925 but revealed gray17924/17926. Only those two exact source-camera-bound faces now use disjoint source-footprint render fragments, with every uncovered piece left original (kind255). Coverage is99.9975534% and98.9617844%; no whole-face threshold was relaxed. Barycentric subdivision conserves the raw surface's area, winding, plane and original collider arrays. `check_fragments.py` also verifies a genuine small interior hole stays unpainted. Actual same-camera18:55 Unity captures now show the gray diagonal farm patch as brick, with prior roof/side/stair/logo fixes retained; raw images/logs are in `docs/agent-runs/20261104-three-chats/unity/playable-r23/floor-20261105-115513`. Shader/compiler and production exceptions are zero; known Editor.Search startup fault remains qualified. Full map, lighting and new physics parity are not claimed.

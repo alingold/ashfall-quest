@@ -1,0 +1,51 @@
+{
+  "mapId": "range",
+  "chunks": 4,
+  "vertices": 224,
+  "renderTriangles": 432,
+  "collisionMeshTriangles": 0,
+  "nativeBoxDescriptors": 4,
+  "sourceBoxesMatch": true,
+  "sourceRoundedBevel": 0.01,
+  "spawn": [
+    0.0,
+    0.2,
+    -608.0
+  ],
+  "floorSupportHeights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "renderedFloorAtSpawn": true,
+  "standingWallsClear": true,
+  "boundsMin": [
+    -45.15,
+    -0.4,
+    -650.0
+  ],
+  "boundsMax": [
+    45.15,
+    16.0,
+    -550.0
+  ],
+  "unitNormalMaxError": 5.450244544569216e-08,
+  "worstClockwiseAlignment": -0.9376977756010322,
+  "uvAuthored": false,
+  "rawSourceTintRetained": true,
+  "sourceInputs": [
+    {
+      "path": "C:/Users/aling/Documents/Codex/2026-11-03/ashfall-r23/source/scripts/sandbox_map_091.gd",
+      "sha256": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7"
+    },
+    {
+      "path": "C:/Users/aling/Documents/Codex/2026-11-03/ashfall-r23/source/scripts/field_item_models.gd",
+      "sha256": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b"
+    }
+  ],
+  "geometryBytes": 16024,
+  "geometrySha256": "734a1eb2069f003992da9efaee2d7eb6007a87cd27e63efc1247d7900e205da8",
+  "limits": "CPU recipe/payload validation only. No Godot/Unity export, engine, render or device execution. Valley environment is inherited in source and is not ported here."
+}

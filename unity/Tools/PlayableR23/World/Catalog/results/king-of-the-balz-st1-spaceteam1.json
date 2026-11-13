@@ -1,0 +1,35 @@
+{
+  "id": "archive:king-of-the-balz-st1-spaceteam1",
+  "slug": "king-of-the-balz-st1-spaceteam1",
+  "title": "KING OF THE  BALZ [ST1]",
+  "creator": "Spaceteam1",
+  "relativeFolder": "Maps/king-of-the-balz-st1-spaceteam1",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\king-of-the-balz-st1-spaceteam1\\source\\thumb.jpg",
+  "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+  "cacheFingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+  "spawn": [
+    144.22,
+    206.1630908203125,
+    65.92
+  ],
+  "warmupSpawn": [
+    41.46535,
+    206.1630908203125,
+    38.65979
+  ],
+  "chunks": 49,
+  "renderTriangles": 198522,
+  "collisionTriangles": 198208,
+  "payloadBytes": 13426248,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\king-of-the-balz-st1-spaceteam1",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

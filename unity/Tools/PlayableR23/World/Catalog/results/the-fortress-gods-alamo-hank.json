@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-fortress-gods-alamo-hank",
+  "slug": "the-fortress-gods-alamo-hank",
+  "title": "THE FORTRESS",
+  "creator": "GODS_ALAMO_HANK",
+  "relativeFolder": "Maps/the-fortress-gods-alamo-hank",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-fortress-gods-alamo-hank\\source\\thumb.jpg",
+  "sourceSha256": "a3002111c0dcb070d792f0ff6d4f362d402d238dda278c1e891dff6f279b17f7",
+  "cacheFingerprint": "3b36a7afb62d7383634893eadded99b61986012e3a0a481dede3c9579ebb75a7",
+  "spawn": [
+    -31.515789473684208,
+    1.478267664909363,
+    29.04647088301789
+  ],
+  "warmupSpawn": [
+    -31.515789473684208,
+    1.478267664909363,
+    29.04647088301789
+  ],
+  "chunks": 48,
+  "renderTriangles": 133248,
+  "collisionTriangles": 131272,
+  "payloadBytes": 13321028,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-fortress-gods-alamo-hank",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

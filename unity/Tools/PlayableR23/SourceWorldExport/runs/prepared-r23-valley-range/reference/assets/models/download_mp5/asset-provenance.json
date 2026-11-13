@@ -1,0 +1,104 @@
+{
+  "id": "mp5",
+  "file": "mp5_-_codmw2019_pbr.glb",
+  "scale": 1.9331510371905263,
+  "anchor": [
+    0.01646738,
+    0.07317945,
+    0.1
+  ],
+  "target": [
+    0,
+    0.045,
+    -0.04
+  ],
+  "mag": [
+    6
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.62
+  ],
+  "reflex_height": 0.2,
+  "source_bore_end": [
+    0.01646738,
+    0.07317945,
+    0.40002829
+  ],
+  "bore_evidence": "Component11 actual upper barrel, not component13 lower flashlight/accessory forward extent",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.03183393272681053,
+    -0.09646692966853225,
+    0.15331510371905263
+  ],
+  "source": "[local development path]",
+  "source_sha256": "854796b0b77cacb1335b568cd38ccfc0c6be003cb4762d0baf86eb520e3d4802",
+  "output_sha256": "12813cf2426963b9e79b12d08700332aa17d719e5c02efdfe8c85bb9a4986ae9",
+  "asset": {
+    "author": "Wicked_Vixx (https://sketchfab.com/tylukex)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/mp5-codmw2019-pbr-8d32423f6a0f4d1d99ecb0744f40e22f",
+    "title": "MP5 - COD:MW2019 (PBR)"
+  },
+  "magazine_center": [
+    -0.0026430622334967582,
+    -0.1256524374659132,
+    -0.24343604924794743
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 34193,
+  "body_triangles": 32915,
+  "magazine_triangles": 1278,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.05421861260225359,
+    -0.2904948554392906,
+    -0.6679224877231705
+  ],
+  "bounds_max": [
+    0.04257623102398781,
+    0.1571561064325085,
+    0.4497069829841912
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 1,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "normal_uv_alias_fix_082": {
+    "source_primitives": 5,
+    "source_uv0_uv1_exactly_equal": true,
+    "materials": [
+      "mp5_si",
+      "mp5_low"
+    ],
+    "binary_chunk_unchanged": true
+  }
+}

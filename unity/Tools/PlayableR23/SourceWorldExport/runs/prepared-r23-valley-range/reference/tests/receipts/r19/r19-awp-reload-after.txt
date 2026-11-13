@@ -1,0 +1,43 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS right actual catalog AWP loaded3 belongs to support with no bolt claim
+PASS right actual offhand foregrip activates scope without grabbing overlapping bolt
+PASS right loaded offhand movement cannot enable reload
+PASS right supported shot fires and requests only normal spent cycle
+PASS right scope stays latched after shot while support grip is held
+PASS right held foregrip is not silently acquired as bolt after firing
+PASS right moving held support hand during spent cycle retains scope
+PASS right releasing support grip closes scope
+PASS right between-shot BACK retains loaded magazine without thumb input
+PASS right third round enables empty reload automatically
+PASS right empty BACK ejects without thumbstick
+PASS right magazine seats three funded rounds, separately awaiting chamber BACK
+PASS right release and regrip after insertion chambers, then bolt claim disappears
+PASS right dominant thumbstick explicitly enables loaded early reload but does not eject
+PASS right thumb request does not recycle the held foregrip into a bolt grab
+PASS right deliberate early reload first BACK ejects magazine
+PASS right forward zoom direction cannot request reload
+PASS right already-released offhand may grab bolt immediately after thumb request without an extra release
+PASS right disabled input cannot enable loaded reload
+PASS left actual catalog AWP loaded3 belongs to support with no bolt claim
+PASS left actual offhand foregrip activates scope without grabbing overlapping bolt
+PASS left loaded offhand movement cannot enable reload
+PASS left supported shot fires and requests only normal spent cycle
+PASS left scope stays latched after shot while support grip is held
+PASS left held foregrip is not silently acquired as bolt after firing
+PASS left moving held support hand during spent cycle retains scope
+PASS left releasing support grip closes scope
+PASS left between-shot BACK retains loaded magazine without thumb input
+PASS left third round enables empty reload automatically
+PASS left empty BACK ejects without thumbstick
+PASS left magazine seats three funded rounds, separately awaiting chamber BACK
+PASS left release and regrip after insertion chambers, then bolt claim disappears
+PASS left dominant thumbstick explicitly enables loaded early reload but does not eject
+PASS left thumb request does not recycle the held foregrip into a bolt grab
+PASS left deliberate early reload first BACK ejects magazine
+PASS left forward zoom direction cannot request reload
+PASS left already-released offhand may grab bolt immediately after thumb request without an extra release
+PASS left disabled input cannot enable loaded reload
+AWP_R18 checks=38 failures=0 actual_controller_polling=true headset_tested=false
+
+

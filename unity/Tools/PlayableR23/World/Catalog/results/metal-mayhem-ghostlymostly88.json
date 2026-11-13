@@ -1,0 +1,35 @@
+{
+  "id": "archive:metal-mayhem-ghostlymostly88",
+  "slug": "metal-mayhem-ghostlymostly88",
+  "title": "METAL MAYHEM",
+  "creator": "GhostlyMostly88",
+  "relativeFolder": "Maps/metal-mayhem-ghostlymostly88",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\metal-mayhem-ghostlymostly88\\source\\thumb.jpg",
+  "sourceSha256": "38445692ae79198f71b4de70ba7c2a7dedc98bffc4b2f3782bfee2e8dabdb7ca",
+  "cacheFingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+  "spawn": [
+    31.515789473684208,
+    0.15230059146881103,
+    29.04647088301789
+  ],
+  "warmupSpawn": [
+    31.515789473684208,
+    0.15230059146881103,
+    29.04647088301789
+  ],
+  "chunks": 67,
+  "renderTriangles": 183722,
+  "collisionTriangles": 183046,
+  "payloadBytes": 17874110,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\metal-mayhem-ghostlymostly88",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

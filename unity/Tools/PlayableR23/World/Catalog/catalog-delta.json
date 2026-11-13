@@ -1,0 +1,3576 @@
+{
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "maps": [
+    {
+      "id": "archive:10000-days-gods-crazytrain",
+      "slug": "10000-days-gods-crazytrain",
+      "title": "10000 DAYS",
+      "creator": "GODS_CRAZYTRAIN",
+      "relativeFolder": "Maps/10000-days-gods-crazytrain",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\10000-days-gods-crazytrain\\source\\thumb.jpg",
+      "sourceSha256": "372abb96a7a8ca0e97e9586e6d5b537b92a2c09615633b7d1f5a00c1822fb35c",
+      "cacheFingerprint": "98164a326adc61c3e03c3bc14232a126958711880f0c24ea1f03df8eb92a9a95",
+      "spawn": [
+        -203.28,
+        108.32327836458107,
+        -156.78
+      ],
+      "warmupSpawn": [
+        -71.08987,
+        118.47691833496094,
+        23.26407
+      ],
+      "chunks": 99,
+      "renderTriangles": 146456,
+      "collisionTriangles": 145140,
+      "payloadBytes": 12159184,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\10000-days-gods-crazytrain",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:5-levels-zyro",
+      "slug": "5-levels-zyro",
+      "title": "5 LEVELS",
+      "creator": "zyro",
+      "relativeFolder": "Maps/5-levels-zyro",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\5-levels-zyro\\source\\thumb.jpg",
+      "sourceSha256": "2a5f30b621ed16c6e44526a2874e64406e12061ebaf4ad9856cc258772297b54",
+      "cacheFingerprint": "23d33a09bbcb4af61801319eab40801b37b0d73667e08a3c6cf9744618b84a38",
+      "spawn": [
+        21.79088,
+        143.75893127441407,
+        -12.88901
+      ],
+      "warmupSpawn": [
+        29.08,
+        114.5505419921875,
+        -18.19
+      ],
+      "chunks": 96,
+      "renderTriangles": 71981,
+      "collisionTriangles": 49327,
+      "payloadBytes": 9029897,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\5-levels-zyro",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:aaa-tree-house-oldschoolshyit",
+      "slug": "aaa-tree-house-oldschoolshyit",
+      "title": "AAA TREE HOUSE",
+      "creator": "Oldschoolshyit",
+      "relativeFolder": "Maps/aaa-tree-house-oldschoolshyit",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aaa-tree-house-oldschoolshyit\\source\\thumb.jpg",
+      "sourceSha256": "9eb49f3937a7ed23eec2807eb3d1f760339a2eb6e6d180952e80cc823094671c",
+      "cacheFingerprint": "ebf9e9d7ce7b4b321f3aa25f2262fbe5b6097e71d8d17bbcd11195b7f2519431",
+      "spawn": [
+        8.75,
+        95.49370300292969,
+        95.48
+      ],
+      "warmupSpawn": [
+        5.59,
+        145.33749877929688,
+        17.14
+      ],
+      "chunks": 262,
+      "renderTriangles": 284457,
+      "collisionTriangles": 282943,
+      "payloadBytes": 27281938,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aaa-tree-house-oldschoolshyit",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:aethelgard-solstis-kiki-80-bbb",
+      "slug": "aethelgard-solstis-kiki-80-bbb",
+      "title": "AETHELGARD SOLSTIS",
+      "creator": "Kiki.80_BBB",
+      "relativeFolder": "Maps/aethelgard-solstis-kiki-80-bbb",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aethelgard-solstis-kiki-80-bbb\\source\\thumb.jpg",
+      "sourceSha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+      "cacheFingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+      "spawn": [
+        29.35,
+        230.11256174699562,
+        -245.01
+      ],
+      "warmupSpawn": [
+        -6.8156,
+        142.0999041748047,
+        47.49743
+      ],
+      "chunks": 126,
+      "renderTriangles": 215205,
+      "collisionTriangles": 197487,
+      "payloadBytes": 18100145,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aethelgard-solstis-kiki-80-bbb",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:afterlife-gods-alamo-hank",
+      "slug": "afterlife-gods-alamo-hank",
+      "title": "AFTERLIFE",
+      "creator": "GODS_ALAMO_HANK",
+      "relativeFolder": "Maps/afterlife-gods-alamo-hank",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\afterlife-gods-alamo-hank\\source\\thumb.jpg",
+      "sourceSha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+      "cacheFingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+      "spawn": [
+        233.71,
+        123.26859008789063,
+        -332.78
+      ],
+      "warmupSpawn": [
+        -507.55655,
+        417.88315586695666,
+        -316.42882
+      ],
+      "chunks": 310,
+      "renderTriangles": 242538,
+      "collisionTriangles": 242438,
+      "payloadBytes": 22075330,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\afterlife-gods-alamo-hank",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:aftermath-light-vs-dark-gods-badbar",
+      "slug": "aftermath-light-vs-dark-gods-badbar",
+      "title": "AFTERMATH-LIGHT VS DARK",
+      "creator": "GODS_BADBAR",
+      "relativeFolder": "Maps/aftermath-light-vs-dark-gods-badbar",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aftermath-light-vs-dark-gods-badbar\\source\\thumb.jpg",
+      "sourceSha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+      "cacheFingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+      "spawn": [
+        -145.15,
+        99.03275970309532,
+        -1.41
+      ],
+      "warmupSpawn": [
+        -45.71216,
+        218.62,
+        -4.13939
+      ],
+      "chunks": 190,
+      "renderTriangles": 251629,
+      "collisionTriangles": 243769,
+      "payloadBytes": 23742658,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aftermath-light-vs-dark-gods-badbar",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:asylum-gods-pitdevil",
+      "slug": "asylum-gods-pitdevil",
+      "title": "ASYLUM",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/asylum-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\asylum-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "02b9923d1052bccee37ccf60dcf930ee185cbd31ecbfc544ef40ab8c4ff4725e",
+      "cacheFingerprint": "89575a87ea632469ba8601eb1c48c106f94f9c156f07ba83fa4321de720e0fc0",
+      "spawn": [
+        -60.91,
+        40.5833674621582,
+        -196.41
+      ],
+      "warmupSpawn": [
+        -29.09,
+        40.5833674621582,
+        -135.09
+      ],
+      "chunks": 132,
+      "renderTriangles": 303842,
+      "collisionTriangles": 303858,
+      "payloadBytes": 22998407,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\asylum-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:atrocious-gods-trashpandakiller",
+      "slug": "atrocious-gods-trashpandakiller",
+      "title": "ATROCIOUS",
+      "creator": "GODS_TrashPandaKiller",
+      "relativeFolder": "Maps/atrocious-gods-trashpandakiller",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\atrocious-gods-trashpandakiller\\source\\thumb.jpg",
+      "sourceSha256": "53efdbbacc8a60a0e1644ce16ab9d6e72adc9f7d7512fbb92a5c1683ab7e352e",
+      "cacheFingerprint": "23d58ed183b2bbde48b1747a04c59db564b823143fc0059468852db2906ac89d",
+      "spawn": [
+        -35.05,
+        116.62,
+        -88.44
+      ],
+      "warmupSpawn": [
+        114.91,
+        140.7239018917301,
+        53.85
+      ],
+      "chunks": 130,
+      "renderTriangles": 196942,
+      "collisionTriangles": 194246,
+      "payloadBytes": 18201397,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\atrocious-gods-trashpandakiller",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:badlands-gods-pitdevil",
+      "slug": "badlands-gods-pitdevil",
+      "title": "BADLANDS",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/badlands-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\badlands-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "86fc76c858cea8e444aac14fb1cda3e384c6af634f2546daad5287cc3e973254",
+      "cacheFingerprint": "492d43301e0d1111d3617c5e1b29fc5a910516398ff9f8ea095124bcf7d4e295",
+      "spawn": [
+        7.53,
+        75.65678894042969,
+        28.81
+      ],
+      "warmupSpawn": [
+        23.08802,
+        75.65678894042969,
+        18.35877
+      ],
+      "chunks": 219,
+      "renderTriangles": 270024,
+      "collisionTriangles": 268140,
+      "payloadBytes": 24691596,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\badlands-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:bamboo-gods-pitdevil",
+      "slug": "bamboo-gods-pitdevil",
+      "title": "BAMBOO",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/bamboo-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bamboo-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "e11d43b8721ff9e31328837b62b46f2786f3648a4590c6dbbede4d87ef3345e0",
+      "cacheFingerprint": "5445e4c336ca42fa646e36801c6239b1d1e8d91ca68edf2db48e6a28b484c3bf",
+      "spawn": [
+        183.58,
+        58.56042206373688,
+        -182.18
+      ],
+      "warmupSpawn": [
+        -82.03922,
+        280.16941146014386,
+        -484.91138
+      ],
+      "chunks": 342,
+      "renderTriangles": 515677,
+      "collisionTriangles": 512235,
+      "payloadBytes": 42855759,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bamboo-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:banana-land-gods-pitdevil",
+      "slug": "banana-land-gods-pitdevil",
+      "title": "BANANA LAND",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/banana-land-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\banana-land-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "8eff4d8862387447fd6c0163d8c18d19b5f67bab361a9f16c40f2597e9d58e8a",
+      "cacheFingerprint": "256aa11ad7fd5f0a599079f323f3475c8d1014a0844d9338742968f0563d0b54",
+      "spawn": [
+        141.72,
+        58.93709482421287,
+        -245.0
+      ],
+      "warmupSpawn": [
+        21.41255,
+        81.62244903564454,
+        -0.19734
+      ],
+      "chunks": 648,
+      "renderTriangles": 952151,
+      "collisionTriangles": 933711,
+      "payloadBytes": 83340157,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\banana-land-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:beast-mode-gods-pitdevil",
+      "slug": "beast-mode-gods-pitdevil",
+      "title": "BEAST MODE",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/beast-mode-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\beast-mode-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "8a6bf7afcc48cb1488f441b1680bc5f82e847512c6f23f475b0f2313b0e2e587",
+      "cacheFingerprint": "e1259d0fa01a9cce1e2c0df3f903e2b5b56d05e27abd1eb99b0dd855501fd875",
+      "spawn": [
+        251.18,
+        40.87360383053309,
+        -9.91
+      ],
+      "warmupSpawn": [
+        14.59782,
+        268.63629638671875,
+        -351.64124
+      ],
+      "chunks": 463,
+      "renderTriangles": 634614,
+      "collisionTriangles": 625766,
+      "payloadBytes": 55252237,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\beast-mode-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:bi-polar-gods-trashpandakiller",
+      "slug": "bi-polar-gods-trashpandakiller",
+      "title": "BI-POLAR",
+      "creator": "GODS_TrashPandaKiller",
+      "relativeFolder": "Maps/bi-polar-gods-trashpandakiller",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bi-polar-gods-trashpandakiller\\source\\thumb.jpg",
+      "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+      "cacheFingerprint": "ae27c5ff40fb46ad919ddba0f50fdc4bcc8bd400093a027130eab52ced53a6d4",
+      "spawn": [
+        -142.64,
+        54.11994659423828,
+        182.62
+      ],
+      "warmupSpawn": [
+        234.18758,
+        190.11207212257224,
+        36.08798
+      ],
+      "chunks": 202,
+      "renderTriangles": 235320,
+      "collisionTriangles": 230140,
+      "payloadBytes": 21495826,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bi-polar-gods-trashpandakiller",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:bigbabyjesuz-classic-kiki-80",
+      "slug": "bigbabyjesuz-classic-kiki-80",
+      "title": "BIGBABYJESUZ CLASSIC",
+      "creator": "Kiki.80",
+      "relativeFolder": "Maps/bigbabyjesuz-classic-kiki-80",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bigbabyjesuz-classic-kiki-80\\source\\thumb.jpg",
+      "sourceSha256": "34522d0f636f2ea40bb234070353bec785045ef1c934918dbdab41d00f11bfa3",
+      "cacheFingerprint": "274a6630b96fad5e7ae1ff07dd753f117d7858a95656aedfc0a34effa2874570",
+      "spawn": [
+        -482.70734,
+        48.85100662231445,
+        -102.55428
+      ],
+      "warmupSpawn": [
+        42.32505,
+        23.008551167775728,
+        -44.31575
+      ],
+      "chunks": 289,
+      "renderTriangles": 594737,
+      "collisionTriangles": 551160,
+      "payloadBytes": 59293737,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bigbabyjesuz-classic-kiki-80",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:blue-gods-quietowl",
+      "slug": "blue-gods-quietowl",
+      "title": "BLUE",
+      "creator": "GODS_Quietowl",
+      "relativeFolder": "Maps/blue-gods-quietowl",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\blue-gods-quietowl\\source\\thumb.jpg",
+      "sourceSha256": "be630548066e0469afcac0edd2a58b329bd788c5030f76530106438eafdd8d9b",
+      "cacheFingerprint": "c7369cb759c3b4746cbbf1f744634e8dd32782e15f7913ab0766abd624a328e7",
+      "spawn": [
+        29.64,
+        43.03510282597625,
+        113.99
+      ],
+      "warmupSpawn": [
+        -12.90294,
+        223.720830078125,
+        194.32519
+      ],
+      "chunks": 199,
+      "renderTriangles": 116503,
+      "collisionTriangles": 111511,
+      "payloadBytes": 11344012,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\blue-gods-quietowl",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:candle-magic-gods-goodwitch",
+      "slug": "candle-magic-gods-goodwitch",
+      "title": "CANDLE MAGIC",
+      "creator": "GODS_GoodWitch",
+      "relativeFolder": "Maps/candle-magic-gods-goodwitch",
+      "preview": "preview.png",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\candle-magic-gods-goodwitch\\converted\\preview.png",
+      "sourceSha256": "6fe3c4ef99a28bec532fff0711ca7981838b6c5961541a1152bd2794bf2577ab",
+      "cacheFingerprint": "b7874a2060c7f7ec78eb6e9f0527d2f2b1d2033aa35c7d22535eb94149d360d6",
+      "spawn": [
+        -149.32,
+        280.57156860351563,
+        200.66
+      ],
+      "warmupSpawn": [
+        -139.72048,
+        311.8078662109375,
+        201.30052
+      ],
+      "chunks": 186,
+      "renderTriangles": 322997,
+      "collisionTriangles": 238079,
+      "payloadBytes": 26284357,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\candle-magic-gods-goodwitch",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:caskades-gods-alamo-hank",
+      "slug": "caskades-gods-alamo-hank",
+      "title": "CASKADES",
+      "creator": "GODS_ALAMO_HANK",
+      "relativeFolder": "Maps/caskades-gods-alamo-hank",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\caskades-gods-alamo-hank\\source\\thumb.jpg",
+      "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+      "cacheFingerprint": "e38d1bae62dc208404a86fb20c03939f42e508a514d5cf3667b7ae9c18f3df6c",
+      "spawn": [
+        -2.325439453124943,
+        24.60293361136419,
+        -134.71666404322582
+      ],
+      "warmupSpawn": [
+        -2.325439453124943,
+        46.294921032125636,
+        22.98860393323389
+      ],
+      "chunks": 170,
+      "renderTriangles": 184381,
+      "collisionTriangles": 180202,
+      "payloadBytes": 14190652,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\caskades-gods-alamo-hank",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:chaotic-gods-alamo-hank",
+      "slug": "chaotic-gods-alamo-hank",
+      "title": "CHAOTIC",
+      "creator": "GODS_ALAMO_HANK",
+      "relativeFolder": "Maps/chaotic-gods-alamo-hank",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chaotic-gods-alamo-hank\\source\\thumb.jpg",
+      "sourceSha256": "2292992c46d6eb1d4b33ea7a5d8bd7766bd874583b186d622c7685827055577c",
+      "cacheFingerprint": "8eca9e377d9f6347bc1556109765203ad7bf1e690db30256c813196218c6eba5",
+      "spawn": [
+        -252.91183,
+        44.62,
+        -218.65881
+      ],
+      "warmupSpawn": [
+        -507.55655,
+        417.88315586695666,
+        -316.42882
+      ],
+      "chunks": 340,
+      "renderTriangles": 353122,
+      "collisionTriangles": 314904,
+      "payloadBytes": 33146007,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chaotic-gods-alamo-hank",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:chem-x-template",
+      "slug": "chem-x-template",
+      "title": "CHEM X",
+      "creator": "TEMPLATE",
+      "relativeFolder": "Maps/chem-x-template",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chem-x-template\\source\\thumb.jpg",
+      "sourceSha256": "83c2cd3b982ab4c1ca66cf6e4155c6d12b8ca18ba6a246515845592b97fa3baf",
+      "cacheFingerprint": "048473a1616d5d72d3df48bdf4333dd36837dc2bccb81e50a8ac39cbb3ccc671",
+      "spawn": [
+        6.66,
+        0.12,
+        37.14
+      ],
+      "warmupSpawn": [
+        0.58991,
+        0.12,
+        18.58803
+      ],
+      "chunks": 245,
+      "renderTriangles": 382878,
+      "collisionTriangles": 379024,
+      "payloadBytes": 30941369,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chem-x-template",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:chess-ifun",
+      "slug": "chess-ifun",
+      "title": "CHESS",
+      "creator": "Ifun",
+      "relativeFolder": "Maps/chess-ifun",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chess-ifun\\source\\thumb.jpg",
+      "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+      "cacheFingerprint": "b0f1ef9b49f03801ae2bd63013a32f7ac924a0395d3fd00ac9324a8f5d3afd77",
+      "spawn": [
+        -56.46,
+        47.57154733417191,
+        89.25
+      ],
+      "warmupSpawn": [
+        113.18743,
+        136.2500506591797,
+        -9.01824
+      ],
+      "chunks": 53,
+      "renderTriangles": 109250,
+      "collisionTriangles": 108056,
+      "payloadBytes": 8550403,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chess-ifun",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:chill-gods-pitdevil",
+      "slug": "chill-gods-pitdevil",
+      "title": "CHILL",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/chill-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chill-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "51357e7ae38620f0cf7dcbc035f7e3ca9001bac471f76dd9b0ca19a124406945",
+      "cacheFingerprint": "e7a179a93b7a79ee9629ca8f21812960109f57abfe55980bc7b6e5e4fb7a960f",
+      "spawn": [
+        -40.71101202713817,
+        63.12845249571768,
+        57.35290591591263
+      ],
+      "warmupSpawn": [
+        53.419263980263224,
+        63.1285752514033,
+        4.784484863280966
+      ],
+      "chunks": 273,
+      "renderTriangles": 237930,
+      "collisionTriangles": 237634,
+      "payloadBytes": 20642492,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chill-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:classic-bw-187norvis",
+      "slug": "classic-bw-187norvis",
+      "title": "CLASSIC",
+      "creator": "BW_187Norvis",
+      "relativeFolder": "Maps/classic-bw-187norvis",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\classic-bw-187norvis\\source\\thumb.jpg",
+      "sourceSha256": "615df34fe80e4343d49aaf2277546d87f89d426d28975607e6fe9101a6166311",
+      "cacheFingerprint": "e6474f5307a45ff2584e11417904ef48cfc9c506e2741d1eedde620074b2eb02",
+      "spawn": [
+        -46.41,
+        20.619994277954103,
+        -0.59
+      ],
+      "warmupSpawn": [
+        42.41198,
+        22.58135424641908,
+        -40.41009
+      ],
+      "chunks": 342,
+      "renderTriangles": 591530,
+      "collisionTriangles": 553762,
+      "payloadBytes": 58635460,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bw-187norvis",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:cold-hearted-gods-pitdevil",
+      "slug": "cold-hearted-gods-pitdevil",
+      "title": "COLD HEARTED",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/cold-hearted-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\cold-hearted-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "de3fab4119f34c9d9966c2bfeb65c79a0f63cf028e18e807b567b6743bdf15ec",
+      "cacheFingerprint": "b9ecbbeef4ea11f6ed0dbac659b93403e3a2fc3e84bda87a96395ce9940075ff",
+      "spawn": [
+        272.14,
+        40.78906039683826,
+        90.09
+      ],
+      "warmupSpawn": [
+        -74.58802,
+        294.0218249511719,
+        439.14124
+      ],
+      "chunks": 630,
+      "renderTriangles": 628337,
+      "collisionTriangles": 613221,
+      "payloadBytes": 56898636,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\cold-hearted-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:cont-cl-er-ssd-cjcoops",
+      "slug": "cont-cl-er-ssd-cjcoops",
+      "title": "CONT-CL ER-SSD",
+      "creator": "CJCoops",
+      "relativeFolder": "Maps/cont-cl-er-ssd-cjcoops",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\cont-cl-er-ssd-cjcoops\\source\\thumb.jpg",
+      "sourceSha256": "7b39c34dbaa5adbe0f5944c13f7c3b7e9c2c7eb5c7b056a442f86260252d8fd9",
+      "cacheFingerprint": "bd0817ea4aab5fe77c2bb2b24993e6e631364c9f8a56cf59530d8c6b28364d8d",
+      "spawn": [
+        -144.49171,
+        235.25388061523438,
+        -21.80762
+      ],
+      "warmupSpawn": [
+        60.41198,
+        22.476044036190032,
+        -41.08991
+      ],
+      "chunks": 366,
+      "renderTriangles": 610511,
+      "collisionTriangles": 573594,
+      "payloadBytes": 60863590,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\cont-cl-er-ssd-cjcoops",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:cont-cl-ssd-cjcoops",
+      "slug": "cont-cl-ssd-cjcoops",
+      "title": "CONT-CL SSD",
+      "creator": "CJCoops",
+      "relativeFolder": "Maps/cont-cl-ssd-cjcoops",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\cont-cl-ssd-cjcoops\\source\\thumb.jpg",
+      "sourceSha256": "03c7b9f3dd6a5f963c0ca6634a3892c68da1f285724bc52b07e62e5e56cc2e9d",
+      "cacheFingerprint": "b342c347ba6a2d24cad88ab994241ce305d9f4413c42fa5468f19c89b3278496",
+      "spawn": [
+        -521.7804,
+        56.680401916503904,
+        -317.01163
+      ],
+      "warmupSpawn": [
+        60.41198,
+        22.476044036190032,
+        -41.08991
+      ],
+      "chunks": 399,
+      "renderTriangles": 653724,
+      "collisionTriangles": 598278,
+      "payloadBytes": 65510004,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\cont-cl-ssd-cjcoops",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:dark-carnival-gods-pitdevil",
+      "slug": "dark-carnival-gods-pitdevil",
+      "title": "DARK CARNIVAL",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/dark-carnival-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\dark-carnival-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "64c020e6289085645e3586af7c38e20320b132cab402dfa9b2f5d7952688fe4f",
+      "cacheFingerprint": "f870798f90064946289d55f8bebcd0de5eb268221518c37c3ebeeae631693b1e",
+      "spawn": [
+        107.91,
+        118.0614291381836,
+        368.41
+      ],
+      "warmupSpawn": [
+        -132.18622,
+        294.29169189453125,
+        -361.5376
+      ],
+      "chunks": 628,
+      "renderTriangles": 978030,
+      "collisionTriangles": 969214,
+      "payloadBytes": 86358450,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\dark-carnival-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:deep-space-5-stand-alone-pro-yt",
+      "slug": "deep-space-5-stand-alone-pro-yt",
+      "title": "DEEP SPACE 5",
+      "creator": "Stand.alone.pro.YT",
+      "relativeFolder": "Maps/deep-space-5-stand-alone-pro-yt",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\thumb.jpg",
+      "sourceSha256": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+      "cacheFingerprint": "fe51b0649cf0d7fe0e61e37a7fdb9b3f54547f0b0e35c85199dbd73734444299",
+      "spawn": [
+        21.91,
+        2.064776614531635,
+        -26.65
+      ],
+      "warmupSpawn": [
+        -91.41,
+        75.12000762939454,
+        55.8
+      ],
+      "chunks": 159,
+      "renderTriangles": 229005,
+      "collisionTriangles": 229021,
+      "payloadBytes": 21759631,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\deep-space-5-stand-alone-pro-yt",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:ereptile-disfunction-gods-pitdevil",
+      "slug": "ereptile-disfunction-gods-pitdevil",
+      "title": "EREPTILE DISFUNCTION",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/ereptile-disfunction-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ereptile-disfunction-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "a238f905d290ce71b6396810315eebbff95cabf1c4bb2cb04179c33880f6665e",
+      "cacheFingerprint": "0e92a3c1e7b87fad303a201229ece2d3f858c927c182d753c607f871e64cc10e",
+      "spawn": [
+        -113.91,
+        58.10649165383531,
+        -20.21
+      ],
+      "warmupSpawn": [
+        -96.91,
+        83.69871385930003,
+        152.14
+      ],
+      "chunks": 142,
+      "renderTriangles": 202900,
+      "collisionTriangles": 202412,
+      "payloadBytes": 16958515,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ereptile-disfunction-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:evolving-map-bigbox",
+      "slug": "evolving-map-bigbox",
+      "title": "EVOLVING MAP",
+      "creator": "BIGBOX",
+      "relativeFolder": "Maps/evolving-map-bigbox",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\evolving-map-bigbox\\source\\thumb.jpg",
+      "sourceSha256": "f5b9c42f6f00a6ce7c3f37efe9929fe6c7d11984561920eb62105e8cad082903",
+      "cacheFingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+      "spawn": [
+        83.85394672594589,
+        20.46377686886286,
+        40.666259765625
+      ],
+      "warmupSpawn": [
+        -21.864807128906023,
+        26.62,
+        40.666259765625
+      ],
+      "chunks": 286,
+      "renderTriangles": 1319789,
+      "collisionTriangles": 1296529,
+      "payloadBytes": 100954553,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\evolving-map-bigbox",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:fear-thy-neighbor-oitc-steve-qc",
+      "slug": "fear-thy-neighbor-oitc-steve-qc",
+      "title": "FEAR THY NEIGHBOR [OITC]",
+      "creator": "Steve_Qc",
+      "relativeFolder": "Maps/fear-thy-neighbor-oitc-steve-qc",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\fear-thy-neighbor-oitc-steve-qc\\source\\thumb.jpg",
+      "sourceSha256": "8e7cb8a22dcb0557951d9b6560e15b8958d28de299804b64a840a9546fd218a3",
+      "cacheFingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+      "spawn": [
+        52.09,
+        0.25556849315077446,
+        -40.1
+      ],
+      "warmupSpawn": [
+        79.65,
+        7.004540557861328,
+        -2.48
+      ],
+      "chunks": 159,
+      "renderTriangles": 189968,
+      "collisionTriangles": 182520,
+      "payloadBytes": 19820488,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\fear-thy-neighbor-oitc-steve-qc",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:flash-gods-pitdevil",
+      "slug": "flash-gods-pitdevil",
+      "title": "FLASH",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/flash-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\flash-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+      "cacheFingerprint": "9698c43334aa81f0aa5ef826cbcd418ffc11f6735c90dfa653c2d2b2fd5b9fd9",
+      "spawn": [
+        6.29,
+        77.86032417671656,
+        155.41
+      ],
+      "warmupSpawn": [
+        25.49827,
+        209.41042053222657,
+        83.53218
+      ],
+      "chunks": 152,
+      "renderTriangles": 217188,
+      "collisionTriangles": 214976,
+      "payloadBytes": 19377112,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\flash-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:fortress-gods-putangfreyja",
+      "slug": "fortress-gods-putangfreyja",
+      "title": "FORTRESS",
+      "creator": "GODS_PutangFreyja",
+      "relativeFolder": "Maps/fortress-gods-putangfreyja",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\fortress-gods-putangfreyja\\source\\thumb.jpg",
+      "sourceSha256": "ed19b10297661fa13755a00b1c67af3c6013d2d42913603dc91e52265fa911a9",
+      "cacheFingerprint": "1d3657a77fe8b7653bbd9dda027645d79e95f84965b3a567123202be16130238",
+      "spawn": [
+        226.58,
+        112.3540087890625,
+        -52.58
+      ],
+      "warmupSpawn": [
+        13.01198,
+        133.62,
+        -14.75876
+      ],
+      "chunks": 256,
+      "renderTriangles": 175355,
+      "collisionTriangles": 173825,
+      "payloadBytes": 15273345,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\fortress-gods-putangfreyja",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:g-spot-gods-pitdevil",
+      "slug": "g-spot-gods-pitdevil",
+      "title": "G SPOT",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/g-spot-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\g-spot-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "6946df672418a57c92200c5bb3b95d590fc1f78ae1a50a5eb1ee94cf0ca9fc23",
+      "cacheFingerprint": "f10467954a2c2281d6eee1745eb573e1b471428a52201bcf4377a54d5ee46a7a",
+      "spawn": [
+        -178.14,
+        29.620020227567966,
+        -174.09
+      ],
+      "warmupSpawn": [
+        -178.14,
+        29.620020227567966,
+        -174.09
+      ],
+      "chunks": 181,
+      "renderTriangles": 215130,
+      "collisionTriangles": 214224,
+      "payloadBytes": 19721794,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\g-spot-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:g0dtham-gods-poplightning",
+      "slug": "g0dtham-gods-poplightning",
+      "title": "G0DTHAM",
+      "creator": "GODS_POPLIGHTNING",
+      "relativeFolder": "Maps/g0dtham-gods-poplightning",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\g0dtham-gods-poplightning\\source\\thumb.jpg",
+      "sourceSha256": "46a3e69b394c4356f2fbb3e3bca9367f769d24c31b96cb9fa979098ce5eefd81",
+      "cacheFingerprint": "3f72c46ce6661473e869c654c0dbdcb71d99ff952dde80fe5775a0e9e847b2ed",
+      "spawn": [
+        175.76,
+        21.668849138698434,
+        -0.09
+      ],
+      "warmupSpawn": [
+        11.36557,
+        40.619984741210935,
+        -3.08991
+      ],
+      "chunks": 222,
+      "renderTriangles": 379652,
+      "collisionTriangles": 374224,
+      "payloadBytes": 32163282,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\g0dtham-gods-poplightning",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:ga-fenix-ga-hikesa",
+      "slug": "ga-fenix-ga-hikesa",
+      "title": "GA FENIX",
+      "creator": "GA_HIKESA",
+      "relativeFolder": "Maps/ga-fenix-ga-hikesa",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ga-fenix-ga-hikesa\\source\\thumb.jpg",
+      "sourceSha256": "255ec785c959697afaf93155f3fdf308774619b7c23c9fe799d5610144d00186",
+      "cacheFingerprint": "3915a3096049812ec9c0ab4bca3ee1b9f6a3cd79922496d00a0e21b5ea8557ce",
+      "spawn": [
+        -412.91199,
+        47.48070827274879,
+        -88.58991
+      ],
+      "warmupSpawn": [
+        -311.31763,
+        51.65039169311523,
+        -3.98004
+      ],
+      "chunks": 488,
+      "renderTriangles": 2201504,
+      "collisionTriangles": 2186158,
+      "payloadBytes": 169000922,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ga-fenix-ga-hikesa",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:ghost-ship-wintersoldier-egy",
+      "slug": "ghost-ship-wintersoldier-egy",
+      "title": "GHOST SHIP",
+      "creator": "WinterSoldier_EGY",
+      "relativeFolder": "Maps/ghost-ship-wintersoldier-egy",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ghost-ship-wintersoldier-egy\\source\\thumb.jpg",
+      "sourceSha256": "523184bf0cdd424ee7f88e9e159c86c2cd68c1b3dcba3b2f0451692ce1630290",
+      "cacheFingerprint": "2a2c03586d5f6340db12da7f166810d9b3565ea9e91cf8d9a40968caaf09dbe6",
+      "spawn": [
+        9.09,
+        65.61913510748255,
+        -76.86
+      ],
+      "warmupSpawn": [
+        -64.08,
+        91.26781695581025,
+        -275.12
+      ],
+      "chunks": 103,
+      "renderTriangles": 280106,
+      "collisionTriangles": 278507,
+      "payloadBytes": 21835494,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ghost-ship-wintersoldier-egy",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:gun-game-star-wars-by-sam-sam",
+      "slug": "gun-game-star-wars-by-sam-sam",
+      "title": "GUN GAME STAR WARS BY SAM",
+      "creator": "Sam",
+      "relativeFolder": "Maps/gun-game-star-wars-by-sam-sam",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\gun-game-star-wars-by-sam-sam\\source\\thumb.jpg",
+      "sourceSha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+      "cacheFingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+      "spawn": [
+        -6.23,
+        211.12,
+        30.92
+      ],
+      "warmupSpawn": [
+        -63.7209,
+        207.11998474121094,
+        28.22089
+      ],
+      "chunks": 170,
+      "renderTriangles": 366944,
+      "collisionTriangles": 362820,
+      "payloadBytes": 34759873,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\gun-game-star-wars-by-sam-sam",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:halloween-5-level-x-ifun-ifun",
+      "slug": "halloween-5-level-x-ifun-ifun",
+      "title": "HALLOWEEN 5 LEVEL X IFUN",
+      "creator": "Ifun",
+      "relativeFolder": "Maps/halloween-5-level-x-ifun-ifun",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\halloween-5-level-x-ifun-ifun\\source\\thumb.jpg",
+      "sourceSha256": "b1753b4b495c7e21fc2c12fcff66e3743dac0ef6a43a177bb39f3350a4bfa1a4",
+      "cacheFingerprint": "7eaa7fb88d8c977f7f403ca83580e2a167fff8154a3840868a87e75508d243ce",
+      "spawn": [
+        66.6,
+        40.239682312011716,
+        25.55
+      ],
+      "warmupSpawn": [
+        27.98791,
+        169.91989624023438,
+        24.73723
+      ],
+      "chunks": 243,
+      "renderTriangles": 297660,
+      "collisionTriangles": 296522,
+      "payloadBytes": 26612366,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\halloween-5-level-x-ifun-ifun",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:heavens-arena-big-battles-swa-wildbarnacle",
+      "slug": "heavens-arena-big-battles-swa-wildbarnacle",
+      "title": "HEAVENS ARENA BIG BATTLES",
+      "creator": "SWA_wildbarnacle",
+      "relativeFolder": "Maps/heavens-arena-big-battles-swa-wildbarnacle",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\heavens-arena-big-battles-swa-wildbarnacle\\source\\thumb.jpg",
+      "sourceSha256": "2f3297adc92631cc9c2b24e1e54e3a8ff3816970a10c56b03b40b5813221c0a6",
+      "cacheFingerprint": "608b455a642c311b0df8fc90651c7318cecab2f2e682db3ba6b102f64f2bf542",
+      "spawn": [
+        11.75,
+        68.72979840803735,
+        -9.41
+      ],
+      "warmupSpawn": [
+        38.02,
+        220.60576620529517,
+        -22.0
+      ],
+      "chunks": 307,
+      "renderTriangles": 362443,
+      "collisionTriangles": 360215,
+      "payloadBytes": 33552276,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\heavens-arena-big-battles-swa-wildbarnacle",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:high-ground-gods-thor",
+      "slug": "high-ground-gods-thor",
+      "title": "HIGH GROUND",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/high-ground-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\high-ground-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "b857dca932b9e5585eb456b73e73134d4f051c8c4a29d89d35e0eaa41ad9ba0e",
+      "cacheFingerprint": "dc4fdeaac8818fe1e0ebcffff8313d15aa1399298417afd23730855b55278ee3",
+      "spawn": [
+        4.41,
+        102.15075062106173,
+        143.41
+      ],
+      "warmupSpawn": [
+        -17.64123,
+        136.33316528320313,
+        -19.08802
+      ],
+      "chunks": 127,
+      "renderTriangles": 225595,
+      "collisionTriangles": 222647,
+      "payloadBytes": 20482467,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\high-ground-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:hildrs-echo-gods-pitdevil",
+      "slug": "hildrs-echo-gods-pitdevil",
+      "title": "HILDRS ECHO",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/hildrs-echo-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hildrs-echo-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "72e73d43d64d6672d7dbd1a040194f55ace61d6a88b4ea4c364d8c1c11f014aa",
+      "cacheFingerprint": "2e13b3ccb616b9c2d0eb9a4db5654c8c27c4d9fec7b340aebdebc1d6c425445a",
+      "spawn": [
+        251.18,
+        40.87360383053309,
+        -9.91
+      ],
+      "warmupSpawn": [
+        -177.68,
+        45.873734588623044,
+        -19.71
+      ],
+      "chunks": 193,
+      "renderTriangles": 203772,
+      "collisionTriangles": 202188,
+      "payloadBytes": 18113095,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hildrs-echo-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:holy-ground-gods-pitdevil",
+      "slug": "holy-ground-gods-pitdevil",
+      "title": "HOLY GROUND",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/holy-ground-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\holy-ground-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "d8ae9becfeec2c266618eb668984743f2f4a5f1166e3620076d72224dd9743d7",
+      "cacheFingerprint": "41b7dc529fe9934dd9afe03c21a9d2120891ad0a9e1f81cbf69e0fffd6e48152",
+      "spawn": [
+        0.54,
+        122.70571909555858,
+        -275.64
+      ],
+      "warmupSpawn": [
+        162.73582,
+        146.789894220213,
+        55.58506
+      ],
+      "chunks": 215,
+      "renderTriangles": 229504,
+      "collisionTriangles": 227320,
+      "payloadBytes": 19685274,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\holy-ground-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:home-town-sir-dave-sir-dave",
+      "slug": "home-town-sir-dave-sir-dave",
+      "title": "HOME TOWN SIR DAVE",
+      "creator": "SIR-DAVE",
+      "relativeFolder": "Maps/home-town-sir-dave-sir-dave",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\home-town-sir-dave-sir-dave\\source\\thumb.jpg",
+      "sourceSha256": "a4c93cd39a87134623aae864ee41c926e970334f85d118b90ab860687feb2b27",
+      "cacheFingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+      "spawn": [
+        -84.1,
+        41.87492477416992,
+        32.64
+      ],
+      "warmupSpawn": [
+        -53.2,
+        42.49175369262695,
+        -42.87
+      ],
+      "chunks": 277,
+      "renderTriangles": 282173,
+      "collisionTriangles": 277173,
+      "payloadBytes": 32137166,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\home-town-sir-dave-sir-dave",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:hunted-gods-pitdevil",
+      "slug": "hunted-gods-pitdevil",
+      "title": "HUNTED",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/hunted-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hunted-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "69b8ac120f6f0f2e72bcbcd40b705bb9bb9a7c751d029f88cc5c0932c47910b7",
+      "cacheFingerprint": "cbcf63ec63c41506ea0a9de51c2f0abf272f003c3de60691e2c1aadeefefceda",
+      "spawn": [
+        -184.41,
+        77.83734298059879,
+        188.78
+      ],
+      "warmupSpawn": [
+        23.83265,
+        58.86283624004921,
+        -72.25307
+      ],
+      "chunks": 198,
+      "renderTriangles": 175422,
+      "collisionTriangles": 167792,
+      "payloadBytes": 16408444,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hunted-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:hypnosis-gods-pitdevil",
+      "slug": "hypnosis-gods-pitdevil",
+      "title": "HYPNOSIS",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/hypnosis-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hypnosis-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "9d5a6c4091e1ab0d44c2739edc92e53fa6500b406b3ec506a7225ec9593eac08",
+      "cacheFingerprint": "0ca12562b3483b596016767be5e8fb9cb1a9b8bc57363cfc103559182e6947a7",
+      "spawn": [
+        -262.18,
+        94.62000762939454,
+        111.09
+      ],
+      "warmupSpawn": [
+        -132.18622,
+        294.29169189453125,
+        -361.5376
+      ],
+      "chunks": 149,
+      "renderTriangles": 231954,
+      "collisionTriangles": 229918,
+      "payloadBytes": 20340218,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hypnosis-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:ivars-village-trigger-apex",
+      "slug": "ivars-village-trigger-apex",
+      "title": "IVARS VILLAGE",
+      "creator": "Trigger_APEX",
+      "relativeFolder": "Maps/ivars-village-trigger-apex",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ivars-village-trigger-apex\\source\\thumb.jpg",
+      "sourceSha256": "6389df2a132b4f6f11f9fa72074e3583de8f7548862fafde90dde1e8d0dae561",
+      "cacheFingerprint": "e92eeb8b42f8db67cf41b454a8159347387d0354f5bd0b930103f99b3d27deed",
+      "spawn": [
+        106.06,
+        0.12,
+        61.54
+      ],
+      "warmupSpawn": [
+        191.91,
+        43.475155944824216,
+        -4.64
+      ],
+      "chunks": 122,
+      "renderTriangles": 214297,
+      "collisionTriangles": 209273,
+      "payloadBytes": 20888901,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ivars-village-trigger-apex",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:king-of-the-balz-st1-spaceteam1",
+      "slug": "king-of-the-balz-st1-spaceteam1",
+      "title": "KING OF THE  BALZ [ST1]",
+      "creator": "Spaceteam1",
+      "relativeFolder": "Maps/king-of-the-balz-st1-spaceteam1",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\king-of-the-balz-st1-spaceteam1\\source\\thumb.jpg",
+      "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+      "cacheFingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+      "spawn": [
+        144.22,
+        206.1630908203125,
+        65.92
+      ],
+      "warmupSpawn": [
+        41.46535,
+        206.1630908203125,
+        38.65979
+      ],
+      "chunks": 49,
+      "renderTriangles": 198522,
+      "collisionTriangles": 198208,
+      "payloadBytes": 13426248,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\king-of-the-balz-st1-spaceteam1",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:kokiri-forest-atc-garden-porfavortiktok",
+      "slug": "kokiri-forest-atc-garden-porfavortiktok",
+      "title": "KOKIRI FOREST",
+      "creator": "ATC_Garden_porfavorTIKTOK",
+      "relativeFolder": "Maps/kokiri-forest-atc-garden-porfavortiktok",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\kokiri-forest-atc-garden-porfavortiktok\\source\\thumb.jpg",
+      "sourceSha256": "276f98e23ba96cf3cc422778794b811d576752f46209b4dacbcdbdb20ec2dd21",
+      "cacheFingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+      "spawn": [
+        9.17,
+        0.12,
+        112.73
+      ],
+      "warmupSpawn": [
+        -28.09,
+        0.9058746647834778,
+        55.86
+      ],
+      "chunks": 288,
+      "renderTriangles": 238186,
+      "collisionTriangles": 232338,
+      "payloadBytes": 24955806,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\kokiri-forest-atc-garden-porfavortiktok",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:la-la-la-gods-trashpandakiller",
+      "slug": "la-la-la-gods-trashpandakiller",
+      "title": "LA LA LA",
+      "creator": "GODS_TrashPandaKiller",
+      "relativeFolder": "Maps/la-la-la-gods-trashpandakiller",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\la-la-la-gods-trashpandakiller\\source\\thumb.jpg",
+      "sourceSha256": "dfd4d287711e0fd9105c034131562084baeef7616c99666cdd413364eb062bcf",
+      "cacheFingerprint": "b19a789f380015d76f3df5c313cf09e3c39f4e9b944d200b2bd23a0a15813a04",
+      "spawn": [
+        173.5,
+        2.6170961691538497,
+        -72.94
+      ],
+      "warmupSpawn": [
+        6.06333,
+        204.12009155273438,
+        280.83798
+      ],
+      "chunks": 252,
+      "renderTriangles": 237570,
+      "collisionTriangles": 235124,
+      "payloadBytes": 20509637,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\la-la-la-gods-trashpandakiller",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:light-vs-dark-gods-badbar",
+      "slug": "light-vs-dark-gods-badbar",
+      "title": "LIGHT  VS  DARK",
+      "creator": "GODS_BADBAR",
+      "relativeFolder": "Maps/light-vs-dark-gods-badbar",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\light-vs-dark-gods-badbar\\source\\thumb.jpg",
+      "sourceSha256": "ce6a8ddeeffd755b8d2b82d68f741ebd183ebca7e199f85855256f17b99a8ed5",
+      "cacheFingerprint": "719c86e8f0a24c3bdb25334313d28c01013e5b6ded8a914b508a323e5aeac5d4",
+      "spawn": [
+        113.56,
+        44.741070861816404,
+        -57.81
+      ],
+      "warmupSpawn": [
+        -29.41198,
+        77.54500305175782,
+        18.41009
+      ],
+      "chunks": 81,
+      "renderTriangles": 138786,
+      "collisionTriangles": 137568,
+      "payloadBytes": 14545164,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\light-vs-dark-gods-badbar",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:magnum-3-chaosvr",
+      "slug": "magnum-3-chaosvr",
+      "title": "MAGNUM 3",
+      "creator": "ChaosVR",
+      "relativeFolder": "Maps/magnum-3-chaosvr",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\magnum-3-chaosvr\\source\\thumb.jpg",
+      "sourceSha256": "466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",
+      "cacheFingerprint": "8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",
+      "spawn": [
+        83.36,
+        158.71744262695313,
+        21.59
+      ],
+      "warmupSpawn": [
+        0.58991,
+        166.61818420410157,
+        20.63444
+      ],
+      "chunks": 55,
+      "renderTriangles": 101014,
+      "collisionTriangles": 100700,
+      "payloadBytes": 9614657,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\magnum-3-chaosvr",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:magnum-chaosvr",
+      "slug": "magnum-chaosvr",
+      "title": "MAGNUM",
+      "creator": "ChaosVR",
+      "relativeFolder": "Maps/magnum-chaosvr",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\magnum-chaosvr\\source\\thumb.jpg",
+      "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+      "cacheFingerprint": "1a3aad846543d24f6c20d5d2a96cfc3c7e7d0e93fca429f1427f89f8f2728dca",
+      "spawn": [
+        -5.64123,
+        259.3416491699219,
+        11.08802
+      ],
+      "warmupSpawn": [
+        0.58991,
+        266.2221728515625,
+        20.63436
+      ],
+      "chunks": 48,
+      "renderTriangles": 106370,
+      "collisionTriangles": 99836,
+      "payloadBytes": 10181290,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\magnum-chaosvr",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:marksman-remarkabled",
+      "slug": "marksman-remarkabled",
+      "title": "MARKSMAN",
+      "creator": "ReMarkabled",
+      "relativeFolder": "Maps/marksman-remarkabled",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\marksman-remarkabled\\source\\thumb.jpg",
+      "sourceSha256": "f2f6e58b7ca877b0ae66b195d2b560de21bff01f08d48d18a261ca3802d255c9",
+      "cacheFingerprint": "c76c9e1d9788d60b0ee271a620a11f2c7999e6486d2355524543aaa34e236361",
+      "spawn": [
+        24.31,
+        16.62,
+        -48.35
+      ],
+      "warmupSpawn": [
+        142.19,
+        92.24315305750179,
+        49.9
+      ],
+      "chunks": 187,
+      "renderTriangles": 281575,
+      "collisionTriangles": 274007,
+      "payloadBytes": 27988773,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\marksman-remarkabled",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:melipop-gods-poplightning",
+      "slug": "melipop-gods-poplightning",
+      "title": "[MELIPOP]",
+      "creator": "GODS_POPLIGHTNING",
+      "relativeFolder": "Maps/melipop-gods-poplightning",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\melipop-gods-poplightning\\source\\thumb.jpg",
+      "sourceSha256": "dd7b22842678f875ab27fdb959505424be7f96755d1b9b5cea64f11b9c10a152",
+      "cacheFingerprint": "6e2f16dea7e1b592369479a99fd5c38df5331202958e98a76e03920cdb04548b",
+      "spawn": [
+        -222.77,
+        197.0708056640625,
+        89.71
+      ],
+      "warmupSpawn": [
+        -84.08802,
+        5.120104006860677,
+        -67.16519
+      ],
+      "chunks": 123,
+      "renderTriangles": 149188,
+      "collisionTriangles": 142264,
+      "payloadBytes": 12628685,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\melipop-gods-poplightning",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:melis-cafe-gods-pitdevil",
+      "slug": "melis-cafe-gods-pitdevil",
+      "title": "MELIS CAFE",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/melis-cafe-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\melis-cafe-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "6c42e928f34a55ec6bd88f9b587c5bda53eece8c458351c8e33a3e6a74b4a61d",
+      "cacheFingerprint": "2348ab8b3b1c625289aeaa111ce4939568224527052f35b90fec1a86e6f5c319",
+      "spawn": [
+        275.08,
+        58.93702332333984,
+        -271.41
+      ],
+      "warmupSpawn": [
+        14.26438,
+        81.62244903564454,
+        -7.14123
+      ],
+      "chunks": 664,
+      "renderTriangles": 901716,
+      "collisionTriangles": 882848,
+      "payloadBytes": 76304306,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\melis-cafe-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:metal-mayhem-ghostlymostly88",
+      "slug": "metal-mayhem-ghostlymostly88",
+      "title": "METAL MAYHEM",
+      "creator": "GhostlyMostly88",
+      "relativeFolder": "Maps/metal-mayhem-ghostlymostly88",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\metal-mayhem-ghostlymostly88\\source\\thumb.jpg",
+      "sourceSha256": "38445692ae79198f71b4de70ba7c2a7dedc98bffc4b2f3782bfee2e8dabdb7ca",
+      "cacheFingerprint": "a33e40ab7be5c48b25380b83a1aec9286557628dd6364093f9b4fe8a9da07438",
+      "spawn": [
+        31.515789473684208,
+        0.15230059146881103,
+        29.04647088301789
+      ],
+      "warmupSpawn": [
+        31.515789473684208,
+        0.15230059146881103,
+        29.04647088301789
+      ],
+      "chunks": 67,
+      "renderTriangles": 183722,
+      "collisionTriangles": 183046,
+      "payloadBytes": 17874110,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\metal-mayhem-ghostlymostly88",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:mortal-kombat-bwaynecs",
+      "slug": "mortal-kombat-bwaynecs",
+      "title": "MORTAL KOMBAT ",
+      "creator": "BWayneCS",
+      "relativeFolder": "Maps/mortal-kombat-bwaynecs",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\mortal-kombat-bwaynecs\\source\\thumb.jpg",
+      "sourceSha256": "257470dbebf0478f588661e996b1d6a9483bdb6e7327206f990e205979276b0e",
+      "cacheFingerprint": "4682e46b32d63449145c14d9c5faf4b54aa07872dc1edd1b834cf0cb72776a11",
+      "spawn": [
+        43.72,
+        61.54026268951496,
+        44.11
+      ],
+      "warmupSpawn": [
+        82.98265,
+        77.1200972508637,
+        10.40463
+      ],
+      "chunks": 165,
+      "renderTriangles": 261794,
+      "collisionTriangles": 261080,
+      "payloadBytes": 24352561,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\mortal-kombat-bwaynecs",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:muddy26-muddyfartz",
+      "slug": "muddy26-muddyfartz",
+      "title": "MUDDY26",
+      "creator": "MuddyFartz",
+      "relativeFolder": "Maps/muddy26-muddyfartz",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\muddy26-muddyfartz\\source\\thumb.jpg",
+      "sourceSha256": "622c9257a7748b9aa0d854f7a7cf418098d56626b196e7033479f2bdedc3287f",
+      "cacheFingerprint": "34bf91aaad3cdeeef8ef18ba50485adbb1691c16c4bde68a93ff2ab2248be257",
+      "spawn": [
+        196.7477276049162,
+        106.96176635742188,
+        -199.04351935135708
+      ],
+      "warmupSpawn": [
+        196.7477276049162,
+        106.96176635742188,
+        -199.04351935135708
+      ],
+      "chunks": 616,
+      "renderTriangles": 1532652,
+      "collisionTriangles": 1528114,
+      "payloadBytes": 123589230,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\muddy26-muddyfartz",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:mushy-2-gods-putangfreyja",
+      "slug": "mushy-2-gods-putangfreyja",
+      "title": "MUSHY 2",
+      "creator": "GODS_PutangFreyja",
+      "relativeFolder": "Maps/mushy-2-gods-putangfreyja",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\mushy-2-gods-putangfreyja\\source\\thumb.jpg",
+      "sourceSha256": "9abec0557618ad864380479189069bfe94e5dd2c1b7c9004bd61b6b056fd7330",
+      "cacheFingerprint": "2a0f32fdc2f424a0bf20edcbdfa6a0abf3323e381b9e0785b94a2ec1ad045abb",
+      "spawn": [
+        0.0,
+        97.6225634765625,
+        60.97908421566592
+      ],
+      "warmupSpawn": [
+        -8.37236,
+        0.12,
+        27.23442
+      ],
+      "chunks": 193,
+      "renderTriangles": 246783,
+      "collisionTriangles": 244585,
+      "payloadBytes": 21996816,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\mushy-2-gods-putangfreyja",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:mushy-gods-putangfreyja",
+      "slug": "mushy-gods-putangfreyja",
+      "title": "MUSHY",
+      "creator": "GODS_PutangFreyja",
+      "relativeFolder": "Maps/mushy-gods-putangfreyja",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\mushy-gods-putangfreyja\\source\\thumb.jpg",
+      "sourceSha256": "23f795914c354a9836e5d55852ba48119477239b2688d82f575326843b79fa21",
+      "cacheFingerprint": "7adee4e08041f636149724c607a791a0827d3954cbe116f5fa102a522360ce8a",
+      "spawn": [
+        203.14,
+        175.0420428466797,
+        185.75
+      ],
+      "warmupSpawn": [
+        31.13424,
+        125.31141387939454,
+        52.64123
+      ],
+      "chunks": 203,
+      "renderTriangles": 271938,
+      "collisionTriangles": 270832,
+      "payloadBytes": 23649723,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\mushy-gods-putangfreyja",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:odf-5-level-odf-birdshot",
+      "slug": "odf-5-level-odf-birdshot",
+      "title": "ODF 5 LEVEL",
+      "creator": "ODF.BIRDSHOT",
+      "relativeFolder": "Maps/odf-5-level-odf-birdshot",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\odf-5-level-odf-birdshot\\source\\thumb.jpg",
+      "sourceSha256": "68bcb9ce68ab722351a9e8c814652ce670bdebb1d986a8bacb5a81253c773fe0",
+      "cacheFingerprint": "0783b53e72e350495d69665481f237a9abb128837c03ec1b6036cec7876be665",
+      "spawn": [
+        70.89,
+        40.12,
+        1.72
+      ],
+      "warmupSpawn": [
+        71.12,
+        111.12,
+        5.4
+      ],
+      "chunks": 285,
+      "renderTriangles": 526105,
+      "collisionTriangles": 526073,
+      "payloadBytes": 43357102,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\odf-5-level-odf-birdshot",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:oppression-gods-thor",
+      "slug": "oppression-gods-thor",
+      "title": "OPPRESSION",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/oppression-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\oppression-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+      "cacheFingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+      "spawn": [
+        -207.64,
+        41.25051986694336,
+        -7.63
+      ],
+      "warmupSpawn": [
+        -14.02789,
+        94.12,
+        -0.11152
+      ],
+      "chunks": 133,
+      "renderTriangles": 193868,
+      "collisionTriangles": 192776,
+      "payloadBytes": 17768010,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\oppression-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:phantom-gods-badbar",
+      "slug": "phantom-gods-badbar",
+      "title": "PHANTOM",
+      "creator": "GODS_BADBAR",
+      "relativeFolder": "Maps/phantom-gods-badbar",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\phantom-gods-badbar\\source\\thumb.jpg",
+      "sourceSha256": "b2c70b5530fa04dd3e4e274929637c223b38342d28e734056b85161243d51e95",
+      "cacheFingerprint": "96bf3b704641483428768a6f6ab338543c742b88f945677817bb4fe0a21345ce",
+      "spawn": [
+        9.41,
+        88.11994951967321,
+        192.64
+      ],
+      "warmupSpawn": [
+        -289.91199,
+        398.7812548828125,
+        312.24814
+      ],
+      "chunks": 159,
+      "renderTriangles": 248136,
+      "collisionTriangles": 247370,
+      "payloadBytes": 21949494,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\phantom-gods-badbar",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:phoenix-bigbox-vr",
+      "slug": "phoenix-bigbox-vr",
+      "title": "Phoenix",
+      "creator": "BigBox VR",
+      "relativeFolder": "Maps/phoenix-bigbox-vr",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\phoenix-bigbox-vr\\source\\thumb.jpg",
+      "sourceSha256": "915590b61ba40e7b7b5f0ae28b238b79aff3f36314ac788b6f41e501a250b3c5",
+      "cacheFingerprint": "3f85b40b45bc7562b9b6d0654860d717498eb8c39b45e78d8617745e703def80",
+      "spawn": [
+        137.714965820315,
+        24.905842685102993,
+        27.59521484375
+      ],
+      "warmupSpawn": [
+        -1.8026354337971497,
+        37.69397842407226,
+        27.59521484375
+      ],
+      "chunks": 403,
+      "renderTriangles": 1800853,
+      "collisionTriangles": 1800853,
+      "payloadBytes": 138556818,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\phoenix-bigbox-vr",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:plan-b-gods-pitdevil",
+      "slug": "plan-b-gods-pitdevil",
+      "title": "PLAN B",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/plan-b-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\plan-b-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "45198e5157a98c297f0fa51672908b56793c5e53a6c43422afe90d162c06d204",
+      "cacheFingerprint": "58b4908281af9f62d94dc8afcb31ed79e57088cda6eef0653819688327fa7d75",
+      "spawn": [
+        -24.91,
+        78.144169921875,
+        -364.41
+      ],
+      "warmupSpawn": [
+        93.8063,
+        428.1198779296875,
+        -362.4101
+      ],
+      "chunks": 443,
+      "renderTriangles": 409262,
+      "collisionTriangles": 405606,
+      "payloadBytes": 36952600,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\plan-b-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:pollen-panic-kiki-80",
+      "slug": "pollen-panic-kiki-80",
+      "title": "POLLEN PANIC",
+      "creator": "Kiki.80",
+      "relativeFolder": "Maps/pollen-panic-kiki-80",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\pollen-panic-kiki-80\\source\\thumb.jpg",
+      "sourceSha256": "e5812d38562a67ab10057b8ff69d77657ddbc6875bb84f678d29eec12f07cd5b",
+      "cacheFingerprint": "211c6ca637183aeef05163854f0a4cd4006d5442ef76df7bbfa40612e1fa0c1a",
+      "spawn": [
+        128.94,
+        34.59488021850586,
+        -37.59
+      ],
+      "warmupSpawn": [
+        -63.05789,
+        66.80998220380673,
+        -19.39266
+      ],
+      "chunks": 124,
+      "renderTriangles": 310082,
+      "collisionTriangles": 306278,
+      "payloadBytes": 21669217,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\pollen-panic-kiki-80",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:poppy-gods-poplightning",
+      "slug": "poppy-gods-poplightning",
+      "title": "POPPY",
+      "creator": "GODS_POPLIGHTNING",
+      "relativeFolder": "Maps/poppy-gods-poplightning",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\poppy-gods-poplightning\\source\\thumb.jpg",
+      "sourceSha256": "f607fde898b0e60add02e9d0a1c64c9955f23d10072002be3e4487d4901f740f",
+      "cacheFingerprint": "4cdbb885696a4a0802739662f136b8bdd7199f2cad564c3712a604b08ab56717",
+      "spawn": [
+        175.76,
+        21.668849138698434,
+        -0.09
+      ],
+      "warmupSpawn": [
+        -4.96039,
+        124.5292342200137,
+        -6.69444
+      ],
+      "chunks": 141,
+      "renderTriangles": 160396,
+      "collisionTriangles": 158612,
+      "payloadBytes": 12912453,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\poppy-gods-poplightning",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:quantum-city-gods-pitdevil",
+      "slug": "quantum-city-gods-pitdevil",
+      "title": "QUANTUM CITY",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/quantum-city-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\quantum-city-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "2523b65982988c4eb8c105393a496cbb0585944f24cf1b8f6882790e1bd0097c",
+      "cacheFingerprint": "cd673075bf3a826b3d62fb77b0635973926cc533b3a4275d10d814453c35cbd3",
+      "spawn": [
+        186.91,
+        58.61954585704504,
+        199.59
+      ],
+      "warmupSpawn": [
+        -201.0695,
+        144.10465814511903,
+        -59.78714
+      ],
+      "chunks": 191,
+      "renderTriangles": 148478,
+      "collisionTriangles": 147934,
+      "payloadBytes": 13906244,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\quantum-city-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:quietowl-gods-pitdevil",
+      "slug": "quietowl-gods-pitdevil",
+      "title": "QUIETOWL",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/quietowl-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\quietowl-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "418cac4a7612b937d4d766e909eb840ec39e310c15874c170fb3e64e86306013",
+      "cacheFingerprint": "fc232fdb25946f471759f88d9a43f157d54392d348f4f0812c6b46ec4dffd551",
+      "spawn": [
+        -207.64,
+        41.25051986694336,
+        -7.63
+      ],
+      "warmupSpawn": [
+        -14.02789,
+        94.12,
+        -0.11152
+      ],
+      "chunks": 243,
+      "renderTriangles": 455971,
+      "collisionTriangles": 454407,
+      "payloadBytes": 39398366,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\quietowl-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:realtree-gods-poplightning",
+      "slug": "realtree-gods-poplightning",
+      "title": "REALTREE",
+      "creator": "GODS_POPLIGHTNING",
+      "relativeFolder": "Maps/realtree-gods-poplightning",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\realtree-gods-poplightning\\source\\thumb.jpg",
+      "sourceSha256": "d9d89ab2587d68707f35ef310617fcadf689a7ca479f943d19d5358fcffc056f",
+      "cacheFingerprint": "b1c82e56989fb6d6848a3a38c7fc4616e171d4d52d2539c339fbffd74d2319b0",
+      "spawn": [
+        19.09,
+        42.083417053222654,
+        -176.92
+      ],
+      "warmupSpawn": [
+        -74.56525,
+        1.780791164084747,
+        -27.9696
+      ],
+      "chunks": 78,
+      "renderTriangles": 193226,
+      "collisionTriangles": 182856,
+      "payloadBytes": 17068676,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\realtree-gods-poplightning",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:rip-respect-integrity-pop1-armsreach",
+      "slug": "rip-respect-integrity-pop1-armsreach",
+      "title": "RIP - RESPECT. INTEGRITY. POP1",
+      "creator": "ArmsReach",
+      "relativeFolder": "Maps/rip-respect-integrity-pop1-armsreach",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\rip-respect-integrity-pop1-armsreach\\source\\thumb.jpg",
+      "sourceSha256": "5e9296aad507ddf72cbd4dd6150cd386acc5ec55a37110295d3581aa09b9f4e6",
+      "cacheFingerprint": "276be5d1d64573c8e4f50ab1989ddc682603f078a6297f39f02cf9c9d67a8eca",
+      "spawn": [
+        8.39927,
+        178.72349562259757,
+        -29.99497
+      ],
+      "warmupSpawn": [
+        16.24176,
+        65.30210294979699,
+        44.75546
+      ],
+      "chunks": 130,
+      "renderTriangles": 213431,
+      "collisionTriangles": 209364,
+      "payloadBytes": 20086650,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\rip-respect-integrity-pop1-armsreach",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:robotics-2-gods-pitdevil",
+      "slug": "robotics-2-gods-pitdevil",
+      "title": "ROBOTICS 2",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/robotics-2-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\robotics-2-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "9119b9d2eca2d39a17571866280bafdba190728d2fcd75036f15eb60ca79aff4",
+      "cacheFingerprint": "6137c8596b7a98e4e7f1809237276940af484d3de17d54419d8b97b3e229fa08",
+      "spawn": [
+        223.21,
+        23.62,
+        -188.44
+      ],
+      "warmupSpawn": [
+        19.08802,
+        75.65678894042969,
+        16.08991
+      ],
+      "chunks": 648,
+      "renderTriangles": 1224953,
+      "collisionTriangles": 1217267,
+      "payloadBytes": 107591778,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\robotics-2-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:romulus-gods-skblong",
+      "slug": "romulus-gods-skblong",
+      "title": "ROMULUS",
+      "creator": "GODS_SKBLong",
+      "relativeFolder": "Maps/romulus-gods-skblong",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\romulus-gods-skblong\\source\\thumb.jpg",
+      "sourceSha256": "0ac3f983fcc3bf18eeb6b272eb8a80e676ad127e36571ddd6e617f02b40a39e1",
+      "cacheFingerprint": "1218f0d8968694992581fe934bc764c59d5edbe8897c28e3b0466a8f5948034b",
+      "spawn": [
+        11.44,
+        58.13346238271031,
+        -202.88
+      ],
+      "warmupSpawn": [
+        -25.38,
+        64.13377868652344,
+        75.31
+      ],
+      "chunks": 194,
+      "renderTriangles": 252680,
+      "collisionTriangles": 251220,
+      "payloadBytes": 21866032,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\romulus-gods-skblong",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:sean0311-gods-sean0311",
+      "slug": "sean0311-gods-sean0311",
+      "title": "SEAN0311",
+      "creator": "GODS_Sean0311",
+      "relativeFolder": "Maps/sean0311-gods-sean0311",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sean0311-gods-sean0311\\source\\thumb.jpg",
+      "sourceSha256": "b78895f67cea47fe73be7ad758fda9211ccdd50d9ad2b606cd6e67a3df887377",
+      "cacheFingerprint": "7e7d4bc3cf8792d90d0b799a46bd313312471f307a0282695ead054e83c31c87",
+      "spawn": [
+        -125.29,
+        96.96935241143102,
+        -238.49
+      ],
+      "warmupSpawn": [
+        37.62663,
+        96.96937049946415,
+        -5.31554
+      ],
+      "chunks": 110,
+      "renderTriangles": 128632,
+      "collisionTriangles": 126914,
+      "payloadBytes": 12593480,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sean0311-gods-sean0311",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:sharp-objects-kiwishade",
+      "slug": "sharp-objects-kiwishade",
+      "title": "SHARP OBJECTS",
+      "creator": "KiwiShade",
+      "relativeFolder": "Maps/sharp-objects-kiwishade",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sharp-objects-kiwishade\\source\\thumb.jpg",
+      "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+      "cacheFingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+      "spawn": [
+        -26.67,
+        49.52309906005859,
+        21.9
+      ],
+      "warmupSpawn": [
+        -18.21521,
+        52.62,
+        74.86577
+      ],
+      "chunks": 56,
+      "renderTriangles": 110312,
+      "collisionTriangles": 104286,
+      "payloadBytes": 10402296,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sharp-objects-kiwishade",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:showdown-gods-crazytrain",
+      "slug": "showdown-gods-crazytrain",
+      "title": "SHOWDOWN",
+      "creator": "GODS_CRAZYTRAIN",
+      "relativeFolder": "Maps/showdown-gods-crazytrain",
+      "preview": "preview.png",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\showdown-gods-crazytrain\\converted\\preview.png",
+      "sourceSha256": "4f2171e67edfd8a1e004e810e79989fe85cfada34277f5e3e2d32c3be408006d",
+      "cacheFingerprint": "7a985234fac33219ddaa1a825431f8920f3f04a770eac7136c5d369dce0a49bb",
+      "spawn": [
+        22.91205,
+        72.11999237060547,
+        -72.46009
+      ],
+      "warmupSpawn": [
+        -36.9852,
+        76.33709442138672,
+        -17.67812
+      ],
+      "chunks": 174,
+      "renderTriangles": 140805,
+      "collisionTriangles": 136489,
+      "payloadBytes": 13880758,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\showdown-gods-crazytrain",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:skb-paintball-gods-skblong",
+      "slug": "skb-paintball-gods-skblong",
+      "title": "SKB PAINTBALL",
+      "creator": "GODS_SKBLong",
+      "relativeFolder": "Maps/skb-paintball-gods-skblong",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\skb-paintball-gods-skblong\\source\\thumb.jpg",
+      "sourceSha256": "cd5aaaa7de37a9077a39283ffecd560e1cf56f087ac5e6a20096834ad0dbbdb8",
+      "cacheFingerprint": "68390f92cd69204e09c4ef38543e7b6c023db21c0ff12c85de9313932dbb01fd",
+      "spawn": [
+        -105.68,
+        92.36998474121094,
+        309.94
+      ],
+      "warmupSpawn": [
+        7.78578,
+        92.11928952900249,
+        18.79994
+      ],
+      "chunks": 151,
+      "renderTriangles": 110358,
+      "collisionTriangles": 106492,
+      "payloadBytes": 16704561,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\skb-paintball-gods-skblong",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:stacked-gods-trashpandakiller",
+      "slug": "stacked-gods-trashpandakiller",
+      "title": "STACKED",
+      "creator": "GODS_TrashPandaKiller",
+      "relativeFolder": "Maps/stacked-gods-trashpandakiller",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\stacked-gods-trashpandakiller\\source\\thumb.jpg",
+      "sourceSha256": "b60f507045111455f184941efcd1e772d81a3b3301b77389ad7c0ead70eb0532",
+      "cacheFingerprint": "4c510e447dfb224943afe432a47c6fb5e5e0490847232c966047e33afa667882",
+      "spawn": [
+        230.68,
+        121.12,
+        -13.94
+      ],
+      "warmupSpawn": [
+        234.85284,
+        309.9572497558594,
+        -120.86353
+      ],
+      "chunks": 129,
+      "renderTriangles": 127350,
+      "collisionTriangles": 126140,
+      "payloadBytes": 12395081,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\stacked-gods-trashpandakiller",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:statmaster-classic-soulsmight",
+      "slug": "statmaster-classic-soulsmight",
+      "title": "STATMASTER CLASSIC",
+      "creator": "Soulsmight",
+      "relativeFolder": "Maps/statmaster-classic-soulsmight",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\statmaster-classic-soulsmight\\source\\thumb.jpg",
+      "sourceSha256": "36579e8cf66cbd73d9f55b12562e63bfe1fcef3f3235d8281c4748dcbeb4139b",
+      "cacheFingerprint": "78e9d46aa694036fc2dc4fcdd79716b40bbc8770d1b60677406048ba5c14b0f0",
+      "spawn": [
+        83.85394672594589,
+        20.365126907234753,
+        40.666259765625
+      ],
+      "warmupSpawn": [
+        -21.864807128906023,
+        26.62,
+        40.666259765625
+      ],
+      "chunks": 266,
+      "renderTriangles": 564266,
+      "collisionTriangles": 534718,
+      "payloadBytes": 55851635,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\statmaster-classic-soulsmight",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:statmaster-evolving-soulsmight",
+      "slug": "statmaster-evolving-soulsmight",
+      "title": "STATMASTER EVOLVING",
+      "creator": "Soulsmight",
+      "relativeFolder": "Maps/statmaster-evolving-soulsmight",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\statmaster-evolving-soulsmight\\source\\thumb.jpg",
+      "sourceSha256": "795a32676af36833b747ff2a5617dab5e31a3e927535b72a7d6c0043d4ab19f3",
+      "cacheFingerprint": "28d3e23ab6a9abfcc37b9cfad707e2c135179eff7ac6ed97c4b1a67b46f8376f",
+      "spawn": [
+        83.85394672594589,
+        20.46377686886286,
+        40.666259765625
+      ],
+      "warmupSpawn": [
+        63.5899,
+        23.502676476482833,
+        -53.08802
+      ],
+      "chunks": 363,
+      "renderTriangles": 1342569,
+      "collisionTriangles": 1315581,
+      "payloadBytes": 103929145,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\statmaster-evolving-soulsmight",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:suffering-gods-thor",
+      "slug": "suffering-gods-thor",
+      "title": "SUFFERING",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/suffering-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\suffering-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "cf68defaea8ceb9aa11a3579eb56fbe242767995b13bcbad98d1c9a80eee22ac",
+      "cacheFingerprint": "e77d8e1240b866dc18a563758ce6e1fd8c328c7d8baf3921a453f1f52df4f4fe",
+      "spawn": [
+        -98.41,
+        148.62,
+        -33.62
+      ],
+      "warmupSpawn": [
+        -72.08801,
+        158.12,
+        -54.91009
+      ],
+      "chunks": 114,
+      "renderTriangles": 171020,
+      "collisionTriangles": 165828,
+      "payloadBytes": 14159867,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\suffering-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:sunflower-city-kiki-80-bbb",
+      "slug": "sunflower-city-kiki-80-bbb",
+      "title": "SUNFLOWER CITY",
+      "creator": "Kiki.80_BBB",
+      "relativeFolder": "Maps/sunflower-city-kiki-80-bbb",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sunflower-city-kiki-80-bbb\\source\\thumb.jpg",
+      "sourceSha256": "cef6add47ad1f752e04e96fe7abf8d4d9f2ab734d4423fe0fd3099e4d006c13b",
+      "cacheFingerprint": "7e5154445ef622c817fc6dc7843f3842a4c4cbf89e63294b259d572564426594",
+      "spawn": [
+        47.48,
+        43.381293362662284,
+        7.2
+      ],
+      "warmupSpawn": [
+        60.22936,
+        60.708701598266714,
+        51.53851
+      ],
+      "chunks": 187,
+      "renderTriangles": 347891,
+      "collisionTriangles": 345449,
+      "payloadBytes": 27710061,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sunflower-city-kiki-80-bbb",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:survive-gods-goodwitch",
+      "slug": "survive-gods-goodwitch",
+      "title": "SURVIVE",
+      "creator": "GODS_GoodWitch",
+      "relativeFolder": "Maps/survive-gods-goodwitch",
+      "preview": "preview.png",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\survive-gods-goodwitch\\converted\\preview.png",
+      "sourceSha256": "0473f193991ada44dd035fd2a6e96d2bf9c850627b400facc22866c6f40bef6f",
+      "cacheFingerprint": "fd160dc9c9f0c4f26100929a5a1a0eb32bbd3cad1dffd42f8f4f753636bdaff1",
+      "spawn": [
+        -128.29,
+        266.60147583007813,
+        118.84
+      ],
+      "warmupSpawn": [
+        -27.79069,
+        260.34427368164063,
+        -91.24155
+      ],
+      "chunks": 517,
+      "renderTriangles": 290859,
+      "collisionTriangles": 274345,
+      "payloadBytes": 28565295,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\survive-gods-goodwitch",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:swarm-gods-chriso",
+      "slug": "swarm-gods-chriso",
+      "title": "SWARM",
+      "creator": "GODS_ChrisO",
+      "relativeFolder": "Maps/swarm-gods-chriso",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\swarm-gods-chriso\\source\\thumb.jpg",
+      "sourceSha256": "ca9088bac716f9f4081cb56b6785938465a1a51e108130133bf36655f0689db8",
+      "cacheFingerprint": "4b8f5307cca865be0f69c4fae48cf5508a46a63e05e9e74a6cc20598027a5ea2",
+      "spawn": [
+        -187.95,
+        287.3523913574219,
+        103.41
+      ],
+      "warmupSpawn": [
+        43.47446,
+        295.6203704152993,
+        181.0626
+      ],
+      "chunks": 126,
+      "renderTriangles": 327024,
+      "collisionTriangles": 324092,
+      "payloadBytes": 24781224,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\swarm-gods-chriso",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:sweet-dreams-gods-badbar",
+      "slug": "sweet-dreams-gods-badbar",
+      "title": "SWEET DREAMS",
+      "creator": "GODS_BADBAR",
+      "relativeFolder": "Maps/sweet-dreams-gods-badbar",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sweet-dreams-gods-badbar\\source\\thumb.jpg",
+      "sourceSha256": "f941aa69c2bccf048654b7ce79aaf833b47781a1f9d77403d89d7bf418a5c4c8",
+      "cacheFingerprint": "3ff8734088fce2b3676d0224e51777a2590f5a341030317d303e720074284c7c",
+      "spawn": [
+        -128.36,
+        109.62,
+        -193.59
+      ],
+      "warmupSpawn": [
+        -25.9399,
+        1.478267664909363,
+        15.4101
+      ],
+      "chunks": 185,
+      "renderTriangles": 337358,
+      "collisionTriangles": 328392,
+      "payloadBytes": 34329248,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sweet-dreams-gods-badbar",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:tagd-gods-pitdevil",
+      "slug": "tagd-gods-pitdevil",
+      "title": "TAGD",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/tagd-gods-pitdevil",
+      "preview": "preview.png",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\tagd-gods-pitdevil\\converted\\preview.png",
+      "sourceSha256": "569eb7f52ccd20837dd99f8de190619995a71ec43e83f339c67605067859db1f",
+      "cacheFingerprint": "5626d0d5eaa4bce94d90be82e8ae7981f007e6520b63c1db7dbfd22081118909",
+      "spawn": [
+        107.91,
+        118.0614291381836,
+        368.41
+      ],
+      "warmupSpawn": [
+        -19.30618,
+        143.04084127158202,
+        137.99374
+      ],
+      "chunks": 163,
+      "renderTriangles": 229490,
+      "collisionTriangles": 226826,
+      "payloadBytes": 19267021,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\tagd-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-citadel-gods-thor",
+      "slug": "the-citadel-gods-thor",
+      "title": "THE CITADEL",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/the-citadel-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-citadel-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "bd7182b904229b1d3b7982c92dd47d89dda66dd22e94af0782cbbf766a9403f0",
+      "cacheFingerprint": "9cfd917759d54c00372a30fe9aefcca1ed04576402896c3c332383429520985d",
+      "spawn": [
+        0.0,
+        14.120030517578124,
+        -2.7598266601564774
+      ],
+      "warmupSpawn": [
+        0.0,
+        14.120030517578124,
+        -2.7598266601564774
+      ],
+      "chunks": 122,
+      "renderTriangles": 136438,
+      "collisionTriangles": 135402,
+      "payloadBytes": 11833572,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-citadel-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-fortress-gods-alamo-hank",
+      "slug": "the-fortress-gods-alamo-hank",
+      "title": "THE FORTRESS",
+      "creator": "GODS_ALAMO_HANK",
+      "relativeFolder": "Maps/the-fortress-gods-alamo-hank",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-fortress-gods-alamo-hank\\source\\thumb.jpg",
+      "sourceSha256": "a3002111c0dcb070d792f0ff6d4f362d402d238dda278c1e891dff6f279b17f7",
+      "cacheFingerprint": "3b36a7afb62d7383634893eadded99b61986012e3a0a481dede3c9579ebb75a7",
+      "spawn": [
+        -31.515789473684208,
+        1.478267664909363,
+        29.04647088301789
+      ],
+      "warmupSpawn": [
+        -31.515789473684208,
+        1.478267664909363,
+        29.04647088301789
+      ],
+      "chunks": 48,
+      "renderTriangles": 133248,
+      "collisionTriangles": 131272,
+      "payloadBytes": 13321028,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-fortress-gods-alamo-hank",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-holler-gods-alamo-hank",
+      "slug": "the-holler-gods-alamo-hank",
+      "title": "THE HOLLER",
+      "creator": "GODS_ALAMO_HANK",
+      "relativeFolder": "Maps/the-holler-gods-alamo-hank",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-holler-gods-alamo-hank\\source\\thumb.jpg",
+      "sourceSha256": "a7e7c56f931ee49192ecdadd636ff8b09c80088bc326febfd81583cd4873cd32",
+      "cacheFingerprint": "6705aa80bf82042f36748a9a02ee19c0ca0cacf5dedcd14677d53ba2862274b8",
+      "spawn": [
+        366.06,
+        63.82088597359119,
+        219.58
+      ],
+      "warmupSpawn": [
+        -5.50702,
+        115.46607696533204,
+        7.2426
+      ],
+      "chunks": 229,
+      "renderTriangles": 321148,
+      "collisionTriangles": 318374,
+      "payloadBytes": 26529302,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-holler-gods-alamo-hank",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-powerpuff-g0ds-gods-meli",
+      "slug": "the-powerpuff-g0ds-gods-meli",
+      "title": "THE POWERPUFF G0DS",
+      "creator": "GODS_Meli",
+      "relativeFolder": "Maps/the-powerpuff-g0ds-gods-meli",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-powerpuff-g0ds-gods-meli\\source\\thumb.jpg",
+      "sourceSha256": "dc8310310317a595e60b86ec1433f8efbe80b030b6c1694f4248b98551eb1cae",
+      "cacheFingerprint": "65ecd7d807303db41396e75c3deaf969380f57bb44ab85958ce9713def280d0b",
+      "spawn": [
+        -72.68,
+        73.0836252119045,
+        -124.06
+      ],
+      "warmupSpawn": [
+        117.68289,
+        166.46693908691407,
+        226.35807
+      ],
+      "chunks": 210,
+      "renderTriangles": 302572,
+      "collisionTriangles": 298544,
+      "payloadBytes": 24640680,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-powerpuff-g0ds-gods-meli",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-shining-gods-ghostlymostly88",
+      "slug": "the-shining-gods-ghostlymostly88",
+      "title": "THE SHINING",
+      "creator": "GODS_GhostlyMostly88",
+      "relativeFolder": "Maps/the-shining-gods-ghostlymostly88",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-shining-gods-ghostlymostly88\\source\\thumb.jpg",
+      "sourceSha256": "e41e2ab9ca6de3a41ce607f277b7e7087bf8ef76e095d568c3a08f990049efc8",
+      "cacheFingerprint": "d9f41688944129186004944c55e391399747b8bac818087a1c7784d0ecdba85f",
+      "spawn": [
+        -70.08680034436662,
+        130.4940692138672,
+        -0.054626464843522626
+      ],
+      "warmupSpawn": [
+        0.47110724198211074,
+        136.23886652673997,
+        -0.054626464843522626
+      ],
+      "chunks": 171,
+      "renderTriangles": 246076,
+      "collisionTriangles": 236808,
+      "payloadBytes": 21975464,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-shining-gods-ghostlymostly88",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-swamp-taffy-dragon-vr",
+      "slug": "the-swamp-taffy-dragon-vr",
+      "title": "THE SWAMP",
+      "creator": "Taffy_Dragon_VR",
+      "relativeFolder": "Maps/the-swamp-taffy-dragon-vr",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-swamp-taffy-dragon-vr\\source\\thumb.jpg",
+      "sourceSha256": "1dde98149b583b39dd9a421742f7198530516c9b8fc11c0493361bc54bedac6f",
+      "cacheFingerprint": "77847af39a60aad2ca8364c487fb60ef6ea7bc8808460db9a46f179ce5f17165",
+      "spawn": [
+        10.25,
+        39.71585817850371,
+        -42.28
+      ],
+      "warmupSpawn": [
+        -36.95985,
+        62.48516925273207,
+        47.41198
+      ],
+      "chunks": 179,
+      "renderTriangles": 227737,
+      "collisionTriangles": 219947,
+      "payloadBytes": 21045288,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-swamp-taffy-dragon-vr",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:the-white-house-gods-osprey-kat",
+      "slug": "the-white-house-gods-osprey-kat",
+      "title": "THE WHITE HOUSE",
+      "creator": "GODS_OSPREY.kat",
+      "relativeFolder": "Maps/the-white-house-gods-osprey-kat",
+      "preview": "preview.png",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-white-house-gods-osprey-kat\\converted\\preview.png",
+      "sourceSha256": "4ce15e966db225cc08e8512a9f4cdbf976a42ffbad8375c2972c93894d55e331",
+      "cacheFingerprint": "d8f5714de7aa8b37e48feb1be9aefb8fb4106d126fde67dadd69d28d61bb8ec1",
+      "spawn": [
+        -11.59,
+        120.10802185058594,
+        79.42
+      ],
+      "warmupSpawn": [
+        -18.85,
+        120.10802185058594,
+        79.42
+      ],
+      "chunks": 135,
+      "renderTriangles": 119882,
+      "collisionTriangles": 107886,
+      "payloadBytes": 14991633,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-white-house-gods-osprey-kat",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:thor-city-gods-thor",
+      "slug": "thor-city-gods-thor",
+      "title": "THOR CITY",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/thor-city-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\thor-city-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "ee7d45ed854d134474e499b396fcef7af9a72a4c3c23829c53850c53aee0f6f1",
+      "cacheFingerprint": "0af52069fdbbd35bef8d700ee689c9faa0b54048a47af06711d9d23058500b47",
+      "spawn": [
+        83.79095458984398,
+        40.61984741210937,
+        -241.09778426320963
+      ],
+      "warmupSpawn": [
+        124.12684454666964,
+        176.1243986971727,
+        -103.63105773925804
+      ],
+      "chunks": 181,
+      "renderTriangles": 216573,
+      "collisionTriangles": 215941,
+      "payloadBytes": 19373317,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\thor-city-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:train-rmx-armsreach",
+      "slug": "train-rmx-armsreach",
+      "title": "TRAIN [RMX]",
+      "creator": "ArmsReach",
+      "relativeFolder": "Maps/train-rmx-armsreach",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\train-rmx-armsreach\\source\\thumb.jpg",
+      "sourceSha256": "cb9e2eb5f9202b0874a8e6feb09bf08bf6b6285da2682a76c4e665961e8014a5",
+      "cacheFingerprint": "a128d44a4c036529d61d094f7c2a24233ece0ee311f295266545dd212b8550d9",
+      "spawn": [
+        -3.61,
+        191.32637512207032,
+        56.2
+      ],
+      "warmupSpawn": [
+        -89.09,
+        220.69293701171875,
+        -27.13
+      ],
+      "chunks": 167,
+      "renderTriangles": 273183,
+      "collisionTriangles": 271555,
+      "payloadBytes": 25268442,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\train-rmx-armsreach",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:trashed-gods-pitdevil",
+      "slug": "trashed-gods-pitdevil",
+      "title": "TRASHED",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/trashed-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\trashed-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "e78ffd3eff470f3dd1930a4faf3e8daad8e2710089cb01db690d2e75e299f1da",
+      "cacheFingerprint": "5aff40c123cd65e46798ebc2342384ce107a3872936bccaa702d3b1db5353d73",
+      "spawn": [
+        6.22,
+        58.87561415335994,
+        -267.64
+      ],
+      "warmupSpawn": [
+        310.3822,
+        352.02896606445313,
+        -312.18988
+      ],
+      "chunks": 226,
+      "renderTriangles": 280048,
+      "collisionTriangles": 276978,
+      "payloadBytes": 24427623,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\trashed-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:trauma-gods-pitdevil",
+      "slug": "trauma-gods-pitdevil",
+      "title": "TRAUMA",
+      "creator": "GODS_PITDEVIL",
+      "relativeFolder": "Maps/trauma-gods-pitdevil",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\trauma-gods-pitdevil\\source\\thumb.jpg",
+      "sourceSha256": "56f47a512e7948ec83d5fd18a8cc1eb225be02997f899c82a7e2efce69316a42",
+      "cacheFingerprint": "21ffbd967193a5c31b7bc75635c5fcebccf10f53d60888787a7fe9309b2025ac",
+      "spawn": [
+        279.22,
+        58.9370245078032,
+        -271.41
+      ],
+      "warmupSpawn": [
+        14.59782,
+        268.63629638671875,
+        -351.64124
+      ],
+      "chunks": 496,
+      "renderTriangles": 400478,
+      "collisionTriangles": 381150,
+      "payloadBytes": 35509225,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\trauma-gods-pitdevil",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:ultimate-5-levels-rexryan",
+      "slug": "ultimate-5-levels-rexryan",
+      "title": "ULTIMATE 5 LEVELS",
+      "creator": "REXRYAN",
+      "relativeFolder": "Maps/ultimate-5-levels-rexryan",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ultimate-5-levels-rexryan\\source\\thumb.jpg",
+      "sourceSha256": "4618a055707531fbadeb1638d65da182b8715c3d7a8a9039d7291f92c9e5b46a",
+      "cacheFingerprint": "4c6bb7726162dfe2d5ab41365db5d1ec0f29aa2fcec9430f8d1d2763fa531da3",
+      "spawn": [
+        -41.24,
+        9.795237655639648,
+        -7.41
+      ],
+      "warmupSpawn": [
+        -0.28,
+        99.69439422607422,
+        -1.15
+      ],
+      "chunks": 237,
+      "renderTriangles": 261310,
+      "collisionTriangles": 254774,
+      "payloadBytes": 26053859,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ultimate-5-levels-rexryan",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:unbroken-gods-thor",
+      "slug": "unbroken-gods-thor",
+      "title": "UNBROKEN",
+      "creator": "GODS_THOR",
+      "relativeFolder": "Maps/unbroken-gods-thor",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\unbroken-gods-thor\\source\\thumb.jpg",
+      "sourceSha256": "24aadde52aeb72d532931917ef783d91648cbbc2c1b55b261a594f7a095c3360",
+      "cacheFingerprint": "f00b4fe83d948e4b94aaad81612de20cf9b4f3d1ac7000abf4db7b8f62eab979",
+      "spawn": [
+        -0.76,
+        4.46573846479927,
+        -97.88
+      ],
+      "warmupSpawn": [
+        -2.21038,
+        18.617393862411436,
+        -5.00489
+      ],
+      "chunks": 120,
+      "renderTriangles": 128842,
+      "collisionTriangles": 126850,
+      "payloadBytes": 11274806,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\unbroken-gods-thor",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:viral-gods-ghostlymostly88",
+      "slug": "viral-gods-ghostlymostly88",
+      "title": "VIRAL",
+      "creator": "GODS_GhostlyMostly88",
+      "relativeFolder": "Maps/viral-gods-ghostlymostly88",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\viral-gods-ghostlymostly88\\source\\thumb.jpg",
+      "sourceSha256": "281e6a762653a21e7cddf556c323f0c3bd34776baaa5883af7ff150e7a905674",
+      "cacheFingerprint": "eb6ccc1dbd1b9b3b2434db8ad89fd562dd0ff2afc11e8c260ac9665d1081880d",
+      "spawn": [
+        -41.92134,
+        62.723595733642576,
+        -42.307
+      ],
+      "warmupSpawn": [
+        141.49,
+        46.89790069580078,
+        4.35
+      ],
+      "chunks": 210,
+      "renderTriangles": 178150,
+      "collisionTriangles": 170096,
+      "payloadBytes": 16540211,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\viral-gods-ghostlymostly88",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:vortex-sd-stumpdawg",
+      "slug": "vortex-sd-stumpdawg",
+      "title": "VORTEX SD",
+      "creator": "StumpDawg",
+      "relativeFolder": "Maps/vortex-sd-stumpdawg",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\vortex-sd-stumpdawg\\source\\thumb.jpg",
+      "sourceSha256": "76db6dfecf8bebe95d19e5514235b607c0487aaddfd1f5330170870de1a8889e",
+      "cacheFingerprint": "466946c954308d5b16eb4221c54a0fba2e3055d41989e329b7a1a9ab321eb91b",
+      "spawn": [
+        32.41,
+        575.62,
+        18.59
+      ],
+      "warmupSpawn": [
+        14.41,
+        581.62,
+        22.18
+      ],
+      "chunks": 108,
+      "renderTriangles": 127688,
+      "collisionTriangles": 108240,
+      "payloadBytes": 12421529,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\vortex-sd-stumpdawg",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    },
+    {
+      "id": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+      "slug": "zelda-kokiri-forest-solos-ilikepies1211",
+      "title": "ZELDA KOKIRI FOREST [SOLOS]",
+      "creator": "ilikepies1211",
+      "relativeFolder": "Maps/zelda-kokiri-forest-solos-ilikepies1211",
+      "preview": "preview.jpg",
+      "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\thumb.jpg",
+      "sourceSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+      "cacheFingerprint": "9c456feb8d525d218b872fca489d598eb592b98236f743ad3b27da7e61951a3e",
+      "spawn": [
+        21.09,
+        0.9290923428535461,
+        -68.41
+      ],
+      "warmupSpawn": [
+        12.41198,
+        3.0120991349923503,
+        39.64123
+      ],
+      "chunks": 235,
+      "renderTriangles": 318170,
+      "collisionTriangles": 316432,
+      "payloadBytes": 27975032,
+      "published": true,
+      "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\zelda-kokiri-forest-solos-ilikepies1211",
+      "nativeValidated": false,
+      "limits": [
+        "Native mesh cooking/render/entry have not run.",
+        "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+        "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+        "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+        "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+      ]
+    }
+  ],
+  "refused": []
+}

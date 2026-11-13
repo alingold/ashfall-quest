@@ -1,0 +1,35 @@
+{
+  "id": "archive:aethelgard-solstis-kiki-80-bbb",
+  "slug": "aethelgard-solstis-kiki-80-bbb",
+  "title": "AETHELGARD SOLSTIS",
+  "creator": "Kiki.80_BBB",
+  "relativeFolder": "Maps/aethelgard-solstis-kiki-80-bbb",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aethelgard-solstis-kiki-80-bbb\\source\\thumb.jpg",
+  "sourceSha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+  "cacheFingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+  "spawn": [
+    29.35,
+    230.11256174699562,
+    -245.01
+  ],
+  "warmupSpawn": [
+    -6.8156,
+    142.0999041748047,
+    47.49743
+  ],
+  "chunks": 126,
+  "renderTriangles": 215205,
+  "collisionTriangles": 197487,
+  "payloadBytes": 18100145,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aethelgard-solstis-kiki-80-bbb",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

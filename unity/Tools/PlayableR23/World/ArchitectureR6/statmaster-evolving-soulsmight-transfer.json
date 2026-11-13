@@ -1,0 +1,162 @@
+{
+  "map": "statmaster-evolving-soulsmight",
+  "exportFolder": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\statmaster-evolving-inspect",
+  "preparedR10Sha256": "e9a6b1092e3e1b9084dfd06668928b518f60e9e70340066fafffbc608c1d5de5",
+  "sourcePlanSha256": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+  "geometrySha256": "8ba79fa81f700272bd0fe3f0ccbc8ac2fb0e3ccc3a9e2378bd119d5bc7dbde8c",
+  "selectedSourceVertices": {
+    "1": 61128,
+    "4": 3281,
+    "3": 18425,
+    "2": 5803,
+    "5": 841,
+    "6": 2032,
+    "7": 150,
+    "32": 42
+  },
+  "sourceClassifiedFaces": 59278,
+  "transferredUnityFaces": {
+    "1": 29539,
+    "4": 1672,
+    "3": 6368,
+    "2": 3581,
+    "5": 533,
+    "6": 1504,
+    "7": 130,
+    "32": 28
+  },
+  "directSourceWitnesses": [
+    {
+      "chunk": 253,
+      "triangle": 10,
+      "kind": 1,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 10,
+      "maxCornerDistance": 0.0009023432503454387
+    },
+    {
+      "chunk": 253,
+      "triangle": 197,
+      "kind": 4,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 197,
+      "maxCornerDistance": 0.0006546291988343
+    },
+    {
+      "chunk": 253,
+      "triangle": 4068,
+      "kind": 3,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 3540,
+      "maxCornerDistance": 0.0010218904353678226
+    },
+    {
+      "chunk": 254,
+      "triangle": 3140,
+      "kind": 2,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-1",
+      "sourceTriangle": 2732,
+      "maxCornerDistance": 0.0002446169964969158
+    },
+    {
+      "chunk": 256,
+      "triangle": 4422,
+      "kind": 5,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_0",
+      "sourceTriangle": 4392,
+      "maxCornerDistance": 0.0005822882521897554
+    },
+    {
+      "chunk": 256,
+      "triangle": 7747,
+      "kind": 6,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_0",
+      "sourceTriangle": 7757,
+      "maxCornerDistance": 0.0009932947577908635
+    },
+    {
+      "chunk": 278,
+      "triangle": 9504,
+      "kind": 7,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 6545,
+      "maxCornerDistance": 0.001233091694302857
+    },
+    {
+      "chunk": 279,
+      "triangle": 2363,
+      "kind": 32,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 15102,
+      "maxCornerDistance": 0.0010756702395156026
+    }
+  ],
+  "coplanarFootprintFaces": {
+    "3": 5,
+    "1": 108
+  },
+  "footprintExamples": [
+    {
+      "chunk": 253,
+      "triangle": 6987,
+      "kind": 3,
+      "unionCoverage": 0.9999874922290827
+    },
+    {
+      "chunk": 253,
+      "triangle": 8279,
+      "kind": 3,
+      "unionCoverage": 0.9999791659503855
+    },
+    {
+      "chunk": 261,
+      "triangle": 3653,
+      "kind": 1,
+      "unionCoverage": 0.9999790195659242
+    },
+    {
+      "chunk": 261,
+      "triangle": 4444,
+      "kind": 1,
+      "unionCoverage": 0.9999932839999361
+    },
+    {
+      "chunk": 261,
+      "triangle": 4460,
+      "kind": 1,
+      "unionCoverage": 0.99999153842802
+    },
+    {
+      "chunk": 261,
+      "triangle": 4489,
+      "kind": 1,
+      "unionCoverage": 0.9999811793474925
+    },
+    {
+      "chunk": 261,
+      "triangle": 5276,
+      "kind": 1,
+      "unionCoverage": 0.9999599856163967
+    },
+    {
+      "chunk": 261,
+      "triangle": 5284,
+      "kind": 1,
+      "unionCoverage": 0.9999626372089323
+    }
+  ],
+  "patches": 32,
+  "ambiguousFacesUnchanged": 0,
+  "normalOrDistanceRejected": 383244,
+  "geometryUnchanged": true,
+  "shaderNativeRun": false,
+  "rule": "Keep exact oriented <=5mm whole-face matches. Fallback: one source welded component/kind, original material+uniform RGB+oriented normals, <=5mm plane, actual triangle union>=99.99%, covered7.5mm inset core, no competing kind/255 overlap. Original last-corner selector."
+}

@@ -1,0 +1,101 @@
+{
+  "id": "m1014",
+  "file": "m1014.glb",
+  "scale": 0.698799085870372,
+  "anchor": [
+    -0.28,
+    0.3229250239672176,
+    0.0
+  ],
+  "target": [
+    0.0,
+    0.045,
+    0.025
+  ],
+  "bolt": [
+    6
+  ],
+  "bolt_home": [
+    0.06,
+    0.045,
+    -0.1
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.77
+  ],
+  "actual_bolt_contact": [
+    0.05162028847324438,
+    0.07999234747668911,
+    -0.1650733513567412
+  ],
+  "variant": "Downloaded M1014 with separate moving bolt/charging assembly. Existing six-shell UP pack then BACK gesture, mirrored hand target, ammunition, cadence and recoil unchanged. Visual bolt reciprocation uses original carrier clock. High-geometry PC option; authored fallback retained.",
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.18065971155295962,
+    -0.17066374404370419
+  ],
+  "source": "[local development path]",
+  "source_sha256": "445e2334b5fa6390f1db21a13478fbf4f4cc48ac86ba35c4caa7a6c3cd9da404",
+  "output_sha256": "863176001b360d624532bdeec18e1e33f04c381b13ad66e43909f6f9db00b492",
+  "asset": {
+    "author": "baiyx (https://sketchfab.com/baiyx)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/m1014-58b0e2de0f684ef3849679e76eba42c5",
+    "title": "M1014"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "source_triangles": 79142,
+  "body_triangles": 76594,
+  "magazine_triangles": 0,
+  "moving_triangles": 2548,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.02902543373285683,
+    -0.11331775950964779,
+    -0.7713196498717525
+  ],
+  "bounds_max": [
+    0.05162073837437925,
+    0.1277450639330674,
+    0.4360551038757463
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 79142,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.02581036918718913,
+    0.078844824887245,
+    -0.16490612431535626
+  ]
+}

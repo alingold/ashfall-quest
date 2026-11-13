@@ -1,0 +1,29 @@
+{
+  "complete": true,
+  "phases": [
+    {
+      "phase": "verify-reused-imported-reference",
+      "files": 5586,
+      "engineRun": false
+    },
+    {
+      "phase": "valley",
+      "exit": 0,
+      "finishedUTC": "2026-11-05T06:10:12.807364+00:00"
+    }
+  ],
+  "deadline": "2026-11-05T06:14:00+00:00",
+  "validated": {
+    "complete": true,
+    "map": "valley",
+    "meshes": 243,
+    "vertices": 206001,
+    "uniqueMeshTriangles": 341251,
+    "meshInstances": 263,
+    "multiMeshes": 16,
+    "staticBodies": 1267,
+    "exactTextureImages": 37,
+    "arrayBlobs": 2302,
+    "unsupported": 30
+  }
+}

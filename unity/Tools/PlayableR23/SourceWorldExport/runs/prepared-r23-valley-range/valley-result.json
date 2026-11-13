@@ -1,0 +1,23 @@
+{
+  "phase": "valley",
+  "command": [
+    "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\toolchain\\godot-isolated\\Godot_v4.7.2-stable_win64.exe",
+    "--headless",
+    "--audio-driver",
+    "Dummy",
+    "--xr-mode",
+    "off",
+    "--path",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\reference",
+    "--log-file",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\valley-godot.log",
+    "--script",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\export_source_world.gd",
+    "--",
+    "--request=C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\valley-request.json"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 27.296999999991385,
+  "log": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\valley-engine.log",
+  "boundedSeconds": 210
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:ereptile-disfunction-gods-pitdevil",
+  "slug": "ereptile-disfunction-gods-pitdevil",
+  "title": "EREPTILE DISFUNCTION",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/ereptile-disfunction-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ereptile-disfunction-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "a238f905d290ce71b6396810315eebbff95cabf1c4bb2cb04179c33880f6665e",
+  "cacheFingerprint": "0e92a3c1e7b87fad303a201229ece2d3f858c927c182d753c607f871e64cc10e",
+  "spawn": [
+    -113.91,
+    58.10649165383531,
+    -20.21
+  ],
+  "warmupSpawn": [
+    -96.91,
+    83.69871385930003,
+    152.14
+  ],
+  "chunks": 142,
+  "renderTriangles": 202900,
+  "collisionTriangles": 202412,
+  "payloadBytes": 16958515,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ereptile-disfunction-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

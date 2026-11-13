@@ -1,0 +1,163 @@
+{
+  "id": "s85_m1_099",
+  "file": "m1_carbine.glb",
+  "scale": 0.0006136749739376027,
+  "anchor": [
+    0,
+    0.32,
+    0.3
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    2,
+    7,
+    8,
+    9,
+    11,
+    14,
+    15,
+    16,
+    22
+  ],
+  "bolt": [
+    39,
+    40
+  ],
+  "omit": [
+    1,
+    3,
+    10,
+    12,
+    13,
+    17,
+    18,
+    19,
+    20,
+    21,
+    24,
+    25,
+    27,
+    28,
+    29,
+    31,
+    34,
+    35,
+    36,
+    37,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    49,
+    50,
+    51,
+    52
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.76
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "omission_reason": "Hanging sling1 and detached sling hardware24/25/27/28/29/34/35/36/37/42..47, floating case31 and degenerate display fragments49..52 removed. Exploded clip/cartridge group relocated inside receiver as the reloadable S85 clip; retains game S85 reload rather than claiming Garand-authentic top loading.",
+  "variant": "User identifies M1Garand as S85/SA5. Original ring-dot three-depth sight and source bolt/clip used, existing game S85 stats/recoil/reload retained.",
+  "rotation": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "offset": [
+    0,
+    0.00536621332256116,
+    -0.012156675010098907
+  ],
+  "source": "[local development path]",
+  "source_sha256": "3fbe768928dcd03ec8ffe2bec349064a86fda76773f40d36fa1256b2c010a3ea",
+  "output_sha256": "20456735ff21fb5919c72bff054c8ebc2046c6160f769fce1be377da34c7e7bc",
+  "asset": {
+    "author": "drcrazzie (https://sketchfab.com/drcrazzie)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/m1-garand-a7113c4d094d4f489b3cdc9a74664710",
+    "title": "M1 GARAND"
+  },
+  "magazine_center": [
+    8.975620268726614e-09,
+    -0.025062778049173895,
+    -0.13077066646302124
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 29057,
+  "body_triangles": 8604,
+  "magazine_triangles": 6681,
+  "moving_triangles": 360,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.029280274799327665,
+    -0.14967505503954398,
+    -0.7600000019409769
+  ],
+  "bounds_max": [
+    0.027713411906391084,
+    0.07921777898455956,
+    0.4245315856045596
+  ],
+  "method": "All node transforms baked; proper source-to-Godot rotation; previous S85 axial length and muzzle preserved. Original magazine shortened to55% vertically with closed feed band and floorplate; original material/UVs retained. Donor iron sights omitted for accepted floating ring sight. Separate moving magazine and bolt owners.",
+  "omitted_triangles": 13412,
+  "visible_source_triangles": 15645,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true,
+  "moving_grip_center_model": [
+    0.018004496221568835,
+    0.04543366967756077,
+    -0.1720264419859343
+  ],
+  "translation": [
+    2.3409842435361182e-08,
+    0.11394282496731256,
+    -0.1702589493462352
+  ],
+  "omitted_meshes": [
+    "sight2_low_Material #43_0",
+    "frontsight_low_Material #43_0",
+    "sight_low_Material #43_0",
+    "sight3_low_Material #43_0"
+  ],
+  "source_credit": {
+    "author": "roelandvermeulen (https://sketchfab.com/roelandvermeulen)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/m1-carbine-d9edbccc56fe4b6db765ebc494dc2ceb",
+    "title": "M1 Carbine"
+  }
+}

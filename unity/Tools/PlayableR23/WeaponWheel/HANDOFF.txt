@@ -1,0 +1,67 @@
+Actual source A-held weapon wheel / nonpausing backpack request
+
+Namespace Ashfall.Integration.Playable.Input, component R23WeaponWheel.
+Initialize(headTransform, Func<string,int,bool> tryEquip,
+           Action openBackpack=null, Action toggleHeldItem=null).
+SetSlots(params R23WeaponWheelSlot[] liveSlots), at most3, null holes preserved.
+DTO: new R23WeaponWheelSlot(stableOwnedId,label,weaponArchetypeId,
+                            detail="",canEquip=true).
+Read Active/Ready/Failure/HighlightedSector/LastRejectedId. Events ActiveChanged
+and RequestAccepted. Equip callback returns actual accepted/rejected status;
+only successful callbacks emit RequestAccepted. No slot/inventory grants.
+
+Each root input-pump frame:
+ wheel.Step(clampedDt,dominantAorXHeld,valid,
+            new Ray(worldAimOrigin,worldAimDirection),locomotionAnchor,primaryHand);
+primaryHand0left/1right. Feed actual controller AIM pose, not glove/grip offset.
+valid = hardware session focused + dominant aim tracked + alive/gameplay enabled
+        + not other menu/backpack/gallery consuming input. A/X is selector only;
+this component never emits jump, pauses simulation, moves a tracked transform or
+reads devices. Root must remove dominant A from jump mapping. Use ActiveChanged
+to suppress weapon firing/weapon presentation while wheel is held, preserving
+locomotion. tryEquip owns source climb/item reservation and existing equip path.
+On bottom-sector release, openBackpack should open the existing nonpausing
+backpack page. No global pause setting is changed here. Quick tap callback should
+use existing holster/draw held-item seam; omitting it produces no invented action.
+
+Actual preserved Opus R23 source behavior:
+weapon_rack.update_a_input quick tap<=.1000001s; longer held button opens wheel,
+pointer tracks current ray, release recomputes sector and selects current owned
+item. Center/invalid ray cancels. Source 8-sector geometry and current capacity3
+slot positions RIGHT/UPPER-RIGHT/TOP (ITEM_SLOTS first3 [2,1,0]); bottomBACKPACK;
+three extra carry positions show LOCKED. Revive sector is explicitly unavailable
+until real paddles exist. Source outside-radius pointing stays directional; its
+visible pointer clamps to .34. Inner cancel radius .102, displayScale1.2, captured
+aim .85m forward; face the head at opening, follow supplied locomotion translation
+only thereafter. View rotation/roomscale head motion do not drag the captured wheel.
+Physical neutral release required at startup, focus/tracking loss, Cancel(),
+dominance change or live inventory identity/eligibility change. Same-ID ammo/
+caption refresh does not interrupt a valid hold. Empty slots never compact/grant.
+
+Uses original catalog0991/catalog094 PNGs by exact weapon_icons_094 routing for
+MK18(3), AKM(21), SPR(13), Magnum(7), embedded byte-identically in the owned new
+R23WeaponWheelIcons.cs because new external asset payload paths were not assigned.
+Other supplied items retain truthful labels; no fabricated weapon image. Existing
+R23GodotUI font, R23VrUi and R23SourceIcon shaders are reused. UI geometry is on
+Unity UI layer5 and excluded from existing scope cameras' world-only mask.
+Repeated identical slot snapshots do not rebuild geometry; replaced card meshes/
+materials are retired, shared source textures retained until component teardown.
+
+Native-callable Editor fixture:
+yield return R23WeaponWheelFixture.Run(existingHead,report,optionalCaptureIterator);
+Runs a dedicated UI instance with a fake acceptance CALLBACK only (no inventory
+calls), original icon meshes, select-on-release/backpack/focus cleanup checks.
+Samples head once into its own untracked pose snapshot; never changes HMD/rig.
+The optional Func<string,IEnumerator> capture is invoked with wheel open/hovered.
+Fixture has been API-compiled, not engine-run. Cancel() closes/rearms explicitly;
+OnDisable/OnDestroy hide and dispose the independent world-space visual root.
+
+Checks: python unity/Tools/PlayableR23/WeaponWheel/check.py
+32 source behavior cases pass; original4PNG bytes/source hashes verified; full
+component + Editor fixture compile against installed Unity6000.6.8f1 APIs with
+warnings as errors. No engine, GPU, native capture, headset or Android run.
+
+Bounded limits: source3-second radial hold-to-drop is deliberately not exposed
+by this selector task; existing backpack drop remains the owner. Revive paddles
+and expanded6slot upgrades are unavailable. Root decides inventory ordering,
+stable IDs, current canEquip and source grant policy. Capacity stays3.

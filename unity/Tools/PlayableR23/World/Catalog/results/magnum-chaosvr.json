@@ -1,0 +1,35 @@
+{
+  "id": "archive:magnum-chaosvr",
+  "slug": "magnum-chaosvr",
+  "title": "MAGNUM",
+  "creator": "ChaosVR",
+  "relativeFolder": "Maps/magnum-chaosvr",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\magnum-chaosvr\\source\\thumb.jpg",
+  "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+  "cacheFingerprint": "1a3aad846543d24f6c20d5d2a96cfc3c7e7d0e93fca429f1427f89f8f2728dca",
+  "spawn": [
+    -5.64123,
+    259.3416491699219,
+    11.08802
+  ],
+  "warmupSpawn": [
+    0.58991,
+    266.2221728515625,
+    20.63436
+  ],
+  "chunks": 48,
+  "renderTriangles": 106370,
+  "collisionTriangles": 99836,
+  "payloadBytes": 10181290,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\magnum-chaosvr",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

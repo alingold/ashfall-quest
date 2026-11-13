@@ -1,0 +1,35 @@
+{
+  "id": "archive:chaotic-gods-alamo-hank",
+  "slug": "chaotic-gods-alamo-hank",
+  "title": "CHAOTIC",
+  "creator": "GODS_ALAMO_HANK",
+  "relativeFolder": "Maps/chaotic-gods-alamo-hank",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chaotic-gods-alamo-hank\\source\\thumb.jpg",
+  "sourceSha256": "2292992c46d6eb1d4b33ea7a5d8bd7766bd874583b186d622c7685827055577c",
+  "cacheFingerprint": "8eca9e377d9f6347bc1556109765203ad7bf1e690db30256c813196218c6eba5",
+  "spawn": [
+    -252.91183,
+    44.62,
+    -218.65881
+  ],
+  "warmupSpawn": [
+    -507.55655,
+    417.88315586695666,
+    -316.42882
+  ],
+  "chunks": 340,
+  "renderTriangles": 353122,
+  "collisionTriangles": 314904,
+  "payloadBytes": 33146007,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chaotic-gods-alamo-hank",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

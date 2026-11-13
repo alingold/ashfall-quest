@@ -1,0 +1,124 @@
+{
+  "id": "mk18",
+  "file": "modern_warefare_m4a1.glb",
+  "scale": 1.3887632571086894,
+  "anchor": [
+    0,
+    0.018,
+    -0.075
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    3,
+    34,
+    78
+  ],
+  "omit": [
+    10,
+    14,
+    16,
+    19,
+    22,
+    29,
+    31,
+    32,
+    35,
+    37,
+    38,
+    44,
+    50,
+    52,
+    60,
+    79,
+    80,
+    95,
+    96,
+    100,
+    104,
+    23,
+    51
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.69
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "omission_reason": "Independent front/rear iron sight components above sourceY.042 at rearZ<-.02/frontZ>.30, plus floating display cartridges23/51. Source receiver rail retained for working transparent red dot. Existing authored charging handle retained; no invented source bolt separation.",
+  "variant": "User identifies M4 as MK18. Real source magazine/floorplate separated. Burst timing, recoil and physical reload unchanged; display0.6applied once at runtime.",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.02000226137204359,
+    -0.07915724428315171
+  ],
+  "source": "[local development path]",
+  "source_sha256": "3dd1d6efba70c0485846d1ab063117535d41b97f90440a37ae13aef2e6b752bf",
+  "output_sha256": "15a7669b504249510bd5e2fec024221277f0dcb4049c5c4649f60a10275cefb8",
+  "asset": {
+    "author": "Nneako (https://sketchfab.com/nickolasa.mcintosh)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/modern-warefare-m4a1-167dd49ffff14d41ab11b6417f128bf1",
+    "title": "Modern Warefare M4A1"
+  },
+  "magazine_center": [
+    -0.00045859008135555254,
+    -0.09602320398034184,
+    -0.17046988496616006
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 70888,
+  "body_triangles": 59958,
+  "magazine_triangles": 3022,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.04657521612275146,
+    -0.22565937594154054,
+    -0.69
+  ],
+  "bounds_max": [
+    0.049097673338729164,
+    0.08740972602297267,
+    0.372673112869349
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 7908,
+  "visible_source_triangles": 62980,
+  "default_pose_skins_baked": 2,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

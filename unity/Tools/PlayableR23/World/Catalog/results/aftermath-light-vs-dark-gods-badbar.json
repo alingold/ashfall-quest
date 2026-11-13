@@ -1,0 +1,35 @@
+{
+  "id": "archive:aftermath-light-vs-dark-gods-badbar",
+  "slug": "aftermath-light-vs-dark-gods-badbar",
+  "title": "AFTERMATH-LIGHT VS DARK",
+  "creator": "GODS_BADBAR",
+  "relativeFolder": "Maps/aftermath-light-vs-dark-gods-badbar",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aftermath-light-vs-dark-gods-badbar\\source\\thumb.jpg",
+  "sourceSha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+  "cacheFingerprint": "223276c30f21472794bf9aa0eb6d63160adb618c867064635be800f30f13e432",
+  "spawn": [
+    -145.15,
+    99.03275970309532,
+    -1.41
+  ],
+  "warmupSpawn": [
+    -45.71216,
+    218.62,
+    -4.13939
+  ],
+  "chunks": 190,
+  "renderTriangles": 251629,
+  "collisionTriangles": 243769,
+  "payloadBytes": 23742658,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aftermath-light-vs-dark-gods-badbar",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

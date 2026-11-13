@@ -1,0 +1,35 @@
+{
+  "id": "archive:cont-cl-ssd-cjcoops",
+  "slug": "cont-cl-ssd-cjcoops",
+  "title": "CONT-CL SSD",
+  "creator": "CJCoops",
+  "relativeFolder": "Maps/cont-cl-ssd-cjcoops",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\cont-cl-ssd-cjcoops\\source\\thumb.jpg",
+  "sourceSha256": "03c7b9f3dd6a5f963c0ca6634a3892c68da1f285724bc52b07e62e5e56cc2e9d",
+  "cacheFingerprint": "b342c347ba6a2d24cad88ab994241ce305d9f4413c42fa5468f19c89b3278496",
+  "spawn": [
+    -521.7804,
+    56.680401916503904,
+    -317.01163
+  ],
+  "warmupSpawn": [
+    60.41198,
+    22.476044036190032,
+    -41.08991
+  ],
+  "chunks": 399,
+  "renderTriangles": 653724,
+  "collisionTriangles": 598278,
+  "payloadBytes": 65510004,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\cont-cl-ssd-cjcoops",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

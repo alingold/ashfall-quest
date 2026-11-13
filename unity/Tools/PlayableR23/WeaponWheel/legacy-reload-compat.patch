@@ -1,0 +1,11 @@
+--- unity\Assets\Ashfall\Integration\Playable\HandsWeapons\R23HandsInputFrame.cs
++++ unity\Assets\Ashfall\Integration\Playable\HandsWeapons\R23HandsInputFrame.cs
+@@ -23,7 +23,7 @@
+         public R23HandsInputSnapshot Snapshot { get {
+             return new R23HandsInputSnapshot(
+                 new R23HandInput(LeftTracked,LeftHandReserved||SupportHandReserved,R23HandInput.Combine(LeftGrip,SupportGrip),LeftTrigger,LeftGripPressed||SupportGripPressed,LeftTriggerPressed,LeftPrimary,LeftSecondary,LeftStickClick),
+-                new R23HandInput(RightTracked,RightHandReserved,R23HandInput.Combine(RightGrip,Grip),R23HandInput.Combine(RightTrigger,Trigger),RightGripPressed||GripPressed,RightTriggerPressed||TriggerPressed,RightPrimary,RightSecondary,RightStickClick||ReloadPressed),
++                new R23HandInput(RightTracked,RightHandReserved,R23HandInput.Combine(RightGrip,Grip),R23HandInput.Combine(RightTrigger,Trigger),RightGripPressed||GripPressed,RightTriggerPressed||TriggerPressed,RightPrimary||ReloadPressed,RightSecondary,RightStickClick||ReloadPressed),
+                 ReloadRequested,NextWeaponPressed&&LeftTracked,RestartPressed&&LeftTracked);
+         } }
+     }

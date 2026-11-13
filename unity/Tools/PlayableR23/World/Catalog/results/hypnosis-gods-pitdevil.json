@@ -1,0 +1,35 @@
+{
+  "id": "archive:hypnosis-gods-pitdevil",
+  "slug": "hypnosis-gods-pitdevil",
+  "title": "HYPNOSIS",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/hypnosis-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hypnosis-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "9d5a6c4091e1ab0d44c2739edc92e53fa6500b406b3ec506a7225ec9593eac08",
+  "cacheFingerprint": "0ca12562b3483b596016767be5e8fb9cb1a9b8bc57363cfc103559182e6947a7",
+  "spawn": [
+    -262.18,
+    94.62000762939454,
+    111.09
+  ],
+  "warmupSpawn": [
+    -132.18622,
+    294.29169189453125,
+    -361.5376
+  ],
+  "chunks": 149,
+  "renderTriangles": 231954,
+  "collisionTriangles": 229918,
+  "payloadBytes": 20340218,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hypnosis-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

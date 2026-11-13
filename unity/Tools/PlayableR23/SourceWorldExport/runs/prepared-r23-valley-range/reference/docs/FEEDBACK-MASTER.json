@@ -1,0 +1,1265 @@
+{
+  "scope": "All user feedback available in this conversation, retained R8–R14 registers and city R2–R7 handoffs, plus earlier standalone preservation contracts. Records available here span October17–November1,2026; unavailable earlier-month conversations are not claimed reviewed. No Skyrim implementation task is started.",
+  "base_checkpoint": "b70460622e678b55ee104f284c80bf803c3fc90d",
+  "new_branch": "quest3/r16-performance",
+  "source_files": [
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R10.md",
+      "sha256": "b7e7ff6286abe4b3483feab35d6fa383ee865c8a47f2c298e2ba9609fe776221"
+    },
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R12.md",
+      "sha256": "9492a4d6a230e2b9bb0d2f8472fe7e0480e39cd988e5a445b25af747d31ea7e1"
+    },
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R13.md",
+      "sha256": "d5e25ee75b58736de7ac58307cbfa951e927d212c9a8eb1fccee39a898f41cd4"
+    },
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R14.md",
+      "sha256": "793b53b69f6d83e0fd6c2fd39882cf84918cf075842afed92ebd54c3e87a2aa7"
+    },
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R8.md",
+      "sha256": "4187c0a0c2f4725ab2f6a77e74dc2c367b0303a27b15891b446eef41da16721f"
+    },
+    {
+      "path": "D:\\Codex\\ASHFALL-R15-Quest3\\source\\FEEDBACK-REGISTER-R9.md",
+      "sha256": "ff530597934feb3b6f1cd8643d60fd89b7a2eb0d03f56b6141665b20c16075db"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R10.md",
+      "sha256": "d97d067164973612f4bac535ed501beef46cf62d65a387c04c5b618d52e7ea92"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R11.md",
+      "sha256": "660741288c370cc5b9fcf8dbb7f339cc2f7265ef4e34b553551c1f857b3cfdd8"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R12.md",
+      "sha256": "b8980a49bd19350c701c07142120fdea9ca4ece7203fdd12809407f35712dd8f"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R13-GHOSTS.md",
+      "sha256": "d670cae593d2762d19c944ec4fd5f06adb14a7a4f0cb945af383ece980c15183"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R14-MAPSYSTEMS.md",
+      "sha256": "24d98108905b7ff94f60f56b96baf19f9b383e99555b0fc409ced0b907b2115d"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R7.md",
+      "sha256": "96dc72ef2b414ab06360ad45f58ff30cefa5903e6110666683c57edfc92b1bd1"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R8.md",
+      "sha256": "5b661ec03a8ca8af2c90164f365bc32360704d99801a6ef682445e77c600922a"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-ASHFALL-R9.md",
+      "sha256": "9c5c3043c533f1e2cbdeec80743f8386c06f4c0054bddd0c9b68e02eaf2fe27a"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD-R2.md",
+      "sha256": "91ae86f162e422d830f004f7a50666a552645b2db998ff050fd33b2770c0cc3d"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD-R3.md",
+      "sha256": "bb68ecf1804135699e9cd5d9bcc15125ea081665eeb006cc14f7c06b3a6087d5"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD-R4.md",
+      "sha256": "e51e16e148107db87af4d639a8785d7cfefabd3ff4c29495be8906046e1fb519"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD-R5.md",
+      "sha256": "670014e59e40b834e503cae69d3356aa729b616d1bf7ffe9877c6742bf687e38"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD-R6.md",
+      "sha256": "1005551d72916f6c618a81967eaa191c25068e71dfca329f0f8c59272c281f22"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\HANDOFF-CYBER-BIRD.md",
+      "sha256": "7c6ea6bfde87b4caef2eb81f31133896cdabbdcebc8af0ee35597657fb83abdf"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\T3-Bridge\\README.md",
+      "sha256": "6ecbbacfb259417f76d3ca7b66db57bb4f83c27c189d2fda3143eb6ec651808b"
+    }
+  ],
+  "current_themes": [
+    {
+      "id": "CITY",
+      "request": "Cyber Bird name (correcting NEON ROOK typo),800m scale,original cyberpunk bird identity,distinct districts/routes/building variety/interiors",
+      "current_status": "R2–R6 inherited;144buildings; preserve original map geometry",
+      "evidence": "HANDOFF-CYBER-BIRD-R2.md"
+    },
+    {
+      "id": "CITY-DETAIL",
+      "request": "Denser streets/full walls,10x giant bird landmark,neon/street lights,shadows and warm interiors",
+      "current_status": "Implemented in earlier city deliveries; Quest visual/performance acceptance pending",
+      "evidence": "HANDOFF-CYBER-BIRD-R2.md"
+    },
+    {
+      "id": "STAIRS",
+      "request": "Floating/cutaway stair underside and smooth invisible walking ramps",
+      "current_status": "Inherited; preserve stair geometry/collision; physical VR acceptance pending",
+      "evidence": "HANDOFF-CYBER-BIRD-R4.md"
+    },
+    {
+      "id": "HANDS",
+      "request": "Prevent free hands passing through hollow walls; retain climbable near-side contacts and avoid stretched arms",
+      "current_status": "R9 shared wall proxy; R14 bad tracked hands cannot freeze body; physical edge cases pending",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "LOOT",
+      "request": "Many real grabbable weapons on walls/streets/interiors/roofs; six random weapons at source markers; five ammo types/heals/build supplies",
+      "current_status": "R6 dense city loot and shared R8–R10 caches inherited; unrecognized bespoke source bindings remain partial",
+      "evidence": "FEEDBACK-REGISTER-R8.md"
+    },
+    {
+      "id": "BACKPACK",
+      "request": "Grip equips into selector/hand; trigger drops; upright blade icons; compact backpack when host catalog hidden",
+      "current_status": "Implemented earlier and retained; R14 UI checks; physical input acceptance pending",
+      "evidence": "HANDOFF-CYBER-BIRD-R4.md"
+    },
+    {
+      "id": "AIM",
+      "request": "CX4 sight alignment,current muzzle direction while moving,AWP remains scoped while support grip held",
+      "current_status": "R9 aim/scope fixes inherited; no gameplay/weapon-script changes from Quest fork",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "AMMO",
+      "request": "Dual simultaneous Uzi triggers cannot produce infinite right-hand ammo; finite reloads/transfers",
+      "current_status": "R10 fixed; R14 packaged finite dual-trigger/reload regressions passed",
+      "evidence": "FEEDBACK-REGISTER-R10.md"
+    },
+    {
+      "id": "AUDIO",
+      "request": "Latest accepted weapon sounds must not revert; paddle charge/ready/discharge must not overlap or loop incorrectly",
+      "current_status": "R14 preserves276WAVs;604route checks plus confirmation-owned paddle discharge; new Quest listening remains pending",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "CALIBRATION",
+      "request": "Preserve player height,controls,recoil,damage/reloads/inventory and saved calibration; Initialize stays manual",
+      "current_status": "Preservation requirement applies to entire merge; runtime/action-map and asset hash audit records exceptions",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "LOAD",
+      "request": "Unload previous map; diagnose lag after repeated entry/return; distinguish baked overlap from leaked scenes",
+      "current_status": "R14 repeated Alpha/Phoenix/CyberBird unload checks release all captured map nodes; Quest memory/performance untested",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "MENU",
+      "request": "Map name above MAP SELECT,READY closer; remove floating MAIN MENU and redundant instructions; consistent settings styling",
+      "current_status": "Inherited R4–R9 layout; R14 overlay checks; physical headset acceptance pending",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "SELECTOR",
+      "request": "One full-size slowly rotating selected character at fixed world location slightly right; one podium; main menu world-fixed",
+      "current_status": "R9/R11 implemented; retain exact skin assets and menu implementation",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "SKINS",
+      "request": "Skin button; Gemini upgraded player skins; four Witch Doctors labeled Astra/Sol/Gemini Argon/Claude; no active-match changes",
+      "current_status": "All four plus existing styles inherited; R10 skin lock; no character assets replaced by merge",
+      "evidence": "FEEDBACK-REGISTER-R10.md"
+    },
+    {
+      "id": "LOBBY",
+      "request": "In-map shared warmup distinct from main menu; solo host can START; round reset returns to shared warmup",
+      "current_status": "R4/R12 inherited; R14 source markers improve warmup recovery",
+      "evidence": "FEEDBACK-REGISTER-R12.md"
+    },
+    {
+      "id": "HOST",
+      "request": "Host controls obvious from menu buttons; aligned controls,selected modes,sliders,300% limits; remove redundant session/movement shortcuts",
+      "current_status": "R5/R6 controls retained; no new host UI edits in Quest merge",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "VOICE",
+      "request": "General mic/listening/volume settings; per-player name/speaking indicator/mute; host players tab/kick",
+      "current_status": "Inherited UI/voice code; real microphone mix and WAN voice remain unverified",
+      "evidence": "HANDOFF-CYBER-BIRD-R5.md"
+    },
+    {
+      "id": "HUD",
+      "request": "Stamina/sprint unobscured at bottom; compact centered inward team bars with cap/time/weapon-named knockdown feed; no team/opponent or mic-on clutter",
+      "current_status": "Inherited R3–R6; R14 overlay ordering; Skyrim port remains separate",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "ZONE",
+      "request": "Host damage/speed controls; shrinking random square inside previous; red current and white next on map/world;1ft next outline; scary audio; tint every intersecting floor/wall/roof; remove Danger Zone text",
+      "current_status": "Inherited R3/R5/R6; R14 current-position authority fix; new Quest rendering/audio acceptance pending",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "DEATHMATCH",
+      "request": "Host time/kill caps,team totals and score bars; kill/death accounting and compact notices",
+      "current_status": "Inherited; R13 one-death path and R14 packed regressions",
+      "evidence": "FEEDBACK-REGISTER-R13.md"
+    },
+    {
+      "id": "PING",
+      "request": "Sticky chosen ping type and color; remove arbitrary80m/150m distance cap",
+      "current_status": "R4 sticky selection and R14 cap removal retained",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "MAP-UI",
+      "request": "Map appears only while holding left trigger; remove headers/help/legend/duplicate health shield; marker follows actual player/pod/eject/dive",
+      "current_status": "R14 cleanup and stale-pose fix; source/core receipts; physical headset input pending",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "TRAFFIC",
+      "request": "More original cars/NPC walkers; moving cars climbable/rideable without falling behind; preserve model credits",
+      "current_status": "R6 has64cars,24couriers; carrier tests inherited; no driving controls or NPC combat claimed",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "T3",
+      "request": "Read/send prompts through T3 Code and use Gemini Argon for original car modeling",
+      "current_status": "Earlier T3-Bridge README records tested read/prompt bridge and authenticated Argon provider; no new prompt or restart performed",
+      "evidence": "T3-Bridge/README.md"
+    },
+    {
+      "id": "RARITY",
+      "request": "White,blue,purple,gold,red order; levels affect supported gun stats; selector/backpack icons/text/stars colored; glow only on ground; blades/grenades fixed form",
+      "current_status": "R6/R9/R10/R14 retained; reference policy distinguishes wiki data and extrapolated red tier, not exact Population One parity",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "IMPACTS",
+      "request": "Bullet holes visible in environment during hosted warmup/matches",
+      "current_status": "R6 shared impact pool and network-shot path retained",
+      "evidence": "HANDOFF-CYBER-BIRD-R6.md"
+    },
+    {
+      "id": "LIBRARY",
+      "request": "All105 added maps accessible through selector and READY beside3built-ins",
+      "current_status": "R14 preserved; Quest requires separately installed verified external packs; device path/install not headset-tested here",
+      "evidence": "docs/QUEST-R14-INTEGRATION.md"
+    },
+    {
+      "id": "OVERLAP",
+      "request": "Bananaland,Bamboo,BeastMode,ChemX,Coldhearted,DarkCarnival,MeliesCafe overlapping geometry; GSpot/Phoenix/MellyPop looked fine",
+      "current_status": "OPEN source-layout issues reproduced independently in R8/R9; not silently marked fixed; no runtime duplication claim",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "TEXTURE-DISTANCE",
+      "request": "Paintball grass/graywalls and Classic rocks/trees shimmer at distance; render entire map without head-angle cutoff",
+      "current_status": "R8/R9 mip/aniso/far-plane fixes retained; Quest ETC2/ASTC imports enabled; new device fidelity/performance pending",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "MISSING-ART",
+      "request": "Pink/white signs,vehicles/vans/trucks,barrels,road crossings,fences/wood/lamps/stop signs/roadblocks/dumpsters",
+      "current_status": "PARTIAL:4366exported image bindings decode; missing original UV/art remains; R14repairs2056container ends+9wood panels in13maps",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "SPAWN",
+      "request": "Atrocious/Paintball/Poppy and all maps: white-ring lobby vs black-ring person deathmatch; no below-map/air or swapped spawns; hide authoring markers in hosted play",
+      "current_status": "R14 all-map scan570validated warmup79deathmatch sites; missing/unsafe sites retain validated fallback; platform mode separate",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "SCORES",
+      "request": "Remove approximate floating scoreboards; recover intended surfaces,including Paintball and four-faced MellyPop megatron",
+      "current_status": "PARTIAL: R9 removed generic boards and binds MellyPop surfaces; unknown original scoreboard locations remain open acrosslibrary",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "RACKS",
+      "request": "MellyPop weapon boards have one of each weapon underneath; source markers produce real cache drops",
+      "current_status": "R9 two measured racks and common cache resolver inherited; unrecognized bespoke placements remain limited",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "PADS",
+      "request": "All-map jump pads; orange octagon/arrows; strong sustained launch; tilted Alpha chains launch along actual face,not onlyUP",
+      "current_status": "R14690assemblies/139tilted/47vertical-facing fixes; exact unknown official placements remain a coverage limit",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "PASSAGES",
+      "request": "Doors and transparent windows break in exploration,warmup AND actual match; window crosspieces/collision vanish; wood distinct from glass; Vortex decorations/forcefields excluded",
+      "current_status": "Shared R9/R10 bindings plus R14 pose/contact fix; actual Alpha match passed; unrecognized bespoke source doors remain partial",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "CHAOS",
+      "request": "Chaos Magnum uses Magnums only and respawns20m below platforms above central platform",
+      "current_status": "R9 shared rule/center recovery inherited",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "FORCEFIELD",
+      "request": "Smaller optional hexagons and translucent forcefields",
+      "current_status": "R9 material adaptation retained; new Quest rendering acceptance pending",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "BUILD",
+      "request": "Building functions during actual match as well as warmup",
+      "current_status": "R14 valid-body authority/build reach fix; actual hosted Alpha match regression passed",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "RESUME",
+      "request": "Remove persistent Release controls to resume message without losing neutral-input safety",
+      "current_status": "R14 removed toast and retained input safety",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "UI-OCCLUSION",
+      "request": "HUD,paddle HUD,menu text,black backdrop and interactive lasers all render ahead of map geometry; remove duplicate right laser; no wall blackout",
+      "current_status": "R8/R9/R14 overlays and wall fade/proxy fixes retained; tracked hardware acceptance pending",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "SOURCE-RULES",
+      "request": "Apply authored movement/damage/etc defaults in host and READY; host overrides preserved; no temporary defaults saved as personal settings",
+      "current_status": "R14 normalizes79maps;26lacksettings; unsupported scripts not executed and63values clamped; partial source fidelity documented",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "SKY-PODS",
+      "request": "High sky team platforms at perimeter corners;12red pods,framework walls/roof and windows; no pilot labels; any unused own-team pod; forward cardinal travel; jump/glide/eject alternatives",
+      "current_status": "R14 detailed49x18m platforms;206packaged deployment checks; retain current art and routes",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "GHOST",
+      "request": "Compact death notice; movable translucent grayscale current skin; only teammates see ghost/name/bars through walls; opponents cannot; equipment disabled until revived/respawned",
+      "current_status": "R13/R14 packed ghost and3peer tests inherited; preserve normal ghost movement speed",
+      "evidence": "FEEDBACK-REGISTER-R13.md"
+    },
+    {
+      "id": "HEAL-PADS",
+      "request": "Green/black cross pads regenerate health throughout maps",
+      "current_status": "PARTIAL source access:410/410face contacts work at10HP/s;370floor-center probes work;40source-obstructed locations listed",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "DIVE",
+      "request": "After about1sfalling,push left stick forward to accelerate down; release permits glide",
+      "current_status": "R14 implemented with calibration preserved; headset comfort pending",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "WAKES",
+      "request": "Long elbow flight trails visible to others in all play phases; make2–3xthicker",
+      "current_status": "R14 radius2.5x; remote glide/dive meshes and team-only ghost visibility passed loopback",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "TRACERS",
+      "request": "All players see bullet tracers from actual shooter muzzle",
+      "current_status": "R14 remote-origin/follower correction;55packedFX checks",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "ZONE-POSITION",
+      "request": "Player marker/server root freezes after pod/fall; wrong zone damage must follow actual current body",
+      "current_status": "R14 independent bad-hand sanitation,fall-speed allowance and bounded correction; actual zone test passed",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "NET-TEST",
+      "request": "Validate multiplayer without friends and package for distant friend joining",
+      "current_status": "Local multi-peer self-tests retained; samebuild/content/packs required; reachableUDP24760; WAN/voice/cross-platform remain unverified",
+      "evidence": "docs/QUEST-R14-INTEGRATION.md"
+    },
+    {
+      "id": "SKYRIM",
+      "request": "Keep mergeable records for later Skyrim/Skyra port,including sprint-bottom HUD change",
+      "current_status": "Separate pending port; R14 porting manifest retained; Skyrim not edited or tested by this integration",
+      "evidence": "FEEDBACK-REGISTER-R14.md"
+    },
+    {
+      "id": "PROCESS",
+      "request": "Isolated source/branch,no active workspace or prior builds edited,no original Gemini assets changed; launcher/checkpoints/screenshots/manifests; offline vs headset distinction",
+      "current_status": "Preserved. New branch onD due lowCspace; no push or VR/device action",
+      "evidence": "docs/QUEST-R14-INTEGRATION.md"
+    },
+    {
+      "id": "DISMISSED",
+      "request": "Codex voice-to-text indicator complaint explicitly needs no game fix; existing gun star label request retracted",
+      "current_status": "No new implementation required; retained as withdrawn/out-of-scope",
+      "evidence": "FEEDBACK-REGISTER-R9.md"
+    },
+    {
+      "id": "QUEST",
+      "request": "Merge Philip Bankier helper Quest3 fork into current working source,retain all prior points; user may add features/push later",
+      "current_status": "R15 clean signed ARM64 APK built with both packs and verified installer; current exported gameplay/audio checks pass offline; physical Quest and cross-platform acceptance pending",
+      "evidence": "docs/QUEST-R15-SIDELOAD.md"
+    }
+  ],
+  "historical_rows": [
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 7,
+      "id": "RARITY-01",
+      "request": "White, blue, purple, gold, red, in that order.",
+      "historical_result": "Corrected shared palette and base metadata. Runtime asserts every color; selector checks preserve held/no-glow versus ground/glow behavior.",
+      "raw_markdown": "| RARITY-01 | White, blue, purple, gold, red, in that order. | Corrected shared palette and base metadata. Runtime asserts every color; selector checks preserve held/no-glow versus ground/glow behavior. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 8,
+      "id": "SELECTOR-01",
+      "request": "Gun type/star labels already exist; request retracted.",
+      "historical_result": "Existing labels preserved, without duplicate text. Blades and grenades remain fixed form.",
+      "raw_markdown": "| SELECTOR-01 | Gun type/star labels already exist; request retracted. | Existing labels preserved, without duplicate text. Blades and grenades remain fixed form. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 9,
+      "id": "SPAWN-01",
+      "request": "Hosted START returned to warmup position.",
+      "historical_result": "Initial match spawns prefer safe separated sites. Actual exported Main host transitions passed on Alpha, Afterlife, Poppy and Classic: approximately 147, 865, 186 and 213 m separation. All 105 maps pass supported-spawn checks. Missing authored spawn-type tags are not reconstructed.",
+      "raw_markdown": "| SPAWN-01 | Hosted START returned to warmup position. | Initial match spawns prefer safe separated sites. Actual exported Main host transitions passed on Alpha, Afterlife, Poppy and Classic: approximately 147, 865, 186 and 213 m separation. All 105 maps pass supported-spawn checks. Missing authored spawn-type tags are not reconstructed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 10,
+      "id": "SKINS-01",
+      "request": "Remove skins from field menu; forbid mid-match changes.",
+      "historical_result": "Field-menu entry and activation routes removed. Stale page returns to pause. Host rejects active-round style changes. Main-menu selector retained. Actual host and two-peer checks passed.",
+      "raw_markdown": "| SKINS-01 | Remove skins from field menu; forbid mid-match changes. | Field-menu entry and activation routes removed. Stale page returns to pause. Host rejects active-round style changes. Main-menu selector retained. Actual host and two-peer checks passed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 11,
+      "id": "SOUND-01",
+      "request": "Wooden door break, distinct from glass.",
+      "historical_result": "New original 0.7 s wooden fracture WAV, routed by passage type. All 271 accepted WAVs byte-identical to R9; 604 exported audio-route checks passed. Listening/headset mix untested.",
+      "raw_markdown": "| SOUND-01 | Wooden door break, distinct from glass. | New original 0.7 s wooden fracture WAV, routed by passage type. All 271 accepted WAVs byte-identical to R9; 604 exported audio-route checks passed. Listening/headset mix untested. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 12,
+      "id": "GLASS-01",
+      "request": "Opaque windows.",
+      "historical_result": "Custom maps using official-template s48 glass now recognized. Recognized panes use shared transparent material; native screenshot shows scenery through intact glass.",
+      "raw_markdown": "| GLASS-01 | Opaque windows. | Custom maps using official-template s48 glass now recognized. Recognized panes use shared transparent material; native screenshot shows scenery through intact glass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 13,
+      "id": "GLASS-02",
+      "request": "Sound plays but pane remains.",
+      "historical_result": "Pane owns duplicate layers, crosspieces and collision; aperture splitting removes welded leftovers. 558 exported checks include actual Alpha/Classic collision ray fans, assembly visibility and audio routing. Break state passes across real ENet peers. Afterlife decorative glass-named letters/posts excluded. Bespoke unrecognized geometry remains a coverage limit.",
+      "raw_markdown": "| GLASS-02 | Sound plays but pane remains. | Pane owns duplicate layers, crosspieces and collision; aperture splitting removes welded leftovers. 558 exported checks include actual Alpha/Classic collision ray fans, assembly visibility and audio routing. Break state passes across real ENet peers. Afterlife decorative glass-named letters/posts excluded. Bespoke unrecognized geometry remains a coverage limit. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 14,
+      "id": "PAD-01",
+      "request": "Sound without launch or intermittent activation; launch high.",
+      "historical_result": "Floor support canceled the impulse on the next tick; glide intent could cancel ascent. New ascent state preserves 45 m/s launch until apex/collision/climb/reset. Only successful launch emits sound/cooldown. Source pad sites grounded and deduplicated. Actual Alpha source pad and exported Main peers sustain roughly 59–61 m rise during measured flight. Arms-out ascent intent checked separately. R9's 12 safe Classic/Phoenix replacements remain explicitly new; original sockets unrecovered.",
+      "raw_markdown": "| PAD-01 | Sound without launch or intermittent activation; launch high. | Floor support canceled the impulse on the next tick; glide intent could cancel ascent. New ascent state preserves 45 m/s launch until apex/collision/climb/reset. Only successful launch emits sound/cooldown. Source pad sites grounded and deduplicated. Actual Alpha source pad and exported Main peers sustain roughly 59–61 m rise during measured flight. Arms-out ascent intent checked separately. R9's 12 safe Classic/Phoenix replacements remain explicitly new; original sockets unrecovered. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 15,
+      "id": "MATERIAL-01",
+      "request": "Alpha vans/containers lack detail; pink/white/green surfaces.",
+      "historical_result": "Raw-source/native comparison confirms gray low-detail bodies and plain boxes already lack original UV/art. Original procedural replacement detail only on matched shapes: Alpha 54 van bodies, 52 containers and 52 wheel pieces. Collision-face bytes, triangle counts and original textured bindings preserved. Original missing art remains partly unresolved.",
+      "raw_markdown": "| MATERIAL-01 | Alpha vans/containers lack detail; pink/white/green surfaces. | Raw-source/native comparison confirms gray low-detail bodies and plain boxes already lack original UV/art. Original procedural replacement detail only on matched shapes: Alpha 54 van bodies, 52 containers and 52 wheel pieces. Collision-face bytes, triangle counts and original textured bindings preserved. Original missing art remains partly unresolved. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 16,
+      "id": "MATERIAL-02",
+      "request": "Afterlife missing textures.",
+      "historical_result": "Source provenance, native overview and original thumbnail inspected. Much of its flat bright palette exists in supplied source. All declared dependencies verify. Unknown original art remains open; no blanket recoloring.",
+      "raw_markdown": "| MATERIAL-02 | Afterlife missing textures. | Source provenance, native overview and original thumbnail inspected. Much of its flat bright palette exists in supplied source. All declared dependencies verify. Unknown original art remains open; no blanket recoloring. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 17,
+      "id": "TEAM-01",
+      "request": "Team Revive explanation cut off after “you actually have…”.",
+      "historical_result": "Open clarification: whether each team should use a fixed authored base. Supplied spawn triples lack team/lobby tags. Existing Team Revive rules retained; authored base reconstruction is not claimed.",
+      "raw_markdown": "| TEAM-01 | Team Revive explanation cut off after “you actually have…”. | Open clarification: whether each team should use a fixed authored base. Supplied spawn triples lack team/lobby tags. Existing Team Revive rules retained; authored base reconstruction is not claimed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R10.md",
+      "line": 18,
+      "id": "UZI-01",
+      "request": "Both triggers can make right Uzi fire indefinitely.",
+      "historical_result": "Reproduced 87 emissions from a 40-round pair, one authority magazine still holding 20. Removed muzzle-proximity guessing; relay carries actual child-hand context. Exported simultaneous coincident-hand tests emit exactly 20 per hand; both authority/local magazines stay empty. Matador finite magazines and one-shot-per-press also pass. Stats/handling unchanged.",
+      "raw_markdown": "| UZI-01 | Both triggers can make right Uzi fire indefinitely. | Reproduced 87 emissions from a 40-round pair, one authority magazine still holding 20. Removed muzzle-proximity guessing; relay carries actual child-hand context. Exported simultaneous coincident-hand tests emit exactly 20 per hand; both authority/local magazines stay empty. Matador finite magazines and one-shot-per-press also pass. Stats/handling unchanged. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 16,
+      "id": "ROW-16",
+      "request": "Platform high in the sky; jump, fly or pod by choice.",
+      "historical_result": "Open 33 x 15 m climbable metal decks, 65 m above playable geometry, inward-facing red cabins. Cyberbird measures 236.325 m deck height over its 171.325 m landmark, below the finished canopy at 420 m. Direct downward collision ray reaches the arena.",
+      "raw_markdown": "| Platform high in the sky; jump, fly or pod by choice. | Open 33 x 15 m climbable metal decks, 65 m above playable geometry, inward-facing red cabins. Cyberbird measures 236.325 m deck height over its 171.325 m landmark, below the finished canopy at 420 m. Direct downward collision ray reaches the arena. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 17,
+      "id": "ROW-17",
+      "request": "Teams gather separately after host START.",
+      "historical_result": "Two to eight team decks, eight cabin lanes each (session limit eight total players). Distinct teammate spawn lanes; teammates together, opponents separated. Shared warmup remains a separate in-map gathering. Round end restores warmup.",
+      "raw_markdown": "| Teams gather separately after host START. | Two to eight team decks, eight cabin lanes each (session limit eight total players). Distinct teammate spawn lanes; teammates together, opponents separated. Shared warmup remains a separate in-map gathering. Round end restores warmup. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 18,
+      "id": "ROW-18",
+      "request": "Enter a red pod and launch to a random arena position.",
+      "historical_result": "Choose any unused own-team cabin; aim/touch its console and press trigger/grip, or E in desktop debug. Neutral input required after entering. A short outward climb clears the cabin row, followed by level travel over the arena; explicit early eject or automatic release. Destinations use floor/headroom-validated arena sites.",
+      "raw_markdown": "| Enter a red pod and launch to a random arena position. | Choose any unused own-team cabin; aim/touch its console and press trigger/grip, or E in desktop debug. Neutral input required after entering. A short outward climb clears the cabin row, followed by level travel over the arena; explicit early eject or automatic release. Destinations use floor/headroom-validated arena sites. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 19,
+      "id": "ROW-19",
+      "request": "Deathmatch uses random map spawn points.",
+      "historical_result": "Retains existing supported-spawn, enemy-separation and warmup-avoidance checks, with private randomized candidate traversal. Deathmatch removes all deployment structures.",
+      "raw_markdown": "| Deathmatch uses random map spawn points. | Retains existing supported-spawn, enemy-separation and warmup-avoidance checks, with private randomized candidate traversal. Deathmatch removes all deployment structures. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 20,
+      "id": "ROW-20",
+      "request": "Preserve initialization and accepted gameplay.",
+      "historical_result": "Calibration, height, settings, inventory and health retain their existing values through deployment. No automatic Initialize. All 273 inherited WAV assets byte-identical; three new original pod cues only. Weapon handling/data unchanged.",
+      "raw_markdown": "| Preserve initialization and accepted gameplay. | Calibration, height, settings, inventory and health retain their existing values through deployment. No automatic Initialize. All 273 inherited WAV assets byte-identical; three new original pod cues only. Weapon handling/data unchanged. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 21,
+      "id": "ROW-21",
+      "request": "Multiplayer and cleanup.",
+      "historical_result": "Server validates occupied own-team cabin and one-use pod, chooses destination and clock, clamps carried root poses to authorized path; preserves hand/HMD offsets. Eject uses spawn-revision fencing. Pod/engine nodes retire on expiry, round/map/session changes.",
+      "raw_markdown": "| Multiplayer and cleanup. | Server validates occupied own-team cabin and one-use pod, chooses destination and clock, clamps carried root poses to authorized path; preserves hand/HMD offsets. Eject uses spawn-revision fencing. Pod/engine nodes retire on expiry, round/map/session changes. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R12.md",
+      "line": 22,
+      "id": "ROW-22",
+      "request": "Source authenticity.",
+      "historical_result": "All 105 supplied maps inspected through retained source metadata. No authoritative pod/team bindings recovered. Four lootdropship material references are supply-ship artwork. These platforms are a reconstruction, with no claim to have restored missing original tags.",
+      "raw_markdown": "| Source authenticity. | All 105 supplied maps inspected through retained source metadata. No authoritative pod/team bindings recovered. Four lootdropship material references are supply-ship artwork. These platforms are a reconstruction, with no claim to have restored missing original tags. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 7,
+      "id": "ROW-7",
+      "request": "Proper death handling and a little notice above the HUD.",
+      "historical_result": "One authoritative death path sets zero health/shield, clears healing and counts one death/kill. Falling also enters the death feed. Compact ghost/respawn notice remains visible above the HUD, with large legacy death text suppressed. Repeated damage cannot score another death.",
+      "raw_markdown": "| Proper death handling and a little notice above the HUD. | One authoritative death path sets zero health/shield, clears healing and counts one death/kill. Falling also enters the death feed. Compact ghost/respawn notice remains visible above the HUD, with large legacy death text suppressed. Repeated damage cannot score another death. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 8,
+      "id": "ROW-8",
+      "request": "Opponents cannot see ghosts; teammates can.",
+      "historical_result": "Downed and eliminated bodies render only to allies. Opponents see no body, name, bars, shadow or held gun. Ghost colliders do not stop bullets/grenades. Free-for-all treats every other player as an opponent.",
+      "raw_markdown": "| Opponents cannot see ghosts; teammates can. | Downed and eliminated bodies render only to allies. Opponents see no body, name, bars, shadow or held gun. Ghost colliders do not stop bullets/grenades. Free-for-all treats every other player as an opponent. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 9,
+      "id": "ROW-9",
+      "request": "Translucent black-and-white version of current skin.",
+      "historical_result": "Original current head/body/glove meshes and albedo textures retained. A per-avatar 42% alpha grayscale material replaces rendering only; original materials/overlays/shadows are restored exactly on revival/respawn. All seven styles and both model tiers checked. No character asset files changed.",
+      "raw_markdown": "| Translucent black-and-white version of current skin. | Original current head/body/glove meshes and albedo textures retained. A per-avatar 42% alpha grayscale material replaces rendering only; original materials/overlays/shadows are restored exactly on revival/respawn. All seven styles and both model tiers checked. No character asset files changed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 10,
+      "id": "ROW-10",
+      "request": "Name and health bars remain above friendly ghosts.",
+      "historical_result": "Friendly tag stays visible for both downed and eliminated players, with red dead-player name, zero-pool readouts and empty bar tracks. Existing through-wall friendly tag behavior retained.",
+      "raw_markdown": "| Name and health bars remain above friendly ghosts. | Friendly tag stays visible for both downed and eliminated players, with red dead-player name, zero-pool readouts and empty bar tracks. Existing through-wall friendly tag behavior retained. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 11,
+      "id": "ROW-11",
+      "request": "Move around.",
+      "historical_result": "Normal walking/climbing/flying remain available with world collision. Ghosts pass through player colliders. Local and authoritative weapon, pickup, building, consumable and paddle permissions remain blocked until alive. Safe arena relocation handles a ghost falling out of bounds while retaining death state, timers and counters.",
+      "raw_markdown": "| Move around. | Normal walking/climbing/flying remain available with world collision. Ghosts pass through player colliders. Local and authoritative weapon, pickup, building, consumable and paddle permissions remain blocked until alive. Safe arena relocation handles a ghost falling out of bounds while retaining death state, timers and counters. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 12,
+      "id": "ROW-12",
+      "request": "Ghosts are visible through walls.",
+      "historical_result": "Ghost shader ignores geometry depth and fog; only teammates render it. Native opaque-wall control shows the alive body occluded, allied ghost visible, opposing ghost absent.",
+      "raw_markdown": "| Ghosts are visible through walls. | Ghost shader ignores geometry depth and fog; only teammates render it. Native opaque-wall control shows the alive body occluded, allied ghost visible, opposing ghost absent. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R13.md",
+      "line": 13,
+      "id": "ROW-13",
+      "request": "Preserve prior accepted systems.",
+      "historical_result": "Existing revive charge/reach/team validation, expiry and deathmatch respawn timing retained. Calibration/settings and manual Initialize retained. All 276 existing WAV files and 430 character/weapon model/texture files unchanged; map packs byte-identical. R12 deployment and finite dual-trigger checks pass.",
+      "raw_markdown": "| Preserve prior accepted systems. | Existing revive charge/reach/team validation, expiry and deathmatch respawn timing retained. Calibration/settings and manual Initialize retained. All 276 existing WAV files and 430 character/weapon model/texture files unchanged; map packs byte-identical. R12 deployment and finite dual-trigger checks pass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 7,
+      "id": "HEAL-01",
+      "request": "Recognize green/black octagon with cross; health-regeneration pads functional throughout all maps.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| HEAL-01 | Recognize green/black octagon with cross; health-regeneration pads functional throughout all maps. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 8,
+      "id": "PAD-01",
+      "request": "Retain sustained jump-pad flight; tilted pads launch along face normal and support directional chains, including Alpha.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| PAD-01 | Retain sustained jump-pad flight; tilted pads launch along face normal and support directional chains, including Alpha. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 9,
+      "id": "AUDIO-01",
+      "request": "Repair revive-paddle sound playback; preserve latest accepted weapon/audio assets.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| AUDIO-01 | Repair revive-paddle sound playback; preserve latest accepted weapon/audio assets. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 10,
+      "id": "ART-01",
+      "request": "Audit all map material bindings and native/source appearance; repair broken Alpha signs, road intersections, large trucks, remaining vans, tower fences, barrels, stop signs, lamp posts, crossing barriers, wooden fences and dumpsters. Distinguish original missing artwork from runtime faults.",
+      "historical_result": "Audit complete; guarded container/wood repairs included; unavailable original signs/vehicle/fence artwork remains unresolved",
+      "raw_markdown": "| ART-01 | Audit all map material bindings and native/source appearance; repair broken Alpha signs, road intersections, large trucks, remaining vans, tower fences, barrels, stop signs, lamp posts, crossing barriers, wooden fences and dumpsters. Distinguish original missing artwork from runtime faults. | Audit complete; guarded container/wood repairs included; unavailable original signs/vehicle/fence artwork remains unresolved |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 11,
+      "id": "ROW-11",
+      "request": "Remove tactical-map headers, Local Archive subtitle and bottom-right help/legend; remove duplicate health/shield panel, retain useful top-left player readout.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| MAP-UI-01 | Remove tactical-map headers, Local Archive subtitle and bottom-right help/legend; remove duplicate health/shield panel, retain useful top-left player readout. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 12,
+      "id": "RARITY-01",
+      "request": "Tint weapon pictures, selector heading text and stars in selector/backpack using white, blue, purple, gold, red rarity order. Held weapon meshes do not glow.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| RARITY-01 | Tint weapon pictures, selector heading text and stars in selector/backpack using white, blue, purple, gold, red rarity order. Held weapon meshes do not glow. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 13,
+      "id": "RULES-01",
+      "request": "Apply documented source-map defaults to hosted sessions as for solo READY; host can deliberately override.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| RULES-01 | Apply documented source-map defaults to hosted sessions as for solo READY; host can deliberately override. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 14,
+      "id": "SPAWN-01",
+      "request": "White ring with arrow is a warmup/lobby spawn. Black ring/person marker is a deathmatch spawn. Scan all maps, recover floor/direction, and hide markers during hosted play. Team Revive retains deployment decks.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| SPAWN-01 | White ring with arrow is a warmup/lobby spawn. Black ring/person marker is a deathmatch spawn. Scan all maps, recover floor/direction, and hide markers during hosted play. Team Revive retains deployment decks. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 15,
+      "id": "POD-01",
+      "request": "Add open side windows, remove pilot names/personalization, allow any unused own-team pod. Move decks to true map corners/perimeter and orient along opposite map sides. Initial travel must go forward into map; no backward launch.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| POD-01 | Add open side windows, remove pilot names/personalization, allow any unused own-team pod. Move decks to true map corners/perimeter and orient along opposite map sides. Initial travel must go forward into map; no backward launch. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 16,
+      "id": "POSE-01",
+      "request": "Fix stale authoritative/player tactical-map location causing wrong zone damage after moving/ejecting; preserve movement speed for ghosts and living players.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| POSE-01 | Fix stale authoritative/player tactical-map location causing wrong zone damage after moving/ejecting; preserve movement speed for ghosts and living players. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 17,
+      "id": "MOVE-01",
+      "request": "Add dive after approximately one second of falling when pushing forward on left joystick, increasing downward fall speed.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| MOVE-01 | Add dive after approximately one second of falling when pushing forward on left joystick, increasing downward fall speed. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 18,
+      "id": "TRAIL-01",
+      "request": "Long elbow trails while flying, visible to all eligible players; respect team-only ghost visibility.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| TRAIL-01 | Long elbow trails while flying, visible to all eligible players; respect team-only ghost visibility. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 19,
+      "id": "TRACER-01",
+      "request": "Bullet tracers visible to every player.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| TRACER-01 | Bullet tracers visible to every player. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 20,
+      "id": "PING-01",
+      "request": "Remove arbitrary ping-distance limit while keeping finite/valid geometry positions.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| PING-01 | Remove arbitrary ping-distance limit while keeping finite/valid geometry positions. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 21,
+      "id": "PASSAGE-01",
+      "request": "User clarified doors/windows work in hosted warmup and solo READY, fail in actual match. Validate actual match authority/pose and passage destruction for Alpha and full library.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| PASSAGE-01 | User clarified doors/windows work in hosted warmup and solo READY, fail in actual match. Validate actual match authority/pose and passage destruction for Alpha and full library. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 22,
+      "id": "BUILD-01",
+      "request": "Building works in lobby but not actual match. Fix authority/movement and validate real match construction.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| BUILD-01 | Building works in lobby but not actual match. Fix authority/movement and validate real match construction. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 23,
+      "id": "MENU-01",
+      "request": "Remove Release controls to resume text entirely; fix menu black backdrop and interactive laser depth so all render ahead of world geometry.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| MENU-01 | Remove Release controls to resume text entirely; fix menu black backdrop and interactive laser depth so all render ahead of world geometry. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 24,
+      "id": "TRAIL-02",
+      "request": "User confirmed trails already work in lobby and match. Preserve implementation, make trails 2–3 times thicker and ensure remote visibility.",
+      "historical_result": "Implemented; offline validation recorded; headset acceptance pending",
+      "raw_markdown": "| TRAIL-02 | User confirmed trails already work in lobby and match. Preserve implementation, make trails 2–3 times thicker and ensure remote visibility. | Implemented; offline validation recorded; headset acceptance pending |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R14.md",
+      "line": 25,
+      "id": "POD-02",
+      "request": "Improve visual fidelity against the spawn-platform reference. Exactly 12 pods per platform, futuristic framework walls and roof; preserve clear hot-drop and pod departure routes.",
+      "historical_result": "Implemented; native screenshots and 12-pod collision checks recorded",
+      "raw_markdown": "| POD-02 | Improve visual fidelity against the spawn-platform reference. Exactly 12 pods per platform, futuristic framework walls and roof; preserve clear hot-drop and pod departure routes. | Implemented; native screenshots and 12-pod collision checks recorded |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 11,
+      "id": "MAP-01",
+      "request": "BANANA LAND appears to contain two maps overlaid. Determine source geometry versus runtime duplication; fix the actual cause.",
+      "historical_result": "UPSTREAM SOURCE ISSUE, remains. Raw Delicious mesh diagnostic reproduces overlap with no Main, gameplay or previous map. Binary buffers/transforms unchanged. RAW-HEADER-DIAGNOSTIC.json and RAW-SOURCE-banana-land-gods-pitdevil.png.",
+      "raw_markdown": "| MAP-01 | BANANA LAND appears to contain two maps overlaid. Determine source geometry versus runtime duplication; fix the actual cause. | UPSTREAM SOURCE ISSUE, remains. Raw Delicious mesh diagnostic reproduces overlap with no Main, gameplay or previous map. Binary buffers/transforms unchanged. RAW-HEADER-DIAGNOSTIC.json and RAW-SOURCE-banana-land-gods-pitdevil.png. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 12,
+      "id": "MAP-02",
+      "request": "BAMBOO also appears to contain two overlaid maps.",
+      "historical_result": "UPSTREAM SOURCE ISSUE, remains. Same independent reproduction for Bamboo; RAW-SOURCE-bamboo-gods-pitdevil.png. All 105 actual READY/unload checks released old map weak references.",
+      "raw_markdown": "| MAP-02 | BAMBOO also appears to contain two overlaid maps. | UPSTREAM SOURCE ISSUE, remains. Same independent reproduction for Bamboo; RAW-SOURCE-bamboo-gods-pitdevil.png. All 105 actual READY/unload checks released old map weak references. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 13,
+      "id": "UI-01",
+      "request": "Right hand has two menu lasers: lower beam works, upper beam does nothing. Keep one accurate interactive beam.",
+      "historical_result": "Implemented shared grip ray and explicit menu-beam ownership; pointer shadows disabled. Exported feedback checks pass. Tracked right-hand headset acceptance pending.",
+      "raw_markdown": "| UI-01 | Right hand has two menu lasers: lower beam works, upper beam does nothing. Keep one accurate interactive beam. | Implemented shared grip ray and explicit menu-beam ownership; pointer shadows disabled. Exported feedback checks pass. Tracked right-hand headset acceptance pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 14,
+      "id": "LOOT-01",
+      "request": "Red hexagons/question marks are weapon spawn placeholders, expected to produce approximately six random weapons each.",
+      "historical_result": "Recognized baked ring/glyph triangles and matching collision removed in prepared adapters. Valid nearby sites activate six real varied weapons using existing authoritative inventory/rarity systems; bounded activation and art allocation. Exported five-map checks and two-peer pickup/equip/drop pass.",
+      "raw_markdown": "| LOOT-01 | Red hexagons/question marks are weapon spawn placeholders, expected to produce approximately six random weapons each. | Recognized baked ring/glyph triangles and matching collision removed in prepared adapters. Valid nearby sites activate six real varied weapons using existing authoritative inventory/rarity systems; bounded activation and art allocation. Exported five-map checks and two-peer pickup/equip/drop pass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 15,
+      "id": "LOOT-02",
+      "request": "Atrocious geometry otherwise appeared correct, but weapons must spawn at the marked sites.",
+      "historical_result": "Atrocious: 378 cache sites recovered. Geometry preserved except recognized authoring symbols and breakable panes. Real exported cache items and two-peer match verified.",
+      "raw_markdown": "| LOOT-02 | Atrocious geometry otherwise appeared correct, but weapons must spawn at the marked sites. | Atrocious: 378 cache sites recovered. Geometry preserved except recognized authoring symbols and breakable panes. Real exported cache items and two-peer match verified. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 16,
+      "id": "SPAWN-01",
+      "request": "Starting Atrocious spawns player below the map.",
+      "historical_result": "Fixed zone fallback that discarded valid sites and skipped grounding. Exported Atrocious warmup, zone match, death/respawn, rematch and return warmup pass with actual floor/headroom checks.",
+      "raw_markdown": "| SPAWN-01 | Starting Atrocious spawns player below the map. | Fixed zone fallback that discarded valid sites and skipped grounding. Exported Atrocious warmup, zone match, death/respawn, rematch and return warmup pass with actual floor/headroom checks. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 17,
+      "id": "HUD-01",
+      "request": "HUD disappears into walls; HUD must render in front of geometry like the reticle.",
+      "historical_result": "HUD quads/labels/icons use no-depth rendering; world markers retain normal occlusion. Exported R8-09 screenshot and feedback checks pass. Headset edge cases pending.",
+      "raw_markdown": "| HUD-01 | HUD disappears into walls; HUD must render in front of geometry like the reticle. | HUD quads/labels/icons use no-depth rendering; world markers retain normal occlusion. Exported R8-09 screenshot and feedback checks pass. Headset edge cases pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 18,
+      "id": "VIEW-01",
+      "request": "Moving against walls can black out the screen.",
+      "historical_result": "Removed obstruction blackout; solid tracked head collision retained. Exported fade assertion passes. Physical headset wall approach remains pending.",
+      "raw_markdown": "| VIEW-01 | Moving against walls can black out the screen. | Removed obstruction blackout; solid tracked head collision retained. Exported fade assertion passes. Physical headset wall approach remains pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 19,
+      "id": "TEX-01",
+      "request": "Paintball grass and gray wall textures shimmer/flicker beyond a few metres.",
+      "historical_result": "Mipmaps and anisotropic filtering apply to every imported map, including normal maps; roughness floor and foliage alpha scissor. Native Vulkan views recorded. Headset motion/long-distance comfort remains pending.",
+      "raw_markdown": "| TEX-01 | Paintball grass and gray wall textures shimmer/flicker beyond a few metres. | Mipmaps and anisotropic filtering apply to every imported map, including normal maps; roughness floor and foliage alpha scissor. Native Vulkan views recorded. Headset motion/long-distance comfort remains pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 20,
+      "id": "SPAWN-02",
+      "request": "Paintball lobby and match spawns appear swapped; match can start above the arena.",
+      "historical_result": "Separate supported warmup versus arena candidates; unsupported Y=100 and tallest fallback roofs no longer become lobby sites. Exported Paintball warmup and zone match floor/headroom checks pass.",
+      "raw_markdown": "| SPAWN-02 | Paintball lobby and match spawns appear swapped; match can start above the arena. | Separate supported warmup versus arena candidates; unsupported Y=100 and tallest fallback roofs no longer become lobby sites. Exported Paintball warmup and zone match floor/headroom checks pass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 21,
+      "id": "SCORE-01",
+      "request": "Imported scoreboards missing, specifically beside “Welcome to Battlefield Paintball.”",
+      "historical_result": "Live ASHFALL world scoreboards added near warmup and distant arena spawn. Paintball native screenshot beside arena sign; session-derived score/team/player data. Original scoreboard metadata absent, so exact source placement is not reconstructed.",
+      "raw_markdown": "| SCORE-01 | Imported scoreboards missing, specifically beside “Welcome to Battlefield Paintball.” | Live ASHFALL world scoreboards added near warmup and distant arena spawn. Paintball native screenshot beside arena sign; session-derived score/team/player data. Original scoreboard metadata absent, so exact source placement is not reconstructed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 22,
+      "id": "MARK-01",
+      "request": "Player spawn markers should not be visible in hosted warmup/matches. Review view may show them.",
+      "historical_result": "Functional player spawn sites are invisible. Recognized baked weapon symbols hidden/removed in play; raw archive remains preserved for review. No generic decoder for every possible bespoke authoring glyph or new review-mode toggle is claimed.",
+      "raw_markdown": "| MARK-01 | Player spawn markers should not be visible in hosted warmup/matches. Review view may show them. | Functional player spawn sites are invisible. Recognized baked weapon symbols hidden/removed in play; raw archive remains preserved for review. No generic decoder for every possible bespoke authoring glyph or new review-mode toggle is claimed. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 23,
+      "id": "MARK-02",
+      "request": "During matches red weapon placeholders must be weapons, not hexagons.",
+      "historical_result": "Implemented with LOOT-01. Actual random cache weapons replace recognized red symbols and use normal grabbable item systems in hosted sessions.",
+      "raw_markdown": "| MARK-02 | During matches red weapon placeholders must be weapons, not hexagons. | Implemented with LOOT-01. Actual random cache weapons replace recognized red symbols and use normal grabbable item systems in hosted sessions. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 24,
+      "id": "TEX-02",
+      "request": "Classic rocks and trees shimmer; its grass seemed fine.",
+      "historical_result": "Same all-map mipmap/filter/foliage changes cover Classic rocks/trees. Native Classic views recorded; actual headset shimmer acceptance pending.",
+      "raw_markdown": "| TEX-02 | Classic rocks and trees shimmer; its grass seemed fine. | Same all-map mipmap/filter/foliage changes cover Classic rocks/trees. Native Classic views recorded; actual headset shimmer acceptance pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 25,
+      "id": "AUDIO-01",
+      "request": "Weapon sound effects sound reverted; ensure latest accepted weapon audio is shipped and selected.",
+      "historical_result": "Confirmed real PCM regression in R7/1004 under unchanged filenames. Restored accepted R6/0992/0993 audio and full manifests. Shipped executable: 604 decoded-sample/routing checks, zero failures. Headset mix remains separate.",
+      "raw_markdown": "| AUDIO-01 | Weapon sound effects sound reverted; ensure latest accepted weapon audio is shipped and selected. | Confirmed real PCM regression in R7/1004 under unchanged filenames. Restored accepted R6/0992/0993 audio and full manifests. Shipped executable: 604 decoded-sample/routing checks, zero failures. Headset mix remains separate. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 26,
+      "id": "MAP-03",
+      "request": "Classic offhand map is only a blank blue grid.",
+      "historical_result": "Actual geometry captured once into aligned north-up tactical texture; map/zone/player coordinates use catalog bounds. R8-08 native screenshot replaces blank grid. Held-trigger behavior retained.",
+      "raw_markdown": "| MAP-03 | Classic offhand map is only a blank blue grid. | Actual geometry captured once into aligned north-up tactical texture; map/zone/player coordinates use catalog bounds. R8-08 native screenshot replaces blank grid. Held-trigger behavior retained. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 27,
+      "id": "PAD-01",
+      "request": "Classic jump pads do not work.",
+      "historical_result": "Classic: 12 new standable launch-pad sites with open vertical clearance, visible discs/arrows, original sound and cooldown. Real player velocity/cooldown tested in export. These are ASHFALL placements; original exact pad sites not recovered.",
+      "raw_markdown": "| PAD-01 | Classic jump pads do not work. | Classic: 12 new standable launch-pad sites with open vertical clearance, visible discs/arrows, original sound and cooldown. Real player velocity/cooldown tested in export. These are ASHFALL placements; original exact pad sites not recovered. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 28,
+      "id": "BREAK-01",
+      "request": "Doors/windows must break when walked through, allowing building entry, with a loud break sound.",
+      "historical_result": "Recognized glass plus Classic thin entry panels become collision-bearing breakables, shatter on approach/shots, sound, reset each round and replicate broken state. Classic 1070 panels (730 glass + 340 thin entry panels). Bespoke opaque doors need authored semantics. Shipped peer panel-state check passes.",
+      "raw_markdown": "| BREAK-01 | Doors/windows must break when walked through, allowing building entry, with a loud break sound. | Recognized glass plus Classic thin entry panels become collision-bearing breakables, shatter on approach/shots, sound, reset each round and replicate broken state. Classic 1070 panels (730 glass + 340 thin entry panels). Bespoke opaque doors need authored semantics. Shipped peer panel-state check passes. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 29,
+      "id": "LOOT-03",
+      "request": "Classic has missing weapon drops throughout.",
+      "historical_result": "Classic: 64 distributed supported cache sites, six real weapons per active site plus existing ammo/build/heal pickups. Nearby activation bounds runtime cost; shipped checks verify real instances and ground access.",
+      "raw_markdown": "| LOOT-03 | Classic has missing weapon drops throughout. | Classic: 64 distributed supported cache sites, six real weapons per active site plus existing ammo/build/heal pickups. Nearby activation bounds runtime cost; shipped checks verify real instances and ground access. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 30,
+      "id": "SPAWN-03",
+      "request": "Starting matches can spawn player in midair generally. Lobby and match have different spawn types.",
+      "historical_result": "Common imported-map zone fallback grounds and validates candidates; retains valid recorded arena sites, separates warmup. Five reported maps checked in export; all 105 actual READY/load/unload tested in source with final prepared packs.",
+      "raw_markdown": "| SPAWN-03 | Starting matches can spawn player in midair generally. Lobby and match have different spawn types. | Common imported-map zone fallback grounds and validates candidates; retains valid recorded arena sites, separates warmup. Five reported maps checked in export; all 105 actual READY/load/unload tested in source with final prepared packs. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 31,
+      "id": "SKIN-01",
+      "request": "Add an obvious skin-selector button.",
+      "historical_result": "SKINS button beside LOADOUT plus field-menu selector. Seven total styles, preview/USE CHARACTER, saved selection and remote replication. Calibration unchanged; initialization remains manual. Native selector screenshots and exported interaction checks pass.",
+      "raw_markdown": "| SKIN-01 | Add an obvious skin-selector button. | SKINS button beside LOADOUT plus field-menu selector. Seven total styles, preview/USE CHARACTER, saved selection and remote replication. Calibration unchanged; initialization remains manual. Native selector screenshots and exported interaction checks pass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 32,
+      "id": "SKIN-02",
+      "request": "Incorporate new Witch Doctor skins and label each by the model that made it.",
+      "historical_result": "All FOUR new skins integrated: GPT-6 Astra, GPT-6.1 Sol, Gemini 4 Argon and completed Claude Opus. Donor copies fitted to existing avatar segmentation; Claude includes light variant/glove maps. Model provenance retained, source donors untouched. Exported four-model native view; two-peer Claude body/hands pass.",
+      "raw_markdown": "| SKIN-02 | Incorporate new Witch Doctor skins and label each by the model that made it. | All FOUR new skins integrated: GPT-6 Astra, GPT-6.1 Sol, Gemini 4 Argon and completed Claude Opus. Donor copies fitted to existing avatar segmentation; Claude includes light variant/glove maps. Model provenance retained, source donors untouched. Exported four-model native view; two-peer Claude body/hands pass. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R8.md",
+      "line": 33,
+      "id": "PROCESS-01",
+      "request": "Write down every comment and work systematically; do not lose earlier feedback.",
+      "historical_result": "Register created before implementation, all current reports retained, prior accepted features listed below. Candidate/source contain register, change/porting manifests and offline receipts with separate headset/Internet limits.",
+      "raw_markdown": "| PROCESS-01 | Write down every comment and work systematically; do not lose earlier feedback. | Register created before implementation, all current reports retained, prior accepted features listed below. Candidate/source contain register, change/porting manifests and offline receipts with separate headset/Internet limits. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 7,
+      "id": "MENU-01",
+      "request": "Actual-size character preview, rotating slowly without needing a grab.",
+      "historical_result": "Implemented: full-size scale 1 and slow rotation. REGRESSION-R9.json; native world-fixed selector.",
+      "raw_markdown": "| MENU-01 | Actual-size character preview, rotating slowly without needing a grab. | Implemented: full-size scale 1 and slow rotation. REGRESSION-R9.json; native world-fixed selector. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 8,
+      "id": "MENU-02",
+      "request": "Remove the two side pedestals and their characters; one selected character only, slightly right.",
+      "historical_result": "Implemented: one podium/avatar, selected style slightly right. Regression and native capture.",
+      "raw_markdown": "| MENU-02 | Remove the two side pedestals and their characters; one selected character only, slightly right. | Implemented: one podium/avatar, selected style slightly right. Regression and native capture. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 9,
+      "id": "MENU-03",
+      "request": "Character fixed in world, not in front of/above tracked headset.",
+      "historical_result": "Implemented: gallery reuses fixed world avatar; controller/head motion does not relocate it.",
+      "raw_markdown": "| MENU-03 | Character fixed in world, not in front of/above tracked headset. | Implemented: gallery reuses fixed world avatar; controller/head motion does not relocate it. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 10,
+      "id": "MENU-04",
+      "request": "Main-menu UI fixed in world in front of remaining podium; no head-follow positioning.",
+      "historical_result": "Implemented: main board world-fixed. In-map host overlay retains its separate reachable anchor.",
+      "raw_markdown": "| MENU-04 | Main-menu UI fixed in world in front of remaining podium; no head-follow positioning. | Implemented: main board world-fixed. In-map host overlay retains its separate reachable anchor. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 11,
+      "id": "MODEL-01",
+      "request": "Astra/Sol/Argon appear lower-poly than Claude; Claude looks best.",
+      "historical_result": "Observation retained; preserve supplied variants/provenance.",
+      "raw_markdown": "| MODEL-01 | Astra/Sol/Argon appear lower-poly than Claude; Claude looks best. | Observation retained; preserve supplied variants/provenance. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 12,
+      "id": "OVERLAP-01",
+      "request": "Banana Land and Bamboo confirmed by user.",
+      "historical_result": "Existing raw-source overlap evidence; remains source issue.",
+      "raw_markdown": "| OVERLAP-01 | Banana Land and Bamboo confirmed by user. | Existing raw-source overlap evidence; remains source issue. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 13,
+      "id": "OVERLAP-02",
+      "request": "Inspect Beast Mode, Chem X, Coldhearted, Dark Carnival for apparent overlapping maps.",
+      "historical_result": "Reproduced mixed scenery from independent raw geometry for all four, without Main/converter/previous maps. Source layout retained; author intent not inferred. RAW-SOURCE-R9.json and five native diagnostics.",
+      "raw_markdown": "| OVERLAP-02 | Inspect Beast Mode, Chem X, Coldhearted, Dark Carnival for apparent overlapping maps. | Reproduced mixed scenery from independent raw geometry for all four, without Main/converter/previous maps. Source layout retained; author intent not inferred. RAW-SOURCE-R9.json and five native diagnostics. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 14,
+      "id": "OVERLAP-03",
+      "request": "G-Spot ultimately looked fine; Phoenix fine. Melly Pop also not overlapped.",
+      "historical_result": "Do not flag these as broken without evidence.",
+      "raw_markdown": "| OVERLAP-03 | G-Spot ultimately looked fine; Phoenix fine. Melly Pop also not overlapped. | Do not flag these as broken without evidence. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 15,
+      "id": "OVERLAP-04",
+      "request": "Melie's Cafe appears overlapped with Banana Land, absent in thumbnail; inspect actual loaded geometry.",
+      "historical_result": "Raw Melie’s Cafe includes Bamboo/Banana letter geometry and mixed scenery. Present before ASHFALL loading; retained, source repair unresolved.",
+      "raw_markdown": "| OVERLAP-04 | Melie's Cafe appears overlapped with Banana Land, absent in thumbnail; inspect actual loaded geometry. | Raw Melie’s Cafe includes Bamboo/Banana letter geometry and mixed scenery. Present before ASHFALL loading; retained, source repair unresolved. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 16,
+      "id": "AUDIO-01",
+      "request": "User confirms general sounds now much better. Preserve accepted updated audio.",
+      "historical_result": "Retain R8 restoration; regressions separately tracked.",
+      "raw_markdown": "| AUDIO-01 | User confirms general sounds now much better. Preserve accepted updated audio. | Retain R8 restoration; regressions separately tracked. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 17,
+      "id": "HAND-01",
+      "request": "Hands sometimes still reach through walls, preventing climbing; verify accepted collision change carried over.",
+      "historical_result": "Shared proxy now applies to all worlds and accepts clamped near-side climb contact. Real hollow concave-wall regression passes; physical tracked-hand acceptance pending.",
+      "raw_markdown": "| HAND-01 | Hands sometimes still reach through walls, preventing climbing; verify accepted collision change carried over. | Shared proxy now applies to all worlds and accepts clamped near-side climb contact. Real hollow concave-wall regression passes; physical tracked-hand acceptance pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 18,
+      "id": "RARITY-01",
+      "request": "Swords/knives have no rarity stars; fixed form. Grenades/zone grenades also have no stars.",
+      "historical_result": "Implemented fixed form/no rarity decoration for swords, knives, frag and zone grenades. Firearm levels retained; exported selector regression covers both classes.",
+      "raw_markdown": "| RARITY-01 | Swords/knives have no rarity stars; fixed form. Grenades/zone grenades also have no stars. | Implemented fixed form/no rarity decoration for swords, knives, frag and zone grenades. Firearm levels retained; exported selector regression covers both classes. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 19,
+      "id": "VIEW-01",
+      "request": "Sharp render cutoff changes with head angle; render whole map sensibly.",
+      "historical_result": "Main and scoped camera far planes cover solid map bounds with margin. No distance cutoff introduced in chunks. Actual head-motion/performance acceptance pending.",
+      "raw_markdown": "| VIEW-01 | Sharp render cutoff changes with head angle; render whole map sensibly. | Main and scoped camera far planes cover solid map bounds with margin. No distance cutoff introduced in chunks. Actual head-motion/performance acceptance pending. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 20,
+      "id": "MATERIAL-01",
+      "request": "Phoenix signs pink; signs and vehicle textures missing on many maps.",
+      "historical_result": "UNRESOLVED: source signs/vehicles lack reliable original artwork bindings. Rejected a visually incorrect substitute; it is not shipped. Retained distance filtering and original geometry.",
+      "raw_markdown": "| MATERIAL-01 | Phoenix signs pink; signs and vehicle textures missing on many maps. | UNRESOLVED: source signs/vehicles lack reliable original artwork bindings. Rejected a visually incorrect substitute; it is not shipped. Retained distance filtering and original geometry. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 21,
+      "id": "PAD-01",
+      "request": "Phoenix jump pads still nonfunctional; previous claim was too broad.",
+      "historical_result": "Shared source jump-pad material recognition across library; Phoenix and Classic have twelve explicitly new orange octagonal pads each, with real launch velocity/cooldown. Native review rejected crane footings and a factory object; no color-only detection is shipped. Exact original official-map pad locations remain unrecovered. Unknown untagged bespoke pads remain a source coverage limit.",
+      "raw_markdown": "| PAD-01 | Phoenix jump pads still nonfunctional; previous claim was too broad. | Shared source jump-pad material recognition across library; Phoenix and Classic have twelve explicitly new orange octagonal pads each, with real launch velocity/cooldown. Native review rejected crane footings and a factory object; no color-only detection is shipped. Exact original official-map pad locations remain unrecovered. Unknown untagged bespoke pads remain a source coverage limit. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 22,
+      "id": "REVIVE-01",
+      "request": "Revive paddles ready sound loops although previously fixed to one-shot. Check latest accepted behavior, not just file names.",
+      "historical_result": "Implemented one-shot stream/cache and per-charge-episode cue, no automatic frame restart or synthetic loop. Accepted PCM preserved; real audio cue lifecycle tested offline.",
+      "raw_markdown": "| REVIVE-01 | Revive paddles ready sound loops although previously fixed to one-shot. Check latest accepted behavior, not just file names. | Implemented one-shot stream/cache and per-charge-episode cue, no automatic frame restart or synthetic loop. Accepted PCM preserved; real audio cue lifecycle tested offline. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 23,
+      "id": "REVIVE-02",
+      "request": "Revive-paddle HUD still occluded by world geometry.",
+      "historical_result": "Meter background/fill/label render above world geometry. Regression and native wall-occlusion view.",
+      "raw_markdown": "| REVIVE-02 | Revive-paddle HUD still occluded by world geometry. | Meter background/fill/label render above world geometry. Regression and native wall-occlusion view. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 24,
+      "id": "AWP-01",
+      "request": "Firing drops scope while left grip remains held; stay scoped until grip release.",
+      "historical_result": "Physical support grip latches scope across shot/bolt cycle and releases on grip-up. Actual AWP fire plus synthetic tracker regression; no OpenXR/headset test.",
+      "raw_markdown": "| AWP-01 | Firing drops scope while left grip remains held; stay scoped until grip release. | Physical support grip latches scope across shot/bolt cycle and releases on grip-up. Actual AWP fire plus synthetic tracker regression; no OpenXR/headset test. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 25,
+      "id": "CHAOS-01",
+      "request": "Chaos Magnum is Magnum-only.",
+      "historical_result": "Both Chaos Magnum maps enforce Magnum-only authoritative starting inventory, catalog, caches and solo drops.",
+      "raw_markdown": "| CHAOS-01 | Chaos Magnum is Magnum-only. | Both Chaos Magnum maps enforce Magnum-only authoritative starting inventory, catalog, caches and solo drops. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 26,
+      "id": "CHAOS-02",
+      "request": "Falling 20m below platform level auto-respawns above center platform.",
+      "historical_result": "Measured arena spawn baseline minus 20m; server publishes a fresh respawn above center floor. HOST-TRANSITION-R9.json tests actual host and player relocation.",
+      "raw_markdown": "| CHAOS-02 | Falling 20m below platform level auto-respawns above center platform. | Measured arena spawn baseline minus 20m; server publishes a fresh respawn above center floor. HOST-TRANSITION-R9.json tests actual host and player relocation. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 27,
+      "id": "FORCE-01",
+      "request": "Smaller hexagons optional; hexagonal force fields should be translucent.",
+      "historical_result": "Shared LaserCurtain material uses translucent small hexagons, original pattern texture, no dynamic lights. Native appearance/headset comfort remain separate.",
+      "raw_markdown": "| FORCE-01 | Smaller hexagons optional; hexagonal force fields should be translucent. | Shared LaserCurtain material uses translucent small hexagons, original pattern texture, no dynamic lights. Native appearance/headset comfort remain separate. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 28,
+      "id": "BREAK-01",
+      "request": "Vortex window-like texture breaks incorrectly; distinguish forcefields/decorations from breakable windows.",
+      "historical_result": "Vortex decorative glass excluded from breakable classification; eight recovered source-material pads remain functional.",
+      "raw_markdown": "| BREAK-01 | Vortex window-like texture breaks incorrectly; distinguish forcefields/decorations from breakable windows. | Vortex decorative glass excluded from breakable classification; eight recovered source-material pads remain functional. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 29,
+      "id": "BREAK-02",
+      "request": "Real doors still unbreakable.",
+      "historical_result": "PRIORITY: all-map door classification, leaf/frame assembly and welded-strip aperture splitting. Intact geometry retained; break removes rendering and collision inside doorway. PASSAGE-CUT-R9.json tests full player capsule and retained surrounding wall; full-library coverage receipt records recognized and unrecognized cases.",
+      "raw_markdown": "| BREAK-02 | Real doors still unbreakable. | PRIORITY: all-map door classification, leaf/frame assembly and welded-strip aperture splitting. Intact geometry retained; break removes rendering and collision inside doorway. PASSAGE-CUT-R9.json tests full player capsule and retained surrounding wall; full-library coverage receipt records recognized and unrecognized cases. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 30,
+      "id": "BREAK-03",
+      "request": "Cross-shaped window framing should disappear with window.",
+      "historical_result": "Recognized official pane crosspieces attach to and disappear with pane and collision. Native before/after assembly captures and actual walk-trigger checks.",
+      "raw_markdown": "| BREAK-03 | Cross-shaped window framing should disappear with window. | Recognized official pane crosspieces attach to and disappear with pane and collision. Native before/after assembly captures and actual walk-trigger checks. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 31,
+      "id": "POPPY-01",
+      "request": "Warmup currently spawns in arena instead of separate lobby.",
+      "historical_result": "Recovered source high lobby floor is solid and used for gathering. Actual host enters it above Y=100.",
+      "raw_markdown": "| POPPY-01 | Warmup currently spawns in arena instead of separate lobby. | Recovered source high lobby floor is solid and used for gathering. Actual host enters it above Y=100. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 32,
+      "id": "POPPY-02",
+      "request": "Start match spawns outside Poppy map.",
+      "historical_result": "Arena spawn list excludes high lobby; actual host START uses supported arena below Y=90, then round end returns to high lobby. Calibration origin retained.",
+      "raw_markdown": "| POPPY-02 | Start match spawns outside Poppy map. | Arena spawn list excludes high lobby; actual host START uses supported arena below Y=90, then round end returns to high lobby. Calibration origin retained. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 33,
+      "id": "UI-01",
+      "request": "Remove HUD text “Warm Up Menu Start Match”.",
+      "historical_result": "Removed redundant warmup HUD hint.",
+      "raw_markdown": "| UI-01 | Remove HUD text “Warm Up Menu Start Match”. | Removed redundant warmup HUD hint. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 34,
+      "id": "UI-02",
+      "request": "Remove main-menu instructional text “Choose a map and ready for solo exploration, or host/join”.",
+      "historical_result": "Removed redundant inactive-session main-menu instructions.",
+      "raw_markdown": "| UI-02 | Remove main-menu instructional text “Choose a map and ready for solo exploration, or host/join”. | Removed redundant inactive-session main-menu instructions. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 35,
+      "id": "SCORE-01",
+      "request": "Remove R8 floating scoreboard implementation.",
+      "historical_result": "Removed R8 freestanding board creation and refresh code.",
+      "raw_markdown": "| SCORE-01 | Remove R8 floating scoreboard implementation. | Removed R8 freestanding board creation and refresh code. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 36,
+      "id": "SCORE-02",
+      "request": "Inspect Melly Pop central four-faced gray scoreboard megatron for original scoreboard metadata; use intended surfaces.",
+      "historical_result": "No explicit scoreboard tags exist in flattened metadata. Hash-bound Melly Pop central source cube has four real world scoreboard faces, one shared texture at 1Hz. Other unknown scoreboard surfaces remain unresolved; no blanket restoration claim.",
+      "raw_markdown": "| SCORE-02 | Inspect Melly Pop central four-faced gray scoreboard megatron for original scoreboard metadata; use intended surfaces. | No explicit scoreboard tags exist in flattened metadata. Hash-bound Melly Pop central source cube has four real world scoreboard faces, one shared texture at 1Hz. Other unknown scoreboard surfaces remain unresolved; no blanket restoration claim. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 37,
+      "id": "WEAPONS-01",
+      "request": "Melly Pop “weapons” boards should have one of each weapon below; inspect original marker metadata.",
+      "historical_result": "No explicit weapon-board tags found. Two measured Melly Pop source boards have 28 actual grabbable weapons each. Common six-random-weapon cache markers use shared all-map resolver.",
+      "raw_markdown": "| WEAPONS-01 | Melly Pop “weapons” boards should have one of each weapon below; inspect original marker metadata. | No explicit weapon-board tags found. Two measured Melly Pop source boards have 28 actual grabbable weapons each. Common six-random-weapon cache markers use shared all-map resolver. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 38,
+      "id": "AIM-01",
+      "request": "Bullets lag behind moving gun; shots must follow current physical muzzle pose, not damped history.",
+      "historical_result": "Current physical muzzle drives shots and reticle; visible gun and aim use the same damping. MOVING-MUZZLE-R9.json: 784 actual-emission/grip checks at 30/72/90/120Hz; CX4 preservation separately checked.",
+      "raw_markdown": "| AIM-01 | Bullets lag behind moving gun; shots must follow current physical muzzle pose, not damped history. | Current physical muzzle drives shots and reticle; visible gun and aim use the same damping. MOVING-MUZZLE-R9.json: 784 actual-emission/grip checks at 30/72/90/120Hz; CX4 preservation separately checked. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 39,
+      "id": "APP-01",
+      "request": "App voice-to-text receiving indicator disappeared.",
+      "historical_result": "User explicitly says no fix needed; outside game scope.",
+      "raw_markdown": "| APP-01 | App voice-to-text receiving indicator disappeared. | User explicitly says no fix needed; outside game scope. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 40,
+      "id": "PROCESS-01",
+      "request": "Do not omit previous feedback or overstate validation.",
+      "historical_result": "Keep prior registers; report source limitations, implementation gaps and offline/headset tests separately.",
+      "raw_markdown": "| PROCESS-01 | Do not omit previous feedback or overstate validation. | Keep prior registers; report source limitations, implementation gaps and offline/headset tests separately. |"
+    },
+    {
+      "source": "FEEDBACK-REGISTER-R9.md",
+      "line": 44,
+      "id": "LIBRARY-01",
+      "request": "Apply pads, weapon positions and scoreboard work across all maps, not only named examples; doors especially.",
+      "historical_result": "Shared resolver rebuilt across all 105 maps. Per-map coverage records pads/cache sites/door assemblies and actual aperture tests. Original metadata has no gameplay object tags; bespoke pads/doors/scoreboards with no recognized geometry remain explicitly unverified.",
+      "raw_markdown": "| LIBRARY-01 | Apply pads, weapon positions and scoreboard work across all maps, not only named examples; doors especially. | Shared resolver rebuilt across all 105 maps. Per-map coverage records pads/cache sites/door assemblies and actual aperture tests. Original metadata has no gameplay object tags; bespoke pads/doors/scoreboards with no recognized geometry remain explicitly unverified. |"
+    }
+  ],
+  "headset_acceptance_new_merge": false,
+  "historical_results_are_not_new_test_claims": true,
+  "quest_r15": {
+    "apk_built": true,
+    "apk_source_commit": "93a784ecf0aff9fc83a068689ea1037f15d0c1ba",
+    "apk_sha256": "e2becdb7a8107879414102b026d94f9401c1bd7bf36d39acf2d52c4ee5feb5b3",
+    "archive_packs_included": 2,
+    "device_installed": false,
+    "headset_tested": false,
+    "vr_launched_or_stopped": false,
+    "github_pushed": false
+  },
+  "quest_r16": {
+    "feedback": "docs/FEEDBACK-QUEST-R16.md",
+    "guide": "docs/QUEST-R16.md",
+    "base_checkpoint": "6b5544f7f971c9451e2df5d06fb530c961f1bad5",
+    "r15_installed_and_human_tested": true,
+    "r16_headset_acceptance": false
+  },
+  "current_continuation": {
+    "iteration": "R19",
+    "source": "D:/Codex/ASHFALL-R19-Quest/source",
+    "branch": "quest3/r19-support-pose",
+    "completed_base": "a6aa9614446b548a2616284e06d25f6d302bf3d3",
+    "feedback": "FEEDBACK-R19.md",
+    "outstanding": "PERSISTENT-BACKLOG-R19.md",
+    "note": "Historical row states/source hashes below retain their original recorded scope; current status is in the linked continuation. Latest user instruction supersedes manual-only initialization."
+  }
+}

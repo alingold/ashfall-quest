@@ -1,0 +1,42 @@
+PASS source default blue location mark
+PASS held-at-boot input cannot arm
+PASS neutral arms
+PASS exact .10 s keeps wheel closed
+PASS strict greater hold opens once
+PASS ray selects help
+PASS source center does not erase last explicit ray choice
+PASS release emits chosen mark and remembers preference
+PASS next quick press inherits preference
+PASS quick release uses preference without wheel
+PASS right stick selects ping
+PASS stick choice overrides wheel ray selection
+PASS stick release commits preference
+PASS exact stick deadzone stays neutral
+PASS above stick deadzone chooses hold
+PASS lost tracking cancels without release request
+PASS still-held button after focus does not restart
+PASS ineligible release cannot create a mark
+PASS clockwise source sector 0
+PASS clockwise source sector 1
+PASS clockwise source sector 2
+PASS clockwise source sector 3
+PASS clockwise source sector 4
+PASS clockwise source sector 5
+PASS clockwise source sector 6
+PASS clockwise source sector 7
+PASS source decal membership
+PASS alt smile source action, never old gun silhouette
+PASS 4 degree source normal angular width
+PASS 5 degree target angular width
+PASS behind or near camera column hidden
+PASS close source column max512 bound
+PASS source sky limit80 produces no dots above sky
+PASS column source width/start/spacing formula
+PASS source mapped world/target/panel mask
+PASS local mark remains before30 even without input eligibility
+PASS source strict expiry keeps exact30 s record
+PASS source expires after30 s
+PASS replacement renews single-current lifetime
+PASS malformed negative delta cannot corrupt lifetime
+PASS map/reset clear
+PASS 41 production state/math cases; native physics/render/audio playback not executed here.

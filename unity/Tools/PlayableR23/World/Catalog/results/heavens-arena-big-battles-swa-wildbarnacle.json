@@ -1,0 +1,35 @@
+{
+  "id": "archive:heavens-arena-big-battles-swa-wildbarnacle",
+  "slug": "heavens-arena-big-battles-swa-wildbarnacle",
+  "title": "HEAVENS ARENA BIG BATTLES",
+  "creator": "SWA_wildbarnacle",
+  "relativeFolder": "Maps/heavens-arena-big-battles-swa-wildbarnacle",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\heavens-arena-big-battles-swa-wildbarnacle\\source\\thumb.jpg",
+  "sourceSha256": "2f3297adc92631cc9c2b24e1e54e3a8ff3816970a10c56b03b40b5813221c0a6",
+  "cacheFingerprint": "608b455a642c311b0df8fc90651c7318cecab2f2e682db3ba6b102f64f2bf542",
+  "spawn": [
+    11.75,
+    68.72979840803735,
+    -9.41
+  ],
+  "warmupSpawn": [
+    38.02,
+    220.60576620529517,
+    -22.0
+  ],
+  "chunks": 307,
+  "renderTriangles": 362443,
+  "collisionTriangles": 360215,
+  "payloadBytes": 33552276,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\heavens-arena-big-battles-swa-wildbarnacle",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

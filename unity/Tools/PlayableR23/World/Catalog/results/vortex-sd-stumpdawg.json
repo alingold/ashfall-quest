@@ -1,0 +1,35 @@
+{
+  "id": "archive:vortex-sd-stumpdawg",
+  "slug": "vortex-sd-stumpdawg",
+  "title": "VORTEX SD",
+  "creator": "StumpDawg",
+  "relativeFolder": "Maps/vortex-sd-stumpdawg",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\vortex-sd-stumpdawg\\source\\thumb.jpg",
+  "sourceSha256": "76db6dfecf8bebe95d19e5514235b607c0487aaddfd1f5330170870de1a8889e",
+  "cacheFingerprint": "466946c954308d5b16eb4221c54a0fba2e3055d41989e329b7a1a9ab321eb91b",
+  "spawn": [
+    32.41,
+    575.62,
+    18.59
+  ],
+  "warmupSpawn": [
+    14.41,
+    581.62,
+    22.18
+  ],
+  "chunks": 108,
+  "renderTriangles": 127688,
+  "collisionTriangles": 108240,
+  "payloadBytes": 12421529,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\vortex-sd-stumpdawg",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

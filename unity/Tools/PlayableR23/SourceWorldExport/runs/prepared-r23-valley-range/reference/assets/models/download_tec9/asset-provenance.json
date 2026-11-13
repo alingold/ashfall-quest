@@ -1,0 +1,92 @@
+{
+  "id": "tec9",
+  "file": "tec-9.glb",
+  "scale": 0.22405082837350354,
+  "anchor": [
+    0.45,
+    0.3325232,
+    0
+  ],
+  "target": [
+    0,
+    0.045,
+    -0.035
+  ],
+  "mag": [
+    12,
+    25
+  ],
+  "bolt": [
+    10
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.42
+  ],
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      -1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.0295020984134082,
+    -0.13582287276807659
+  ],
+  "source": "[local development path]",
+  "source_sha256": "5e38332eb68fa05c0718febf286f0d0c9fc15a87372608e8e4da20070b321376",
+  "output_sha256": "a84dc924c750de34581c7bb117d0734b3ef6f007fec8f35abc65519b92cba59e",
+  "asset": {
+    "author": "neyr (https://sketchfab.com/neyr)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/tec-9-4150563248d94261acc3217c5158193b",
+    "title": "Tec-9"
+  },
+  "magazine_center": [
+    -2.2090266438984374e-09,
+    -0.12647174934706928,
+    -0.208577756975728
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 25982,
+  "body_triangles": 25626,
+  "magazine_triangles": 132,
+  "moving_triangles": 224,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.038191989258186065,
+    -0.25575273377795593,
+    -0.42000000000000004
+  ],
+  "bounds_max": [
+    0.032377311475424705,
+    0.08324621959505694,
+    0.031037191092011057
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

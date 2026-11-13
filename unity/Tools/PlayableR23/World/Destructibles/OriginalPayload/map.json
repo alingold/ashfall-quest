@@ -1,0 +1,535 @@
+{
+  "version": 1,
+  "mapId": "archive:alfa-aglae-souza",
+  "title": "ALFA",
+  "sourceSha256": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994",
+  "spawn": [
+    57.63441,
+    46.08347045898437,
+    -82.86372
+  ],
+  "boundsMin": [
+    -1026.79296875,
+    -165.569305419922,
+    -1138.17749023438
+  ],
+  "boundsMax": [
+    983.063354492188,
+    242.269561767578,
+    1219.51000976563
+  ],
+  "materials": [
+    {
+      "name": "s0",
+      "color": "s0_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s1",
+      "color": "s1_c.jpg",
+      "normal": "s1_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s2",
+      "color": "s2_c.jpg",
+      "normal": "s2_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s3",
+      "color": "s3_c.jpg",
+      "normal": "s3_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s4",
+      "color": "s4_c.png",
+      "normal": "s4_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true
+    },
+    {
+      "name": "s5",
+      "color": "s5_c.jpg",
+      "normal": "s5_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s6",
+      "color": "s6_c.jpg",
+      "normal": "s6_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s7",
+      "color": "s7_c.jpg",
+      "normal": "s7_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s8",
+      "color": "s8_c.jpg",
+      "normal": "s8_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s9",
+      "color": "s9_c.jpg",
+      "normal": "s9_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s10",
+      "color": "s10_c.jpg",
+      "normal": "s10_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s11",
+      "color": "s11_c.jpg",
+      "normal": "s11_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s12",
+      "color": "s12_c.jpg",
+      "normal": "s12_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s13",
+      "color": "s13_c.jpg",
+      "normal": "s13_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s14",
+      "color": "s14_c.jpg",
+      "normal": "s14_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s15",
+      "color": "s15_c.jpg",
+      "normal": "s15_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s16",
+      "color": "s16_c.jpg",
+      "normal": "s16_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s17",
+      "color": "s17_c.jpg",
+      "normal": "s17_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s18",
+      "color": "s18_c.jpg",
+      "normal": "s18_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s19",
+      "color": "s19_c.jpg",
+      "normal": "s19_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s20",
+      "color": "s20_c.jpg",
+      "normal": "s20_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s21",
+      "color": "s21_c.jpg",
+      "normal": "s21_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s22",
+      "color": "s22_c.jpg",
+      "normal": "s22_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s23",
+      "color": "s23_c.jpg",
+      "normal": "s23_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s24",
+      "color": "s24_c.jpg",
+      "normal": "s24_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s25",
+      "color": "s25_c.jpg",
+      "normal": "s25_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s26",
+      "color": "s26_c.jpg",
+      "normal": "s26_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s27",
+      "color": "s27_c.jpg",
+      "normal": "s27_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s28",
+      "color": "s28_c.jpg",
+      "normal": "s28_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s29",
+      "color": "s29_c.jpg",
+      "normal": "s29_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s30",
+      "color": "s30_c.jpg",
+      "normal": "s30_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s31",
+      "color": "s31_c.jpg",
+      "normal": "s31_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s32",
+      "color": "s32_c.jpg",
+      "normal": "s32_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s33",
+      "color": "s33_c.jpg",
+      "normal": "s33_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s34",
+      "color": "s34_c.jpg",
+      "normal": "s34_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s35",
+      "color": "s35_c.jpg",
+      "normal": "s35_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s36",
+      "color": "s36_c.jpg",
+      "normal": "s36_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s37",
+      "color": "s37_c.jpg",
+      "normal": "s37_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s38",
+      "color": "s38_c.jpg",
+      "normal": "s38_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s39",
+      "color": "s39_c.jpg",
+      "normal": "s39_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s40",
+      "color": "s40_c.jpg",
+      "normal": "s40_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s41",
+      "color": "s41_c.jpg",
+      "normal": "s41_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s42",
+      "color": "s42_c.jpg",
+      "normal": "s42_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s43",
+      "color": "s43_c.jpg",
+      "normal": "s43_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s44",
+      "color": "s44_c.jpg",
+      "normal": "s44_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s45",
+      "color": "s45_c.jpg",
+      "normal": "s45_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s46",
+      "color": "s46_c.jpg",
+      "normal": "s46_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s47",
+      "color": "s47_c.jpg",
+      "normal": "s47_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "s48",
+      "color": "s48_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "pd959969c",
+      "color": "pd959969c_c.jpg",
+      "normal": "pd959969c_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p95447a31",
+      "color": "p95447a31_c.jpg",
+      "normal": "p95447a31_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p649d5925",
+      "color": "p649d5925_c.jpg",
+      "normal": "p649d5925_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p6da8d940",
+      "color": "p6da8d940_c.jpg",
+      "normal": "p6da8d940_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p2a61c272",
+      "color": "p2a61c272_c.jpg",
+      "normal": "p2a61c272_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "pee49fa59",
+      "color": "pee49fa59_c.jpg",
+      "normal": "pee49fa59_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p11780687",
+      "color": "p11780687_c.jpg",
+      "normal": "p11780687_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t9",
+      "color": "t9_c.jpg",
+      "normal": "t9_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p52c49b5d",
+      "color": "p52c49b5d_c.jpg",
+      "normal": "p52c49b5d_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    }
+  ],
+  "chunks": 488,
+  "warmupSpawn": [
+    57.63441,
+    46.08347045898437,
+    -82.86372
+  ],
+  "gameSpawn": [
+    -512.91199,
+    58.27322113037109,
+    -64.64123
+  ],
+  "recordedSpawn": [
+    54.59,
+    22.590163970158237,
+    -41.14
+  ]
+}

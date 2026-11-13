@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-shining-gods-ghostlymostly88",
+  "slug": "the-shining-gods-ghostlymostly88",
+  "title": "THE SHINING",
+  "creator": "GODS_GhostlyMostly88",
+  "relativeFolder": "Maps/the-shining-gods-ghostlymostly88",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-shining-gods-ghostlymostly88\\source\\thumb.jpg",
+  "sourceSha256": "e41e2ab9ca6de3a41ce607f277b7e7087bf8ef76e095d568c3a08f990049efc8",
+  "cacheFingerprint": "d9f41688944129186004944c55e391399747b8bac818087a1c7784d0ecdba85f",
+  "spawn": [
+    -70.08680034436662,
+    130.4940692138672,
+    -0.054626464843522626
+  ],
+  "warmupSpawn": [
+    0.47110724198211074,
+    136.23886652673997,
+    -0.054626464843522626
+  ],
+  "chunks": 171,
+  "renderTriangles": 246076,
+  "collisionTriangles": 236808,
+  "payloadBytes": 21975464,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-shining-gods-ghostlymostly88",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

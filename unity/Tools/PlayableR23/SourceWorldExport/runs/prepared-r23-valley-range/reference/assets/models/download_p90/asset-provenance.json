@@ -1,0 +1,98 @@
+{
+  "id": "p90",
+  "file": "p90.glb",
+  "scale": 0.04267789965043678,
+  "anchor": [
+    0.0,
+    -1.8,
+    -2.5
+  ],
+  "target": [
+    0.0,
+    -0.057,
+    0.025
+  ],
+  "mag": [
+    2,
+    3,
+    7
+  ],
+  "muzzle": [
+    0.0,
+    0.015552429405742522,
+    -0.24330114823626606
+  ],
+  "primary_grip": [
+    0,
+    -0.057,
+    0.025
+  ],
+  "variant": "Replaces visibly broken previous P90. Primary fist behind source trigger, not forward support hole. Source top-magazine body/end caps separated together; existing forward seat/back rack retained. Full pre-user-reduction length0.75m; subsequent084display factor0.6 once.",
+  "rotation": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.0198202193707862,
+    0.13169474912609194
+  ],
+  "source": "[local development path]",
+  "source_sha256": "aa30e79f176f7da99e9af6c2e8d7998bcefd590e47478f3c38c22d1fa82ead06",
+  "output_sha256": "3a4a9e9f4ddb47a8216ab8ffa27ac9bad736039f74a9833d15080e93e9979915",
+  "asset": {
+    "author": "Rotuma (https://sketchfab.com/Rotuma)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/p90-82d8b9f1e02b48f9b012698dcfa3352b",
+    "title": "P90"
+  },
+  "magazine_center": [
+    1.2504711297683935e-08,
+    0.05543516978739311,
+    0.09955194717758702
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 38082,
+  "body_triangles": 33470,
+  "magazine_triangles": 4612,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.05130423305199559,
+    -0.13920445006009421,
+    -0.24330114823626606
+  ],
+  "bounds_max": [
+    0.05130423305199559,
+    0.17886817330162194,
+    0.506698851763734
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 38082,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:showdown-gods-crazytrain",
+  "slug": "showdown-gods-crazytrain",
+  "title": "SHOWDOWN",
+  "creator": "GODS_CRAZYTRAIN",
+  "relativeFolder": "Maps/showdown-gods-crazytrain",
+  "preview": "preview.png",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\showdown-gods-crazytrain\\converted\\preview.png",
+  "sourceSha256": "4f2171e67edfd8a1e004e810e79989fe85cfada34277f5e3e2d32c3be408006d",
+  "cacheFingerprint": "7a985234fac33219ddaa1a825431f8920f3f04a770eac7136c5d369dce0a49bb",
+  "spawn": [
+    22.91205,
+    72.11999237060547,
+    -72.46009
+  ],
+  "warmupSpawn": [
+    -36.9852,
+    76.33709442138672,
+    -17.67812
+  ],
+  "chunks": 174,
+  "renderTriangles": 140805,
+  "collisionTriangles": 136489,
+  "payloadBytes": 13880758,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\showdown-gods-crazytrain",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

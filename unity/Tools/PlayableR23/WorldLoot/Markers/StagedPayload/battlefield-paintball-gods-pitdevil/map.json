@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "mapId": "archive:battlefield-paintball-gods-pitdevil",
+  "title": "BATTLEFIELD PAINTBALL",
+  "sourceSha256": "1f2453276f150a5c04373ea92cb6c6e5f43707c0a7f1fc0dfe351b0a24573c0a",
+  "spawn": [
+    -7.37,
+    35.336511681663104,
+    149.36
+  ],
+  "boundsMin": [
+    -251.275695800781,
+    -0.380159974098206,
+    -255.077346801758
+  ],
+  "boundsMax": [
+    248.361328125,
+    168.135879516602,
+    233.279403686523
+  ],
+  "materials": [
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t27",
+      "color": "t27_c.jpg",
+      "normal": "t27_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t3",
+      "color": "t3_c.jpg",
+      "normal": "t3_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t7",
+      "color": "t7_c.jpg",
+      "normal": "t7_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t20",
+      "color": "t20_c.jpg",
+      "normal": "t20_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true
+    },
+    {
+      "name": "t55",
+      "color": "t55_c.jpg",
+      "normal": "t55_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t60",
+      "color": "t60_c.jpg",
+      "normal": "t60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t26",
+      "color": "t26_c.jpg",
+      "normal": "t26_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t52",
+      "color": "t52_c.jpg",
+      "normal": "t52_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "pd959969c",
+      "color": "pd959969c_c.jpg",
+      "normal": "pd959969c_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p95447a31",
+      "color": "p95447a31_c.jpg",
+      "normal": "p95447a31_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p649d5925",
+      "color": "p649d5925_c.jpg",
+      "normal": "p649d5925_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p6da8d940",
+      "color": "p6da8d940_c.jpg",
+      "normal": "p6da8d940_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t98",
+      "color": "t98_c.jpg",
+      "normal": "t98_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "pe8ebb6fa",
+      "color": "pe8ebb6fa_c.jpg",
+      "normal": "pe8ebb6fa_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p2a61c272",
+      "color": "p2a61c272_c.jpg",
+      "normal": "p2a61c272_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "t53",
+      "color": "t53_c.jpg",
+      "normal": "t53_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    },
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false
+    }
+  ],
+  "chunks": 110
+}

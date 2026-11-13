@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "mapsPreserved": 9,
+  "previousArtTrianglesPreserved": 149075,
+  "junctionTriangles": {
+    "alfa-aglae-souza": 142,
+    "classic-bigbox-vr": 0,
+    "bigbabyjesuz-classic-kiki-80": 114,
+    "classic-bw-187norvis": 114,
+    "cont-cl-er-ssd-cjcoops": 115,
+    "cont-cl-ssd-cjcoops": 115,
+    "evolving-map-bigbox": 0,
+    "statmaster-classic-soulsmight": 114,
+    "statmaster-evolving-soulsmight": 0
+  },
+  "totalAddedTriangles": 714,
+  "alphaSupplementalRoadFaces": 28,
+  "actualCapturedPixelWitness": {
+    "map": "bigbabyjesuz-classic-kiki-80",
+    "view": "junction-source-match",
+    "pixel": [
+      600,
+      400
+    ],
+    "size": [
+      1200,
+      800
+    ],
+    "chunk": 253,
+    "triangle": 9213,
+    "nearestCpuRayDistance": 32.38431760395371
+  },
+  "sourceShaderSha256": "5194b56355ab192d92d6e1e94d5929144b72cacec90a3df48c984e6d6082ded9",
+  "sevenSourceProjectionExpressionsRetained": true,
+  "validHlslSplatExpansions": 7,
+  "transformedBodyHashMatchesEmittedShader": true,
+  "liveShaderByteIdentical": true,
+  "glassFourPreserved": true,
+  "collisionUntouched": true,
+  "nativeShaderOrRenderRun": false
+}

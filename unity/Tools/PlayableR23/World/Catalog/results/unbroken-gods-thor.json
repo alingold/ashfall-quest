@@ -1,0 +1,35 @@
+{
+  "id": "archive:unbroken-gods-thor",
+  "slug": "unbroken-gods-thor",
+  "title": "UNBROKEN",
+  "creator": "GODS_THOR",
+  "relativeFolder": "Maps/unbroken-gods-thor",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\unbroken-gods-thor\\source\\thumb.jpg",
+  "sourceSha256": "24aadde52aeb72d532931917ef783d91648cbbc2c1b55b261a594f7a095c3360",
+  "cacheFingerprint": "f00b4fe83d948e4b94aaad81612de20cf9b4f3d1ac7000abf4db7b8f62eab979",
+  "spawn": [
+    -0.76,
+    4.46573846479927,
+    -97.88
+  ],
+  "warmupSpawn": [
+    -2.21038,
+    18.617393862411436,
+    -5.00489
+  ],
+  "chunks": 120,
+  "renderTriangles": 128842,
+  "collisionTriangles": 126850,
+  "payloadBytes": 11274806,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\unbroken-gods-thor",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

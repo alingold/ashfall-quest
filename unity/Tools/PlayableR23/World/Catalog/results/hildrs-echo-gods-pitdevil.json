@@ -1,0 +1,35 @@
+{
+  "id": "archive:hildrs-echo-gods-pitdevil",
+  "slug": "hildrs-echo-gods-pitdevil",
+  "title": "HILDRS ECHO",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/hildrs-echo-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\hildrs-echo-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "72e73d43d64d6672d7dbd1a040194f55ace61d6a88b4ea4c364d8c1c11f014aa",
+  "cacheFingerprint": "2e13b3ccb616b9c2d0eb9a4db5654c8c27c4d9fec7b340aebdebc1d6c425445a",
+  "spawn": [
+    251.18,
+    40.87360383053309,
+    -9.91
+  ],
+  "warmupSpawn": [
+    -177.68,
+    45.873734588623044,
+    -19.71
+  ],
+  "chunks": 193,
+  "renderTriangles": 203772,
+  "collisionTriangles": 202188,
+  "payloadBytes": 18113095,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\hildrs-echo-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

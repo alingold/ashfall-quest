@@ -1,0 +1,73 @@
+{
+  "mapId": "archive:classic-bigbox-vr",
+  "preparedR10Sha256": "a687f6b9bb18aceadeb030f0ce91eae5630b7d52ee87217fd06048fdfeed35d1",
+  "sourceShader": "assets/materials/clear_glass_r10.gdshader",
+  "sourceShaderSha256": "870e6eab10deb52d4cd5209958ead6ff531c37620abc14abaf1b03616f18e1cd",
+  "panels": [
+    {
+      "panelId": 433,
+      "meshReference": [
+        "reference",
+        2,
+        2387
+      ],
+      "materialReference": [
+        "reference",
+        2,
+        996
+      ],
+      "sourceFacesSha256": "471dadb6f2a315c6a2db297832e98a80ea404e1b3fe0a8e94c5d68d756e27e8f",
+      "opaqueAttachmentCount": 4
+    },
+    {
+      "panelId": 616,
+      "meshReference": [
+        "reference",
+        2,
+        2839
+      ],
+      "materialReference": [
+        "reference",
+        2,
+        996
+      ],
+      "sourceFacesSha256": "3af6981fd8ee8e34030f550d23cc040642ce5a4f79d8030521ee81b48750f1c7",
+      "opaqueAttachmentCount": 4
+    }
+  ],
+  "matches": [
+    {
+      "panelId": 433,
+      "sourceTriangle": 0,
+      "chunk": 185,
+      "triangle": 351,
+      "maxCornerDistance": 0.0020614229142665863
+    },
+    {
+      "panelId": 433,
+      "sourceTriangle": 1,
+      "chunk": 185,
+      "triangle": 352,
+      "maxCornerDistance": 0.00205449340865016
+    },
+    {
+      "panelId": 616,
+      "sourceTriangle": 0,
+      "chunk": 186,
+      "triangle": 284,
+      "maxCornerDistance": 0.0015611062990501523
+    },
+    {
+      "panelId": 616,
+      "sourceTriangle": 1,
+      "chunk": 186,
+      "triangle": 285,
+      "maxCornerDistance": 0.0015611062990501523
+    }
+  ],
+  "originalGeometrySha256": "5c6ab2878fb26f5f9a37521ac7d7d12d61c3514cc204648d515263dfd0d374b1",
+  "originalCollisionUntouched": true,
+  "opaqueAttachmentsUnchanged": true,
+  "scope": "Only four actual source pane triangles of panels433/616. No new frame geometry, collider, gameplay owner, or opacity on vc attachments. Raw266/4977 does not match these pane meshes and is unchanged.",
+  "engineRun": false
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:halloween-5-level-x-ifun-ifun",
+  "slug": "halloween-5-level-x-ifun-ifun",
+  "title": "HALLOWEEN 5 LEVEL X IFUN",
+  "creator": "Ifun",
+  "relativeFolder": "Maps/halloween-5-level-x-ifun-ifun",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\halloween-5-level-x-ifun-ifun\\source\\thumb.jpg",
+  "sourceSha256": "b1753b4b495c7e21fc2c12fcff66e3743dac0ef6a43a177bb39f3350a4bfa1a4",
+  "cacheFingerprint": "7eaa7fb88d8c977f7f403ca83580e2a167fff8154a3840868a87e75508d243ce",
+  "spawn": [
+    66.6,
+    40.239682312011716,
+    25.55
+  ],
+  "warmupSpawn": [
+    27.98791,
+    169.91989624023438,
+    24.73723
+  ],
+  "chunks": 243,
+  "renderTriangles": 297660,
+  "collisionTriangles": 296522,
+  "payloadBytes": 26612366,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\halloween-5-level-x-ifun-ifun",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

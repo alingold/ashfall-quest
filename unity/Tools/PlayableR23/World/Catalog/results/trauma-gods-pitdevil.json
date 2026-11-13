@@ -1,0 +1,35 @@
+{
+  "id": "archive:trauma-gods-pitdevil",
+  "slug": "trauma-gods-pitdevil",
+  "title": "TRAUMA",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/trauma-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\trauma-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "56f47a512e7948ec83d5fd18a8cc1eb225be02997f899c82a7e2efce69316a42",
+  "cacheFingerprint": "21ffbd967193a5c31b7bc75635c5fcebccf10f53d60888787a7fe9309b2025ac",
+  "spawn": [
+    279.22,
+    58.9370245078032,
+    -271.41
+  ],
+  "warmupSpawn": [
+    14.59782,
+    268.63629638671875,
+    -351.64124
+  ],
+  "chunks": 496,
+  "renderTriangles": 400478,
+  "collisionTriangles": 381150,
+  "payloadBytes": 35509225,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\trauma-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

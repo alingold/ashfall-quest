@@ -1,0 +1,101 @@
+{
+  "id": "knife",
+  "file": "knife.glb",
+  "scale": 0.05136258051051265,
+  "anchor": [
+    3.6707281917333603,
+    0.7310079224407673,
+    2.6542920916750035e-08
+  ],
+  "target": [
+    0.0,
+    -0.134,
+    0.025
+  ],
+  "muzzle": [
+    0.0,
+    0.246,
+    0.025
+  ],
+  "source_pommel": [
+    3.6707281917333603,
+    0.7310079224407673,
+    2.6542920916750035e-08
+  ],
+  "source_tip": [
+    -3.726503610610962,
+    0.8602688312530518,
+    -0.017665058374404716
+  ],
+  "contact_tip": [
+    0.0,
+    0.246,
+    0.025
+  ],
+  "target_chord": 0.38,
+  "rotation": [
+    [
+      -0.0023876956481346857,
+      -0.2682924421242532,
+      -0.9633345547671781
+    ],
+    [
+      -0.9998445105332596,
+      0.017471510094034196,
+      -0.0023876956481346857
+    ],
+    [
+      0.017471510094034196,
+      0.963179065300438,
+      -0.2682924421242532
+    ]
+  ],
+  "offset": [
+    0.010523602488979855,
+    0.05385276336174408,
+    -0.01445800223331
+  ],
+  "source": "[local development path]",
+  "source_sha256": "fc40c8f3090eb67c544fb7cd12002bccc11c84d1247bd0f29e79c70141a26e28",
+  "output_sha256": "5e0c549acbf390a02a177e13aa5fde9b51e7562e176a318497cf7e4216a4ed88",
+  "asset": {
+    "author": "CG Lab34 (https://sketchfab.com/tuandesigner.mtc)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/knife-8374ea78a11c4be5a2f145448c17c90e",
+    "title": "Knife"
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 1142,
+  "body_triangles": 1142,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.020662056030507303,
+    -0.13422217365329348,
+    -0.01295278516776071
+  ],
+  "bounds_max": [
+    0.020858729314139537,
+    0.24599999999980382,
+    0.056928089753366225
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

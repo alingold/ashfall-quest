@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "run": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\valley-source-batches-r2",
+  "reference": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range\\reference",
+  "original": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "baseline": "C:\\Users\\aling\\Documents\\ashfall\\docs\\agent-runs\\20261104-three-chats\\world\\r24-integration\\R23-BASELINE.json",
+  "baselineSha256": "c3a63943ab6157e453ef56546d959226c5f35cafd1f47fdc3a9e446af88a9922",
+  "sourceTreeDigest": "0f1bb53114ebd2f15140521bcda71964fe8f5652c8b885d9b2f924f5d029ed15",
+  "sourceFiles": 5586,
+  "sourceBytes": 3199689639,
+  "exporter": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\valley-source-batches-r2\\export_source_world.r2.gd",
+  "exporterSha256": "8a0e8547176c1370007f583cc86a4f22c74a73a5d758ab786dd8f0b328faaf3c",
+  "maxCopySeconds": 900,
+  "importTimeoutSeconds": 900,
+  "exportTimeoutSeconds": 210,
+  "criticalSourceHashes": {
+    "project.godot": "21fcecca9c73af26d19c89873dec9fc3e5fe64d6fd7a3022dd6d1e2259f10f25",
+    "scripts/world.gd": "52d05443eaf9ffe0f872ac46eba670da05e3a86c55d45e57aa980ce46ed029d5",
+    "scripts/sandbox_map_091.gd": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7",
+    "scripts/field_item_models.gd": "c0b8baf76a8b818d865c7f16fe9f9758571e881c1b7ebe9f5f525b5f4425704b",
+    "scripts/light_fixture.gd": "e211285fcc87d2a488a6ccb1dce9ce934236f18b68e0d28dd94a1dc010d77856",
+    "assets/materials/alpine_terrain.gdshader": "888361e92cce4fd849455f77a16ad928387403e2efb74a8a50228245a2991170"
+  },
+  "reuseImportedFrom": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\SourceWorldExport\\runs\\prepared-r23-valley-range",
+  "reusedPlanSha256": "a71111eac4be05d08436a095ddf76649f24398c200f12f9b0dbd7848631155b4"
+}

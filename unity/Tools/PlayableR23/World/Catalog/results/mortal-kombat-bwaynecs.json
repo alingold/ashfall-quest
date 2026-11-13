@@ -1,0 +1,35 @@
+{
+  "id": "archive:mortal-kombat-bwaynecs",
+  "slug": "mortal-kombat-bwaynecs",
+  "title": "MORTAL KOMBAT ",
+  "creator": "BWayneCS",
+  "relativeFolder": "Maps/mortal-kombat-bwaynecs",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\mortal-kombat-bwaynecs\\source\\thumb.jpg",
+  "sourceSha256": "257470dbebf0478f588661e996b1d6a9483bdb6e7327206f990e205979276b0e",
+  "cacheFingerprint": "4682e46b32d63449145c14d9c5faf4b54aa07872dc1edd1b834cf0cb72776a11",
+  "spawn": [
+    43.72,
+    61.54026268951496,
+    44.11
+  ],
+  "warmupSpawn": [
+    82.98265,
+    77.1200972508637,
+    10.40463
+  ],
+  "chunks": 165,
+  "renderTriangles": 261794,
+  "collisionTriangles": 261080,
+  "payloadBytes": 24352561,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\mortal-kombat-bwaynecs",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

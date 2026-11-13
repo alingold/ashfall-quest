@@ -1,0 +1,35 @@
+{
+  "id": "archive:aaa-tree-house-oldschoolshyit",
+  "slug": "aaa-tree-house-oldschoolshyit",
+  "title": "AAA TREE HOUSE",
+  "creator": "Oldschoolshyit",
+  "relativeFolder": "Maps/aaa-tree-house-oldschoolshyit",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\aaa-tree-house-oldschoolshyit\\source\\thumb.jpg",
+  "sourceSha256": "9eb49f3937a7ed23eec2807eb3d1f760339a2eb6e6d180952e80cc823094671c",
+  "cacheFingerprint": "ebf9e9d7ce7b4b321f3aa25f2262fbe5b6097e71d8d17bbcd11195b7f2519431",
+  "spawn": [
+    8.75,
+    95.49370300292969,
+    95.48
+  ],
+  "warmupSpawn": [
+    5.59,
+    145.33749877929688,
+    17.14
+  ],
+  "chunks": 262,
+  "renderTriangles": 284457,
+  "collisionTriangles": 282943,
+  "payloadBytes": 27281938,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\aaa-tree-house-oldschoolshyit",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

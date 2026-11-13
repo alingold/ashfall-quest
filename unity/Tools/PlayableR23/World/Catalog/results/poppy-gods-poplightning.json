@@ -1,0 +1,35 @@
+{
+  "id": "archive:poppy-gods-poplightning",
+  "slug": "poppy-gods-poplightning",
+  "title": "POPPY",
+  "creator": "GODS_POPLIGHTNING",
+  "relativeFolder": "Maps/poppy-gods-poplightning",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\poppy-gods-poplightning\\source\\thumb.jpg",
+  "sourceSha256": "f607fde898b0e60add02e9d0a1c64c9955f23d10072002be3e4487d4901f740f",
+  "cacheFingerprint": "4cdbb885696a4a0802739662f136b8bdd7199f2cad564c3712a604b08ab56717",
+  "spawn": [
+    175.76,
+    21.668849138698434,
+    -0.09
+  ],
+  "warmupSpawn": [
+    -4.96039,
+    124.5292342200137,
+    -6.69444
+  ],
+  "chunks": 141,
+  "renderTriangles": 160396,
+  "collisionTriangles": 158612,
+  "payloadBytes": 12912453,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\poppy-gods-poplightning",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "name": "TeamLaunch.API",
+    "command": [
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\NetCoreRuntime\\dotnet.exe",
+      "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.8f1\\Editor\\Data\\DotNetSdk\\sdk\\8.0.318\\Roslyn\\bincore\\csc.dll",
+      "/noconfig",
+      "@C:\\Users\\aling\\Documents\\ashfall\\unity\\Tools\\PlayableR23\\TeamLaunch\\Compiler\\TeamLaunch.API.rsp"
+    ],
+    "exit": 1,
+    "output": "unity\\Assets\\Ashfall\\Integration\\Playable\\R23PlayableLoop.cs(148,17): error CS0103: The name 'InitializeTeamLaunch' does not exist in the current context\nunity\\Assets\\Ashfall\\Integration\\Playable\\R23PlayableLoop.cs(148,40): error CS0103: The name 'InitializeMatch' does not exist in the current context\n"
+  }
+]

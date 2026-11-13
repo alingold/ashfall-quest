@@ -1,0 +1,35 @@
+{
+  "id": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+  "slug": "zelda-kokiri-forest-solos-ilikepies1211",
+  "title": "ZELDA KOKIRI FOREST [SOLOS]",
+  "creator": "ilikepies1211",
+  "relativeFolder": "Maps/zelda-kokiri-forest-solos-ilikepies1211",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\thumb.jpg",
+  "sourceSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+  "cacheFingerprint": "9c456feb8d525d218b872fca489d598eb592b98236f743ad3b27da7e61951a3e",
+  "spawn": [
+    21.09,
+    0.9290923428535461,
+    -68.41
+  ],
+  "warmupSpawn": [
+    12.41198,
+    3.0120991349923503,
+    39.64123
+  ],
+  "chunks": 235,
+  "renderTriangles": 318170,
+  "collisionTriangles": 316432,
+  "payloadBytes": 27975032,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\zelda-kokiri-forest-solos-ilikepies1211",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

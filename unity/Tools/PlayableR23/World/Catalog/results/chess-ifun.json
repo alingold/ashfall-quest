@@ -1,0 +1,35 @@
+{
+  "id": "archive:chess-ifun",
+  "slug": "chess-ifun",
+  "title": "CHESS",
+  "creator": "Ifun",
+  "relativeFolder": "Maps/chess-ifun",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chess-ifun\\source\\thumb.jpg",
+  "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+  "cacheFingerprint": "b0f1ef9b49f03801ae2bd63013a32f7ac924a0395d3fd00ac9324a8f5d3afd77",
+  "spawn": [
+    -56.46,
+    47.57154733417191,
+    89.25
+  ],
+  "warmupSpawn": [
+    113.18743,
+    136.2500506591797,
+    -9.01824
+  ],
+  "chunks": 53,
+  "renderTriangles": 109250,
+  "collisionTriangles": 108056,
+  "payloadBytes": 8550403,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chess-ifun",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

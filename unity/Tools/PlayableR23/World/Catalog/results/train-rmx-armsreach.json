@@ -1,0 +1,35 @@
+{
+  "id": "archive:train-rmx-armsreach",
+  "slug": "train-rmx-armsreach",
+  "title": "TRAIN [RMX]",
+  "creator": "ArmsReach",
+  "relativeFolder": "Maps/train-rmx-armsreach",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\train-rmx-armsreach\\source\\thumb.jpg",
+  "sourceSha256": "cb9e2eb5f9202b0874a8e6feb09bf08bf6b6285da2682a76c4e665961e8014a5",
+  "cacheFingerprint": "a128d44a4c036529d61d094f7c2a24233ece0ee311f295266545dd212b8550d9",
+  "spawn": [
+    -3.61,
+    191.32637512207032,
+    56.2
+  ],
+  "warmupSpawn": [
+    -89.09,
+    220.69293701171875,
+    -27.13
+  ],
+  "chunks": 167,
+  "renderTriangles": 273183,
+  "collisionTriangles": 271555,
+  "payloadBytes": 25268442,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\train-rmx-armsreach",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

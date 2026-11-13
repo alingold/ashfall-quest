@@ -1,0 +1,35 @@
+{
+  "id": "archive:holy-ground-gods-pitdevil",
+  "slug": "holy-ground-gods-pitdevil",
+  "title": "HOLY GROUND",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/holy-ground-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\holy-ground-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "d8ae9becfeec2c266618eb668984743f2f4a5f1166e3620076d72224dd9743d7",
+  "cacheFingerprint": "41b7dc529fe9934dd9afe03c21a9d2120891ad0a9e1f81cbf69e0fffd6e48152",
+  "spawn": [
+    0.54,
+    122.70571909555858,
+    -275.64
+  ],
+  "warmupSpawn": [
+    162.73582,
+    146.789894220213,
+    55.58506
+  ],
+  "chunks": 215,
+  "renderTriangles": 229504,
+  "collisionTriangles": 227320,
+  "payloadBytes": 19685274,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\holy-ground-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

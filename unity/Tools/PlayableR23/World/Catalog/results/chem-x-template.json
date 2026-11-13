@@ -1,0 +1,35 @@
+{
+  "id": "archive:chem-x-template",
+  "slug": "chem-x-template",
+  "title": "CHEM X",
+  "creator": "TEMPLATE",
+  "relativeFolder": "Maps/chem-x-template",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chem-x-template\\source\\thumb.jpg",
+  "sourceSha256": "83c2cd3b982ab4c1ca66cf6e4155c6d12b8ca18ba6a246515845592b97fa3baf",
+  "cacheFingerprint": "048473a1616d5d72d3df48bdf4333dd36837dc2bccb81e50a8ac39cbb3ccc671",
+  "spawn": [
+    6.66,
+    0.12,
+    37.14
+  ],
+  "warmupSpawn": [
+    0.58991,
+    0.12,
+    18.58803
+  ],
+  "chunks": 245,
+  "renderTriangles": 382878,
+  "collisionTriangles": 379024,
+  "payloadBytes": 30941369,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chem-x-template",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

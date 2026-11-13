@@ -1,0 +1,54 @@
+{
+  "original_builder": "[local development path]",
+  "original_builder_sha256": "13007d300763e82ab547d8dd2b8961adb058d6a1f605a63cccb5483b71df3702",
+  "aperture": [
+    0.055,
+    0.0325
+  ],
+  "axis_y": 0.103,
+  "repair": "CCW winding agrees with supplied normals; opaque solid housing remains backface culled.",
+  "fixed": [
+    {
+      "part": "ScopeMount_Base",
+      "flipped_triangles": 480
+    },
+    {
+      "part": "ScopeHousing_Body",
+      "flipped_triangles": 712
+    },
+    {
+      "part": "ScopeHousing_Rubber",
+      "flipped_triangles": 320
+    },
+    {
+      "part": "ScopeDarkInterior_Baffle",
+      "flipped_triangles": 240
+    },
+    {
+      "part": "ScopeMount_Base",
+      "flipped_triangles": 240
+    },
+    {
+      "part": "ScopeHousing_Body",
+      "flipped_triangles": 360
+    },
+    {
+      "part": "ScopeHousing_Rubber",
+      "flipped_triangles": 160
+    },
+    {
+      "part": "ScopeDarkInterior_Baffle",
+      "flipped_triangles": 120
+    }
+  ],
+  "outputs": [
+    {
+      "file": "spr_scope_light.glb",
+      "sha256": "ce86c1e8d5db4ed186c512685ac1c95e82272d03cefe6c992101b8975533e711"
+    },
+    {
+      "file": "spr_scope_pcvr.glb",
+      "sha256": "5a07bf84e1f063ed0895e2d51e9bd6e6c9fb303adee6083f0dea50c64ed84c08"
+    }
+  ]
+}

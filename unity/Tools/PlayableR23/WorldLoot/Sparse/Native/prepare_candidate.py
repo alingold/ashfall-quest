@@ -1,0 +1,11 @@
+from pathlib import Path
+import hashlib,json
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[5];P=ROOT/'unity/Assets/StreamingAssets/PlayableR23'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+frozen=Path('D:/ashfall-r6-staging/frozen-source-r6-v001');assert sha(frozen/'SOURCE-MANIFEST.json')=='b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111'
+cache=json.loads((P/'Loot/caches.json').read_text());catalog={r['id']:r for r in json.loads((P/'TeamLaunch/launch-maps.json').read_text())['rows']};recovery={r['id']:r for r in json.loads((P/'TeamLaunch/ArchiveRecovery/maps.json').read_text())['rows']}
+candidate='archive:the-white-house-gods-osprey-kat';row=next(r for r in cache['maps'] if r['mapId']==candidate);frame=catalog[candidate];info=recovery[candidate];folder=P/frame['payloadFolder'];native=json.loads((folder/'map.json').read_text())
+threshold=max(16,int((row['boundsMax'][0]-row['boundsMin'][0])*(row['boundsMax'][2]-row['boundsMin'][2])/(65*65)))
+assert not row['sites'] and threshold==209 and len(info['recorded'])==24 and not info['hazards'];assert row['sourceSha256']==frame['sourceSha256']==info['sourceSha256']==native['sourceSha256'];assert row['cacheFingerprint']==frame['cacheFingerprint']==info['cacheFingerprint']
+out=dict(candidate=candidate,reason='Actual initial sites0; native19x19 loot grid can yield at most121 fallback cache sites, below source area threshold209. Positive sparse suffix still requires genuine native floor/headroom; refusal remains possible.',initialSourceSites=0,sourceAreaThreshold=threshold,maximumGridFallbackSites=121,recordedSpawns=24,authoredHazards=0,chunks=native['chunks'],geometryBytes=(folder/'geometry.bytes').stat().st_size,sourceSha256=row['sourceSha256'],sourceConvertedManifestSha256=frame['manifestSha256'],adapterSha256=frame['adapterSha256'],cacheFingerprint=row['cacheFingerprint'],inputs={str(x.relative_to(P)):sha(x) for x in [P/'Loot/caches.json',P/'TeamLaunch/launch-maps.json',P/'TeamLaunch/ArchiveRecovery/maps.json',folder/'map.json']},entry='new R24SparseWorldSmoke().Run(actualRoot)',nativeExecuted=False,headsetVerified=False)
+(HERE/'candidate.json').write_text(json.dumps(out,indent=2)+'\n');print(candidate,'source-bound candidate metadata ready; no native execution')

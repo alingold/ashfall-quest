@@ -1,0 +1,447 @@
+def _beam(a, b, thickness, material, solid=False):
+    axis = b - a
+    if axis.length() < 0.001:
+        return
+    basis = Basis.looking_at(axis.normalized(), Vector3.FORWARD if absf(axis.normalized().y) > 0.99 else Vector3.UP)
+    _box((a + b) * 0.5, Vector3(thickness, thickness, axis.length()), material, solid, False, basis)
+
+def _city_ground():
+    for z in gd_iter(4):
+        for x in gd_iter(4):
+            _begin_chunk(gd_mod('Ground_%d_%d', Array([x, z])), Vector3(-300 + x * 200, 0, -300 + z * 200))
+            _box(Vector3(0, -2, 0), Vector3(200, 4, 200), 'road')
+            _finish_chunk(True)
+    for n in gd_iter(9):
+        axis = -352.0 + n * 88
+        _begin_chunk(gd_mod('Avenue_%d', n))
+        for k in gd_iter(range(-38, 39)):
+            _box(Vector3(axis, 0.012, k * 10), Vector3(0.15, 0.022, 3.4), 'gold', False, True)
+            _box(Vector3(k * 10, 0.012, axis), Vector3(3.4, 0.022, 0.15), 'gold', False, True)
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _box(Vector3(axis + side * 7, 0.055, 0), Vector3(0.35, 0.11, 780), 'concrete')
+            _box(Vector3(0, 0.055, axis + side * 10), Vector3(780, 0.11, 0.35), 'concrete')
+        _finish_chunk()
+
+def _building(center, width, depth, floors, district, id):
+    accent = Array(['cyan', 'pink', 'gold', 'violet'])[district]
+    _begin_chunk(gd_mod('Building_%03d_%s', Array([id, DISTRICTS[district].replace(' ', '_')])), center)
+    sx = width * 0.5 - 5
+    body_mat = Array(['concrete', 'warmwall', 'copper', 'metal'])[gd_mod(id, 4)]
+    descriptor = Row({'id': id, 'center': center, 'width': width, 'depth': depth, 'floors': floors, 'district': DISTRICTS[district], 'stair_x': sx})
+    buildings.append(descriptor)
+    for level in gd_iter(floors + 1):
+        y = level * STOREY
+        floor_y = y + 0.012
+        _box(Vector3(-4.5, floor_y - 0.14, 0), Vector3(width - 9, 0.28, depth), 'floor')
+        _box(Vector3(width * 0.5 - 0.5, floor_y - 0.14, 0), Vector3(1, 0.28, depth), 'floor')
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _box(Vector3(sx, floor_y - 0.14, side * (depth * 0.25 + 3)), Vector3(8, 0.28, depth * 0.5 - 6), 'floor')
+        _box(Vector3(sx, floor_y - 0.14, -5.05), Vector3(8, 0.28, 2.1), 'floor')
+        loot_points.append(global_position + center + Vector3(-width * 0.24, y + 0.65, -depth * 0.22))
+        if level == floors:
+            break
+        statistics.floors += 1
+        _stairs(sx, y)
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _facade(center, width, depth, y, side, False, body_mat, id, level)
+            _facade(center, depth, width, y, side, True, body_mat, id, level)
+        if width > 20:
+            for sign_value in gd_iter(Array([-1.0, 1.0])):
+                _box(Vector3(-width * 0.18, y + 1.5, sign_value * (depth * 0.25 + 1.7)), Vector3(0.22, 3, depth * 0.5 - 7), 'warmwall')
+                _box(Vector3(-width * 0.18 + sign_value * 3, y + 1.5, sign_value * 3.5), Vector3(3.8, 3, 0.22), 'warmwall')
+                _box(Vector3(-width * 0.18 + sign_value * 4, y + 0.55, sign_value * (depth * 0.5 - 3)), Vector3(2.5, 1.1, 1), 'metal', True, True)
+        _box(Vector3(-width * 0.23, y + 3.91, -depth * 0.22), Vector3(4, 0.06, 0.25), 'gold', False, True)
+        _box(Vector3(sx, y + 3.93, -5), Vector3(2.4, 0.06, 0.2), accent, False, True)
+        _box(Vector3(-3, y + 0.018, -7), Vector3(width * 0.47, 0.025, 0.045), 'gold', False, True)
+        if level < 4:
+            _sign(gd_mod('%02d  /  ROOF ↑', level), Vector3(sx - 3.8, y + 2.0, -6.15), accent, 0.004)
+        _light_sites.append(Row({'at': global_position + center + Vector3(-width * 0.23, y + 2.9, -depth * 0.22), 'color': Color('ffbb79')}))
+        _light_sites.append(Row({'at': global_position + center + Vector3(sx, y + 2.8, 1), 'color': Color('ffbb79')}))
+        if gd_mod(level, 2) == 0:
+            _box(Vector3(-width * 0.34, y + 0.55, -depth * 0.33), Vector3(2.3, 1.1, 1.2), 'metal', True, True)
+            _box(Vector3(-width * 0.34, y + 1.12, -depth * 0.33), Vector3(2, 0.04, 0.8), accent, False, True)
+            _box(Vector3(-width * 0.35, y + 0.4, depth * 0.25), Vector3(1.1, 0.8, 3.4), 'copper', True, True)
+        if width > 20:
+            _interior_program(width, depth, y, level, district, id)
+        if gd_mod(level, 3) == 0:
+            z = depth * 0.5 + 1.8
+            _box(Vector3(-3, y - 0.15, z), Vector3(width - 4, 0.3, 3.6), 'metal')
+            for x in gd_iter(Array([-width * 0.5 + 1, width * 0.5 - 7])):
+                _box(Vector3(x, y + 0.58, z), Vector3(0.18, 1.16, 3.6), 'metal')
+            for x in gd_iter(Array([-width * 0.3, width * 0.1])):
+                _box(Vector3(x, y + 0.56, z + 1.7), Vector3(3.4, 1.12, 0.25), 'concrete')
+    roof = floors * STOREY
+    for side in gd_iter(Array([-1.0, 1.0])):
+        for section in gd_iter(Array([-1.0, 1.0])):
+            _box(Vector3(section * (width * 0.25 + 2.5), roof + 0.55, side * (depth * 0.5 - 0.2)), Vector3(width * 0.5 - 5, 1.1, 0.4), body_mat)
+            _box(Vector3(side * (width * 0.5 - 0.2), roof + 0.55, section * (depth * 0.25 + 2.5)), Vector3(0.4, 1.1, depth * 0.5 - 5), body_mat)
+    for k in gd_iter(1 if id >= 100 else 3):
+        _box(Vector3(-width * 0.3 + k * 3.7, roof + 0.9, depth * 0.15), Vector3(2.2, 1.8, 3), 'metal')
+        _box(Vector3(-width * 0.3 + k * 3.7, roof + 1.82, depth * 0.15), Vector3(2, 0.04, 2.8), accent, False)
+    _nest(Vector3(-4.5, roof, 0), minf(4.3, (width - 9) * 0.38), accent)
+    if id < 100 and gd_mod(id, 4) == 0:
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _box(Vector3(side * width * 0.27, roof + 3.2, -depth * 0.25), Vector3(width * 0.43, 0.32, 8), 'metal', True, False, Basis(Vector3.FORWARD, side * 0.22))
+            _beam(Vector3(side * width * 0.45, roof + 4.1, -depth * 0.25), Vector3(side * width * 0.08, roof + 2.5, -depth * 0.25), 0.16, accent)
+    elif id < 100 and gd_mod(id, 4) == 1:
+        for fin in gd_iter(5):
+            _box(Vector3(width * 0.25, roof + 1.5, (-2 + fin) * 1.5), Vector3(3, 3, 0.24), 'copper')
+    elif id < 100 and gd_mod(id, 4) == 2:
+        _box(Vector3(width * 0.2, roof + 2, -depth * 0.2), Vector3(4, 4, 5), 'metal')
+        _feather(Vector3(width * 0.2, roof + 6, -depth * 0.2), 2.3, accent)
+    elif id < 100:
+        for fin in gd_iter(3):
+            _beam(Vector3(-width * 0.4 + fin * 3, roof, -depth * 0.4), Vector3(-width * 0.4 + fin * 3, roof + 8 - fin * 1.5, -depth * 0.4), 0.4, 'copper', True)
+    if id in Array([26, 37]):
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _beam(Vector3(-5 + side * 5, roof, 3), Vector3(-5 + side * 5, roof + 35, 3), 1.2, 'copper', True)
+        _bird(Vector3(-5, roof + 35, 3), 70, accent, id == 26)
+    _neon_sites.append(Row({'at': global_position + center + Vector3(-4.5, roof + 2, 0), 'color': materials[accent].albedo_color}))
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(side * (width * 0.5 + 0.06), roof * 0.5, 0), Vector3(0.1, roof, 0.17), accent, False)
+        for y in gd_iter(range(2, mini(floors, 8), 2)):
+            _feather(Vector3(side * (width * 0.5 + 0.12), y * STOREY, depth * 0.25), 2.3, accent, PI * 0.5)
+    if id >= 200:
+        _infill_identity(id, width, depth, roof, accent)
+    if id < 100:
+        title = Array(['HERON\nTRANSIT', 'FEATHER\nARCADE', 'ROOK\nWORKS', 'CROWN\nHABITAT'])[district]
+        _box(Vector3(-width * 0.28, 6, depth * 0.5 + 1), Vector3(6, 5, 0.4), 'dark')
+        _sign(title, Vector3(-width * 0.28, 6, depth * 0.5 + 1.23), accent, 0.012)
+        if gd_mod(id, 8) == 3:
+            _sign(DISTRICTS[district], Vector3(0, roof + 4, 0), accent, 0.04)
+    _finish_chunk()
+
+def _facade(center, span, perpendicular, y, side, rotated, mat, id, level):
+    bays = maxi(2, int(gd_div(span, 6)))
+    step = gd_div(span, bays)
+    for i in gd_iter(bays):
+        u = -span * 0.5 + step * (i + 0.5)
+        door = i == gd_div(bays, 2) or (level == 0 and i == gd_div(bays, 2) - 1)
+        if not door and gd_mod(id + level + i + (1 if rotated else 0), 3) == 0:
+            _box(_swap(Vector3(u, y + 2.1, side * perpendicular * 0.5), rotated), _swap(Vector3(step, 4.2, 0.48), rotated), mat)
+            continue
+        sill = 0.0 if door else 0.92
+        pos = Vector3(u, y + sill * 0.5, side * perpendicular * 0.5)
+        size = Vector3(step, sill, 0.32)
+        if sill > 0:
+            _box(_swap(pos, rotated), _swap(size, rotated), mat)
+        _box(_swap(Vector3(u, y + 3.85, side * perpendicular * 0.5), rotated), _swap(Vector3(step, 0.7, 0.32), rotated), mat)
+        _box(_swap(Vector3(-span * 0.5 + i * step, y + 2.1, side * perpendicular * 0.5), rotated), _swap(Vector3(0.48, 4.2, 0.48), rotated), 'metal')
+        local = _swap(Vector3(u, y + 2, side * perpendicular * 0.5), rotated)
+        windows.append(Row({'at': global_position + center + local, 'normal': _swap(Vector3(0, 0, side), rotated), 'building': id, 'floor': level, 'door': door, 'width': step - 0.48, 'sill': sill}))
+    _box(_swap(Vector3(span * 0.5, y + 2.1, side * perpendicular * 0.5), rotated), _swap(Vector3(0.48, 4.2, 0.48), rotated), 'metal')
+
+def _interior_program(width, depth, y, level, district, id):
+    accent = Array(['cyan', 'pink', 'gold', 'violet'])[district]
+    room_z = depth * 0.27
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(-width * 0.18 - 0.13, y + 1.03, side * (depth * 0.25 + 1.7)), Vector3(0.06, 0.09, depth * 0.5 - 7), 'copper', False, True)
+        _box(Vector3(-width * 0.18 - 0.13, y + 2.72, side * (depth * 0.25 + 1.7)), Vector3(0.06, 0.05, depth * 0.5 - 7), accent, False, True)
+    _box(Vector3(-width * 0.18, y + 2.9, 0), Vector3(0.22, 0.18, 6.7), 'metal')
+    _box(Vector3(-width * 0.18 - 0.14, y + 2.88, 0), Vector3(0.025, 0.055, 5.8), accent, False, True)
+    match district:
+        case 0:
+            for seat in gd_iter(3):
+                at = Vector3(-width * 0.35, y, -4 + seat * 3.2)
+                _box(at + Vector3(0, 0.48, 0), Vector3(2.4, 0.18, 1.1), 'copper')
+                _box(at + Vector3(0, 0.95, -0.45), Vector3(2.4, 0.9, 0.18), 'metal')
+                for leg in gd_iter(Array([-1.0, 1.0])):
+                    _box(at + Vector3(leg * 0.8, 0.22, 0), Vector3(0.14, 0.44, 0.75), 'metal', False, True)
+            _box(Vector3(-1.5, y + 1, room_z), Vector3(5.8, 2, 1.3), 'metal')
+            _box(Vector3(-1.5, y + 2.1, room_z), Vector3(5.5, 0.16, 1.4), 'copper')
+            _box(Vector3(-1.5, y + 1.5, room_z + 0.67), Vector3(4.4, 0.08, 0.035), 'cyan', False, True)
+            if gd_mod(level, 3) == 0:
+                _sign(gd_mod('HERON / TRANSIT\nNIGHT LINE  •  %02d', level), Vector3(-1.5, y + 2.8, room_z + 0.72), 'gold', 0.004)
+        case 1:
+            _box(Vector3(-1.4, y + 0.58, room_z), Vector3(6.2, 1.16, 1.4), 'copper')
+            _box(Vector3(-1.4, y + 1.2, room_z), Vector3(6.4, 0.12, 1.6), 'metal')
+            for station in gd_iter(3):
+                at = Vector3(-3.4 + station * 2, y, room_z)
+                _box(at + Vector3(0, 1.75, -0.4), Vector3(1.3, 0.9, 0.2), 'dark')
+                _box(at + Vector3(0, 1.75, -0.28), Vector3(1.1, 0.67, 0.035), 'pink', False, True)
+                _box(at + Vector3(0, 0.4, 1.8), Vector3(0.8, 0.8, 0.8), 'metal')
+            for side in gd_iter(Array([-1.0, 1.0])):
+                _box(Vector3(-width * 0.36, y + 0.55, side * depth * 0.23), Vector3(2.3, 1.1, 2.7), 'copper')
+                _box(Vector3(-width * 0.36, y + 1.13, side * depth * 0.23), Vector3(1.5, 0.05, 2.2), 'dark', False, True)
+            if gd_mod(level, 3) == 0:
+                _sign('PLUMAGE\nNOODLES / ARCADE', Vector3(-1.4, y + 2.8, room_z + 0.85), 'pink', 0.0045)
+        case 2:
+            for server in gd_iter(3):
+                at = Vector3(-width * 0.36, y, -5 + server * 4.5)
+                _box(at + Vector3(0, 1.25, 0), Vector3(2.6, 2.5, 1.7), 'metal')
+                for vent in gd_iter(5):
+                    _box(at + Vector3(0, 0.5 + vent * 0.35, 0.88), Vector3(2, 0.09, 0.06), 'copper', False, True)
+                _box(at + Vector3(0.9, 1.9, 0.9), Vector3(0.15, 0.5, 0.04), 'gold', False, True)
+            _box(Vector3(-1.5, y + 0.7, room_z), Vector3(6, 1.4, 1.6), 'copper')
+            for machine in gd_iter(2):
+                _box(Vector3(-3 + machine * 3, y + 1.9, room_z), Vector3(1.2, 2.4, 1.1), 'metal')
+            if gd_mod(level, 3) == 0:
+                _sign(gd_mod('ROOK / RELAY %02d\nMAINTENANCE LOOP', level), Vector3(-1.5, y + 3.2, room_z + 1), 'gold', 0.004)
+        case 3:
+            for side in gd_iter(Array([-1.0, 1.0])):
+                at = Vector3(-width * 0.36, y, side * depth * 0.25)
+                _box(at + Vector3(0, 0.35, 0), Vector3(2.2, 0.7, 3.4), 'metal')
+                _box(at + Vector3(0, 0.8, -1.35), Vector3(2.2, 1.6, 0.24), 'copper')
+                _box(at + Vector3(0, 0.73, 0), Vector3(1.9, 0.06, 2.7), 'warmwall', False, True)
+            _box(Vector3(-1.5, y + 0.5, room_z), Vector3(4.6, 1, 2), 'copper')
+            for side in gd_iter(Array([-1.0, 1.0])):
+                _box(Vector3(-1.5 + side * 3.2, y + 0.5, room_z), Vector3(1.1, 1, 3), 'metal')
+                _box(Vector3(-1.5 + side * 3.6, y + 1.2, room_z), Vector3(0.28, 1.4, 3), 'warmwall')
+            if gd_mod(level, 3) == 0:
+                _sign(gd_mod('CROWN / TEA LOUNGE\nNEST %03d / %02d', Array([id, level])), Vector3(-1.5, y + 2.8, room_z + 1.2), 'violet', 0.004)
+
+def _swap(v, rotated):
+    return Vector3(v.z, v.y, v.x) if rotated else v
+
+def _stairs(sx, y):
+    for step in gd_iter(12):
+        rise = (step + 1) * 0.175
+        z = -3.8 + step * 0.6
+        _box(Vector3(sx - 1.3, y + rise - 0.06, z), Vector3(2.3, 0.12, 0.6), 'metal')
+        _box(Vector3(sx + 1.3, y + 2.1 + rise - 0.06, 2.8 - step * 0.6), Vector3(2.3, 0.12, 0.6), 'metal')
+        _box(Vector3(sx - 1.3, y + rise + 0.012, z - 0.29), Vector3(2.3, 0.024, 0.04), 'gold', False, True)
+        _box(Vector3(sx + 1.3, y + 2.1 + rise + 0.012, 3.09 - step * 0.6), Vector3(2.3, 0.024, 0.04), 'gold', False, True)
+    _box(Vector3(sx, y + 1.96, 4), Vector3(5.2, 0.28, 1.8), 'floor')
+    _beam(Vector3(sx - 2.55, y, -4.1), Vector3(sx - 2.55, y + 2.1, 3.1), 0.14, 'copper', True)
+    _beam(Vector3(sx + 2.55, y + 2.1, 3.1), Vector3(sx + 2.55, y + 4.2, -4.1), 0.14, 'copper', True)
+    _box(Vector3(sx, y + 2.65, 4.85), Vector3(5.3, 1.1, 0.16), 'metal')
+    routes.append(Row({'kind': 'stairs', 'from': global_position + _chunk.position + Vector3(sx - 1.3, y, -4.4), 'to': global_position + _chunk.position + Vector3(sx + 1.3, y + STOREY, -4.4)}))
+    statistics.stairs += 1
+    _foot_ramp_r5(sx - 1.3, y, -4.7, 2.5)
+    _foot_ramp_r5(sx + 1.3, y + 2.1, 3.7, -3.5)
+
+def _nest(at, radius, accent):
+    for i in gd_iter(12):
+        angle = gd_div(i * TAU, 12)
+        tangent = Basis(Vector3.UP, -angle)
+        _box(at + Vector3(cos(angle) * radius, 0.65, sin(angle) * radius), Vector3(0.35, 1.3, 1.65), 'copper', True, False, tangent)
+        if gd_mod(i, 3) == 0:
+            _box(at + Vector3(cos(angle) * radius, 1.35, sin(angle) * radius), Vector3(0.4, 0.07, 1.65), accent, False, False, tangent)
+
+def _feather(at, length, accent, rotation=0.0):
+    orientation = Basis(Vector3.UP, rotation)
+    _beam(at + orientation * Vector3(0, -length, 0), at + orientation * Vector3(0, length, 0), 0.1, accent)
+    for i in gd_iter(5):
+        y = -length * 0.7 + i * length * 0.32
+        width = length * (0.58 - absf(float(i) - 2) * 0.11)
+        for side in gd_iter(Array([-1.0, 1.0])):
+            _beam(at + orientation * Vector3(0, y, 0), at + orientation * Vector3(side * width, y + length * 0.5, 0), 0.095, accent)
+
+def _street_furniture(center, district, id):
+    accent = Array(['cyan', 'pink', 'gold', 'violet'])[district]
+    _neon_sites.append(Row({'at': global_position + center + Vector3(-15, 3.6, 29), 'color': materials[accent].albedo_color}))
+    service_z = 24.0 if gd_mod(floori(gd_div(float(id), 8)) + gd_mod(id, 8), 4) == 0 else -24.0
+    _begin_chunk(gd_mod('Courtyard_%d', id), center)
+    for k in gd_iter(4):
+        x = -4 if k == 2 else -20 + k * 12
+        z = -29 if gd_mod(k, 2) == 0 else 29
+        _box(Vector3(x, 0.55, z), Vector3(3.6, 1.1, 2), 'concrete')
+        _box(Vector3(x, 1.18, z), Vector3(3.2, 0.16, 1.6), 'copper')
+        _box(Vector3(x, 1.3, z), Vector3(0.15, 0.2, 1.65), accent, False)
+        loot_points.append(global_position + center + Vector3(x + 2.6, 0.7, z))
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(side * 34, 3.4, service_z), Vector3(0.32, 6.8, 0.32), 'metal')
+        _beam(Vector3(side * 34, 6.5, service_z), Vector3(side * 29, 6.5, service_z), 0.22, 'metal', True)
+        _box(Vector3(side * 29, 6.4, service_z), Vector3(2, 0.12, 0.6), 'gold', False)
+        _street_sites.append(global_position + center + Vector3(side * 29, 6.3, service_z))
+    _box(Vector3(25, 1.1, service_z), Vector3(6, 2.2, 3.2), 'metal')
+    _box(Vector3(25, 2.25, service_z), Vector3(5, 0.1, 2.4), accent, False, True)
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(-15 + side * 6, 1.6, 26), Vector3(0.15, 3.2, 0.15), 'copper')
+    _box(Vector3(-15, 3.3, 26), Vector3(13, 0.25, 6), 'metal')
+    _feather(Vector3(-15, 5.9, 28.9), 2, accent)
+    if gd_mod(id, 4) == 0:
+        _box(Vector3(-15, 1.0, 26), Vector3(7, 2, 1.2), 'warmwall')
+        _sign(Array(['HERON / NIGHT FERRY', 'PLUMAGE / NIGHT MARKET', 'ROOK / FABRICATION', 'NEST / ROOFTOP CLUB'])[district], Vector3(-15, 3.9, 29), accent, 0.008)
+    if district == 1:
+        for stall in gd_iter(3):
+            at = Vector3(-20 + stall * 7, 0, -27)
+            _box(at + Vector3(0, 0.6, 0), Vector3(4, 1.2, 2), 'copper')
+            _box(at + Vector3(0, 3, 0), Vector3(5.7, 0.2, 4.4), 'metal', True, False, Basis(Vector3.FORWARD, 0.12))
+            _box(at + Vector3(0, 2.8, 2.2), Vector3(5, 0.2, 0.12), 'pink', False)
+    elif district == 2:
+        for pipe in gd_iter(3):
+            _beam(Vector3(28 + pipe * 1.2, 0, 23), Vector3(28 + pipe * 1.2, 9 + pipe * 3, 23), 0.6, 'copper', True)
+        _box(Vector3(28, 4.1, 23), Vector3(6, 0.2, 5), 'metal')
+    elif district == 0:
+        for blade in gd_iter(5):
+            _beam(Vector3(-27 + blade * 1.2, 0, 25), Vector3(-27 + blade * 1.2, 4 + blade * 0.6, 25), 0.26, 'cyan')
+    else:
+        _nest(Vector3(22, 0, 26), 4, 'violet')
+    _finish_chunk()
+
+def _bridge(a, b, accent, index):
+    _begin_chunk(gd_mod('SkyBridge_%02d', index))
+    direction = (b - a).normalized()
+    length = a.distance_to(b)
+    basis = Basis.looking_at(direction, Vector3.UP)
+    mid = (a + b) * 0.5
+    _box(mid - Vector3.UP * 0.15, Vector3(3.6, 0.3, length), 'metal', True, False, basis)
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(mid + basis.x * side * 1.73 + Vector3.UP * 0.55, Vector3(0.16, 1.1, length), 'metal', True, False, basis)
+        _box(mid + basis.x * side * 1.75 + Vector3.UP * 1.14, Vector3(0.08, 0.08, length), accent, False, False, basis)
+    for t in gd_iter(Array([0.28, 0.7])):
+        side = -1.0 if t < 0.5 else 1.0
+        _box(a.lerp(b, t) + basis.x * side * 1.2 + Vector3.UP * 0.7, Vector3(1.0, 1.4, 2.6), 'concrete', True, False, basis)
+        _box(a.lerp(b, t) - Vector3.UP * 3, Vector3(0.35, 6, 0.35), 'copper')
+    _finish_chunk()
+    routes.append(Row({'kind': 'bridge', 'from': global_position + a, 'to': global_position + b}))
+    statistics.bridges += 1
+
+def _sky_routes():
+    index = 0
+    for row in gd_iter(Array([2, 3, 4, 5])):
+        for col in gd_iter(Array([2, 3, 4])):
+            a = buildings.filter(lambda v: v.id == row * 8 + col)[0]
+            b = buildings.filter(lambda v: v.id == row * 8 + col + 1)[0]
+            y = STOREY * (2 if gd_mod(row, 2) == 0 else 3)
+            za = -float(a.depth) * 0.5 + gd_div(float(a.depth), int(gd_div(float(a.depth), 6))) * (int(gd_div(int(gd_div(float(a.depth), 6)), 2)) + 0.5)
+            zb = -float(b.depth) * 0.5 + gd_div(float(b.depth), int(gd_div(float(b.depth), 6))) * (int(gd_div(int(gd_div(float(b.depth), 6)), 2)) + 0.5)
+            _bridge(a.center + Vector3(float(a.width) * 0.5 - 0.4, y, za), b.center + Vector3(-float(b.width) * 0.5 + 0.4, y, zb), 'cyan' if row < 4 else 'pink', index)
+            index += 1
+    for col in gd_iter(Array([2, 5])):
+        for row in gd_iter(Array([2, 3, 4])):
+            a = buildings.filter(lambda v: v.id == row * 8 + col)[0]
+            b = buildings.filter(lambda v: v.id == (row + 1) * 8 + col)[0]
+            xa = -float(a.width) * 0.5 + gd_div(float(a.width), int(gd_div(float(a.width), 6))) * (int(gd_div(int(gd_div(float(a.width), 6)), 2)) + 0.5)
+            xb = -float(b.width) * 0.5 + gd_div(float(b.width), int(gd_div(float(b.width), 6))) * (int(gd_div(int(gd_div(float(b.width), 6)), 2)) + 0.5)
+            _bridge(a.center + Vector3(xa, STOREY * 2, float(a.depth) * 0.5 - 0.4), b.center + Vector3(xb, STOREY * 2, -float(b.depth) * 0.5 + 0.4), 'gold', index)
+            index += 1
+
+def _landmarks():
+    _begin_chunk('Aviary_Cathedral')
+    for side in gd_iter(Array([-1.0, 1.0])):
+        for k in gd_iter(7):
+            z = -24 + k * 8
+            _beam(Vector3(side * 24, 0, z), Vector3(side * 18, 34, z), 0.65, 'metal', True)
+            _beam(Vector3(side * 18, 34, z), Vector3(0, 44, z), 0.48, 'copper', True)
+            _beam(Vector3(side * 18, 34, z), Vector3(side * 4, 41, z), 0.18, 'cyan')
+        _box(Vector3(side * 22, 0.6, 0), Vector3(3, 1.2, 48), 'concrete')
+    _nest(Vector3.ZERO, 10, 'cyan')
+    _bird(Vector3(0, 22, 0), 12, 'cyan', False)
+    _sign('CYBER BIRD', Vector3(0, 14, 25), 'cyan', 0.06)
+    _sign('AVIARY / 00', Vector3(0, 8, 25), 'gold', 0.022)
+    _finish_chunk()
+    _begin_chunk('Heron_Spire', Vector3(-185, 0, -80))
+    _bird(Vector3(0, 28, 0), 10, 'gold', True)
+    _box(Vector3(0, 12, 0), Vector3(3, 24, 3), 'metal')
+    _nest(Vector3(0, 0.1, 0), 8, 'gold')
+    _sign('HERON QUAY', Vector3(0, 7, 7), 'cyan', 0.025)
+    _finish_chunk()
+    _begin_chunk('SafeSpawn_NightTerminal', Vector3(-9, 0, 365))
+    _box(Vector3(0, 5, 0), Vector3(24, 0.7, 22), 'metal')
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(side * 11, 2.5, 0), Vector3(0.6, 5, 22), 'concrete')
+        _box(Vector3(side * 6, 1.5, -10), Vector3(10, 3, 0.7), 'concrete')
+        _box(Vector3(side * 8, 2.5, 10), Vector3(6, 5, 0.6), 'concrete')
+    _box(Vector3(0, 2, -5), Vector3(7, 4, 0.6), 'metal')
+    _feather(Vector3(0, 2.7, -4.65), 1.0, 'cyan')
+    _sign('CYBER BIRD\nNIGHT TERMINAL', Vector3(0, 3.1, 9.6), 'cyan', 0.014, PI)
+    _sign('HERON ←     AVIARY ↑     CROWN →', Vector3(0, 5.9, -10), 'gold', 0.009, PI)
+    loot_points.append(global_position + Vector3(-9, 0.7, 369))
+    _light_sites.append(Row({'at': global_position + Vector3(-9, 3.7, 368), 'color': Color('ffbb79')}))
+    _neon_sites.append(Row({'at': global_position + Vector3(-9, 2.8, 361), 'color': Color('21e9ef')}))
+    _finish_chunk()
+
+def _bird(at, size, accent, heron):
+    _beam(at - Vector3.UP * size * 0.35, at + Vector3.UP * size * 0.3, size * 0.18, 'metal', True)
+    neck = at + Vector3(0, size * (0.95 if heron else 0.45), -size * 0.12)
+    _beam(at, neck, size * 0.09, 'copper', True)
+    _beam(neck, neck + Vector3(size * 0.32, 0, 0), size * 0.075, accent)
+    for side in gd_iter(Array([-1.0, 1.0])):
+        for feather in gd_iter(8):
+            spread = 0.25 + feather * 0.11
+            end = at + Vector3(side * size * spread, size * (0.52 - feather * 0.035), size * (feather * 0.07 - 0.2))
+            _beam(at + Vector3(0, -feather * 0.15, 0), end, size * 0.065, 'metal', True)
+            _beam(end, end + Vector3(side * size * 0.22, -size * 0.36, size * 0.09), size * 0.035, accent)
+
+def _boundary():
+    _begin_chunk('Finished_City_Seawall')
+    for side in gd_iter(Array([-1.0, 1.0])):
+        _box(Vector3(side * 397, 12, 0), Vector3(6, 24, 800), 'metal')
+        _box(Vector3(0, 12, side * 397), Vector3(788, 24, 6), 'metal')
+        _box(Vector3(side * 397, 24.1, 0), Vector3(6, 0.2, 800), 'cyan', False)
+        _box(Vector3(0, 24.1, side * 397), Vector3(788, 0.2, 6), 'pink', False)
+        _box(Vector3(side * 399, 222, 0), Vector3(2, 396, 800), 'dark')
+        _box(Vector3(0, 222, side * 399), Vector3(796, 396, 2), 'dark')
+        for k in gd_iter(range(-7, 8)):
+            _box(Vector3(side * 393, 20, k * 50), Vector3(3, 40, 5), 'concrete')
+            _box(Vector3(k * 50, 20, side * 393), Vector3(5, 40, 3), 'concrete')
+    _finish_chunk()
+    _begin_chunk('Visible_Flight_Canopy')
+    _box(Vector3(0, 421, 0), Vector3(800, 2, 800), 'dark')
+    _finish_chunk()
+
+def _infill_identity(id, width, depth, roof, accent):
+    type = gd_mod(id, 4)
+    titles = Array(['SWIFT / REPAIR', 'IBIS / TEA HOUSE', 'KESTREL / POWER', 'FINCH / LOFTS'])
+    _sign(titles[type], Vector3(-3, 2.8, depth * 0.5 + 0.3), accent, 0.0035)
+    if type == 0:
+        for fin in gd_iter(3):
+            _box(Vector3(-3, roof + 1.2, -4 + fin * 3), Vector3(4, 0.15, 2.6), 'copper', True, False, Basis(Vector3.RIGHT, 0.3))
+    elif type == 1:
+        for level in gd_iter(3):
+            _box(Vector3(-3, level * STOREY + 3, depth * 0.5 + 0.8), Vector3(5, 0.2, 1.6), 'copper')
+            _box(Vector3(-3, level * STOREY + 3.14, depth * 0.5 + 1.5), Vector3(5, 0.06, 0.12), accent, False)
+    elif type == 2:
+        for fin in gd_iter(4):
+            _box(Vector3(-3, roof + 1.6, -4 + fin * 2.5), Vector3(2.4, 3.2, 0.22), 'copper')
+    else:
+        for fin in gd_iter(3):
+            _beam(Vector3(-4 + fin, roof, -4), Vector3(-4 + fin, roof + 4 + fin, -2), 0.22, 'metal', True)
+    for level in gd_iter(3):
+        _box(Vector3(-4.7, level * STOREY + 0.6, 2), Vector3(1, 1.2, 2), 'copper')
+        _box(Vector3(-4.7, level * STOREY + 1.23, 2), Vector3(0.9, 0.06, 1.9), accent, False, True)
+
+def _loot_offset_r6(b, slot):
+    w = b.width
+    d = b.depth
+    match slot:
+        case 0:
+            return Vector3(-w * 0.28, 1.45, d * 0.5 + 0.55)
+        case 1:
+            return Vector3(w * 0.28, 1.45, d * 0.5 + 0.55)
+        case 2:
+            return Vector3(w * 0.5 + 0.55, 1.45, -d * 0.25)
+        case 3:
+            return Vector3(-w * 0.24, 0.75, -d * 0.22)
+        case 4:
+            return Vector3(-w * 0.24, STOREY + 0.75, -d * 0.22)
+    return Vector3(-w * 0.24, int(b.floors) * STOREY + 0.75, -d * 0.22)
+
+def _weapon_mounts_r6():
+    for b in gd_iter(buildings):
+        if int(b.id) >= 100:
+            continue
+        _begin_chunk('StreetWeaponDisplays' + str(b.id), b.center)
+        for slot in gd_iter(3):
+            at = _loot_offset_r6(b, slot)
+            turn = Basis(Vector3.UP, PI * 0.5) if slot == 2 else Basis.IDENTITY
+            _box(at + turn * Vector3(0, 0, -0.2), Vector3(1.8, 0.65, 0.08), 'metal', True, False, turn)
+            _box(at + turn * Vector3(0, -0.35, -0.1), Vector3(1.8, 0.045, 0.18), 'cyan', False, False, turn)
+        _finish_chunk()
+
+def build_geometry():
+    _city_ground()
+    for row in gd_iter(8):
+        for col in gd_iter(8):
+            district = (0 if col < 4 else 1) + (0 if row < 4 else 2)
+            center = Vector3(-308.0 + col * 88.0 - 9.0, 0, -308.0 + row * 88.0)
+            floors = 3 + gd_mod(col * 7 + row * 3, 10)
+            if Vector2(center.x, center.z).length() < 100:
+                floors = 6
+            if col == 2 and row == 3:
+                floors = 16
+            if col == 5 and row == 4:
+                floors = 15
+            width = 28.0 + gd_mod(col + row, 3) * 3.0
+            depth = 30.0 + gd_mod(col * 3 + row, 3) * 3.0
+            _building(center, width, depth, floors, district, row * 8 + col)
+            if gd_mod(col + row, 4) == 0:
+                _building(center + Vector3(32, 0, -23), 14, 23, 3, district, 100 + row * 8 + col)
+            _building(center + Vector3(12, 0, -28), 12, 14, 3 + gd_mod(row + col, 4), district, 200 + row * 8 + col)
+            _street_furniture(center, district, row * 8 + col)
+    _sky_routes()
+    _weapon_mounts_r6()
+    _landmarks()
+    _boundary()

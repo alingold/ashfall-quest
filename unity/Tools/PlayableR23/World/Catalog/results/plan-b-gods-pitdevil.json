@@ -1,0 +1,35 @@
+{
+  "id": "archive:plan-b-gods-pitdevil",
+  "slug": "plan-b-gods-pitdevil",
+  "title": "PLAN B",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/plan-b-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\plan-b-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "45198e5157a98c297f0fa51672908b56793c5e53a6c43422afe90d162c06d204",
+  "cacheFingerprint": "58b4908281af9f62d94dc8afcb31ed79e57088cda6eef0653819688327fa7d75",
+  "spawn": [
+    -24.91,
+    78.144169921875,
+    -364.41
+  ],
+  "warmupSpawn": [
+    93.8063,
+    428.1198779296875,
+    -362.4101
+  ],
+  "chunks": 443,
+  "renderTriangles": 409262,
+  "collisionTriangles": 405606,
+  "payloadBytes": 36952600,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\plan-b-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

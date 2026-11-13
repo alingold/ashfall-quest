@@ -1,0 +1,35 @@
+{
+  "id": "archive:asylum-gods-pitdevil",
+  "slug": "asylum-gods-pitdevil",
+  "title": "ASYLUM",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/asylum-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\asylum-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "02b9923d1052bccee37ccf60dcf930ee185cbd31ecbfc544ef40ab8c4ff4725e",
+  "cacheFingerprint": "89575a87ea632469ba8601eb1c48c106f94f9c156f07ba83fa4321de720e0fc0",
+  "spawn": [
+    -60.91,
+    40.5833674621582,
+    -196.41
+  ],
+  "warmupSpawn": [
+    -29.09,
+    40.5833674621582,
+    -135.09
+  ],
+  "chunks": 132,
+  "renderTriangles": 303842,
+  "collisionTriangles": 303858,
+  "payloadBytes": 22998407,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\asylum-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

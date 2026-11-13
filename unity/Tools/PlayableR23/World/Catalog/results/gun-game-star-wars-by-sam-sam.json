@@ -1,0 +1,35 @@
+{
+  "id": "archive:gun-game-star-wars-by-sam-sam",
+  "slug": "gun-game-star-wars-by-sam-sam",
+  "title": "GUN GAME STAR WARS BY SAM",
+  "creator": "Sam",
+  "relativeFolder": "Maps/gun-game-star-wars-by-sam-sam",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\gun-game-star-wars-by-sam-sam\\source\\thumb.jpg",
+  "sourceSha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+  "cacheFingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+  "spawn": [
+    -6.23,
+    211.12,
+    30.92
+  ],
+  "warmupSpawn": [
+    -63.7209,
+    207.11998474121094,
+    28.22089
+  ],
+  "chunks": 170,
+  "renderTriangles": 366944,
+  "collisionTriangles": 362820,
+  "payloadBytes": 34759873,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\gun-game-star-wars-by-sam-sam",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:trashed-gods-pitdevil",
+  "slug": "trashed-gods-pitdevil",
+  "title": "TRASHED",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/trashed-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\trashed-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "e78ffd3eff470f3dd1930a4faf3e8daad8e2710089cb01db690d2e75e299f1da",
+  "cacheFingerprint": "5aff40c123cd65e46798ebc2342384ce107a3872936bccaa702d3b1db5353d73",
+  "spawn": [
+    6.22,
+    58.87561415335994,
+    -267.64
+  ],
+  "warmupSpawn": [
+    310.3822,
+    352.02896606445313,
+    -312.18988
+  ],
+  "chunks": 226,
+  "renderTriangles": 280048,
+  "collisionTriangles": 276978,
+  "payloadBytes": 24427623,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\trashed-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

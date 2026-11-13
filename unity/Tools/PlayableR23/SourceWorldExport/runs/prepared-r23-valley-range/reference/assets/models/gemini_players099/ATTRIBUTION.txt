@@ -1,0 +1,16 @@
+ASHFALL Player Models Visual Overhaul Attribution
+=================================================
+1. Player Character Models & 2048x2048 PBR Texture Atlases:
+   - player_camo_pcvr.glb / player_camo_light.glb / player_kit_camo_*.glb ("APEX CAMO")
+   - player_witch_doctor_pcvr.glb / player_witch_doctor_light.glb / player_kit_witch_doctor_*.glb ("WITCH DOCTOR")
+   - player_eclipse_ronin_pcvr.glb / player_eclipse_ronin_light.glb / player_kit_eclipse_ronin_*.glb ("ECLIPSE RONIN")
+   - player_trio_showcase_pcvr.glb
+   - All player_*_albedo.png, player_*_normal.png, player_*_orm.png, player_*_emission.png (2048x2048)
+   Author: Procedural high-detail geometry & PBR textures authored for ASHFALL (Gemini Argon asset collaboration)
+   License: CC0 1.0 Universal / Project-Owned Original Assets
+
+2. Articulated VR Hand / Glove Base Mesh & UV Layout:
+   - Donor files: assets/hands/xrtools086/Hand_Glove_low_L.gltf, Hand_Glove_low_R.gltf
+   - Source: Godot XR Tools (https://github.com/GodotVR/godot-xr-tools)
+   - License: CC0 1.0 Universal (hand meshes & textures) / MIT (Godot XR Tools repository)
+   - Custom Overhaul Textures: glove_camo_*.png, glove_witch_doctor_*.png, glove_eclipse_ronin_*.png (1024x1024)

@@ -1,0 +1,35 @@
+{
+  "id": "archive:statmaster-classic-soulsmight",
+  "slug": "statmaster-classic-soulsmight",
+  "title": "STATMASTER CLASSIC",
+  "creator": "Soulsmight",
+  "relativeFolder": "Maps/statmaster-classic-soulsmight",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\statmaster-classic-soulsmight\\source\\thumb.jpg",
+  "sourceSha256": "36579e8cf66cbd73d9f55b12562e63bfe1fcef3f3235d8281c4748dcbeb4139b",
+  "cacheFingerprint": "78e9d46aa694036fc2dc4fcdd79716b40bbc8770d1b60677406048ba5c14b0f0",
+  "spawn": [
+    83.85394672594589,
+    20.365126907234753,
+    40.666259765625
+  ],
+  "warmupSpawn": [
+    -21.864807128906023,
+    26.62,
+    40.666259765625
+  ],
+  "chunks": 266,
+  "renderTriangles": 564266,
+  "collisionTriangles": 534718,
+  "payloadBytes": 55851635,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\statmaster-classic-soulsmight",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

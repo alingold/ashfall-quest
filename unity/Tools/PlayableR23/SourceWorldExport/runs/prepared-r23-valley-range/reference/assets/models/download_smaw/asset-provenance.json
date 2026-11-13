@@ -1,0 +1,89 @@
+{
+  "id": "smaw",
+  "file": "the_rocket_launcher_of_jinx__fishbones.glb",
+  "scale": 0.7276410368984114,
+  "anchor": [
+    -0.1,
+    -0.178,
+    0
+  ],
+  "target": [
+    0,
+    -0.075,
+    -0.3195
+  ],
+  "mag": [],
+  "muzzle": [
+    0,
+    0.045,
+    -0.83
+  ],
+  "fit_method": "Jinx Fishbones selected explicitly instead of DZJ08. Uniform +X to -Z fit around central grip and existing launcher mouth/reload line. Entire source retained; existing projectile and functional front-loading reload preserved.",
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    0.05452010456791724,
+    -0.39226410368984116
+  ],
+  "source": "[local development path]",
+  "source_sha256": "9c44066a607be4cf73550598314231bf50813717f1d924f65956eba6930587b3",
+  "output_sha256": "8ebd6dda8a9750e1a2bb9f1c473b519899e124950e2ead77e535cb55e419a5f9",
+  "asset": {
+    "author": "Prabhath077 (https://sketchfab.com/Prabhath077)",
+    "license": "CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)",
+    "source": "https://sketchfab.com/3d-models/the-rocket-launcher-of-jinx-fishbones-bc59b8ebd17147518b80da0cce50cfce",
+    "title": "The Rocket Launcher of Jinx \" FishBones\"."
+  },
+  "magazine_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 5216,
+  "body_triangles": 5216,
+  "magazine_triangles": 0,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.111440545001128,
+    -0.11302567986659971,
+    -0.83
+  ],
+  "bounds_max": [
+    0.11304844810369805,
+    0.2179011945612589,
+    0.034425704688896885
+  ],
+  "method": "Jinx Fishbones selected explicitly instead of DZJ08. Uniform +X to -Z fit around central grip and existing launcher mouth/reload line. Entire source retained; existing projectile and functional front-loading reload preserved.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 5216,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

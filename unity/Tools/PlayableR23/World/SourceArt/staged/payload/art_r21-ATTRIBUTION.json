@@ -1,0 +1,17 @@
+{
+  "creator": "Original ASHFALL R21 geometric avian artwork",
+  "assets": [
+    "northline-landscape.svg",
+    "northline-portrait.svg",
+    "northline-landscape.png",
+    "northline-portrait.png",
+    "northline-landscape_texture.res",
+    "northline-portrait_texture.res"
+  ],
+  "method": "Original vector geometry; NORTHLINE glyphs converted offline through locally installed Arial to vector paths, no font binary embedded or distributed",
+  "external_artwork": false,
+  "archive_reuse": "UNKNOWN LOCAL-ONLY restrictions retained; archive originals unchanged",
+  "runtime": "Landscape embedded ETC2 resource installed at accepted R19 freight_texture.res path; portrait resource prepared, selector/hook pending",
+  "bake": "Godot 4.7.2 headless SVG rasterization, ETC2 compressed embedded ImageTexture, 10 mip levels each; production requires no raw SVG/PNG loading",
+  "r21_primary_review": "Earlier draft preserved before worker cancellation; integrated and extended by primary after user requested no subagents. Landscape replaces verbose previous NORTHLINE text; new296x1024 roadside portrait layout authored locally."
+}

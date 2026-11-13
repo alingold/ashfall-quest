@@ -1,0 +1,35 @@
+{
+  "id": "archive:melipop-gods-poplightning",
+  "slug": "melipop-gods-poplightning",
+  "title": "[MELIPOP]",
+  "creator": "GODS_POPLIGHTNING",
+  "relativeFolder": "Maps/melipop-gods-poplightning",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\melipop-gods-poplightning\\source\\thumb.jpg",
+  "sourceSha256": "dd7b22842678f875ab27fdb959505424be7f96755d1b9b5cea64f11b9c10a152",
+  "cacheFingerprint": "6e2f16dea7e1b592369479a99fd5c38df5331202958e98a76e03920cdb04548b",
+  "spawn": [
+    -222.77,
+    197.0708056640625,
+    89.71
+  ],
+  "warmupSpawn": [
+    -84.08802,
+    5.120104006860677,
+    -67.16519
+  ],
+  "chunks": 123,
+  "renderTriangles": 149188,
+  "collisionTriangles": 142264,
+  "payloadBytes": 12628685,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\melipop-gods-poplightning",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

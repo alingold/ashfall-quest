@@ -1,0 +1,35 @@
+{
+  "id": "archive:afterlife-gods-alamo-hank",
+  "slug": "afterlife-gods-alamo-hank",
+  "title": "AFTERLIFE",
+  "creator": "GODS_ALAMO_HANK",
+  "relativeFolder": "Maps/afterlife-gods-alamo-hank",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\afterlife-gods-alamo-hank\\source\\thumb.jpg",
+  "sourceSha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+  "cacheFingerprint": "2e872a04cb2f5dd1984f5eb9364082533bfb68cb6a2b4a25fe1fe3d97ebc0d3c",
+  "spawn": [
+    233.71,
+    123.26859008789063,
+    -332.78
+  ],
+  "warmupSpawn": [
+    -507.55655,
+    417.88315586695666,
+    -316.42882
+  ],
+  "chunks": 310,
+  "renderTriangles": 242538,
+  "collisionTriangles": 242438,
+  "payloadBytes": 22075330,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\afterlife-gods-alamo-hank",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

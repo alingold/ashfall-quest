@@ -1,0 +1,35 @@
+{
+  "id": "archive:bigbabyjesuz-classic-kiki-80",
+  "slug": "bigbabyjesuz-classic-kiki-80",
+  "title": "BIGBABYJESUZ CLASSIC",
+  "creator": "Kiki.80",
+  "relativeFolder": "Maps/bigbabyjesuz-classic-kiki-80",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bigbabyjesuz-classic-kiki-80\\source\\thumb.jpg",
+  "sourceSha256": "34522d0f636f2ea40bb234070353bec785045ef1c934918dbdab41d00f11bfa3",
+  "cacheFingerprint": "274a6630b96fad5e7ae1ff07dd753f117d7858a95656aedfc0a34effa2874570",
+  "spawn": [
+    -482.70734,
+    48.85100662231445,
+    -102.55428
+  ],
+  "warmupSpawn": [
+    42.32505,
+    23.008551167775728,
+    -44.31575
+  ],
+  "chunks": 289,
+  "renderTriangles": 594737,
+  "collisionTriangles": 551160,
+  "payloadBytes": 59293737,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bigbabyjesuz-classic-kiki-80",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

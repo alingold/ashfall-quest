@@ -1,0 +1,35 @@
+{
+  "id": "archive:swarm-gods-chriso",
+  "slug": "swarm-gods-chriso",
+  "title": "SWARM",
+  "creator": "GODS_ChrisO",
+  "relativeFolder": "Maps/swarm-gods-chriso",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\swarm-gods-chriso\\source\\thumb.jpg",
+  "sourceSha256": "ca9088bac716f9f4081cb56b6785938465a1a51e108130133bf36655f0689db8",
+  "cacheFingerprint": "4b8f5307cca865be0f69c4fae48cf5508a46a63e05e9e74a6cc20598027a5ea2",
+  "spawn": [
+    -187.95,
+    287.3523913574219,
+    103.41
+  ],
+  "warmupSpawn": [
+    43.47446,
+    295.6203704152993,
+    181.0626
+  ],
+  "chunks": 126,
+  "renderTriangles": 327024,
+  "collisionTriangles": 324092,
+  "payloadBytes": 24781224,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\swarm-gods-chriso",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

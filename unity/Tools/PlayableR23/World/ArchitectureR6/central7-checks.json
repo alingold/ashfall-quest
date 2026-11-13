@@ -1,0 +1,906 @@
+{
+  "maps": [
+    {
+      "map": "bigbabyjesuz-classic-kiki-80",
+      "chunks": 23,
+      "sourceClassifiedFaces": 32865,
+      "transferredFaces": 24198,
+      "kinds": {
+        "1": 15476,
+        "3": 4770,
+        "4": 1428,
+        "6": 1316,
+        "48": 44,
+        "49": 44,
+        "50": 44,
+        "51": 44,
+        "5": 567,
+        "2": 368,
+        "7": 29,
+        "32": 28,
+        "33": 14,
+        "34": 26
+      },
+      "boundedFootprintFaces": {
+        "3": 8,
+        "1": 70
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 241,
+          "triangle": 22,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 18,
+          "maxCornerDistance": 0.0005835489137098193
+        },
+        {
+          "kind": 3,
+          "chunk": 241,
+          "triangle": 1053,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 715,
+          "maxCornerDistance": 0.0006871645455248654
+        },
+        {
+          "kind": 4,
+          "chunk": 242,
+          "triangle": 776,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 560,
+          "maxCornerDistance": 0.00013669184409081936
+        },
+        {
+          "kind": 6,
+          "chunk": 243,
+          "triangle": 2008,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 1990,
+          "maxCornerDistance": 0.0007876495365053415
+        },
+        {
+          "kind": 48,
+          "chunk": 246,
+          "triangle": 3977,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2703,
+          "maxCornerDistance": 0.0007799913291819394
+        },
+        {
+          "kind": 49,
+          "chunk": 246,
+          "triangle": 3980,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2704,
+          "maxCornerDistance": 0.0010260400595143437
+        },
+        {
+          "kind": 50,
+          "chunk": 246,
+          "triangle": 3982,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2705,
+          "maxCornerDistance": 0.0005333077860996127
+        },
+        {
+          "kind": 51,
+          "chunk": 246,
+          "triangle": 8063,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 6037,
+          "maxCornerDistance": 0.00041454017627984285
+        },
+        {
+          "kind": 5,
+          "chunk": 247,
+          "triangle": 6494,
+          "sourceNode": "Draw_world_vc_-2_-1",
+          "sourceTriangle": 6131,
+          "maxCornerDistance": 0.0007952179876156151
+        },
+        {
+          "kind": 2,
+          "chunk": 248,
+          "triangle": 5948,
+          "sourceNode": "Draw_world_vc_-2_0",
+          "sourceTriangle": 5907,
+          "maxCornerDistance": 0.0005005400162190199
+        },
+        {
+          "kind": 7,
+          "chunk": 253,
+          "triangle": 8773,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 5608,
+          "maxCornerDistance": 0.001418492989614606
+        },
+        {
+          "kind": 32,
+          "chunk": 253,
+          "triangle": 15889,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 9037,
+          "maxCornerDistance": 0.0007366317440755665
+        },
+        {
+          "kind": 33,
+          "chunk": 261,
+          "triangle": 10920,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 7091,
+          "maxCornerDistance": 0.0009622266516089439
+        },
+        {
+          "kind": 34,
+          "chunk": 261,
+          "triangle": 19681,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 13053,
+          "maxCornerDistance": 0.0011534288059920073
+        }
+      ],
+      "geometrySha256": "4f1433edb8b4873399afaa08628625302f087327c55fefa97ed0e895261b11f3",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "classic-bw-187norvis",
+      "chunks": 23,
+      "sourceClassifiedFaces": 33566,
+      "transferredFaces": 24427,
+      "kinds": {
+        "1": 15651,
+        "3": 4824,
+        "4": 1428,
+        "6": 1316,
+        "48": 44,
+        "49": 44,
+        "50": 44,
+        "51": 44,
+        "5": 567,
+        "2": 368,
+        "7": 29,
+        "32": 28,
+        "33": 14,
+        "34": 26
+      },
+      "boundedFootprintFaces": {
+        "3": 8,
+        "1": 70
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 241,
+          "triangle": 22,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 18,
+          "maxCornerDistance": 0.0005835489137098193
+        },
+        {
+          "kind": 3,
+          "chunk": 241,
+          "triangle": 1053,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 715,
+          "maxCornerDistance": 0.0006871645455248654
+        },
+        {
+          "kind": 4,
+          "chunk": 242,
+          "triangle": 776,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 560,
+          "maxCornerDistance": 0.00013669184409081936
+        },
+        {
+          "kind": 6,
+          "chunk": 243,
+          "triangle": 2008,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 1990,
+          "maxCornerDistance": 0.0007876495365053415
+        },
+        {
+          "kind": 48,
+          "chunk": 247,
+          "triangle": 3893,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2723,
+          "maxCornerDistance": 0.0007835651631467044
+        },
+        {
+          "kind": 49,
+          "chunk": 247,
+          "triangle": 3896,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2724,
+          "maxCornerDistance": 0.0010289858328178525
+        },
+        {
+          "kind": 50,
+          "chunk": 247,
+          "triangle": 3898,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2725,
+          "maxCornerDistance": 0.0005389534053392708
+        },
+        {
+          "kind": 51,
+          "chunk": 247,
+          "triangle": 5345,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3423,
+          "maxCornerDistance": 0.00041454017627984285
+        },
+        {
+          "kind": 5,
+          "chunk": 249,
+          "triangle": 5822,
+          "sourceNode": "Draw_world_vc_-2_-1",
+          "sourceTriangle": 5563,
+          "maxCornerDistance": 0.0007952179876156151
+        },
+        {
+          "kind": 2,
+          "chunk": 251,
+          "triangle": 5948,
+          "sourceNode": "Draw_world_vc_-2_0",
+          "sourceTriangle": 5907,
+          "maxCornerDistance": 0.0005005400162190199
+        },
+        {
+          "kind": 7,
+          "chunk": 258,
+          "triangle": 8773,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 5504,
+          "maxCornerDistance": 0.001418492989614606
+        },
+        {
+          "kind": 32,
+          "chunk": 258,
+          "triangle": 15889,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 8933,
+          "maxCornerDistance": 0.0007366317440755665
+        },
+        {
+          "kind": 33,
+          "chunk": 269,
+          "triangle": 10920,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 7091,
+          "maxCornerDistance": 0.0009622266516089439
+        },
+        {
+          "kind": 34,
+          "chunk": 269,
+          "triangle": 19681,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 13053,
+          "maxCornerDistance": 0.0011534288059920073
+        }
+      ],
+      "geometrySha256": "f13b10c4f02aac7212552d0aaf746a91b6d66a30b3f347d920d9c2fea2c2741e",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "cont-cl-er-ssd-cjcoops",
+      "chunks": 23,
+      "sourceClassifiedFaces": 33198,
+      "transferredFaces": 24314,
+      "kinds": {
+        "1": 15522,
+        "3": 4824,
+        "4": 1428,
+        "6": 1316,
+        "48": 44,
+        "49": 44,
+        "50": 44,
+        "51": 44,
+        "5": 567,
+        "2": 368,
+        "7": 45,
+        "32": 28,
+        "33": 14,
+        "34": 26
+      },
+      "boundedFootprintFaces": {
+        "3": 8,
+        "1": 70
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 242,
+          "triangle": 22,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 18,
+          "maxCornerDistance": 0.0005835489137098193
+        },
+        {
+          "kind": 3,
+          "chunk": 242,
+          "triangle": 1053,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 715,
+          "maxCornerDistance": 0.0006531158578582108
+        },
+        {
+          "kind": 4,
+          "chunk": 244,
+          "triangle": 776,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 560,
+          "maxCornerDistance": 0.00013669184409081936
+        },
+        {
+          "kind": 6,
+          "chunk": 246,
+          "triangle": 2008,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 1990,
+          "maxCornerDistance": 0.0007876495365053415
+        },
+        {
+          "kind": 48,
+          "chunk": 250,
+          "triangle": 3893,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2919,
+          "maxCornerDistance": 0.0007835651631467044
+        },
+        {
+          "kind": 49,
+          "chunk": 250,
+          "triangle": 3896,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2920,
+          "maxCornerDistance": 0.0010289858328178525
+        },
+        {
+          "kind": 50,
+          "chunk": 250,
+          "triangle": 3898,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2921,
+          "maxCornerDistance": 0.0005389534053392708
+        },
+        {
+          "kind": 51,
+          "chunk": 250,
+          "triangle": 5345,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3619,
+          "maxCornerDistance": 0.00041454017627984285
+        },
+        {
+          "kind": 5,
+          "chunk": 252,
+          "triangle": 5822,
+          "sourceNode": "Draw_world_vc_-2_-1",
+          "sourceTriangle": 5563,
+          "maxCornerDistance": 0.0007952179876156151
+        },
+        {
+          "kind": 2,
+          "chunk": 254,
+          "triangle": 6000,
+          "sourceNode": "Draw_world_vc_-2_0",
+          "sourceTriangle": 6011,
+          "maxCornerDistance": 0.0005005400162190199
+        },
+        {
+          "kind": 7,
+          "chunk": 261,
+          "triangle": 8773,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 5615,
+          "maxCornerDistance": 0.001418492989614606
+        },
+        {
+          "kind": 32,
+          "chunk": 261,
+          "triangle": 15889,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 9068,
+          "maxCornerDistance": 0.0007366317440755665
+        },
+        {
+          "kind": 33,
+          "chunk": 274,
+          "triangle": 10920,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 7299,
+          "maxCornerDistance": 0.0009622266516089439
+        },
+        {
+          "kind": 34,
+          "chunk": 274,
+          "triangle": 19681,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 13365,
+          "maxCornerDistance": 0.0011534288059920073
+        }
+      ],
+      "geometrySha256": "b43ce89926118a69b5093db2a5d4300e893ca7de91ce60b1bbe506b9e4a00e0d",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "cont-cl-ssd-cjcoops",
+      "chunks": 23,
+      "sourceClassifiedFaces": 31790,
+      "transferredFaces": 24104,
+      "kinds": {
+        "1": 15477,
+        "3": 4659,
+        "4": 1428,
+        "6": 1316,
+        "48": 44,
+        "49": 44,
+        "50": 44,
+        "51": 44,
+        "5": 567,
+        "2": 368,
+        "7": 45,
+        "32": 28,
+        "33": 14,
+        "34": 26
+      },
+      "boundedFootprintFaces": {
+        "3": 5,
+        "1": 68
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 242,
+          "triangle": 22,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 18,
+          "maxCornerDistance": 0.0005835489137098193
+        },
+        {
+          "kind": 3,
+          "chunk": 242,
+          "triangle": 1053,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 715,
+          "maxCornerDistance": 0.0006531158578582108
+        },
+        {
+          "kind": 4,
+          "chunk": 244,
+          "triangle": 776,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 560,
+          "maxCornerDistance": 0.00013669184409081936
+        },
+        {
+          "kind": 6,
+          "chunk": 246,
+          "triangle": 2008,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 1990,
+          "maxCornerDistance": 0.0007876495365053415
+        },
+        {
+          "kind": 48,
+          "chunk": 250,
+          "triangle": 4799,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3837,
+          "maxCornerDistance": 0.0007835651631467044
+        },
+        {
+          "kind": 49,
+          "chunk": 250,
+          "triangle": 4802,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3838,
+          "maxCornerDistance": 0.0010289858328178525
+        },
+        {
+          "kind": 50,
+          "chunk": 250,
+          "triangle": 4804,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3839,
+          "maxCornerDistance": 0.0005389534053392708
+        },
+        {
+          "kind": 51,
+          "chunk": 250,
+          "triangle": 7157,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 5443,
+          "maxCornerDistance": 0.0005866701831109822
+        },
+        {
+          "kind": 5,
+          "chunk": 252,
+          "triangle": 5822,
+          "sourceNode": "Draw_world_vc_-2_-1",
+          "sourceTriangle": 5691,
+          "maxCornerDistance": 0.0007952179876156151
+        },
+        {
+          "kind": 2,
+          "chunk": 254,
+          "triangle": 5948,
+          "sourceNode": "Draw_world_vc_-2_0",
+          "sourceTriangle": 6011,
+          "maxCornerDistance": 0.0005005400162190199
+        },
+        {
+          "kind": 7,
+          "chunk": 261,
+          "triangle": 8773,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 5719,
+          "maxCornerDistance": 0.001418492989614606
+        },
+        {
+          "kind": 32,
+          "chunk": 261,
+          "triangle": 15889,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 9218,
+          "maxCornerDistance": 0.0007366317440755665
+        },
+        {
+          "kind": 33,
+          "chunk": 274,
+          "triangle": 11826,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 8205,
+          "maxCornerDistance": 0.0009622266516089439
+        },
+        {
+          "kind": 34,
+          "chunk": 275,
+          "triangle": 587,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 14449,
+          "maxCornerDistance": 0.0011534288059920073
+        }
+      ],
+      "geometrySha256": "ea7b05a269020d3ba627d1297a4f912fe6388be40a2cf9b317d329708ca805c1",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "evolving-map-bigbox",
+      "chunks": 32,
+      "sourceClassifiedFaces": 60124,
+      "transferredFaces": 43620,
+      "kinds": {
+        "1": 29802,
+        "4": 1672,
+        "3": 6370,
+        "2": 3581,
+        "5": 533,
+        "6": 1504,
+        "7": 130,
+        "32": 28
+      },
+      "boundedFootprintFaces": {
+        "3": 5,
+        "1": 108
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 253,
+          "triangle": 10,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 10,
+          "maxCornerDistance": 0.0009023432503454387
+        },
+        {
+          "kind": 4,
+          "chunk": 253,
+          "triangle": 197,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 197,
+          "maxCornerDistance": 0.0006546291988343
+        },
+        {
+          "kind": 3,
+          "chunk": 253,
+          "triangle": 4068,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 3540,
+          "maxCornerDistance": 0.0010218904353678226
+        },
+        {
+          "kind": 2,
+          "chunk": 254,
+          "triangle": 3140,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 2732,
+          "maxCornerDistance": 0.0002446169964969158
+        },
+        {
+          "kind": 5,
+          "chunk": 255,
+          "triangle": 4422,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 4392,
+          "maxCornerDistance": 0.0005822882521897554
+        },
+        {
+          "kind": 6,
+          "chunk": 255,
+          "triangle": 7747,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 7653,
+          "maxCornerDistance": 0.0009932947577908635
+        },
+        {
+          "kind": 7,
+          "chunk": 267,
+          "triangle": 9504,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 6545,
+          "maxCornerDistance": 0.001233091694302857
+        },
+        {
+          "kind": 32,
+          "chunk": 268,
+          "triangle": 2155,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 14894,
+          "maxCornerDistance": 0.0010756702395156026
+        }
+      ],
+      "geometrySha256": "d0052b55d458c9086ca0b22eb0bc9f4984240d3125735d604ee6586d7b413b35",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "statmaster-classic-soulsmight",
+      "chunks": 23,
+      "sourceClassifiedFaces": 33566,
+      "transferredFaces": 24427,
+      "kinds": {
+        "1": 15651,
+        "3": 4824,
+        "4": 1428,
+        "6": 1316,
+        "48": 44,
+        "49": 44,
+        "50": 44,
+        "51": 44,
+        "5": 567,
+        "2": 368,
+        "7": 29,
+        "32": 28,
+        "33": 14,
+        "34": 26
+      },
+      "boundedFootprintFaces": {
+        "3": 8,
+        "1": 70
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 241,
+          "triangle": 22,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 18,
+          "maxCornerDistance": 0.0005835489137098193
+        },
+        {
+          "kind": 3,
+          "chunk": 241,
+          "triangle": 1053,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 715,
+          "maxCornerDistance": 0.0006871645455248654
+        },
+        {
+          "kind": 4,
+          "chunk": 242,
+          "triangle": 776,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 560,
+          "maxCornerDistance": 0.00013669184409081936
+        },
+        {
+          "kind": 6,
+          "chunk": 243,
+          "triangle": 2008,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 1990,
+          "maxCornerDistance": 0.0007876495365053415
+        },
+        {
+          "kind": 48,
+          "chunk": 246,
+          "triangle": 3893,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2619,
+          "maxCornerDistance": 0.0007835651631467044
+        },
+        {
+          "kind": 49,
+          "chunk": 246,
+          "triangle": 3896,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2620,
+          "maxCornerDistance": 0.0010289858328178525
+        },
+        {
+          "kind": 50,
+          "chunk": 246,
+          "triangle": 3898,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 2621,
+          "maxCornerDistance": 0.0005389534053392708
+        },
+        {
+          "kind": 51,
+          "chunk": 246,
+          "triangle": 5345,
+          "sourceNode": "Draw_world_vc_-2_-2",
+          "sourceTriangle": 3319,
+          "maxCornerDistance": 0.00041454017627984285
+        },
+        {
+          "kind": 5,
+          "chunk": 247,
+          "triangle": 5822,
+          "sourceNode": "Draw_world_vc_-2_-1",
+          "sourceTriangle": 5459,
+          "maxCornerDistance": 0.0007952179876156151
+        },
+        {
+          "kind": 2,
+          "chunk": 248,
+          "triangle": 5948,
+          "sourceNode": "Draw_world_vc_-2_0",
+          "sourceTriangle": 5907,
+          "maxCornerDistance": 0.0005005400162190199
+        },
+        {
+          "kind": 7,
+          "chunk": 252,
+          "triangle": 8773,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 5504,
+          "maxCornerDistance": 0.001418492989614606
+        },
+        {
+          "kind": 32,
+          "chunk": 252,
+          "triangle": 15889,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 8933,
+          "maxCornerDistance": 0.0007366317440755665
+        },
+        {
+          "kind": 33,
+          "chunk": 259,
+          "triangle": 10920,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 7091,
+          "maxCornerDistance": 0.0009622266516089439
+        },
+        {
+          "kind": 34,
+          "chunk": 259,
+          "triangle": 19681,
+          "sourceNode": "Draw_world_vc_0_0",
+          "sourceTriangle": 13053,
+          "maxCornerDistance": 0.0011534288059920073
+        }
+      ],
+      "geometrySha256": "352e25b005d30cf4ef3579056f75eecdb0295d0eb2b0d61dc6ac3b6cecd617e5",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    },
+    {
+      "map": "statmaster-evolving-soulsmight",
+      "chunks": 32,
+      "sourceClassifiedFaces": 59278,
+      "transferredFaces": 43355,
+      "kinds": {
+        "1": 29539,
+        "4": 1672,
+        "3": 6368,
+        "2": 3581,
+        "5": 533,
+        "6": 1504,
+        "7": 130,
+        "32": 28
+      },
+      "boundedFootprintFaces": {
+        "3": 5,
+        "1": 108
+      },
+      "actualSourceWitnesses": [
+        {
+          "kind": 1,
+          "chunk": 253,
+          "triangle": 10,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 10,
+          "maxCornerDistance": 0.0009023432503454387
+        },
+        {
+          "kind": 4,
+          "chunk": 253,
+          "triangle": 197,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 197,
+          "maxCornerDistance": 0.0006546291988343
+        },
+        {
+          "kind": 3,
+          "chunk": 253,
+          "triangle": 4068,
+          "sourceNode": "Draw_world_vc_-3_-2",
+          "sourceTriangle": 3540,
+          "maxCornerDistance": 0.0010218904353678226
+        },
+        {
+          "kind": 2,
+          "chunk": 254,
+          "triangle": 3140,
+          "sourceNode": "Draw_world_vc_-3_-1",
+          "sourceTriangle": 2732,
+          "maxCornerDistance": 0.0002446169964969158
+        },
+        {
+          "kind": 5,
+          "chunk": 256,
+          "triangle": 4422,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 4392,
+          "maxCornerDistance": 0.0005822882521897554
+        },
+        {
+          "kind": 6,
+          "chunk": 256,
+          "triangle": 7747,
+          "sourceNode": "Draw_world_vc_-3_0",
+          "sourceTriangle": 7757,
+          "maxCornerDistance": 0.0009932947577908635
+        },
+        {
+          "kind": 7,
+          "chunk": 278,
+          "triangle": 9504,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 6545,
+          "maxCornerDistance": 0.001233091694302857
+        },
+        {
+          "kind": 32,
+          "chunk": 279,
+          "triangle": 2363,
+          "sourceNode": "Draw_world_vc_-1_0",
+          "sourceTriangle": 15102,
+          "maxCornerDistance": 0.0010756702395156026
+        }
+      ],
+      "geometrySha256": "8ba79fa81f700272bd0fe3f0ccbc8ac2fb0e3ccc3a9e2378bd119d5bc7dbde8c",
+      "published": true,
+      "geometryAndOtherManifestFieldsUnchanged": true
+    }
+  ],
+  "protectedAlfaClassic": {
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\alfa-aglae-souza\\architecture.json": "8f61a453219d18962b991522ba309c07d10fb2569ee1bebef7b2ed0ade20f356",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\alfa-aglae-souza\\map.json": "fd7fcae42ced766524a64fda7b417fa9347c106bbfc1269333577810ca8a83af",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\architecture.json": "8050f53890248349c0ad0aba44ce64a3161ee2bf19247df08f67cdfb004757c8",
+    "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\map.json": "02dd534635edd8620d261c6e3790f6d3afb227c4e7593aa07d9c5f6a74544542"
+  },
+  "sourcePlanSha256": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+  "engineRun": false,
+  "deviceRun": false
+}

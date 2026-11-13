@@ -1,0 +1,35 @@
+{
+  "id": "archive:bi-polar-gods-trashpandakiller",
+  "slug": "bi-polar-gods-trashpandakiller",
+  "title": "BI-POLAR",
+  "creator": "GODS_TrashPandaKiller",
+  "relativeFolder": "Maps/bi-polar-gods-trashpandakiller",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bi-polar-gods-trashpandakiller\\source\\thumb.jpg",
+  "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+  "cacheFingerprint": "ae27c5ff40fb46ad919ddba0f50fdc4bcc8bd400093a027130eab52ced53a6d4",
+  "spawn": [
+    -142.64,
+    54.11994659423828,
+    182.62
+  ],
+  "warmupSpawn": [
+    234.18758,
+    190.11207212257224,
+    36.08798
+  ],
+  "chunks": 202,
+  "renderTriangles": 235320,
+  "collisionTriangles": 230140,
+  "payloadBytes": 21495826,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bi-polar-gods-trashpandakiller",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

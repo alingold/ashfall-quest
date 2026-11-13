@@ -1,0 +1,35 @@
+{
+  "id": "archive:quietowl-gods-pitdevil",
+  "slug": "quietowl-gods-pitdevil",
+  "title": "QUIETOWL",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/quietowl-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\quietowl-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "418cac4a7612b937d4d766e909eb840ec39e310c15874c170fb3e64e86306013",
+  "cacheFingerprint": "fc232fdb25946f471759f88d9a43f157d54392d348f4f0812c6b46ec4dffd551",
+  "spawn": [
+    -207.64,
+    41.25051986694336,
+    -7.63
+  ],
+  "warmupSpawn": [
+    -14.02789,
+    94.12,
+    -0.11152
+  ],
+  "chunks": 243,
+  "renderTriangles": 455971,
+  "collisionTriangles": 454407,
+  "payloadBytes": 39398366,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\quietowl-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

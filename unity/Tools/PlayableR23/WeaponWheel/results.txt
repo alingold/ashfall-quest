@@ -1,0 +1,38 @@
+PASS source clockwise sector 0
+PASS source clockwise sector 1
+PASS source clockwise sector 2
+PASS source clockwise sector 3
+PASS source clockwise sector 4
+PASS source clockwise sector 5
+PASS source clockwise sector 6
+PASS source clockwise sector 7
+PASS source inner deadzone cancels
+PASS source sector pointing remains valid beyond outer pointer clamp
+PASS invalid ray coordinates reject
+PASS new component requires physical A release before arming
+PASS source quick tap .1 boundary does not open
+PASS source rapid A tap toggles held item, never emits jump/equip
+PASS source hold threshold opens owned wheel
+PASS right sector releases to first real owned slot
+PASS repeated release cannot duplicate equip request
+PASS left dominant hand selects same source upper-right slot mapping
+PASS release recomputes current pointed sector rather than stale hover
+PASS long hold release at center cancels
+PASS source bottom utility requests backpack without pause mutation
+PASS capacity3 locked arc never grants a fourth item
+PASS unimplemented revive utility cannot fake an equip
+PASS focus/tracking loss cancels and held A cannot reopen on recovery
+PASS dominance changes cancel and require new neutral edge
+PASS live inventory identity replacement cancels stale held selection
+PASS live ammo/label refresh preserves a stable owned selection
+PASS equip eligibility loss cancels stale request
+PASS unavailable supplied slot cannot request equip
+PASS null current slot remains empty without compaction or grant
+PASS more than three supplied slots rejected
+PASS duplicate owned instance identities rejected
+PASS same-profile copies retain distinct equip action ID and shared genuine profile icon
+PASS source name plus actual five stars without stats/aliases
+PASS one-star source rarity is visible too
+PASS source untiered zone has no stars
+PASS source SPR label preserves inferred instance stars and removes implementation alias
+37 source wheel behavior cases passed

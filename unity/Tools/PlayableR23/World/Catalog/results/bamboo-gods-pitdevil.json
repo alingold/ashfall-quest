@@ -1,0 +1,35 @@
+{
+  "id": "archive:bamboo-gods-pitdevil",
+  "slug": "bamboo-gods-pitdevil",
+  "title": "BAMBOO",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/bamboo-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\bamboo-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "e11d43b8721ff9e31328837b62b46f2786f3648a4590c6dbbede4d87ef3345e0",
+  "cacheFingerprint": "5445e4c336ca42fa646e36801c6239b1d1e8d91ca68edf2db48e6a28b484c3bf",
+  "spawn": [
+    183.58,
+    58.56042206373688,
+    -182.18
+  ],
+  "warmupSpawn": [
+    -82.03922,
+    280.16941146014386,
+    -484.91138
+  ],
+  "chunks": 342,
+  "renderTriangles": 515677,
+  "collisionTriangles": 512235,
+  "payloadBytes": 42855759,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\bamboo-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:pollen-panic-kiki-80",
+  "slug": "pollen-panic-kiki-80",
+  "title": "POLLEN PANIC",
+  "creator": "Kiki.80",
+  "relativeFolder": "Maps/pollen-panic-kiki-80",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\pollen-panic-kiki-80\\source\\thumb.jpg",
+  "sourceSha256": "e5812d38562a67ab10057b8ff69d77657ddbc6875bb84f678d29eec12f07cd5b",
+  "cacheFingerprint": "211c6ca637183aeef05163854f0a4cd4006d5442ef76df7bbfa40612e1fa0c1a",
+  "spawn": [
+    128.94,
+    34.59488021850586,
+    -37.59
+  ],
+  "warmupSpawn": [
+    -63.05789,
+    66.80998220380673,
+    -19.39266
+  ],
+  "chunks": 124,
+  "renderTriangles": 310082,
+  "collisionTriangles": 306278,
+  "payloadBytes": 21669217,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\pollen-panic-kiki-80",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

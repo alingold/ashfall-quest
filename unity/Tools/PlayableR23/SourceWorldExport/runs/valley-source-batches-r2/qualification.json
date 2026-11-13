@@ -1,0 +1,18 @@
+{
+  "qualified": true,
+  "scope": "Actual source direct and batch geometry, static collision recipes and raw material images exported; Unity rendering/physics/native acceptance unrun",
+  "scriptErrors": {},
+  "multiMeshGroups": 16,
+  "multiMeshInstances": 1124,
+  "capturedBatchInputGroups": 16,
+  "nonidentityLocalPoses": 1124,
+  "unsupported": {
+    "Source ShaderMaterial code and effective uniform values exported; Unity shader translation not supplied": 24,
+    "Label3D text/font recipe preserved; no Unity glyph atlas or rendered text mesh exported": 6
+  },
+  "sourceBuilder": "scripts/world.gd::build",
+  "executedExporterSha256": "8a0e8547176c1370007f583cc86a4f22c74a73a5d758ab786dd8f0b328faaf3c",
+  "knownImageViewWarning": "RGBE9995 cannot save EXR view; original exact raw HDR image retained",
+  "enginePhases": "Reused imported private reference, one original Valley build only; no copy/import/Range/main scene/device",
+  "originalCapturePreserved": "../prepared-r23-valley-range"
+}

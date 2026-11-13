@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-powerpuff-g0ds-gods-meli",
+  "slug": "the-powerpuff-g0ds-gods-meli",
+  "title": "THE POWERPUFF G0DS",
+  "creator": "GODS_Meli",
+  "relativeFolder": "Maps/the-powerpuff-g0ds-gods-meli",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-powerpuff-g0ds-gods-meli\\source\\thumb.jpg",
+  "sourceSha256": "dc8310310317a595e60b86ec1433f8efbe80b030b6c1694f4248b98551eb1cae",
+  "cacheFingerprint": "65ecd7d807303db41396e75c3deaf969380f57bb44ab85958ce9713def280d0b",
+  "spawn": [
+    -72.68,
+    73.0836252119045,
+    -124.06
+  ],
+  "warmupSpawn": [
+    117.68289,
+    166.46693908691407,
+    226.35807
+  ],
+  "chunks": 210,
+  "renderTriangles": 302572,
+  "collisionTriangles": 298544,
+  "payloadBytes": 24640680,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-powerpuff-g0ds-gods-meli",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

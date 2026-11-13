@@ -1,0 +1,24 @@
+{
+  "candidate": "archive:the-white-house-gods-osprey-kat",
+  "reason": "Actual initial sites0; native19x19 loot grid can yield at most121 fallback cache sites, below source area threshold209. Positive sparse suffix still requires genuine native floor/headroom; refusal remains possible.",
+  "initialSourceSites": 0,
+  "sourceAreaThreshold": 209,
+  "maximumGridFallbackSites": 121,
+  "recordedSpawns": 24,
+  "authoredHazards": 0,
+  "chunks": 135,
+  "geometryBytes": 10354604,
+  "sourceSha256": "4ce15e966db225cc08e8512a9f4cdbf976a42ffbad8375c2972c93894d55e331",
+  "sourceConvertedManifestSha256": "9759ce63a17a68c3bfb7f7d8e1eea638c36ed32232247cf8d05ade1885c2de30",
+  "adapterSha256": "091693437061e67a80d66f5ba957a7f01e07f7ca02bd72540c03430993fbec12",
+  "cacheFingerprint": "d8f5714de7aa8b37e48feb1be9aefb8fb4106d126fde67dadd69d28d61bb8ec1",
+  "inputs": {
+    "Loot\\caches.json": "08ffae1a057b38dd242824c8ae50186bcb1d64d7c633577d92aabc8177a9b802",
+    "TeamLaunch\\launch-maps.json": "661ec45b03f5c14f901534bc933d0bfcaaefa35102107be35acd46076780aca4",
+    "TeamLaunch\\ArchiveRecovery\\maps.json": "72c1827251d48c02b35530ba7ff694abef5a7ff09b0938ae71fa9b9fb64dc8b7",
+    "Maps\\the-white-house-gods-osprey-kat\\map.json": "e54c331ff590e7a9ceab30ab16caa71341216a7cd26306d98296b0685935af53"
+  },
+  "entry": "new R24SparseWorldSmoke().Run(actualRoot)",
+  "nativeExecuted": false,
+  "headsetVerified": false
+}

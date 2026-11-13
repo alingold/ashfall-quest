@@ -1,0 +1,35 @@
+{
+  "id": "archive:banana-land-gods-pitdevil",
+  "slug": "banana-land-gods-pitdevil",
+  "title": "BANANA LAND",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/banana-land-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\banana-land-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "8eff4d8862387447fd6c0163d8c18d19b5f67bab361a9f16c40f2597e9d58e8a",
+  "cacheFingerprint": "256aa11ad7fd5f0a599079f323f3475c8d1014a0844d9338742968f0563d0b54",
+  "spawn": [
+    141.72,
+    58.93709482421287,
+    -245.0
+  ],
+  "warmupSpawn": [
+    21.41255,
+    81.62244903564454,
+    -0.19734
+  ],
+  "chunks": 648,
+  "renderTriangles": 952151,
+  "collisionTriangles": 933711,
+  "payloadBytes": 83340157,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\banana-land-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

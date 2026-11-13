@@ -1,0 +1,35 @@
+{
+  "id": "archive:badlands-gods-pitdevil",
+  "slug": "badlands-gods-pitdevil",
+  "title": "BADLANDS",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/badlands-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\badlands-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "86fc76c858cea8e444aac14fb1cda3e384c6af634f2546daad5287cc3e973254",
+  "cacheFingerprint": "492d43301e0d1111d3617c5e1b29fc5a910516398ff9f8ea095124bcf7d4e295",
+  "spawn": [
+    7.53,
+    75.65678894042969,
+    28.81
+  ],
+  "warmupSpawn": [
+    23.08802,
+    75.65678894042969,
+    18.35877
+  ],
+  "chunks": 219,
+  "renderTriangles": 270024,
+  "collisionTriangles": 268140,
+  "payloadBytes": 24691596,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\badlands-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

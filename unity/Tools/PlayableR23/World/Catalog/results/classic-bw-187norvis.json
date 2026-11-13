@@ -1,0 +1,35 @@
+{
+  "id": "archive:classic-bw-187norvis",
+  "slug": "classic-bw-187norvis",
+  "title": "CLASSIC",
+  "creator": "BW_187Norvis",
+  "relativeFolder": "Maps/classic-bw-187norvis",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\classic-bw-187norvis\\source\\thumb.jpg",
+  "sourceSha256": "615df34fe80e4343d49aaf2277546d87f89d426d28975607e6fe9101a6166311",
+  "cacheFingerprint": "e6474f5307a45ff2584e11417904ef48cfc9c506e2741d1eedde620074b2eb02",
+  "spawn": [
+    -46.41,
+    20.619994277954103,
+    -0.59
+  ],
+  "warmupSpawn": [
+    42.41198,
+    22.58135424641908,
+    -40.41009
+  ],
+  "chunks": 342,
+  "renderTriangles": 591530,
+  "collisionTriangles": 553762,
+  "payloadBytes": 58635460,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bw-187norvis",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

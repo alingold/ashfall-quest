@@ -1,0 +1,37 @@
+{
+  "contentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "manifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "inputs": {
+    "scripts/archive_prop_materials_r10.gd": "75b03167ce931f67eb68786203fc377e80c50f05f39df55520a4e730265bf305",
+    "scripts/map_art_repair_r14.gd": "602993a6d601c077117c8f2e753aac47607d2206ab899aa3756534de74219477",
+    "scripts/map_art_r17.gd": "cb472a00d9946fde23e358a9590902ce76045dcaa823cb528bcab618d9c0f363",
+    "scripts/map_art_r19.gd": "dbb06f80f1e25de6c084e16d1a367ad7edae8b31d6e271ba043ccbf46234f929",
+    "scripts/architecture_r24.gd": "3622e23809ea9563ea71c83089fee40245e943c0403019bb6ee91af0c6ceaded",
+    "scripts/alpha_junctions_r24.gd": "729d64d4c7563fb93eb280a98ede97ace776ae3dee4518e7e0745ba8860dc09f",
+    "assets/data/alpha_junction_r24.json": "5ebf32a7f8897c177f6043fdf93bdd67cd62141353cc35225725bf9348a975cf",
+    "assets/data/architecture_r24.json": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+    "assets/data/archive_adapters_r10.json": "00aee2d894f87aa3399720f9c88abe70b8ebd8eb90895442a3b8ae983a4e7695",
+    "assets/data/map_art_audit_r14.json": "5a09f364a3fbe50a21f94a9956b190ae5a696835edfc53098d280f73f55c6a30",
+    "assets/materials/alpha_junction_r24.gdshader": "5194b56355ab192d92d6e1e94d5929144b72cacec90a3df48c984e6d6082ded9",
+    "assets/materials/archive_container_r10.gdshader": "a61645b86cc2d36474d6210d943dbe9800376277c92f98dc96b0147e332002e9",
+    "assets/materials/archive_van_r10.gdshader": "48be96e8d03396e9ba59ceda51d17464a725305a8f6bbeaa28d5d7f28b71c1e2",
+    "assets/materials/vehicle_r17.gdshader": "8237c5a4d0ad7681b3767fc9d3618dcd642748e962cfdac8e68eee93ee7f3b09",
+    "assets/materials/surface_r17.gdshader": "54ef1c63f2450e0222d7c47b0f59a3eb64572effd7107fcb61fbae8c57f433f2",
+    "assets/materials/assembly_r19.gdshader": "463517ffd8faa464cfcfa8cd5ef4226ded5e09d3c9fb29aa7a49015adfe6a3d6"
+  },
+  "exportedPlansSha256": "0f099e4c9e2d207575df476e573dccbe62ef8df9186c9a4d2a16c04fd5ec396e",
+  "family7PlansSha256": "ce1bab0e154817cb9e3beed2f9f249dad9e99ad09578bd85d3ba45fb3b955967",
+  "preparedR10Resources": {
+    "alfa-aglae-souza": "1207b2c8c007702030f95264dab0de446ac11c11a8393c3756eed741d8b95bc6",
+    "classic-bigbox-vr": "a687f6b9bb18aceadeb030f0ce91eae5630b7d52ee87217fd06048fdfeed35d1",
+    "bigbabyjesuz-classic-kiki-80": "bfd84b6950cea9c9d3a0134bd8f9036b70471065ee11a1ae540aee7c5993f00b",
+    "classic-bw-187norvis": "670caec75cdc240de5d4db8aea0c15078a0442fbdd48292c4338ff7dea6b6013",
+    "cont-cl-er-ssd-cjcoops": "acee9d244a8040d4c7222386e5a144e591169b5e72939277d8953657ffce3b63",
+    "cont-cl-ssd-cjcoops": "8a060a5912bc217eca4b902981fb9a06868dfad088cc3851f3ddc4696020b61c",
+    "evolving-map-bigbox": "34912267d6f91e03c5df6108a71776dcdd33995b801bb32aa97e99e42a4c0b0f",
+    "statmaster-classic-soulsmight": "873c123092dae3fca5d587a861500561796b196f021364e7818d15e8fec43c37",
+    "statmaster-evolving-soulsmight": "e9a6b1092e3e1b9084dfd06668928b518f60e9e70340066fafffbc608c1d5de5"
+  },
+  "geometryUntouched": true,
+  "engineRun": false
+}

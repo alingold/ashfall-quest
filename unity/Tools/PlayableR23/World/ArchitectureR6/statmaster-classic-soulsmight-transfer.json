@@ -1,0 +1,228 @@
+{
+  "map": "statmaster-classic-soulsmight",
+  "exportFolder": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\statmaster-inspect",
+  "preparedR10Sha256": "873c123092dae3fca5d587a861500561796b196f021364e7818d15e8fec43c37",
+  "sourcePlanSha256": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+  "geometrySha256": "352e25b005d30cf4ef3579056f75eecdb0295d0eb2b0d61dc6ac3b6cecd617e5",
+  "selectedSourceVertices": {
+    "1": 32112,
+    "3": 14591,
+    "4": 2798,
+    "6": 1778,
+    "48": 31,
+    "49": 31,
+    "50": 31,
+    "51": 31,
+    "5": 865,
+    "2": 656,
+    "7": 42,
+    "32": 42,
+    "33": 20,
+    "34": 40
+  },
+  "sourceClassifiedFaces": 33566,
+  "transferredUnityFaces": {
+    "1": 15651,
+    "3": 4824,
+    "4": 1428,
+    "6": 1316,
+    "48": 44,
+    "49": 44,
+    "50": 44,
+    "51": 44,
+    "5": 567,
+    "2": 368,
+    "7": 29,
+    "32": 28,
+    "33": 14,
+    "34": 26
+  },
+  "directSourceWitnesses": [
+    {
+      "chunk": 241,
+      "triangle": 22,
+      "kind": 1,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 18,
+      "maxCornerDistance": 0.0005835489137098193
+    },
+    {
+      "chunk": 241,
+      "triangle": 1053,
+      "kind": 3,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 715,
+      "maxCornerDistance": 0.0006871645455248654
+    },
+    {
+      "chunk": 242,
+      "triangle": 776,
+      "kind": 4,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-1",
+      "sourceTriangle": 560,
+      "maxCornerDistance": 0.00013669184409081936
+    },
+    {
+      "chunk": 243,
+      "triangle": 2008,
+      "kind": 6,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_0",
+      "sourceTriangle": 1990,
+      "maxCornerDistance": 0.0007876495365053415
+    },
+    {
+      "chunk": 246,
+      "triangle": 3893,
+      "kind": 48,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_-2",
+      "sourceTriangle": 2619,
+      "maxCornerDistance": 0.0007835651631467044
+    },
+    {
+      "chunk": 246,
+      "triangle": 3896,
+      "kind": 49,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_-2",
+      "sourceTriangle": 2620,
+      "maxCornerDistance": 0.0010289858328178525
+    },
+    {
+      "chunk": 246,
+      "triangle": 3898,
+      "kind": 50,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_-2",
+      "sourceTriangle": 2621,
+      "maxCornerDistance": 0.0005389534053392708
+    },
+    {
+      "chunk": 246,
+      "triangle": 5345,
+      "kind": 51,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_-2",
+      "sourceTriangle": 3319,
+      "maxCornerDistance": 0.00041454017627984285
+    },
+    {
+      "chunk": 247,
+      "triangle": 5822,
+      "kind": 5,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_-1",
+      "sourceTriangle": 5459,
+      "maxCornerDistance": 0.0007952179876156151
+    },
+    {
+      "chunk": 248,
+      "triangle": 5948,
+      "kind": 2,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-2_0",
+      "sourceTriangle": 5907,
+      "maxCornerDistance": 0.0005005400162190199
+    },
+    {
+      "chunk": 252,
+      "triangle": 8773,
+      "kind": 7,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 5504,
+      "maxCornerDistance": 0.001418492989614606
+    },
+    {
+      "chunk": 252,
+      "triangle": 15889,
+      "kind": 32,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 8933,
+      "maxCornerDistance": 0.0007366317440755665
+    },
+    {
+      "chunk": 259,
+      "triangle": 10920,
+      "kind": 33,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceTriangle": 7091,
+      "maxCornerDistance": 0.0009622266516089439
+    },
+    {
+      "chunk": 259,
+      "triangle": 19681,
+      "kind": 34,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceTriangle": 13053,
+      "maxCornerDistance": 0.0011534288059920073
+    }
+  ],
+  "coplanarFootprintFaces": {
+    "3": 8,
+    "1": 70
+  },
+  "footprintExamples": [
+    {
+      "chunk": 241,
+      "triangle": 3596,
+      "kind": 3,
+      "unionCoverage": 0.9999312539566918
+    },
+    {
+      "chunk": 242,
+      "triangle": 894,
+      "kind": 3,
+      "unionCoverage": 0.9999669211565744
+    },
+    {
+      "chunk": 242,
+      "triangle": 1000,
+      "kind": 3,
+      "unionCoverage": 0.9999748683664987
+    },
+    {
+      "chunk": 242,
+      "triangle": 1022,
+      "kind": 3,
+      "unionCoverage": 0.9999662373285299
+    },
+    {
+      "chunk": 242,
+      "triangle": 1330,
+      "kind": 3,
+      "unionCoverage": 0.9999653758057176
+    },
+    {
+      "chunk": 246,
+      "triangle": 879,
+      "kind": 3,
+      "unionCoverage": 0.9999701864214195
+    },
+    {
+      "chunk": 246,
+      "triangle": 5125,
+      "kind": 3,
+      "unionCoverage": 0.9999615397270064
+    },
+    {
+      "chunk": 247,
+      "triangle": 2843,
+      "kind": 3,
+      "unionCoverage": 0.9999638491917543
+    }
+  ],
+  "patches": 23,
+  "ambiguousFacesUnchanged": 0,
+  "normalOrDistanceRejected": 191233,
+  "geometryUnchanged": true,
+  "shaderNativeRun": false,
+  "rule": "Keep exact oriented <=5mm whole-face matches. Fallback: one source welded component/kind, original material+uniform RGB+oriented normals, <=5mm plane, actual triangle union>=99.99%, covered7.5mm inset core, no competing kind/255 overlap. Original last-corner selector."
+}

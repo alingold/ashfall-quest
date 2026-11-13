@@ -1,0 +1,35 @@
+{
+  "id": "archive:blue-gods-quietowl",
+  "slug": "blue-gods-quietowl",
+  "title": "BLUE",
+  "creator": "GODS_Quietowl",
+  "relativeFolder": "Maps/blue-gods-quietowl",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\blue-gods-quietowl\\source\\thumb.jpg",
+  "sourceSha256": "be630548066e0469afcac0edd2a58b329bd788c5030f76530106438eafdd8d9b",
+  "cacheFingerprint": "c7369cb759c3b4746cbbf1f744634e8dd32782e15f7913ab0766abd624a328e7",
+  "spawn": [
+    29.64,
+    43.03510282597625,
+    113.99
+  ],
+  "warmupSpawn": [
+    -12.90294,
+    223.720830078125,
+    194.32519
+  ],
+  "chunks": 199,
+  "renderTriangles": 116503,
+  "collisionTriangles": 111511,
+  "payloadBytes": 11344012,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\blue-gods-quietowl",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

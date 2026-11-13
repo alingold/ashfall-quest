@@ -1,0 +1,200 @@
+{
+  "source": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\assets\\materials\\alpine_terrain.gdshader",
+  "sourceSha256": "888361e92cce4fd849455f77a16ad928387403e2efb74a8a50228245a2991170",
+  "exportSha256": "94aea8c3459618640c7b670393219858f2e4690ac0c63d51feca114de8b300f4",
+  "shaderSha256": "702bfb66717a7505805839996bb8e06b9b4b290452185eb43a8f689f6e677ea9",
+  "actualMaterials": 24,
+  "snowHeightRange": [
+    35.196442947387695,
+    79.20827270507813
+  ],
+  "formulaCases": 12,
+  "maxAlbedoAbsoluteError": 0.0,
+  "stageComparisons": true,
+  "linearGammaRoundtrips": true,
+  "sourceCoordinateContract": true,
+  "sourceVertexColorIgnored": true,
+  "samples": [
+    {
+      "case": "below",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.13843071717576197,
+        0.1615025033717223,
+        0.17534557508929852
+      ],
+      "gammaWorkingAlbedo": [
+        0.40784188643395447,
+        0.4385454479322631,
+        0.45575030046174775
+      ],
+      "accumulation": 0.0
+    },
+    {
+      "case": "lower edge",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.14068306718713147,
+        0.16413024505165338,
+        0.17819855177036656
+      ],
+      "gammaWorkingAlbedo": [
+        0.41096491914158134,
+        0.44187565339069396,
+        0.4591965959257602
+      ],
+      "accumulation": 0.0
+    },
+    {
+      "case": "mid altitude",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.2724130174584118,
+        0.30731518703481375,
+        0.33275648878065495
+      ],
+      "gammaWorkingAlbedo": [
+        0.5586641225649832,
+        0.5902764308834204,
+        0.6120194762834904
+      ],
+      "accumulation": 0.45
+    },
+    {
+      "case": "upper edge",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.41098809476784715,
+        0.45848611056248834,
+        0.4959849200392731
+      ],
+      "gammaWorkingAlbedo": [
+        0.6733631693636563,
+        0.7073218527995746,
+        0.7327063076039334
+      ],
+      "accumulation": 0.9
+    },
+    {
+      "case": "high vertical wall",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.17138651505433797,
+        0.1980842675633943,
+        0.21490291906882808
+      ],
+      "gammaWorkingAlbedo": [
+        0.4509132606265231,
+        0.48236983798991023,
+        0.5009299743426678
+      ],
+      "accumulation": 0.08
+    },
+    {
+      "case": "high underside",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.15735787400390788,
+        0.18171751967122585,
+        0.19713330707161664
+      ],
+      "gammaWorkingAlbedo": [
+        0.4332279737853838,
+        0.46340334255248733,
+        0.4812934130164081
+      ],
+      "accumulation": 0.08
+    },
+    {
+      "case": "slope lower edge",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.16368628806625846,
+        0.1891006694106348,
+        0.2051492982172607
+      ],
+      "gammaWorkingAlbedo": [
+        0.4413152100229009,
+        0.47207761312750945,
+        0.4902742316894854
+      ],
+      "accumulation": 0.08
+    },
+    {
+      "case": "slope midpoint",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.2868260944715128,
+        0.3231971102167649,
+        0.3499197196639162
+      ],
+      "gammaWorkingAlbedo": [
+        0.5719894516438503,
+        0.6039673621424181,
+        0.6261445724135329
+      ],
+      "accumulation": 0.4899999999999998
+    },
+    {
+      "case": "slope upper edge",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.4099659008767672,
+        0.4572935510228951,
+        0.49469014111057186
+      ],
+      "gammaWorkingAlbedo": [
+        0.6726078056446725,
+        0.7064950330920128,
+        0.7318488528057665
+      ],
+      "accumulation": 0.9
+    },
+    {
+      "case": "normal magnitude",
+      "snowHeight": 55.0,
+      "linearAlbedo": [
+        0.27850100475256734,
+        0.314553195870095,
+        0.3406265004011403
+      ],
+      "gammaWorkingAlbedo": [
+        0.5643416388035004,
+        0.5965658823444246,
+        0.6185478795305532
+      ],
+      "accumulation": 0.44419898605286834
+    },
+    {
+      "case": "minimum actual uniform",
+      "snowHeight": 35.196442947387695,
+      "linearAlbedo": [
+        0.2676895754868912,
+        0.30223845693708784,
+        0.32728180629189946
+      ],
+      "gammaWorkingAlbedo": [
+        0.5542079575980898,
+        0.5858132913203892,
+        0.6074247787885569
+      ],
+      "accumulation": 0.43140204846936797
+    },
+    {
+      "case": "maximum actual uniform",
+      "snowHeight": 79.20827270507813,
+      "linearAlbedo": [
+        0.17344130822909076,
+        0.19921025620054775,
+        0.21601645501201827
+      ],
+      "gammaWorkingAlbedo": [
+        0.4534317755485692,
+        0.4836404928129662,
+        0.5021284127622573
+      ],
+      "accumulation": 0.1344830028596349
+    }
+  ],
+  "limits": "CPU authored-expression equivalence, channel/gamma contract and package API inspection only. No HLSL compilation, native engine, GPU, render, headset, Godot-vs-URP lighting/tone parity claim."
+}

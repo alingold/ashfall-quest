@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-white-house-gods-osprey-kat",
+  "slug": "the-white-house-gods-osprey-kat",
+  "title": "THE WHITE HOUSE",
+  "creator": "GODS_OSPREY.kat",
+  "relativeFolder": "Maps/the-white-house-gods-osprey-kat",
+  "preview": "preview.png",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-white-house-gods-osprey-kat\\converted\\preview.png",
+  "sourceSha256": "4ce15e966db225cc08e8512a9f4cdbf976a42ffbad8375c2972c93894d55e331",
+  "cacheFingerprint": "d8f5714de7aa8b37e48feb1be9aefb8fb4106d126fde67dadd69d28d61bb8ec1",
+  "spawn": [
+    -11.59,
+    120.10802185058594,
+    79.42
+  ],
+  "warmupSpawn": [
+    -18.85,
+    120.10802185058594,
+    79.42
+  ],
+  "chunks": 135,
+  "renderTriangles": 119882,
+  "collisionTriangles": 107886,
+  "payloadBytes": 14991633,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-white-house-gods-osprey-kat",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

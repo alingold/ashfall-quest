@@ -1,0 +1,35 @@
+{
+  "id": "archive:high-ground-gods-thor",
+  "slug": "high-ground-gods-thor",
+  "title": "HIGH GROUND",
+  "creator": "GODS_THOR",
+  "relativeFolder": "Maps/high-ground-gods-thor",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\high-ground-gods-thor\\source\\thumb.jpg",
+  "sourceSha256": "b857dca932b9e5585eb456b73e73134d4f051c8c4a29d89d35e0eaa41ad9ba0e",
+  "cacheFingerprint": "dc4fdeaac8818fe1e0ebcffff8313d15aa1399298417afd23730855b55278ee3",
+  "spawn": [
+    4.41,
+    102.15075062106173,
+    143.41
+  ],
+  "warmupSpawn": [
+    -17.64123,
+    136.33316528320313,
+    -19.08802
+  ],
+  "chunks": 127,
+  "renderTriangles": 225595,
+  "collisionTriangles": 222647,
+  "payloadBytes": 20482467,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\high-ground-gods-thor",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

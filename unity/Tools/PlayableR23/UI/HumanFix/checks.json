@@ -1,0 +1,44 @@
+{
+  "checks": [
+    "Both real arrows use CycleAppearance and publish currently browsed ID separately from worn selection",
+    "Bottom prompt removed; posture-neutral calibration text; actual R23GodotUI font retained",
+    "Map BACK matches actual source final map layout override at (40,720), size170x58",
+    "Three canonical map resources bind real unchanged RGB source PNG payloads, including Valley/Range",
+    "All8 available styles have matching real manifests/meshes/textures; first arrow targets genuinely different source mesh bytes",
+    "Callable check uses real arrow/host frame path and actual committed profile/renderers/head, not caption alone",
+    "Root viewed-style frame binding and thumbnail color importer scope are present (edited by root owner)",
+    "Full current UI/preview/appearance and native callable check compile against installed Unity6000.6.8f1 APIs, C#5 warnings-as-errors"
+  ],
+  "sourceFontSha256": "ab424b0dfe9aa67c0305a992402750431ea024254047f6e09a99c0b89955e9a1",
+  "mapTextures": [
+    {
+      "id": "valley",
+      "resource": "R23MapThumbnails/valley",
+      "dimensions": [
+        1400,
+        900
+      ],
+      "sha256": "f715072506f1858ae9f167a8960866d0a6006e0c69069470b21737074720f3d0"
+    },
+    {
+      "id": "range",
+      "resource": "R23MapThumbnails/range",
+      "dimensions": [
+        1400,
+        900
+      ],
+      "sha256": "649caf0eb583bdec717270c7e7c731eb07ba93c191b14b1e8127c5bb1f137890"
+    },
+    {
+      "id": "cyber_bird",
+      "resource": "R23MapThumbnails/cyber_bird",
+      "dimensions": [
+        1600,
+        1000
+      ],
+      "sha256": "1b19cf19b2ea1289faa3bea2c4aae1ccfa39bd4cfecc74cfbe8fcf35c47ebabc"
+    }
+  ],
+  "nativePreviewChange": "NOT RUN: call UI.CheckAppearancePreviewChange in reserved coordinator lane",
+  "limits": "CPU assets/source binding checks and installed API compilation only. No engine, GPU, native preview change, texture import or headset execution."
+}

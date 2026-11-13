@@ -1,0 +1,35 @@
+{
+  "id": "archive:quantum-city-gods-pitdevil",
+  "slug": "quantum-city-gods-pitdevil",
+  "title": "QUANTUM CITY",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/quantum-city-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\quantum-city-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "2523b65982988c4eb8c105393a496cbb0585944f24cf1b8f6882790e1bd0097c",
+  "cacheFingerprint": "cd673075bf3a826b3d62fb77b0635973926cc533b3a4275d10d814453c35cbd3",
+  "spawn": [
+    186.91,
+    58.61954585704504,
+    199.59
+  ],
+  "warmupSpawn": [
+    -201.0695,
+    144.10465814511903,
+    -59.78714
+  ],
+  "chunks": 191,
+  "renderTriangles": 148478,
+  "collisionTriangles": 147934,
+  "payloadBytes": 13906244,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\quantum-city-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

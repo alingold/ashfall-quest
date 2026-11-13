@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "head_forward_metres": 0.03,
+  "tiers": {
+    "pcvr": {
+      "unchanged_body_meshes": [
+        "Belt",
+        "ChestPlate",
+        "Jacket",
+        "LBoot",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "head_only_translation": true,
+      "sha256": "0d6f568840b731dc30fc79e4a8589fbaf9aa50e5d8059c045f6aac9e0afbf0d1"
+    },
+    "light": {
+      "unchanged_body_meshes": [
+        "Belt",
+        "ChestPlate",
+        "Jacket",
+        "LBoot",
+        "LForearm",
+        "LShin",
+        "LThigh",
+        "LUpperArm",
+        "RBoot",
+        "RForearm",
+        "RShin",
+        "RThigh",
+        "RUpperArm"
+      ],
+      "head_only_translation": true,
+      "sha256": "00f8fde02fb66357cb2a74dd09bbe18606ad6ad0c847022fde327169a4d3b466"
+    }
+  },
+  "base": "ASHFALL R10, checkpoint 715823c2b84f5b1c50f4acf2e857e84d498e15a0",
+  "authorship": "Claude Opus 5.5 geometry and materials; Sol completion and requested 3 cm head-profile revision",
+  "style_index": 6,
+  "style_name": "WITCH DOCTOR \u00b7 CLAUDE OPUS"
+}

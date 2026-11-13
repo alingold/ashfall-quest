@@ -1,0 +1,35 @@
+{
+  "id": "archive:sean0311-gods-sean0311",
+  "slug": "sean0311-gods-sean0311",
+  "title": "SEAN0311",
+  "creator": "GODS_Sean0311",
+  "relativeFolder": "Maps/sean0311-gods-sean0311",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sean0311-gods-sean0311\\source\\thumb.jpg",
+  "sourceSha256": "b78895f67cea47fe73be7ad758fda9211ccdd50d9ad2b606cd6e67a3df887377",
+  "cacheFingerprint": "7e7d4bc3cf8792d90d0b799a46bd313312471f307a0282695ead054e83c31c87",
+  "spawn": [
+    -125.29,
+    96.96935241143102,
+    -238.49
+  ],
+  "warmupSpawn": [
+    37.62663,
+    96.96937049946415,
+    -5.31554
+  ],
+  "chunks": 110,
+  "renderTriangles": 128632,
+  "collisionTriangles": 126914,
+  "payloadBytes": 12593480,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sean0311-gods-sean0311",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

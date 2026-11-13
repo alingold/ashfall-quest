@@ -1,0 +1,35 @@
+{
+  "id": "archive:sharp-objects-kiwishade",
+  "slug": "sharp-objects-kiwishade",
+  "title": "SHARP OBJECTS",
+  "creator": "KiwiShade",
+  "relativeFolder": "Maps/sharp-objects-kiwishade",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sharp-objects-kiwishade\\source\\thumb.jpg",
+  "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+  "cacheFingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+  "spawn": [
+    -26.67,
+    49.52309906005859,
+    21.9
+  ],
+  "warmupSpawn": [
+    -18.21521,
+    52.62,
+    74.86577
+  ],
+  "chunks": 56,
+  "renderTriangles": 110312,
+  "collisionTriangles": 104286,
+  "payloadBytes": 10402296,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sharp-objects-kiwishade",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

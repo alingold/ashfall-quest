@@ -1,0 +1,10 @@
+{
+  "source": "assets/materials/alpha_junction_r24.gdshader",
+  "sourceSha256": "5194b56355ab192d92d6e1e94d5929144b72cacec90a3df48c984e6d6082ded9",
+  "transformedFragmentSha256": "1e22a05db6e3bad9defc904c5824d86698557765f81edcba3ae612248c12d7a8",
+  "sourceProjectionZones": 7,
+  "sourceScalarSplatExpansions": 7,
+  "sourceCoordinateRule": "Input mesh vertices are original map-local Unity coordinates; reflect local Z once. Map-root offset is not used in source projection.",
+  "lightingLimit": "Existing SourceArt URP lighting approximation retained; no claim of Godot BRDF/shadow parity.",
+  "engineShaderCompile": false
+}

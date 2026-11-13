@@ -1,0 +1,35 @@
+{
+  "id": "archive:the-holler-gods-alamo-hank",
+  "slug": "the-holler-gods-alamo-hank",
+  "title": "THE HOLLER",
+  "creator": "GODS_ALAMO_HANK",
+  "relativeFolder": "Maps/the-holler-gods-alamo-hank",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\the-holler-gods-alamo-hank\\source\\thumb.jpg",
+  "sourceSha256": "a7e7c56f931ee49192ecdadd636ff8b09c80088bc326febfd81583cd4873cd32",
+  "cacheFingerprint": "6705aa80bf82042f36748a9a02ee19c0ca0cacf5dedcd14677d53ba2862274b8",
+  "spawn": [
+    366.06,
+    63.82088597359119,
+    219.58
+  ],
+  "warmupSpawn": [
+    -5.50702,
+    115.46607696533204,
+    7.2426
+  ],
+  "chunks": 229,
+  "renderTriangles": 321148,
+  "collisionTriangles": 318374,
+  "payloadBytes": 26529302,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\the-holler-gods-alamo-hank",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

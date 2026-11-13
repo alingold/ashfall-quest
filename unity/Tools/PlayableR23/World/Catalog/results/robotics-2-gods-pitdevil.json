@@ -1,0 +1,35 @@
+{
+  "id": "archive:robotics-2-gods-pitdevil",
+  "slug": "robotics-2-gods-pitdevil",
+  "title": "ROBOTICS 2",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/robotics-2-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\robotics-2-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "9119b9d2eca2d39a17571866280bafdba190728d2fcd75036f15eb60ca79aff4",
+  "cacheFingerprint": "6137c8596b7a98e4e7f1809237276940af484d3de17d54419d8b97b3e229fa08",
+  "spawn": [
+    223.21,
+    23.62,
+    -188.44
+  ],
+  "warmupSpawn": [
+    19.08802,
+    75.65678894042969,
+    16.08991
+  ],
+  "chunks": 648,
+  "renderTriangles": 1224953,
+  "collisionTriangles": 1217267,
+  "payloadBytes": 107591778,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\robotics-2-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

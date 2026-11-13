@@ -1,0 +1,43 @@
+{
+  "sourceManifestSha256": "b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111",
+  "sourceFiles": {
+    "scripts/weapon_inventory.gd": "593e9f573dbb5ae2d1aa08f1d9155ee64914927350abcc780e36907851192e84",
+    "scripts/archive_map1003.gd": "3aeb9a038edec0fd890423365961d82b64c7e67c8d453e744a74a90ac9e5ee0e",
+    "scripts/world.gd": "52d05443eaf9ffe0f872ac46eba670da05e3a86c55d45e57aa980ce46ed029d5"
+  },
+  "fixtureSha256": "7ac3f365d876810c92c85869369633a60100291570dc657c268bcb8de6612a21",
+  "referenceSha256": "4a5da8f60428e88a6c457e42da3e791457d5a410bae83edd7e06dd79289b25d9",
+  "rangeShots": [
+    {
+      "name": "range-rack",
+      "mapId": "range",
+      "eyeMapLocal": [
+        0.199999913573265,
+        4.11426258087158,
+        13.7999877929688
+      ],
+      "targetMapLocal": [
+        0.199999913573265,
+        0.614262759685516,
+        6.79998779296875
+      ]
+    },
+    {
+      "name": "range-food",
+      "mapId": "range",
+      "eyeMapLocal": [
+        -1.90000009536743,
+        2.84719967842102,
+        13.7999877929688
+      ],
+      "targetMapLocal": [
+        -2.40000009536743,
+        0.547199785709381,
+        10.4500122070313
+      ]
+    }
+  ],
+  "sourceChecksPassed": true,
+  "installedFixtureApiExit": 0,
+  "nativeExecuted": false
+}

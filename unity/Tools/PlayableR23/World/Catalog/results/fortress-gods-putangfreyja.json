@@ -1,0 +1,35 @@
+{
+  "id": "archive:fortress-gods-putangfreyja",
+  "slug": "fortress-gods-putangfreyja",
+  "title": "FORTRESS",
+  "creator": "GODS_PutangFreyja",
+  "relativeFolder": "Maps/fortress-gods-putangfreyja",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\fortress-gods-putangfreyja\\source\\thumb.jpg",
+  "sourceSha256": "ed19b10297661fa13755a00b1c67af3c6013d2d42913603dc91e52265fa911a9",
+  "cacheFingerprint": "1d3657a77fe8b7653bbd9dda027645d79e95f84965b3a567123202be16130238",
+  "spawn": [
+    226.58,
+    112.3540087890625,
+    -52.58
+  ],
+  "warmupSpawn": [
+    13.01198,
+    133.62,
+    -14.75876
+  ],
+  "chunks": 256,
+  "renderTriangles": 175355,
+  "collisionTriangles": 173825,
+  "payloadBytes": 15273345,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\fortress-gods-putangfreyja",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

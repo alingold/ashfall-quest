@@ -1,0 +1,2185 @@
+{
+  "player_kit_camo_pcvr.glb": {
+    "file": "player_kit_camo_pcvr.glb",
+    "vertices": 18482,
+    "triangles": 27132,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 4704,
+        "outward_ccw": 4704,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1920,
+        "outward_ccw": 1920,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1776,
+        "outward_ccw": 1776,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1808,
+        "outward_ccw": 1808,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1424,
+        "outward_ccw": 1424,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 6204,
+        "outward_ccw": 6204,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_camo_pcvr.glb": {
+    "file": "player_camo_pcvr.glb",
+    "vertices": 20106,
+    "triangles": 29452,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 4704,
+        "outward_ccw": 4704,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1920,
+        "outward_ccw": 1920,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1776,
+        "outward_ccw": 1776,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 6204,
+        "outward_ccw": 6204,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1808,
+        "outward_ccw": 1808,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1424,
+        "outward_ccw": 1424,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_kit_camo_light.glb": {
+    "file": "player_kit_camo_light.glb",
+    "vertices": 9910,
+    "triangles": 12640,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 2036,
+        "outward_ccw": 2036,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1080,
+        "outward_ccw": 1080,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1224,
+        "outward_ccw": 1224,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 772,
+        "outward_ccw": 772,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 556,
+        "outward_ccw": 556,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 3220,
+        "outward_ccw": 3220,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_camo_light.glb": {
+    "file": "player_camo_light.glb",
+    "vertices": 11534,
+    "triangles": 14960,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 2036,
+        "outward_ccw": 2036,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1080,
+        "outward_ccw": 1080,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1224,
+        "outward_ccw": 1224,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 3220,
+        "outward_ccw": 3220,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 772,
+        "outward_ccw": 772,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 556,
+        "outward_ccw": 556,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 524,
+        "outward_ccw": 524,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_kit_witch_doctor_pcvr.glb": {
+    "file": "player_kit_witch_doctor_pcvr.glb",
+    "vertices": 22250,
+    "triangles": 32708,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6736,
+        "outward_ccw": 6736,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3616,
+        "outward_ccw": 3616,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 2412,
+        "outward_ccw": 2412,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6792,
+        "outward_ccw": 6792,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_witch_doctor_pcvr.glb": {
+    "file": "player_witch_doctor_pcvr.glb",
+    "vertices": 23874,
+    "triangles": 35028,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6736,
+        "outward_ccw": 6736,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3616,
+        "outward_ccw": 3616,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 2412,
+        "outward_ccw": 2412,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6792,
+        "outward_ccw": 6792,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_kit_witch_doctor_light.glb": {
+    "file": "player_kit_witch_doctor_light.glb",
+    "vertices": 12940,
+    "triangles": 16904,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3180,
+        "outward_ccw": 3180,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 2188,
+        "outward_ccw": 2188,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1692,
+        "outward_ccw": 1692,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 964,
+        "outward_ccw": 964,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 964,
+        "outward_ccw": 964,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 396,
+        "outward_ccw": 396,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 396,
+        "outward_ccw": 396,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 748,
+        "outward_ccw": 748,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 748,
+        "outward_ccw": 748,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 432,
+        "outward_ccw": 432,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 432,
+        "outward_ccw": 432,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3612,
+        "outward_ccw": 3612,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_witch_doctor_light.glb": {
+    "file": "player_witch_doctor_light.glb",
+    "vertices": 14564,
+    "triangles": 19224,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3180,
+        "outward_ccw": 3180,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 2188,
+        "outward_ccw": 2188,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1692,
+        "outward_ccw": 1692,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3612,
+        "outward_ccw": 3612,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 964,
+        "outward_ccw": 964,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 396,
+        "outward_ccw": 396,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 748,
+        "outward_ccw": 748,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 432,
+        "outward_ccw": 432,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 964,
+        "outward_ccw": 964,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 396,
+        "outward_ccw": 396,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 748,
+        "outward_ccw": 748,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 432,
+        "outward_ccw": 432,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_kit_eclipse_ronin_pcvr.glb": {
+    "file": "player_kit_eclipse_ronin_pcvr.glb",
+    "vertices": 18531,
+    "triangles": 26728,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5664,
+        "outward_ccw": 5664,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1344,
+        "outward_ccw": 1344,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2232,
+        "outward_ccw": 2232,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5264,
+        "outward_ccw": 5264,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_eclipse_ronin_pcvr.glb": {
+    "file": "player_eclipse_ronin_pcvr.glb",
+    "vertices": 20155,
+    "triangles": 29048,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5664,
+        "outward_ccw": 5664,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1344,
+        "outward_ccw": 1344,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2232,
+        "outward_ccw": 2232,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5264,
+        "outward_ccw": 5264,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_kit_eclipse_ronin_light.glb": {
+    "file": "player_kit_eclipse_ronin_light.glb",
+    "vertices": 9933,
+    "triangles": 12204,
+    "materials": 1,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2576,
+        "outward_ccw": 2576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 756,
+        "outward_ccw": 756,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1260,
+        "outward_ccw": 1260,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 612,
+        "outward_ccw": 612,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 612,
+        "outward_ccw": 612,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2716,
+        "outward_ccw": 2716,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_eclipse_ronin_light.glb": {
+    "file": "player_eclipse_ronin_light.glb",
+    "vertices": 11557,
+    "triangles": 14524,
+    "materials": 2,
+    "diagnostics": [
+      {
+        "mesh": "Jacket",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2576,
+        "outward_ccw": 2576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "ChestPlate",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 756,
+        "outward_ccw": 756,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Belt",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1260,
+        "outward_ccw": 1260,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "AvatarHead",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2716,
+        "outward_ccw": 2716,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 612,
+        "outward_ccw": 612,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "LGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 612,
+        "outward_ccw": 612,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 504,
+        "outward_ccw": 504,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 324,
+        "outward_ccw": 324,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "RGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  },
+  "player_trio_showcase_pcvr.glb": {
+    "file": "player_trio_showcase_pcvr.glb",
+    "vertices": 65479,
+    "triangles": 95256,
+    "materials": 6,
+    "diagnostics": [
+      {
+        "mesh": "camo_Jacket",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 4704,
+        "outward_ccw": 4704,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_ChestPlate",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1920,
+        "outward_ccw": 1920,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_Belt",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1776,
+        "outward_ccw": 1776,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_AvatarHead",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 6204,
+        "outward_ccw": 6204,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1808,
+        "outward_ccw": 1808,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_LGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RUpperArm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RForearm",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1424,
+        "outward_ccw": 1424,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RThigh",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RShin",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1368,
+        "outward_ccw": 1368,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RBoot",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "camo_RGlove",
+        "material": "Mat_Glove_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_Jacket",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6736,
+        "outward_ccw": 6736,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_ChestPlate",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 3616,
+        "outward_ccw": 3616,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_Belt",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 2412,
+        "outward_ccw": 2412,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_AvatarHead",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 6792,
+        "outward_ccw": 6792,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_LGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RUpperArm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1880,
+        "outward_ccw": 1880,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RForearm",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1456,
+        "outward_ccw": 1456,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RThigh",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1144,
+        "outward_ccw": 1144,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RShin",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1496,
+        "outward_ccw": 1496,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RBoot",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 600,
+        "outward_ccw": 600,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "witch_doctor_RGlove",
+        "material": "Mat_Glove_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_Jacket",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5664,
+        "outward_ccw": 5664,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_ChestPlate",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1344,
+        "outward_ccw": 1344,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_Belt",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 2232,
+        "outward_ccw": 2232,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_AvatarHead",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 5264,
+        "outward_ccw": 5264,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_LGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RUpperArm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1528,
+        "outward_ccw": 1528,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RForearm",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RThigh",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RShin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1336,
+        "outward_ccw": 1336,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RBoot",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "eclipse_ronin_RGlove",
+        "material": "Mat_Glove_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 1160,
+        "outward_ccw": 1160,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Pedestal_camo",
+        "material": "Mat_Player_camo",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Pedestal_witch_doctor",
+        "material": "Mat_Player_witch_doctor",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      },
+      {
+        "mesh": "Pedestal_eclipse_ronin",
+        "material": "Mat_Player_eclipse_ronin",
+        "alphaMode": "OPAQUE",
+        "triangles": 576,
+        "outward_ccw": 576,
+        "reversed": 0,
+        "degenerate": 0
+      }
+    ]
+  }
+}

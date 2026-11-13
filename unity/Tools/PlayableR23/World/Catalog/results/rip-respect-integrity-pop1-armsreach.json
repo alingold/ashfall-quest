@@ -1,0 +1,35 @@
+{
+  "id": "archive:rip-respect-integrity-pop1-armsreach",
+  "slug": "rip-respect-integrity-pop1-armsreach",
+  "title": "RIP - RESPECT. INTEGRITY. POP1",
+  "creator": "ArmsReach",
+  "relativeFolder": "Maps/rip-respect-integrity-pop1-armsreach",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\rip-respect-integrity-pop1-armsreach\\source\\thumb.jpg",
+  "sourceSha256": "5e9296aad507ddf72cbd4dd6150cd386acc5ec55a37110295d3581aa09b9f4e6",
+  "cacheFingerprint": "276be5d1d64573c8e4f50ab1989ddc682603f078a6297f39f02cf9c9d67a8eca",
+  "spawn": [
+    8.39927,
+    178.72349562259757,
+    -29.99497
+  ],
+  "warmupSpawn": [
+    16.24176,
+    65.30210294979699,
+    44.75546
+  ],
+  "chunks": 130,
+  "renderTriangles": 213431,
+  "collisionTriangles": 209364,
+  "payloadBytes": 20086650,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\rip-respect-integrity-pop1-armsreach",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

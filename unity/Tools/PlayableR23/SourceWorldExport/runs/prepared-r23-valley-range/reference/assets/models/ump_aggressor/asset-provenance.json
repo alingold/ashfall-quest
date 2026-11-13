@@ -1,0 +1,26 @@
+{
+  "uniform_scale": 0.031198002459047434,
+  "magazine_center_m": [
+    9.047493904848665e-05,
+    -0.14787072428519224,
+    -0.21439060338927785
+  ],
+  "muzzle_m": [
+    0,
+    0.045,
+    -0.46
+  ],
+  "source_triangles": 10421,
+  "body_triangles": 10119,
+  "magazine_triangles": 302,
+  "source_sha256": "50b83ca58d3e272e1f33ed9ae7174ee37f12188520474157c25679b7476d6a23",
+  "output_sha256": "021fd6a47eeb84028181dfdb22433725fb9b3952dab1e15e5d1cfef5367f84a3",
+  "asset": {
+    "author": "REEESkins (https://sketchfab.com/REEESkins)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/ump-45-aggressor-b82ae28c7d8143c5890d51bb1ef7aedb",
+    "title": "UMP-45 | AGGRESSOR"
+  },
+  "method": "Separate source connected component3 (entire magazine); preserve every triangle, UV, normal and texture. Uniform fit to existing grip/muzzle. Source originals retained in evidence.",
+  "runtime_display_scale": 0.8
+}

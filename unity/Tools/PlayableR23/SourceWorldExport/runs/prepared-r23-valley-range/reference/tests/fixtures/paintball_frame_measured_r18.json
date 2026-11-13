@@ -1,0 +1,26 @@
+{
+	"aperture": {
+		"plane_x": -3.96061396598816,
+		"y_max": 82.638298034668,
+		"y_min": 74.847297668457,
+		"z_max": 29.7788906097412,
+		"z_min": 22.6943168640137
+	},
+	"cache_fingerprint": "17a3c47f028fae76404f3aa12d8b9b905ae1306d6bb60ed0cc9357ad214ef76c",
+	"map": "archive:battlefield-paintball-gods-pitdevil",
+	"source_frames": [
+		{
+			"aabb": "[P: (-4.078712, 74.59695, 22.40857), S: (0.236195, 8.291687, 7.648697)]",
+			"path": "Draw_roof_p8ad59c41_-1_-1",
+			"sha256": "9b4138d3de7aaf8d21a432284c4ecd3b50bdcc57b511dadd15d11121ef70fb17",
+			"triangles": 32
+		},
+		{
+			"aabb": "[P: (-4.078712, 74.59695, 22.40857), S: (0.236195, 8.291687, 7.648697)]",
+			"path": "Draw_roof_pd959969c_-1_-1",
+			"sha256": "78a91327c2793239bb6b31a86312569253327858154e021aa4440e62bd8c6758",
+			"triangles": 32
+		}
+	],
+	"status": "Source-authored hollow frame beside actual Welcome sign; generated display face is probe-only until native confirmation, not an original exported face."
+}

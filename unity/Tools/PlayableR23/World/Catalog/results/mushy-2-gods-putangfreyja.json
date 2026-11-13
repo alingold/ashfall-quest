@@ -1,0 +1,35 @@
+{
+  "id": "archive:mushy-2-gods-putangfreyja",
+  "slug": "mushy-2-gods-putangfreyja",
+  "title": "MUSHY 2",
+  "creator": "GODS_PutangFreyja",
+  "relativeFolder": "Maps/mushy-2-gods-putangfreyja",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\mushy-2-gods-putangfreyja\\source\\thumb.jpg",
+  "sourceSha256": "9abec0557618ad864380479189069bfe94e5dd2c1b7c9004bd61b6b056fd7330",
+  "cacheFingerprint": "2a0f32fdc2f424a0bf20edcbdfa6a0abf3323e381b9e0785b94a2ec1ad045abb",
+  "spawn": [
+    0.0,
+    97.6225634765625,
+    60.97908421566592
+  ],
+  "warmupSpawn": [
+    -8.37236,
+    0.12,
+    27.23442
+  ],
+  "chunks": 193,
+  "renderTriangles": 246783,
+  "collisionTriangles": 244585,
+  "payloadBytes": 21996816,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\mushy-2-gods-putangfreyja",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:stacked-gods-trashpandakiller",
+  "slug": "stacked-gods-trashpandakiller",
+  "title": "STACKED",
+  "creator": "GODS_TrashPandaKiller",
+  "relativeFolder": "Maps/stacked-gods-trashpandakiller",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\stacked-gods-trashpandakiller\\source\\thumb.jpg",
+  "sourceSha256": "b60f507045111455f184941efcd1e772d81a3b3301b77389ad7c0ead70eb0532",
+  "cacheFingerprint": "4c510e447dfb224943afe432a47c6fb5e5e0490847232c966047e33afa667882",
+  "spawn": [
+    230.68,
+    121.12,
+    -13.94
+  ],
+  "warmupSpawn": [
+    234.85284,
+    309.9572497558594,
+    -120.86353
+  ],
+  "chunks": 129,
+  "renderTriangles": 127350,
+  "collisionTriangles": 126140,
+  "payloadBytes": 12395081,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\stacked-gods-trashpandakiller",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

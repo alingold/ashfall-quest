@@ -1,0 +1,35 @@
+{
+  "id": "archive:caskades-gods-alamo-hank",
+  "slug": "caskades-gods-alamo-hank",
+  "title": "CASKADES",
+  "creator": "GODS_ALAMO_HANK",
+  "relativeFolder": "Maps/caskades-gods-alamo-hank",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\caskades-gods-alamo-hank\\source\\thumb.jpg",
+  "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+  "cacheFingerprint": "e38d1bae62dc208404a86fb20c03939f42e508a514d5cf3667b7ae9c18f3df6c",
+  "spawn": [
+    -2.325439453124943,
+    24.60293361136419,
+    -134.71666404322582
+  ],
+  "warmupSpawn": [
+    -2.325439453124943,
+    46.294921032125636,
+    22.98860393323389
+  ],
+  "chunks": 170,
+  "renderTriangles": 184381,
+  "collisionTriangles": 180202,
+  "payloadBytes": 14190652,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\caskades-gods-alamo-hank",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

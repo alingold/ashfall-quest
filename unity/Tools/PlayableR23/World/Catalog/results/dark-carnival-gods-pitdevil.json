@@ -1,0 +1,35 @@
+{
+  "id": "archive:dark-carnival-gods-pitdevil",
+  "slug": "dark-carnival-gods-pitdevil",
+  "title": "DARK CARNIVAL",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/dark-carnival-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\dark-carnival-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "64c020e6289085645e3586af7c38e20320b132cab402dfa9b2f5d7952688fe4f",
+  "cacheFingerprint": "f870798f90064946289d55f8bebcd0de5eb268221518c37c3ebeeae631693b1e",
+  "spawn": [
+    107.91,
+    118.0614291381836,
+    368.41
+  ],
+  "warmupSpawn": [
+    -132.18622,
+    294.29169189453125,
+    -361.5376
+  ],
+  "chunks": 628,
+  "renderTriangles": 978030,
+  "collisionTriangles": 969214,
+  "payloadBytes": 86358450,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\dark-carnival-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

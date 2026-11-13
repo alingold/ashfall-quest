@@ -1,0 +1,35 @@
+{
+  "id": "archive:oppression-gods-thor",
+  "slug": "oppression-gods-thor",
+  "title": "OPPRESSION",
+  "creator": "GODS_THOR",
+  "relativeFolder": "Maps/oppression-gods-thor",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\oppression-gods-thor\\source\\thumb.jpg",
+  "sourceSha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+  "cacheFingerprint": "345dd81b7b1769bd6c489d743dae7c78f15dbb8dd17323fbfa74043d5aa77fba",
+  "spawn": [
+    -207.64,
+    41.25051986694336,
+    -7.63
+  ],
+  "warmupSpawn": [
+    -14.02789,
+    94.12,
+    -0.11152
+  ],
+  "chunks": 133,
+  "renderTriangles": 193868,
+  "collisionTriangles": 192776,
+  "payloadBytes": 17768010,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\oppression-gods-thor",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

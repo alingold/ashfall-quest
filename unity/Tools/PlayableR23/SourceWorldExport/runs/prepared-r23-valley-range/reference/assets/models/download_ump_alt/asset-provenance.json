@@ -1,0 +1,91 @@
+{
+  "id": "ump_alt",
+  "file": "ump.glb",
+  "scale": 0.031198002459047434,
+  "anchor": [
+    -5.380649924278259,
+    0.6492929458618191,
+    -22.094116926193237
+  ],
+  "target": [
+    -0.0033428631722927094,
+    -0.08276518662644577,
+    -0.004265844821929932
+  ],
+  "mag": [
+    3
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.46
+  ],
+  "variant": "Selectable alternate UMP skin, registered to existing Aggressor geometry bounds before its unchanged runtime0.8display scale. Existing authored charging handle, hand targets and ballistics retained.",
+  "rotation": [
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      -1.0
+    ]
+  ],
+  "offset": [
+    -0.17120839274119923,
+    -0.10302182954808496,
+    -0.6935581590157881
+  ],
+  "source": "[local development path]",
+  "source_sha256": "2ee4dfb21f7974f7e2a7960d8dcf078ecc06527664921d5f6d078dd07b29f3fb",
+  "output_sha256": "8a1865776459d872e8f1ab3d94ad3a2dcfcfff1c2c3e3f112a0bb4ea1211dea0",
+  "asset": {
+    "author": "AvnisT (https://sketchfab.com/AvnisT)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/ump-ce2b2a42f95c4fa3a9921b9986ceb303",
+    "title": "Ump"
+  },
+  "magazine_center": [
+    9.047212482768408e-05,
+    -0.14787073580880222,
+    -0.21439062130851724
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    -0.045,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 10421,
+  "body_triangles": 10119,
+  "magazine_triangles": 302,
+  "moving_triangles": 0,
+  "moving_kind": "authored charging handle",
+  "bounds_min": [
+    -0.04647878182569548,
+    -0.31117199892111985,
+    -0.46000003279560614
+  ],
+  "bounds_max": [
+    0.03979305548111009,
+    0.1456416256682283,
+    0.4514683431517462
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "omitted_triangles": 0,
+  "visible_source_triangles": 10421,
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

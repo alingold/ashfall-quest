@@ -1,0 +1,35 @@
+{
+  "id": "archive:ga-fenix-ga-hikesa",
+  "slug": "ga-fenix-ga-hikesa",
+  "title": "GA FENIX",
+  "creator": "GA_HIKESA",
+  "relativeFolder": "Maps/ga-fenix-ga-hikesa",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ga-fenix-ga-hikesa\\source\\thumb.jpg",
+  "sourceSha256": "255ec785c959697afaf93155f3fdf308774619b7c23c9fe799d5610144d00186",
+  "cacheFingerprint": "3915a3096049812ec9c0ab4bca3ee1b9f6a3cd79922496d00a0e21b5ea8557ce",
+  "spawn": [
+    -412.91199,
+    47.48070827274879,
+    -88.58991
+  ],
+  "warmupSpawn": [
+    -311.31763,
+    51.65039169311523,
+    -3.98004
+  ],
+  "chunks": 488,
+  "renderTriangles": 2201504,
+  "collisionTriangles": 2186158,
+  "payloadBytes": 169000922,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ga-fenix-ga-hikesa",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

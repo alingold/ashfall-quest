@@ -1,0 +1,39 @@
+[
+  {
+    "key": "astra",
+    "model": "GPT-6 Astra",
+    "source": "C:\\Users\\aling\\Documents\\ashfall\\codex_witch_doctor_v2\\exports\\codex_witch_doctor_v2_reduced.glb",
+    "copied_to": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\astra.glb",
+    "sha256": "34f4571c2e9cf5cffc3e0015e71754b34e9847d52f308dad9b1addd4eaf65faf"
+  },
+  {
+    "key": "sol",
+    "model": "GPT-6.1 Sol",
+    "source": "C:\\Users\\aling\\Documents\\ashfall\\witch_doctor_recreation\\exports\\witch_doctor_lod1.glb",
+    "copied_to": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\sol.glb",
+    "sha256": "9a37f9298ed262668ca87b309ef44d42a1e9e3dbfc2a8f77c51e09b373a700b0"
+  },
+  {
+    "key": "argon",
+    "model": "Gemini 4 Argon",
+    "source": "C:\\Users\\aling\\Documents\\ashfall\\gemini_witch_doctor\\exports\\witch_doctor_gemini.glb",
+    "copied_to": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\argon.glb",
+    "sha256": "1ad59c405c9b03449ea9a4747332e50e20f27a5ed8a5d141f60107c57f88678e"
+  },
+  {
+    "key": "claude",
+    "model": "Claude Opus",
+    "label_source": "User confirmed the fourth finished skin is Claude; originating handoff is titled please finish up for opus. Existing handoff finalization chat uses GPT-6.1 Sol.",
+    "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\WITCH-DOCTOR-R7",
+    "assets": [
+      {
+        "file": "witch_doctor_claude_pcvr.glb",
+        "sha256": "898008853d32be96ce36f7bf539cff954454c5d6deb239b157cd23e7922d47f9"
+      },
+      {
+        "file": "witch_doctor_claude_light.glb",
+        "sha256": "7ae4baf34a7ca136a2a2f3ed8280263e6550efc9692904c7bd31a7206f37569d"
+      }
+    ]
+  }
+]

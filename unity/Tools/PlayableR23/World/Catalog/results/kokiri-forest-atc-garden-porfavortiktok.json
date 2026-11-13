@@ -1,0 +1,35 @@
+{
+  "id": "archive:kokiri-forest-atc-garden-porfavortiktok",
+  "slug": "kokiri-forest-atc-garden-porfavortiktok",
+  "title": "KOKIRI FOREST",
+  "creator": "ATC_Garden_porfavorTIKTOK",
+  "relativeFolder": "Maps/kokiri-forest-atc-garden-porfavortiktok",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\kokiri-forest-atc-garden-porfavortiktok\\source\\thumb.jpg",
+  "sourceSha256": "276f98e23ba96cf3cc422778794b811d576752f46209b4dacbcdbdb20ec2dd21",
+  "cacheFingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+  "spawn": [
+    9.17,
+    0.12,
+    112.73
+  ],
+  "warmupSpawn": [
+    -28.09,
+    0.9058746647834778,
+    55.86
+  ],
+  "chunks": 288,
+  "renderTriangles": 238186,
+  "collisionTriangles": 232338,
+  "payloadBytes": 24955806,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\kokiri-forest-atc-garden-porfavortiktok",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

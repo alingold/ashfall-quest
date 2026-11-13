@@ -1,0 +1,35 @@
+{
+  "id": "archive:sweet-dreams-gods-badbar",
+  "slug": "sweet-dreams-gods-badbar",
+  "title": "SWEET DREAMS",
+  "creator": "GODS_BADBAR",
+  "relativeFolder": "Maps/sweet-dreams-gods-badbar",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\sweet-dreams-gods-badbar\\source\\thumb.jpg",
+  "sourceSha256": "f941aa69c2bccf048654b7ce79aaf833b47781a1f9d77403d89d7bf418a5c4c8",
+  "cacheFingerprint": "3ff8734088fce2b3676d0224e51777a2590f5a341030317d303e720074284c7c",
+  "spawn": [
+    -128.36,
+    109.62,
+    -193.59
+  ],
+  "warmupSpawn": [
+    -25.9399,
+    1.478267664909363,
+    15.4101
+  ],
+  "chunks": 185,
+  "renderTriangles": 337358,
+  "collisionTriangles": 328392,
+  "payloadBytes": 34329248,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\sweet-dreams-gods-badbar",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

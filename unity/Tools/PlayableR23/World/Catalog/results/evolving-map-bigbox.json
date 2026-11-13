@@ -1,0 +1,35 @@
+{
+  "id": "archive:evolving-map-bigbox",
+  "slug": "evolving-map-bigbox",
+  "title": "EVOLVING MAP",
+  "creator": "BIGBOX",
+  "relativeFolder": "Maps/evolving-map-bigbox",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\evolving-map-bigbox\\source\\thumb.jpg",
+  "sourceSha256": "f5b9c42f6f00a6ce7c3f37efe9929fe6c7d11984561920eb62105e8cad082903",
+  "cacheFingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+  "spawn": [
+    83.85394672594589,
+    20.46377686886286,
+    40.666259765625
+  ],
+  "warmupSpawn": [
+    -21.864807128906023,
+    26.62,
+    40.666259765625
+  ],
+  "chunks": 286,
+  "renderTriangles": 1319789,
+  "collisionTriangles": 1296529,
+  "payloadBytes": 100954553,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\evolving-map-bigbox",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

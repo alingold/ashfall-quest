@@ -1,0 +1,35 @@
+{
+  "id": "archive:fear-thy-neighbor-oitc-steve-qc",
+  "slug": "fear-thy-neighbor-oitc-steve-qc",
+  "title": "FEAR THY NEIGHBOR [OITC]",
+  "creator": "Steve_Qc",
+  "relativeFolder": "Maps/fear-thy-neighbor-oitc-steve-qc",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\fear-thy-neighbor-oitc-steve-qc\\source\\thumb.jpg",
+  "sourceSha256": "8e7cb8a22dcb0557951d9b6560e15b8958d28de299804b64a840a9546fd218a3",
+  "cacheFingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+  "spawn": [
+    52.09,
+    0.25556849315077446,
+    -40.1
+  ],
+  "warmupSpawn": [
+    79.65,
+    7.004540557861328,
+    -2.48
+  ],
+  "chunks": 159,
+  "renderTriangles": 189968,
+  "collisionTriangles": 182520,
+  "payloadBytes": 19820488,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\fear-thy-neighbor-oitc-steve-qc",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

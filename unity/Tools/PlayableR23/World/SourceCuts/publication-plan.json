@@ -1,0 +1,69 @@
+{
+  "state": "STAGED_READY_FOR_ROOT_GUARDED_PUBLICATION_NATIVE_PENDING",
+  "sourcePayload": "D:/ashfall-r6-staging/world/classic-source-cuts-v003/SOURCE-CUT-PARTITIONS.json",
+  "sourcePayloadSha256": "243f1dd751d97ab46dade4efcfacbac4b10c8f0ff9e23b990875e09f27523114",
+  "geometry": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\geometry.bytes",
+  "geometrySha256": "5c6ab2878fb26f5f9a37521ac7d7d12d61c3514cc204648d515263dfd0d374b1",
+  "tower": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\classic-tower18-passages319.json",
+  "towerSha256": "afc67b4e1dedc0c6821534a2e09cabb79f91efcd083e6679857b7d4ed65b2d25",
+  "architecture": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\architecture.json",
+  "architectureSha256": "3f862115a0d55adaec04cee3b6e862765165fa91b8af20fc980c543951c9bd2f",
+  "sourceArt": "unity/Assets/StreamingAssets/PlayableR23/SourceArt/classic-bigbox-vr.json",
+  "sourceArtSha256": "4334bcfe2a894d29ec5b53d956c79e05d8bb375dbee9345680706e501b09b3d0",
+  "files": [
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\R24SourceCuts.cs",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\Destructibles\\R24SourceCuts.cs",
+      "before": null,
+      "after": "678aad710af186e09a9539ac36aacef714d70601f9ad636cf981948b4954fbe7"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\R24SourceCuts.cs.meta",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\Destructibles\\R24SourceCuts.cs.meta",
+      "before": null,
+      "after": "ec73500a0cdffc5cfb38011985d2d300af832445a06dd76e3c05f523321c60f7"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\Resources\\R24Architecture.shader",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\Resources\\R24Architecture.shader",
+      "before": "0509a0c788ca80d73835a4428917efa79626f7d18f3182985e1da6fcae7ab378",
+      "after": "d508198eccf080a1249f8068d7d4c6a8f3126347b634fef39f213ebbe02df876"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\SourceArt\\R24SourceArtPlan.cs",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\SourceArt\\R24SourceArtPlan.cs",
+      "before": "8b63bcdccf117da9a4954d583cb32a10a176dc148136e4f57e114b5212694fdd",
+      "after": "947e6635b3e136872f3518599e2023e993febe8871be3fc6cc7bb753b49a2dc3"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\SourceArt\\R24SourceArtMaterials.cs",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\SourceArt\\R24SourceArtMaterials.cs",
+      "before": "b817585feb58a69489d735311a77490560e11cd5650ae7a70856cb83b2859cb6",
+      "after": "5241e5124130c51a2785e8b0e14d99617be860c7c46e5e9406f028e4445cb669"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Runtime\\R23PlayableMap.cs",
+      "target": "unity\\Assets\\Ashfall\\Integration\\Playable\\World\\R23PlayableMap.cs",
+      "before": "85d0ec487f23fd6230eeee8cec56dd5303ddc2c37f10b260cc23c456681cda66",
+      "after": "93d2c595580058a43e5cabe608a7394b04eef6efe9ab7670b9dafcb9862d4956"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Payload\\classic-source-cuts-v003.bytes",
+      "target": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\classic-source-cuts-v003.bytes",
+      "before": null,
+      "after": "cfb1095321b7bf6d0251bb3ee8194580265b79f569d1bb695f6b6ec3c7543ea3"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Payload\\classic-source-cuts-v003.bytes.meta",
+      "target": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\classic-source-cuts-v003.bytes.meta",
+      "before": null,
+      "after": "ed0fffd91671cd338dfb9b6419106e77312c278d2896e8c3755ce62802901436"
+    },
+    {
+      "stage": "unity\\Tools\\PlayableR23\\World\\SourceCuts\\Payload\\map.json",
+      "target": "unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\classic-bigbox-vr\\map.json",
+      "before": "7cff9f5f68d8438662be05ea83ba0c34aa1d3ae2965efc2e4071bfd3f9538cd1",
+      "after": "ccb779bfe458515d92b1f13a71b903af07d2e02daa7db141713b52dad588f8bd"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:atrocious-gods-trashpandakiller",
+  "slug": "atrocious-gods-trashpandakiller",
+  "title": "ATROCIOUS",
+  "creator": "GODS_TrashPandaKiller",
+  "relativeFolder": "Maps/atrocious-gods-trashpandakiller",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\atrocious-gods-trashpandakiller\\source\\thumb.jpg",
+  "sourceSha256": "53efdbbacc8a60a0e1644ce16ab9d6e72adc9f7d7512fbb92a5c1683ab7e352e",
+  "cacheFingerprint": "23d58ed183b2bbde48b1747a04c59db564b823143fc0059468852db2906ac89d",
+  "spawn": [
+    -35.05,
+    116.62,
+    -88.44
+  ],
+  "warmupSpawn": [
+    114.91,
+    140.7239018917301,
+    53.85
+  ],
+  "chunks": 130,
+  "renderTriangles": 196942,
+  "collisionTriangles": 194246,
+  "payloadBytes": 18201397,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\atrocious-gods-trashpandakiller",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

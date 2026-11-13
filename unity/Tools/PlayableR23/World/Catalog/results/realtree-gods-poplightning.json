@@ -1,0 +1,35 @@
+{
+  "id": "archive:realtree-gods-poplightning",
+  "slug": "realtree-gods-poplightning",
+  "title": "REALTREE",
+  "creator": "GODS_POPLIGHTNING",
+  "relativeFolder": "Maps/realtree-gods-poplightning",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\realtree-gods-poplightning\\source\\thumb.jpg",
+  "sourceSha256": "d9d89ab2587d68707f35ef310617fcadf689a7ca479f943d19d5358fcffc056f",
+  "cacheFingerprint": "b1c82e56989fb6d6848a3a38c7fc4616e171d4d52d2539c339fbffd74d2319b0",
+  "spawn": [
+    19.09,
+    42.083417053222654,
+    -176.92
+  ],
+  "warmupSpawn": [
+    -74.56525,
+    1.780791164084747,
+    -27.9696
+  ],
+  "chunks": 78,
+  "renderTriangles": 193226,
+  "collisionTriangles": 182856,
+  "payloadBytes": 17068676,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\realtree-gods-poplightning",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

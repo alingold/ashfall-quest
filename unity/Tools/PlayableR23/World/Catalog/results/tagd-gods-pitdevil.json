@@ -1,0 +1,35 @@
+{
+  "id": "archive:tagd-gods-pitdevil",
+  "slug": "tagd-gods-pitdevil",
+  "title": "TAGD",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/tagd-gods-pitdevil",
+  "preview": "preview.png",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\tagd-gods-pitdevil\\converted\\preview.png",
+  "sourceSha256": "569eb7f52ccd20837dd99f8de190619995a71ec43e83f339c67605067859db1f",
+  "cacheFingerprint": "5626d0d5eaa4bce94d90be82e8ae7981f007e6520b63c1db7dbfd22081118909",
+  "spawn": [
+    107.91,
+    118.0614291381836,
+    368.41
+  ],
+  "warmupSpawn": [
+    -19.30618,
+    143.04084127158202,
+    137.99374
+  ],
+  "chunks": 163,
+  "renderTriangles": 229490,
+  "collisionTriangles": 226826,
+  "payloadBytes": 19267021,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\tagd-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

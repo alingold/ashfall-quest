@@ -1,0 +1,35 @@
+{
+  "id": "archive:romulus-gods-skblong",
+  "slug": "romulus-gods-skblong",
+  "title": "ROMULUS",
+  "creator": "GODS_SKBLong",
+  "relativeFolder": "Maps/romulus-gods-skblong",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\romulus-gods-skblong\\source\\thumb.jpg",
+  "sourceSha256": "0ac3f983fcc3bf18eeb6b272eb8a80e676ad127e36571ddd6e617f02b40a39e1",
+  "cacheFingerprint": "1218f0d8968694992581fe934bc764c59d5edbe8897c28e3b0466a8f5948034b",
+  "spawn": [
+    11.44,
+    58.13346238271031,
+    -202.88
+  ],
+  "warmupSpawn": [
+    -25.38,
+    64.13377868652344,
+    75.31
+  ],
+  "chunks": 194,
+  "renderTriangles": 252680,
+  "collisionTriangles": 251220,
+  "payloadBytes": 21866032,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\romulus-gods-skblong",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

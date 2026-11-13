@@ -1,0 +1,35 @@
+{
+  "id": "archive:deep-space-5-stand-alone-pro-yt",
+  "slug": "deep-space-5-stand-alone-pro-yt",
+  "title": "DEEP SPACE 5",
+  "creator": "Stand.alone.pro.YT",
+  "relativeFolder": "Maps/deep-space-5-stand-alone-pro-yt",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\thumb.jpg",
+  "sourceSha256": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+  "cacheFingerprint": "fe51b0649cf0d7fe0e61e37a7fdb9b3f54547f0b0e35c85199dbd73734444299",
+  "spawn": [
+    21.91,
+    2.064776614531635,
+    -26.65
+  ],
+  "warmupSpawn": [
+    -91.41,
+    75.12000762939454,
+    55.8
+  ],
+  "chunks": 159,
+  "renderTriangles": 229005,
+  "collisionTriangles": 229021,
+  "payloadBytes": 21759631,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\deep-space-5-stand-alone-pro-yt",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

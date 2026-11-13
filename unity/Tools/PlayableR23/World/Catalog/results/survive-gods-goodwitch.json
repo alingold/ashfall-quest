@@ -1,0 +1,35 @@
+{
+  "id": "archive:survive-gods-goodwitch",
+  "slug": "survive-gods-goodwitch",
+  "title": "SURVIVE",
+  "creator": "GODS_GoodWitch",
+  "relativeFolder": "Maps/survive-gods-goodwitch",
+  "preview": "preview.png",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\survive-gods-goodwitch\\converted\\preview.png",
+  "sourceSha256": "0473f193991ada44dd035fd2a6e96d2bf9c850627b400facc22866c6f40bef6f",
+  "cacheFingerprint": "fd160dc9c9f0c4f26100929a5a1a0eb32bbd3cad1dffd42f8f4f753636bdaff1",
+  "spawn": [
+    -128.29,
+    266.60147583007813,
+    118.84
+  ],
+  "warmupSpawn": [
+    -27.79069,
+    260.34427368164063,
+    -91.24155
+  ],
+  "chunks": 517,
+  "renderTriangles": 290859,
+  "collisionTriangles": 274345,
+  "payloadBytes": 28565295,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\survive-gods-goodwitch",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

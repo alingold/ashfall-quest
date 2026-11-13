@@ -1,0 +1,14 @@
+{
+  "source": "Godot4.7.2 thirdparty/fonts/OpenSans_SemiBold.woff2",
+  "sourceURL": "https://raw.githubusercontent.com/godotengine/godot/4.7.2-stable/thirdparty/fonts/OpenSans_SemiBold.woff2",
+  "sourceSha256": "55809808749613ed9ef9ad4f61424a14d2aa265d74369ad43403b9761aa6bac4",
+  "ttf": "unity\\Assets\\Ashfall\\Integration\\Playable\\UI\\Resources\\R23GodotUI.ttf",
+  "ttfSha256": "ab424b0dfe9aa67c0305a992402750431ea024254047f6e09a99c0b89955e9a1",
+  "family": "Open Sans SemiBold",
+  "style": "Regular",
+  "glyphs": 1150,
+  "cmapEntries": 1010,
+  "metricsAndGlyphOutlinesIdentical": true,
+  "engineImported": false,
+  "reference": "Godot4.7.2 scene/theme/default_theme.cpp uses this embedded defaultfont; actual R23 project defines no default_font override"
+}

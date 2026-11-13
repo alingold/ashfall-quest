@@ -1,0 +1,68 @@
+{
+  "astra": {
+    "source_copy": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\astra.glb",
+    "output": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\ASHFALL-R8-Source\\assets\\models\\witch_doctors_r8\\witch_doctor_astra.glb",
+    "height_fit": 0.9660443773254369,
+    "triangles": 98916,
+    "parts": {
+      "Belt": 20308,
+      "Jacket": 31892,
+      "RThigh": 1128,
+      "RShin": 5980,
+      "LThigh": 1178,
+      "LShin": 5906,
+      "RUpperArm": 946,
+      "RForearm": 2220,
+      "LUpperArm": 946,
+      "LForearm": 2228,
+      "RBoot": 2892,
+      "LBoot": 2892,
+      "AvatarHead": 20400
+    },
+    "contract": "independent render segments; existing tracked gloves, eye height, collisions and weapon controls unchanged"
+  },
+  "sol": {
+    "source_copy": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\sol.glb",
+    "output": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\ASHFALL-R8-Source\\assets\\models\\witch_doctors_r8\\witch_doctor_sol.glb",
+    "height_fit": 0.9944896319073009,
+    "triangles": 42379,
+    "parts": {
+      "Belt": 8609,
+      "Jacket": 15712,
+      "AvatarHead": 7959,
+      "LShin": 1866,
+      "LThigh": 545,
+      "LBoot": 942,
+      "LUpperArm": 786,
+      "LForearm": 910,
+      "RShin": 1861,
+      "RThigh": 546,
+      "RBoot": 938,
+      "RUpperArm": 780,
+      "RForearm": 925
+    },
+    "contract": "independent render segments; existing tracked gloves, eye height, collisions and weapon controls unchanged"
+  },
+  "argon": {
+    "source_copy": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\work\\r8\\skin-inputs\\argon.glb",
+    "output": "C:\\Users\\aling\\Documents\\Codex\\2026-10-24\\build-a-large-beautiful-playable-map\\outputs\\ASHFALL-R8-Source\\assets\\models\\witch_doctors_r8\\witch_doctor_argon.glb",
+    "height_fit": 0.9594986082285912,
+    "triangles": 73448,
+    "parts": {
+      "Jacket": 27092,
+      "Belt": 13704,
+      "RUpperArm": 188,
+      "LUpperArm": 188,
+      "AvatarHead": 15772,
+      "RForearm": 2008,
+      "LForearm": 2008,
+      "RShin": 4458,
+      "RBoot": 1632,
+      "LShin": 4458,
+      "LBoot": 1632,
+      "RThigh": 154,
+      "LThigh": 154
+    },
+    "contract": "independent render segments; existing tracked gloves, eye height, collisions and weapon controls unchanged"
+  }
+}

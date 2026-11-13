@@ -1,0 +1,162 @@
+{
+  "map": "evolving-map-bigbox",
+  "exportFolder": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\evolving-inspect",
+  "preparedR10Sha256": "34912267d6f91e03c5df6108a71776dcdd33995b801bb32aa97e99e42a4c0b0f",
+  "sourcePlanSha256": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+  "geometrySha256": "d0052b55d458c9086ca0b22eb0bc9f4984240d3125735d604ee6586d7b413b35",
+  "selectedSourceVertices": {
+    "1": 62150,
+    "4": 3281,
+    "3": 18479,
+    "2": 5803,
+    "5": 841,
+    "6": 2032,
+    "7": 150,
+    "32": 42
+  },
+  "sourceClassifiedFaces": 60124,
+  "transferredUnityFaces": {
+    "1": 29802,
+    "4": 1672,
+    "3": 6370,
+    "2": 3581,
+    "5": 533,
+    "6": 1504,
+    "7": 130,
+    "32": 28
+  },
+  "directSourceWitnesses": [
+    {
+      "chunk": 253,
+      "triangle": 10,
+      "kind": 1,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 10,
+      "maxCornerDistance": 0.0009023432503454387
+    },
+    {
+      "chunk": 253,
+      "triangle": 197,
+      "kind": 4,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 197,
+      "maxCornerDistance": 0.0006546291988343
+    },
+    {
+      "chunk": 253,
+      "triangle": 4068,
+      "kind": 3,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-2",
+      "sourceTriangle": 3540,
+      "maxCornerDistance": 0.0010218904353678226
+    },
+    {
+      "chunk": 254,
+      "triangle": 3140,
+      "kind": 2,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_-1",
+      "sourceTriangle": 2732,
+      "maxCornerDistance": 0.0002446169964969158
+    },
+    {
+      "chunk": 255,
+      "triangle": 4422,
+      "kind": 5,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_0",
+      "sourceTriangle": 4392,
+      "maxCornerDistance": 0.0005822882521897554
+    },
+    {
+      "chunk": 255,
+      "triangle": 7747,
+      "kind": 6,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-3_0",
+      "sourceTriangle": 7653,
+      "maxCornerDistance": 0.0009932947577908635
+    },
+    {
+      "chunk": 267,
+      "triangle": 9504,
+      "kind": 7,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 6545,
+      "maxCornerDistance": 0.001233091694302857
+    },
+    {
+      "chunk": 268,
+      "triangle": 2155,
+      "kind": 32,
+      "material": "vc",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceTriangle": 14894,
+      "maxCornerDistance": 0.0010756702395156026
+    }
+  ],
+  "coplanarFootprintFaces": {
+    "3": 5,
+    "1": 108
+  },
+  "footprintExamples": [
+    {
+      "chunk": 253,
+      "triangle": 6987,
+      "kind": 3,
+      "unionCoverage": 0.9999874922290827
+    },
+    {
+      "chunk": 253,
+      "triangle": 8279,
+      "kind": 3,
+      "unionCoverage": 0.9999791659503855
+    },
+    {
+      "chunk": 258,
+      "triangle": 3653,
+      "kind": 1,
+      "unionCoverage": 0.9999790195659243
+    },
+    {
+      "chunk": 258,
+      "triangle": 4444,
+      "kind": 1,
+      "unionCoverage": 0.9999932839999364
+    },
+    {
+      "chunk": 258,
+      "triangle": 4460,
+      "kind": 1,
+      "unionCoverage": 0.99999153842802
+    },
+    {
+      "chunk": 258,
+      "triangle": 4489,
+      "kind": 1,
+      "unionCoverage": 0.9999811793474926
+    },
+    {
+      "chunk": 258,
+      "triangle": 5276,
+      "kind": 1,
+      "unionCoverage": 0.9999599856163965
+    },
+    {
+      "chunk": 258,
+      "triangle": 5284,
+      "kind": 1,
+      "unionCoverage": 0.9999626372089323
+    }
+  ],
+  "patches": 32,
+  "ambiguousFacesUnchanged": 0,
+  "normalOrDistanceRejected": 379339,
+  "geometryUnchanged": true,
+  "shaderNativeRun": false,
+  "rule": "Keep exact oriented <=5mm whole-face matches. Fallback: one source welded component/kind, original material+uniform RGB+oriented normals, <=5mm plane, actual triangle union>=99.99%, covered7.5mm inset core, no competing kind/255 overlap. Original last-corner selector."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "archive:chill-gods-pitdevil",
+  "slug": "chill-gods-pitdevil",
+  "title": "CHILL",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/chill-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\chill-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "51357e7ae38620f0cf7dcbc035f7e3ca9001bac471f76dd9b0ca19a124406945",
+  "cacheFingerprint": "e7a179a93b7a79ee9629ca8f21812960109f57abfe55980bc7b6e5e4fb7a960f",
+  "spawn": [
+    -40.71101202713817,
+    63.12845249571768,
+    57.35290591591263
+  ],
+  "warmupSpawn": [
+    53.419263980263224,
+    63.1285752514033,
+    4.784484863280966
+  ],
+  "chunks": 273,
+  "renderTriangles": 237930,
+  "collisionTriangles": 237634,
+  "payloadBytes": 20642492,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\chill-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

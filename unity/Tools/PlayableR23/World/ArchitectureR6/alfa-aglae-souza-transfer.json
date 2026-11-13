@@ -1,0 +1,80 @@
+{
+  "map": "alfa-aglae-souza",
+  "selectedSourceVertices": {
+    "4": 2798,
+    "1": 32129,
+    "3": 15642,
+    "6": 1778,
+    "5": 843,
+    "2": 656
+  },
+  "sourceClassifiedFaces": 34032,
+  "transferredUnityFaces": {
+    "3": 8566,
+    "1": 20003,
+    "4": 1428,
+    "6": 1316,
+    "5": 553,
+    "2": 368
+  },
+  "coplanarFootprintFaces": {
+    "1": 929,
+    "3": 1025
+  },
+  "footprintExamples": [
+    {
+      "chunk": 238,
+      "triangle": 3887,
+      "kind": 1,
+      "unionCoverage": 0.999999654046328
+    },
+    {
+      "chunk": 238,
+      "triangle": 3916,
+      "kind": 1,
+      "unionCoverage": 0.9999998201022436
+    },
+    {
+      "chunk": 238,
+      "triangle": 3942,
+      "kind": 1,
+      "unionCoverage": 0.9999999616785844
+    },
+    {
+      "chunk": 238,
+      "triangle": 3969,
+      "kind": 1,
+      "unionCoverage": 0.9999998462629075
+    },
+    {
+      "chunk": 240,
+      "triangle": 2883,
+      "kind": 3,
+      "unionCoverage": 1.0
+    },
+    {
+      "chunk": 240,
+      "triangle": 2884,
+      "kind": 3,
+      "unionCoverage": 0.9999992611340354
+    },
+    {
+      "chunk": 240,
+      "triangle": 2890,
+      "kind": 3,
+      "unionCoverage": 0.9999999335302677
+    },
+    {
+      "chunk": 240,
+      "triangle": 2894,
+      "kind": 3,
+      "unionCoverage": 0.9999999539840478
+    }
+  ],
+  "patches": 45,
+  "ambiguousFacesUnchanged": 0,
+  "normalOrDistanceRejected": 226835,
+  "geometryUnchanged": true,
+  "shaderNativeRun": false,
+  "rule": "Keep exact oriented <=5mm whole-face matches. Fallback: one source welded component/kind, original material+uniform RGB+oriented normals, <=5mm plane, actual triangle union>=99.99%, covered7.5mm inset core, no competing kind/255 overlap. Original last-corner selector."
+}

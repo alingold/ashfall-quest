@@ -1,0 +1,63 @@
+Valley environment integration
+
+R23ValleyEnvironment, namespace Ashfall.Integration.Playable.World.
+Initialize(string folder): accepts the map's full packaged folder/URL or
+"Maps/valley" relative to StreamingAssets/PlayableR23. It loads asynchronously
+with UnityWebRequest, including Android jar URLs. Keep the component GameObject
+active during loading; its own light root starts inactive and no globals change.
+Wait for Ready (or inspect Loading/Failure), then SetActiveEnvironment(true).
+SetActiveEnvironment(false) restores the captured RenderSettings and every
+preexisting directional light's enabled flag. DisposeEnvironment cancels loading,
+restores globals and destroys owned materials/textures/lights. OnDisable restores.
+SourceToneMode/SourceExposure/RenderingLimits expose retained source metadata.
+
+Visibility ordering with the separate lobby environment must be LIFO:
+map environment OFF before Lobby.Show; Lobby.Hide before map environment ON.
+Do not overlap independently active map environments. No camera, HMD, rig,
+tracking root or other owner's transform is changed. Local lights are owned
+children with reflected source global positions/bases relative to this map root.
+
+Actual source data:
+SourceWorldExport/runs/prepared-r23-valley-range/valley/world.json and resources.
+Sky resource_00003 is format16 RGBE9995, NOT RGBAHalf. The corrected sky.rgb9e5
+preserves all 8,388,608 original bytes, SHA256
+819e1de32dfe4b25735c5413c89a5b9d5312fdd27fbd7743a4444933b1ed06ae.
+2048x1024, linear HDR RGB range .14453125..6.6875, no alpha (implicit1).
+Direct Unity RGB9e5Float upload uses mip generation and trilinear filtering.
+Unsupported packed format uses frame-yielding, mathematically lossless RGBAHalf
+expansion; absence of either supported HDR texture format fails explicitly.
+
+One source directional light plus13 local point lights, original energies,
+colors, visibility/ranges and reflected forward/up bases. Full original light
+properties remain in environment.json even where Unity has no equivalent.
+Sky energy .4, background energy1, source exposure1. Ambient source3 is SKY,
+sky contribution1, ambient energy .55; the source ambient color (.6,.72,.85)
+is retained separately. 2048 CPU spherical samples integrate every panorama
+pixel and feed Unity's directional-light L2 SH API, rather than a false flat sky.
+Source expfog density .0012, color(.48,.61,.69), energy1 and sky affect .18.
+Shader uses the pinned Godot panorama coordinate convention after Z reflection:
+Unity +Z => u0, +X => u.25, -Z => u.5, -X => u.75; +Y => v0.
+Raw top row is sampled at v0, so no texture flip/yaw is introduced.
+
+Qualified limits:
+No native/render/device run or shader compilation has occurred. Current world
+shader does not yet consume fog, local lights or shadow attenuation: this
+component supplies those real inputs; the world shader owner must enable them.
+Godot filmic tonemap mode2 is retained as metadata; no sky-only fake curve or
+global camera/postprocess mutation is introduced. Scene-wide filmic, full PBR,
+specular sky reflection convolution, Godot local attenuation/shadow filtering,
+pipeline additional-light budgets and exact irradiance convolution remain
+unmatched. Diffuse sky is a bounded L2 SH approximation. Root222943 untouched.
+
+Checks: python unity/Tools/PlayableR23/World/ValleyEnvironment/check.py
+Exact source bytes/manifest/light props and reflected bases; cardinal panorama
+mapping; sky energy-preserving quadrature (constant Lambert error<.0013);
+all16,384 exponent/mantissa combinations exact; all2,097,152 source pixels match
+an independent NumPy half expansion; malformed range rejection; installed
+Unity6000.6.8f1 API compilation with warnings as errors. No engine/GPU/device.
+
+Pinned primary Godot sources (exported engine commit ed1daf0bf...):
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/core/io/image.h
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/resources/environment.h
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/servers/rendering/renderer_rd/shaders/environment/sky.glsl
+https://github.com/godotengine/godot/blob/ed1daf0bf001b61586d9930840f2f1394092c079/scene/resources/3d/sky_material.cpp

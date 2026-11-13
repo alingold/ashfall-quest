@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "checks": 390,
+  "maps": [
+    {
+      "map": "alfa-aglae-souza",
+      "owners": 18,
+      "sourceMembers": 159,
+      "renderTriangles": 2168,
+      "collisionTriangles": 2168,
+      "patchedChunks": 12,
+      "unchangedChunks": 2132,
+      "existingOwnersPreserved": 930,
+      "bytes": 22511,
+      "sha256": "ae5c8e26f6be74d790ed1c8c1d72094aad1f4838455279a53bc25f1b0ed8ad65"
+    },
+    {
+      "map": "classic-bigbox-vr",
+      "owners": 18,
+      "sourceMembers": 159,
+      "renderTriangles": 2168,
+      "collisionTriangles": 2168,
+      "patchedChunks": 9,
+      "unchangedChunks": 271,
+      "existingOwnersPreserved": 0,
+      "bytes": 20613,
+      "sha256": "443c31a53e461ede2c4c2100b2eb201e560e21581c822134aad1f5386dfda141"
+    }
+  ],
+  "deltaBytes": 43124,
+  "sourceContentId": "da1db74984ea1b82a8b60b7cb8baae9d31dc5483f387fdcf105f3dd0a308895c",
+  "engineRun": false,
+  "deviceRun": false,
+  "geometryWrites": false,
+  "materialWrites": false
+}

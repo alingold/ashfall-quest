@@ -1,0 +1,35 @@
+{
+  "id": "archive:cold-hearted-gods-pitdevil",
+  "slug": "cold-hearted-gods-pitdevil",
+  "title": "COLD HEARTED",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/cold-hearted-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\cold-hearted-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "de3fab4119f34c9d9966c2bfeb65c79a0f63cf028e18e807b567b6743bdf15ec",
+  "cacheFingerprint": "b9ecbbeef4ea11f6ed0dbac659b93403e3a2fc3e84bda87a96395ce9940075ff",
+  "spawn": [
+    272.14,
+    40.78906039683826,
+    90.09
+  ],
+  "warmupSpawn": [
+    -74.58802,
+    294.0218249511719,
+    439.14124
+  ],
+  "chunks": 630,
+  "renderTriangles": 628337,
+  "collisionTriangles": 613221,
+  "payloadBytes": 56898636,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\cold-hearted-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

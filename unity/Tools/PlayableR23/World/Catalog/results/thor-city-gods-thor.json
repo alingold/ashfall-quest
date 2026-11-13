@@ -1,0 +1,35 @@
+{
+  "id": "archive:thor-city-gods-thor",
+  "slug": "thor-city-gods-thor",
+  "title": "THOR CITY",
+  "creator": "GODS_THOR",
+  "relativeFolder": "Maps/thor-city-gods-thor",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\thor-city-gods-thor\\source\\thumb.jpg",
+  "sourceSha256": "ee7d45ed854d134474e499b396fcef7af9a72a4c3c23829c53850c53aee0f6f1",
+  "cacheFingerprint": "0af52069fdbbd35bef8d700ee689c9faa0b54048a47af06711d9d23058500b47",
+  "spawn": [
+    83.79095458984398,
+    40.61984741210937,
+    -241.09778426320963
+  ],
+  "warmupSpawn": [
+    124.12684454666964,
+    176.1243986971727,
+    -103.63105773925804
+  ],
+  "chunks": 181,
+  "renderTriangles": 216573,
+  "collisionTriangles": 215941,
+  "payloadBytes": 19373317,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\thor-city-gods-thor",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

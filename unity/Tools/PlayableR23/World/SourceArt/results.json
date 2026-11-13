@@ -1,0 +1,1460 @@
+[
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "e85d94c675f6ece53ce7fd4877ddf4cc5b3cf733a8edb25e259ac826a002c6fb"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "609747084c9f5ee49b64d38051239a3094e9546d1d01ee89cd56ef477d074035"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "0069c627317ba1ac748a85daaea558db1e83111f0a10f8d7f2a05bd9ea5ce5e1"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "c31c58276d6fe49764e0e4f015dc7e0395183ac79d09a2738eba88bc8849b693"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "617fc4f99a1fd16884f4bdac6914a695d5585de6a932f319189e9c45ef062cd7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "98f4b12c0a58c9e4dcc1d7100b2d093366659ddb240546453bc1b0e2b7e5f03a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "1911609d6744195fffdf2f616fb70ce465e4b50f0c46fb9483febc9a52f8eafd"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "e2eff6decaf7433456a8c70c90d898c15d00d9a0fa178b34197a40f7b556a65d"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "2afaa060d2b1ea0b8cdb8993f192dee6a7be5919c012dd35ad48e967ceebfc7e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "a5b6d752f5ebe6817fc92e8a976ffe01dec53178243d505e8aa73240ca0b14ae"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "3de64142b72ed41fafcc0cf785688c8a0f85e4cece4b0044b600c5084d59e676"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "ef641748543cdb75a9d9adfd37829e82a7d843b834b0863adffe78e320667ab4"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "41e71e113f684867489fc872a9985f9ba188b023e844a5856bb561c4c797b3d1"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "40774a6faf42cafe447fa77968040e8d81bd1305c6aab81340db0aa579a3004a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "7064761c68d65ef8c9c957d61b0f5966f9e4677376a34424fd38c5c1d2406de6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "817718ad9ba47ba5428af547004fd0608db2014235f39dcdb6ea572e31867eb1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "7239f02453298986bc14cdcb635396b2e4adac659f3fe18571b32336a6e1d88c"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "96c209782c7f87c62b211a94d3c6cfa75a005d26adcdd74ba3e8b32af06b1341"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "bd1cb6312e6abfbcd45db75519e30ff3156ec19fe1b2b70d70db3cf565ea6d33"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "e24e282ed29c4d4647bb25a91ac09a1ee459c36df92bc98d245aed8eace11d9c"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "1398a2b9e38de40b05452d7bcae526924b7a23fc79c2f9fa5cf411c12292ca68"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "68182e2ea3e823bd30f465d64783596a7609e1d7f58dc61aec7be7b3930d89d6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "d18ff1449b2e661157c9c1b2c35422145bef751910d6037773de13e1fcb772af"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 624,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 84,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\r24-playtest-feedback-v001\\alpha-inspect-v001",
+    "mapId": "archive:alfa-aglae-souza",
+    "transferredTriangles": {
+      "container_r10": 624,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16461,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0025638206861913204,
+    "patches": 36,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "32fc5b48d4e056e3da22a86351b81680b313bf80802acf6469c2aaefbbc3f482"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "54e7e57470edeec011b6ea22e0ee8a659ca2a30e67eaf885b8703e00644f80ed"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "a6e5381fb918cee1e8420d49c7bfbeb356bf23bb4192de22876cba5c9ed9ac74"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "104ece752371c692a2627e79f364cb12e58a168944a2cf6d0b3ca541d6580c46"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "7edbdfd462bd6b3a6adf7aafc99dd42dad6461482a39243f25fbc8b613013f5c"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-3",
+        "sha256": "0148fbd71d4a7c8c967d3944a501e8f35792e3631142fd302f2f4b952ace8c26"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-2",
+        "sha256": "e931a6378599305ed6bcca1ad645ab5b2958c1dd1992c59a4dab607bd6e86c33"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "d30c9e634cdb40432198269d56d7af7c6923b66e56521c5bb3d4704bec088dbe"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "40788222f3a61985f79f5fb479715efed6deda759bb0681b6f4b6cf5ab1c32db"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "8669980d8f45dc48bd29b6bae256bbdfa7ba77e43a5688e41be318679d471a99"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "0d4fffe7a37abc95409627459fcff1098e0707bdd56074a9e94e779691371fb2"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "5748d93bb69237180a5aa49646022d10dfed60b7eaccef31a6e31d16b5c0146e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "6851904b59dd79bc33066ea0cc1fd6a9c449e86cc5867c71fc83dbb70faa896f"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "a79800c09a4e391790af447fb65d06600843cb27dc7846a9b44cab5ff13a5b73"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "78a92bc3c6021b69905b4587a9477195208836130e05e2d9b7da5ba1ac32be60"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "1380d1e9dd25b8c2b4a9afa36ce0a0544352c3d680e35a5d9f790b689c8b0fe6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "6978b8e63b3447b220c9f7acf7748a3fe82ac1949a4130d6f4bf4f8efcf10f97"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "f302be299b95000d0cfc73ef4468caf3ff2150a3fb0e5db4567740ec6e70b685"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "2e765d27a72ab8efe10b65f7f3e64d9df8a133708e2936cef460c033aa2267b7"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "54dff3e97da7f94a0bb913bbe0d48719612a62937effa3ab5039122dca8281fd"
+      }
+    ],
+    "sourceTriangles": {
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "tire_r10": 2400,
+      "container_end_panels": 48,
+      "wood_panels": 28,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "van": 98,
+      "banner": 20,
+      "sign": 16
+    },
+    "preparedR10Owners": {
+      "container_r10": 14,
+      "van_r10": 13,
+      "tire_r10": 11
+    },
+    "finalNativeArraysCompared": 88,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\r24-playtest-feedback-v001\\classic-inspect-v001",
+    "mapId": "archive:classic-bigbox-vr",
+    "transferredTriangles": {
+      "tire_r10": 2400,
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "container_end_panels": 48,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "wood_panels": 28,
+      "banner": 20,
+      "sign": 16,
+      "van": 98
+    },
+    "uniqueSourceTrianglesMatched": 16511,
+    "unmatchedSourceTriangles": 37,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0035263816826045513,
+    "patches": 22,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "0ec0ecf1cdecfd40c46b9e00f43f6e34720a1e326c8a68fb3ccfffadedd1cbee"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "98113e8fac57eaaf278ebf1246220a03543894253a69d6c5edb3333da4aaf505"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "c0695989993437cf310a403690bf955d64296f09fc063c85e3181799b29400d7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "e661a358fd3547b6faf3c08fe2190cd7445d26c69eace6c5c41c6c4e44689bd6"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "82f603f8e9919fc939bce84dd2970ffdfb5765cccf1ba29b824fb94e50548103"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "5abd23337eed2033bfe7e622e8199362e277f4c741b449d90b529bd1470a054a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "e2a17fa69a9580be96442f93533613a0b77b09a31205e02d4e3f4134eb11356c"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "65b4e1d2b92f328dc473de8f1a93cee4803bdd138824c60679a881c4dcde77f6"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "d1aa391d48ddf6b53ebb7d54952de0e22122eaf9844278ec0f05d8b39e34c2f6"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "7e088c8b47567656154cd87a5beaf57eb80cb4c1f5dc48818b75a3a622adf3ac"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "f9c248486596664b048fd820b2ecd5e2a40df5117e1c6922caf57052c0de3969"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "fa2133108b5ae0d2d27815fbaa00a5fac59b2446272e8d7f4f6af6b4762007a3"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "26bb88e4a7f6ab6782b1d62918b2dc6a4c76ef15f1df8b05fb7ef4237fd8985a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "c856efa2f7cda8690231d033776b79a83496e9a717e804cb4fa87b45826e3055"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "ac820d875402a8fe978dff6684e7fe1b3874fef946963b5614ebcc2bab9bd0b6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "c104d547f63f965a5db5b58aa06fda87470ee4e5d47b1e6e361a41a9226e48fa"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "dd66768bc63dfc662911932c288bae08125d2bd7741c5c71a1743fd90af68bb8"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "c79d29648aa295f1d46593cd4d6412393f6848aacd6eb3bb18c100899440c5a4"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "e3f5f77ea1c9449777edfa48f5c17968113b3afcf85822a3aabdf4af2398c5c6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "39259cfffa057b5e98e530dda0c8b4906a7c7887e5b330b6a57d57f5ee34d858"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "7a43bfaf8a36017c0eb8b380428652d655f8083c74cbe98cce688f1a347598a1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "6a6fce759106643b901d04e84fe16214cd987422a022855091a21c333f16fd7b"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "922bd150b7c56987fa812d9aec4a84e5bd6fc8e09ffe9f1b6ab3f45d1179bd13"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 624,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 85,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\bigbaby-classic-inspect",
+    "mapId": "archive:bigbabyjesuz-classic-kiki-80",
+    "transferredTriangles": {
+      "container_r10": 624,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16461,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0025638206861913204,
+    "patches": 24,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "b9b86df366628bb02eb57472336ba7100b586af6d687191118bf8f748d29f8af"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "1a1d4a2adbdc4dee5f0cda9709de6b20b8031efded7b8e3ae5917d7ca55ef7d7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "c0695989993437cf310a403690bf955d64296f09fc063c85e3181799b29400d7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "bee2992d6c4bb3d25c7810df070f5f0ad5bd8d3448fa2f984fc1888c6203aad3"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "30fd6c14d35147fe66fd753b8d143e30dceffffd44ba1f40ca58f3835486d534"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "e32b2697344d4d3eeac66dc7520698931cf01b68dc285d58612dd19b42fb4d14"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "b33cd65b012bc600fdd581140cf138fddab4d8e59e4d2df7adbd34f738bc8bac"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "ea41692bc2c59513966f5016c5f7f4767337cd5783eac8d41175c68ac1b20f14"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "d4a1988fe477002806a842e3e9b9f74d6a053819ff0f3d8987b3d91564feead8"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "5c4c9647ab24042f0a32ed348c7c6cc19d85f376571c7eb2f22cec5666682425"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "f9c248486596664b048fd820b2ecd5e2a40df5117e1c6922caf57052c0de3969"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "8df045e78833f85eac29a7d3709624ee216035eb2219d3c92c3e4927baacd78a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "632c1911850dc150629854f0682ae55d55b9caccacc30f3196bfd37ec01c5009"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "c856efa2f7cda8690231d033776b79a83496e9a717e804cb4fa87b45826e3055"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "9fe7ad9878d3ad7dfa94faa3011283839409e070f18895ff16cc179f748f28f0"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "79d826810cdbede37b568ffb7bb19e09bbe1be0a2ac74c3479aabe36f84fa6e1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "17e9cc6296e7f12b00760a37cd678dfbd9c6bf2339b789786a33554d1dec09f7"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "cf912289c3b00da56509402694e01216e8deb4c6ec48c980263467317fa7fe6f"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "e3f5f77ea1c9449777edfa48f5c17968113b3afcf85822a3aabdf4af2398c5c6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "09f38b887f4759dfb3b84aedd51e8bdc5562a007eaddcbd31cc40e2757887d77"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "1e93c77d383d0aacf0489659f83b2c90eb71f4ef77a97768dcc59632921fceb3"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "611cf07d9bc610f3ee3b080e14f2f926d2a5e12214e04eed758702ee904324b5"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "24ae7ebe101a02622d647139b43a954310be0958862c299c44f54bd2f2382444"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 624,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 85,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r4\\classic-bw-inspect",
+    "mapId": "archive:classic-bw-187norvis",
+    "transferredTriangles": {
+      "container_r10": 624,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16461,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0025638206861913204,
+    "patches": 24,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "40cb8d12c7b85e331c8072abc508685f2bde7a6cdd7a54ab3f9a60939872f757"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "924294039091d802cf4338c55e6ca4bebf7831e136b3bcc97d51cc86b186a50a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "650aa476ac4170c712cdb078d1de26a1fdaf01fb1e3fbf1e24ee1e3565e2dad0"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "1328f30ce1fe917f6fbfe6e307a8332f736baa86f4d893d91ac4c150537cc29a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "a2ce6bd4b309135d5337ba796e5cb06fc7149bbebf666e0ce8cc2ab5e6b9b170"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "029719236125972512bc22b943da0765a14c3b221fb003e2cd84dde9e69a7a09"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "3cf39c6458e147acec546ef0cd796bfbc156a94df1dc026fb9ea04ad01b6f080"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "d4262aff29bf43b05bc04211df6daea75df03ff0a7173246e4bdd8aec62d6794"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "7a515c97bee2e048c3d70200a55e9c1e935165681fd0e6598d8616e909e12778"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "69b28c6aafb3d528d0f23aa590c85b12aadb08d51e4b78fdac04e792cfb01356"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "b421d50b3546ebf04087027110795b468fb69f2e4ea97a1224cfd12e1a7e49a7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "7cf3361aeddf58bffc3dbd595fa62d0ad40782046317733ab66d24bdf3985ebb"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "d15a4d1e8064418926654dee85c55bd10f0e57e4dddb969b354cc0675ee388b1"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "c856efa2f7cda8690231d033776b79a83496e9a717e804cb4fa87b45826e3055"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "1f837ae62abd3368fe8805098075417864afe9bfb1d1a5d1e9a5bd8a0a7f2282"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "420d33fb547649068b5d128ba68041ad3584530d0d8a19075e109690be30c584"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "7cc097f7bb360e6f2d179beec87f947bc5741b551de9146564bdbc3eba94ae0b"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "6233ec1f38174897e62e66b569b4ec80707b07f3a0b2bf84c4dd013c19968827"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "d8253a42ba60724305c21ea048de1083e3a9bab6265da3e83a24b8c4048cfc25"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "d2d87677f10fa4e5a6bb9360a99ab20dffd12909dca25da058814b19b692bcf9"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "d882b0ee54aadc44f70b57478c0c9a7cdeedd8c9ed4da6fc6012479cc3dfb87f"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "bfe3cf27c45211a4ebd91257abf350fad4ce7f4507e0da83b3c9f7439a36cab1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "bd32c37d88702e24597c9ec7dce6a5caab46c42e24108e7458ce8980547330bc"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 612,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5209,
+      "van": 1594,
+      "junction": 115,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 86,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r4\\cont-cl-er-inspect",
+    "mapId": "archive:cont-cl-er-ssd-cjcoops",
+    "transferredTriangles": {
+      "container_r10": 612,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5209,
+      "van": 1594,
+      "junction": 115,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16488,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0034836274571716785,
+    "patches": 24,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "76b0576642ed7129d85ae50b881aba6be770c24a6430fa32a9e11548c93a68cd"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "09df75325a3188f67c9da0b9cd1a0b0d9f33227edf4de5b3418f598131b5e148"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "aa7ac7dc42cc2dee897fed830e3518a356b52b7fce9de86cd266bdc8b1b9f1d3"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "bf4acd4eb4712bfc9eb2cddc7a1346b18c0a6dc9f595a72f444ec67251ea1d82"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "3a2bc1fe1464af97eb73d6318ef6d4cb2ee1dee4e022e18fd847e128c93c016e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "34dec3bc9de3ce3231f2f5bd2d9e4e4293b1dd7351fcae987a28372504279fcb"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "e808e70d03b6bc05f51dd148db1d9aa75035e817f09bc3e08902f7fae5aeb21e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "05004a5702dd606fdc23aa5148d1452545bc4c5043e5196ab57fc28565e44375"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "7a515c97bee2e048c3d70200a55e9c1e935165681fd0e6598d8616e909e12778"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "e84b15846609d5dd25eb6f2ccbe636ed9f6a4a1cc6dd7c9cd1eecb07d7a24d82"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "58aae6c7c1b1dcce2b765c9f061dba416f4a39b962c43b30d7345c80cae2c18a"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "7cf3361aeddf58bffc3dbd595fa62d0ad40782046317733ab66d24bdf3985ebb"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "c41059443ff9bfc06bcf49118c3cba48e8421efdb9195e5f69077d9d59bc8a6e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "c856efa2f7cda8690231d033776b79a83496e9a717e804cb4fa87b45826e3055"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "a95a5f1d9dba7c3cd66a1f2dfa6270162abd5d7617f3b9488f9f026e86baa334"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "7d34ab6f7f0c778b054870c469afdff36d700a826ed14ab6ba1e3d41e6d3d7bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "b7b51037e4f45301ca416d751d224808801e45b5ed21f7b3a3e0ae80347c7ec0"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "fbadfcb42a3a40607ec15fe0382d17bd66300c3222cdadfa761249b73a0cd735"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "8150b271d08350f6cab5128a1924c7f2fdd7242a5e8528be97c2c0edd63d4bda"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "717ae0d0f701235dcf60b7c8fccd47c6f4f8ab07588e31fd4d5a20dc0297f1e2"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "a056083134441623038cb4c70b0e1768d8cc48f78ced5136a4595ceaca05e3aa"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "2d29facffb906e36b9b07126c475915ddc98b2bc8096b182b5bd5b2024a8dcb3"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "fd34a1b9dbff99c3564a620f923c67b933e1ffdfc034351b1e642a8db2f06234"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 612,
+      "van_r10": 5292,
+      "tire_r10": 1225,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5209,
+      "van": 1594,
+      "junction": 115,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 86,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\cont-cl-inspect",
+    "mapId": "archive:cont-cl-ssd-cjcoops",
+    "transferredTriangles": {
+      "container_r10": 612,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1225,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5209,
+      "van": 1594,
+      "junction": 115,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16413,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.003462625900283456,
+    "patches": 24,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "32fc5b48d4e056e3da22a86351b81680b313bf80802acf6469c2aaefbbc3f482"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "54e7e57470edeec011b6ea22e0ee8a659ca2a30e67eaf885b8703e00644f80ed"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "a6e5381fb918cee1e8420d49c7bfbeb356bf23bb4192de22876cba5c9ed9ac74"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "104ece752371c692a2627e79f364cb12e58a168944a2cf6d0b3ca541d6580c46"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "7edbdfd462bd6b3a6adf7aafc99dd42dad6461482a39243f25fbc8b613013f5c"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-3",
+        "sha256": "0148fbd71d4a7c8c967d3944a501e8f35792e3631142fd302f2f4b952ace8c26"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-2",
+        "sha256": "e931a6378599305ed6bcca1ad645ab5b2958c1dd1992c59a4dab607bd6e86c33"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "d30c9e634cdb40432198269d56d7af7c6923b66e56521c5bb3d4704bec088dbe"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "40788222f3a61985f79f5fb479715efed6deda759bb0681b6f4b6cf5ab1c32db"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "8669980d8f45dc48bd29b6bae256bbdfa7ba77e43a5688e41be318679d471a99"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "0d4fffe7a37abc95409627459fcff1098e0707bdd56074a9e94e779691371fb2"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "5748d93bb69237180a5aa49646022d10dfed60b7eaccef31a6e31d16b5c0146e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "6851904b59dd79bc33066ea0cc1fd6a9c449e86cc5867c71fc83dbb70faa896f"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "a79800c09a4e391790af447fb65d06600843cb27dc7846a9b44cab5ff13a5b73"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "78a92bc3c6021b69905b4587a9477195208836130e05e2d9b7da5ba1ac32be60"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "1380d1e9dd25b8c2b4a9afa36ce0a0544352c3d680e35a5d9f790b689c8b0fe6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "6978b8e63b3447b220c9f7acf7748a3fe82ac1949a4130d6f4bf4f8efcf10f97"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "f302be299b95000d0cfc73ef4468caf3ff2150a3fb0e5db4567740ec6e70b685"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "2e765d27a72ab8efe10b65f7f3e64d9df8a133708e2936cef460c033aa2267b7"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "54dff3e97da7f94a0bb913bbe0d48719612a62937effa3ab5039122dca8281fd"
+      }
+    ],
+    "sourceTriangles": {
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "tire_r10": 2400,
+      "container_end_panels": 48,
+      "wood_panels": 28,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "van": 98,
+      "banner": 20,
+      "sign": 16
+    },
+    "preparedR10Owners": {
+      "container_r10": 14,
+      "van_r10": 13,
+      "tire_r10": 11
+    },
+    "finalNativeArraysCompared": 88,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\evolving-inspect",
+    "mapId": "archive:evolving-map-bigbox",
+    "transferredTriangles": {
+      "tire_r10": 2400,
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "container_end_panels": 48,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "wood_panels": 28,
+      "banner": 20,
+      "sign": 16,
+      "van": 98
+    },
+    "uniqueSourceTrianglesMatched": 16511,
+    "unmatchedSourceTriangles": 37,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0035263816826045513,
+    "patches": 26,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "f7b2b73aaf4f6b1727199ad8301a80ef95b5add533897f83e2992847bb08f47f"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "e24bab82ed3a190bd5c885b5594bdb84fb22f9c808f6cb91aced4ab638dd1187"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "c0695989993437cf310a403690bf955d64296f09fc063c85e3181799b29400d7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-1",
+        "sha256": "ef648a279cfa1a7700c63f97b0bc018568940cb62a48e5e00263f8e7c4df7324"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "0bb9a268783cd116562da0251fb1a15eb3a19fb61d6724e7c708c4e748c7fcda"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-1",
+        "sha256": "e32b2697344d4d3eeac66dc7520698931cf01b68dc285d58612dd19b42fb4d14"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "e2a17fa69a9580be96442f93533613a0b77b09a31205e02d4e3f4134eb11356c"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "818353a3ffcdfca8d041fca881693c3b5f8f93184e34607dfec2fa462e5b8e57"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-3",
+        "sha256": "d1aa391d48ddf6b53ebb7d54952de0e22122eaf9844278ec0f05d8b39e34c2f6"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "7e088c8b47567656154cd87a5beaf57eb80cb4c1f5dc48818b75a3a622adf3ac"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "f9c248486596664b048fd820b2ecd5e2a40df5117e1c6922caf57052c0de3969"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "6fdb17da23699ce773ac1d07c3f15974e858ce704a5417b0a89e816344f9e6a5"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "d15a4d1e8064418926654dee85c55bd10f0e57e4dddb969b354cc0675ee388b1"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-3",
+        "sha256": "c856efa2f7cda8690231d033776b79a83496e9a717e804cb4fa87b45826e3055"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "6133e1b05b119db3378d14b10eaf3b0bf53472c6d0ae7029c29dce1e2fe7766f"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_-1",
+        "sha256": "b359a03bdd6062c4d342f793cee3416289401f4ea7a26b1b8af99ed16462afef"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_s39_-1_0",
+        "sha256": "90e7a8a972ba8d90af2c037900fa011dcfee047ffceefab62e3795cd097757bd"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "dc0a62c6fa0aa230bdfe4575d8443c1ee21b8af2c61d5d96dda1c00b7dcf437e"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "94614bc89b26bf9c966dcb2fdd24f9292c338a69e83f32d271e77a76fc5df200"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "b8631d9bdfe72f464b05aa9ad0474e828d9f3ca15450e050a33e9c086a1e2876"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "e3f5f77ea1c9449777edfa48f5c17968113b3afcf85822a3aabdf4af2398c5c6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "abb1143641c14075aefa113cdffd794692620966c498084fb02b32d142bfcce6"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "7a43bfaf8a36017c0eb8b380428652d655f8083c74cbe98cce688f1a347598a1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "6a6fce759106643b901d04e84fe16214cd987422a022855091a21c333f16fd7b"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "bd32c37d88702e24597c9ec7dce6a5caab46c42e24108e7458ce8980547330bc"
+      }
+    ],
+    "sourceTriangles": {
+      "container_r10": 624,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "container_end_panels": 636,
+      "wood_panels": 28,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "tire": 1248,
+      "truck": 624,
+      "banner": 26,
+      "sign": 32
+    },
+    "preparedR10Owners": {
+      "container_r10": 13,
+      "van_r10": 11,
+      "tire_r10": 6
+    },
+    "finalNativeArraysCompared": 85,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\statmaster-inspect",
+    "mapId": "archive:statmaster-classic-soulsmight",
+    "transferredTriangles": {
+      "container_r10": 624,
+      "container_end_panels": 636,
+      "van_r10": 5292,
+      "tire_r10": 1300,
+      "tire": 1248,
+      "truck": 624,
+      "wood_panels": 28,
+      "banner": 26,
+      "wood": 5171,
+      "van": 1594,
+      "junction": 114,
+      "sign": 32
+    },
+    "uniqueSourceTrianglesMatched": 16461,
+    "unmatchedSourceTriangles": 228,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0025638206861913204,
+    "patches": 24,
+    "geometryUntouched": true
+  },
+  {
+    "stageDigests": [
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "2c948aebb16ffce3a1473d055c3645346559b5a1953ca9d8d7a9806bb20a5e71"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_-2",
+        "sha256": "0b0d3e0477a3e2dc6e6f92201d3a866ab42cc91bd60b15fb61b7e6898c8d78c2"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "51159cc61975d684170468b662fe38e0434cfb1fbc8588da135038c33afe16b8"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "104ece752371c692a2627e79f364cb12e58a168944a2cf6d0b3ca541d6580c46"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "a75b0b18148537c872d2177ca27896449b3721d22f6dd4195790b485d254fc48"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-2_-3",
+        "sha256": "71e17da435e202384db99ad4e0771985e8502fddffd78b8d0f949ae1f6c7594e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_-3_-2",
+        "sha256": "e931a6378599305ed6bcca1ad645ab5b2958c1dd1992c59a4dab607bd6e86c33"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "c6d661e2a78c684149b970768ab2d129b785ce2431ef31665adeb54dea620d2b"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_-2",
+        "sha256": "0844b845bcbbf73fabe8d3daa3af2607781aea23da76e448a5e37d86de21b2a7"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "48cae74c6f9583bd56bada28a78490337f5d4ad96d55010a61c2fb8600adb87b"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_0_1",
+        "sha256": "0d4fffe7a37abc95409627459fcff1098e0707bdd56074a9e94e779691371fb2"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-1",
+        "sha256": "5748d93bb69237180a5aa49646022d10dfed60b7eaccef31a6e31d16b5c0146e"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_-2",
+        "sha256": "6851904b59dd79bc33066ea0cc1fd6a9c449e86cc5867c71fc83dbb70faa896f"
+      },
+      {
+        "stage": "r17",
+        "node": "Draw_world_vc_1_0",
+        "sha256": "09150dc365d4e3553fcfe57ccd2595969e78d3e6443f71f3bfe6638c11b18ad9"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_-1",
+        "sha256": "6e59bb32f6ad2d230648ce9ea77cd9d4c035e9bf2ed9df246fd2d24e8514edae"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_0",
+        "sha256": "0ebf1d47f764d778e45e50b769f11f1c0b49460e016a724c777764850a6bc75b"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-1_1",
+        "sha256": "6978b8e63b3447b220c9f7acf7748a3fe82ac1949a4130d6f4bf4f8efcf10f97"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_-2_-2",
+        "sha256": "bb6a6d22d69f382a3216dc35326d300ad555e8fb80966262ef734b1c66de3fd4"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_-1",
+        "sha256": "ce016081061eaf627aee02cd23c79572628cb93b4bcfced111e4947cc444b3d1"
+      },
+      {
+        "stage": "r19",
+        "node": "Draw_world_vc_0_0",
+        "sha256": "b03a344ea18950500d839d649b2e73ee2ade92f9b83ea29da1984c39e75f1d5c"
+      }
+    ],
+    "sourceTriangles": {
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "tire_r10": 2400,
+      "container_end_panels": 48,
+      "wood_panels": 28,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "van": 98,
+      "banner": 20,
+      "sign": 16
+    },
+    "preparedR10Owners": {
+      "container_r10": 14,
+      "van_r10": 13,
+      "tire_r10": 11
+    },
+    "finalNativeArraysCompared": 88,
+    "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\statmaster-evolving-inspect",
+    "mapId": "archive:statmaster-evolving-soulsmight",
+    "transferredTriangles": {
+      "tire_r10": 2400,
+      "van_r10": 5194,
+      "container_r10": 1476,
+      "container_end_panels": 48,
+      "wood": 4510,
+      "tire": 1744,
+      "truck": 1014,
+      "wood_panels": 28,
+      "banner": 20,
+      "sign": 16,
+      "van": 98
+    },
+    "uniqueSourceTrianglesMatched": 16511,
+    "unmatchedSourceTriangles": 37,
+    "ambiguousUnityTrianglesUnchanged": 0,
+    "maxCornerDistance": 0.0035263816826045513,
+    "patches": 26,
+    "geometryUntouched": true
+  }
+]

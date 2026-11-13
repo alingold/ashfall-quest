@@ -1,0 +1,35 @@
+{
+  "id": "archive:melis-cafe-gods-pitdevil",
+  "slug": "melis-cafe-gods-pitdevil",
+  "title": "MELIS CAFE",
+  "creator": "GODS_PITDEVIL",
+  "relativeFolder": "Maps/melis-cafe-gods-pitdevil",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\melis-cafe-gods-pitdevil\\source\\thumb.jpg",
+  "sourceSha256": "6c42e928f34a55ec6bd88f9b587c5bda53eece8c458351c8e33a3e6a74b4a61d",
+  "cacheFingerprint": "2348ab8b3b1c625289aeaa111ce4939568224527052f35b90fec1a86e6f5c319",
+  "spawn": [
+    275.08,
+    58.93702332333984,
+    -271.41
+  ],
+  "warmupSpawn": [
+    14.26438,
+    81.62244903564454,
+    -7.14123
+  ],
+  "chunks": 664,
+  "renderTriangles": 901716,
+  "collisionTriangles": 882848,
+  "payloadBytes": 76304306,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\melis-cafe-gods-pitdevil",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

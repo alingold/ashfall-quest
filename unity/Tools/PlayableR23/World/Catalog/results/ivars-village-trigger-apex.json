@@ -1,0 +1,35 @@
+{
+  "id": "archive:ivars-village-trigger-apex",
+  "slug": "ivars-village-trigger-apex",
+  "title": "IVARS VILLAGE",
+  "creator": "Trigger_APEX",
+  "relativeFolder": "Maps/ivars-village-trigger-apex",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ivars-village-trigger-apex\\source\\thumb.jpg",
+  "sourceSha256": "6389df2a132b4f6f11f9fa72074e3583de8f7548862fafde90dde1e8d0dae561",
+  "cacheFingerprint": "e92eeb8b42f8db67cf41b454a8159347387d0354f5bd0b930103f99b3d27deed",
+  "spawn": [
+    106.06,
+    0.12,
+    61.54
+  ],
+  "warmupSpawn": [
+    191.91,
+    43.475155944824216,
+    -4.64
+  ],
+  "chunks": 122,
+  "renderTriangles": 214297,
+  "collisionTriangles": 209273,
+  "payloadBytes": 20888901,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ivars-village-trigger-apex",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

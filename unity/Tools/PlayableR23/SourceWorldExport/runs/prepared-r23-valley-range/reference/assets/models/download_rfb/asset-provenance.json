@@ -1,0 +1,93 @@
+{
+  "id": "rfb",
+  "file": "rfb_rifle.glb",
+  "scale": 0.18681279737309267,
+  "anchor": [
+    0.2,
+    1.45708,
+    0
+  ],
+  "target": [
+    0,
+    0.045,
+    0.025
+  ],
+  "mag": [
+    2
+  ],
+  "bolt": [
+    6,
+    7
+  ],
+  "muzzle": [
+    0,
+    0.045,
+    -0.62
+  ],
+  "reflex_height": 0.165,
+  "rotation": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "offset": [
+    0.0,
+    -0.22720119079638584,
+    0.06236255947461854
+  ],
+  "source": "[local development path]",
+  "source_sha256": "6581a869f625c6718d90c9b88e9197afadb66ffa115e712442895f729eb77c70",
+  "output_sha256": "c9cec68e1cccb167e284dde208c149629d1aa7417c3340c85a12f5654a6078f5",
+  "asset": {
+    "author": "Pieter Ferreira (https://sketchfab.com/Badboy17Aiden)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/rfb-rifle-033c5e9169324b5ebb52d9f6c6b31285",
+    "title": "RFB RIFLE"
+  },
+  "magazine_center": [
+    1.3790532230347971e-05,
+    -0.0862811515715489,
+    0.21889231405060539
+  ],
+  "slide_home": [
+    0,
+    0.04,
+    -0.1
+  ],
+  "bolt_home": [
+    0.065,
+    0.064,
+    -0.1
+  ],
+  "source_triangles": 17294,
+  "body_triangles": 15716,
+  "magazine_triangles": 1058,
+  "moving_triangles": 520,
+  "moving_kind": "bolt",
+  "bounds_min": [
+    -0.032176767888069766,
+    -0.20110898326413287,
+    -0.62
+  ],
+  "bounds_max": [
+    0.032190557050424944,
+    0.12494077710801577,
+    0.4840323278347711
+  ],
+  "method": "Node transforms baked, uniformly fitted using inspected bore/grip landmarks. Connected magazine/floorplate separated. Source triangles partitioned exactly once; UVs, transformed normals and original materials/textures preserved. Existing gameplay ballistics/recoil retained; authored lightweight version selectable.",
+  "default_pose_skins_baked": 0,
+  "source_animations_not_used": 0,
+  "source_tangents_retained": true
+}

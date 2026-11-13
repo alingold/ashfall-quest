@@ -1,0 +1,35 @@
+{
+  "id": "archive:5-levels-zyro",
+  "slug": "5-levels-zyro",
+  "title": "5 LEVELS",
+  "creator": "zyro",
+  "relativeFolder": "Maps/5-levels-zyro",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\5-levels-zyro\\source\\thumb.jpg",
+  "sourceSha256": "2a5f30b621ed16c6e44526a2874e64406e12061ebaf4ad9856cc258772297b54",
+  "cacheFingerprint": "23d33a09bbcb4af61801319eab40801b37b0d73667e08a3c6cf9744618b84a38",
+  "spawn": [
+    21.79088,
+    143.75893127441407,
+    -12.88901
+  ],
+  "warmupSpawn": [
+    29.08,
+    114.5505419921875,
+    -18.19
+  ],
+  "chunks": 96,
+  "renderTriangles": 71981,
+  "collisionTriangles": 49327,
+  "payloadBytes": 9029897,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\5-levels-zyro",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

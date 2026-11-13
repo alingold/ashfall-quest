@@ -1,0 +1,35 @@
+{
+  "id": "archive:g0dtham-gods-poplightning",
+  "slug": "g0dtham-gods-poplightning",
+  "title": "G0DTHAM",
+  "creator": "GODS_POPLIGHTNING",
+  "relativeFolder": "Maps/g0dtham-gods-poplightning",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\g0dtham-gods-poplightning\\source\\thumb.jpg",
+  "sourceSha256": "46a3e69b394c4356f2fbb3e3bca9367f769d24c31b96cb9fa979098ce5eefd81",
+  "cacheFingerprint": "3f72c46ce6661473e869c654c0dbdcb71d99ff952dde80fe5775a0e9e847b2ed",
+  "spawn": [
+    175.76,
+    21.668849138698434,
+    -0.09
+  ],
+  "warmupSpawn": [
+    11.36557,
+    40.619984741210935,
+    -3.08991
+  ],
+  "chunks": 222,
+  "renderTriangles": 379652,
+  "collisionTriangles": 374224,
+  "payloadBytes": 32163282,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\g0dtham-gods-poplightning",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

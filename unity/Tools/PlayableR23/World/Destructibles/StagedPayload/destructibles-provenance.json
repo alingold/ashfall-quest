@@ -1,0 +1,33 @@
+{
+  "mapId": "archive:alfa-aglae-souza",
+  "originalGeometrySha256": "2ad46276bcdec115904b8891859c4da058d849c1f31e01e6972fc23b779e7987",
+  "geometrySha256": "b5163f787b8414e8ddca4b7c48c3a3bc435ddb8941a58d7c2f292502b5c37e89",
+  "sourceInputs": {
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_semantics_r8.gd": "857bbf458575af9407d4f969eb9b158683088dc1c89199c9ea57c5b91a9526e5",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_semantics_r9.gd": "a24e26762d5f3b4f03c498116e47d25099166f5ba837a4c1a86289208b0197b2",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_panel_r8.gd": "d151e86ef56db94f9fd00dca48150b367852fc7ec09349a64528c251e85a5fd6",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_passage_cut_r9.gd": "9594ec9c26895d251b70bbda26943e27b3c978e2d1727e02249fc1f53717862d",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_panel_batches_r17.gd": "6713b70895fb9e803739df00d4a5dba25f19427761d4d5beefe2d5c13a4d91ec",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\assets\\materials\\clear_glass_r10.gdshader": "870e6eab10deb52d4cd5209958ead6ff531c37620abc14abaf1b03616f18e1cd",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\assets\\data\\archive_semantics_r9.json": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\assets\\data\\map_semantics_r14.json": "d2eec08d77b134b10b0a0095a16f2fe4feb82139299b38eac7c84582d7d8a0b2",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\alfa-aglae-souza\\source\\map.glb": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994"
+  },
+  "panels": 930,
+  "glass": 730,
+  "doors": 200,
+  "panelTriangles": 42917,
+  "originalRenderTriangles": 1081459,
+  "originalCollisionTriangles": 1010520,
+  "staticRenderTriangles": 1065035,
+  "staticCollisionTriangles": 994096,
+  "basePanelRenderTrianglesRemoved": 23430,
+  "basePanelCollisionTrianglesRemoved": 23430,
+  "trimOriginalTrianglesCut": 13304,
+  "trimInsideFragments": 13687,
+  "chunks": 2144,
+  "elapsedSeconds": 58.545,
+  "engineRun": false,
+  "deviceRun": false,
+  "limits": "Exact connected components and pane/frame/door grouping plus source aperture clipping; no touch/melee/network triggers or shard FX are added by this bullet damage slice. Source first accepted hit retires each assembly regardless of positive damage magnitude."
+}

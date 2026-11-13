@@ -1,0 +1,37 @@
+﻿R24 R5 TOWER FIXTURES - native-index deltas, ownership released
+
+New payload files
+Maps/alfa-aglae-souza/tower-fixtures-r5.json
+Maps/classic-bigbox-vr/tower-fixtures-r5.json
+Both under StreamingAssets/PlayableR23, with new metas. No geometry.bytes, map.json, material, source-reference or historical build files modified. Root enables towerFixturesFile/runtime separately.
+
+Source binding
+Frozen SOURCE-CONTENT.json SHA256 d4fb1053acfbaa7f3eb285879472bfdd136e09bf2f7e1f2dc6478f23d8f12bc7
+R5 content da1db74984ea1b82a8b60b7cb8baae9d31dc5483f387fdcf105f3dd0a308895c
+Every catalog/runtime/helper/audio input recorded in sourceInputs verified against frozen manifest. Original raw map.glb files verified against catalog source_sha256.
+
+Positive result
+Each map:18 owners (8 tower_gate_grate +10 tower_mid_hatch),159 source member records covered,2168 render +2168 collision triangles.
+ALFA:12 patched/2132 unchanged chunks;2144 total; existing930 owners untouched. Base geometry653faa4d1100f4c8207f81cf292d5ab084fb5f95a5a39c98c1d65a43052dae2c.
+Classic:9 patched/271 unchanged chunks;280 total;0 existing owners. Base geometry5c6ab2878fb26f5f9a37521ac7d7d12d61c3514cc204648d515263dfd0d374b1.
+Total JSON43124 bytes (<8MiB).
+
+Runtime contract
+version1 / geometryVersion1. Bind baseGeometrySha256/baseChunks/basePanels/baseMaterialKeys. baseOwnershipSha256 = SHA256(little-endian int32 chunkPanelIds; absent Classic membership becomes all -1). Patched chunk vertexSha256/indexSha256 cover ORIGINAL raw byte spans before float reserialization/filtering.
+chunks[].staticTriangleRanges and parts[].triangleRanges are FLAT start,count pairs of ORIGINAL triangle ordinals: slice originalIndices[start*3 .. (start+count)*3]. Partition once before mesh creation. Keep native attributes/vertex references/winding/material/collisionFlags/visible. No added/clipped/moved triangles. Every original triangle goes exactly once to static or one owner part. Local owner0..17 becomes runtime basePanels+owner. Compact owned vertices by remapping existing indices only.
+definitions[] use R23ArchivePanelDefinition id/glass=false/health1/center/size/probe/normal. Probe is an actual owned triangle centroid; normal is reflected SOURCE normal. Extra source metadata fixtureKind/openingId/cardinal/sound/member IDs retained. Sound source res://assets/audio/sfx/r18/metal_grate.wav.
+
+ALFA split channel detail
+Original chunks271/273 are render-only64triangles each;272/275 collision-only64 each. Preserve flags. Register visual-only owner GameObjects with null collider so they hide on break; validate at least one REAL collider per owner. No placeholder collider or collision promotion. Visible and collision multisets independently conserve2168 source triangles.
+
+Adaptation / limits
+Raw GLB and cached source component topology differ slightly. ALFA six members are uniquely selected as WHOLE original triangles with exact expected count/AABB; joined raw components entirely/disjointly covered. Classic also adapts joins. One Classic frame is raw142 while catalog splits105+37 with overlapping AABBs; the individual boundary is not uniquely recoverable. The pair has IDENTICAL owner/material/role, so only this exact complete component is coalesced, preserving both source records and geometry:157 individually matched +2 explicitly coalesced /159 covered. No guessed105/37 allocation. All owner geometry/material areas remain exact.
+This JSON-only translation supplies the omitted tower class. Existing native owner provides positive bullet/explosion retirement/reset. Original auto-touch retirement, melee/network synchronization and metal-grate playback are not supplied by these files. Precise corner/hole cause remains unassigned; no filler/cut geometry generated.
+
+Validation
+python unity/Tools/PlayableR23/World/TowerFixtures/prepare.py
+python unity/Tools/PlayableR23/World/TowerFixtures/check.py
+390 source/index/material/owner/area/probe/conservation and real-delta overlap/out-of-range/missing/unknown-owner negative checks PASS. Selected base chunks all unowned. Per-channel/per-owner source geometry and material area conserved, zero misses/duplicates. No engine/render/GPU/device/Blender run; Root verifies native loader/render/break behavior.
+
+First actual partition example:
+{"chunk":35,"material":3,"materialKey":"s3","collisionFlags":1,"visible":1,"vertices":30865,"indices":51423,"indexSha256":"b404707dbaa92fee60f90df57717f9a0137113dc874b9f4004bee2ee8c7a64d9","vertexSha256":"de9a279bbfe31a294cad92d785bf1e88b3f1a5de236e6ae79005463335ecdd60","staticTriangleRanges":[0,2877,2881,1831,4716,88,4808,1619,6485,3966,10455,3879,14338,92,14434,2242,16728,413],"parts":[{"owner":2,"triangleRanges":[14334,4],"sourceMemberSpecs":[14,15],"triangles":4},{"owner":3,"triangleRanges":[14430,4],"sourceMemberSpecs":[21,22],"triangles":4},{"owner":4,"triangleRanges":[2877,4],"sourceMemberSpecs":[28,29],"triangles":4},{"owner":5,"triangleRanges":[10451,4],"sourceMemberSpecs":[35,36],"triangles":4},{"owner":6,"triangleRanges":[4804,4],"sourceMemberSpecs":[42,43],"triangles":4},{"owner":7,"triangleRanges":[4712,4],"sourceMemberSpecs":[49,50],"triangles":4},{"owner":8,"triangleRanges":[6427,14,16720,8],"sourceMemberSpecs":[65,66],"triangles":22},{"owner":9,"triangleRanges":[6441,22],"sourceMemberSpecs":[76],"triangles":22},{"owner":10,"triangleRanges":[6463,22],"sourceMemberSpecs":[86],"triangles":22},{"owner":11,"triangleRanges":[16676,22],"sourceMemberSpecs":[96],"triangles":22},{"owner":12,"triangleRanges":[16698,22],"sourceMemberSpecs":[106],"triangles":22}]}

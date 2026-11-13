@@ -1,0 +1,96 @@
+{
+  "source_baseline": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source",
+  "catalog": {
+    "pack": "C:\\Users\\aling\\Documents\\ashfall\\builds\\ASHFALL-Local-Maps.pck",
+    "entry": "local_archive/catalog.json",
+    "sha256": "e36ccca2a4a3237894bb05c9577c23822f0a3cd51622ef9864fc0134ed45bf58",
+    "entry_md5_verified": true
+  },
+  "resolver_sources": [
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\map_catalog1000.gd",
+      "sha256": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5"
+    },
+    {
+      "path": "C:\\Users\\aling\\Documents\\Codex\\2026-11-03\\ashfall-r23\\source\\scripts\\archive_catalog1003.gd",
+      "sha256": "6e7d4743b3845e44bb54babf8b5a9046108fbd68e111e7c88b5c1cafb609d3a7"
+    }
+  ],
+  "entries": [
+    {
+      "id": "archive:battlefield-paintball-gods-pitdevil",
+      "title": "BATTLEFIELD PAINTBALL",
+      "creator": "GODS_PITDEVIL",
+      "official": false,
+      "cache_fingerprint": "17a3c47f028fae76404f3aa12d8b9b905ae1306d6bb60ed0cc9357ad214ef76c",
+      "resource": "R23MapThumbnails/battlefield-paintball-gods-pitdevil",
+      "asset": "unity\\Assets\\Ashfall\\Integration\\Playable\\UI\\Resources\\R23MapThumbnails\\battlefield-paintball-gods-pitdevil.jpg",
+      "source_path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\battlefield-paintball-gods-pitdevil\\source\\thumb.jpg",
+      "pack_entry": "local_archive/maps/battlefield-paintball-gods-pitdevil/source/thumb.jpg",
+      "preferred_preview_present": false,
+      "sha256": "13ad4353532cd3a16930f3bca313e7c31a2b45ad96a5cb71efd9fcb3fe73a97d",
+      "bytes": 28074,
+      "dimensions": [
+        800,
+        450
+      ],
+      "receipt": {
+        "uri": "maps/battlefield-paintball-gods-pitdevil/thumb.jpg",
+        "bytes": 28074,
+        "sha256": "13ad4353532cd3a16930f3bca313e7c31a2b45ad96a5cb71efd9fcb3fe73a97d",
+        "etag": "\"6ad7bf4a-6daa\""
+      }
+    },
+    {
+      "id": "archive:alfa-aglae-souza",
+      "title": "ALFA",
+      "creator": "aglae_souza",
+      "official": false,
+      "cache_fingerprint": "4bdb9eb629b352982c4d161ea9937b33eb320df341f56146970c0a5fbf56ca92",
+      "resource": "R23MapThumbnails/alfa-aglae-souza",
+      "asset": "unity\\Assets\\Ashfall\\Integration\\Playable\\UI\\Resources\\R23MapThumbnails\\alfa-aglae-souza.jpg",
+      "source_path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\alfa-aglae-souza\\source\\thumb.jpg",
+      "pack_entry": "local_archive/maps/alfa-aglae-souza/source/thumb.jpg",
+      "preferred_preview_present": false,
+      "sha256": "dfc307f70e3a6c4d32eb2812d632cbc5615256f714fbc2d6e67a6cfe813b3023",
+      "bytes": 53567,
+      "dimensions": [
+        800,
+        450
+      ],
+      "receipt": {
+        "uri": "maps/alfa-aglae-souza/thumb.jpg",
+        "bytes": 53567,
+        "sha256": "dfc307f70e3a6c4d32eb2812d632cbc5615256f714fbc2d6e67a6cfe813b3023",
+        "etag": "\"6adaba35-d13f\""
+      }
+    },
+    {
+      "id": "archive:classic-bigbox-vr",
+      "title": "Classic",
+      "creator": "BigBox VR",
+      "official": true,
+      "cache_fingerprint": "f720f430ea1b84a6c32a3c7d8723859db193982bd6570f32562646a6a716c10a",
+      "resource": "R23MapThumbnails/classic-bigbox-vr",
+      "asset": "unity\\Assets\\Ashfall\\Integration\\Playable\\UI\\Resources\\R23MapThumbnails\\classic-bigbox-vr.jpg",
+      "source_path": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\classic-bigbox-vr\\source\\thumb.jpg",
+      "pack_entry": "local_archive/maps/classic-bigbox-vr/source/thumb.jpg",
+      "preferred_preview_present": false,
+      "sha256": "604ee40cdbee0382a45a747f156a8b69a2fe0aef47cb6eb24a50d01382617849",
+      "bytes": 56577,
+      "dimensions": [
+        800,
+        450
+      ],
+      "receipt": {
+        "uri": "maps/classic-bigbox-vr/thumb.jpg",
+        "bytes": 56577,
+        "sha256": "604ee40cdbee0382a45a747f156a8b69a2fe0aef47cb6eb24a50d01382617849",
+        "etag": "\"6ad348a2-dd01\""
+      }
+    }
+  ],
+  "conversion": "None: byte-identical original source JPEGs. Existing Unity UI applies source card center-crop.",
+  "missing_genuine_previews": [],
+  "engine_or_device_run": false
+}

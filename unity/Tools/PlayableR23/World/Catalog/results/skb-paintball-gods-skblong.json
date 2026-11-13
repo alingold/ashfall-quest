@@ -1,0 +1,35 @@
+{
+  "id": "archive:skb-paintball-gods-skblong",
+  "slug": "skb-paintball-gods-skblong",
+  "title": "SKB PAINTBALL",
+  "creator": "GODS_SKBLong",
+  "relativeFolder": "Maps/skb-paintball-gods-skblong",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\skb-paintball-gods-skblong\\source\\thumb.jpg",
+  "sourceSha256": "cd5aaaa7de37a9077a39283ffecd560e1cf56f087ac5e6a20096834ad0dbbdb8",
+  "cacheFingerprint": "68390f92cd69204e09c4ef38543e7b6c023db21c0ff12c85de9313932dbb01fd",
+  "spawn": [
+    -105.68,
+    92.36998474121094,
+    309.94
+  ],
+  "warmupSpawn": [
+    7.78578,
+    92.11928952900249,
+    18.79994
+  ],
+  "chunks": 151,
+  "renderTriangles": 110358,
+  "collisionTriangles": 106492,
+  "payloadBytes": 16704561,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\skb-paintball-gods-skblong",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

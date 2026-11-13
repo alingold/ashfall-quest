@@ -1,0 +1,35 @@
+{
+  "id": "archive:candle-magic-gods-goodwitch",
+  "slug": "candle-magic-gods-goodwitch",
+  "title": "CANDLE MAGIC",
+  "creator": "GODS_GoodWitch",
+  "relativeFolder": "Maps/candle-magic-gods-goodwitch",
+  "preview": "preview.png",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\candle-magic-gods-goodwitch\\converted\\preview.png",
+  "sourceSha256": "6fe3c4ef99a28bec532fff0711ca7981838b6c5961541a1152bd2794bf2577ab",
+  "cacheFingerprint": "b7874a2060c7f7ec78eb6e9f0527d2f2b1d2033aa35c7d22535eb94149d360d6",
+  "spawn": [
+    -149.32,
+    280.57156860351563,
+    200.66
+  ],
+  "warmupSpawn": [
+    -139.72048,
+    311.8078662109375,
+    201.30052
+  ],
+  "chunks": 186,
+  "renderTriangles": 322997,
+  "collisionTriangles": 238079,
+  "payloadBytes": 26284357,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\candle-magic-gods-goodwitch",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

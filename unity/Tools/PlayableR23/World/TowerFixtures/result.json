@@ -1,0 +1,186 @@
+{
+  "sourceContentId": "da1db74984ea1b82a8b60b7cb8baae9d31dc5483f387fdcf105f3dd0a308895c",
+  "frozenManifestSha256": "d4fb1053acfbaa7f3eb285879472bfdd136e09bf2f7e1f2dc6478f23d8f12bc7",
+  "maps": [
+    {
+      "mapId": "archive:alfa-aglae-souza",
+      "sourceSpecs": 159,
+      "matchedSourceSpecs": 159,
+      "coveredSourceSpecs": 159,
+      "coalescedSourceSpecs": 0,
+      "definitions": 18,
+      "gateOwners": 8,
+      "hatchOwners": 10,
+      "sourceTriangles": 2168,
+      "renderTriangles": 2168,
+      "collisionTriangles": 2168,
+      "affectedChunks": 12,
+      "nativeTriangleSlotsPartitioned": 2296,
+      "existingOwnedChunksSelected": [],
+      "materialSurfaceAreas": {
+        "s3": 898.9435185959012,
+        "s15": 595.9289110817354,
+        "s23": 6.234366276417859,
+        "vc": 231.20871543436544
+      },
+      "baseGeometrySha256": "653faa4d1100f4c8207f81cf292d5ab084fb5f95a5a39c98c1d65a43052dae2c",
+      "baseChunks": 2144,
+      "basePanels": 930,
+      "staticAndOwnedIndexConservation": true,
+      "positionExactSourceMatch": true,
+      "renderAndCollisionNoMissesOrDuplicates": true,
+      "rawComponentAdaptations": [
+        {
+          "batch": [
+            "world",
+            "s3",
+            -1,
+            -1
+          ],
+          "rawComponentTriangles": 22,
+          "sourceMemberSpecs": [
+            65,
+            66
+          ],
+          "sourceMemberTriangles": [
+            14,
+            8
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": false
+        },
+        {
+          "batch": [
+            "world",
+            "vc",
+            -1,
+            0
+          ],
+          "rawComponentTriangles": 2,
+          "sourceMemberSpecs": [
+            148,
+            154
+          ],
+          "sourceMemberTriangles": [
+            1,
+            1
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": false
+        },
+        {
+          "batch": [
+            "world",
+            "vc",
+            -1,
+            0
+          ],
+          "rawComponentTriangles": 2,
+          "sourceMemberSpecs": [
+            150,
+            156
+          ],
+          "sourceMemberTriangles": [
+            1,
+            1
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": false
+        }
+      ]
+    },
+    {
+      "mapId": "archive:classic-bigbox-vr",
+      "sourceSpecs": 159,
+      "matchedSourceSpecs": 157,
+      "coveredSourceSpecs": 159,
+      "coalescedSourceSpecs": 2,
+      "definitions": 18,
+      "gateOwners": 8,
+      "hatchOwners": 10,
+      "sourceTriangles": 2168,
+      "renderTriangles": 2168,
+      "collisionTriangles": 2168,
+      "affectedChunks": 9,
+      "nativeTriangleSlotsPartitioned": 2168,
+      "existingOwnedChunksSelected": [],
+      "materialSurfaceAreas": {
+        "s2": 898.9435185959013,
+        "s14": 595.9289110817354,
+        "s10": 6.234366276417859,
+        "vc": 231.2087154343654
+      },
+      "baseGeometrySha256": "5c6ab2878fb26f5f9a37521ac7d7d12d61c3514cc204648d515263dfd0d374b1",
+      "baseChunks": 280,
+      "basePanels": 0,
+      "staticAndOwnedIndexConservation": true,
+      "positionExactSourceMatch": true,
+      "renderAndCollisionNoMissesOrDuplicates": true,
+      "rawComponentAdaptations": [
+        {
+          "batch": [
+            "world",
+            "vc",
+            -1,
+            0
+          ],
+          "rawComponentTriangles": 2,
+          "sourceMemberSpecs": [
+            137,
+            143
+          ],
+          "sourceMemberTriangles": [
+            1,
+            1
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": false
+        },
+        {
+          "batch": [
+            "world",
+            "s14",
+            -1,
+            -1
+          ],
+          "rawComponentTriangles": 142,
+          "sourceMemberSpecs": [
+            147,
+            148
+          ],
+          "sourceMemberTriangles": [
+            105,
+            37
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": true
+        },
+        {
+          "batch": [
+            "world",
+            "s2",
+            -1,
+            -1
+          ],
+          "rawComponentTriangles": 22,
+          "sourceMemberSpecs": [
+            157,
+            158
+          ],
+          "sourceMemberTriangles": [
+            14,
+            8
+          ],
+          "exactWholeComponentConserved": true,
+          "coalescedSameOwnerMaterialRole": false
+        }
+      ]
+    }
+  ],
+  "deltaBytes": 43124,
+  "elapsedSeconds": 1.791,
+  "engineRun": false,
+  "deviceRun": false,
+  "geometryModified": false,
+  "materialsModified": false
+}

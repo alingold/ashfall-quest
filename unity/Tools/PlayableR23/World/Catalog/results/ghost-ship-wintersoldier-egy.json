@@ -1,0 +1,35 @@
+{
+  "id": "archive:ghost-ship-wintersoldier-egy",
+  "slug": "ghost-ship-wintersoldier-egy",
+  "title": "GHOST SHIP",
+  "creator": "WinterSoldier_EGY",
+  "relativeFolder": "Maps/ghost-ship-wintersoldier-egy",
+  "preview": "preview.jpg",
+  "sourcePreview": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\ghost-ship-wintersoldier-egy\\source\\thumb.jpg",
+  "sourceSha256": "523184bf0cdd424ee7f88e9e159c86c2cd68c1b3dcba3b2f0451692ce1630290",
+  "cacheFingerprint": "2a2c03586d5f6340db12da7f166810d9b3565ea9e91cf8d9a40968caaf09dbe6",
+  "spawn": [
+    9.09,
+    65.61913510748255,
+    -76.86
+  ],
+  "warmupSpawn": [
+    -64.08,
+    91.26781695581025,
+    -275.12
+  ],
+  "chunks": 103,
+  "renderTriangles": 280106,
+  "collisionTriangles": 278507,
+  "payloadBytes": 21835494,
+  "published": true,
+  "destination": "C:\\Users\\aling\\Documents\\ashfall\\unity\\Assets\\StreamingAssets\\PlayableR23\\Maps\\ghost-ship-wintersoldier-egy",
+  "nativeValidated": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ]
+}

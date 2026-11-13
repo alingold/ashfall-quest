@@ -1,0 +1,212 @@
+{
+  "passed": true,
+  "sourceImage": "D:\\ashfall-r6-staging\\world\\native\\alpha-junction-reference-v001\\godot-alpha-junction-source-match.png",
+  "sourceImageSha256": "a4fa9e05cc16f94705bc2a00359f636a328bb44d69d1e8798f02092c22182c8b",
+  "capturedUnityImage": "C:\\Users\\aling\\Documents\\ashfall\\docs\\agent-runs\\20261104-three-chats\\unity\\playable-r23\\floor-20261105-131532\\unity-archive-alfa-aglae-souza-junction-source-match.png",
+  "capturedUnityImageSha256": "3179f71a92ab527dc869e882c924d9e449a327b46dab066f2dee71d0f4636052",
+  "capturedPlan": "D:\\ashfall-unity-builds\\parity-r6-20261105-1945\\freeze-melee-pose-fix\\source\\Assets\\StreamingAssets\\PlayableR23\\SourceArt\\alfa-aglae-souza.json",
+  "capturedPlanSha256": "b05c84934698c8a4d69ea372fa960fc66bd5bd0794806c0a8708cbb3fe0305de",
+  "currentPlanSha256": "96e68fc63598713df5d2a98a65c5ad4d30aded3caafa9cf599f033ac335e8e8f",
+  "geometrySha256": "653faa4d1100f4c8207f81cf292d5ab084fb5f95a5a39c98c1d65a43052dae2c",
+  "samples": [
+    {
+      "label": "already-correct-upper",
+      "pixel": [
+        600,
+        240
+      ],
+      "sourceRgb": [
+        208,
+        216,
+        215
+      ],
+      "capturedUnityRgb": [
+        232,
+        247,
+        244
+      ],
+      "capturedKind": "junction",
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": null,
+      "chunk": 277,
+      "triangle": 1360,
+      "distance": 34.35605080298077,
+      "point": [
+        -152.4537171463532,
+        20.528747558593746,
+        -51.24330082549154
+      ]
+    },
+    {
+      "label": "already-correct-center",
+      "pixel": [
+        600,
+        360
+      ],
+      "sourceRgb": [
+        106,
+        116,
+        120
+      ],
+      "capturedUnityRgb": [
+        108,
+        118,
+        123
+      ],
+      "capturedKind": "junction",
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": null,
+      "chunk": 277,
+      "triangle": 1360,
+      "distance": 32.71611545994182,
+      "point": [
+        -152.4531079866774,
+        20.528747558593754,
+        -56.938211326647625
+      ]
+    },
+    {
+      "label": "already-correct-lower",
+      "pixel": [
+        600,
+        520
+      ],
+      "sourceRgb": [
+        103,
+        112,
+        117
+      ],
+      "capturedUnityRgb": [
+        104,
+        113,
+        118
+      ],
+      "capturedKind": "junction",
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": null,
+      "chunk": 277,
+      "triangle": 1360,
+      "distance": 32.001303005650165,
+      "point": [
+        -152.45234376411662,
+        20.528747558593754,
+        -64.08277335083656
+      ]
+    },
+    {
+      "label": "missing-left-marking",
+      "pixel": [
+        500,
+        360
+      ],
+      "sourceRgb": [
+        208,
+        216,
+        214
+      ],
+      "capturedUnityRgb": [
+        110,
+        114,
+        117
+      ],
+      "capturedKind": null,
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": "AlphaJunctionRoadFacesR24_0",
+      "chunk": 273,
+      "triangle": 5152,
+      "distance": 33.02472393930454,
+      "point": [
+        -147.92617617860031,
+        20.528747558593746,
+        -56.93821132664762
+      ]
+    },
+    {
+      "label": "missing-upper-left-marking",
+      "pixel": [
+        530,
+        240
+      ],
+      "sourceRgb": [
+        209,
+        217,
+        215
+      ],
+      "capturedUnityRgb": [
+        112,
+        116,
+        119
+      ],
+      "capturedKind": null,
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": "AlphaJunctionRoadFacesR24_0",
+      "chunk": 273,
+      "triangle": 5152,
+      "distance": 34.50762729996717,
+      "point": [
+        -149.19958252608504,
+        20.528747558593746,
+        -51.24330082549154
+      ]
+    },
+    {
+      "label": "missing-upper-right-marking",
+      "pixel": [
+        650,
+        240
+      ],
+      "sourceRgb": [
+        208,
+        216,
+        214
+      ],
+      "capturedUnityRgb": [
+        114,
+        118,
+        121
+      ],
+      "capturedKind": null,
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": "AlphaJunctionRoadFacesR24_0",
+      "chunk": 273,
+      "triangle": 5154,
+      "distance": 34.43615879978215,
+      "point": [
+        -154.77809901797332,
+        20.528747558593754,
+        -51.243300825491545
+      ]
+    },
+    {
+      "label": "flat-right-flank",
+      "pixel": [
+        700,
+        480
+      ],
+      "sourceRgb": [
+        96,
+        105,
+        109
+      ],
+      "capturedUnityRgb": [
+        111,
+        114,
+        118
+      ],
+      "capturedKind": null,
+      "currentKind": "junction",
+      "exactAdditionalSourceOwner": "AlphaJunctionRoadFacesR24_0",
+      "chunk": 273,
+      "triangle": 5154,
+      "distance": 32.335765719845334,
+      "point": [
+        -156.86385252502805,
+        20.52874755859375,
+        -62.34224747428102
+      ]
+    }
+  ],
+  "finding": "Raw277/1360 is already correctly drawn at the three formerly mislabeled samples. Actual flat gray flanks and missing white markings bind to the additional28 ALFA source road faces, absent in this capture and present in the released candidate. No projection/mask/material fix to277/1360 is justified.",
+  "nativeCandidateVisualConfirmationPending": true,
+  "assetsWritten": false
+}

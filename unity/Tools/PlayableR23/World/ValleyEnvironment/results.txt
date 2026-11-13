@@ -1,0 +1,7 @@
+PASS exact original 8,388,608 HDR bytes; source RGBE9995 retains RGB maxima6.6875/5.875/4.9375, implicit alpha1
+PASS one directional and13 local lights: exact source properties, energy/color, reflected world positions and forward/up bases
+PASS reflected Godot cardinal panorama directions, top-row V convention;2048 source-energy-preserving ambient samples, constant-radiance Lambert error<.0013
+PASS all 16,384 shared-exponent/mantissa combinations expand exactly to half, alpha1
+PASS malformed HDR/range inputs rejected
+PASS all2,097,152 panorama pixels losslessly expand to half; native C# fallback bytes match independent NumPy hash
+PASS installed Unity6000.6.8f1 API compile with warnings as errors; no engine/shader compiler/GPU/device run

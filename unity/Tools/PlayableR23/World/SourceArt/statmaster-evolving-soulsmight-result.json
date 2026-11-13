@@ -1,0 +1,144 @@
+{
+  "stageDigests": [
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-1_-1",
+      "sha256": "2c948aebb16ffce3a1473d055c3645346559b5a1953ca9d8d7a9806bb20a5e71"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-1_-2",
+      "sha256": "0b0d3e0477a3e2dc6e6f92201d3a866ab42cc91bd60b15fb61b7e6898c8d78c2"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-1_0",
+      "sha256": "51159cc61975d684170468b662fe38e0434cfb1fbc8588da135038c33afe16b8"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-1_1",
+      "sha256": "104ece752371c692a2627e79f364cb12e58a168944a2cf6d0b3ca541d6580c46"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-2_-2",
+      "sha256": "a75b0b18148537c872d2177ca27896449b3721d22f6dd4195790b485d254fc48"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-2_-3",
+      "sha256": "71e17da435e202384db99ad4e0771985e8502fddffd78b8d0f949ae1f6c7594e"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_-3_-2",
+      "sha256": "e931a6378599305ed6bcca1ad645ab5b2958c1dd1992c59a4dab607bd6e86c33"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_0_-1",
+      "sha256": "c6d661e2a78c684149b970768ab2d129b785ce2431ef31665adeb54dea620d2b"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_0_-2",
+      "sha256": "0844b845bcbbf73fabe8d3daa3af2607781aea23da76e448a5e37d86de21b2a7"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_0_0",
+      "sha256": "48cae74c6f9583bd56bada28a78490337f5d4ad96d55010a61c2fb8600adb87b"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_0_1",
+      "sha256": "0d4fffe7a37abc95409627459fcff1098e0707bdd56074a9e94e779691371fb2"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_1_-1",
+      "sha256": "5748d93bb69237180a5aa49646022d10dfed60b7eaccef31a6e31d16b5c0146e"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_1_-2",
+      "sha256": "6851904b59dd79bc33066ea0cc1fd6a9c449e86cc5867c71fc83dbb70faa896f"
+    },
+    {
+      "stage": "r17",
+      "node": "Draw_world_vc_1_0",
+      "sha256": "09150dc365d4e3553fcfe57ccd2595969e78d3e6443f71f3bfe6638c11b18ad9"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_-1_-1",
+      "sha256": "6e59bb32f6ad2d230648ce9ea77cd9d4c035e9bf2ed9df246fd2d24e8514edae"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_-1_0",
+      "sha256": "0ebf1d47f764d778e45e50b769f11f1c0b49460e016a724c777764850a6bc75b"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_-1_1",
+      "sha256": "6978b8e63b3447b220c9f7acf7748a3fe82ac1949a4130d6f4bf4f8efcf10f97"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_-2_-2",
+      "sha256": "bb6a6d22d69f382a3216dc35326d300ad555e8fb80966262ef734b1c66de3fd4"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_0_-1",
+      "sha256": "ce016081061eaf627aee02cd23c79572628cb93b4bcfced111e4947cc444b3d1"
+    },
+    {
+      "stage": "r19",
+      "node": "Draw_world_vc_0_0",
+      "sha256": "b03a344ea18950500d839d649b2e73ee2ade92f9b83ea29da1984c39e75f1d5c"
+    }
+  ],
+  "sourceTriangles": {
+    "van_r10": 5194,
+    "container_r10": 1476,
+    "tire_r10": 2400,
+    "container_end_panels": 48,
+    "wood_panels": 28,
+    "wood": 4510,
+    "tire": 1744,
+    "truck": 1014,
+    "van": 98,
+    "banner": 20,
+    "sign": 16
+  },
+  "preparedR10Owners": {
+    "container_r10": 14,
+    "van_r10": 13,
+    "tire_r10": 11
+  },
+  "finalNativeArraysCompared": 88,
+  "exactNativeExport": "C:\\Users\\aling\\Documents\\ashfall\\campaign-staging\\20261104-three-chats\\world\\morning-r5\\r5\\statmaster-evolving-inspect",
+  "mapId": "archive:statmaster-evolving-soulsmight",
+  "transferredTriangles": {
+    "tire_r10": 2400,
+    "van_r10": 5194,
+    "container_r10": 1476,
+    "container_end_panels": 48,
+    "wood": 4510,
+    "tire": 1744,
+    "truck": 1014,
+    "wood_panels": 28,
+    "banner": 20,
+    "sign": 16,
+    "van": 98
+  },
+  "uniqueSourceTrianglesMatched": 16511,
+  "unmatchedSourceTriangles": 37,
+  "ambiguousUnityTrianglesUnchanged": 0,
+  "maxCornerDistance": 0.0035263816826045513,
+  "patches": 26,
+  "geometryUntouched": true
+}

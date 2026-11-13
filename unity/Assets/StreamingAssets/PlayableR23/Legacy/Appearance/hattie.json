@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "hattie",
+  "label": "Hattie",
+  "sourceIndex": 11,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-0008471cd7ef824e16745a04.png",
+      "normal": "r5-normal-00565355b2f97ac2571146c1.png",
+      "metallicMap": "r5-metallic-b967280d13553f86194c79d8.png",
+      "occlusion": "r5-occlusion-37f5c08870b7585001f7c29e.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-353158c7aff656c84964d07a.png",
+      "normal": "r5-normal-51ba5c2ff325f7e294ecdf32.png",
+      "metallicMap": "r5-metallic-38ba4ecbf48d289d0dddda52.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

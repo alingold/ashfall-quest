@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "roy_daring",
+  "label": "Roy (Daring)",
+  "sourceIndex": 30,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-0100e90a9989824f9cbd53cf.png",
+      "normal": "r5-normal-4bfa9b7c5182bcc638f358e7.png",
+      "metallicMap": "r5-metallic-5726fe44d2e968732e378627.png",
+      "occlusion": "r5-occlusion-3556d93d36a60d513d117cd4.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-56b4cc5b1eb8fe086f8d7203.png",
+      "normal": "r5-normal-7bcf326c97ec220674b13f73.png",
+      "metallicMap": "r5-metallic-0c667d14902dccddc5a8965d.png",
+      "occlusion": "r5-occlusion-7f1b11f1017350648b1e501d.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

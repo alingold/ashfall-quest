@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "ace_sergeant",
+  "label": "Ace (Sergeant)",
+  "sourceIndex": 26,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-de2bbf543ba03cf68914bee7.png",
+      "normal": "r5-normal-0ac3f8d4168e8a2c985efa49.png",
+      "metallicMap": "r5-metallic-aca5a91deee14b36981e314a.png",
+      "occlusion": "r5-occlusion-5d95ad736ebaca702b070cf5.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-f300b50e25352dc43127e758.png",
+      "normal": "r5-normal-b1650ee784027d80e7e22d84.png",
+      "metallicMap": "r5-metallic-de4b67fe8718bace9ee9b8a6.png",
+      "occlusion": "r5-occlusion-0b2e093504e9e3311b4cdee8.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

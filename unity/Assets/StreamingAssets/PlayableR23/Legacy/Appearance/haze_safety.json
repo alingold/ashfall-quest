@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "id": "haze_safety",
+  "label": "Haze (Safety) (Draft)",
+  "sourceIndex": 101,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 9,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        0.09084171056747437,
+        0.1119324266910553,
+        0.11953842639923096,
+        1
+      ],
+      "metallic": 0.25,
+      "roughness": 0.4699999988079071,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.22322796285152435,
+        0.2917706370353699,
+        0.30946892499923706,
+        1
+      ],
+      "metallic": 0.6499999761581421,
+      "roughness": 0.3799999952316284,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.014443843625485897,
+        0.024157632142305374,
+        0.024157632142305374,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.550000011920929,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.006048833020031452,
+        0.010960093699395657,
+        0.014443843625485897,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.7699999809265137,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.9301108717918396,
+        0.1441284716129303,
+        0.0018211619462817907,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.38999998569488525,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.4793201684951782,
+        0.06847816705703735,
+        0.0030352699104696512,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6399999856948853,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.03433980792760849,
+        0.23839756846427917,
+        0.10224173218011856,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.3400000035762787,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.01850022003054619,
+        0.023153366521000862,
+        0.02518685907125473,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.7200000286102295,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.01850022003054619,
+        0.022173885256052017,
+        0.023153366521000862,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.8299999833106995,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.8879231214523315,
+        0.13563333451747894,
+        0.0030352699104696512,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6800000071525574,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.045186202973127365,
+        0.28314873576164246,
+        0.0666259378194809,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.41999998688697815,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

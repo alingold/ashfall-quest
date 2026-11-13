@@ -1,0 +1,94 @@
+{
+  "mapId": "archive:evolving-map-bigbox",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "f5b9c42f6f00a6ce7c3f37efe9929fe6c7d11984561920eb62105e8cad082903",
+    "cache_fingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+    "warmup": [],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 25680,
+      "warmup": 0,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 0
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "8a7b33643668ffed5561a4f7c4df2c1d0ecdcb763ead46407377121db8bd2609",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "boundsMax": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:evolving-map-bigbox",
+    "title": "EVOLVING MAP",
+    "creator": "BIGBOX",
+    "template": "Demo_GameMap--Batched",
+    "center": [
+      -37.7968330383301,
+      31.5928382873535,
+      -7.78294277191162
+    ],
+    "recorded_spawns": [],
+    "bounds_min": [
+      -1026.79296875,
+      -165.569305419922,
+      -1219.51000976563
+    ],
+    "bounds_max": [
+      983.063354492188,
+      243.800994873047,
+      1138.17749023438
+    ],
+    "solid_min": [
+      -1026.79296875,
+      -165.569305419922,
+      -1219.51000976563
+    ],
+    "solid_max": [
+      983.063354492188,
+      243.800994873047,
+      1138.17749023438
+    ],
+    "source": "https://maps.deliciouswines.org/maps/evolving-map-bigbox/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "tormentus",
+  "label": "Tormentus",
+  "sourceIndex": 17,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-011ab3ece8090b11efdefd90.png",
+      "normal": "r5-normal-4d47176515c6e5ea3d970675.png",
+      "metallicMap": "r5-metallic-f3f10680d97a569ea8bd3083.png",
+      "occlusion": "r5-occlusion-88f62a7b635fa8ef1100c1f6.png",
+      "emission": "r5-emission-f18cbc2cc760bef5cf760b5f.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-d17b8a3ae46c0d103ec82b1f.png",
+      "normal": "r5-normal-5f2c614562ade4e632acc0ce.png",
+      "metallicMap": "r5-metallic-841f7e69702a77d90b547ba0.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

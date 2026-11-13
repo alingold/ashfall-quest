@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "id": "valentina_cupid",
+  "label": "Valentina (Cupid)",
+  "sourceIndex": 19,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-d6f25be9c6c0e8f461cc566d.png",
+      "normal": "r5-normal-c35a04e73334b383a4afbc96.png",
+      "metallicMap": "r5-metallic-c30f2c95ee1f237069a5ca34.png",
+      "occlusion": "r5-occlusion-5459bf02cfaf07e74a82a0a2.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-56a1cc607f3eeab8519bcb7a.png",
+      "normal": "r5-normal-a21d4dcc60d2d084f1dfe881.png",
+      "metallicMap": "r5-metallic-99d5f69d11fba736b4f150b9.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

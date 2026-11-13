@@ -1,0 +1,2973 @@
+{
+  "mapId": "archive:sharp-objects-kiwishade",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+    "cache_fingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+    "warmup": [
+      {
+        "center": [
+          -18.21521,
+          52.84326,
+          -74.86577
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          -0.72887,
+          0,
+          0.68465
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -15.79045,
+          52.84326,
+          -72.34173
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          -0.72887,
+          0,
+          0.68465
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -17.02195,
+          52.84326,
+          -73.62361
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          -0.72887,
+          0,
+          0.68465
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -21.9518,
+          49.40757,
+          10.00727
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -19.98458,
+          49.39713,
+          7.37879
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -16.41595,
+          49.40106,
+          7.35724
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -18.3644,
+          49.39701,
+          10.02113
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -14.80141,
+          49.39817,
+          10.01298
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -16.49731,
+          49.41445,
+          12.7684
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -20.09671,
+          49.41445,
+          12.7684
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -20.16329,
+          49.40757,
+          -15.22898
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -18.16601,
+          49.39713,
+          -18.49158
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -14.54294,
+          49.40106,
+          -18.51832
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -16.5211,
+          49.39702,
+          -15.21179
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -12.90379,
+          49.39818,
+          -15.2219
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -14.62559,
+          49.41445,
+          -11.80174
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -18.27987,
+          49.41445,
+          -11.80174
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -30.93534,
+          49.40757,
+          -18.27404
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -28.96804,
+          49.39713,
+          -21.65592
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -25.39943,
+          49.40106,
+          -21.68363
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -27.34789,
+          49.39701,
+          -18.25621
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -23.7849,
+          49.39817,
+          -18.26669
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -25.48085,
+          49.41445,
+          -14.72149
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -29.08024,
+          49.41445,
+          -14.72149
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -43.82549,
+          49.40757,
+          -21.97431
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -41.74071,
+          49.39713,
+          -25.02552
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -37.95891,
+          49.40106,
+          -25.05051
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -40.02374,
+          49.39701,
+          -21.95825
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -36.24795,
+          49.39817,
+          -21.96766
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -38.04529,
+          49.41445,
+          -18.76911
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -41.85959,
+          49.41445,
+          -18.76911
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -45.43078,
+          49.40757,
+          -11.70882
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -43.69851,
+          49.39713,
+          -14.33733
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -40.55614,
+          49.40106,
+          -14.35886
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -42.27185,
+          49.39701,
+          -11.69499
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -39.13443,
+          49.39817,
+          -11.70313
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -40.62779,
+          49.41445,
+          -8.94771
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -43.79723,
+          49.41445,
+          -8.94771
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -35.45617,
+          49.40757,
+          -5.48499
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -33.34143,
+          49.39713,
+          -8.86687
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -29.50529,
+          49.40106,
+          -8.8946
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -31.59986,
+          49.39702,
+          -5.46715
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -27.76972,
+          49.39818,
+          -5.47764
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -29.59281,
+          49.41445,
+          -1.93242
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -33.46206,
+          49.41445,
+          -1.93242
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -55.53374,
+          49.40757,
+          -16.49331
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -53.80144,
+          49.39713,
+          -19.66386
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -50.65905,
+          49.40106,
+          -19.68983
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -52.37481,
+          49.39701,
+          -16.47661
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -49.23737,
+          49.39817,
+          -16.48642
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -50.73074,
+          49.41445,
+          -13.16277
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -53.90019,
+          49.41445,
+          -13.16277
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      }
+    ],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -18.69022,
+          52.84567,
+          -74.41959
+        ],
+        "min": [
+          -19.0382,
+          52.82172,
+          -74.76402
+        ],
+        "max": [
+          -18.34224,
+          52.86963,
+          -74.07515
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -18.21521,
+          52.84326,
+          -74.86577
+        ],
+        "min": [
+          -18.80531,
+          52.82172,
+          -75.45588
+        ],
+        "max": [
+          -17.62512,
+          52.86481,
+          -74.27567
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -16.26546,
+          52.84567,
+          -71.89555
+        ],
+        "min": [
+          -16.61344,
+          52.82172,
+          -72.23998
+        ],
+        "max": [
+          -15.91748,
+          52.86963,
+          -71.55111
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -15.79045,
+          52.84326,
+          -72.34173
+        ],
+        "min": [
+          -16.38055,
+          52.82172,
+          -72.93184
+        ],
+        "max": [
+          -15.20036,
+          52.86481,
+          -71.75163
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -17.49696,
+          52.84567,
+          -73.17742
+        ],
+        "min": [
+          -17.84493,
+          52.82172,
+          -73.52186
+        ],
+        "max": [
+          -17.14898,
+          52.86963,
+          -72.83298
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -17.02195,
+          52.84326,
+          -73.62361
+        ],
+        "min": [
+          -17.61205,
+          52.82172,
+          -74.21371
+        ],
+        "max": [
+          -16.43186,
+          52.86481,
+          -73.0335
+        ]
+      }
+    ],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -22.41946,
+          49.59654,
+          10.00727
+        ],
+        "min": [
+          -22.68355,
+          49.57837,
+          9.7477
+        ],
+        "max": [
+          -22.15537,
+          49.61471,
+          10.26684
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -22.00038,
+          49.59654,
+          10.00727
+        ],
+        "min": [
+          -22.26446,
+          49.57837,
+          9.7477
+        ],
+        "max": [
+          -21.73629,
+          49.61471,
+          10.26684
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.45223,
+          49.5861,
+          7.37879
+        ],
+        "min": [
+          -20.71632,
+          49.56793,
+          7.11922
+        ],
+        "max": [
+          -20.18814,
+          49.60427,
+          7.63836
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.03315,
+          49.5861,
+          7.37879
+        ],
+        "min": [
+          -20.29724,
+          49.56793,
+          7.11922
+        ],
+        "max": [
+          -19.76906,
+          49.60427,
+          7.63836
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.8836,
+          49.59003,
+          7.35724
+        ],
+        "min": [
+          -17.14769,
+          49.57186,
+          7.09767
+        ],
+        "max": [
+          -16.61952,
+          49.6082,
+          7.61681
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.46452,
+          49.59003,
+          7.35724
+        ],
+        "min": [
+          -16.72861,
+          49.57186,
+          7.09767
+        ],
+        "max": [
+          -16.20043,
+          49.6082,
+          7.61681
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.83206,
+          49.58598,
+          10.02113
+        ],
+        "min": [
+          -19.09614,
+          49.56781,
+          9.76155
+        ],
+        "max": [
+          -18.56797,
+          49.60415,
+          10.2807
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.41297,
+          49.58598,
+          10.02113
+        ],
+        "min": [
+          -18.67706,
+          49.56781,
+          9.76155
+        ],
+        "max": [
+          -18.14889,
+          49.60415,
+          10.2807
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.26907,
+          49.58714,
+          10.01298
+        ],
+        "min": [
+          -15.53315,
+          49.56897,
+          9.75341
+        ],
+        "max": [
+          -15.00498,
+          49.60531,
+          10.27255
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -14.84998,
+          49.58714,
+          10.01298
+        ],
+        "min": [
+          -15.11407,
+          49.56897,
+          9.75341
+        ],
+        "max": [
+          -14.5859,
+          49.60531,
+          10.27255
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.96496,
+          49.60342,
+          12.7684
+        ],
+        "min": [
+          -17.22905,
+          49.58524,
+          12.50883
+        ],
+        "max": [
+          -16.70088,
+          49.62159,
+          13.02798
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.54588,
+          49.60342,
+          12.7684
+        ],
+        "min": [
+          -16.80997,
+          49.58524,
+          12.50883
+        ],
+        "max": [
+          -16.2818,
+          49.62159,
+          13.02798
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.56437,
+          49.60342,
+          12.7684
+        ],
+        "min": [
+          -20.82846,
+          49.58524,
+          12.50883
+        ],
+        "max": [
+          -20.30028,
+          49.62159,
+          13.02798
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.14529,
+          49.60342,
+          12.7684
+        ],
+        "min": [
+          -20.40937,
+          49.58524,
+          12.50883
+        ],
+        "max": [
+          -19.8812,
+          49.62159,
+          13.02798
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.63808,
+          49.59654,
+          -15.22898
+        ],
+        "min": [
+          -20.9062,
+          49.57837,
+          -15.55116
+        ],
+        "max": [
+          -20.36996,
+          49.61471,
+          -14.90681
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.2126,
+          49.59654,
+          -15.22898
+        ],
+        "min": [
+          -20.48072,
+          49.57837,
+          -15.55116
+        ],
+        "max": [
+          -19.94449,
+          49.61471,
+          -14.90681
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.6408,
+          49.5861,
+          -18.49158
+        ],
+        "min": [
+          -18.90892,
+          49.56793,
+          -18.81376
+        ],
+        "max": [
+          -18.37269,
+          49.60427,
+          -18.1694
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.21533,
+          49.5861,
+          -18.49158
+        ],
+        "min": [
+          -18.48344,
+          49.56793,
+          -18.81376
+        ],
+        "max": [
+          -17.94721,
+          49.60427,
+          -18.1694
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.01773,
+          49.59003,
+          -18.51832
+        ],
+        "min": [
+          -15.28585,
+          49.57186,
+          -18.84049
+        ],
+        "max": [
+          -14.74962,
+          49.6082,
+          -18.19614
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -14.59226,
+          49.59003,
+          -18.51832
+        ],
+        "min": [
+          -14.86037,
+          49.57186,
+          -18.84049
+        ],
+        "max": [
+          -14.32414,
+          49.6082,
+          -18.19614
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.99589,
+          49.58599,
+          -15.21179
+        ],
+        "min": [
+          -17.26401,
+          49.56781,
+          -15.53396
+        ],
+        "max": [
+          -16.72777,
+          49.60416,
+          -14.88961
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -16.57041,
+          49.58599,
+          -15.21179
+        ],
+        "min": [
+          -16.83853,
+          49.56781,
+          -15.53396
+        ],
+        "max": [
+          -16.3023,
+          49.60416,
+          -14.88961
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -13.37858,
+          49.58715,
+          -15.2219
+        ],
+        "min": [
+          -13.64669,
+          49.56897,
+          -15.54407
+        ],
+        "max": [
+          -13.11046,
+          49.60532,
+          -14.89972
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -12.9531,
+          49.58715,
+          -15.2219
+        ],
+        "min": [
+          -13.22122,
+          49.56897,
+          -15.54407
+        ],
+        "max": [
+          -12.68498,
+          49.60532,
+          -14.89972
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.10038,
+          49.60342,
+          -11.80174
+        ],
+        "min": [
+          -15.3685,
+          49.58525,
+          -12.12392
+        ],
+        "max": [
+          -14.83226,
+          49.62159,
+          -11.47956
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -14.6749,
+          49.60342,
+          -11.80174
+        ],
+        "min": [
+          -14.94302,
+          49.58525,
+          -12.12392
+        ],
+        "max": [
+          -14.40679,
+          49.62159,
+          -11.47956
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.75466,
+          49.60342,
+          -11.80174
+        ],
+        "min": [
+          -19.02278,
+          49.58525,
+          -12.12392
+        ],
+        "max": [
+          -18.48654,
+          49.62159,
+          -11.47956
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -18.32918,
+          49.60342,
+          -11.80174
+        ],
+        "min": [
+          -18.5973,
+          49.58525,
+          -12.12392
+        ],
+        "max": [
+          -18.06107,
+          49.62159,
+          -11.47956
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -31.403,
+          49.59654,
+          -18.27404
+        ],
+        "min": [
+          -31.66709,
+          49.57837,
+          -18.60801
+        ],
+        "max": [
+          -31.13891,
+          49.61471,
+          -17.94006
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -30.98392,
+          49.59654,
+          -18.27404
+        ],
+        "min": [
+          -31.24801,
+          49.57837,
+          -18.60801
+        ],
+        "max": [
+          -30.71983,
+          49.61471,
+          -17.94006
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.4357,
+          49.5861,
+          -21.65592
+        ],
+        "min": [
+          -29.69979,
+          49.56793,
+          -21.98989
+        ],
+        "max": [
+          -29.17162,
+          49.60427,
+          -21.32195
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.01662,
+          49.5861,
+          -21.65592
+        ],
+        "min": [
+          -29.28071,
+          49.56793,
+          -21.98989
+        ],
+        "max": [
+          -28.75253,
+          49.60427,
+          -21.32195
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.86709,
+          49.59003,
+          -21.68363
+        ],
+        "min": [
+          -26.13118,
+          49.57186,
+          -22.01761
+        ],
+        "max": [
+          -25.603,
+          49.6082,
+          -21.34966
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.448,
+          49.59003,
+          -21.68363
+        ],
+        "min": [
+          -25.71209,
+          49.57186,
+          -22.01761
+        ],
+        "max": [
+          -25.18391,
+          49.6082,
+          -21.34966
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -27.81555,
+          49.58598,
+          -18.25621
+        ],
+        "min": [
+          -28.07964,
+          49.56781,
+          -18.59019
+        ],
+        "max": [
+          -27.55146,
+          49.60415,
+          -17.92224
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -27.39646,
+          49.58598,
+          -18.25621
+        ],
+        "min": [
+          -27.66055,
+          49.56781,
+          -18.59019
+        ],
+        "max": [
+          -27.13237,
+          49.60415,
+          -17.92224
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -24.25256,
+          49.58714,
+          -18.26669
+        ],
+        "min": [
+          -24.51665,
+          49.56897,
+          -18.60067
+        ],
+        "max": [
+          -23.98847,
+          49.60531,
+          -17.93272
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -23.83348,
+          49.58714,
+          -18.26669
+        ],
+        "min": [
+          -24.09757,
+          49.56897,
+          -18.60067
+        ],
+        "max": [
+          -23.56939,
+          49.60531,
+          -17.93272
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.94851,
+          49.60342,
+          -14.72149
+        ],
+        "min": [
+          -26.2126,
+          49.58524,
+          -15.05546
+        ],
+        "max": [
+          -25.68442,
+          49.62159,
+          -14.38752
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.52942,
+          49.60342,
+          -14.72149
+        ],
+        "min": [
+          -25.79351,
+          49.58524,
+          -15.05546
+        ],
+        "max": [
+          -25.26534,
+          49.62159,
+          -14.38752
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.5479,
+          49.60342,
+          -14.72149
+        ],
+        "min": [
+          -29.81199,
+          49.58524,
+          -15.05546
+        ],
+        "max": [
+          -29.28381,
+          49.62159,
+          -14.38752
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.12881,
+          49.60342,
+          -14.72149
+        ],
+        "min": [
+          -29.3929,
+          49.58524,
+          -15.05546
+        ],
+        "max": [
+          -28.86472,
+          49.62159,
+          -14.38752
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -44.32108,
+          49.59654,
+          -21.97431
+        ],
+        "min": [
+          -44.60093,
+          49.57837,
+          -22.27563
+        ],
+        "max": [
+          -44.04122,
+          49.61471,
+          -21.673
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.87697,
+          49.59654,
+          -21.97431
+        ],
+        "min": [
+          -44.15682,
+          49.57837,
+          -22.27563
+        ],
+        "max": [
+          -43.59711,
+          49.61471,
+          -21.673
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -42.23629,
+          49.5861,
+          -25.02552
+        ],
+        "min": [
+          -42.51615,
+          49.56793,
+          -25.32683
+        ],
+        "max": [
+          -41.95643,
+          49.60427,
+          -24.72421
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -41.79218,
+          49.5861,
+          -25.02552
+        ],
+        "min": [
+          -42.07204,
+          49.56793,
+          -25.32683
+        ],
+        "max": [
+          -41.51233,
+          49.60427,
+          -24.72421
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.45449,
+          49.59003,
+          -25.05051
+        ],
+        "min": [
+          -38.73435,
+          49.57186,
+          -25.35182
+        ],
+        "max": [
+          -38.17464,
+          49.6082,
+          -24.7492
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.01039,
+          49.59003,
+          -25.05051
+        ],
+        "min": [
+          -38.29024,
+          49.57186,
+          -25.35182
+        ],
+        "max": [
+          -37.73053,
+          49.6082,
+          -24.7492
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -40.51932,
+          49.58598,
+          -21.95825
+        ],
+        "min": [
+          -40.79918,
+          49.56781,
+          -22.25956
+        ],
+        "max": [
+          -40.23946,
+          49.60415,
+          -21.65694
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -40.07521,
+          49.58598,
+          -21.95825
+        ],
+        "min": [
+          -40.35506,
+          49.56781,
+          -22.25956
+        ],
+        "max": [
+          -39.79535,
+          49.60415,
+          -21.65694
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -36.74353,
+          49.58714,
+          -21.96766
+        ],
+        "min": [
+          -37.02339,
+          49.56897,
+          -22.26897
+        ],
+        "max": [
+          -36.46368,
+          49.60531,
+          -21.66635
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -36.29943,
+          49.58714,
+          -21.96766
+        ],
+        "min": [
+          -36.57928,
+          49.56897,
+          -22.26897
+        ],
+        "max": [
+          -36.01957,
+          49.60531,
+          -21.66635
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.54087,
+          49.60342,
+          -18.76911
+        ],
+        "min": [
+          -38.82073,
+          49.58524,
+          -19.07042
+        ],
+        "max": [
+          -38.26102,
+          49.62159,
+          -18.4678
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.09677,
+          49.60342,
+          -18.76911
+        ],
+        "min": [
+          -38.37662,
+          49.58524,
+          -19.07042
+        ],
+        "max": [
+          -37.81691,
+          49.62159,
+          -18.4678
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -42.35517,
+          49.60342,
+          -18.76911
+        ],
+        "min": [
+          -42.63503,
+          49.58524,
+          -19.07042
+        ],
+        "max": [
+          -42.07531,
+          49.62159,
+          -18.4678
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -41.91106,
+          49.60342,
+          -18.76911
+        ],
+        "min": [
+          -42.19092,
+          49.58524,
+          -19.07042
+        ],
+        "max": [
+          -41.63121,
+          49.62159,
+          -18.4678
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -45.84258,
+          49.59654,
+          -11.70882
+        ],
+        "min": [
+          -46.07512,
+          49.57837,
+          -11.96839
+        ],
+        "max": [
+          -45.61003,
+          49.61471,
+          -11.44926
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -45.47355,
+          49.59654,
+          -11.70882
+        ],
+        "min": [
+          -45.70609,
+          49.57837,
+          -11.96839
+        ],
+        "max": [
+          -45.241,
+          49.61471,
+          -11.44926
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -44.11031,
+          49.5861,
+          -14.33733
+        ],
+        "min": [
+          -44.34285,
+          49.56793,
+          -14.59689
+        ],
+        "max": [
+          -43.87777,
+          49.60427,
+          -14.07776
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.74128,
+          49.5861,
+          -14.33733
+        ],
+        "min": [
+          -43.97382,
+          49.56793,
+          -14.59689
+        ],
+        "max": [
+          -43.50874,
+          49.60427,
+          -14.07776
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -40.96794,
+          49.59003,
+          -14.35886
+        ],
+        "min": [
+          -41.20048,
+          49.57186,
+          -14.61843
+        ],
+        "max": [
+          -40.73539,
+          49.6082,
+          -14.0993
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -40.59891,
+          49.59003,
+          -14.35886
+        ],
+        "min": [
+          -40.83145,
+          49.57186,
+          -14.61843
+        ],
+        "max": [
+          -40.36636,
+          49.6082,
+          -14.0993
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -42.68365,
+          49.58598,
+          -11.69499
+        ],
+        "min": [
+          -42.91619,
+          49.56781,
+          -11.95455
+        ],
+        "max": [
+          -42.45111,
+          49.60415,
+          -11.43542
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -42.31462,
+          49.58598,
+          -11.69499
+        ],
+        "min": [
+          -42.54716,
+          49.56781,
+          -11.95455
+        ],
+        "max": [
+          -42.08208,
+          49.60415,
+          -11.43542
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -39.54623,
+          49.58714,
+          -11.70313
+        ],
+        "min": [
+          -39.77877,
+          49.56897,
+          -11.96269
+        ],
+        "max": [
+          -39.31369,
+          49.60531,
+          -11.44356
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -39.1772,
+          49.58714,
+          -11.70313
+        ],
+        "min": [
+          -39.40974,
+          49.56897,
+          -11.96269
+        ],
+        "max": [
+          -38.94466,
+          49.60531,
+          -11.44356
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -41.03959,
+          49.60342,
+          -8.94771
+        ],
+        "min": [
+          -41.27213,
+          49.58524,
+          -9.20727
+        ],
+        "max": [
+          -40.80704,
+          49.62159,
+          -8.68814
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -40.67056,
+          49.60342,
+          -8.94771
+        ],
+        "min": [
+          -40.9031,
+          49.58524,
+          -9.20727
+        ],
+        "max": [
+          -40.43801,
+          49.62159,
+          -8.68814
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -44.20903,
+          49.60342,
+          -8.94771
+        ],
+        "min": [
+          -44.44158,
+          49.58524,
+          -9.20727
+        ],
+        "max": [
+          -43.97649,
+          49.62159,
+          -8.68814
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.84,
+          49.60342,
+          -8.94771
+        ],
+        "min": [
+          -44.07255,
+          49.58524,
+          -9.20727
+        ],
+        "max": [
+          -43.60746,
+          49.62159,
+          -8.68814
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -35.9589,
+          49.59654,
+          -5.48499
+        ],
+        "min": [
+          -36.24279,
+          49.57837,
+          -5.81896
+        ],
+        "max": [
+          -35.675,
+          49.61471,
+          -5.15102
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -35.50838,
+          49.59654,
+          -5.48499
+        ],
+        "min": [
+          -35.79228,
+          49.57837,
+          -5.81896
+        ],
+        "max": [
+          -35.22449,
+          49.61471,
+          -5.15102
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -33.84416,
+          49.5861,
+          -8.86687
+        ],
+        "min": [
+          -34.12806,
+          49.56793,
+          -9.20084
+        ],
+        "max": [
+          -33.56026,
+          49.60427,
+          -8.5329
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -33.39364,
+          49.5861,
+          -8.86687
+        ],
+        "min": [
+          -33.67754,
+          49.56793,
+          -9.20084
+        ],
+        "max": [
+          -33.10975,
+          49.60427,
+          -8.5329
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -30.00802,
+          49.59003,
+          -8.8946
+        ],
+        "min": [
+          -30.29192,
+          49.57186,
+          -9.22857
+        ],
+        "max": [
+          -29.72412,
+          49.6082,
+          -8.56063
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.5575,
+          49.59003,
+          -8.8946
+        ],
+        "min": [
+          -29.8414,
+          49.57186,
+          -9.22857
+        ],
+        "max": [
+          -29.27361,
+          49.6082,
+          -8.56063
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -32.10259,
+          49.58599,
+          -5.46715
+        ],
+        "min": [
+          -32.38649,
+          49.56781,
+          -5.80112
+        ],
+        "max": [
+          -31.81869,
+          49.60416,
+          -5.13318
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -31.65207,
+          49.58599,
+          -5.46715
+        ],
+        "min": [
+          -31.93597,
+          49.56781,
+          -5.80113
+        ],
+        "max": [
+          -31.36818,
+          49.60416,
+          -5.13318
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -28.27245,
+          49.58715,
+          -5.47764
+        ],
+        "min": [
+          -28.55635,
+          49.56897,
+          -5.81161
+        ],
+        "max": [
+          -27.98856,
+          49.60532,
+          -5.14367
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -27.82194,
+          49.58715,
+          -5.47764
+        ],
+        "min": [
+          -28.10583,
+          49.56897,
+          -5.81161
+        ],
+        "max": [
+          -27.53804,
+          49.60532,
+          -5.14367
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -30.09554,
+          49.60342,
+          -1.93242
+        ],
+        "min": [
+          -30.37944,
+          49.58525,
+          -2.26639
+        ],
+        "max": [
+          -29.81165,
+          49.62159,
+          -1.59845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -29.64503,
+          49.60342,
+          -1.93242
+        ],
+        "min": [
+          -29.92892,
+          49.58525,
+          -2.26639
+        ],
+        "max": [
+          -29.36113,
+          49.62159,
+          -1.59845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -33.9648,
+          49.60342,
+          -1.93242
+        ],
+        "min": [
+          -34.24869,
+          49.58525,
+          -2.26639
+        ],
+        "max": [
+          -33.6809,
+          49.62159,
+          -1.59845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -33.51428,
+          49.60342,
+          -1.93242
+        ],
+        "min": [
+          -33.79818,
+          49.58525,
+          -2.26639
+        ],
+        "max": [
+          -33.23038,
+          49.62159,
+          -1.59845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -55.94554,
+          49.59654,
+          -16.49331
+        ],
+        "min": [
+          -56.17809,
+          49.57837,
+          -16.80641
+        ],
+        "max": [
+          -55.713,
+          49.61471,
+          -16.18022
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -55.57651,
+          49.59654,
+          -16.49331
+        ],
+        "min": [
+          -55.80906,
+          49.57837,
+          -16.80641
+        ],
+        "max": [
+          -55.34397,
+          49.61471,
+          -16.18022
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -54.21324,
+          49.5861,
+          -19.66386
+        ],
+        "min": [
+          -54.44578,
+          49.56793,
+          -19.97695
+        ],
+        "max": [
+          -53.98069,
+          49.60427,
+          -19.35076
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -53.84421,
+          49.5861,
+          -19.66386
+        ],
+        "min": [
+          -54.07675,
+          49.56793,
+          -19.97695
+        ],
+        "max": [
+          -53.61166,
+          49.60427,
+          -19.35076
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.07085,
+          49.59003,
+          -19.68983
+        ],
+        "min": [
+          -51.3034,
+          49.57186,
+          -20.00292
+        ],
+        "max": [
+          -50.83831,
+          49.6082,
+          -19.37673
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -50.70182,
+          49.59003,
+          -19.68983
+        ],
+        "min": [
+          -50.93437,
+          49.57186,
+          -20.00292
+        ],
+        "max": [
+          -50.46928,
+          49.6082,
+          -19.37673
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -52.78661,
+          49.58598,
+          -16.47661
+        ],
+        "min": [
+          -53.01915,
+          49.56781,
+          -16.78971
+        ],
+        "max": [
+          -52.55406,
+          49.60415,
+          -16.16352
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -52.41758,
+          49.58598,
+          -16.47661
+        ],
+        "min": [
+          -52.65012,
+          49.56781,
+          -16.78971
+        ],
+        "max": [
+          -52.18503,
+          49.60415,
+          -16.16352
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -49.64917,
+          49.58714,
+          -16.48642
+        ],
+        "min": [
+          -49.88171,
+          49.56897,
+          -16.79951
+        ],
+        "max": [
+          -49.41662,
+          49.60531,
+          -16.17332
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -49.28014,
+          49.58714,
+          -16.48642
+        ],
+        "min": [
+          -49.51268,
+          49.56897,
+          -16.79951
+        ],
+        "max": [
+          -49.04759,
+          49.60531,
+          -16.17332
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.14254,
+          49.60342,
+          -13.16277
+        ],
+        "min": [
+          -51.37508,
+          49.58524,
+          -13.47586
+        ],
+        "max": [
+          -50.91,
+          49.62159,
+          -12.84968
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -50.77351,
+          49.60342,
+          -13.16277
+        ],
+        "min": [
+          -51.00605,
+          49.58524,
+          -13.47586
+        ],
+        "max": [
+          -50.54097,
+          49.62159,
+          -12.84968
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -54.31199,
+          49.60342,
+          -13.16277
+        ],
+        "min": [
+          -54.54453,
+          49.58524,
+          -13.47586
+        ],
+        "max": [
+          -54.07944,
+          49.62159,
+          -12.84968
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -53.94296,
+          49.60342,
+          -13.16277
+        ],
+        "min": [
+          -54.1755,
+          49.58524,
+          -13.47586
+        ],
+        "max": [
+          -53.71041,
+          49.62159,
+          -12.84968
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 1927,
+      "warmup": 3,
+      "deathmatch": 0,
+      "jump": 49,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 6
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "a33a4ae97b836fdf4580dcb5aefc52b43a63d4db955ba1509d905168dfc5087c",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -18.645858764648438,
+        39.99854278564453,
+        -29.784481048583984
+      ],
+      "boundsMax": [
+        31.354141235351562,
+        49.772483825683594,
+        20.215518951416016
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:sharp-objects-kiwishade",
+    "title": "SHARP OBJECTS",
+    "creator": "KiwiShade",
+    "template": "MapEditorSnow",
+    "center": [
+      -38.0567229311529,
+      49.4054166165901,
+      -2.88103896730301
+    ],
+    "recorded_spawns": [
+      [
+        -23.29,
+        58.72,
+        -16.18
+      ],
+      [
+        -57.5,
+        50.06,
+        -24.26
+      ],
+      [
+        -26.67,
+        50.29,
+        -21.9
+      ],
+      [
+        -18.66,
+        57.78,
+        -1.83
+      ],
+      [
+        -13.86,
+        50.02,
+        12.09
+      ],
+      [
+        -23.16,
+        50.71,
+        10.46
+      ],
+      [
+        -49.13,
+        58.09,
+        -1.89
+      ],
+      [
+        -17.04,
+        55.19,
+        -13.66
+      ],
+      [
+        -49.35,
+        51.7,
+        -7.57
+      ],
+      [
+        -54.98,
+        50.4,
+        11.39
+      ],
+      [
+        -38.62,
+        50.16,
+        -23.69
+      ],
+      [
+        -38.29,
+        49.95,
+        6.97
+      ]
+    ],
+    "bounds_min": [
+      -69.9999923706055,
+      49.0000038146973,
+      -86.4999923706055
+    ],
+    "bounds_max": [
+      3.99999237060547,
+      74.0,
+      22.9999923706055
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      173.143783569336,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/sharp-objects-kiwishade/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

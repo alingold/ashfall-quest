@@ -1,0 +1,200 @@
+{
+  "recipe": "source native marker validation, recorded support, then 19x19 floor-grid fallback",
+  "spawnFloorsAdded": false,
+  "standingClearance": 1.9288,
+  "capsuleRadius": 0.3,
+  "recordedValid": 96,
+  "game": {
+    "spawn": [
+      21.91,
+      2.064776614531635,
+      -26.65
+    ],
+    "floor": [
+      21.91,
+      1.9447766145316352,
+      -26.65
+    ],
+    "normal": [
+      1.997300929646223e-08,
+      0.9999999999999996,
+      -1.6376977854772507e-08
+    ],
+    "witness": [
+      127,
+      11
+    ],
+    "source": "recorded 21",
+    "proof": {
+      "footprint": [
+        {
+          "offset": [
+            0.4,
+            0
+          ],
+          "height": 1.9447766065424312,
+          "normal": [
+            1.997300929646223e-08,
+            0.9999999999999996,
+            -1.6376977854772507e-08
+          ],
+          "witness": [
+            127,
+            11
+          ]
+        },
+        {
+          "offset": [
+            -0.4,
+            0
+          ],
+          "height": 1.9447766225208387,
+          "normal": [
+            1.997300929646223e-08,
+            0.9999999999999996,
+            -1.6376977854772507e-08
+          ],
+          "witness": [
+            127,
+            11
+          ]
+        },
+        {
+          "offset": [
+            0,
+            0.4
+          ],
+          "height": 1.9447766210824262,
+          "normal": [
+            1.997300929646223e-08,
+            0.9999999999999996,
+            -1.6376977854772507e-08
+          ],
+          "witness": [
+            127,
+            11
+          ]
+        },
+        {
+          "offset": [
+            0,
+            -0.4
+          ],
+          "height": 1.944776607980844,
+          "normal": [
+            1.997300929646223e-08,
+            0.9999999999999996,
+            -1.6376977854772507e-08
+          ],
+          "witness": [
+            127,
+            11
+          ]
+        }
+      ],
+      "capsule": {
+        "candidateTriangles": 0,
+        "minimumDistance": null
+      }
+    }
+  },
+  "warmup": {
+    "spawn": [
+      -91.41,
+      75.12000762939454,
+      55.8
+    ],
+    "floor": [
+      -91.41,
+      75.00000762939453,
+      55.8
+    ],
+    "normal": [
+      -0.0,
+      1.0,
+      0.0
+    ],
+    "witness": [
+      93,
+      2
+    ],
+    "source": "recorded 30",
+    "proof": {
+      "footprint": [
+        {
+          "offset": [
+            0.4,
+            0
+          ],
+          "height": 75.00000762939453,
+          "normal": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "witness": [
+            93,
+            2
+          ]
+        },
+        {
+          "offset": [
+            -0.4,
+            0
+          ],
+          "height": 75.00000762939453,
+          "normal": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "witness": [
+            93,
+            2
+          ]
+        },
+        {
+          "offset": [
+            0,
+            0.4
+          ],
+          "height": 75.00000762939453,
+          "normal": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "witness": [
+            93,
+            2
+          ]
+        },
+        {
+          "offset": [
+            0,
+            -0.4
+          ],
+          "height": 75.00000762939453,
+          "normal": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "witness": [
+            93,
+            2
+          ]
+        }
+      ],
+      "capsule": {
+        "candidateTriangles": 0,
+        "minimumDistance": null
+      }
+    }
+  },
+  "nativeValid": {
+    "deathmatch": 0,
+    "warmup": 0
+  },
+  "recordedInput": 96
+}

@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "blair_pumpkin_spice",
+  "label": "Blair (Pumpkin Spice)",
+  "sourceIndex": 46,
+  "eyeToShoulder": 0.21,
+  "bodyRear": 0.0,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-67510ee207e324819f460ecf.png",
+      "normal": "r5-normal-973e36a3d31a95ed4a265272.png",
+      "metallicMap": "r5-metallic-7056ef7b9f703fabbd937511.png",
+      "occlusion": "r5-occlusion-c30c3723b85efb774651355e.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-6cb580a37c239d7dc021fa34.png",
+      "normal": "r5-normal-7e263faabb179a632afaedff.png",
+      "metallicMap": "r5-metallic-0925fe75cf1606610a675e19.png",
+      "occlusion": "r5-occlusion-17ceacf2c410a85f7decb78e.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ],
+  "chestplateFollowsJacket": true
+}

@@ -1,0 +1,1942 @@
+{
+  "mapId": "archive:gun-game-star-wars-by-sam-sam",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+    "cache_fingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+    "warmup": [
+      {
+        "center": [
+          -63.7209,
+          207.02489,
+          -28.22089
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          -0.70713,
+          0,
+          -0.70709
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -82.27915,
+          207.02489,
+          -26.91714
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0.7071,
+          0,
+          -0.70711
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -79.49054,
+          207.02489,
+          -50.45705
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0.70713,
+          0,
+          0.70708
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          -65.43953,
+          207.02489,
+          -46.60692
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          -0.70711,
+          0,
+          0.70711
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -125.61784,
+          215.91754,
+          -39.62037
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -129.74422,
+          217.42659,
+          -2.0764
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -122.99648,
+          217.3977,
+          -72.9176
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -96.96731,
+          215.91688,
+          9.00536
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -77.47007,
+          215.88835,
+          31.7273
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -84.07368,
+          236.54459,
+          15.86814
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -65.65926,
+          206.72934,
+          -38.95406
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -73.99245,
+          254.9965,
+          -10.95772
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -109.1833,
+          250.83495,
+          -39.04743
+        ],
+        "normal": [
+          0.55017,
+          0.83119,
+          0.08018
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": true
+      },
+      {
+        "center": [
+          -63.65057,
+          217.45158,
+          -107.6997
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -83.01137,
+          215.89077,
+          -64.58138
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -103.26687,
+          215.91754,
+          -81.2417
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -99.54848,
+          217.44917,
+          -115.82975
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -54.00622,
+          233.53607,
+          10.20728
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -17.52931,
+          215.91754,
+          31.35706
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -21.85707,
+          217.91708,
+          14.47979
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -43.25151,
+          231.98859,
+          -10.95842
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -58.80326,
+          215.91074,
+          -14.51589
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -51.98964,
+          212.89409,
+          -25.72959
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -21.48555,
+          215.91074,
+          -17.59469
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -51.55763,
+          212.89409,
+          -52.28799
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -15.50961,
+          255.35499,
+          -41.08308
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -58.82975,
+          215.88939,
+          -64.58138
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -25.38662,
+          215.91754,
+          -101.84883
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -3.61842,
+          217.4288,
+          -85.9428
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      },
+      {
+        "center": [
+          -15.50961,
+          255.35499,
+          -64.86579
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": false
+      }
+    ],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -64.1816,
+          207.02731,
+          -28.68157
+        ],
+        "min": [
+          -64.52788,
+          207.00336,
+          -29.02784
+        ],
+        "max": [
+          -63.83533,
+          207.05125,
+          -28.33529
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -63.7209,
+          207.02489,
+          -28.22089
+        ],
+        "min": [
+          -64.31113,
+          207.00336,
+          -28.81111
+        ],
+        "max": [
+          -63.13068,
+          207.04643,
+          -27.63068
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -81.81847,
+          207.02731,
+          -27.37783
+        ],
+        "min": [
+          -82.16474,
+          207.00336,
+          -27.7241
+        ],
+        "max": [
+          -81.47219,
+          207.05125,
+          -27.03155
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -82.27915,
+          207.02489,
+          -26.91714
+        ],
+        "min": [
+          -82.86936,
+          207.00336,
+          -27.50736
+        ],
+        "max": [
+          -81.68894,
+          207.04643,
+          -26.32692
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -79.02983,
+          207.02731,
+          -49.99637
+        ],
+        "min": [
+          -79.37611,
+          207.00336,
+          -50.34265
+        ],
+        "max": [
+          -78.68356,
+          207.05125,
+          -49.6501
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -79.49054,
+          207.02489,
+          -50.45705
+        ],
+        "min": [
+          -80.08076,
+          207.00336,
+          -51.04726
+        ],
+        "max": [
+          -78.90031,
+          207.04643,
+          -49.86684
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -65.90022,
+          207.02731,
+          -46.14623
+        ],
+        "min": [
+          -66.24649,
+          207.00336,
+          -46.4925
+        ],
+        "max": [
+          -65.55394,
+          207.05125,
+          -45.79995
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -65.43953,
+          207.02489,
+          -46.60692
+        ],
+        "min": [
+          -66.02974,
+          207.00336,
+          -47.19714
+        ],
+        "max": [
+          -64.84932,
+          207.04643,
+          -46.01669
+        ]
+      }
+    ],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -125.6237,
+          216.19284,
+          -40.01386
+        ],
+        "min": [
+          -125.87215,
+          216.16637,
+          -40.24265
+        ],
+        "max": [
+          -125.37524,
+          216.21931,
+          -39.78506
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -125.61163,
+          216.19284,
+          -39.65746
+        ],
+        "min": [
+          -125.86008,
+          216.16637,
+          -39.88626
+        ],
+        "max": [
+          -125.36317,
+          216.21931,
+          -39.42867
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -129.74422,
+          217.82774,
+          -2.0764
+        ],
+        "min": [
+          -130.16333,
+          217.46346,
+          -2.12928
+        ],
+        "max": [
+          -129.3251,
+          218.19203,
+          -2.02351
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -129.74422,
+          217.23808,
+          -2.0764
+        ],
+        "min": [
+          -130.16333,
+          216.87379,
+          -2.12928
+        ],
+        "max": [
+          -129.3251,
+          217.60237,
+          -2.02351
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -122.99648,
+          217.79886,
+          -72.9176
+        ],
+        "min": [
+          -123.41991,
+          217.43457,
+          -72.97048
+        ],
+        "max": [
+          -122.57304,
+          218.16315,
+          -72.86472
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -122.99648,
+          217.2092,
+          -72.9176
+        ],
+        "min": [
+          -123.41991,
+          216.84491,
+          -72.97048
+        ],
+        "max": [
+          -122.57304,
+          217.57349,
+          -72.86472
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -96.5742,
+          216.18884,
+          9.00536
+        ],
+        "min": [
+          -96.79619,
+          216.16269,
+          8.75977
+        ],
+        "max": [
+          -96.35221,
+          216.215,
+          9.25095
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -96.92648,
+          216.18884,
+          9.00536
+        ],
+        "min": [
+          -97.14847,
+          216.16269,
+          8.75977
+        ],
+        "max": [
+          -96.70449,
+          216.215,
+          9.25095
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -77.4999,
+          216.16365,
+          32.09788
+        ],
+        "min": [
+          -77.74478,
+          216.13718,
+          31.85512
+        ],
+        "max": [
+          -77.25501,
+          216.19012,
+          32.34064
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -77.43849,
+          216.16365,
+          31.74661
+        ],
+        "min": [
+          -77.68338,
+          216.13718,
+          31.50385
+        ],
+        "max": [
+          -77.1936,
+          216.19012,
+          31.98937
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -84.07368,
+          236.92373,
+          15.32011
+        ],
+        "min": [
+          -84.41606,
+          236.88727,
+          15.01063
+        ],
+        "max": [
+          -83.73131,
+          236.96019,
+          15.62958
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -84.07368,
+          236.92373,
+          15.81122
+        ],
+        "min": [
+          -84.41606,
+          236.88727,
+          15.50174
+        ],
+        "max": [
+          -83.73131,
+          236.96019,
+          16.1207
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -65.65926,
+          207.10848,
+          -39.50209
+        ],
+        "min": [
+          -66.00164,
+          207.07202,
+          -39.81157
+        ],
+        "max": [
+          -65.31689,
+          207.14494,
+          -39.19262
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -65.65926,
+          207.10848,
+          -39.01098
+        ],
+        "min": [
+          -66.00164,
+          207.07202,
+          -39.32046
+        ],
+        "max": [
+          -65.31689,
+          207.14494,
+          -38.7015
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -73.99245,
+          255.39766,
+          -10.95772
+        ],
+        "min": [
+          -74.20054,
+          255.03337,
+          -11.33914
+        ],
+        "max": [
+          -73.78436,
+          255.76195,
+          -10.57631
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -73.99245,
+          254.80801,
+          -10.95772
+        ],
+        "min": [
+          -74.20054,
+          254.44373,
+          -11.33914
+        ],
+        "max": [
+          -73.78436,
+          255.17229,
+          -10.57631
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -109.10862,
+          251.08408,
+          -39.04385
+        ],
+        "min": [
+          -109.45508,
+          250.69698,
+          -39.30917
+        ],
+        "max": [
+          -108.76217,
+          251.47118,
+          -38.77853
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -109.43303,
+          250.59396,
+          -39.09114
+        ],
+        "min": [
+          -109.77949,
+          250.20686,
+          -39.35646
+        ],
+        "max": [
+          -109.08658,
+          250.98106,
+          -38.82581
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -63.65057,
+          217.85274,
+          -107.6997
+        ],
+        "min": [
+          -64.06969,
+          217.48845,
+          -107.75258
+        ],
+        "max": [
+          -63.23146,
+          218.21703,
+          -107.64682
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -63.65057,
+          217.26308,
+          -107.6997
+        ],
+        "min": [
+          -64.06969,
+          216.89879,
+          -107.75258
+        ],
+        "max": [
+          -63.23146,
+          217.62737,
+          -107.64682
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -83.01137,
+          216.17408,
+          -64.99088
+        ],
+        "min": [
+          -83.2672,
+          216.14684,
+          -65.22213
+        ],
+        "max": [
+          -82.75554,
+          216.20132,
+          -64.75964
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -83.01137,
+          216.17408,
+          -64.62392
+        ],
+        "min": [
+          -83.2672,
+          216.14684,
+          -64.85516
+        ],
+        "max": [
+          -82.75554,
+          216.20132,
+          -64.39267
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -103.38424,
+          216.19284,
+          -81.5038
+        ],
+        "min": [
+          -103.61234,
+          216.16637,
+          -81.75971
+        ],
+        "max": [
+          -103.15615,
+          216.21931,
+          -81.24788
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -103.18639,
+          216.19284,
+          -81.20712
+        ],
+        "min": [
+          -103.41448,
+          216.16637,
+          -81.46304
+        ],
+        "max": [
+          -102.9583,
+          216.21931,
+          -80.9512
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -99.54848,
+          217.85033,
+          -115.82975
+        ],
+        "min": [
+          -99.96759,
+          217.48604,
+          -115.88263
+        ],
+        "max": [
+          -99.12936,
+          218.21461,
+          -115.77687
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -99.54848,
+          217.26067,
+          -115.82975
+        ],
+        "min": [
+          -99.96759,
+          216.89638,
+          -115.88263
+        ],
+        "max": [
+          -99.12936,
+          217.62495,
+          -115.77687
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -54.00622,
+          233.91521,
+          9.65924
+        ],
+        "min": [
+          -54.3486,
+          233.87875,
+          9.34976
+        ],
+        "max": [
+          -53.66385,
+          233.95168,
+          9.96872
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -54.00622,
+          233.91521,
+          10.15036
+        ],
+        "min": [
+          -54.3486,
+          233.87875,
+          9.84088
+        ],
+        "max": [
+          -53.66385,
+          233.95168,
+          10.45984
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -17.13138,
+          216.19284,
+          31.35706
+        ],
+        "min": [
+          -17.35609,
+          216.16637,
+          31.10846
+        ],
+        "max": [
+          -16.90667,
+          216.21931,
+          31.60566
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -17.48798,
+          216.19284,
+          31.35706
+        ],
+        "min": [
+          -17.71269,
+          216.16637,
+          31.10846
+        ],
+        "max": [
+          -17.26327,
+          216.21931,
+          31.60566
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -21.85707,
+          218.31824,
+          14.47979
+        ],
+        "min": [
+          -22.27619,
+          217.95395,
+          14.4269
+        ],
+        "max": [
+          -21.43796,
+          218.68253,
+          14.53267
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -21.85707,
+          217.72858,
+          14.47979
+        ],
+        "min": [
+          -22.27619,
+          217.36429,
+          14.4269
+        ],
+        "max": [
+          -21.43796,
+          218.09286,
+          14.53267
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.25151,
+          232.36773,
+          -11.50645
+        ],
+        "min": [
+          -43.59389,
+          232.33127,
+          -11.81593
+        ],
+        "max": [
+          -42.90914,
+          232.40419,
+          -11.19698
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.25151,
+          232.36773,
+          -11.01534
+        ],
+        "min": [
+          -43.59389,
+          232.33127,
+          -11.32482
+        ],
+        "max": [
+          -42.90914,
+          232.40419,
+          -10.70586
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -58.80326,
+          216.18604,
+          -14.11796
+        ],
+        "min": [
+          -59.05186,
+          216.15956,
+          -14.34268
+        ],
+        "max": [
+          -58.55466,
+          216.21251,
+          -13.89325
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -58.80326,
+          216.18604,
+          -14.47456
+        ],
+        "min": [
+          -59.05186,
+          216.15956,
+          -14.69927
+        ],
+        "max": [
+          -58.55466,
+          216.21251,
+          -14.24985
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.63371,
+          213.16939,
+          -25.68761
+        ],
+        "min": [
+          -51.88184,
+          213.14291,
+          -25.9288
+        ],
+        "max": [
+          -51.38557,
+          213.19586,
+          -25.44642
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.97967,
+          213.16939,
+          -25.77404
+        ],
+        "min": [
+          -52.22781,
+          213.14291,
+          -26.01523
+        ],
+        "max": [
+          -51.73153,
+          213.19586,
+          -25.53285
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -21.08762,
+          216.18604,
+          -17.59469
+        ],
+        "min": [
+          -21.31233,
+          216.15956,
+          -17.84329
+        ],
+        "max": [
+          -20.86291,
+          216.21251,
+          -17.34609
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -21.44422,
+          216.18604,
+          -17.59469
+        ],
+        "min": [
+          -21.66893,
+          216.15956,
+          -17.84329
+        ],
+        "max": [
+          -21.21951,
+          216.21251,
+          -17.34609
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.21458,
+          213.16939,
+          -52.33945
+        ],
+        "min": [
+          -51.46607,
+          213.14291,
+          -52.57682
+        ],
+        "max": [
+          -50.96309,
+          213.19586,
+          -52.10207
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -51.55508,
+          213.16939,
+          -52.23352
+        ],
+        "min": [
+          -51.80658,
+          213.14291,
+          -52.4709
+        ],
+        "max": [
+          -51.30359,
+          213.19586,
+          -51.99614
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.50961,
+          255.75614,
+          -41.08308
+        ],
+        "min": [
+          -15.93303,
+          255.39186,
+          -41.13597
+        ],
+        "max": [
+          -15.08618,
+          256.12042,
+          -41.0302
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.50961,
+          255.16649,
+          -41.08308
+        ],
+        "min": [
+          -15.93303,
+          254.8022,
+          -41.13597
+        ],
+        "max": [
+          -15.08618,
+          255.53078,
+          -41.0302
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -58.82975,
+          216.18029,
+          -65.00187
+        ],
+        "min": [
+          -59.09244,
+          216.15231,
+          -65.23932
+        ],
+        "max": [
+          -58.56705,
+          216.20827,
+          -64.76442
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -58.82975,
+          216.18029,
+          -64.62505
+        ],
+        "min": [
+          -59.09244,
+          216.15231,
+          -64.8625
+        ],
+        "max": [
+          -58.56705,
+          216.20827,
+          -64.3876
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.38879,
+          216.19284,
+          -102.24517
+        ],
+        "min": [
+          -25.63737,
+          216.16637,
+          -102.47142
+        ],
+        "max": [
+          -25.14021,
+          216.21931,
+          -102.01891
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -25.38432,
+          216.19284,
+          -101.8886
+        ],
+        "min": [
+          -25.6329,
+          216.16637,
+          -102.11485
+        ],
+        "max": [
+          -25.13574,
+          216.21931,
+          -101.66235
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -3.61842,
+          217.82996,
+          -85.94279
+        ],
+        "min": [
+          -4.03754,
+          217.46567,
+          -85.99567
+        ],
+        "max": [
+          -3.19931,
+          218.19424,
+          -85.88992
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -3.61842,
+          217.2403,
+          -85.94279
+        ],
+        "min": [
+          -4.03754,
+          216.87601,
+          -85.99567
+        ],
+        "max": [
+          -3.19931,
+          217.60458,
+          -85.88992
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.50961,
+          255.75614,
+          -64.86579
+        ],
+        "min": [
+          -15.93303,
+          255.39186,
+          -64.91867
+        ],
+        "max": [
+          -15.08618,
+          256.12042,
+          -64.81291
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -15.50961,
+          255.16649,
+          -64.86579
+        ],
+        "min": [
+          -15.93303,
+          254.8022,
+          -64.91867
+        ],
+        "max": [
+          -15.08618,
+          255.53078,
+          -64.81291
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 4243,
+      "warmup": 4,
+      "deathmatch": 0,
+      "jump": 26,
+      "tilted_jump": 1,
+      "health": 0,
+      "marker_parts": 8
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "e1aa2e72f8b8f19b9cbfe013a4c19d331a72d1e98a77520d72c6b97f4de517d6",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "killzone",
+      "sourceNode": "killzone",
+      "boundsMin": [
+        -137.0,
+        206.3013458251953,
+        -125.0
+      ],
+      "boundsMax": [
+        5.500298500061035,
+        367.0000305175781,
+        47.0137939453125
+      ],
+      "triangles": 320
+    },
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        -84.99983978271484,
+        207.99993896484375,
+        -53.30231475830078
+      ],
+      "boundsMax": [
+        -74.9996566772461,
+        212.0,
+        -53.27826690673828
+      ],
+      "triangles": 12
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:gun-game-star-wars-by-sam-sam",
+    "title": "GUN GAME STAR WARS BY SAM",
+    "creator": "Sam",
+    "template": "MapEditorDefault",
+    "center": [
+      -69.8426726429212,
+      220.141282867782,
+      -51.8646361232191
+    ],
+    "recorded_spawns": [
+      [
+        -87.2,
+        216.02,
+        -92.19
+      ],
+      [
+        -38.97,
+        216.14,
+        26.6
+      ],
+      [
+        -14.07,
+        216.0,
+        -98.27
+      ],
+      [
+        -104.97,
+        228.03,
+        -98.81
+      ],
+      [
+        -75.62,
+        228.0,
+        -101.78
+      ],
+      [
+        -44.64,
+        228.01,
+        -101.64
+      ],
+      [
+        -40.69,
+        227.99,
+        20.14
+      ],
+      [
+        -106.34,
+        228.03,
+        22.53
+      ],
+      [
+        -118.96,
+        233.03,
+        -24.69
+      ],
+      [
+        -101.18,
+        212.99,
+        -32.45
+      ],
+      [
+        -123.6,
+        215.98,
+        -5.07
+      ],
+      [
+        -29.42,
+        217.01,
+        -67.95
+      ],
+      [
+        -114.19,
+        233.03,
+        -57.34
+      ],
+      [
+        -57.98,
+        238.37,
+        -114.22
+      ],
+      [
+        -13.09,
+        229.28,
+        -113.44
+      ],
+      [
+        0.81,
+        216.03,
+        -84.48
+      ],
+      [
+        -73.95,
+        232.97,
+        -92.43
+      ],
+      [
+        -116.9,
+        216.0,
+        -74.54
+      ],
+      [
+        -113.37,
+        216.86,
+        -122.8
+      ],
+      [
+        -68.59,
+        215.99,
+        -113.92
+      ],
+      [
+        -119.37,
+        215.99,
+        -49.96
+      ],
+      [
+        -10.96,
+        214.02,
+        -81.14
+      ],
+      [
+        -6.23,
+        210.99,
+        -30.92
+      ],
+      [
+        -19.42,
+        215.99,
+        -17.58
+      ],
+      [
+        -7.12,
+        224.01,
+        19.6
+      ],
+      [
+        -62.33,
+        216.0,
+        29.38
+      ],
+      [
+        -102.89,
+        227.51,
+        23.48
+      ],
+      [
+        -7.61,
+        246.79,
+        -13.97
+      ],
+      [
+        -80.35,
+        216.02,
+        19.9
+      ],
+      [
+        -110.86,
+        233.03,
+        -98.63
+      ],
+      [
+        -49.13,
+        233.92,
+        22.52
+      ],
+      [
+        -43.76,
+        233.0,
+        -97.93
+      ],
+      [
+        -85.07,
+        228.01,
+        19.4
+      ],
+      [
+        -120.18,
+        227.99,
+        12.21
+      ],
+      [
+        -118.66,
+        228.0,
+        -90.18
+      ],
+      [
+        -118.66,
+        228.0,
+        -97.09
+      ],
+      [
+        -117.08,
+        228.03,
+        23.44
+      ]
+    ],
+    "bounds_min": [
+      -136.0,
+      216.0,
+      -123.999992370605
+    ],
+    "bounds_max": [
+      4.49945068359375,
+      219.0,
+      45.4997634887695
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      295.24365234375,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/gun-game-star-wars-by-sam-sam/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "skins": [
+    {
+      "id": "ace",
+      "label": "Ace",
+      "sourceIndex": 27,
+      "originalIndex": 37
+    },
+    {
+      "id": "ace_golden",
+      "label": "Ace (Golden) (Draft)",
+      "sourceIndex": 28,
+      "originalIndex": 104
+    },
+    {
+      "id": "ace_sergeant",
+      "label": "Ace (Sergeant)",
+      "sourceIndex": 29,
+      "originalIndex": 26
+    },
+    {
+      "id": "ace_trainee",
+      "label": "Ace (Trainee)",
+      "sourceIndex": 30,
+      "originalIndex": 27
+    },
+    {
+      "id": "ajax",
+      "label": "Ajax (Draft)",
+      "sourceIndex": 31,
+      "originalIndex": 68
+    },
+    {
+      "id": "akai",
+      "label": "Akai (Draft)",
+      "sourceIndex": 32,
+      "originalIndex": 77
+    },
+    {
+      "id": "akai_oni",
+      "label": "Akai (Oni) (Draft)",
+      "sourceIndex": 33,
+      "originalIndex": 114
+    },
+    {
+      "id": "anna",
+      "label": "Anna",
+      "sourceIndex": 34,
+      "originalIndex": 34
+    },
+    {
+      "id": "anna_golden",
+      "label": "Anna Golden (Draft)",
+      "sourceIndex": 35,
+      "originalIndex": 76
+    },
+    {
+      "id": "anna_rainbow",
+      "label": "Anna (Rainbow)",
+      "sourceIndex": 36,
+      "originalIndex": 31
+    },
+    {
+      "id": "anna_tabby",
+      "label": "Anna (Tabby)",
+      "sourceIndex": 37,
+      "originalIndex": 25
+    },
+    {
+      "id": "anubis_paw_and_order",
+      "label": "Anubis (Paw and Order)",
+      "sourceIndex": 38,
+      "originalIndex": 22
+    },
+    {
+      "id": "argon",
+      "label": "WITCH DOCTOR",
+      "sourceIndex": 39,
+      "originalIndex": 5
+    },
+    {
+      "id": "argyle",
+      "label": "Argyle (Draft)",
+      "sourceIndex": 40,
+      "originalIndex": 95
+    },
+    {
+      "id": "astra",
+      "label": "WITCH DOCTOR",
+      "sourceIndex": 41,
+      "originalIndex": 3
+    },
+    {
+      "id": "auditor",
+      "label": "The Auditor (Draft)",
+      "sourceIndex": 42,
+      "originalIndex": 86
+    },
+    {
+      "id": "axel_cupid",
+      "label": "AXEL (CUPID)",
+      "sourceIndex": 43,
+      "originalIndex": 18
+    },
+    {
+      "id": "blair_pumpkin_spice",
+      "label": "Blair (Pumpkin Spice)",
+      "sourceIndex": 44,
+      "originalIndex": 46
+    },
+    {
+      "id": "bone_collector",
+      "label": "Bone Collector",
+      "sourceIndex": 45,
+      "originalIndex": 16
+    },
+    {
+      "id": "boreas",
+      "label": "Boreas (Draft)",
+      "sourceIndex": 46,
+      "originalIndex": 57
+    },
+    {
+      "id": "broodmother",
+      "label": "BROODMOTHER",
+      "sourceIndex": 47,
+      "originalIndex": 14
+    },
+    {
+      "id": "bureau_enforcer",
+      "label": "Bureau Enforcer (Draft)",
+      "sourceIndex": 48,
+      "originalIndex": 111
+    },
+    {
+      "id": "bureau_xlr8",
+      "label": "Bureau XLR8 (Draft)",
+      "sourceIndex": 49,
+      "originalIndex": 58
+    },
+    {
+      "id": "camo",
+      "label": "APEX CAMO",
+      "sourceIndex": 50,
+      "originalIndex": 0
+    },
+    {
+      "id": "cherry_bomb",
+      "label": "Cherry Bomb (Draft)",
+      "sourceIndex": 51,
+      "originalIndex": 66
+    },
+    {
+      "id": "chet_throwback",
+      "label": "Chet (Throwback) (Draft)",
+      "sourceIndex": 52,
+      "originalIndex": 107
+    },
+    {
+      "id": "dani_aqua",
+      "label": "Dani (Aqua) (Draft)",
+      "sourceIndex": 53,
+      "originalIndex": 98
+    },
+    {
+      "id": "dani_checkers",
+      "label": "Dani (Checkers)",
+      "sourceIndex": 54,
+      "originalIndex": 39
+    },
+    {
+      "id": "daybreak",
+      "label": "Daybreak (Draft)",
+      "sourceIndex": 55,
+      "originalIndex": 55
+    },
+    {
+      "id": "dee",
+      "label": "Dee (Draft)",
+      "sourceIndex": 56,
+      "originalIndex": 99
+    },
+    {
+      "id": "destiny",
+      "label": "Destiny (Draft)",
+      "sourceIndex": 57,
+      "originalIndex": 90
+    },
+    {
+      "id": "eclipse_ronin",
+      "label": "ECLIPSE RONIN",
+      "sourceIndex": 58,
+      "originalIndex": 2
+    },
+    {
+      "id": "edge",
+      "label": "Edge (Draft)",
+      "sourceIndex": 59,
+      "originalIndex": 61
+    },
+    {
+      "id": "edge_bureau",
+      "label": "Edge (Bureau) (Draft)",
+      "sourceIndex": 60,
+      "originalIndex": 89
+    },
+    {
+      "id": "fender",
+      "label": "Fender (Draft)",
+      "sourceIndex": 61,
+      "originalIndex": 56
+    },
+    {
+      "id": "gobbler",
+      "label": "Gobbler (Draft)",
+      "sourceIndex": 62,
+      "originalIndex": 63
+    },
+    {
+      "id": "grog_swiller",
+      "label": "Grog Swiller",
+      "sourceIndex": 63,
+      "originalIndex": 40
+    },
+    {
+      "id": "hattie",
+      "label": "Hattie",
+      "sourceIndex": 64,
+      "originalIndex": 11
+    },
+    {
+      "id": "hattie_golden",
+      "label": "Hattie Golden (Draft)",
+      "sourceIndex": 65,
+      "originalIndex": 74
+    },
+    {
+      "id": "hattie_incognito",
+      "label": "Hattie (Incognito)",
+      "sourceIndex": 66,
+      "originalIndex": 32
+    },
+    {
+      "id": "hattie_varsity",
+      "label": "Hattie (Varsity)",
+      "sourceIndex": 67,
+      "originalIndex": 28
+    },
+    {
+      "id": "hazard_meltdown",
+      "label": "Hazard (Meltdown) (Draft)",
+      "sourceIndex": 68,
+      "originalIndex": 62
+    },
+    {
+      "id": "haze_nuclear",
+      "label": "Haze (Nuclear)",
+      "sourceIndex": 69,
+      "originalIndex": 36
+    },
+    {
+      "id": "haze_safety",
+      "label": "Haze (Safety) (Draft)",
+      "sourceIndex": 70,
+      "originalIndex": 101
+    },
+    {
+      "id": "headless_horseman",
+      "label": "Headless Horseman",
+      "sourceIndex": 71,
+      "originalIndex": 41
+    },
+    {
+      "id": "hopn_stacy",
+      "label": "HopN Stacy (Draft)",
+      "sourceIndex": 72,
+      "originalIndex": 93
+    },
+    {
+      "id": "imperator",
+      "label": "Imperator (Draft)",
+      "sourceIndex": 73,
+      "originalIndex": 78
+    },
+    {
+      "id": "jack_o",
+      "label": "Jack-O",
+      "sourceIndex": 74,
+      "originalIndex": 13
+    },
+    {
+      "id": "jax_nova",
+      "label": "Jax Nova (Draft)",
+      "sourceIndex": 75,
+      "originalIndex": 67
+    },
+    {
+      "id": "jay",
+      "label": "Jay (Draft)",
+      "sourceIndex": 76,
+      "originalIndex": 70
+    },
+    {
+      "id": "kaiju",
+      "label": "Kaiju",
+      "sourceIndex": 77,
+      "originalIndex": 51
+    },
+    {
+      "id": "kaiju_y",
+      "label": "Kaiju Y (Draft)",
+      "sourceIndex": 78,
+      "originalIndex": 79
+    },
+    {
+      "id": "kaos",
+      "label": "Kaos (Draft)",
+      "sourceIndex": 79,
+      "originalIndex": 92
+    },
+    {
+      "id": "kringle_beach_boy",
+      "label": "Kringle (Beach Boy)",
+      "sourceIndex": 80,
+      "originalIndex": 20
+    },
+    {
+      "id": "kunzo",
+      "label": "Kunzo (Draft)",
+      "sourceIndex": 81,
+      "originalIndex": 94
+    },
+    {
+      "id": "logan_maverick",
+      "label": "Logan (Maverick)",
+      "sourceIndex": 82,
+      "originalIndex": 49
+    },
+    {
+      "id": "millie",
+      "label": "Millie",
+      "sourceIndex": 83,
+      "originalIndex": 38
+    },
+    {
+      "id": "millie_defiant",
+      "label": "Millie (Defiant)",
+      "sourceIndex": 84,
+      "originalIndex": 33
+    },
+    {
+      "id": "millie_golden",
+      "label": "Millie (Golden) (Draft)",
+      "sourceIndex": 85,
+      "originalIndex": 105
+    },
+    {
+      "id": "millie_punk",
+      "label": "Millie (Punk)",
+      "sourceIndex": 86,
+      "originalIndex": 24
+    },
+    {
+      "id": "morgan_midnight",
+      "label": "Morgan Midnight (Draft)",
+      "sourceIndex": 87,
+      "originalIndex": 72
+    },
+    {
+      "id": "nameless_one",
+      "label": "Nameless One (Draft)",
+      "sourceIndex": 88,
+      "originalIndex": 87
+    },
+    {
+      "id": "odin",
+      "label": "Odin (Draft)",
+      "sourceIndex": 89,
+      "originalIndex": 59
+    },
+    {
+      "id": "onepopularguy",
+      "label": "#OnePOPularGuy (Draft)",
+      "sourceIndex": 90,
+      "originalIndex": 91
+    },
+    {
+      "id": "oni_akai",
+      "label": "Oni (Akai) (Draft)",
+      "sourceIndex": 91,
+      "originalIndex": 113
+    },
+    {
+      "id": "onryo",
+      "label": "Onryo (Draft)",
+      "sourceIndex": 92,
+      "originalIndex": 69
+    },
+    {
+      "id": "phoenix_angelic",
+      "label": "Phoenix Angelic (Draft)",
+      "sourceIndex": 93,
+      "originalIndex": 54
+    },
+    {
+      "id": "phoenix_darkwing",
+      "label": "Phoenix Darkwing (Draft)",
+      "sourceIndex": 94,
+      "originalIndex": 84
+    },
+    {
+      "id": "phoenix_onyx",
+      "label": "Phoenix Onyx (Draft)",
+      "sourceIndex": 95,
+      "originalIndex": 83
+    },
+    {
+      "id": "pierce_vice",
+      "label": "Pierce Vice (Draft)",
+      "sourceIndex": 96,
+      "originalIndex": 71
+    },
+    {
+      "id": "pj",
+      "label": "PJ",
+      "sourceIndex": 97,
+      "originalIndex": 9
+    },
+    {
+      "id": "pj_adventurer",
+      "label": "PJ (Adventurer)",
+      "sourceIndex": 98,
+      "originalIndex": 29
+    },
+    {
+      "id": "pj_gilded",
+      "label": "PJ (Gilded) (Draft)",
+      "sourceIndex": 99,
+      "originalIndex": 106
+    },
+    {
+      "id": "pj_golden",
+      "label": "PJ (Golden) (Draft)",
+      "sourceIndex": 100,
+      "originalIndex": 103
+    },
+    {
+      "id": "polymer_brass",
+      "label": "Pvt. Polymer (Brass) (Draft)",
+      "sourceIndex": 101,
+      "originalIndex": 85
+    },
+    {
+      "id": "polymer_gold",
+      "label": "Polymer Gold (Draft)",
+      "sourceIndex": 102,
+      "originalIndex": 53
+    },
+    {
+      "id": "polymer_steel",
+      "label": "Pvt. Polymer (Steel) (Draft)",
+      "sourceIndex": 103,
+      "originalIndex": 108
+    },
+    {
+      "id": "prism",
+      "label": "Prism",
+      "sourceIndex": 104,
+      "originalIndex": 45
+    },
+    {
+      "id": "prowler",
+      "label": "Prowler (Draft)",
+      "sourceIndex": 105,
+      "originalIndex": 81
+    },
+    {
+      "id": "raven",
+      "label": "Raven",
+      "sourceIndex": 106,
+      "originalIndex": 48
+    },
+    {
+      "id": "reaper",
+      "label": "Reaper",
+      "sourceIndex": 107,
+      "originalIndex": 52
+    },
+    {
+      "id": "rico",
+      "label": "Rico (Draft)",
+      "sourceIndex": 108,
+      "originalIndex": 100
+    },
+    {
+      "id": "roy",
+      "label": "Roy",
+      "sourceIndex": 109,
+      "originalIndex": 10
+    },
+    {
+      "id": "roy_daring",
+      "label": "Roy (Daring)",
+      "sourceIndex": 110,
+      "originalIndex": 30
+    },
+    {
+      "id": "roy_golden",
+      "label": "Roy Golden (Draft)",
+      "sourceIndex": 111,
+      "originalIndex": 75
+    },
+    {
+      "id": "roy_trickshot",
+      "label": "Roy (Trickshot)",
+      "sourceIndex": 112,
+      "originalIndex": 23
+    },
+    {
+      "id": "scaredy_cat",
+      "label": "Scaredy Cat (Draft)",
+      "sourceIndex": 113,
+      "originalIndex": 82
+    },
+    {
+      "id": "scout_recon",
+      "label": "Scout (Recon) (Draft)",
+      "sourceIndex": 114,
+      "originalIndex": 96
+    },
+    {
+      "id": "sir_box_a_lot",
+      "label": "Sir Box-a-lot (Draft)",
+      "sourceIndex": 115,
+      "originalIndex": 60
+    },
+    {
+      "id": "smiley",
+      "label": "Smiley",
+      "sourceIndex": 116,
+      "originalIndex": 35
+    },
+    {
+      "id": "sol",
+      "label": "WITCH DOCTOR",
+      "sourceIndex": 117,
+      "originalIndex": 4
+    },
+    {
+      "id": "stacy_throwback",
+      "label": "Stacy Throwback (Draft)",
+      "sourceIndex": 118,
+      "originalIndex": 73
+    },
+    {
+      "id": "stalker",
+      "label": "Stalker (Draft)",
+      "sourceIndex": 119,
+      "originalIndex": 80
+    },
+    {
+      "id": "surtr",
+      "label": "Surtr (Draft)",
+      "sourceIndex": 120,
+      "originalIndex": 65
+    },
+    {
+      "id": "the_phoenix",
+      "label": "The Phoenix",
+      "sourceIndex": 121,
+      "originalIndex": 50
+    },
+    {
+      "id": "the_pilgrim",
+      "label": "The Pilgrim",
+      "sourceIndex": 122,
+      "originalIndex": 15
+    },
+    {
+      "id": "toni",
+      "label": "Toni (Draft)",
+      "sourceIndex": 123,
+      "originalIndex": 102
+    },
+    {
+      "id": "tormentus",
+      "label": "Tormentus",
+      "sourceIndex": 124,
+      "originalIndex": 17
+    },
+    {
+      "id": "tox",
+      "label": "Tox",
+      "sourceIndex": 125,
+      "originalIndex": 42
+    },
+    {
+      "id": "tsuki",
+      "label": "Tsuki (Draft)",
+      "sourceIndex": 126,
+      "originalIndex": 109
+    },
+    {
+      "id": "tsuki_blood_omen",
+      "label": "Tsuki (Blood Omen) (Draft)",
+      "sourceIndex": 127,
+      "originalIndex": 110
+    },
+    {
+      "id": "valentina_cupid",
+      "label": "Valentina (Cupid)",
+      "sourceIndex": 128,
+      "originalIndex": 19
+    },
+    {
+      "id": "victoria_scarlet",
+      "label": "Victoria (Scarlet)",
+      "sourceIndex": 129,
+      "originalIndex": 47
+    },
+    {
+      "id": "void_wanderer",
+      "label": "Void Wanderer",
+      "sourceIndex": 130,
+      "originalIndex": 43
+    },
+    {
+      "id": "vyper",
+      "label": "Vyper (Draft)",
+      "sourceIndex": 131,
+      "originalIndex": 64
+    },
+    {
+      "id": "warthog",
+      "label": "Warthog",
+      "sourceIndex": 132,
+      "originalIndex": 12
+    },
+    {
+      "id": "wheatley_summer",
+      "label": "Wheatley (Summer) (Draft)",
+      "sourceIndex": 133,
+      "originalIndex": 88
+    },
+    {
+      "id": "wingman",
+      "label": "Wingman",
+      "sourceIndex": 134,
+      "originalIndex": 44
+    },
+    {
+      "id": "witch_doctor",
+      "label": "WITCH DOCTOR",
+      "sourceIndex": 135,
+      "originalIndex": 1
+    },
+    {
+      "id": "yesbot",
+      "label": "Yesbot",
+      "sourceIndex": 136,
+      "originalIndex": 21
+    },
+    {
+      "id": "zara_nightshade",
+      "label": "Zara Nightshade (Draft)",
+      "sourceIndex": 137,
+      "originalIndex": 112
+    },
+    {
+      "id": "zero_forest",
+      "label": "Zero (Forest) (Draft)",
+      "sourceIndex": 138,
+      "originalIndex": 97
+    }
+  ]
+}

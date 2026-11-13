@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "witch_doctor",
+  "label": "WITCH DOCTOR · ARGON ORIGINAL",
+  "sourceIndex": 1,
+  "eyeToShoulder": 0.29,
+  "bodyRear": 0.12,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 1.0,
+      "roughness": 1.0,
+      "doubleSided": false,
+      "baseColor": "witch_doctor-body-0-baseColor.png",
+      "normal": "witch_doctor-body-0-normal.png",
+      "metallicMap": "witch_doctor-body-0-metallic.png",
+      "occlusion": "witch_doctor-body-0-occlusion.png",
+      "emission": "witch_doctor-body-0-emission.png",
+      "emissionColor": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "normalScale": 1.0,
+      "occlusionStrength": 1.0
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "witch_doctor-glove-baseColor.png",
+      "normal": "witch_doctor-glove-normal.png",
+      "metallicMap": "witch_doctor-glove-metallic.png",
+      "occlusion": "witch_doctor-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

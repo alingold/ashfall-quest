@@ -1,0 +1,285 @@
+{
+  "version": 1,
+  "mapId": "archive:sharp-objects-kiwishade",
+  "title": "SHARP OBJECTS",
+  "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+  "spawn": [
+    -26.67,
+    49.52309906005859,
+    21.9
+  ],
+  "gameSpawn": [
+    -26.67,
+    49.52309906005859,
+    21.9
+  ],
+  "warmupSpawn": [
+    -18.21521,
+    52.62,
+    74.86577
+  ],
+  "boundsMin": [
+    -69.9999923706055,
+    49.0000038146973,
+    -22.9999923706055
+  ],
+  "boundsMax": [
+    3.99999237060547,
+    74.0,
+    86.4999923706055
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p182f9ff7",
+      "color": "p182f9ff7_c.jpg",
+      "normal": "p182f9ff7_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p95447a31",
+      "color": "p95447a31_c.jpg",
+      "normal": "p95447a31_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "pd959969c",
+      "color": "pd959969c_c.jpg",
+      "normal": "pd959969c_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pee49fa59",
+      "color": "pee49fa59_c.jpg",
+      "normal": "pee49fa59_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t150",
+      "color": "t150_c.jpg",
+      "normal": "t150_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t18",
+      "color": "t18_c.jpg",
+      "normal": "t18_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t22",
+      "color": "t22_c.jpg",
+      "normal": "t22_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t33",
+      "color": "t33_c.jpg",
+      "normal": "t33_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t43",
+      "color": "t43_c.jpg",
+      "normal": "t43_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t50",
+      "color": "t50_c.jpg",
+      "normal": "t50_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t55",
+      "color": "t55_c.jpg",
+      "normal": "t55_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t56",
+      "color": "t56_c.jpg",
+      "normal": "t56_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t59",
+      "color": "t59_c.jpg",
+      "normal": "t59_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t62",
+      "color": "t62_c.jpg",
+      "normal": "t62_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t66",
+      "color": "t66_c.jpg",
+      "normal": "t66_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 56,
+  "cameraFarDistance": 2000
+}

@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "mapId": "archive:magnum-chaosvr",
+  "title": "MAGNUM",
+  "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+  "spawn": [
+    -5.64123,
+    259.3416491699219,
+    11.08802
+  ],
+  "gameSpawn": [
+    -5.64123,
+    259.3416491699219,
+    11.08802
+  ],
+  "warmupSpawn": [
+    0.58991,
+    266.2221728515625,
+    20.63436
+  ],
+  "boundsMin": [
+    -510.037445068359,
+    3.64715480804443,
+    -460.537445068359
+  ],
+  "boundsMax": [
+    431.037445068359,
+    60.1116676330566,
+    480.537445068359
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p52c49b5d",
+      "color": "p52c49b5d_c.jpg",
+      "normal": "p52c49b5d_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p95447a31",
+      "color": "p95447a31_c.jpg",
+      "normal": "p95447a31_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "pee49fa59",
+      "color": "pee49fa59_c.jpg",
+      "normal": "pee49fa59_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t117",
+      "color": "t117_c.jpg",
+      "normal": "t117_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t74",
+      "color": "t74_c.jpg",
+      "normal": "t74_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 48,
+  "cameraFarDistance": 2000
+}

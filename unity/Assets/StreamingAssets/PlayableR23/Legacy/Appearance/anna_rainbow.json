@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "anna_rainbow",
+  "label": "Anna (Rainbow)",
+  "sourceIndex": 31,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-200767b499c4709817b6b40f.png",
+      "normal": "r5-normal-f6354eb9bd3cf28ba08662a2.png",
+      "metallicMap": "r5-metallic-133b1637f1b7e56815516e37.png",
+      "occlusion": "r5-occlusion-7694d8f277310628d9318c3a.png",
+      "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-ccc724054159a01b730dd2e1.png",
+      "normal": "r5-normal-db9bf7011c4d4ef65f3e763f.png",
+      "metallicMap": "r5-metallic-bc65479f6e9b7db01d1a6924.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ],
+  "stabilizePreviewLegs": true
+}

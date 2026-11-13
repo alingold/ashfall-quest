@@ -1,0 +1,886 @@
+{
+  "mapId": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+  "title": "ZELDA KOKIRI FOREST [SOLOS]",
+  "creator": "ilikepies1211",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "assets/data/architecture_r24.json": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+    "assets/data/map_semantics_r14.json": "61ef5cb7b8e6ff477894fb833caa54c946e695b41d733130e0d1d52ecc3daca6",
+    "assets/data/archive_semantics_r9.json": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a",
+    "assets/data/archive_adapters_r10.json": "00aee2d894f87aa3399720f9c88abe70b8ebd8eb90895442a3b8ae983a4e7695",
+    "assets/data/map_caches_r17.json": "d3069fb750c16606ce84a7bda63e8591d58b456829d3c585d627127acd784fbd",
+    "scripts/archive_catalog1003.gd": "6e7d4743b3845e44bb54babf8b5a9046108fbd68e111e7c88b5c1cafb609d3a7",
+    "scripts/map_catalog1000.gd": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5",
+    "scripts/archive_map1003.gd": "3aeb9a038edec0fd890423365961d82b64c7e67c8d453e744a74a90ac9e5ee0e",
+    "scripts/community_map1002.gd": "8a959a2b5fa8562d411ea2e8756a9102b6015efb0a6702033a8e028d97abce61",
+    "scripts/archive_semantics_r8.gd": "857bbf458575af9407d4f969eb9b158683088dc1c89199c9ea57c5b91a9526e5",
+    "scripts/archive_semantics_r9.gd": "a24e26762d5f3b4f03c498116e47d25099166f5ba837a4c1a86289208b0197b2",
+    "scripts/map_semantics_r14.gd": "232fc81b6a6d493ca6384a2533d397a43354ef560c51d2757b60ec60e703913b",
+    "scripts/foliage_r23.gd": "44bfa5c57cc38c51f04ddc714640c3e06a7523bd1f4501ba4b378dab38413685",
+    "tools/convert_archive1003.gd": "3dcd46d595b9e7c0bd331f7e822c9b066f58f730cdfa93c81f80e3127d622a71"
+  },
+  "archiveInputs": {
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\map.glb": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\provenance.json": "c5f52f5641b6e7db3d21c4c2afbed6334c76b0bc7d923a7c8a875a8a5d033d41",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\map.json": "4196f2623de8bcabf2ba4a28ea3686f6e8347e616ba2ddd47e832928e410b35f",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\converted\\manifest.json": "4b631c267721079cfcdb398fcc521b8346cf31fbc3b9396e02a49ad61d33678e",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\catalog.json": "e36ccca2a4a3237894bb05c9577c23822f0a3cd51622ef9864fc0134ed45bf58"
+  },
+  "sourceGlbSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+  "cacheFingerprint": "9c456feb8d525d218b872fca489d598eb592b98236f743ad3b27da7e61951a3e",
+  "preparedAdapterSha256": "26f1c1ae5a1f7002f8aa344b7993c85d74daa268fe130aace20f77d19349b1b2",
+  "sourceSolidTriangles": 330590,
+  "sourceRoles": {
+    "world": 330590,
+    "false": 996,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 318170,
+  "collisionTriangles": 316432,
+  "sourceMarkerTrianglesRemoved": {
+    "decorativeCollisionOnly": 208,
+    "r8RedRing": 2496,
+    "r8RedQuestion": 10080,
+    "r14r17Visual": 840,
+    "r14LocalMarkerCollisionOnly": 550
+  },
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 0.9997135067974282,
+  "chunks": 235,
+  "materials": 83,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gloss_01_white_c.jpg",
+      "sha256": "517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4",
+      "bytes": 4723
+    },
+    "p054b1b60_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gloss_01_white_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "p07125d04_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_viking_trim_01_c.jpg",
+      "sha256": "adc6933f5c5606395f1d40951a9a331dc2dbaa4fd04f0e8f54406ee3a0be7e4d",
+      "bytes": 48702
+    },
+    "p07125d04_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_viking_trim_01_n.jpg",
+      "sha256": "c9b6d69adda1a68af0b301fe6e0262246e9018e50ce834e51e10a05a284c4f87",
+      "bytes": 50107
+    },
+    "p2a61c272_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gloss_01_red_c.jpg",
+      "sha256": "5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79",
+      "bytes": 4725
+    },
+    "p2a61c272_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gloss_01_red_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "p3971bcce_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_ends_01_c.jpg",
+      "sha256": "c6b34f8b53361e27f4217bc18ea0b5c15dcb3ca1c4257701d1f27ed9073ceb14",
+      "bytes": 73361
+    },
+    "p3971bcce_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_ends_01_n.jpg",
+      "sha256": "298e879200896639adea333ec1e683504ef0a9e9682a507918b4faa198ed2f61",
+      "bytes": 106177
+    },
+    "p4227e4ec_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\rock_peak_01_c.jpg",
+      "sha256": "5810c4be156e89f9e71f7b730148eb66a99f644f224da16b70327b9cf3f9f452",
+      "bytes": 50158
+    },
+    "p4227e4ec_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\rock_peak_01_n.jpg",
+      "sha256": "e2ef043516cc61f7041c44c2aaabf421d804684377934947c747daa5e0f186d7",
+      "bytes": 78257
+    },
+    "p691aabc7_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\rock_granite_01_c.jpg",
+      "sha256": "3062cd0bbbcf43408976ceb6b3896cd651bce16fe89be226735afc1c1bff25ea",
+      "bytes": 78970
+    },
+    "p691aabc7_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\rock_granite_01_n.jpg",
+      "sha256": "deae76a1b4304a9f0f16863cc8cc21c0ce6a82ba0703382f109f568dfc7a7aba",
+      "bytes": 110080
+    },
+    "p70705e03_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\prop_rur_barrel_01_c.jpg",
+      "sha256": "483955c278679410a0fcb53b36cc3b54c0d6766ca2f5b449ed0b239eabd474d0",
+      "bytes": 43166
+    },
+    "p70705e03_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\prop_rur_barrel_01_n.jpg",
+      "sha256": "845966340bb1d388de8cd62557bc7618fd3faa95c8919d870d39beaad909634b",
+      "bytes": 28213
+    },
+    "p785e2add_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_destruct_trim_01_c.jpg",
+      "sha256": "6d29d02a12d6446862635ad244b3b4d5f7b23e8ef2a13155cdc398b0560e77b4",
+      "bytes": 27289
+    },
+    "p785e2add_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_destruct_trim_01_n.jpg",
+      "sha256": "9e8f8eb050e69598fe53889bc4b37f13f1686ad9e8767c9da88bcd6d5cfe9009",
+      "bytes": 23601
+    },
+    "p797b5424_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\sign_caution_01_c.jpg",
+      "sha256": "f7195bd74b8a58bbe475414f238cfcd717fa26286799e2601c6c71e150db70dc",
+      "bytes": 35666
+    },
+    "p797b5424_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\sign_caution_01_n.jpg",
+      "sha256": "a331ab2b4f16bcf651b498b3d98c7f77765484826d27f0565fbb8855f28d76b2",
+      "bytes": 19076
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_black_01_c.jpg",
+      "sha256": "42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c",
+      "bytes": 16230
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_black_01_n.jpg",
+      "sha256": "a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf",
+      "bytes": 13760
+    },
+    "p95447a31_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_trim_silver_01_c.jpg",
+      "sha256": "5377d634497fa19017e3f88653ddbfb8f4ea1f0e1eea2486502b6ea1beedd5cf",
+      "bytes": 31032
+    },
+    "p95447a31_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_trim_silver_01_n.jpg",
+      "sha256": "c5be8d3388202d279c893d49d7879263c795bb74b1e432eead69883769279839",
+      "bytes": 52010
+    },
+    "paab5c174_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\hay_bale_round_01_c.jpg",
+      "sha256": "0e145758578aac140124a2d70780dbbebeb578dacf54c9412969de16f378aba3",
+      "bytes": 48980
+    },
+    "paab5c174_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\hay_bale_round_01_n.jpg",
+      "sha256": "febf4cb5346a6ad807013ee7ea1206c706557549f040550059be49e6eb833fea",
+      "bytes": 43441
+    },
+    "pb8a19331_c.png": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\LaserCurtain_FX_mat_cull_c.png",
+      "sha256": "5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f",
+      "bytes": 91030
+    },
+    "pc19a0d9a_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\chipped_stone_01_c.jpg",
+      "sha256": "f6095897e30d4bcca792ea14278d5cab56fc1c3f6aefcf624443fcdf00e2e19d",
+      "bytes": 23785
+    },
+    "pc19a0d9a_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\chipped_stone_01_n.jpg",
+      "sha256": "70062a5f67c4c4d253c07dec1529b33853aa632a99ac4ef638731f548d0f2714",
+      "bytes": 57796
+    },
+    "pc24e4054_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_logs_01_c.jpg",
+      "sha256": "b0e7aabf120f63033314bdad5b0720af9d640555e312a3bc3003b1d94e1ed3f8",
+      "bytes": 56060
+    },
+    "pc24e4054_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_logs_01_n.jpg",
+      "sha256": "af78ab0f2de0a5167c5f42fd76cf34847b7fbf713c8cfd03d9c315002deb6245",
+      "bytes": 49978
+    },
+    "pc31bfb81_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_viking_plank_01_c.jpg",
+      "sha256": "88d8145fc09e32b5ed762277f0a1cd73ff4a1aa5cf8dcd181114a7d3356aa6b5",
+      "bytes": 45497
+    },
+    "pc31bfb81_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_viking_plank_01_n.jpg",
+      "sha256": "6307d5b907ee3c7ec6546f63c6951cb4a510e1ac84394158fdc335ce3fb012bb",
+      "bytes": 39832
+    },
+    "pcdf281b7_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\terrain_rock_ground_01_c.jpg",
+      "sha256": "7f4b9e9a3e4e527e7fec64f087bad4c378e75b22947c9271eafcaa8f1cca1125",
+      "bytes": 66904
+    },
+    "pcdf281b7_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\terrain_rock_ground_01_n.jpg",
+      "sha256": "a7f10cefc186895610783716c9c59df1e66bbfac72cbac0241a86c4453a4c813",
+      "bytes": 93111
+    },
+    "pd959969c_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_trim_black_01_c.jpg",
+      "sha256": "10ea7ab836cd8286ca05426ae286cc32da8bbe99ad547bf27fc3d95f3801ebde",
+      "bytes": 26353
+    },
+    "pd959969c_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_trim_black_01_n.jpg",
+      "sha256": "042f2a3cf1581114d253d4abb579700232c7cbaac50b53e5b39a10f9c2780fde",
+      "bytes": 42352
+    },
+    "pdc94084b_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_blocks_panel_01_signs_c.jpg",
+      "sha256": "34f96335265912ae7a0311b3c3ee9ce14e95a4b2af789399c3bcc0dbd8ae6472",
+      "bytes": 51464
+    },
+    "pdc94084b_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_blocks_panel_01_signs_n.jpg",
+      "sha256": "ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb",
+      "bytes": 20170
+    },
+    "pe8ebb6fa_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\grass_01_c.jpg",
+      "sha256": "47b74327f6dad9769d976c4927e676055c7cdfacac3aca8261da9aa7c968210c",
+      "bytes": 51074
+    },
+    "pe8ebb6fa_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\grass_01_n.jpg",
+      "sha256": "721f33fd64fd81c35166bcd4b285b416eed7684e70cc9739f4aba66ff3ce97ec",
+      "bytes": 41416
+    },
+    "ped8b3a81_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_bare_01_c.jpg",
+      "sha256": "71beddd69846b5497cf2a44671b114e4915a060a8c52ef4fc142dc3524a78aa5",
+      "bytes": 35182
+    },
+    "ped8b3a81_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\wood_bare_01_n.jpg",
+      "sha256": "ea47333d65fc55a407ca316c8731ee5c28dcb61d7db1fd96f11a8710ef255642",
+      "bytes": 72184
+    },
+    "pee49fa59_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gb_emissive_01_jumppad_c.jpg",
+      "sha256": "dec5f7da6a585990fd9f09cb4007ea530d510ed795042b0a316d5d191ad87faf",
+      "bytes": 18287
+    },
+    "pee49fa59_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\gb_emissive_01_jumppad_n.jpg",
+      "sha256": "e16febf33b5a4a18c8b2805cf36d57db97b34137b1adbcd56e12ab4a398c0b69",
+      "bytes": 15122
+    },
+    "sg_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\s\\mapeditordefault\\sg_c.jpg",
+      "sha256": "55db55e0a047fba34146515d0a8cb9d0435a78aec8a382165b57d186ae884d38",
+      "bytes": 388910
+    },
+    "t100_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\100_c.jpg",
+      "sha256": "7c8af823e462cf17a988c45c26a2590e252d17b4108adfcf5af09a5b861a177f",
+      "bytes": 65226
+    },
+    "t100_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\100_n.jpg",
+      "sha256": "f98f48fda1d7b6880792b524134259c99fe3e0cd4ce86c785a80c9cceb345339",
+      "bytes": 12755
+    },
+    "t109_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\109_c.jpg",
+      "sha256": "3062cd0bbbcf43408976ceb6b3896cd651bce16fe89be226735afc1c1bff25ea",
+      "bytes": 78970
+    },
+    "t109_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\109_n.jpg",
+      "sha256": "deae76a1b4304a9f0f16863cc8cc21c0ce6a82ba0703382f109f568dfc7a7aba",
+      "bytes": 110080
+    },
+    "t11_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\11_c.jpg",
+      "sha256": "07b583b27c6f298953a5fed8b0a420037e1955796175d3adf94ac0d19177585e",
+      "bytes": 43938
+    },
+    "t11_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\11_n.jpg",
+      "sha256": "74e133b132d053d516deab5cd728a2fb8b0754b7584eaef1e979febe99d95879",
+      "bytes": 57966
+    },
+    "t111_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\111_c.jpg",
+      "sha256": "f5cee2e245233e03f584925593ec8ebfd8cdd3dfdb0bce8b528bf430db73eae7",
+      "bytes": 19537
+    },
+    "t111_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\111_n.jpg",
+      "sha256": "533e5cd48763120c2ef4ff276f188c53171f6d28b62978b398235ad9f551354a",
+      "bytes": 39206
+    },
+    "t112_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\112_c.jpg",
+      "sha256": "20acb6e8aba96b3dd57991c9e1c7934393555733b21744005d5d391a00814259",
+      "bytes": 41180
+    },
+    "t112_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\112_n.jpg",
+      "sha256": "a429d65e152054fb10ac793270b266517eb257a9fcc0bd3cb2470caf53929545",
+      "bytes": 27734
+    },
+    "t113_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\113_c.jpg",
+      "sha256": "cf3810e14ce562093833a3c843ce9a4b7e3e9bf7d952b9cfe8ddb6638470acd1",
+      "bytes": 91010
+    },
+    "t113_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\113_n.jpg",
+      "sha256": "85ba54e5cfa50194538df5dedb377138a4e0d73911becfb77ca15e1f1fc5bd98",
+      "bytes": 103292
+    },
+    "t116_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\116_c.jpg",
+      "sha256": "f3a81d357bda96c12e13e6860ad6c0b283d61754b996e607d6762dc9421ce58a",
+      "bytes": 30656
+    },
+    "t116_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\116_n.jpg",
+      "sha256": "0e56675adf8c84ace1597b395e54fa8d62ea52472b79581c4db728e6eddd5061",
+      "bytes": 15617
+    },
+    "t12_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\12_c.jpg",
+      "sha256": "91a23c79ed2cfa172f55c8dfdbab5a4907bfa6a383843be7851611ee057b97ef",
+      "bytes": 35252
+    },
+    "t12_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\12_n.jpg",
+      "sha256": "bf0249f3541ad3577d5a996458f73038af19fca581917c1877245b4ee3938a83",
+      "bytes": 40598
+    },
+    "t121_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\121_c.jpg",
+      "sha256": "d0a340a84e130181d2706d5980f1f3084b57d32800022426ae2edc84f9663386",
+      "bytes": 39295
+    },
+    "t121_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\121_n.jpg",
+      "sha256": "74e133b132d053d516deab5cd728a2fb8b0754b7584eaef1e979febe99d95879",
+      "bytes": 57966
+    },
+    "t122_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\122_c.jpg",
+      "sha256": "7c3df846d95bf2abc99cf6699751541a07c1a5dea9564566c3c7e907f7bc10ed",
+      "bytes": 41249
+    },
+    "t122_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\122_n.jpg",
+      "sha256": "74e133b132d053d516deab5cd728a2fb8b0754b7584eaef1e979febe99d95879",
+      "bytes": 57966
+    },
+    "t124_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\124_c.jpg",
+      "sha256": "5291021a71faa2c3b45baee726623d660104409f7bd9cca8842741ab091b347e",
+      "bytes": 43663
+    },
+    "t124_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\124_n.jpg",
+      "sha256": "bf0249f3541ad3577d5a996458f73038af19fca581917c1877245b4ee3938a83",
+      "bytes": 40598
+    },
+    "t133_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\133_c.jpg",
+      "sha256": "9877bc526acc187ee98b8f095a8869bbaa91c4dabb2d78f002640ee7c9eb7d88",
+      "bytes": 17891
+    },
+    "t133_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\133_n.jpg",
+      "sha256": "c74808a06c084074ac50681c2f7c473f11322a31d1fe61b432314b9821aacb51",
+      "bytes": 10886
+    },
+    "t135_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\135_c.jpg",
+      "sha256": "1c0eb725f0806eb179c064c1930516aefb7fb9491300b003eec1d265b2bdaedf",
+      "bytes": 40750
+    },
+    "t135_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\135_n.jpg",
+      "sha256": "b917ef0962ca60a3f816bb03788a3332e7249c4faa3de61c665c27b205b559fe",
+      "bytes": 44833
+    },
+    "t14_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\14_c.jpg",
+      "sha256": "f6095897e30d4bcca792ea14278d5cab56fc1c3f6aefcf624443fcdf00e2e19d",
+      "bytes": 23785
+    },
+    "t14_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\14_n.jpg",
+      "sha256": "70062a5f67c4c4d253c07dec1529b33853aa632a99ac4ef638731f548d0f2714",
+      "bytes": 57796
+    },
+    "t16_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\16_c.jpg",
+      "sha256": "c99f083b045a2d42892b8fc5dd2124255f5214b5f5eb8d9e1c3f75d124b55c67",
+      "bytes": 37408
+    },
+    "t16_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\16_n.jpg",
+      "sha256": "cdd3ea20a6a3354b878a6fd74fa2041fc649d22e9cc8049f42e13cb6950b4392",
+      "bytes": 28518
+    },
+    "t18_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\18_c.jpg",
+      "sha256": "61093648fd9f263f3aec9223aa287425b4694bab36c928c1de4663c33dc94f95",
+      "bytes": 5707
+    },
+    "t18_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\18_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t19_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\19_c.jpg",
+      "sha256": "3ca0812f0ee3929f8f351c059cbaaa74ba1a63a09f2687cb98f7145831cdb557",
+      "bytes": 7443
+    },
+    "t19_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\19_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t2_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\2_c.jpg",
+      "sha256": "c8b855e6c49a07060b3e4ec624f72c5eba7bf1c0be98c11120eb55da636ba443",
+      "bytes": 19008
+    },
+    "t2_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\2_n.jpg",
+      "sha256": "16716a6c9750f02f5a94d0ac833d73db7667cfac9299d89647e6355a27a49243",
+      "bytes": 11833
+    },
+    "t20_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\20_c.jpg",
+      "sha256": "ce6f7827a45552c365f4d1c1f462de335bfc67251a89087487284b45141858a5",
+      "bytes": 9893
+    },
+    "t20_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\20_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t22_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\22_c.jpg",
+      "sha256": "3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781",
+      "bytes": 19984
+    },
+    "t22_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\22_n.jpg",
+      "sha256": "ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb",
+      "bytes": 20170
+    },
+    "t24_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\24_c.jpg",
+      "sha256": "fba0d0b6f66680fc6eae793d8dc1d5972e59649a332d9d702de56ed28722ae8f",
+      "bytes": 14481
+    },
+    "t24_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\24_n.jpg",
+      "sha256": "ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb",
+      "bytes": 20170
+    },
+    "t26_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\26_c.jpg",
+      "sha256": "005cf0558b23f683be8273adc3840f6b3347408fd3976bc30a1909261b08877d",
+      "bytes": 6696
+    },
+    "t26_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\26_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t27_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\27_c.jpg",
+      "sha256": "deb4ba424c9555ace258249a68c63b14b4122eaabf5faf5c3ab151da6048eae3",
+      "bytes": 8297
+    },
+    "t27_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\27_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t3_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\3_c.jpg",
+      "sha256": "47b74327f6dad9769d976c4927e676055c7cdfacac3aca8261da9aa7c968210c",
+      "bytes": 51074
+    },
+    "t3_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\3_n.jpg",
+      "sha256": "721f33fd64fd81c35166bcd4b285b416eed7684e70cc9739f4aba66ff3ce97ec",
+      "bytes": 41416
+    },
+    "t30_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\30_c.jpg",
+      "sha256": "32b642e344df03f4872e17177e441fac57bc289fbc96dc7810007bb93d407755",
+      "bytes": 9764
+    },
+    "t30_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\30_n.jpg",
+      "sha256": "a276c0392ed22dc47945d9d319635802a0093f397edec07a2ceb9d7b1e61a3eb",
+      "bytes": 8132
+    },
+    "t34_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\34_c.jpg",
+      "sha256": "07809bfde3ed5f88b7c757da80447f51ea22929eec04e0fab18079f192fbb432",
+      "bytes": 46870
+    },
+    "t34_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\34_n.jpg",
+      "sha256": "6d7e665cee024eea85b0ae8ebf1714f4d237cbd31d7898e01e3f8ef1c686116e",
+      "bytes": 71768
+    },
+    "t37_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\37_c.jpg",
+      "sha256": "93d8926fd4a9caa681c15bf1686256cd0faa378ce176098508daf915fa1012eb",
+      "bytes": 52499
+    },
+    "t37_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\37_n.jpg",
+      "sha256": "613c0b3e648abcf0a89cbd8f199d0aecfdf26121cc19a0d0e11711196acfb302",
+      "bytes": 82733
+    },
+    "t4_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\4_c.jpg",
+      "sha256": "494647789e86d4023538a9cbdf359b203a8530de5671eb19fb0fcb204914dec1",
+      "bytes": 43624
+    },
+    "t4_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\4_n.jpg",
+      "sha256": "57d86eec912df78ea86fcd7b5a6f378b95f53ea2eabe7e734614b9eaad4346d5",
+      "bytes": 68220
+    },
+    "t41_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\41_c.jpg",
+      "sha256": "ce2b5616e5aa096e3b01440ea7e04b0d1860877ad8fb6ace86abce8d676789a3",
+      "bytes": 32824
+    },
+    "t41_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\41_n.jpg",
+      "sha256": "4258765152af8c41562abfdd933433935465e66b3a0e34cab98dc42545961e8e",
+      "bytes": 20379
+    },
+    "t42_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\42_c.jpg",
+      "sha256": "15d0cd9fc6033a64e736156022ca687277d8695e185d717097d2cffccbfff7b7",
+      "bytes": 18134
+    },
+    "t42_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\42_n.jpg",
+      "sha256": "67d865c29b4b221d6d62e8548bbaafc91611ce0fb6f3bfe1bd420268d58c2069",
+      "bytes": 23419
+    },
+    "t48_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\48_c.jpg",
+      "sha256": "873f066cdb6bb62da2dd0e0097e6086e7848a8f2ceeb8e55974a8d56f929dcbe",
+      "bytes": 4725
+    },
+    "t48_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\48_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t49_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\49_c.jpg",
+      "sha256": "322eb05e3182ce8c82d899777cb077d1bec1028b6c81488899037d2306d47f88",
+      "bytes": 4724
+    },
+    "t49_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\49_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t50_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\50_c.jpg",
+      "sha256": "6ae7625a71a98c858ff9f8da136d1161042914f6cd907677057af926bf8dc60a",
+      "bytes": 4725
+    },
+    "t50_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\50_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t51_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\51_c.jpg",
+      "sha256": "699656b11168fc4d00c0bad2ba1642bd58e880e88070c419bde7c108a8cc2663",
+      "bytes": 4723
+    },
+    "t51_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\51_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t52_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\52_c.jpg",
+      "sha256": "dd70782dfa2fe66e7540e349d91f0626d768704314ef95b4abc3f7a1fcda7e72",
+      "bytes": 4723
+    },
+    "t52_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\52_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t54_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\54_c.jpg",
+      "sha256": "7b3677e4302978ab5481a0507c4b5955a096423b05b3bfa060910f01d3fec38e",
+      "bytes": 12651
+    },
+    "t54_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\54_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t56_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\56_c.jpg",
+      "sha256": "5ebff68c5b9117d7cd08dfc8ec27371182e1881afcb3d37a90905510bcae5b14",
+      "bytes": 4725
+    },
+    "t56_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\56_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t57_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\57_c.jpg",
+      "sha256": "8ef12ca985e6fad0bece4d36ba6678183080b8f5bc2d3b47c17ab7225e2b907b",
+      "bytes": 4726
+    },
+    "t57_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\57_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t6_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\6_c.jpg",
+      "sha256": "84bf1d754fdfcfca66d5b996ad716917f9e189ece7054cfb606d059239cbc03f",
+      "bytes": 29491
+    },
+    "t6_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\6_n.jpg",
+      "sha256": "ccc40fb774940f3c68dc41a97d814408b7d5e17cf51155e2784eb92390ff339d",
+      "bytes": 31722
+    },
+    "t60_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\60_c.jpg",
+      "sha256": "5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79",
+      "bytes": 4725
+    },
+    "t60_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\60_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t61_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\61_c.jpg",
+      "sha256": "cfd380276e2afd0970ba0e7b6f0a3f9b1310725f6ea685c86e1920476e2397b7",
+      "bytes": 4725
+    },
+    "t61_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\61_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t62_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\62_c.jpg",
+      "sha256": "a4bc407059df6080c54de3df0e32e983eb6b021ca63aa9c82819cca6e8b25d16",
+      "bytes": 4725
+    },
+    "t62_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\62_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t63_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\63_c.jpg",
+      "sha256": "839319b77fe2d7a506564376d1abb9bfe4eb5439e87d835dd40995f1763a0058",
+      "bytes": 4724
+    },
+    "t63_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\63_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t66_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\66_c.jpg",
+      "sha256": "aaa0c99b3d234d13c13f55925bf7c0cd71f622e3735915a0c8e43bc3ee45b921",
+      "bytes": 4724
+    },
+    "t66_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\66_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t67_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\67_c.jpg",
+      "sha256": "9452961b74c0d4ae890e7dbb03e666adec6a9052515e7b820196502f6c0f7870",
+      "bytes": 4725
+    },
+    "t67_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\67_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t7_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\7_c.jpg",
+      "sha256": "06d3c8bcadecb1bc8d0397db2819c9328157ff8b7bcc65a165f578fa05a0930c",
+      "bytes": 13455
+    },
+    "t7_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\7_n.jpg",
+      "sha256": "9d70117e05d9e3b4b1cad420466c8eed8944fbf9300e142c90ba97653c16b848",
+      "bytes": 20578
+    },
+    "t78_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\78_c.jpg",
+      "sha256": "1287ff6fa0de43c64d06f85506c38863a998d548abfcf8329b86fb2950ed3351",
+      "bytes": 26022
+    },
+    "t78_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\78_n.jpg",
+      "sha256": "dd516b648199df007dda0e00c55e47e1c401d31e732fcf243beb47f38796a43c",
+      "bytes": 37039
+    },
+    "t8_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\8_c.jpg",
+      "sha256": "88d8145fc09e32b5ed762277f0a1cd73ff4a1aa5cf8dcd181114a7d3356aa6b5",
+      "bytes": 45497
+    },
+    "t8_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\8_n.jpg",
+      "sha256": "6307d5b907ee3c7ec6546f63c6951cb4a510e1ac84394158fdc335ce3fb012bb",
+      "bytes": 39832
+    },
+    "t80_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\80_c.jpg",
+      "sha256": "d6f22b2ef9b572c226306475718a2135bc785cb80196d26fa53a8d6b193d12c8",
+      "bytes": 51407
+    },
+    "t80_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\80_n.jpg",
+      "sha256": "92374123d82d69d1b59388261a568f93eba8ab2c2938420267d744c64579bbb1",
+      "bytes": 39151
+    },
+    "t82_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\82_c.jpg",
+      "sha256": "81aa4a69926faa6f540649f5e292d8edd6bddb57ebf7f75e9e0e20530ec6f2f2",
+      "bytes": 39713
+    },
+    "t82_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\82_n.jpg",
+      "sha256": "a49e8bb745a208aa73f94365e88389c7b3a08c6f1a3a01ed67d12266ac1431d6",
+      "bytes": 38286
+    },
+    "t85_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\85_c.jpg",
+      "sha256": "c8813406476cd903b0c8485f722fdde01458b0492b17715b7167347f9a6f63c8",
+      "bytes": 14050
+    },
+    "t85_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\85_n.jpg",
+      "sha256": "c74808a06c084074ac50681c2f7c473f11322a31d1fe61b432314b9821aacb51",
+      "bytes": 10886
+    },
+    "t9_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\9_c.jpg",
+      "sha256": "71beddd69846b5497cf2a44671b114e4915a060a8c52ef4fc142dc3524a78aa5",
+      "bytes": 35182
+    },
+    "t9_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\9_n.jpg",
+      "sha256": "ea47333d65fc55a407ca316c8731ee5c28dcb61d7db1fd96f11a8710ef255642",
+      "bytes": 72184
+    },
+    "t90_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\90_c.jpg",
+      "sha256": "38ec307f9c9ee7314936aad056eb9b7278367d32396ff079fe3a9320d57ab7f4",
+      "bytes": 42093
+    },
+    "t90_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\90_n.jpg",
+      "sha256": "1645c6b548b2d1b6b8673227a483dfd70bc29a3f322552cf8809a6c5f12c1fa8",
+      "bytes": 29641
+    },
+    "t91_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\91_c.jpg",
+      "sha256": "619cc5ee557bcf1a888eb265251408c198eca52ecf1e5b3b7e9135ba93f26daf",
+      "bytes": 24751
+    },
+    "t91_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\91_n.jpg",
+      "sha256": "f656b844dd3d511752e0ed33900b9a1ca0e05767fe8291df7257c4828c45ed94",
+      "bytes": 56782
+    },
+    "t92_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\92_c.jpg",
+      "sha256": "086823cafd3f5727274bfbb4c4948780e3376c80162cd78a5dca931435d7914e",
+      "bytes": 68591
+    },
+    "t92_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\92_n.jpg",
+      "sha256": "4b67cc3702e83e40d99ec3cadfe8d86ab7cb39a72efeceffc83e9454a964f088",
+      "bytes": 41666
+    },
+    "t94_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\94_c.jpg",
+      "sha256": "50da459c0114952e4a6732d332731741f19f98f5879452619b7eb5fd99b34578",
+      "bytes": 35779
+    },
+    "t94_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\94_n.jpg",
+      "sha256": "b04d07c9c388bf76011db36707f70b2394cc82afda270d1cd7eba2a97f6fa320",
+      "bytes": 20794
+    },
+    "t95_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\95_c.jpg",
+      "sha256": "fd82d05dcc9834561878edf05a234c788b1d730224611355cf803fb37a4469ba",
+      "bytes": 4724
+    },
+    "t95_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\95_n.jpg",
+      "sha256": "24ee54a8782046abf798ea732874ef521c95f1bc837b19069ffead4e0d4b2602",
+      "bytes": 24320
+    },
+    "t96_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\96_c.jpg",
+      "sha256": "20720dd2028ecab7e03c4bd45dc2bf532ee6c6de9b1f16b2e2f07429bc5b3736",
+      "bytes": 32270
+    },
+    "t96_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\96_n.jpg",
+      "sha256": "58c62a092ed56530d24327b4fd824c2a06b5b3218f507820996425b1b62a5243",
+      "bytes": 29513
+    }
+  },
+  "spawn": [
+    21.09,
+    0.9290923428535461,
+    -68.41
+  ],
+  "warmupSpawn": [
+    12.41198,
+    3.0120991349923503,
+    39.64123
+  ],
+  "preview": {
+    "file": "preview.jpg",
+    "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\zelda-kokiri-forest-solos-ilikepies1211\\source\\thumb.jpg",
+    "sha256": "1fbbb3e77ca8dcf0cdfa5fb06bd48a8e5a73cb104de589501c8c2ce999acc07a"
+  },
+  "geometrySha256": "21b3a89163a0fb0e712129355249bb16f0de1e875a6281c177ec3475ff76f3a5",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 1.52,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "4c31ac9d43c06be9c46c83d33c59e05ca1f6a7b9e0e41adf6ca93db93f15266e",
+  "sourceRetainedCollisionAttributesSha256": "05a01dc5a755e956bf667b58b7a6bca5576019fe3721f7d8ae3eda3cd7a8f4b7",
+  "payloadBytes": 27975032
+}

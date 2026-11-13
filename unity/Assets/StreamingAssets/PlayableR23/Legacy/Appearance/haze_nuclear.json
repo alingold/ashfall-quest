@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "id": "haze_nuclear",
+  "label": "Haze (Nuclear)",
+  "sourceIndex": 36,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-3d30c8094b4d42515cec1c12.png",
+      "normal": "r5-normal-cc4ec960bba6cc7d8ec49f41.png",
+      "metallicMap": "r5-metallic-f3839eea7c6ffe11739eeac4.png",
+      "occlusion": "r5-occlusion-1d072848875f18800a2a9f06.png",
+      "emission": "r5-emission-10d619d85a7187fb2f7aca96.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 1.399999976158142,
+      "specularFactor": 0.3199999928474426
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-c54cb085f497b7ecbb75a497.png",
+      "normal": "r5-normal-2150a107aba3701e30c565e9.png",
+      "metallicMap": "r5-metallic-da44f41a9353a44c4f0bee60.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "specularFactor": 0.32
+    }
+  ]
+}

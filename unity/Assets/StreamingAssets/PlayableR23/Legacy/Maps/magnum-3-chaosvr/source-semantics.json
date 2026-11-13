@@ -1,0 +1,360 @@
+{
+  "mapId": "archive:magnum-3-chaosvr",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",
+    "cache_fingerprint": "8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",
+    "warmup": [
+      {
+        "center": [
+          0.58991,
+          166.52221,
+          -20.63444
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          0.58991,
+          166.52221,
+          -18.58803
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          0.58991,
+          166.52221,
+          -22.912
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          1.42382,
+          166.52462,
+          -20.63444
+        ],
+        "min": [
+          1.1165,
+          166.50067,
+          -20.99922
+        ],
+        "max": [
+          1.73114,
+          166.54857,
+          -20.26966
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          0.58991,
+          166.52221,
+          -20.63444
+        ],
+        "min": [
+          0,
+          166.50067,
+          -21.22246
+        ],
+        "max": [
+          1.17982,
+          166.54375,
+          -20.04643
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          1.42382,
+          166.52462,
+          -18.58803
+        ],
+        "min": [
+          1.1165,
+          166.50067,
+          -18.95281
+        ],
+        "max": [
+          1.73114,
+          166.54857,
+          -18.22326
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          0.58991,
+          166.52221,
+          -18.58803
+        ],
+        "min": [
+          0,
+          166.50067,
+          -19.17605
+        ],
+        "max": [
+          1.17982,
+          166.54375,
+          -18.00002
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          1.42382,
+          166.52462,
+          -22.912
+        ],
+        "min": [
+          1.1165,
+          166.50067,
+          -23.27678
+        ],
+        "max": [
+          1.73114,
+          166.54857,
+          -22.54722
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          0.58991,
+          166.52221,
+          -22.912
+        ],
+        "min": [
+          0,
+          166.50067,
+          -23.50002
+        ],
+        "max": [
+          1.17981,
+          166.54375,
+          -22.32398
+        ]
+      }
+    ],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 3335,
+      "warmup": 3,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 6
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "8a484b3dc7c5b18725e35d7d435e3835ace9484da40aac05935ae616fa9be050",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:magnum-3-chaosvr",
+    "title": "MAGNUM 3",
+    "creator": "ChaosVR",
+    "template": "MapEditorDefault",
+    "center": [
+      8.44897393388709,
+      161.606039030113,
+      -17.0047424114427
+    ],
+    "recorded_spawns": [
+      [
+        1.52,
+        158.61,
+        49.26
+      ],
+      [
+        83.36,
+        158.63,
+        -21.59
+      ],
+      [
+        62.65,
+        158.63,
+        -57.0
+      ],
+      [
+        42.14,
+        158.63,
+        49.33
+      ],
+      [
+        62.64,
+        158.63,
+        13.77
+      ],
+      [
+        1.45,
+        158.63,
+        -21.64
+      ],
+      [
+        42.14,
+        158.63,
+        -21.59
+      ],
+      [
+        1.37,
+        158.61,
+        -92.3
+      ],
+      [
+        42.19,
+        158.61,
+        -92.24
+      ],
+      [
+        21.71,
+        158.61,
+        -56.98
+      ],
+      [
+        -19.16,
+        158.61,
+        -56.84
+      ],
+      [
+        -80.17,
+        158.61,
+        -21.61
+      ],
+      [
+        -19.06,
+        158.61,
+        13.77
+      ],
+      [
+        -39.26,
+        158.61,
+        -92.33
+      ],
+      [
+        -59.85,
+        158.61,
+        -56.89
+      ],
+      [
+        -39.6,
+        158.61,
+        -21.81
+      ],
+      [
+        -60.05,
+        158.61,
+        13.86
+      ],
+      [
+        -39.48,
+        158.61,
+        49.1
+      ],
+      [
+        21.93,
+        158.63,
+        13.77
+      ]
+    ],
+    "bounds_min": [
+      -259.999877929688,
+      -21.4009952545166,
+      -390.499938964844
+    ],
+    "bounds_max": [
+      285.999816894531,
+      29.0483837127686,
+      359.499938964844
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      173.143783569336,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/magnum-3-chaosvr/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

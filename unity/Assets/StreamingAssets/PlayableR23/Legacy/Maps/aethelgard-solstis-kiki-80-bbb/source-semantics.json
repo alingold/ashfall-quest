@@ -1,0 +1,6472 @@
+{
+  "mapId": "archive:aethelgard-solstis-kiki-80-bbb",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+    "cache_fingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+    "warmup": [
+      {
+        "center": [
+          -6.8156,
+          141.92175,
+          -47.49743
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          5.48272,
+          230.22158,
+          239.80123
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          10.11911,
+          230.10093,
+          243.02345
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          21.06347,
+          230.04508,
+          239.57771
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          27.17767,
+          230.08416,
+          240.67211
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          16.73594,
+          230.02468,
+          243.63605
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          26.56476,
+          230.03468,
+          243.73161
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          23.85486,
+          230.04736,
+          236.39362
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          8.5928,
+          230.00108,
+          232.03318
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          31.48559,
+          230.03173,
+          239.12234
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          15.17977,
+          230.04661,
+          239.23135
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          28.60763,
+          230.01656,
+          236.69735
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          21.71955,
+          230.05604,
+          236.06405
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          27.08908,
+          230.02978,
+          233.33427
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          13.45027,
+          230.02546,
+          234.63734
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          26.17003,
+          230.04787,
+          236.52438
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          16.13571,
+          229.99087,
+          235.07516
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          19.16586,
+          230.0005,
+          232.33625
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          23.92161,
+          229.99607,
+          233.57565
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          21.75089,
+          229.9866,
+          232.79281
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          6.20615,
+          230.00101,
+          234.78098
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          16.39461,
+          230.00932,
+          231.86744
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          13.39418,
+          230.07056,
+          231.41274
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          9.81787,
+          230.01791,
+          238.68797
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          28.70029,
+          229.99483,
+          233.378
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          0,
+          0,
+          -1
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -205.97876,
+          142.00633,
+          245.87729
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -186.06517,
+          302.32259,
+          182.79602
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -192.33542,
+          290.33842,
+          129.38527
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -188.74547,
+          322.94606,
+          37.95509
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -188.4994,
+          295.037,
+          -23.93458
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -188.07393,
+          283.03868,
+          -70.57537
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -208.19359,
+          312.04045,
+          -146.7155
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -203.82385,
+          311.12383,
+          -184.50302
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -142.47009,
+          167.08525,
+          246.71867
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -146.19411,
+          292.6132,
+          209.2197
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -164.11688,
+          247.23274,
+          109.81123
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -155.59387,
+          284.6472,
+          89.51643
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -139.47926,
+          329.46605,
+          106.13321
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -122.84882,
+          207.7132,
+          34.26333
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -157.52486,
+          296.79973,
+          23.49303
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -121.46239,
+          291.38185,
+          -49.9669
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -148.10312,
+          288.20433,
+          -105.82365
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -137.29901,
+          322.55232,
+          -73.15805
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -153.3783,
+          246.05431,
+          -130.86751
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -170.76064,
+          311.26772,
+          -221.87222
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -132.47617,
+          178.41113,
+          -247.59558
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -74.38737,
+          141.82326,
+          246.76988
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -64.54042,
+          304.80095,
+          203.30147
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -93.75067,
+          309.81349,
+          150.02173
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -71.6178,
+          299.62407,
+          99.57803
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -94.00015,
+          297.36043,
+          38.33563
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -118.50353,
+          201.9973,
+          -37.93816
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -65.54313,
+          295.13673,
+          -36.83823
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -98.34416,
+          333.79561,
+          -156.88248
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -88.69535,
+          298.86736,
+          -144.0546
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -67.04179,
+          142.06415,
+          -247.04462
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -36.92689,
+          297.66133,
+          132.49973
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -13.394,
+          307.39479,
+          92.00954
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -26.74159,
+          301.64702,
+          34.82067
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -20.29112,
+          298.92744,
+          -117.89128
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -43.99683,
+          301.40327,
+          -61.15495
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -22.05135,
+          322.14095,
+          -84.25556
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -14.85215,
+          308.71016,
+          -167.19601
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -38.97554,
+          293.17873,
+          -211.69882
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          0.88534,
+          304.5511,
+          190.25105
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          11.71287,
+          150.59327,
+          173.84052
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          32.77412,
+          304.76585,
+          153.40115
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          38.00897,
+          317.94002,
+          90.25121
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          16.0046,
+          306.95589,
+          52.17392
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          56.99567,
+          307.28374,
+          20.92272
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          23.55786,
+          297.62309,
+          -86.61649
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          0.64262,
+          149.44682,
+          -156.29639
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          29.76469,
+          299.67604,
+          -141.21021
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          53.98861,
+          332.41347,
+          -220.56152
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          16.54266,
+          307.61903,
+          -209.05048
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          95.9912,
+          141.92955,
+          246.49242
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          85.70491,
+          314.90202,
+          206.25107
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          61.52923,
+          309.83806,
+          166.43236
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          107.51876,
+          317.47334,
+          158.48456
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          79.87222,
+          307.4778,
+          119.63078
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          108.22155,
+          321.86186,
+          76.51484
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          117.24078,
+          206.18851,
+          42.53017
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          111.03733,
+          309.94908,
+          46.70326
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          60.90182,
+          298.49251,
+          -45.14614
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          112.63924,
+          206.75638,
+          -37.72205
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          88.63605,
+          313.15797,
+          -2.29291
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          108.57247,
+          291.24959,
+          -86.53162
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          65.01133,
+          311.53227,
+          -76.40636
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          84.70817,
+          315.53026,
+          -133.39568
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          110.56566,
+          247.30093,
+          -140.40796
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          75.64622,
+          142.00423,
+          -247.47388
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          157.86922,
+          170.4259,
+          246.79688
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          140.88284,
+          314.36205,
+          196.44644
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          166.95273,
+          299.28633,
+          127.36818
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          129.18649,
+          248.38548,
+          116.56459
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          145.47333,
+          281.05009,
+          3.95469
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          164.77943,
+          309.24043,
+          30.27629
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          134.66916,
+          302.04976,
+          -45.77232
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          165.5679,
+          293.1627,
+          -101.02953
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          135.56888,
+          324.46458,
+          -134.1281
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          129.83511,
+          312.09657,
+          -200.2583
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          135.05307,
+          179.99542,
+          -248.00183
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          207.68602,
+          141.95058,
+          246.99557
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      }
+    ],
+    "health": [
+      {
+        "center": [
+          -110.58797,
+          145.91649,
+          73.85464
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          -113.51761,
+          145.62581,
+          -83.74584
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          -4.42906,
+          141.98375,
+          178.35966
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          -41.23056,
+          171.43269,
+          3.80029
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          -38.71285,
+          267.90082,
+          8.25371
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          -14.82247,
+          162.94531,
+          -146.33761
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          25.68986,
+          163.93279,
+          168.78712
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          54.00856,
+          171.25912,
+          3.57085
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          53.54533,
+          268.02246,
+          4.69224
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          88.6768,
+          146.29352,
+          71.81338
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      },
+      {
+        "center": [
+          95.59318,
+          145.53557,
+          -90.7985
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.12,
+        "health_per_second": 10,
+        "evidence": "green6-triangle hexagonal face +black108/126-triangle base +two gold12-triangle cross bars"
+      }
+    ],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          -6.8156,
+          141.92416,
+          -46.66352
+        ],
+        "min": [
+          -7.18038,
+          141.90021,
+          -46.97084
+        ],
+        "max": [
+          -6.45082,
+          141.9481,
+          -46.3562
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          -6.8156,
+          141.92175,
+          -47.49743
+        ],
+        "min": [
+          -7.40361,
+          141.90021,
+          -48.08733
+        ],
+        "max": [
+          -6.22758,
+          141.94328,
+          -46.90752
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 38,
+        "center": [
+          5.48275,
+          230.22158,
+          240.18475
+        ],
+        "min": [
+          4.93776,
+          230.20004,
+          239.97836
+        ],
+        "max": [
+          6.02773,
+          230.24312,
+          240.39114
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 66,
+        "center": [
+          5.48272,
+          230.22158,
+          239.6192
+        ],
+        "min": [
+          4.8947,
+          230.20004,
+          239.21132
+        ],
+        "max": [
+          6.07074,
+          230.24312,
+          240.02708
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          5.48272,
+          230.22399,
+          238.96732
+        ],
+        "min": [
+          5.11794,
+          230.20004,
+          238.66
+        ],
+        "max": [
+          5.8475,
+          230.24794,
+          239.27464
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          10.11911,
+          230.10334,
+          242.18954
+        ],
+        "min": [
+          9.75433,
+          230.07939,
+          241.88222
+        ],
+        "max": [
+          10.48389,
+          230.12729,
+          242.49686
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          10.11911,
+          230.10093,
+          243.02345
+        ],
+        "min": [
+          9.5311,
+          230.07939,
+          242.43353
+        ],
+        "max": [
+          10.70713,
+          230.12247,
+          243.61336
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 20,
+        "center": [
+          21.06349,
+          230.04508,
+          240.03632
+        ],
+        "min": [
+          20.64613,
+          230.02354,
+          239.90501
+        ],
+        "max": [
+          21.48086,
+          230.06662,
+          240.16762
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 84,
+        "center": [
+          21.06347,
+          230.04508,
+          239.51965
+        ],
+        "min": [
+          20.47546,
+          230.02354,
+          238.98779
+        ],
+        "max": [
+          21.65149,
+          230.06662,
+          240.0515
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          21.06347,
+          230.04749,
+          238.7438
+        ],
+        "min": [
+          20.69869,
+          230.02354,
+          238.43648
+        ],
+        "max": [
+          21.42825,
+          230.07144,
+          239.05112
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 2,
+        "center": [
+          27.17767,
+          230.08657,
+          240.04645
+        ],
+        "min": [
+          26.81289,
+          230.06262,
+          239.94737
+        ],
+        "max": [
+          27.54245,
+          230.11052,
+          240.14552
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 4,
+        "center": [
+          27.17767,
+          230.08657,
+          239.8382
+        ],
+        "min": [
+          26.81289,
+          230.06262,
+          239.53088
+        ],
+        "max": [
+          27.54245,
+          230.11052,
+          240.14552
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          27.17767,
+          230.08416,
+          240.67211
+        ],
+        "min": [
+          26.58965,
+          230.06262,
+          240.0822
+        ],
+        "max": [
+          27.76568,
+          230.1057,
+          241.26202
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          16.73594,
+          230.02709,
+          242.80215
+        ],
+        "min": [
+          16.37116,
+          230.00314,
+          242.49483
+        ],
+        "max": [
+          17.10072,
+          230.05104,
+          243.10947
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          16.73594,
+          230.02468,
+          243.63605
+        ],
+        "min": [
+          16.14792,
+          230.00314,
+          243.04614
+        ],
+        "max": [
+          17.32396,
+          230.04622,
+          244.22597
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          26.56476,
+          230.03709,
+          242.8977
+        ],
+        "min": [
+          26.19998,
+          230.01314,
+          242.59038
+        ],
+        "max": [
+          26.92954,
+          230.06104,
+          243.20502
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          26.56476,
+          230.03468,
+          243.73161
+        ],
+        "min": [
+          25.97674,
+          230.01314,
+          243.14169
+        ],
+        "max": [
+          27.15277,
+          230.05621,
+          244.32152
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          23.85486,
+          230.04977,
+          235.55972
+        ],
+        "min": [
+          23.49008,
+          230.02582,
+          235.2524
+        ],
+        "max": [
+          24.21964,
+          230.07372,
+          235.86703
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          23.85486,
+          230.04736,
+          236.39362
+        ],
+        "min": [
+          23.26685,
+          230.02582,
+          235.80371
+        ],
+        "max": [
+          24.44288,
+          230.06889,
+          236.98354
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          8.5928,
+          230.00349,
+          231.19927
+        ],
+        "min": [
+          8.22803,
+          229.97954,
+          230.89195
+        ],
+        "max": [
+          8.95758,
+          230.02744,
+          231.50659
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          8.5928,
+          230.00108,
+          232.03318
+        ],
+        "min": [
+          8.00479,
+          229.97954,
+          231.44327
+        ],
+        "max": [
+          9.18082,
+          230.02261,
+          232.62309
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          31.48559,
+          230.03414,
+          238.28843
+        ],
+        "min": [
+          31.12081,
+          230.01019,
+          237.98111
+        ],
+        "max": [
+          31.85037,
+          230.05809,
+          238.59575
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          31.48559,
+          230.03173,
+          239.12234
+        ],
+        "min": [
+          30.89758,
+          230.01019,
+          238.53242
+        ],
+        "max": [
+          32.07361,
+          230.05327,
+          239.71225
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          15.17977,
+          230.04902,
+          238.39744
+        ],
+        "min": [
+          14.81499,
+          230.02507,
+          238.09012
+        ],
+        "max": [
+          15.54455,
+          230.07297,
+          238.70476
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          15.17977,
+          230.04661,
+          239.23135
+        ],
+        "min": [
+          14.59176,
+          230.02507,
+          238.64143
+        ],
+        "max": [
+          15.76779,
+          230.06815,
+          239.82126
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          28.60763,
+          230.01897,
+          235.86344
+        ],
+        "min": [
+          28.24285,
+          229.99503,
+          235.55612
+        ],
+        "max": [
+          28.97241,
+          230.04292,
+          236.17076
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          28.60763,
+          230.01656,
+          236.69735
+        ],
+        "min": [
+          28.01961,
+          229.99503,
+          236.10744
+        ],
+        "max": [
+          29.19564,
+          230.0381,
+          237.28726
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          21.71955,
+          230.05845,
+          235.23014
+        ],
+        "min": [
+          21.35477,
+          230.0345,
+          234.92282
+        ],
+        "max": [
+          22.08434,
+          230.0824,
+          235.53746
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          21.71955,
+          230.05604,
+          236.06405
+        ],
+        "min": [
+          21.13154,
+          230.0345,
+          235.47414
+        ],
+        "max": [
+          22.30757,
+          230.07758,
+          236.65396
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          27.08908,
+          230.03219,
+          232.50036
+        ],
+        "min": [
+          26.7243,
+          230.00824,
+          232.19304
+        ],
+        "max": [
+          27.45386,
+          230.05614,
+          232.80768
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          27.08908,
+          230.02978,
+          233.33427
+        ],
+        "min": [
+          26.50106,
+          230.00824,
+          232.74435
+        ],
+        "max": [
+          27.6771,
+          230.05132,
+          233.92418
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          13.45027,
+          230.02787,
+          233.80343
+        ],
+        "min": [
+          13.08549,
+          230.00392,
+          233.49611
+        ],
+        "max": [
+          13.81505,
+          230.05182,
+          234.11075
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          13.45027,
+          230.02546,
+          234.63734
+        ],
+        "min": [
+          12.86225,
+          230.00392,
+          234.04742
+        ],
+        "max": [
+          14.03829,
+          230.047,
+          235.22725
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          26.17003,
+          230.05029,
+          235.69047
+        ],
+        "min": [
+          25.80525,
+          230.02634,
+          235.38315
+        ],
+        "max": [
+          26.53481,
+          230.07423,
+          235.99779
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          26.17003,
+          230.04787,
+          236.52438
+        ],
+        "min": [
+          25.58201,
+          230.02634,
+          235.93446
+        ],
+        "max": [
+          26.75805,
+          230.06941,
+          237.11429
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          16.13571,
+          229.99328,
+          234.24125
+        ],
+        "min": [
+          15.77093,
+          229.96933,
+          233.93393
+        ],
+        "max": [
+          16.50049,
+          230.01723,
+          234.54857
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          16.13571,
+          229.99087,
+          235.07516
+        ],
+        "min": [
+          15.5477,
+          229.96933,
+          234.48524
+        ],
+        "max": [
+          16.72373,
+          230.01241,
+          235.66507
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          19.16586,
+          230.00291,
+          231.50234
+        ],
+        "min": [
+          18.80108,
+          229.97896,
+          231.19502
+        ],
+        "max": [
+          19.53064,
+          230.02686,
+          231.80966
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          19.16586,
+          230.0005,
+          232.33625
+        ],
+        "min": [
+          18.57784,
+          229.97896,
+          231.74634
+        ],
+        "max": [
+          19.75388,
+          230.02203,
+          232.92616
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          23.92161,
+          229.99848,
+          232.74174
+        ],
+        "min": [
+          23.55683,
+          229.97453,
+          232.43442
+        ],
+        "max": [
+          24.28639,
+          230.02243,
+          233.04906
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          23.92161,
+          229.99607,
+          233.57565
+        ],
+        "min": [
+          23.33359,
+          229.97453,
+          232.98573
+        ],
+        "max": [
+          24.50962,
+          230.01761,
+          234.16556
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          21.75089,
+          229.98901,
+          231.9589
+        ],
+        "min": [
+          21.3861,
+          229.96506,
+          231.65158
+        ],
+        "max": [
+          22.11567,
+          230.01295,
+          232.26622
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          21.75089,
+          229.9866,
+          232.79281
+        ],
+        "min": [
+          21.16287,
+          229.96506,
+          232.2029
+        ],
+        "max": [
+          22.3389,
+          230.00813,
+          233.38272
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          6.20615,
+          230.00343,
+          233.94707
+        ],
+        "min": [
+          5.84137,
+          229.97948,
+          233.63976
+        ],
+        "max": [
+          6.57093,
+          230.02737,
+          234.25439
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          6.20615,
+          230.00101,
+          234.78098
+        ],
+        "min": [
+          5.61813,
+          229.97948,
+          234.19107
+        ],
+        "max": [
+          6.79417,
+          230.02255,
+          235.3709
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          16.39461,
+          230.01173,
+          231.03353
+        ],
+        "min": [
+          16.02983,
+          229.98778,
+          230.72621
+        ],
+        "max": [
+          16.75939,
+          230.03568,
+          231.34085
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          16.39461,
+          230.00932,
+          231.86744
+        ],
+        "min": [
+          15.80659,
+          229.98778,
+          231.27753
+        ],
+        "max": [
+          16.98263,
+          230.03085,
+          232.45735
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          13.39418,
+          230.07298,
+          230.57883
+        ],
+        "min": [
+          13.0294,
+          230.04903,
+          230.27151
+        ],
+        "max": [
+          13.75896,
+          230.09692,
+          230.88615
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          13.39418,
+          230.07056,
+          231.41274
+        ],
+        "min": [
+          12.80616,
+          230.04903,
+          230.82283
+        ],
+        "max": [
+          13.9822,
+          230.0921,
+          232.00266
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          9.81787,
+          230.02032,
+          237.85406
+        ],
+        "min": [
+          9.45309,
+          229.99637,
+          237.54674
+        ],
+        "max": [
+          10.18265,
+          230.04427,
+          238.16138
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          9.81787,
+          230.01791,
+          238.68797
+        ],
+        "min": [
+          9.22985,
+          229.99637,
+          238.09805
+        ],
+        "max": [
+          10.40589,
+          230.03944,
+          239.27788
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          28.70029,
+          229.99725,
+          232.54409
+        ],
+        "min": [
+          28.33551,
+          229.9733,
+          232.23677
+        ],
+        "max": [
+          29.06507,
+          230.02119,
+          232.85141
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          28.70029,
+          229.99483,
+          233.378
+        ],
+        "min": [
+          28.11227,
+          229.9733,
+          232.78809
+        ],
+        "max": [
+          29.2883,
+          230.01637,
+          233.96791
+        ]
+      }
+    ],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -205.43073,
+          142.38548,
+          245.87729
+        ],
+        "min": [
+          -205.7402,
+          142.34901,
+          245.53491
+        ],
+        "max": [
+          -205.12125,
+          142.42194,
+          246.21967
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -205.92184,
+          142.38548,
+          245.87729
+        ],
+        "min": [
+          -206.23132,
+          142.34901,
+          245.53491
+        ],
+        "max": [
+          -205.61237,
+          142.42194,
+          246.21967
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -186.06517,
+          302.79761,
+          182.30857
+        ],
+        "min": [
+          -186.33345,
+          302.75192,
+          182.03331
+        ],
+        "max": [
+          -185.79689,
+          302.84329,
+          182.58383
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -186.06517,
+          302.79761,
+          182.74538
+        ],
+        "min": [
+          -186.33345,
+          302.75192,
+          182.47012
+        ],
+        "max": [
+          -185.79689,
+          302.84329,
+          183.02065
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -192.33542,
+          290.81345,
+          128.89782
+        ],
+        "min": [
+          -192.6037,
+          290.76776,
+          128.62256
+        ],
+        "max": [
+          -192.06714,
+          290.85913,
+          129.17308
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -192.33542,
+          290.81345,
+          129.33463
+        ],
+        "min": [
+          -192.6037,
+          290.76776,
+          129.05937
+        ],
+        "max": [
+          -192.06714,
+          290.85913,
+          129.60989
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.74547,
+          323.42108,
+          37.46764
+        ],
+        "min": [
+          -189.01375,
+          323.3754,
+          37.19238
+        ],
+        "max": [
+          -188.47719,
+          323.46677,
+          37.7429
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.74547,
+          323.42108,
+          37.90446
+        ],
+        "min": [
+          -189.01375,
+          323.3754,
+          37.6292
+        ],
+        "max": [
+          -188.47719,
+          323.46677,
+          38.17972
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.4994,
+          295.51202,
+          -24.42202
+        ],
+        "min": [
+          -188.76768,
+          295.46634,
+          -24.69728
+        ],
+        "max": [
+          -188.23112,
+          295.55771,
+          -24.14676
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.4994,
+          295.51202,
+          -23.98521
+        ],
+        "min": [
+          -188.76768,
+          295.46634,
+          -24.26047
+        ],
+        "max": [
+          -188.23112,
+          295.55771,
+          -23.70995
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.07393,
+          283.5137,
+          -71.06281
+        ],
+        "min": [
+          -188.34221,
+          283.46802,
+          -71.33807
+        ],
+        "max": [
+          -187.80565,
+          283.55939,
+          -70.78755
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -188.07393,
+          283.5137,
+          -70.626
+        ],
+        "min": [
+          -188.34221,
+          283.46802,
+          -70.90126
+        ],
+        "max": [
+          -187.80565,
+          283.55939,
+          -70.35074
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -208.19359,
+          312.51547,
+          -147.20295
+        ],
+        "min": [
+          -208.46187,
+          312.46979,
+          -147.47821
+        ],
+        "max": [
+          -207.92531,
+          312.56116,
+          -146.92769
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -208.19359,
+          312.51547,
+          -146.76614
+        ],
+        "min": [
+          -208.46187,
+          312.46979,
+          -147.0414
+        ],
+        "max": [
+          -207.92531,
+          312.56116,
+          -146.49088
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -203.82385,
+          311.59885,
+          -184.99047
+        ],
+        "min": [
+          -204.09213,
+          311.55316,
+          -185.26573
+        ],
+        "max": [
+          -203.55557,
+          311.64453,
+          -184.71521
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -203.82385,
+          311.59885,
+          -184.55366
+        ],
+        "min": [
+          -204.09213,
+          311.55316,
+          -184.82892
+        ],
+        "max": [
+          -203.55557,
+          311.64453,
+          -184.2784
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -142.47009,
+          167.46439,
+          246.17064
+        ],
+        "min": [
+          -142.81247,
+          167.42793,
+          245.86116
+        ],
+        "max": [
+          -142.12772,
+          167.50085,
+          246.48012
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -142.47009,
+          167.46439,
+          246.66176
+        ],
+        "min": [
+          -142.81247,
+          167.42793,
+          246.35228
+        ],
+        "max": [
+          -142.12772,
+          167.50085,
+          246.97124
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -146.19411,
+          293.08823,
+          208.73225
+        ],
+        "min": [
+          -146.46239,
+          293.04254,
+          208.45699
+        ],
+        "max": [
+          -145.92583,
+          293.13391,
+          209.00751
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -146.19411,
+          293.08823,
+          209.16906
+        ],
+        "min": [
+          -146.46239,
+          293.04254,
+          208.8938
+        ],
+        "max": [
+          -145.92583,
+          293.13391,
+          209.44432
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -164.11688,
+          247.61189,
+          110.35927
+        ],
+        "min": [
+          -164.45926,
+          247.57542,
+          110.04979
+        ],
+        "max": [
+          -163.77451,
+          247.64835,
+          110.66875
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -164.11688,
+          247.61189,
+          109.86816
+        ],
+        "min": [
+          -164.45926,
+          247.57542,
+          109.55868
+        ],
+        "max": [
+          -163.77451,
+          247.64835,
+          110.17764
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -155.59387,
+          285.12222,
+          89.02899
+        ],
+        "min": [
+          -155.86215,
+          285.07654,
+          88.75373
+        ],
+        "max": [
+          -155.32559,
+          285.16791,
+          89.30425
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -155.59387,
+          285.12222,
+          89.46581
+        ],
+        "min": [
+          -155.86215,
+          285.07654,
+          89.19054
+        ],
+        "max": [
+          -155.32559,
+          285.16791,
+          89.74107
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -139.47926,
+          329.94107,
+          105.64577
+        ],
+        "min": [
+          -139.74754,
+          329.89539,
+          105.37051
+        ],
+        "max": [
+          -139.21098,
+          329.98676,
+          105.92103
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -139.47926,
+          329.94107,
+          106.08258
+        ],
+        "min": [
+          -139.74754,
+          329.89539,
+          105.80732
+        ],
+        "max": [
+          -139.21098,
+          329.98676,
+          106.35784
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -122.84882,
+          208.09234,
+          34.73614
+        ],
+        "min": [
+          -123.11067,
+          208.05588,
+          34.46914
+        ],
+        "max": [
+          -122.58696,
+          208.1288,
+          35.00313
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -122.84882,
+          208.09234,
+          34.31244
+        ],
+        "min": [
+          -123.11067,
+          208.05588,
+          34.04545
+        ],
+        "max": [
+          -122.58696,
+          208.1288,
+          34.57943
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -157.52486,
+          297.27475,
+          23.00559
+        ],
+        "min": [
+          -157.79314,
+          297.22906,
+          22.73033
+        ],
+        "max": [
+          -157.25658,
+          297.32043,
+          23.28085
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -157.52486,
+          297.27475,
+          23.4424
+        ],
+        "min": [
+          -157.79314,
+          297.22906,
+          23.16714
+        ],
+        "max": [
+          -157.25658,
+          297.32043,
+          23.71766
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -121.46239,
+          291.85687,
+          -50.45434
+        ],
+        "min": [
+          -121.73066,
+          291.81119,
+          -50.7296
+        ],
+        "max": [
+          -121.19411,
+          291.90256,
+          -50.17908
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -121.46239,
+          291.85687,
+          -50.01753
+        ],
+        "min": [
+          -121.73066,
+          291.81119,
+          -50.29279
+        ],
+        "max": [
+          -121.19411,
+          291.90256,
+          -49.74227
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -148.10312,
+          288.67935,
+          -106.3111
+        ],
+        "min": [
+          -148.3714,
+          288.63367,
+          -106.58636
+        ],
+        "max": [
+          -147.83484,
+          288.72504,
+          -106.03584
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -148.10312,
+          288.67935,
+          -105.87428
+        ],
+        "min": [
+          -148.3714,
+          288.63367,
+          -106.14954
+        ],
+        "max": [
+          -147.83484,
+          288.72504,
+          -105.59902
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -137.29901,
+          323.02734,
+          -73.64549
+        ],
+        "min": [
+          -137.56729,
+          322.98166,
+          -73.92075
+        ],
+        "max": [
+          -137.03073,
+          323.07303,
+          -73.37023
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -137.29901,
+          323.02734,
+          -73.20868
+        ],
+        "min": [
+          -137.56729,
+          322.98166,
+          -73.48394
+        ],
+        "max": [
+          -137.03073,
+          323.07303,
+          -72.93342
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -153.3783,
+          246.43345,
+          -130.39471
+        ],
+        "min": [
+          -153.64015,
+          246.39699,
+          -130.6617
+        ],
+        "max": [
+          -153.11644,
+          246.46991,
+          -130.12772
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -153.3783,
+          246.43345,
+          -130.8184
+        ],
+        "min": [
+          -153.64015,
+          246.39699,
+          -131.08539
+        ],
+        "max": [
+          -153.11644,
+          246.46991,
+          -130.55141
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -170.76064,
+          311.74274,
+          -222.35967
+        ],
+        "min": [
+          -171.02892,
+          311.69705,
+          -222.63493
+        ],
+        "max": [
+          -170.49236,
+          311.78842,
+          -222.08441
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -170.76064,
+          311.74274,
+          -221.92286
+        ],
+        "min": [
+          -171.02892,
+          311.69705,
+          -222.19812
+        ],
+        "max": [
+          -170.49236,
+          311.78842,
+          -221.6476
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -131.92813,
+          178.79028,
+          -247.59558
+        ],
+        "min": [
+          -132.23761,
+          178.75381,
+          -247.93796
+        ],
+        "max": [
+          -131.61865,
+          178.82674,
+          -247.2532
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -132.41925,
+          178.79028,
+          -247.59558
+        ],
+        "min": [
+          -132.72873,
+          178.75381,
+          -247.93796
+        ],
+        "max": [
+          -132.10977,
+          178.82674,
+          -247.2532
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -73.83933,
+          142.2024,
+          246.76988
+        ],
+        "min": [
+          -74.14881,
+          142.16594,
+          246.42751
+        ],
+        "max": [
+          -73.52985,
+          142.23886,
+          247.11226
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -74.33044,
+          142.2024,
+          246.76988
+        ],
+        "min": [
+          -74.63992,
+          142.16594,
+          246.42751
+        ],
+        "max": [
+          -74.02097,
+          142.23886,
+          247.11226
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -64.54042,
+          305.27597,
+          202.81402
+        ],
+        "min": [
+          -64.80869,
+          305.23029,
+          202.53876
+        ],
+        "max": [
+          -64.27215,
+          305.32166,
+          203.08928
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -64.54042,
+          305.27597,
+          203.25083
+        ],
+        "min": [
+          -64.80869,
+          305.23029,
+          202.97557
+        ],
+        "max": [
+          -64.27215,
+          305.32166,
+          203.52609
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -93.75067,
+          310.28851,
+          149.53428
+        ],
+        "min": [
+          -94.01894,
+          310.24283,
+          149.25902
+        ],
+        "max": [
+          -93.4824,
+          310.3342,
+          149.80954
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -93.75067,
+          310.28851,
+          149.97109
+        ],
+        "min": [
+          -94.01894,
+          310.24283,
+          149.69583
+        ],
+        "max": [
+          -93.4824,
+          310.3342,
+          150.24635
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -71.6178,
+          300.09909,
+          99.09059
+        ],
+        "min": [
+          -71.88607,
+          300.05341,
+          98.81533
+        ],
+        "max": [
+          -71.34953,
+          300.14478,
+          99.36585
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -71.6178,
+          300.09909,
+          99.5274
+        ],
+        "min": [
+          -71.88607,
+          300.05341,
+          99.25214
+        ],
+        "max": [
+          -71.34953,
+          300.14478,
+          99.80267
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -94.00015,
+          297.83545,
+          37.84819
+        ],
+        "min": [
+          -94.26842,
+          297.78976,
+          37.57293
+        ],
+        "max": [
+          -93.73188,
+          297.88113,
+          38.12345
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -94.00015,
+          297.83545,
+          38.285
+        ],
+        "min": [
+          -94.26842,
+          297.78976,
+          38.00974
+        ],
+        "max": [
+          -93.73188,
+          297.88113,
+          38.56026
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -118.50353,
+          202.37644,
+          -37.46536
+        ],
+        "min": [
+          -118.76539,
+          202.33998,
+          -37.73235
+        ],
+        "max": [
+          -118.24168,
+          202.4129,
+          -37.19837
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -118.50353,
+          202.37644,
+          -37.88906
+        ],
+        "min": [
+          -118.76539,
+          202.33998,
+          -38.15605
+        ],
+        "max": [
+          -118.24168,
+          202.4129,
+          -37.62206
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -65.54313,
+          295.61176,
+          -37.32567
+        ],
+        "min": [
+          -65.8114,
+          295.56607,
+          -37.60093
+        ],
+        "max": [
+          -65.27486,
+          295.65744,
+          -37.05041
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -65.54313,
+          295.61176,
+          -36.88885
+        ],
+        "min": [
+          -65.8114,
+          295.56607,
+          -37.16412
+        ],
+        "max": [
+          -65.27486,
+          295.65744,
+          -36.61359
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -98.34416,
+          334.27063,
+          -157.36993
+        ],
+        "min": [
+          -98.61243,
+          334.22495,
+          -157.64519
+        ],
+        "max": [
+          -98.07589,
+          334.31631,
+          -157.09467
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -98.34416,
+          334.27063,
+          -156.93311
+        ],
+        "min": [
+          -98.61243,
+          334.22495,
+          -157.20837
+        ],
+        "max": [
+          -98.07589,
+          334.31631,
+          -156.65785
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -88.69535,
+          299.34238,
+          -144.54205
+        ],
+        "min": [
+          -88.96362,
+          299.29669,
+          -144.81731
+        ],
+        "max": [
+          -88.42708,
+          299.38806,
+          -144.26678
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -88.69535,
+          299.34238,
+          -144.10523
+        ],
+        "min": [
+          -88.96362,
+          299.29669,
+          -144.38049
+        ],
+        "max": [
+          -88.42708,
+          299.38806,
+          -143.82997
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -66.49376,
+          142.44329,
+          -247.04462
+        ],
+        "min": [
+          -66.80324,
+          142.40683,
+          -247.38699
+        ],
+        "max": [
+          -66.18428,
+          142.47975,
+          -246.70224
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -66.98487,
+          142.44329,
+          -247.04462
+        ],
+        "min": [
+          -67.29435,
+          142.40683,
+          -247.38699
+        ],
+        "max": [
+          -66.67539,
+          142.47975,
+          -246.70224
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -36.92689,
+          298.13635,
+          132.01228
+        ],
+        "min": [
+          -37.19516,
+          298.09067,
+          131.73701
+        ],
+        "max": [
+          -36.65862,
+          298.18204,
+          132.28754
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -36.92689,
+          298.13635,
+          132.44909
+        ],
+        "min": [
+          -37.19516,
+          298.09067,
+          132.17383
+        ],
+        "max": [
+          -36.65862,
+          298.18204,
+          132.72435
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -13.394,
+          307.86981,
+          91.52209
+        ],
+        "min": [
+          -13.66227,
+          307.82413,
+          91.24683
+        ],
+        "max": [
+          -13.12573,
+          307.9155,
+          91.79736
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -13.394,
+          307.86981,
+          91.95891
+        ],
+        "min": [
+          -13.66227,
+          307.82413,
+          91.68365
+        ],
+        "max": [
+          -13.12573,
+          307.9155,
+          92.23417
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -26.74159,
+          302.12204,
+          34.33323
+        ],
+        "min": [
+          -27.00987,
+          302.07635,
+          34.05796
+        ],
+        "max": [
+          -26.47332,
+          302.16772,
+          34.60849
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -26.74159,
+          302.12204,
+          34.77004
+        ],
+        "min": [
+          -27.00987,
+          302.07635,
+          34.49478
+        ],
+        "max": [
+          -26.47332,
+          302.16772,
+          35.0453
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.29112,
+          299.40247,
+          -118.37872
+        ],
+        "min": [
+          -20.5594,
+          299.35678,
+          -118.65398
+        ],
+        "max": [
+          -20.02285,
+          299.44815,
+          -118.10346
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -20.29112,
+          299.40247,
+          -117.94191
+        ],
+        "min": [
+          -20.5594,
+          299.35678,
+          -118.21717
+        ],
+        "max": [
+          -20.02285,
+          299.44815,
+          -117.66665
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.99683,
+          301.8783,
+          -61.64239
+        ],
+        "min": [
+          -44.26511,
+          301.83261,
+          -61.91765
+        ],
+        "max": [
+          -43.72856,
+          301.92398,
+          -61.36713
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -43.99683,
+          301.8783,
+          -61.20558
+        ],
+        "min": [
+          -44.26511,
+          301.83261,
+          -61.48084
+        ],
+        "max": [
+          -43.72856,
+          301.92398,
+          -60.93032
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -22.05135,
+          322.61597,
+          -84.743
+        ],
+        "min": [
+          -22.31962,
+          322.57028,
+          -85.01826
+        ],
+        "max": [
+          -21.78308,
+          322.66165,
+          -84.46774
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -22.05135,
+          322.61597,
+          -84.30619
+        ],
+        "min": [
+          -22.31962,
+          322.57028,
+          -84.58145
+        ],
+        "max": [
+          -21.78308,
+          322.66165,
+          -84.03093
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -14.85215,
+          309.18518,
+          -167.68346
+        ],
+        "min": [
+          -15.12043,
+          309.1395,
+          -167.95872
+        ],
+        "max": [
+          -14.58388,
+          309.23087,
+          -167.4082
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -14.85215,
+          309.18518,
+          -167.24665
+        ],
+        "min": [
+          -15.12043,
+          309.1395,
+          -167.52191
+        ],
+        "max": [
+          -14.58388,
+          309.23087,
+          -166.97139
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.97554,
+          293.65375,
+          -212.18627
+        ],
+        "min": [
+          -39.24382,
+          293.60806,
+          -212.46153
+        ],
+        "max": [
+          -38.70727,
+          293.69943,
+          -211.91101
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -38.97554,
+          293.65375,
+          -211.74946
+        ],
+        "min": [
+          -39.24382,
+          293.60806,
+          -212.02472
+        ],
+        "max": [
+          -38.70727,
+          293.69943,
+          -211.4742
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          0.88534,
+          305.02612,
+          189.7636
+        ],
+        "min": [
+          0.61707,
+          304.98044,
+          189.48834
+        ],
+        "max": [
+          1.15361,
+          305.07181,
+          190.03886
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          0.88534,
+          305.02612,
+          190.20042
+        ],
+        "min": [
+          0.61707,
+          304.98044,
+          189.92516
+        ],
+        "max": [
+          1.15361,
+          305.07181,
+          190.47568
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          11.70681,
+          151.32194,
+          172.99129
+        ],
+        "min": [
+          11.08735,
+          151.25186,
+          172.50385
+        ],
+        "max": [
+          12.32628,
+          151.39201,
+          173.47874
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          11.71927,
+          151.32195,
+          173.75682
+        ],
+        "min": [
+          11.09981,
+          151.25186,
+          173.26938
+        ],
+        "max": [
+          12.33874,
+          151.39203,
+          174.24426
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          32.77412,
+          305.24088,
+          152.9137
+        ],
+        "min": [
+          32.50584,
+          305.19519,
+          152.63844
+        ],
+        "max": [
+          33.04239,
+          305.28656,
+          153.18896
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          32.77412,
+          305.24088,
+          153.35052
+        ],
+        "min": [
+          32.50584,
+          305.19519,
+          153.07526
+        ],
+        "max": [
+          33.04239,
+          305.28656,
+          153.62578
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          38.00897,
+          318.41504,
+          89.76377
+        ],
+        "min": [
+          37.7407,
+          318.36935,
+          89.48851
+        ],
+        "max": [
+          38.27724,
+          318.46072,
+          90.03903
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          38.00897,
+          318.41504,
+          90.20058
+        ],
+        "min": [
+          37.7407,
+          318.36935,
+          89.92532
+        ],
+        "max": [
+          38.27724,
+          318.46072,
+          90.47585
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          16.0046,
+          307.43091,
+          51.68647
+        ],
+        "min": [
+          15.73632,
+          307.38522,
+          51.41121
+        ],
+        "max": [
+          16.27287,
+          307.47659,
+          51.96173
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          16.0046,
+          307.43091,
+          52.12329
+        ],
+        "min": [
+          15.73632,
+          307.38522,
+          51.84803
+        ],
+        "max": [
+          16.27287,
+          307.47659,
+          52.39855
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          56.99567,
+          307.75876,
+          20.43528
+        ],
+        "min": [
+          56.7274,
+          307.71307,
+          20.16002
+        ],
+        "max": [
+          57.26394,
+          307.80444,
+          20.71054
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          56.99567,
+          307.75876,
+          20.8721
+        ],
+        "min": [
+          56.7274,
+          307.71307,
+          20.59683
+        ],
+        "max": [
+          57.26394,
+          307.80444,
+          21.14736
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          23.55786,
+          298.09811,
+          -87.10394
+        ],
+        "min": [
+          23.28959,
+          298.05243,
+          -87.3792
+        ],
+        "max": [
+          23.82613,
+          298.1438,
+          -86.82867
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          23.55786,
+          298.09811,
+          -86.66712
+        ],
+        "min": [
+          23.28959,
+          298.05243,
+          -86.94238
+        ],
+        "max": [
+          23.82613,
+          298.1438,
+          -86.39186
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          0.64262,
+          150.17548,
+          -157.15076
+        ],
+        "min": [
+          0.02308,
+          150.10541,
+          -157.63322
+        ],
+        "max": [
+          1.26217,
+          150.24556,
+          -156.66829
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          0.64262,
+          150.17548,
+          -156.38513
+        ],
+        "min": [
+          0.02307,
+          150.10541,
+          -156.8676
+        ],
+        "max": [
+          1.26217,
+          150.24556,
+          -155.90266
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          29.76469,
+          300.15106,
+          -141.69765
+        ],
+        "min": [
+          29.49641,
+          300.10538,
+          -141.97292
+        ],
+        "max": [
+          30.03296,
+          300.19675,
+          -141.42239
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          29.76469,
+          300.15106,
+          -141.26084
+        ],
+        "min": [
+          29.49641,
+          300.10538,
+          -141.5361
+        ],
+        "max": [
+          30.03296,
+          300.19675,
+          -140.98558
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          53.98861,
+          332.88849,
+          -221.04897
+        ],
+        "min": [
+          53.72033,
+          332.8428,
+          -221.32423
+        ],
+        "max": [
+          54.25688,
+          332.93417,
+          -220.77371
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          53.98861,
+          332.88849,
+          -220.61216
+        ],
+        "min": [
+          53.72033,
+          332.8428,
+          -220.88742
+        ],
+        "max": [
+          54.25688,
+          332.93417,
+          -220.3369
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          16.54266,
+          308.09406,
+          -209.53793
+        ],
+        "min": [
+          16.27438,
+          308.04837,
+          -209.81319
+        ],
+        "max": [
+          16.81093,
+          308.13974,
+          -209.26266
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          16.54266,
+          308.09406,
+          -209.10111
+        ],
+        "min": [
+          16.27438,
+          308.04837,
+          -209.37637
+        ],
+        "max": [
+          16.81093,
+          308.13974,
+          -208.82585
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          96.53923,
+          142.30869,
+          246.49242
+        ],
+        "min": [
+          96.22975,
+          142.27223,
+          246.15004
+        ],
+        "max": [
+          96.84871,
+          142.34515,
+          246.83479
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          96.04812,
+          142.30869,
+          246.49242
+        ],
+        "min": [
+          95.73864,
+          142.27223,
+          246.15004
+        ],
+        "max": [
+          96.3576,
+          142.34515,
+          246.83479
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          85.70491,
+          315.37704,
+          205.76362
+        ],
+        "min": [
+          85.43664,
+          315.33136,
+          205.48836
+        ],
+        "max": [
+          85.97318,
+          315.42273,
+          206.03888
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          85.70491,
+          315.37704,
+          206.20043
+        ],
+        "min": [
+          85.43664,
+          315.33136,
+          205.92517
+        ],
+        "max": [
+          85.97318,
+          315.42273,
+          206.47569
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          61.52923,
+          310.31308,
+          165.94491
+        ],
+        "min": [
+          61.26096,
+          310.2674,
+          165.66965
+        ],
+        "max": [
+          61.7975,
+          310.35876,
+          166.22017
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          61.52923,
+          310.31308,
+          166.38172
+        ],
+        "min": [
+          61.26096,
+          310.2674,
+          166.10646
+        ],
+        "max": [
+          61.7975,
+          310.35876,
+          166.65698
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          107.51876,
+          317.94836,
+          157.99711
+        ],
+        "min": [
+          107.25049,
+          317.90268,
+          157.72185
+        ],
+        "max": [
+          107.78703,
+          317.99405,
+          158.27237
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          107.51876,
+          317.94836,
+          158.43392
+        ],
+        "min": [
+          107.25049,
+          317.90268,
+          158.15866
+        ],
+        "max": [
+          107.78703,
+          317.99405,
+          158.70918
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          79.87222,
+          307.95282,
+          119.14334
+        ],
+        "min": [
+          79.60394,
+          307.90714,
+          118.86808
+        ],
+        "max": [
+          80.14049,
+          307.9985,
+          119.4186
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          79.87222,
+          307.95282,
+          119.58015
+        ],
+        "min": [
+          79.60394,
+          307.90714,
+          119.30489
+        ],
+        "max": [
+          80.14049,
+          307.9985,
+          119.85542
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          108.22155,
+          322.33688,
+          76.0274
+        ],
+        "min": [
+          107.95328,
+          322.2912,
+          75.75214
+        ],
+        "max": [
+          108.48982,
+          322.38257,
+          76.30266
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          108.22155,
+          322.33688,
+          76.46421
+        ],
+        "min": [
+          107.95328,
+          322.2912,
+          76.18895
+        ],
+        "max": [
+          108.48982,
+          322.38257,
+          76.73947
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          117.24078,
+          206.56765,
+          43.00297
+        ],
+        "min": [
+          116.97893,
+          206.53119,
+          42.73598
+        ],
+        "max": [
+          117.50264,
+          206.60411,
+          43.26997
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          117.24078,
+          206.56765,
+          42.57928
+        ],
+        "min": [
+          116.97893,
+          206.53119,
+          42.31229
+        ],
+        "max": [
+          117.50264,
+          206.60411,
+          42.84627
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          111.03733,
+          310.4241,
+          46.21582
+        ],
+        "min": [
+          110.76906,
+          310.37842,
+          45.94056
+        ],
+        "max": [
+          111.3056,
+          310.46979,
+          46.49108
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          111.03733,
+          310.4241,
+          46.65263
+        ],
+        "min": [
+          110.76906,
+          310.37842,
+          46.37737
+        ],
+        "max": [
+          111.3056,
+          310.46979,
+          46.92789
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          60.90182,
+          298.96753,
+          -45.63358
+        ],
+        "min": [
+          60.63355,
+          298.92184,
+          -45.90884
+        ],
+        "max": [
+          61.1701,
+          299.01321,
+          -45.35832
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          60.90182,
+          298.96753,
+          -45.19677
+        ],
+        "min": [
+          60.63355,
+          298.92184,
+          -45.47203
+        ],
+        "max": [
+          61.1701,
+          299.01321,
+          -44.9215
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          112.63924,
+          207.13552,
+          -37.24924
+        ],
+        "min": [
+          112.37738,
+          207.09906,
+          -37.51624
+        ],
+        "max": [
+          112.90109,
+          207.17198,
+          -36.98225
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          112.63924,
+          207.13552,
+          -37.67294
+        ],
+        "min": [
+          112.37738,
+          207.09906,
+          -37.93993
+        ],
+        "max": [
+          112.90109,
+          207.17198,
+          -37.40594
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          88.63605,
+          313.633,
+          -2.78035
+        ],
+        "min": [
+          88.36777,
+          313.58731,
+          -3.05561
+        ],
+        "max": [
+          88.90432,
+          313.67868,
+          -2.50509
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          88.63605,
+          313.633,
+          -2.34354
+        ],
+        "min": [
+          88.36777,
+          313.58731,
+          -2.6188
+        ],
+        "max": [
+          88.90432,
+          313.67868,
+          -2.06828
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          108.57247,
+          291.72461,
+          -87.01907
+        ],
+        "min": [
+          108.3042,
+          291.67892,
+          -87.29433
+        ],
+        "max": [
+          108.84074,
+          291.77029,
+          -86.7438
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          108.57247,
+          291.72461,
+          -86.58225
+        ],
+        "min": [
+          108.3042,
+          291.67892,
+          -86.85751
+        ],
+        "max": [
+          108.84074,
+          291.77029,
+          -86.30699
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          65.01133,
+          312.00729,
+          -76.89381
+        ],
+        "min": [
+          64.74306,
+          311.96161,
+          -77.16907
+        ],
+        "max": [
+          65.2796,
+          312.05298,
+          -76.61855
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          65.01133,
+          312.00729,
+          -76.45699
+        ],
+        "min": [
+          64.74306,
+          311.96161,
+          -76.73225
+        ],
+        "max": [
+          65.2796,
+          312.05298,
+          -76.18173
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          84.70817,
+          316.00528,
+          -133.88313
+        ],
+        "min": [
+          84.4399,
+          315.95959,
+          -134.15839
+        ],
+        "max": [
+          84.97644,
+          316.05096,
+          -133.60786
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          84.70817,
+          316.00528,
+          -133.44631
+        ],
+        "min": [
+          84.4399,
+          315.95959,
+          -133.72157
+        ],
+        "max": [
+          84.97644,
+          316.05096,
+          -133.17105
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          110.56566,
+          247.68008,
+          -139.93516
+        ],
+        "min": [
+          110.3038,
+          247.64362,
+          -140.20215
+        ],
+        "max": [
+          110.82751,
+          247.71654,
+          -139.66817
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          110.56566,
+          247.68008,
+          -140.35885
+        ],
+        "min": [
+          110.3038,
+          247.64362,
+          -140.62584
+        ],
+        "max": [
+          110.82751,
+          247.71654,
+          -140.09186
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          76.19426,
+          142.38337,
+          -247.47388
+        ],
+        "min": [
+          75.88478,
+          142.34691,
+          -247.81625
+        ],
+        "max": [
+          76.50374,
+          142.41983,
+          -247.1315
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          75.70315,
+          142.38337,
+          -247.47388
+        ],
+        "min": [
+          75.39367,
+          142.34691,
+          -247.81625
+        ],
+        "max": [
+          76.01263,
+          142.41983,
+          -247.1315
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          157.86922,
+          170.80505,
+          246.24884
+        ],
+        "min": [
+          157.52684,
+          170.76859,
+          245.93936
+        ],
+        "max": [
+          158.21159,
+          170.84151,
+          246.55832
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          157.86922,
+          170.80505,
+          246.73996
+        ],
+        "min": [
+          157.52684,
+          170.76859,
+          246.43048
+        ],
+        "max": [
+          158.21159,
+          170.84151,
+          247.04944
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          140.88284,
+          314.83707,
+          195.95899
+        ],
+        "min": [
+          140.61456,
+          314.79138,
+          195.68373
+        ],
+        "max": [
+          141.15112,
+          314.88275,
+          196.23425
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          140.88284,
+          314.83707,
+          196.39581
+        ],
+        "min": [
+          140.61456,
+          314.79138,
+          196.12054
+        ],
+        "max": [
+          141.15112,
+          314.88275,
+          196.67107
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          166.95273,
+          299.76135,
+          126.88074
+        ],
+        "min": [
+          166.68445,
+          299.71567,
+          126.60548
+        ],
+        "max": [
+          167.22101,
+          299.80704,
+          127.156
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          166.95273,
+          299.76135,
+          127.31755
+        ],
+        "min": [
+          166.68445,
+          299.71567,
+          127.04229
+        ],
+        "max": [
+          167.22101,
+          299.80704,
+          127.59281
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          129.18649,
+          248.76463,
+          117.03739
+        ],
+        "min": [
+          128.92464,
+          248.72816,
+          116.7704
+        ],
+        "max": [
+          129.44835,
+          248.80109,
+          117.30438
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          129.18649,
+          248.76463,
+          116.6137
+        ],
+        "min": [
+          128.92464,
+          248.72816,
+          116.3467
+        ],
+        "max": [
+          129.44835,
+          248.80109,
+          116.88069
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          145.47333,
+          281.52512,
+          3.46725
+        ],
+        "min": [
+          145.20505,
+          281.47943,
+          3.19199
+        ],
+        "max": [
+          145.74161,
+          281.5708,
+          3.74251
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          145.47333,
+          281.52512,
+          3.90406
+        ],
+        "min": [
+          145.20505,
+          281.47943,
+          3.6288
+        ],
+        "max": [
+          145.74161,
+          281.5708,
+          4.17932
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          164.77943,
+          309.71545,
+          29.78884
+        ],
+        "min": [
+          164.51115,
+          309.66977,
+          29.51358
+        ],
+        "max": [
+          165.04771,
+          309.76114,
+          30.0641
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          164.77943,
+          309.71545,
+          30.22566
+        ],
+        "min": [
+          164.51115,
+          309.66977,
+          29.9504
+        ],
+        "max": [
+          165.04771,
+          309.76114,
+          30.50092
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          134.66916,
+          302.52478,
+          -46.25977
+        ],
+        "min": [
+          134.40088,
+          302.4791,
+          -46.53503
+        ],
+        "max": [
+          134.93744,
+          302.57047,
+          -45.9845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          134.66916,
+          302.52478,
+          -45.82295
+        ],
+        "min": [
+          134.40088,
+          302.4791,
+          -46.09821
+        ],
+        "max": [
+          134.93744,
+          302.57047,
+          -45.54769
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          165.5679,
+          293.63773,
+          -101.51697
+        ],
+        "min": [
+          165.29962,
+          293.59204,
+          -101.79223
+        ],
+        "max": [
+          165.83618,
+          293.68341,
+          -101.24171
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          165.5679,
+          293.63773,
+          -101.08015
+        ],
+        "min": [
+          165.29962,
+          293.59204,
+          -101.35542
+        ],
+        "max": [
+          165.83618,
+          293.68341,
+          -100.80489
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          135.56888,
+          324.93961,
+          -134.61555
+        ],
+        "min": [
+          135.3006,
+          324.89392,
+          -134.89081
+        ],
+        "max": [
+          135.83716,
+          324.98529,
+          -134.34029
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          135.56888,
+          324.93961,
+          -134.17873
+        ],
+        "min": [
+          135.3006,
+          324.89392,
+          -134.45399
+        ],
+        "max": [
+          135.83716,
+          324.98529,
+          -133.90347
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          129.83511,
+          312.57159,
+          -200.74575
+        ],
+        "min": [
+          129.56683,
+          312.52591,
+          -201.02101
+        ],
+        "max": [
+          130.10339,
+          312.61728,
+          -200.47049
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          129.83511,
+          312.57159,
+          -200.30894
+        ],
+        "min": [
+          129.56683,
+          312.52591,
+          -200.5842
+        ],
+        "max": [
+          130.10339,
+          312.61728,
+          -200.03368
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          135.6011,
+          180.37457,
+          -248.00183
+        ],
+        "min": [
+          135.29163,
+          180.3381,
+          -248.34421
+        ],
+        "max": [
+          135.91058,
+          180.41103,
+          -247.65945
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          135.10999,
+          180.37457,
+          -248.00183
+        ],
+        "min": [
+          134.80051,
+          180.3381,
+          -248.34421
+        ],
+        "max": [
+          135.41946,
+          180.41103,
+          -247.65945
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          208.23405,
+          142.32972,
+          246.99557
+        ],
+        "min": [
+          207.92458,
+          142.29326,
+          246.6532
+        ],
+        "max": [
+          208.54353,
+          142.36618,
+          247.33795
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          207.74294,
+          142.32972,
+          246.99557
+        ],
+        "min": [
+          207.43346,
+          142.29326,
+          246.6532
+        ],
+        "max": [
+          208.05241,
+          142.36618,
+          247.33795
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -110.57891,
+          146.71243,
+          73.8545
+        ],
+        "min": [
+          -110.67091,
+          146.41243,
+          73.77302
+        ],
+        "max": [
+          -110.48692,
+          147.01244,
+          73.93598
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -110.57891,
+          146.71243,
+          73.8545
+        ],
+        "min": [
+          -110.67091,
+          146.63243,
+          73.5326
+        ],
+        "max": [
+          -110.48692,
+          146.79243,
+          74.1764
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -113.50854,
+          146.42175,
+          -83.74598
+        ],
+        "min": [
+          -113.60054,
+          146.12175,
+          -83.82746
+        ],
+        "max": [
+          -113.41655,
+          146.72176,
+          -83.6645
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -113.50854,
+          146.42175,
+          -83.74598
+        ],
+        "min": [
+          -113.60054,
+          146.34175,
+          -84.06788
+        ],
+        "max": [
+          -113.41655,
+          146.50175,
+          -83.42408
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -4.42,
+          142.77969,
+          178.35951
+        ],
+        "min": [
+          -4.51199,
+          142.47969,
+          178.27803
+        ],
+        "max": [
+          -4.328,
+          143.0797,
+          178.44099
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -4.42,
+          142.77969,
+          178.35951
+        ],
+        "min": [
+          -4.51199,
+          142.69969,
+          178.03761
+        ],
+        "max": [
+          -4.328,
+          142.8597,
+          178.68141
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -41.22149,
+          172.22864,
+          3.80015
+        ],
+        "min": [
+          -41.31348,
+          171.92863,
+          3.71867
+        ],
+        "max": [
+          -41.1295,
+          172.52864,
+          3.88163
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -41.22149,
+          172.22864,
+          3.80015
+        ],
+        "min": [
+          -41.31348,
+          172.14864,
+          3.47826
+        ],
+        "max": [
+          -41.1295,
+          172.30864,
+          4.12205
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -38.70378,
+          268.69676,
+          8.25357
+        ],
+        "min": [
+          -38.79578,
+          268.39676,
+          8.17209
+        ],
+        "max": [
+          -38.61179,
+          268.99677,
+          8.33505
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -38.70378,
+          268.69676,
+          8.25357
+        ],
+        "min": [
+          -38.79578,
+          268.61676,
+          7.93167
+        ],
+        "max": [
+          -38.61179,
+          268.77676,
+          8.57546
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -14.81341,
+          163.74126,
+          -146.33775
+        ],
+        "min": [
+          -14.9054,
+          163.44125,
+          -146.41924
+        ],
+        "max": [
+          -14.72141,
+          164.04126,
+          -146.25627
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          -14.81341,
+          163.74126,
+          -146.33775
+        ],
+        "min": [
+          -14.9054,
+          163.66125,
+          -146.65965
+        ],
+        "max": [
+          -14.72141,
+          163.82126,
+          -146.01585
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          25.69893,
+          164.72873,
+          168.78697
+        ],
+        "min": [
+          25.60693,
+          164.42873,
+          168.70549
+        ],
+        "max": [
+          25.79092,
+          165.02873,
+          168.86845
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          25.69893,
+          164.72873,
+          168.78697
+        ],
+        "min": [
+          25.60693,
+          164.64873,
+          168.46507
+        ],
+        "max": [
+          25.79092,
+          164.80873,
+          169.10887
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          54.01763,
+          172.05507,
+          3.57071
+        ],
+        "min": [
+          53.92564,
+          171.75507,
+          3.48923
+        ],
+        "max": [
+          54.10962,
+          172.35507,
+          3.65219
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          54.01763,
+          172.05507,
+          3.57071
+        ],
+        "min": [
+          53.92564,
+          171.97507,
+          3.24882
+        ],
+        "max": [
+          54.10962,
+          172.13507,
+          3.89261
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          53.55439,
+          268.81841,
+          4.6921
+        ],
+        "min": [
+          53.4624,
+          268.5184,
+          4.61062
+        ],
+        "max": [
+          53.64638,
+          269.11841,
+          4.77358
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          53.55439,
+          268.81841,
+          4.6921
+        ],
+        "min": [
+          53.4624,
+          268.7384,
+          4.3702
+        ],
+        "max": [
+          53.64638,
+          268.89841,
+          5.014
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          88.68587,
+          147.08946,
+          71.81324
+        ],
+        "min": [
+          88.59387,
+          146.78946,
+          71.73176
+        ],
+        "max": [
+          88.77786,
+          147.38947,
+          71.89472
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          88.68587,
+          147.08946,
+          71.81324
+        ],
+        "min": [
+          88.59387,
+          147.00946,
+          71.49134
+        ],
+        "max": [
+          88.77786,
+          147.16946,
+          72.13514
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          95.60224,
+          146.33151,
+          -90.79865
+        ],
+        "min": [
+          95.51025,
+          146.03151,
+          -90.88013
+        ],
+        "max": [
+          95.69424,
+          146.63152,
+          -90.71716
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 12,
+        "center": [
+          95.60224,
+          146.33151,
+          -90.79865
+        ],
+        "min": [
+          95.51025,
+          146.25151,
+          -91.12054
+        ],
+        "max": [
+          95.69424,
+          146.41151,
+          -90.47675
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 2519,
+      "warmup": 25,
+      "deathmatch": 0,
+      "jump": 78,
+      "tilted_jump": 0,
+      "health": 11,
+      "marker_parts": 53
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "99a689bffbdb3eb5a90af42a18ed0a7d204f4a6651a628818489dd637f813887",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -47.249855041503906,
+        1.3616209030151367,
+        -29.24993896484375
+      ],
+      "boundsMax": [
+        2.7501449584960938,
+        19.999996185302734,
+        20.75006103515625
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:aethelgard-solstis-kiki-80-bbb",
+    "title": "AETHELGARD SOLSTIS",
+    "creator": "Kiki.80_BBB",
+    "template": "MapEditorMoon",
+    "center": [
+      5.26560825938374,
+      215.653944495109,
+      4.44901609083956
+    ],
+    "recorded_spawns": [
+      [
+        7.8,
+        230.16,
+        -246.18
+      ],
+      [
+        4.7,
+        229.99,
+        244.32
+      ],
+      [
+        34.77,
+        229.95,
+        245.46
+      ],
+      [
+        12.37,
+        230.09,
+        -246.49
+      ],
+      [
+        10.31,
+        230.15,
+        -246.48
+      ],
+      [
+        32.3,
+        229.94,
+        245.43
+      ],
+      [
+        14.91,
+        230.08,
+        244.34
+      ],
+      [
+        -8.03,
+        230.22,
+        -244.42
+      ],
+      [
+        7.23,
+        230.04,
+        244.43
+      ],
+      [
+        18.73,
+        230.13,
+        -246.06
+      ],
+      [
+        26.51,
+        229.98,
+        245.42
+      ],
+      [
+        12.24,
+        230.01,
+        244.25
+      ],
+      [
+        -5.98,
+        230.12,
+        -245.02
+      ],
+      [
+        16.28,
+        230.01,
+        -246.22
+      ],
+      [
+        -1.0,
+        230.2,
+        -244.95
+      ],
+      [
+        4.95,
+        230.23,
+        -245.46
+      ],
+      [
+        2.07,
+        230.2,
+        -245.26
+      ],
+      [
+        18.14,
+        230.06,
+        244.7
+      ],
+      [
+        23.66,
+        229.94,
+        245.08
+      ],
+      [
+        20.83,
+        230.05,
+        244.91
+      ],
+      [
+        -3.42,
+        230.12,
+        -245.13
+      ],
+      [
+        14.51,
+        230.02,
+        -246.61
+      ],
+      [
+        29.35,
+        230.13,
+        245.01
+      ],
+      [
+        9.61,
+        230.05,
+        244.41
+      ]
+    ],
+    "bounds_min": [
+      -248.537796020508,
+      295.000335693359,
+      -267.817108154297
+    ],
+    "bounds_max": [
+      283.5,
+      420.500030517578,
+      271.500030517578
+    ],
+    "solid_min": [
+      -300.0,
+      -148.524063110352,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      421.868896484375,
+      320.369079589844
+    ],
+    "source": "https://maps.deliciouswines.org/maps/aethelgard-solstis-kiki-80-bbb/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "101a2b",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.6,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

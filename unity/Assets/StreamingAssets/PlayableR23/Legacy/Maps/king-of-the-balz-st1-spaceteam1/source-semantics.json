@@ -1,0 +1,325 @@
+{
+  "mapId": "archive:king-of-the-balz-st1-spaceteam1",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+    "cache_fingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+    "warmup": [
+      {
+        "center": [
+          41.46535,
+          206.10612,
+          -38.65979
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          38.99742,
+          206.03445,
+          -41.27281
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      },
+      {
+        "center": [
+          45.99014,
+          206.09353,
+          -49.2776
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "forward": [
+          1,
+          0,
+          0
+        ],
+        "evidence": "104-triangle white annulus +6-triangle direction arrow"
+      }
+    ],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          42.29925,
+          206.10853,
+          -38.65979
+        ],
+        "min": [
+          41.99194,
+          206.08458,
+          -39.02457
+        ],
+        "max": [
+          42.60657,
+          206.13248,
+          -38.29501
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          41.46535,
+          206.10612,
+          -38.65979
+        ],
+        "min": [
+          40.87544,
+          206.08458,
+          -39.24781
+        ],
+        "max": [
+          42.05525,
+          206.12766,
+          -38.07177
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          39.83133,
+          206.03686,
+          -41.27281
+        ],
+        "min": [
+          39.52401,
+          206.01291,
+          -41.63759
+        ],
+        "max": [
+          40.13865,
+          206.06081,
+          -40.90803
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          38.99742,
+          206.03445,
+          -41.27281
+        ],
+        "min": [
+          38.40751,
+          206.01291,
+          -41.86082
+        ],
+        "max": [
+          39.58733,
+          206.05598,
+          -40.68479
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 6,
+        "center": [
+          46.82405,
+          206.09594,
+          -49.2776
+        ],
+        "min": [
+          46.51674,
+          206.07199,
+          -49.64238
+        ],
+        "max": [
+          47.13137,
+          206.11989,
+          -48.91282
+        ]
+      },
+      {
+        "key": "p054b1b60",
+        "triangles": 104,
+        "center": [
+          45.99014,
+          206.09353,
+          -49.2776
+        ],
+        "min": [
+          45.40024,
+          206.07199,
+          -49.86562
+        ],
+        "max": [
+          46.58005,
+          206.11507,
+          -48.68959
+        ]
+      }
+    ],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 11,
+      "warmup": 3,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 6
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "a1df4f3ef7beeb188f40052289801311b6db0f0c77143bc72192778c82225fd8",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:king-of-the-balz-st1-spaceteam1",
+    "title": "KING OF THE  BALZ [ST1]",
+    "creator": "Spaceteam1",
+    "template": "MapEditorDefault",
+    "center": [
+      93.9678715189712,
+      209.419040418744,
+      -42.6161456498942
+    ],
+    "recorded_spawns": [
+      [
+        144.22,
+        206.04,
+        -65.92
+      ],
+      [
+        38.92,
+        206.06,
+        -21.2
+      ],
+      [
+        37.77,
+        206.03,
+        -44.54
+      ],
+      [
+        41.35,
+        206.04,
+        -70.04
+      ],
+      [
+        46.72,
+        206.03,
+        -52.72
+      ],
+      [
+        42.63,
+        206.07,
+        -34.38
+      ],
+      [
+        46.02,
+        206.01,
+        -25.11
+      ],
+      [
+        140.62,
+        206.07,
+        -31.0
+      ],
+      [
+        146.35,
+        206.14,
+        -51.41
+      ],
+      [
+        144.54,
+        206.02,
+        -8.08
+      ],
+      [
+        140.9,
+        206.05,
+        -24.19
+      ],
+      [
+        138.05,
+        206.07,
+        -72.97
+      ]
+    ],
+    "bounds_min": [
+      -82.4998779296875,
+      -19.0222358703613,
+      -144.499984741211
+    ],
+    "bounds_max": [
+      179.5,
+      -11.9999990463257,
+      102.999969482422
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      265.779846191406,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/king-of-the-balz-st1-spaceteam1/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

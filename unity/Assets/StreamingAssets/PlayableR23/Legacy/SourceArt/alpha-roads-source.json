@@ -1,0 +1,475 @@
+{
+  "sourceGuardSha256": "5ebf32a7f8897c177f6043fdf93bdd67cd62141353cc35225725bf9348a975cf",
+  "sourceControllerSha256": "729d64d4c7563fb93eb280a98ede97ace776ae3dee4518e7e0745ba8860dc09f",
+  "sourceShaderSha256": "5194b56355ab192d92d6e1e94d5929144b72cacec90a3df48c984e6d6082ded9",
+  "sourceOwners": [
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceVertexSha256": "a8924802a146d72aecdff6d010f42d590517cec7cf8ea4ae1aa2fc8a624dc146",
+      "triangles": 21
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceVertexSha256": "c838f45c9dbba06caf440c94cd09e810335d5cf6d6775b32e1583617317540d5",
+      "triangles": 7
+    }
+  ],
+  "matches": [
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8441,
+        8442,
+        8443
+      ],
+      "sourceTriangle": 6024,
+      "chunk": 273,
+      "triangle": 5148,
+      "maxCornerDistance": 0.001418492989614606
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8444,
+        8442,
+        8441
+      ],
+      "sourceTriangle": 6025,
+      "chunk": 273,
+      "triangle": 5149,
+      "maxCornerDistance": 0.001418492989614606
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8445,
+        8444,
+        8441
+      ],
+      "sourceTriangle": 6026,
+      "chunk": 273,
+      "triangle": 5150,
+      "maxCornerDistance": 0.001418492989614606
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8446,
+        8447,
+        8448
+      ],
+      "sourceTriangle": 6027,
+      "chunk": 273,
+      "triangle": 5151,
+      "maxCornerDistance": 0.0010461177444085479
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8449,
+        8447,
+        8446
+      ],
+      "sourceTriangle": 6028,
+      "chunk": 273,
+      "triangle": 5152,
+      "maxCornerDistance": 0.0010461177444085479
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8441,
+        8443,
+        8450
+      ],
+      "sourceTriangle": 6029,
+      "chunk": 273,
+      "triangle": 5153,
+      "maxCornerDistance": 0.001418492989614606
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8451,
+        8449,
+        8450
+      ],
+      "sourceTriangle": 6030,
+      "chunk": 273,
+      "triangle": 5154,
+      "maxCornerDistance": 0.0009697512723505497
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8452,
+        8453,
+        8454
+      ],
+      "sourceTriangle": 6031,
+      "chunk": 273,
+      "triangle": 5155,
+      "maxCornerDistance": 0.0006832888466306031
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        8448,
+        8453,
+        8452
+      ],
+      "sourceTriangle": 6032,
+      "chunk": 273,
+      "triangle": 5156,
+      "maxCornerDistance": 0.001034226268529892
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        32995,
+        32994,
+        32997
+      ],
+      "sourceTriangle": 22846,
+      "chunk": 273,
+      "triangle": 19038,
+      "maxCornerDistance": 0.0010631120530888438
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        32995,
+        32997,
+        32998
+      ],
+      "sourceTriangle": 22847,
+      "chunk": 273,
+      "triangle": 19039,
+      "maxCornerDistance": 0.001319241477176547
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        32997,
+        32994,
+        32999
+      ],
+      "sourceTriangle": 22848,
+      "chunk": 273,
+      "triangle": 19040,
+      "maxCornerDistance": 0.0011575217358767986
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        33000,
+        33001,
+        32994
+      ],
+      "sourceTriangle": 22849,
+      "chunk": 273,
+      "triangle": 19041,
+      "maxCornerDistance": 0.0010631120530888438
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        32994,
+        32996,
+        33000
+      ],
+      "sourceTriangle": 22850,
+      "chunk": 273,
+      "triangle": 19042,
+      "maxCornerDistance": 0.0010631120530888438
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17869,
+        17870,
+        17871
+      ],
+      "sourceTriangle": 11928,
+      "chunk": 277,
+      "triangle": 5304,
+      "maxCornerDistance": 0.0009778599487617612
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17870,
+        17869,
+        17872
+      ],
+      "sourceTriangle": 11929,
+      "chunk": 277,
+      "triangle": 5305,
+      "maxCornerDistance": 0.0012362577253952622
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17870,
+        17872,
+        17873
+      ],
+      "sourceTriangle": 11930,
+      "chunk": 277,
+      "triangle": 5306,
+      "maxCornerDistance": 0.0012362577253952622
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17872,
+        17869,
+        17874
+      ],
+      "sourceTriangle": 11931,
+      "chunk": 277,
+      "triangle": 5307,
+      "maxCornerDistance": 0.0012362577253952622
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17875,
+        17876,
+        17877
+      ],
+      "sourceTriangle": 11932,
+      "chunk": 277,
+      "triangle": 5308,
+      "maxCornerDistance": 0.0005318083567544818
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17878,
+        17879,
+        17869
+      ],
+      "sourceTriangle": 11933,
+      "chunk": 277,
+      "triangle": 5309,
+      "maxCornerDistance": 0.0008551581995561719
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_0",
+      "sourceNode": "Draw_world_vc_-1_0",
+      "sourceIndices": [
+        17869,
+        17871,
+        17878
+      ],
+      "sourceTriangle": 11934,
+      "chunk": 277,
+      "triangle": 5310,
+      "maxCornerDistance": 0.0009778599487617612
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20378,
+        20379,
+        20380
+      ],
+      "sourceTriangle": 13460,
+      "chunk": 290,
+      "triangle": 9339,
+      "maxCornerDistance": 0.0013958768686279655
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20378,
+        20380,
+        20381
+      ],
+      "sourceTriangle": 13461,
+      "chunk": 290,
+      "triangle": 9340,
+      "maxCornerDistance": 0.0013958768686279655
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20378,
+        20381,
+        20382
+      ],
+      "sourceTriangle": 13462,
+      "chunk": 290,
+      "triangle": 9341,
+      "maxCornerDistance": 0.0011277125449851155
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20383,
+        20384,
+        20385
+      ],
+      "sourceTriangle": 13463,
+      "chunk": 290,
+      "triangle": 9342,
+      "maxCornerDistance": 0.0012502913596108556
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20381,
+        20384,
+        20383
+      ],
+      "sourceTriangle": 13464,
+      "chunk": 290,
+      "triangle": 9343,
+      "maxCornerDistance": 0.0012502913596108556
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20382,
+        20381,
+        20383
+      ],
+      "sourceTriangle": 13465,
+      "chunk": 290,
+      "triangle": 9344,
+      "maxCornerDistance": 0.0012502913596108556
+    },
+    {
+      "owner": "AlphaJunctionRoadFacesR24_1",
+      "sourceNode": "Draw_world_vc_0_0",
+      "sourceIndices": [
+        20381,
+        20386,
+        20384
+      ],
+      "sourceTriangle": 13466,
+      "chunk": 290,
+      "triangle": 9345,
+      "maxCornerDistance": 0.0012300194939598441
+    }
+  ],
+  "sourceFaces": 28,
+  "oldAlphaPlanSha256": "b05c84934698c8a4d69ea372fa960fc66bd5bd0794806c0a8708cbb3fe0305de",
+  "geometrySha256": "653faa4d1100f4c8207f81cf292d5ab084fb5f95a5a39c98c1d65a43052dae2c",
+  "previousAllArtPartsPreserved": true,
+  "otherEightMapsUntouched": true,
+  "collisionUntouched": true,
+  "published": true,
+  "engineRun": false,
+  "capturedCameraWitnesses": [
+    {
+      "pixel": [
+        450,
+        400
+      ],
+      "distance": 33.072149782213486,
+      "chunk": 66,
+      "triangle": 70,
+      "newOwner": null
+    },
+    {
+      "pixel": [
+        500,
+        250
+      ],
+      "distance": 34.49221564032555,
+      "chunk": 273,
+      "triangle": 5152,
+      "newOwner": "AlphaJunctionRoadFacesR24_0"
+    },
+    {
+      "pixel": [
+        500,
+        400
+      ],
+      "distance": 32.690707115406276,
+      "chunk": 273,
+      "triangle": 5152,
+      "newOwner": "AlphaJunctionRoadFacesR24_0"
+    },
+    {
+      "pixel": [
+        550,
+        400
+      ],
+      "distance": 32.46041055927202,
+      "chunk": 277,
+      "triangle": 1357,
+      "newOwner": null
+    },
+    {
+      "pixel": [
+        600,
+        200
+      ],
+      "distance": 35.1198208006899,
+      "chunk": 277,
+      "triangle": 1360,
+      "newOwner": null
+    },
+    {
+      "pixel": [
+        600,
+        400
+      ],
+      "distance": 32.38431760395371,
+      "chunk": 277,
+      "triangle": 1360,
+      "newOwner": null
+    },
+    {
+      "pixel": [
+        650,
+        400
+      ],
+      "distance": 32.46351260564726,
+      "chunk": 277,
+      "triangle": 1360,
+      "newOwner": null
+    },
+    {
+      "pixel": [
+        680,
+        550
+      ],
+      "distance": 32.23106417015524,
+      "chunk": 277,
+      "triangle": 1360,
+      "newOwner": null
+    }
+  ]
+}

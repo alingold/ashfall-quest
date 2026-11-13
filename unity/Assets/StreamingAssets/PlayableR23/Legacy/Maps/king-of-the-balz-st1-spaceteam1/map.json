@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "mapId": "archive:king-of-the-balz-st1-spaceteam1",
+  "title": "KING OF THE  BALZ [ST1]",
+  "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+  "spawn": [
+    144.22,
+    206.1630908203125,
+    65.92
+  ],
+  "gameSpawn": [
+    144.22,
+    206.1630908203125,
+    65.92
+  ],
+  "warmupSpawn": [
+    41.46535,
+    206.1630908203125,
+    38.65979
+  ],
+  "boundsMin": [
+    -82.4998779296875,
+    -19.0222358703613,
+    -102.999969482422
+  ],
+  "boundsMax": [
+    179.5,
+    -11.9999990463257,
+    144.499984741211
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "pcdf281b7",
+      "color": "pcdf281b7_c.jpg",
+      "normal": "pcdf281b7_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pd959969c",
+      "color": "pd959969c_c.jpg",
+      "normal": "pd959969c_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pdc94084b",
+      "color": "pdc94084b_c.jpg",
+      "normal": "pdc94084b_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t10",
+      "color": "t10_c.jpg",
+      "normal": "t10_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t11",
+      "color": "t11_c.jpg",
+      "normal": "t11_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t12",
+      "color": "t12_c.jpg",
+      "normal": "t12_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t120",
+      "color": "t120_c.jpg",
+      "normal": "t120_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t121",
+      "color": "t121_c.jpg",
+      "normal": "t121_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t122",
+      "color": "t122_c.jpg",
+      "normal": "t122_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t124",
+      "color": "t124_c.jpg",
+      "normal": "t124_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t125",
+      "color": "t125_c.jpg",
+      "normal": "t125_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t126",
+      "color": "t126_c.jpg",
+      "normal": "t126_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t13",
+      "color": "t13_c.jpg",
+      "normal": "t13_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t60",
+      "color": "t60_c.jpg",
+      "normal": "t60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 49,
+  "cameraFarDistance": 2000
+}

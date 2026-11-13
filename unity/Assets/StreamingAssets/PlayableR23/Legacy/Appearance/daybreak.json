@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "id": "daybreak",
+  "label": "Daybreak (Draft)",
+  "sourceIndex": 55,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 3,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.7799999713897705,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-38080076e389c7bb07a8a8bc.png",
+      "normal": "",
+      "metallicMap": "r5-metallic-a5b82940d0561cb8da57a753.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-6914022de2999bd5383f8cc0.png",
+      "normal": "",
+      "metallicMap": "r5-metallic-43fa95e7cc3a5709afcd49df.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.001702786423265934,
+        0.002089783316478133,
+        0.0030959751456975937,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.9399999976158142,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.7799999713897705,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-de2c61778439b1f2ee41b127.png",
+      "normal": "",
+      "metallicMap": "r5-metallic-c93a16101d9230b405d558d3.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.021980946883559227,
+        0.007850573398172855,
+        0.0035010159481316805,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.7200000286102295,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "id": "kaiju_y",
+  "label": "Kaiju Y (Draft)",
+  "sourceIndex": 79,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.06,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.10000000149011612,
+      "roughness": 0.46000000834465027,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-aa85b7bbfdcb37739b7f9185.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.2199999988079071,
+      "roughness": 0.3199999928474426,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-9ca1c7d9199426fe73724366.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.25999999046325684,
+      "roughness": 0.30000001192092896,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-45df4a3627a5ebf11c9938e5.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.20000000298023224,
+      "roughness": 0.3400000035762787,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-9ebefc9cbd69a19ce97eae62.png",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.5542217493057251,
+        0.9551045894622803,
+        0.6738595366477966,
+        1
+      ],
+      "metallic": 0.07999999821186066,
+      "roughness": 0.18000000715255737,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0.5802733600282975,
+        1,
+        0.7055348116662036
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 1.0506150711799762
+    },
+    {
+      "color": [
+        0.010022825561463833,
+        0.5542217493057251,
+        0.9551045894622803,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.2199999988079071,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0.010493956025388424,
+        0.5802733600282975,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 1.0506150711799762
+    },
+    {
+      "color": [
+        0.19599418342113495,
+        0.13286831974983215,
+        0.0134117491543293,
+        1
+      ],
+      "metallic": 0.550000011920929,
+      "roughness": 0.33000001311302185,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

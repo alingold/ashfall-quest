@@ -1,0 +1,230 @@
+{
+  "mapId": "archive:home-town-sir-dave-sir-dave",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "a4c93cd39a87134623aae864ee41c926e970334f85d118b90ab860687feb2b27",
+    "cache_fingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+    "warmup": [],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 3916,
+      "warmup": 0,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 0
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "f374627da44b8a2b343225aec40f7f4ed70bd1d664b361ab560080b8a6cc2470",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:home-town-sir-dave-sir-dave",
+    "title": "HOME TOWN SIR DAVE",
+    "creator": "SIR-DAVE",
+    "template": "MapEditorDefault",
+    "center": [
+      -26.7748445660625,
+      44.978341025888,
+      15.9519687335651
+    ],
+    "recorded_spawns": [
+      [
+        -34.36,
+        42.69,
+        -82.42
+      ],
+      [
+        -47.02,
+        42.69,
+        -78.59
+      ],
+      [
+        -42.55,
+        42.94,
+        -35.64
+      ],
+      [
+        -38.4,
+        42.69,
+        -81.14
+      ],
+      [
+        -42.56,
+        42.69,
+        -79.64
+      ],
+      [
+        -42.89,
+        42.69,
+        -75.64
+      ],
+      [
+        -36.84,
+        42.69,
+        -75.14
+      ],
+      [
+        -15.99,
+        42.97,
+        -59.29
+      ],
+      [
+        46.46,
+        42.77,
+        -38.12
+      ],
+      [
+        -84.1,
+        41.61,
+        -32.64
+      ],
+      [
+        -60.93,
+        49.09,
+        -33.96
+      ],
+      [
+        -59.97,
+        49.09,
+        -18.88
+      ],
+      [
+        -102.89,
+        43.06,
+        64.95
+      ],
+      [
+        -35.19,
+        42.89,
+        108.95
+      ],
+      [
+        -37.31,
+        42.89,
+        109.49
+      ],
+      [
+        -39.88,
+        42.89,
+        110.13
+      ],
+      [
+        -42.28,
+        42.89,
+        109.82
+      ],
+      [
+        -46.32,
+        42.89,
+        109.29
+      ],
+      [
+        -48.69,
+        42.89,
+        105.81
+      ],
+      [
+        15.77,
+        42.54,
+        43.11
+      ],
+      [
+        -5.11,
+        42.9,
+        62.41
+      ],
+      [
+        -62.6,
+        42.52,
+        70.55
+      ],
+      [
+        -53.2,
+        42.49,
+        42.87
+      ],
+      [
+        -68.83,
+        51.14,
+        61.89
+      ],
+      [
+        11.09,
+        42.6,
+        77.71
+      ],
+      [
+        57.55,
+        42.67,
+        46.73
+      ],
+      [
+        -5.49,
+        42.67,
+        -34.88
+      ]
+    ],
+    "bounds_min": [
+      -474.927124023438,
+      9.99826431274414,
+      -492.617828369141
+    ],
+    "bounds_max": [
+      438.800903320313,
+      24.2396926879883,
+      453.478485107422
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      173.143783569336,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/home-town-sir-dave-sir-dave/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

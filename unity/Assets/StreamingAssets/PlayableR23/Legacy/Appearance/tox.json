@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "id": "tox",
+  "label": "Tox",
+  "sourceIndex": 42,
+  "eyeToShoulder": 0.18,
+  "bodyRear": 0.02,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "r5-albedo-05d5683b9365450c2b166142.png",
+      "normal": "r5-normal-8e934c372a4139b9a3e23ad7.png",
+      "metallicMap": "r5-metallic-136af0816f48a83a39e2878d.png",
+      "occlusion": "r5-occlusion-670fe2f25d81dc7c4e080377.png",
+      "emission": "r5-emission-3582397e0f21c8d83e2a86e3.png",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1,
+      "emissionEnergy": 4
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "r5-albedo-8325ec7c29603dd3c546cbc5.png",
+      "normal": "r5-normal-2814058d39d8881d9d169469.png",
+      "metallicMap": "r5-metallic-5f907efc2404c95a175c5117.png",
+      "occlusion": "r5-occlusion-15ee326315fe4d24a66dfb03.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ],
+  "chestplateFollowsJacket": true
+}

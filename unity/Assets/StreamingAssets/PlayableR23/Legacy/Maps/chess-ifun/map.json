@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "mapId": "archive:chess-ifun",
+  "title": "CHESS",
+  "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+  "spawn": [
+    -56.46,
+    47.57154733417191,
+    89.25
+  ],
+  "gameSpawn": [
+    -56.46,
+    47.57154733417191,
+    89.25
+  ],
+  "warmupSpawn": [
+    113.18743,
+    136.2500506591797,
+    -9.01824
+  ],
+  "boundsMin": [
+    -312.300354003906,
+    -13.5921812057495,
+    -89.2016372680664
+  ],
+  "boundsMax": [
+    51.6309204101563,
+    -0.592175483703613,
+    112.298210144043
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "p8ad59c41",
+      "color": "p8ad59c41_c.jpg",
+      "normal": "p8ad59c41_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb15f766d",
+      "color": "pb15f766d_c.jpg",
+      "normal": "pb15f766d_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "pd959969c",
+      "color": "pd959969c_c.jpg",
+      "normal": "pd959969c_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t1",
+      "color": "t1_c.jpg",
+      "normal": "t1_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t132",
+      "color": "t132_c.jpg",
+      "normal": "t132_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t139",
+      "color": "t139_c.jpg",
+      "normal": "t139_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t51",
+      "color": "t51_c.jpg",
+      "normal": "t51_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t52",
+      "color": "t52_c.jpg",
+      "normal": "t52_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t60",
+      "color": "t60_c.jpg",
+      "normal": "t60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 53,
+  "cameraFarDistance": 2000
+}

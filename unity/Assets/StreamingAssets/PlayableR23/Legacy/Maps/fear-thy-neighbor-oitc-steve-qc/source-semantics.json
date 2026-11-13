@@ -1,0 +1,240 @@
+{
+  "mapId": "archive:fear-thy-neighbor-oitc-steve-qc",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "8e7cb8a22dcb0557951d9b6560e15b8958d28de299804b64a840a9546fd218a3",
+    "cache_fingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+    "warmup": [],
+    "deathmatch": [],
+    "jump": [],
+    "health": [],
+    "marker_parts": [],
+    "decorative_collision_parts": [],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 1869,
+      "warmup": 0,
+      "deathmatch": 0,
+      "jump": 0,
+      "tilted_jump": 0,
+      "health": 0,
+      "marker_parts": 0
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "ad09c0a6f594c3285c31428a4bcf0fcde032ce0549d98648ab1752abdc4e46b7",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "killzone",
+      "sourceNode": "killzone",
+      "boundsMin": [
+        77.69599914550781,
+        -0.47057461738586426,
+        5.999239444732666
+      ],
+      "boundsMax": [
+        80.61196899414062,
+        2.168992280960083,
+        7.277267932891846
+      ],
+      "triangles": 64
+    },
+    {
+      "role": "trigger",
+      "sourceNode": "trigger",
+      "boundsMin": [
+        49.80927276611328,
+        -2.694420337677002,
+        -103.87782287597656
+      ],
+      "boundsMax": [
+        89.3955307006836,
+        14.962398529052734,
+        43.71353530883789
+      ],
+      "triangles": 1008
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:fear-thy-neighbor-oitc-steve-qc",
+    "title": "FEAR THY NEIGHBOR [OITC]",
+    "creator": "Steve_Qc",
+    "template": "MapEditorDefault",
+    "center": [
+      70.2236288377575,
+      7.03448270029215,
+      4.22561095322981
+    ],
+    "recorded_spawns": [
+      [
+        79.28,
+        2.18,
+        -81.55
+      ],
+      [
+        59.99,
+        2.18,
+        -82.23
+      ],
+      [
+        63.1,
+        0.35,
+        23.01
+      ],
+      [
+        60.9,
+        0.15,
+        9.71
+      ],
+      [
+        69.92,
+        0.36,
+        11.52
+      ],
+      [
+        52.09,
+        0.16,
+        40.1
+      ],
+      [
+        56.21,
+        6.91,
+        29.31
+      ],
+      [
+        74.8,
+        0.17,
+        45.0
+      ],
+      [
+        82.18,
+        0.16,
+        21.56
+      ],
+      [
+        69.63,
+        6.91,
+        24.07
+      ],
+      [
+        67.84,
+        6.86,
+        16.41
+      ],
+      [
+        79.65,
+        6.91,
+        2.48
+      ],
+      [
+        79.12,
+        0.35,
+        23.83
+      ],
+      [
+        59.08,
+        2.17,
+        -84.87
+      ],
+      [
+        57.45,
+        2.52,
+        -70.09
+      ],
+      [
+        51.63,
+        0.38,
+        -98.05
+      ],
+      [
+        82.25,
+        0.38,
+        -93.19
+      ],
+      [
+        76.56,
+        0.38,
+        -58.46
+      ],
+      [
+        81.62,
+        2.18,
+        -79.01
+      ],
+      [
+        78.98,
+        7.57,
+        -81.88
+      ],
+      [
+        79.13,
+        7.57,
+        -90.79
+      ],
+      [
+        58.6,
+        7.52,
+        -80.81
+      ],
+      [
+        62.37,
+        7.57,
+        -92.55
+      ]
+    ],
+    "bounds_min": [
+      44.8804740905762,
+      -16.352970123291,
+      -118.659446716309
+    ],
+    "bounds_max": [
+      95.4635620117188,
+      1.57385444641113,
+      51.6670455932617
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -319.126220703125
+    ],
+    "solid_max": [
+      315.357299804688,
+      173.143783569336,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/fear-thy-neighbor-oitc-steve-qc/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

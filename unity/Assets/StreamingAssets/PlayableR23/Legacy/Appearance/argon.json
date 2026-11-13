@@ -1,0 +1,366 @@
+{
+  "version": 1,
+  "id": "argon",
+  "label": "WITCH DOCTOR · GEMINI 4 ARGON",
+  "sourceIndex": 5,
+  "eyeToShoulder": 0.29,
+  "bodyRear": 0.12,
+  "gloveMaterialIndex": 14,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-0-baseColor.png",
+      "normal": "argon-body-0-normal.png",
+      "metallicMap": "argon-body-0-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.7200000286102295,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-1-baseColor.png",
+      "normal": "argon-body-1-normal.png",
+      "metallicMap": "argon-body-1-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.8500000238418579,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.03999999910593033,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-2-baseColor.png",
+      "normal": "argon-body-2-normal.png",
+      "metallicMap": "argon-body-2-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.5799999833106995,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-3-baseColor.png",
+      "normal": "argon-body-3-normal.png",
+      "metallicMap": "argon-body-3-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.6499999761581421,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.8999999761581421,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-4-baseColor.png",
+      "normal": "argon-body-4-normal.png",
+      "metallicMap": "argon-body-4-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.44999998807907104,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.8799999952316284,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-5-baseColor.png",
+      "normal": "argon-body-5-normal.png",
+      "metallicMap": "argon-body-5-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.41999998688697815,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-6-baseColor.png",
+      "normal": "argon-body-6-normal.png",
+      "metallicMap": "argon-body-6-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.44999998807907104,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.8500000238418579,
+        0.019999999552965164,
+        0.029999999329447746,
+        1
+      ],
+      "metallic": 0.15000000596046448,
+      "roughness": 0.05999999865889549,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-8-baseColor.png",
+      "normal": "argon-body-8-normal.png",
+      "metallicMap": "argon-body-8-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.25,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-9-baseColor.png",
+      "normal": "argon-body-9-normal.png",
+      "metallicMap": "argon-body-9-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.75,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.019999999552965164,
+        0.6499999761581421,
+        0.8799999952316284,
+        1
+      ],
+      "metallic": 0.15000000596046448,
+      "roughness": 0.07999999821186066,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-11-baseColor.png",
+      "normal": "argon-body-11-normal.png",
+      "metallicMap": "argon-body-11-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.800000011920929,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        0.03999999910593033,
+        0.7200000286102295,
+        0.36000001430511475,
+        1
+      ],
+      "metallic": 0.15000000596046448,
+      "roughness": 0.07999999821186066,
+      "doubleSided": true,
+      "baseColor": "",
+      "normal": "",
+      "metallicMap": "",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        1,
+        1,
+        1
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "argon-body-13-baseColor.png",
+      "normal": "argon-body-13-normal.png",
+      "metallicMap": "argon-body-13-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 0.550000011920929,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "argon-glove-baseColor.png",
+      "normal": "argon-glove-normal.png",
+      "metallicMap": "argon-glove-metallic.png",
+      "occlusion": "argon-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

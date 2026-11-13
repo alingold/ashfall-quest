@@ -1,0 +1,470 @@
+{
+  "mapId": "archive:deep-space-5-stand-alone-pro-yt",
+  "title": "DEEP SPACE 5",
+  "creator": "Stand.alone.pro.YT",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "assets/data/architecture_r24.json": "1cb3f22b3267a0d825eadbd3cc2b132f17740fdd0061a74ed5ff44e6e133644d",
+    "assets/data/map_semantics_r14.json": "61ef5cb7b8e6ff477894fb833caa54c946e695b41d733130e0d1d52ecc3daca6",
+    "assets/data/archive_semantics_r9.json": "472d1eb38e244ebb7843ea4840d6f05baa997c184fd4b39afb6d53ca7afd1e8a",
+    "assets/data/archive_adapters_r10.json": "00aee2d894f87aa3399720f9c88abe70b8ebd8eb90895442a3b8ae983a4e7695",
+    "assets/data/map_caches_r17.json": "d3069fb750c16606ce84a7bda63e8591d58b456829d3c585d627127acd784fbd",
+    "scripts/archive_catalog1003.gd": "6e7d4743b3845e44bb54babf8b5a9046108fbd68e111e7c88b5c1cafb609d3a7",
+    "scripts/map_catalog1000.gd": "8b22cc4428790178abd0e9d8e56f9b77a6e9839563a0763c7d61da52024422c5",
+    "scripts/archive_map1003.gd": "3aeb9a038edec0fd890423365961d82b64c7e67c8d453e744a74a90ac9e5ee0e",
+    "scripts/community_map1002.gd": "8a959a2b5fa8562d411ea2e8756a9102b6015efb0a6702033a8e028d97abce61",
+    "scripts/archive_semantics_r8.gd": "857bbf458575af9407d4f969eb9b158683088dc1c89199c9ea57c5b91a9526e5",
+    "scripts/archive_semantics_r9.gd": "a24e26762d5f3b4f03c498116e47d25099166f5ba837a4c1a86289208b0197b2",
+    "scripts/map_semantics_r14.gd": "232fc81b6a6d493ca6384a2533d397a43354ef560c51d2757b60ec60e703913b",
+    "scripts/foliage_r23.gd": "44bfa5c57cc38c51f04ddc714640c3e06a7523bd1f4501ba4b378dab38413685",
+    "tools/convert_archive1003.gd": "3dcd46d595b9e7c0bd331f7e822c9b066f58f730cdfa93c81f80e3127d622a71"
+  },
+  "archiveInputs": {
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\map.glb": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\provenance.json": "75cfe9afcf0ab61fcd6ae20e65e29c688a857dbd2c853aa001cb33351757ba03",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\map.json": "2fef821dabf34a3599089d9ee994c7fe8f6a8ccdd236ccee2502b104e9abede3",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\converted\\manifest.json": "b36d4a3d2a43001c1d2dbdc71b9461e1347f02842aaf409bb48fe9bc1afb4dbb",
+    "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\catalog.json": "e36ccca2a4a3237894bb05c9577c23822f0a3cd51622ef9864fc0134ed45bf58"
+  },
+  "sourceGlbSha256": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+  "cacheFingerprint": "fe51b0649cf0d7fe0e61e37a7fdb9b3f54547f0b0e35c85199dbd73734444299",
+  "preparedAdapterSha256": "342adbc2c695b7bcc62115e6d03f5feaacdf94bd37d806558921cb774bdaef40",
+  "sourceSolidTriangles": 229005,
+  "sourceRoles": {
+    "world": 228993,
+    "roof": 12,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 229005,
+  "collisionTriangles": 229021,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 62,
+  "clockwiseNormalAgreement": 0.999838391250415,
+  "chunks": 159,
+  "materials": 42,
+  "textureInputs": {
+    "p0d65efac_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\ice_cracked_01_snow_c.jpg",
+      "sha256": "20acb6e8aba96b3dd57991c9e1c7934393555733b21744005d5d391a00814259",
+      "bytes": 41180
+    },
+    "p0d65efac_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\ice_cracked_01_snow_n.jpg",
+      "sha256": "a429d65e152054fb10ac793270b266517eb257a9fcc0bd3cb2470caf53929545",
+      "bytes": 27734
+    },
+    "p28e52bc3_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_corrugated_paint_01_orange_c.jpg",
+      "sha256": "a158af5fe3368a35ed298613233031359db4930c44e8e901d3153c0b185ac78b",
+      "bytes": 12462
+    },
+    "p28e52bc3_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_corrugated_paint_01_orange_n.jpg",
+      "sha256": "4ae7fdad36c70c8123d47192e447808a0195fa9c52a27db9b899ddfdd74dd5e4",
+      "bytes": 31500
+    },
+    "p4ce92445_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_gray_c.jpg",
+      "sha256": "41189ddef750f172da8526c287317f629d936b1dbb857e2f76350f80b1966140",
+      "bytes": 8824
+    },
+    "p4ce92445_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_gray_n.jpg",
+      "sha256": "1c4d55d6e1df0cfaa18fa90c9ebb6129c133fd241dd89f3803e6070861a08ed2",
+      "bytes": 12754
+    },
+    "p644d2219_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_c.jpg",
+      "sha256": "abc19cd4178fe0adc51bce0df6c43adbf2a6a8f02b221c464912c2a08e7cc296",
+      "bytes": 17836
+    },
+    "p644d2219_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_n.jpg",
+      "sha256": "1c4d55d6e1df0cfaa18fa90c9ebb6129c133fd241dd89f3803e6070861a08ed2",
+      "bytes": 12754
+    },
+    "p649d5925_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_silver_01_c.jpg",
+      "sha256": "6025f7fdd3a826212dd29463f85feebc3539d2626cfefa13e445a030c662db69",
+      "bytes": 16767
+    },
+    "p649d5925_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_silver_01_n.jpg",
+      "sha256": "01c33e3c4306f2a17b13320ed3a026b55b8b8ad6ff4bec2955ef962c35d66ad1",
+      "bytes": 27158
+    },
+    "p6b14dedd_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_orange_c.jpg",
+      "sha256": "c8813406476cd903b0c8485f722fdde01458b0492b17715b7167347f9a6f63c8",
+      "bytes": 14050
+    },
+    "p6b14dedd_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_orange_n.jpg",
+      "sha256": "c74808a06c084074ac50681c2f7c473f11322a31d1fe61b432314b9821aacb51",
+      "bytes": 10886
+    },
+    "p74820c7b_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_glass_01_c.jpg",
+      "sha256": "7b3677e4302978ab5481a0507c4b5955a096423b05b3bfa060910f01d3fec38e",
+      "bytes": 12651
+    },
+    "p74820c7b_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_glass_01_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "p7983c1f3_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_space_lab_wall_01_c.jpg",
+      "sha256": "a6243c125c91b4a891544c917ea7a35100dc31240060b91908ca4bd861dde1b3",
+      "bytes": 19898
+    },
+    "p7983c1f3_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_space_lab_wall_01_n.jpg",
+      "sha256": "513991a9233d2851bf761399b7c7dd20d1334059721706e00a423ffc8dfe8743",
+      "bytes": 23405
+    },
+    "p8507d26c_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_panel_01_c.jpg",
+      "sha256": "6f6ab6a51e97ff7e43a78117b17fcf3e2cf5ca1ed24fe565fbb0335ae1450513",
+      "bytes": 20808
+    },
+    "p8507d26c_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_panel_01_n.jpg",
+      "sha256": "d6ddfa57e6885cb3d2e39228c1b6a7f65b3032474f75bc83811e6d79f1ca2fea",
+      "bytes": 9698
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_black_01_c.jpg",
+      "sha256": "42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c",
+      "bytes": 16230
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_gb_tile_black_01_n.jpg",
+      "sha256": "a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf",
+      "bytes": 13760
+    },
+    "p8efa202c_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_sheet_grey_01_c.jpg",
+      "sha256": "1fc0b27b0cfaafbaf9d4877966e87aeec13ebfb0fea1417d46fdefbdef533d0c",
+      "bytes": 19230
+    },
+    "p8efa202c_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_sheet_grey_01_n.jpg",
+      "sha256": "709d6941ed967085024e10cafe2c4c3ae7945d75bc5ccf50a5515cff831de4e4",
+      "bytes": 12092
+    },
+    "p972cda12_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_trim_c.jpg",
+      "sha256": "d777aac8a7d6d0a89557fac66b93ee27d47132c77e1b3e45a3d29b1d9308dffe",
+      "bytes": 34312
+    },
+    "p972cda12_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_trim_n.jpg",
+      "sha256": "2b963b3d7aa969a3fb6415e0415f33e924960fc571a19b0ad719e0bd1dc12923",
+      "bytes": 35325
+    },
+    "p9e913eef_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_corrugated_plains_01_c.jpg",
+      "sha256": "a62e9bf290eb3d0a606b5c3e14cd937fc2d1d9089fd97c0ae8a081fea300c7eb",
+      "bytes": 32933
+    },
+    "p9e913eef_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_corrugated_plains_01_n.jpg",
+      "sha256": "f25364a18b0d6c87b7d0564707e6b733790f560acbd1d00983728a95584c03d0",
+      "bytes": 41948
+    },
+    "pa060e2a7_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_white_c.jpg",
+      "sha256": "770406ecdd809d59b172432d3e604e0449570fe29e4aa937297be882863562ab",
+      "bytes": 20310
+    },
+    "pa060e2a7_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_white_n.jpg",
+      "sha256": "24560a6c6c62f68a046fcefb2fbe2389f71b6bb1feb301bd8d70d1d546118c7a",
+      "bytes": 10969
+    },
+    "pa15535ed_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\conc_barrier_01_c.jpg",
+      "sha256": "405a0a93a91b9a442db479bf1c0d79c53eb00403fd7f71a358d21188131dcae2",
+      "bytes": 56092
+    },
+    "pa15535ed_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\conc_barrier_01_n.jpg",
+      "sha256": "3f2f9f8ba4e713514fc294388c6abc526d2cb507dc964b703ebb256d3523f264",
+      "bytes": 35782
+    },
+    "pa22bd934_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_orange_c.jpg",
+      "sha256": "37d5ca8232aad71a428c95000da2aa07e56d76a6203f6b547abd02d06321d45c",
+      "bytes": 15177
+    },
+    "pa22bd934_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_panel_lab_01_tile_orange_n.jpg",
+      "sha256": "1c4d55d6e1df0cfaa18fa90c9ebb6129c133fd241dd89f3803e6070861a08ed2",
+      "bytes": 12754
+    },
+    "pa4bb1f55_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_surface_01_c.jpg",
+      "sha256": "0202a74a971809529102f9629c10d16325d98347e7154db20ba824f539a7bbfc",
+      "bytes": 40755
+    },
+    "pa4bb1f55_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\moon_surface_01_n.jpg",
+      "sha256": "3e643716cc396493a40665a7be5c6d67c0ba1f29a5a83c0078002708d6586209",
+      "bytes": 49129
+    },
+    "pa5d5158f_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\ice_cracked_01_lake_c.jpg",
+      "sha256": "a5fd14df92aa1d0eca8aba0cfa11877234a0dcc17bafd05944fc15fd23098d7d",
+      "bytes": 41244
+    },
+    "pa5d5158f_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\ice_cracked_01_lake_n.jpg",
+      "sha256": "70fbe7c56d92e4daf86615dee2fe7f3d98d2bf1975793cb6b3cab81be0b525a5",
+      "bytes": 22097
+    },
+    "paa310ac9_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\elder_tree_bark_01_c.jpg",
+      "sha256": "cf3810e14ce562093833a3c843ce9a4b7e3e9bf7d952b9cfe8ddb6638470acd1",
+      "bytes": 91010
+    },
+    "paa310ac9_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\elder_tree_bark_01_n.jpg",
+      "sha256": "85ba54e5cfa50194538df5dedb377138a4e0d73911becfb77ca15e1f1fc5bd98",
+      "bytes": 103292
+    },
+    "pb8a19331_c.png": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\LaserCurtain_FX_mat_cull_c.png",
+      "sha256": "5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f",
+      "bytes": 91030
+    },
+    "pd42351c5_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\concrete_bunker_01_dark_c.jpg",
+      "sha256": "fdb1fba45446ac51a0b981d20e445a03faf3b9682aa98245996a7b9e30c472c7",
+      "bytes": 26424
+    },
+    "pd42351c5_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\concrete_bunker_01_dark_n.jpg",
+      "sha256": "34295bf23be4f1c702eae5ad11bf4e031b99c780e6b1f2743b81c1068e85ef0c",
+      "bytes": 43396
+    },
+    "peb8c8b79_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_interlocking_flooring_01_white_c.jpg",
+      "sha256": "56a0e8244cc9535577b927848514461112447c10ef1188906319ab703a2907da",
+      "bytes": 16814
+    },
+    "peb8c8b79_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_interlocking_flooring_01_white_n.jpg",
+      "sha256": "c80f58c1127e9ab8cd2ff4254b50be29f6e5359ff548f1265e85a5d1626942f9",
+      "bytes": 15882
+    },
+    "pf5b8db29_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_trim_c.jpg",
+      "sha256": "ff18f0b6904cf4a52eea6be55a66c036037899dadbecfea781bc4b878d8f65b2",
+      "bytes": 21913
+    },
+    "pf5b8db29_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_brushed_painted_01_trim_n.jpg",
+      "sha256": "521b3a8b3f788e33fe0eaffe8d164cdf05e016ce11166ec489ee13e0fae6c2a5",
+      "bytes": 39703
+    },
+    "pfd2df4db_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_grated_floor_01_c.jpg",
+      "sha256": "c1de0174ce269a251111ef857187344d9e09612d6c404251ed9c75f5739ff22b",
+      "bytes": 25007
+    },
+    "pfd2df4db_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\p\\metal_grated_floor_01_n.jpg",
+      "sha256": "2f3fd855651e23edd639711a35a04c178fd7cb933d1e409323cd403d81c95937",
+      "bytes": 44263
+    },
+    "sg_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\s\\mapeditormoon\\sg_c.jpg",
+      "sha256": "23daf71975b2721152c634fb7aac912c82aa944822fb5968778235763a322c9a",
+      "bytes": 722780
+    },
+    "t113_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\113_c.jpg",
+      "sha256": "cf3810e14ce562093833a3c843ce9a4b7e3e9bf7d952b9cfe8ddb6638470acd1",
+      "bytes": 91010
+    },
+    "t113_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\113_n.jpg",
+      "sha256": "85ba54e5cfa50194538df5dedb377138a4e0d73911becfb77ca15e1f1fc5bd98",
+      "bytes": 103292
+    },
+    "t115_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\115_c.jpg",
+      "sha256": "0202a74a971809529102f9629c10d16325d98347e7154db20ba824f539a7bbfc",
+      "bytes": 40755
+    },
+    "t115_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\115_n.jpg",
+      "sha256": "3e643716cc396493a40665a7be5c6d67c0ba1f29a5a83c0078002708d6586209",
+      "bytes": 49129
+    },
+    "t117_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\117_c.jpg",
+      "sha256": "9f7d77c8d978044e95cac17d499d12dc99c4ce49bd1077a3a491469d17330248",
+      "bytes": 18591
+    },
+    "t117_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\117_n.jpg",
+      "sha256": "45a546d9a67be9dce9bfb1d86350eef1ce03c7fbfdb0c78b1be7d556f3abc5c7",
+      "bytes": 27329
+    },
+    "t118_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\118_c.jpg",
+      "sha256": "8de60f896574c0cb1f14c12519e17163f4af7b85262de60d59e763d44c686d64",
+      "bytes": 18447
+    },
+    "t118_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\118_n.jpg",
+      "sha256": "1d07205203ad8f938fa4e084ceb70eead783d9b0a61ddb34ee225fba329c07fb",
+      "bytes": 10324
+    },
+    "t130_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\130_c.jpg",
+      "sha256": "e076301ed2969dac3e67c596b29f7bcb3c8565971258f9c028c130be2a4660f7",
+      "bytes": 20839
+    },
+    "t130_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\130_n.jpg",
+      "sha256": "513991a9233d2851bf761399b7c7dd20d1334059721706e00a423ffc8dfe8743",
+      "bytes": 23405
+    },
+    "t14_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\14_c.jpg",
+      "sha256": "f6095897e30d4bcca792ea14278d5cab56fc1c3f6aefcf624443fcdf00e2e19d",
+      "bytes": 23785
+    },
+    "t14_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\14_n.jpg",
+      "sha256": "70062a5f67c4c4d253c07dec1529b33853aa632a99ac4ef638731f548d0f2714",
+      "bytes": 57796
+    },
+    "t15_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\15_c.jpg",
+      "sha256": "6931f06a63cb0721a55fdf2ec1d9128405d79fcb6028a0648fe634dbbbc9066f",
+      "bytes": 45673
+    },
+    "t15_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\15_n.jpg",
+      "sha256": "fb61d6a5174bc929f13d1113c24a2f06b2348f828e2b3565530d167aa6004ec7",
+      "bytes": 94498
+    },
+    "t19_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\19_c.jpg",
+      "sha256": "3ca0812f0ee3929f8f351c059cbaaa74ba1a63a09f2687cb98f7145831cdb557",
+      "bytes": 7443
+    },
+    "t19_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\19_n.jpg",
+      "sha256": "1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405",
+      "bytes": 15040
+    },
+    "t2_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\2_c.jpg",
+      "sha256": "c8b855e6c49a07060b3e4ec624f72c5eba7bf1c0be98c11120eb55da636ba443",
+      "bytes": 19008
+    },
+    "t2_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\2_n.jpg",
+      "sha256": "16716a6c9750f02f5a94d0ac833d73db7667cfac9299d89647e6355a27a49243",
+      "bytes": 11833
+    },
+    "t21_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\21_c.jpg",
+      "sha256": "03a462bc03327fb4b733307877ce5b44a34ade7f5cc38ee76ed8b9e74b42377f",
+      "bytes": 22470
+    },
+    "t21_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\21_n.jpg",
+      "sha256": "ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb",
+      "bytes": 20170
+    },
+    "t22_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\22_c.jpg",
+      "sha256": "3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781",
+      "bytes": 19984
+    },
+    "t22_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\22_n.jpg",
+      "sha256": "ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb",
+      "bytes": 20170
+    },
+    "t29_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\29_c.jpg",
+      "sha256": "66753c57babc7cc27e6cf71bd7a7c590f355262d152fb2afe9f0dc993a3e2f3b",
+      "bytes": 85266
+    },
+    "t29_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\29_n.jpg",
+      "sha256": "06ad716f4dc660b29d2779b48bf2b098364cb88a5f21a60b9afe83e48e1b887f",
+      "bytes": 24601
+    },
+    "t51_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\51_c.jpg",
+      "sha256": "699656b11168fc4d00c0bad2ba1642bd58e880e88070c419bde7c108a8cc2663",
+      "bytes": 4723
+    },
+    "t51_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\51_n.jpg",
+      "sha256": "ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214",
+      "bytes": 4724
+    },
+    "t69_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\69_c.jpg",
+      "sha256": "56a0e8244cc9535577b927848514461112447c10ef1188906319ab703a2907da",
+      "bytes": 16814
+    },
+    "t69_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\69_n.jpg",
+      "sha256": "c80f58c1127e9ab8cd2ff4254b50be29f6e5359ff548f1265e85a5d1626942f9",
+      "bytes": 15882
+    },
+    "t81_c.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\81_c.jpg",
+      "sha256": "f1ce743e9bd13a7af6b9b2e2e0585255ae3683e4d970f5bba84034a834f66a47",
+      "bytes": 42475
+    },
+    "t81_n.jpg": {
+      "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\shared\\tex\\81_n.jpg",
+      "sha256": "a49e8bb745a208aa73f94365e88389c7b3a08c6f1a3a01ed67d12266ac1431d6",
+      "bytes": 38286
+    }
+  },
+  "spawn": [
+    21.91,
+    2.064776614531635,
+    -26.65
+  ],
+  "warmupSpawn": [
+    -91.41,
+    75.12000762939454,
+    55.8
+  ],
+  "preview": {
+    "file": "preview.jpg",
+    "source": "C:\\Users\\aling\\Documents\\Codex\\2026-10-22\\task-2\\standalone1003-library\\candidate\\local_archive\\maps\\deep-space-5-stand-alone-pro-yt\\source\\thumb.jpg",
+    "sha256": "9c2f41eaf6763bd739e4efc5b547adaee87025909a0b5e5d2786e7f706c06ce4"
+  },
+  "geometrySha256": "12bf472bc3774dbc9b655986b9a02491785b32c7c0b506b3ca6d04a2921fd046",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 1.642,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "2123b0fd5d76e6e5787544b644a6ce70e44ecbb2b5b0efb06446210b1b0b6706",
+  "sourceRetainedCollisionAttributesSha256": "8b2d9cfa85d69f60b8354b5402e8f4007854ea8db8c5ab44259f00cbd7fe830c",
+  "payloadBytes": 21759631
+}

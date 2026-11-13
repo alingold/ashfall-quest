@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "camo",
+  "label": "APEX CAMO · ARGON",
+  "sourceIndex": 0,
+  "eyeToShoulder": 0.29,
+  "bodyRear": 0.12,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "metallic": 1.0,
+      "roughness": 1.0,
+      "doubleSided": false,
+      "baseColor": "camo-body-0-baseColor.png",
+      "normal": "camo-body-0-normal.png",
+      "metallicMap": "camo-body-0-metallic.png",
+      "occlusion": "camo-body-0-occlusion.png",
+      "emission": "camo-body-0-emission.png",
+      "emissionColor": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "normalScale": 1.0,
+      "occlusionStrength": 1.0
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "camo-glove-baseColor.png",
+      "normal": "camo-glove-normal.png",
+      "metallicMap": "camo-glove-metallic.png",
+      "occlusion": "camo-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

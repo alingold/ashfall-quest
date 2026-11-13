@@ -1,0 +1,894 @@
+{
+  "mapId": "archive:kokiri-forest-atc-garden-porfavortiktok",
+  "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+  "semantics": {
+    "source_sha256": "276f98e23ba96cf3cc422778794b811d576752f46209b4dacbcdbdb20ec2dd21",
+    "cache_fingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+    "warmup": [],
+    "deathmatch": [],
+    "jump": [
+      {
+        "center": [
+          -26.88419,
+          -0.09397,
+          15.47763
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -45.12708,
+          0.24537,
+          -94.90581
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -44.24063,
+          0.19053,
+          -121.48151
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          -34.89239,
+          6.29673,
+          -142.88839
+        ],
+        "normal": [
+          0.29515,
+          0.79701,
+          0.52694
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": true
+      },
+      {
+        "center": [
+          12.61298,
+          0.22875,
+          7.43323
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          31.98004,
+          1.92718,
+          -63.68666
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          22.3116,
+          0.29448,
+          -96.35367
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          46.40287,
+          0.1305,
+          -109.82322
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          18.7942,
+          0.28662,
+          -119.50912
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          0.6062,
+          0.27514,
+          -96.2587
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          30.05132,
+          0.27387,
+          -138.29349
+        ],
+        "normal": [
+          0,
+          1,
+          0
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": false
+      },
+      {
+        "center": [
+          5.11856,
+          5.38745,
+          -158.78969
+        ],
+        "normal": [
+          0,
+          0.82119,
+          0.57065
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+        "tilted": true
+      },
+      {
+        "center": [
+          37.97544,
+          12.64883,
+          -158.22839
+        ],
+        "normal": [
+          -0.54701,
+          0.19498,
+          0.8141
+        ],
+        "radius": 1.3,
+        "speed": 45,
+        "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+        "tilted": true
+      }
+    ],
+    "health": [],
+    "marker_parts": [],
+    "decorative_collision_parts": [
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -26.33614,
+          0.28518,
+          15.47763
+        ],
+        "min": [
+          -26.64562,
+          0.24871,
+          15.13525
+        ],
+        "max": [
+          -26.02666,
+          0.32164,
+          15.82001
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -26.82726,
+          0.28518,
+          15.47763
+        ],
+        "min": [
+          -27.13674,
+          0.24871,
+          15.13525
+        ],
+        "max": [
+          -26.51778,
+          0.32164,
+          15.82001
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -45.12708,
+          0.62452,
+          -95.45384
+        ],
+        "min": [
+          -45.46946,
+          0.58806,
+          -95.76332
+        ],
+        "max": [
+          -44.7847,
+          0.66098,
+          -95.14436
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -45.12708,
+          0.62452,
+          -94.96273
+        ],
+        "min": [
+          -45.46946,
+          0.58806,
+          -95.27221
+        ],
+        "max": [
+          -44.7847,
+          0.66098,
+          -94.65325
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -44.24063,
+          0.56968,
+          -120.93347
+        ],
+        "min": [
+          -44.583,
+          0.53322,
+          -121.24295
+        ],
+        "max": [
+          -43.89825,
+          0.60614,
+          -120.62399
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -44.24063,
+          0.56968,
+          -121.42458
+        ],
+        "min": [
+          -44.583,
+          0.53322,
+          -121.73406
+        ],
+        "max": [
+          -43.89825,
+          0.60614,
+          -121.1151
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -34.78049,
+          6.34617,
+          -142.26263
+        ],
+        "min": [
+          -35.10761,
+          6.12599,
+          -142.55197
+        ],
+        "max": [
+          -34.45336,
+          6.56634,
+          -141.9733
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          -34.78049,
+          6.61702,
+          -142.6723
+        ],
+        "min": [
+          -35.10761,
+          6.39685,
+          -142.96164
+        ],
+        "max": [
+          -34.45336,
+          6.83719,
+          -142.38297
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          12.06494,
+          0.60789,
+          7.43323
+        ],
+        "min": [
+          11.75546,
+          0.57143,
+          7.09085
+        ],
+        "max": [
+          12.37442,
+          0.64436,
+          7.77561
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          12.55606,
+          0.60789,
+          7.43323
+        ],
+        "min": [
+          12.24658,
+          0.57143,
+          7.09085
+        ],
+        "max": [
+          12.86554,
+          0.64436,
+          7.77561
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          31.07452,
+          2.30632,
+          -63.68666
+        ],
+        "min": [
+          30.56317,
+          2.26986,
+          -64.02905
+        ],
+        "max": [
+          31.58587,
+          2.34279,
+          -63.34427
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          31.88598,
+          2.30632,
+          -63.68666
+        ],
+        "min": [
+          31.37463,
+          2.26986,
+          -64.02905
+        ],
+        "max": [
+          32.39734,
+          2.34279,
+          -63.34427
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          22.3116,
+          0.67363,
+          -95.80563
+        ],
+        "min": [
+          21.96922,
+          0.63716,
+          -96.11511
+        ],
+        "max": [
+          22.65397,
+          0.71009,
+          -95.49615
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          22.3116,
+          0.67363,
+          -96.29675
+        ],
+        "min": [
+          21.96922,
+          0.63716,
+          -96.60622
+        ],
+        "max": [
+          22.65397,
+          0.71009,
+          -95.98727
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          45.85482,
+          0.50964,
+          -109.82322
+        ],
+        "min": [
+          45.54534,
+          0.47318,
+          -110.1656
+        ],
+        "max": [
+          46.16431,
+          0.54611,
+          -109.48084
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          46.34594,
+          0.50964,
+          -109.82322
+        ],
+        "min": [
+          46.03646,
+          0.47318,
+          -110.1656
+        ],
+        "max": [
+          46.65543,
+          0.54611,
+          -109.48084
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          19.34225,
+          0.66577,
+          -119.50912
+        ],
+        "min": [
+          19.03277,
+          0.62931,
+          -119.8515
+        ],
+        "max": [
+          19.65173,
+          0.70223,
+          -119.16675
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          18.85113,
+          0.66577,
+          -119.50912
+        ],
+        "min": [
+          18.54165,
+          0.62931,
+          -119.8515
+        ],
+        "max": [
+          19.16061,
+          0.70223,
+          -119.16675
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          1.15424,
+          0.65429,
+          -96.2587
+        ],
+        "min": [
+          0.84476,
+          0.61783,
+          -96.60107
+        ],
+        "max": [
+          1.46372,
+          0.69075,
+          -95.91632
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          0.66312,
+          0.65429,
+          -96.2587
+        ],
+        "min": [
+          0.35364,
+          0.61783,
+          -96.60107
+        ],
+        "max": [
+          0.9726,
+          0.69075,
+          -95.91632
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          30.05132,
+          0.65302,
+          -137.74545
+        ],
+        "min": [
+          29.70895,
+          0.61656,
+          -138.05493
+        ],
+        "max": [
+          30.3937,
+          0.68948,
+          -137.43597
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          30.05132,
+          0.65302,
+          -138.23657
+        ],
+        "min": [
+          29.70895,
+          0.61656,
+          -138.54605
+        ],
+        "max": [
+          30.3937,
+          0.68948,
+          -137.92709
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          5.6666,
+          5.6988,
+          -158.57333
+        ],
+        "min": [
+          5.35712,
+          5.49837,
+          -158.85449
+        ],
+        "max": [
+          5.97608,
+          5.89923,
+          -158.29218
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          5.17549,
+          5.6988,
+          -158.57333
+        ],
+        "min": [
+          4.86601,
+          5.49837,
+          -158.85449
+        ],
+        "max": [
+          5.48497,
+          5.89923,
+          -158.29218
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          37.93174,
+          12.72101,
+          -158.01987
+        ],
+        "min": [
+          37.55673,
+          12.60566,
+          -158.43452
+        ],
+        "max": [
+          38.30674,
+          12.83635,
+          -157.60522
+        ]
+      },
+      {
+        "key": "vc",
+        "triangles": 52,
+        "center": [
+          38.25428,
+          12.60603,
+          -158.49992
+        ],
+        "min": [
+          37.87928,
+          12.49069,
+          -158.91457
+        ],
+        "max": [
+          38.62929,
+          12.72138,
+          -158.08527
+        ]
+      }
+    ],
+    "source_tags_present": false,
+    "coverage": {
+      "scanned_components": 1589,
+      "warmup": 0,
+      "deathmatch": 0,
+      "jump": 13,
+      "tilted_jump": 3,
+      "health": 0,
+      "marker_parts": 0
+    }
+  },
+  "caches": {
+    "cache_fingerprint": "cb3e4a9eca76811eabb12daf135283ee3564de6c7c1826d5538f343c57b942cb",
+    "sites": [],
+    "marker_parts": []
+  },
+  "metadataVolumes": [
+    {
+      "role": "killzone",
+      "sourceNode": "killzone",
+      "boundsMin": [
+        -68.85342407226562,
+        -0.71915602684021,
+        -148.00567626953125
+      ],
+      "boundsMax": [
+        49.0,
+        13.330535888671875,
+        21.858966827392578
+      ],
+      "triangles": 512
+    },
+    {
+      "role": "playfield",
+      "sourceNode": "playfield",
+      "boundsMin": [
+        -13.43850326538086,
+        -0.024188518524169922,
+        -39.463111877441406
+      ],
+      "boundsMax": [
+        36.56149673461914,
+        7.348155975341797,
+        10.536887168884277
+      ],
+      "triangles": 12
+    }
+  ],
+  "metadata": {
+    "map_id": "archive:kokiri-forest-atc-garden-porfavortiktok",
+    "title": "KOKIRI FOREST",
+    "creator": "ATC_Garden_porfavorTIKTOK",
+    "template": "MapEditorDefault",
+    "center": [
+      -11.0381609723954,
+      4.81041562836454,
+      -19.3102007105051
+    ],
+    "recorded_spawns": [
+      [
+        9.87,
+        0.05,
+        -144.78
+      ],
+      [
+        -16.41,
+        0.86,
+        -135.42
+      ],
+      [
+        -26.6,
+        0.84,
+        -133.41
+      ],
+      [
+        9.17,
+        0.03,
+        -112.73
+      ],
+      [
+        13.14,
+        0.03,
+        16.09
+      ],
+      [
+        33.71,
+        3.02,
+        34.43
+      ],
+      [
+        -21.09,
+        0.03,
+        21.86
+      ],
+      [
+        -36.09,
+        0.19,
+        22.36
+      ],
+      [
+        -14.81,
+        1.26,
+        26.86
+      ],
+      [
+        2.31,
+        0.03,
+        36.87
+      ],
+      [
+        30.09,
+        0.03,
+        -131.41
+      ],
+      [
+        15.91,
+        0.03,
+        -137.14
+      ],
+      [
+        -12.54,
+        8.81,
+        -117.24
+      ],
+      [
+        -51.41,
+        0.13,
+        -100.59
+      ],
+      [
+        -28.09,
+        0.82,
+        -55.86
+      ],
+      [
+        -55.64,
+        9.29,
+        -1.23
+      ]
+    ],
+    "bounds_min": [
+      -77.6755447387695,
+      9.5,
+      -167.893814086914
+    ],
+    "bounds_max": [
+      58.1594619750977,
+      12.529972076416,
+      63.7434539794922
+    ],
+    "solid_min": [
+      -300.0,
+      -76.8562164306641,
+      -300.0
+    ],
+    "solid_max": [
+      300.0,
+      181.407852172852,
+      305.519653320313
+    ],
+    "source": "https://maps.deliciouswines.org/maps/kokiri-forest-atc-garden-porfavortiktok/",
+    "license": "UNKNOWN REUSE LICENSE — LOCAL ONLY. Excluded from ASHFALL Apache-2.0 and redistribution."
+  },
+  "sourceEnvironment": {
+    "background": "9db6c6",
+    "ambientColor": "c5d5e2",
+    "ambientEnergy": 0.8,
+    "sunEulerGodot": [
+      -53,
+      -28,
+      0
+    ],
+    "sunEnergy": 1,
+    "shadows": false,
+    "toneMapper": "Filmic",
+    "source": "scripts/archive_map1003.gd:70-77"
+  }
+}

@@ -1,0 +1,1666 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 0,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 1,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 2,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.8999999761581421,
+            0.6600000262260437,
+            0.23000000417232513,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.2199999988079071,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.14,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 4,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 5,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.8999999761581421,
+            0.6600000262260437,
+            0.23000000417232513,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.2199999988079071,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.14,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 6,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 7,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.8999999761581421,
+            0.6600000262260437,
+            0.23000000417232513,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.2199999988079071,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.14,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 8,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 9,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 10,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.8999999761581421,
+            0.6600000262260437,
+            0.23000000417232513,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.2199999988079071,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.14,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 11,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 12,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 13,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 14,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 15,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 16,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 17,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 18,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 19,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 20,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 21,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.47999998927116394,
+            0.26499998569488525,
+            0.054999999701976776,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.3799999952316284,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.3,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 22,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 23,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_gold",
+        "sourceIndex": 53,
+        "materialIndex": 24,
+        "materialCount": 25,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.7200000286102295,
+            0.4300000071525574,
+            0.10499999672174454,
+            1
+          ],
+          "metallic": 0.8799999952316284,
+          "roughness": 0.30000001192092896,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.22,
+      "identityQualification": "exact Polymer Gold53"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_brass",
+        "sourceIndex": 85,
+        "materialIndex": 0,
+        "materialCount": 5,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.4300000071525574,
+            0.1899999976158142,
+            0.07500000298023224,
+            1
+          ],
+          "metallic": 0.7799999713897705,
+          "roughness": 0.2800000011920929,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.2,
+      "identityQualification": "85 probable Pvt/TVT alias; require confirmation before application"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_brass",
+        "sourceIndex": 85,
+        "materialIndex": 2,
+        "materialCount": 5,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.18000000715255737,
+            0.07500000298023224,
+            0.027000000700354576,
+            1
+          ],
+          "metallic": 0.7200000286102295,
+          "roughness": 0.38999998569488525,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.31,
+      "identityQualification": "85 probable Pvt/TVT alias; require confirmation before application"
+    },
+    {
+      "binding": {
+        "styleId": "polymer_brass",
+        "sourceIndex": 85,
+        "materialIndex": 3,
+        "materialCount": 5,
+        "role": "explicit named metal finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            0.6399999856948853,
+            0.36000001430511475,
+            0.14000000059604645,
+            1
+          ],
+          "metallic": 0.800000011920929,
+          "roughness": 0.23999999463558197,
+          "doubleSided": true,
+          "baseColor": "",
+          "normal": "",
+          "metallicMap": "",
+          "occlusion": "",
+          "emission": "",
+          "emissionColor": [
+            0,
+            0,
+            0
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "",
+      "mode": "metal_scalar",
+      "roughnessCap": 0.16,
+      "identityQualification": "85 probable Pvt/TVT alias; require confirmation before application"
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 0,
+        "materialCount": 6,
+        "role": "explicit jacket/boots finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-c51916768baf29875488bec2.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-3b90cc5f7c6982681baad7c0.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "Jacket",
+      "mode": "part_cap",
+      "roughnessCap": 0.38
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 0,
+        "materialCount": 6,
+        "role": "explicit jacket/boots finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-c51916768baf29875488bec2.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-3b90cc5f7c6982681baad7c0.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "LBoot",
+      "mode": "part_cap",
+      "roughnessCap": 0.3
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 0,
+        "materialCount": 6,
+        "role": "explicit jacket/boots finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-c51916768baf29875488bec2.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-3b90cc5f7c6982681baad7c0.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "RBoot",
+      "mode": "part_cap",
+      "roughnessCap": 0.3
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "explicit jacket/boots finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "Jacket",
+      "mode": "part_cap",
+      "roughnessCap": 0.38
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 4,
+        "materialCount": 6,
+        "role": "explicit jacket/boots finish",
+        "rawMapFactors": false,
+        "roughnessFloor": 0,
+        "dielectricScale": 1,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "Jacket",
+      "mode": "part_cap",
+      "roughnessCap": 0.22
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 0,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-c51916768baf29875488bec2.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-3b90cc5f7c6982681baad7c0.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "AvatarHead",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "Belt",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "ChestPlate",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 4,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "LForearm",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "LShin",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "LThigh",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 4,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "LUpperArm",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 4,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "RForearm",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "RShin",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 3,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-30aa6785464226ce0f58d638.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-9f0f905848b47b5cc4dfe44c.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "RThigh",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    },
+    {
+      "binding": {
+        "styleId": "hattie_golden",
+        "sourceIndex": 74,
+        "materialIndex": 4,
+        "materialCount": 6,
+        "role": "non-jacket/shoes dry skin-cloth",
+        "rawMapFactors": false,
+        "roughnessFloor": 0.84,
+        "dielectricScale": 0.35,
+        "expected": {
+          "color": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "metallic": 1,
+          "roughness": 1,
+          "doubleSided": true,
+          "baseColor": "r5-albedo-183fae60fa5606e5a1fc1dda.png",
+          "normal": "r5-normal-c5d0859b89f9e4317d3e8dc3.png",
+          "metallicMap": "r5-metallic-8aab2acbee95b7bfb650befe.png",
+          "occlusion": "r5-occlusion-fa00bc6b27a94ba3f55c4cf9.png",
+          "emission": "r5-emission-cd35d58f304b8d8fad68411d.png",
+          "emissionColor": [
+            1,
+            1,
+            1
+          ],
+          "normalScale": 1,
+          "occlusionStrength": 1
+        }
+      },
+      "part": "RUpperArm",
+      "mode": "dry_part",
+      "roughnessCap": 0
+    }
+  ]
+}

@@ -1,0 +1,3854 @@
+[
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -2,
+      -2
+    ],
+    "sourceParts": [
+      {
+        "node": 0,
+        "primitive": 0,
+        "name": "world_-5_-5_sg"
+      }
+    ],
+    "selectedTriangles": 338,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -2,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 1,
+        "primitive": 0,
+        "name": "world_-5_-4_sg"
+      },
+      {
+        "node": 2,
+        "primitive": 0,
+        "name": "world_-5_-3_sg"
+      },
+      {
+        "node": 3,
+        "primitive": 0,
+        "name": "world_-5_-2_sg"
+      },
+      {
+        "node": 4,
+        "primitive": 0,
+        "name": "world_-5_-1_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -2,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 5,
+        "primitive": 0,
+        "name": "world_-5_0_sg"
+      },
+      {
+        "node": 6,
+        "primitive": 0,
+        "name": "world_-5_1_sg"
+      },
+      {
+        "node": 7,
+        "primitive": 0,
+        "name": "world_-5_2_sg"
+      },
+      {
+        "node": 8,
+        "primitive": 0,
+        "name": "world_-5_3_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -2,
+      1
+    ],
+    "sourceParts": [
+      {
+        "node": 9,
+        "primitive": 0,
+        "name": "world_-5_4_sg"
+      }
+    ],
+    "selectedTriangles": 338,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -1,
+      -2
+    ],
+    "sourceParts": [
+      {
+        "node": 10,
+        "primitive": 0,
+        "name": "world_-4_-5_sg"
+      },
+      {
+        "node": 20,
+        "primitive": 0,
+        "name": "world_-3_-5_sg"
+      },
+      {
+        "node": 30,
+        "primitive": 0,
+        "name": "world_-2_-5_sg"
+      },
+      {
+        "node": 40,
+        "primitive": 0,
+        "name": "world_-1_-5_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 11,
+        "primitive": 0,
+        "name": "world_-4_-4_sg"
+      },
+      {
+        "node": 12,
+        "primitive": 0,
+        "name": "world_-4_-3_sg"
+      },
+      {
+        "node": 13,
+        "primitive": 0,
+        "name": "world_-4_-2_sg"
+      },
+      {
+        "node": 14,
+        "primitive": 0,
+        "name": "world_-4_-1_sg"
+      },
+      {
+        "node": 21,
+        "primitive": 0,
+        "name": "world_-3_-4_sg"
+      },
+      {
+        "node": 22,
+        "primitive": 0,
+        "name": "world_-3_-3_sg"
+      },
+      {
+        "node": 23,
+        "primitive": 0,
+        "name": "world_-3_-2_sg"
+      },
+      {
+        "node": 24,
+        "primitive": 0,
+        "name": "world_-3_-1_sg"
+      },
+      {
+        "node": 31,
+        "primitive": 0,
+        "name": "world_-2_-4_sg"
+      },
+      {
+        "node": 32,
+        "primitive": 0,
+        "name": "world_-2_-3_sg"
+      },
+      {
+        "node": 33,
+        "primitive": 0,
+        "name": "world_-2_-2_sg"
+      },
+      {
+        "node": 34,
+        "primitive": 0,
+        "name": "world_-2_-1_sg"
+      },
+      {
+        "node": 41,
+        "primitive": 0,
+        "name": "world_-1_-4_sg"
+      },
+      {
+        "node": 42,
+        "primitive": 0,
+        "name": "world_-1_-3_sg"
+      },
+      {
+        "node": 43,
+        "primitive": 0,
+        "name": "world_-1_-2_sg"
+      },
+      {
+        "node": 44,
+        "primitive": 0,
+        "name": "world_-1_-1_sg"
+      }
+    ],
+    "selectedTriangles": 5202,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 15,
+        "primitive": 0,
+        "name": "world_-4_0_sg"
+      },
+      {
+        "node": 16,
+        "primitive": 0,
+        "name": "world_-4_1_sg"
+      },
+      {
+        "node": 17,
+        "primitive": 0,
+        "name": "world_-4_2_sg"
+      },
+      {
+        "node": 18,
+        "primitive": 0,
+        "name": "world_-4_3_sg"
+      },
+      {
+        "node": 25,
+        "primitive": 0,
+        "name": "world_-3_0_sg"
+      },
+      {
+        "node": 26,
+        "primitive": 0,
+        "name": "world_-3_1_sg"
+      },
+      {
+        "node": 27,
+        "primitive": 0,
+        "name": "world_-3_2_sg"
+      },
+      {
+        "node": 28,
+        "primitive": 0,
+        "name": "world_-3_3_sg"
+      },
+      {
+        "node": 35,
+        "primitive": 0,
+        "name": "world_-2_0_sg"
+      },
+      {
+        "node": 36,
+        "primitive": 0,
+        "name": "world_-2_1_sg"
+      },
+      {
+        "node": 37,
+        "primitive": 0,
+        "name": "world_-2_2_sg"
+      },
+      {
+        "node": 38,
+        "primitive": 0,
+        "name": "world_-2_3_sg"
+      },
+      {
+        "node": 45,
+        "primitive": 0,
+        "name": "world_-1_0_sg"
+      },
+      {
+        "node": 46,
+        "primitive": 0,
+        "name": "world_-1_1_sg"
+      },
+      {
+        "node": 47,
+        "primitive": 0,
+        "name": "world_-1_2_sg"
+      },
+      {
+        "node": 48,
+        "primitive": 0,
+        "name": "world_-1_3_sg"
+      }
+    ],
+    "selectedTriangles": 5202,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      -1,
+      1
+    ],
+    "sourceParts": [
+      {
+        "node": 19,
+        "primitive": 0,
+        "name": "world_-4_4_sg"
+      },
+      {
+        "node": 29,
+        "primitive": 0,
+        "name": "world_-3_4_sg"
+      },
+      {
+        "node": 39,
+        "primitive": 0,
+        "name": "world_-2_4_sg"
+      },
+      {
+        "node": 49,
+        "primitive": 0,
+        "name": "world_-1_4_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      0,
+      -2
+    ],
+    "sourceParts": [
+      {
+        "node": 50,
+        "primitive": 0,
+        "name": "world_0_-5_sg"
+      },
+      {
+        "node": 60,
+        "primitive": 0,
+        "name": "world_1_-5_sg"
+      },
+      {
+        "node": 70,
+        "primitive": 0,
+        "name": "world_2_-5_sg"
+      },
+      {
+        "node": 80,
+        "primitive": 0,
+        "name": "world_3_-5_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 51,
+        "primitive": 0,
+        "name": "world_0_-4_sg"
+      },
+      {
+        "node": 52,
+        "primitive": 0,
+        "name": "world_0_-3_sg"
+      },
+      {
+        "node": 53,
+        "primitive": 0,
+        "name": "world_0_-2_sg"
+      },
+      {
+        "node": 54,
+        "primitive": 0,
+        "name": "world_0_-1_sg"
+      },
+      {
+        "node": 61,
+        "primitive": 0,
+        "name": "world_1_-4_sg"
+      },
+      {
+        "node": 62,
+        "primitive": 0,
+        "name": "world_1_-3_sg"
+      },
+      {
+        "node": 63,
+        "primitive": 0,
+        "name": "world_1_-2_sg"
+      },
+      {
+        "node": 64,
+        "primitive": 0,
+        "name": "world_1_-1_sg"
+      },
+      {
+        "node": 71,
+        "primitive": 0,
+        "name": "world_2_-4_sg"
+      },
+      {
+        "node": 72,
+        "primitive": 0,
+        "name": "world_2_-3_sg"
+      },
+      {
+        "node": 73,
+        "primitive": 0,
+        "name": "world_2_-2_sg"
+      },
+      {
+        "node": 74,
+        "primitive": 0,
+        "name": "world_2_-1_sg"
+      },
+      {
+        "node": 81,
+        "primitive": 0,
+        "name": "world_3_-4_sg"
+      },
+      {
+        "node": 82,
+        "primitive": 0,
+        "name": "world_3_-3_sg"
+      },
+      {
+        "node": 83,
+        "primitive": 0,
+        "name": "world_3_-2_sg"
+      },
+      {
+        "node": 84,
+        "primitive": 0,
+        "name": "world_3_-1_sg"
+      }
+    ],
+    "selectedTriangles": 5202,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 55,
+        "primitive": 0,
+        "name": "world_0_0_sg"
+      },
+      {
+        "node": 56,
+        "primitive": 0,
+        "name": "world_0_1_sg"
+      },
+      {
+        "node": 57,
+        "primitive": 0,
+        "name": "world_0_2_sg"
+      },
+      {
+        "node": 58,
+        "primitive": 0,
+        "name": "world_0_3_sg"
+      },
+      {
+        "node": 65,
+        "primitive": 0,
+        "name": "world_1_0_sg"
+      },
+      {
+        "node": 66,
+        "primitive": 0,
+        "name": "world_1_1_sg"
+      },
+      {
+        "node": 67,
+        "primitive": 0,
+        "name": "world_1_2_sg"
+      },
+      {
+        "node": 68,
+        "primitive": 0,
+        "name": "world_1_3_sg"
+      },
+      {
+        "node": 75,
+        "primitive": 0,
+        "name": "world_2_0_sg"
+      },
+      {
+        "node": 76,
+        "primitive": 0,
+        "name": "world_2_1_sg"
+      },
+      {
+        "node": 77,
+        "primitive": 0,
+        "name": "world_2_2_sg"
+      },
+      {
+        "node": 78,
+        "primitive": 0,
+        "name": "world_2_3_sg"
+      },
+      {
+        "node": 85,
+        "primitive": 0,
+        "name": "world_3_0_sg"
+      },
+      {
+        "node": 86,
+        "primitive": 0,
+        "name": "world_3_1_sg"
+      },
+      {
+        "node": 87,
+        "primitive": 0,
+        "name": "world_3_2_sg"
+      },
+      {
+        "node": 88,
+        "primitive": 0,
+        "name": "world_3_3_sg"
+      }
+    ],
+    "selectedTriangles": 5202,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      0,
+      1
+    ],
+    "sourceParts": [
+      {
+        "node": 59,
+        "primitive": 0,
+        "name": "world_0_4_sg"
+      },
+      {
+        "node": 69,
+        "primitive": 0,
+        "name": "world_1_4_sg"
+      },
+      {
+        "node": 79,
+        "primitive": 0,
+        "name": "world_2_4_sg"
+      },
+      {
+        "node": 89,
+        "primitive": 0,
+        "name": "world_3_4_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      1,
+      -2
+    ],
+    "sourceParts": [
+      {
+        "node": 90,
+        "primitive": 0,
+        "name": "world_4_-5_sg"
+      }
+    ],
+    "selectedTriangles": 338,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 91,
+        "primitive": 0,
+        "name": "world_4_-4_sg"
+      },
+      {
+        "node": 92,
+        "primitive": 0,
+        "name": "world_4_-3_sg"
+      },
+      {
+        "node": 93,
+        "primitive": 0,
+        "name": "world_4_-2_sg"
+      },
+      {
+        "node": 94,
+        "primitive": 0,
+        "name": "world_4_-1_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 95,
+        "primitive": 0,
+        "name": "world_4_0_sg"
+      },
+      {
+        "node": 96,
+        "primitive": 0,
+        "name": "world_4_1_sg"
+      },
+      {
+        "node": 97,
+        "primitive": 0,
+        "name": "world_4_2_sg"
+      },
+      {
+        "node": 98,
+        "primitive": 0,
+        "name": "world_4_3_sg"
+      }
+    ],
+    "selectedTriangles": 1326,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "sg",
+      1,
+      1
+    ],
+    "sourceParts": [
+      {
+        "node": 99,
+        "primitive": 0,
+        "name": "world_4_4_sg"
+      }
+    ],
+    "selectedTriangles": 338,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "vc",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 100,
+        "primitive": 0,
+        "name": "world_-2_-1_vc"
+      },
+      {
+        "node": 103,
+        "primitive": 0,
+        "name": "world_-1_-4_vc"
+      },
+      {
+        "node": 104,
+        "primitive": 0,
+        "name": "world_-1_-1_vc"
+      }
+    ],
+    "selectedTriangles": 11357,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "vc",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 101,
+        "primitive": 0,
+        "name": "world_-2_0_vc"
+      },
+      {
+        "node": 102,
+        "primitive": 0,
+        "name": "world_-2_1_vc"
+      },
+      {
+        "node": 105,
+        "primitive": 0,
+        "name": "world_-1_0_vc"
+      },
+      {
+        "node": 106,
+        "primitive": 0,
+        "name": "world_-1_1_vc"
+      }
+    ],
+    "selectedTriangles": 15388,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "vc",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 107,
+        "primitive": 0,
+        "name": "world_0_-1_vc"
+      }
+    ],
+    "selectedTriangles": 555,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "vc",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 108,
+        "primitive": 0,
+        "name": "world_0_0_vc"
+      },
+      {
+        "node": 109,
+        "primitive": 0,
+        "name": "world_0_1_vc"
+      }
+    ],
+    "selectedTriangles": 989,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "vc",
+      0,
+      -2
+    ],
+    "sourceParts": [
+      {
+        "node": 110,
+        "primitive": 0,
+        "name": "world_2_-6_vc"
+      }
+    ],
+    "selectedTriangles": 8,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p74820c7b",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 111,
+        "primitive": 0,
+        "name": "world_-2_-1_p74820c7b"
+      },
+      {
+        "node": 113,
+        "primitive": 0,
+        "name": "world_-1_-1_p74820c7b"
+      }
+    ],
+    "selectedTriangles": 1620,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p74820c7b",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 112,
+        "primitive": 0,
+        "name": "world_-2_0_p74820c7b"
+      },
+      {
+        "node": 114,
+        "primitive": 0,
+        "name": "world_-1_0_p74820c7b"
+      },
+      {
+        "node": 115,
+        "primitive": 0,
+        "name": "world_-1_1_p74820c7b"
+      }
+    ],
+    "selectedTriangles": 3415,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p74820c7b",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 116,
+        "primitive": 0,
+        "name": "world_0_-1_p74820c7b"
+      }
+    ],
+    "selectedTriangles": 178,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p74820c7b",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 117,
+        "primitive": 0,
+        "name": "world_0_0_p74820c7b"
+      }
+    ],
+    "selectedTriangles": 667,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8efa202c",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 118,
+        "primitive": 0,
+        "name": "world_-2_-1_p8efa202c"
+      },
+      {
+        "node": 121,
+        "primitive": 0,
+        "name": "world_-1_-1_p8efa202c"
+      }
+    ],
+    "selectedTriangles": 3109,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8efa202c",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 119,
+        "primitive": 0,
+        "name": "world_-2_0_p8efa202c"
+      },
+      {
+        "node": 120,
+        "primitive": 0,
+        "name": "world_-2_1_p8efa202c"
+      },
+      {
+        "node": 122,
+        "primitive": 0,
+        "name": "world_-1_0_p8efa202c"
+      },
+      {
+        "node": 123,
+        "primitive": 0,
+        "name": "world_-1_1_p8efa202c"
+      }
+    ],
+    "selectedTriangles": 6554,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8efa202c",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 124,
+        "primitive": 0,
+        "name": "world_0_-1_p8efa202c"
+      }
+    ],
+    "selectedTriangles": 510,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8efa202c",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 125,
+        "primitive": 0,
+        "name": "world_0_0_p8efa202c"
+      },
+      {
+        "node": 126,
+        "primitive": 0,
+        "name": "world_0_1_p8efa202c"
+      }
+    ],
+    "selectedTriangles": 859,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p644d2219",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 127,
+        "primitive": 0,
+        "name": "world_-2_-1_p644d2219"
+      },
+      {
+        "node": 130,
+        "primitive": 0,
+        "name": "world_-1_-1_p644d2219"
+      }
+    ],
+    "selectedTriangles": 5167,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p644d2219",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 128,
+        "primitive": 0,
+        "name": "world_-2_0_p644d2219"
+      },
+      {
+        "node": 129,
+        "primitive": 0,
+        "name": "world_-2_1_p644d2219"
+      },
+      {
+        "node": 131,
+        "primitive": 0,
+        "name": "world_-1_0_p644d2219"
+      },
+      {
+        "node": 132,
+        "primitive": 0,
+        "name": "world_-1_1_p644d2219"
+      }
+    ],
+    "selectedTriangles": 11825,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p644d2219",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 133,
+        "primitive": 0,
+        "name": "world_0_-1_p644d2219"
+      }
+    ],
+    "selectedTriangles": 713,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p644d2219",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 134,
+        "primitive": 0,
+        "name": "world_0_0_p644d2219"
+      },
+      {
+        "node": 135,
+        "primitive": 0,
+        "name": "world_0_1_p644d2219"
+      }
+    ],
+    "selectedTriangles": 1485,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8507d26c",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 136,
+        "primitive": 0,
+        "name": "world_-2_-1_p8507d26c"
+      },
+      {
+        "node": 138,
+        "primitive": 0,
+        "name": "world_-1_-1_p8507d26c"
+      }
+    ],
+    "selectedTriangles": 1374,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8507d26c",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 137,
+        "primitive": 0,
+        "name": "world_-2_0_p8507d26c"
+      },
+      {
+        "node": 139,
+        "primitive": 0,
+        "name": "world_-1_0_p8507d26c"
+      },
+      {
+        "node": 140,
+        "primitive": 0,
+        "name": "world_-1_1_p8507d26c"
+      }
+    ],
+    "selectedTriangles": 2764,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8507d26c",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 141,
+        "primitive": 0,
+        "name": "world_0_-1_p8507d26c"
+      }
+    ],
+    "selectedTriangles": 180,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8507d26c",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 142,
+        "primitive": 0,
+        "name": "world_0_0_p8507d26c"
+      }
+    ],
+    "selectedTriangles": 370,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "peb8c8b79",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 143,
+        "primitive": 0,
+        "name": "world_-2_-1_peb8c8b79"
+      },
+      {
+        "node": 145,
+        "primitive": 0,
+        "name": "world_-1_-1_peb8c8b79"
+      }
+    ],
+    "selectedTriangles": 120,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "peb8c8b79",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 144,
+        "primitive": 0,
+        "name": "world_-2_0_peb8c8b79"
+      },
+      {
+        "node": 146,
+        "primitive": 0,
+        "name": "world_-1_0_peb8c8b79"
+      },
+      {
+        "node": 147,
+        "primitive": 0,
+        "name": "world_-1_1_peb8c8b79"
+      }
+    ],
+    "selectedTriangles": 306,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "peb8c8b79",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 148,
+        "primitive": 0,
+        "name": "world_0_-1_peb8c8b79"
+      }
+    ],
+    "selectedTriangles": 14,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "peb8c8b79",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 149,
+        "primitive": 0,
+        "name": "world_0_0_peb8c8b79"
+      }
+    ],
+    "selectedTriangles": 52,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p972cda12",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 150,
+        "primitive": 0,
+        "name": "world_-2_-1_p972cda12"
+      },
+      {
+        "node": 153,
+        "primitive": 0,
+        "name": "world_-1_-1_p972cda12"
+      }
+    ],
+    "selectedTriangles": 6749,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p972cda12",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 151,
+        "primitive": 0,
+        "name": "world_-2_0_p972cda12"
+      },
+      {
+        "node": 152,
+        "primitive": 0,
+        "name": "world_-2_1_p972cda12"
+      },
+      {
+        "node": 154,
+        "primitive": 0,
+        "name": "world_-1_0_p972cda12"
+      },
+      {
+        "node": 155,
+        "primitive": 0,
+        "name": "world_-1_1_p972cda12"
+      }
+    ],
+    "selectedTriangles": 13392,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p972cda12",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 156,
+        "primitive": 0,
+        "name": "world_0_-1_p972cda12"
+      }
+    ],
+    "selectedTriangles": 1183,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p972cda12",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 157,
+        "primitive": 0,
+        "name": "world_0_0_p972cda12"
+      },
+      {
+        "node": 158,
+        "primitive": 0,
+        "name": "world_0_1_p972cda12"
+      }
+    ],
+    "selectedTriangles": 2746,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa22bd934",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 159,
+        "primitive": 0,
+        "name": "world_-2_-1_pa22bd934"
+      },
+      {
+        "node": 161,
+        "primitive": 0,
+        "name": "world_-1_-1_pa22bd934"
+      }
+    ],
+    "selectedTriangles": 1142,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa22bd934",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 160,
+        "primitive": 0,
+        "name": "world_-2_0_pa22bd934"
+      },
+      {
+        "node": 162,
+        "primitive": 0,
+        "name": "world_-1_0_pa22bd934"
+      },
+      {
+        "node": 163,
+        "primitive": 0,
+        "name": "world_-1_1_pa22bd934"
+      }
+    ],
+    "selectedTriangles": 2434,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa22bd934",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 164,
+        "primitive": 0,
+        "name": "world_0_-1_pa22bd934"
+      }
+    ],
+    "selectedTriangles": 152,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa22bd934",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 165,
+        "primitive": 0,
+        "name": "world_0_0_pa22bd934"
+      }
+    ],
+    "selectedTriangles": 368,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p7983c1f3",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 166,
+        "primitive": 0,
+        "name": "world_-2_-1_p7983c1f3"
+      },
+      {
+        "node": 168,
+        "primitive": 0,
+        "name": "world_-1_-1_p7983c1f3"
+      }
+    ],
+    "selectedTriangles": 370,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p7983c1f3",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 167,
+        "primitive": 0,
+        "name": "world_-2_0_p7983c1f3"
+      },
+      {
+        "node": 169,
+        "primitive": 0,
+        "name": "world_-1_0_p7983c1f3"
+      },
+      {
+        "node": 170,
+        "primitive": 0,
+        "name": "world_-1_1_p7983c1f3"
+      }
+    ],
+    "selectedTriangles": 748,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p7983c1f3",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 171,
+        "primitive": 0,
+        "name": "world_0_-1_p7983c1f3"
+      }
+    ],
+    "selectedTriangles": 40,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p7983c1f3",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 172,
+        "primitive": 0,
+        "name": "world_0_0_p7983c1f3"
+      }
+    ],
+    "selectedTriangles": 122,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p4ce92445",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 173,
+        "primitive": 0,
+        "name": "world_-2_-1_p4ce92445"
+      },
+      {
+        "node": 175,
+        "primitive": 0,
+        "name": "world_-1_-1_p4ce92445"
+      }
+    ],
+    "selectedTriangles": 4361,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p4ce92445",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 174,
+        "primitive": 0,
+        "name": "world_-2_0_p4ce92445"
+      },
+      {
+        "node": 176,
+        "primitive": 0,
+        "name": "world_-1_0_p4ce92445"
+      },
+      {
+        "node": 177,
+        "primitive": 0,
+        "name": "world_-1_1_p4ce92445"
+      }
+    ],
+    "selectedTriangles": 9724,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p4ce92445",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 178,
+        "primitive": 0,
+        "name": "world_0_-1_p4ce92445"
+      }
+    ],
+    "selectedTriangles": 445,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p4ce92445",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 179,
+        "primitive": 0,
+        "name": "world_0_0_p4ce92445"
+      }
+    ],
+    "selectedTriangles": 666,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8ad59c41",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 180,
+        "primitive": 0,
+        "name": "world_-2_0_p8ad59c41"
+      },
+      {
+        "node": 183,
+        "primitive": 0,
+        "name": "world_-1_0_p8ad59c41"
+      }
+    ],
+    "selectedTriangles": 748,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8ad59c41",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 181,
+        "primitive": 0,
+        "name": "world_-1_-4_p8ad59c41"
+      },
+      {
+        "node": 182,
+        "primitive": 0,
+        "name": "world_-1_-1_p8ad59c41"
+      }
+    ],
+    "selectedTriangles": 1044,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8ad59c41",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 184,
+        "primitive": 0,
+        "name": "world_0_-1_p8ad59c41"
+      }
+    ],
+    "selectedTriangles": 34,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p8ad59c41",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 185,
+        "primitive": 0,
+        "name": "world_0_0_p8ad59c41"
+      }
+    ],
+    "selectedTriangles": 42,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t19",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 186,
+        "primitive": 0,
+        "name": "world_-1_0_t19"
+      }
+    ],
+    "selectedTriangles": 128,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t29",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 187,
+        "primitive": 0,
+        "name": "world_-2_-1_t29"
+      },
+      {
+        "node": 190,
+        "primitive": 0,
+        "name": "world_-1_-1_t29"
+      }
+    ],
+    "selectedTriangles": 420,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t29",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 188,
+        "primitive": 0,
+        "name": "world_-2_0_t29"
+      },
+      {
+        "node": 189,
+        "primitive": 0,
+        "name": "world_-2_1_t29"
+      },
+      {
+        "node": 191,
+        "primitive": 0,
+        "name": "world_-1_0_t29"
+      },
+      {
+        "node": 192,
+        "primitive": 0,
+        "name": "world_-1_1_t29"
+      }
+    ],
+    "selectedTriangles": 988,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t29",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 193,
+        "primitive": 0,
+        "name": "world_0_-1_t29"
+      }
+    ],
+    "selectedTriangles": 272,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t29",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 194,
+        "primitive": 0,
+        "name": "world_0_0_t29"
+      }
+    ],
+    "selectedTriangles": 296,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t69",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 195,
+        "primitive": 0,
+        "name": "world_-1_-1_t69"
+      }
+    ],
+    "selectedTriangles": 50,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t69",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 196,
+        "primitive": 0,
+        "name": "world_-1_0_t69"
+      }
+    ],
+    "selectedTriangles": 230,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p649d5925",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 197,
+        "primitive": 0,
+        "name": "world_-2_-1_p649d5925"
+      },
+      {
+        "node": 200,
+        "primitive": 0,
+        "name": "world_-1_-1_p649d5925"
+      }
+    ],
+    "selectedTriangles": 253,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p649d5925",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 198,
+        "primitive": 0,
+        "name": "world_-2_0_p649d5925"
+      },
+      {
+        "node": 199,
+        "primitive": 0,
+        "name": "world_-2_1_p649d5925"
+      },
+      {
+        "node": 201,
+        "primitive": 0,
+        "name": "world_-1_0_p649d5925"
+      },
+      {
+        "node": 202,
+        "primitive": 0,
+        "name": "world_-1_1_p649d5925"
+      }
+    ],
+    "selectedTriangles": 355,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p649d5925",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 203,
+        "primitive": 0,
+        "name": "world_0_-1_p649d5925"
+      }
+    ],
+    "selectedTriangles": 159,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p649d5925",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 204,
+        "primitive": 0,
+        "name": "world_0_0_p649d5925"
+      },
+      {
+        "node": 205,
+        "primitive": 0,
+        "name": "world_0_1_p649d5925"
+      }
+    ],
+    "selectedTriangles": 261,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t15",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 206,
+        "primitive": 0,
+        "name": "world_-2_-1_t15"
+      }
+    ],
+    "selectedTriangles": 6,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t15",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 207,
+        "primitive": 0,
+        "name": "world_-2_0_t15"
+      },
+      {
+        "node": 208,
+        "primitive": 0,
+        "name": "world_-2_1_t15"
+      },
+      {
+        "node": 209,
+        "primitive": 0,
+        "name": "world_-1_0_t15"
+      }
+    ],
+    "selectedTriangles": 198,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t15",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 210,
+        "primitive": 0,
+        "name": "world_0_-1_t15"
+      }
+    ],
+    "selectedTriangles": 6,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t15",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 211,
+        "primitive": 0,
+        "name": "world_0_0_t15"
+      },
+      {
+        "node": 212,
+        "primitive": 0,
+        "name": "world_0_1_t15"
+      }
+    ],
+    "selectedTriangles": 6,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pd42351c5",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 213,
+        "primitive": 0,
+        "name": "world_-2_-1_pd42351c5"
+      },
+      {
+        "node": 216,
+        "primitive": 0,
+        "name": "world_-1_-1_pd42351c5"
+      }
+    ],
+    "selectedTriangles": 268,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pd42351c5",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 214,
+        "primitive": 0,
+        "name": "world_-2_0_pd42351c5"
+      },
+      {
+        "node": 215,
+        "primitive": 0,
+        "name": "world_-2_1_pd42351c5"
+      },
+      {
+        "node": 217,
+        "primitive": 0,
+        "name": "world_-1_0_pd42351c5"
+      },
+      {
+        "node": 218,
+        "primitive": 0,
+        "name": "world_-1_1_pd42351c5"
+      }
+    ],
+    "selectedTriangles": 396,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pd42351c5",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 219,
+        "primitive": 0,
+        "name": "world_0_-1_pd42351c5"
+      }
+    ],
+    "selectedTriangles": 128,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pd42351c5",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 220,
+        "primitive": 0,
+        "name": "world_0_0_pd42351c5"
+      },
+      {
+        "node": 221,
+        "primitive": 0,
+        "name": "world_0_1_pd42351c5"
+      }
+    ],
+    "selectedTriangles": 192,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pb8a19331",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 222,
+        "primitive": 0,
+        "name": "world_-2_-1_pb8a19331"
+      },
+      {
+        "node": 225,
+        "primitive": 0,
+        "name": "world_-1_-4_pb8a19331"
+      },
+      {
+        "node": 226,
+        "primitive": 0,
+        "name": "world_-1_-1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 28,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pb8a19331",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 223,
+        "primitive": 0,
+        "name": "world_-2_0_pb8a19331"
+      },
+      {
+        "node": 224,
+        "primitive": 0,
+        "name": "world_-2_1_pb8a19331"
+      },
+      {
+        "node": 227,
+        "primitive": 0,
+        "name": "world_-1_1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 16,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pb8a19331",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 228,
+        "primitive": 0,
+        "name": "world_0_-1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 8,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pb8a19331",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 229,
+        "primitive": 0,
+        "name": "world_0_0_pb8a19331"
+      },
+      {
+        "node": 230,
+        "primitive": 0,
+        "name": "world_0_1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 8,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t22",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 231,
+        "primitive": 0,
+        "name": "world_-2_-1_t22"
+      },
+      {
+        "node": 233,
+        "primitive": 0,
+        "name": "world_-1_-4_t22"
+      },
+      {
+        "node": 234,
+        "primitive": 0,
+        "name": "world_-1_-1_t22"
+      }
+    ],
+    "selectedTriangles": 539,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t22",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 232,
+        "primitive": 0,
+        "name": "world_-2_0_t22"
+      },
+      {
+        "node": 235,
+        "primitive": 0,
+        "name": "world_-1_0_t22"
+      },
+      {
+        "node": 236,
+        "primitive": 0,
+        "name": "world_-1_1_t22"
+      }
+    ],
+    "selectedTriangles": 887,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t22",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 237,
+        "primitive": 0,
+        "name": "world_0_-1_t22"
+      }
+    ],
+    "selectedTriangles": 463,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t22",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 238,
+        "primitive": 0,
+        "name": "world_0_0_t22"
+      }
+    ],
+    "selectedTriangles": 895,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t115",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 239,
+        "primitive": 0,
+        "name": "world_-2_-1_t115"
+      },
+      {
+        "node": 242,
+        "primitive": 0,
+        "name": "world_-1_-1_t115"
+      }
+    ],
+    "selectedTriangles": 100,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t115",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 240,
+        "primitive": 0,
+        "name": "world_-2_0_t115"
+      },
+      {
+        "node": 241,
+        "primitive": 0,
+        "name": "world_-2_1_t115"
+      },
+      {
+        "node": 243,
+        "primitive": 0,
+        "name": "world_-1_0_t115"
+      },
+      {
+        "node": 244,
+        "primitive": 0,
+        "name": "world_-1_1_t115"
+      }
+    ],
+    "selectedTriangles": 134,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t115",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 245,
+        "primitive": 0,
+        "name": "world_0_-1_t115"
+      }
+    ],
+    "selectedTriangles": 40,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t115",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 246,
+        "primitive": 0,
+        "name": "world_0_0_t115"
+      },
+      {
+        "node": 247,
+        "primitive": 0,
+        "name": "world_0_1_t115"
+      }
+    ],
+    "selectedTriangles": 54,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t113",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 248,
+        "primitive": 0,
+        "name": "world_-2_-1_t113"
+      },
+      {
+        "node": 250,
+        "primitive": 0,
+        "name": "world_-1_-1_t113"
+      }
+    ],
+    "selectedTriangles": 5,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t113",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 249,
+        "primitive": 0,
+        "name": "world_-2_0_t113"
+      },
+      {
+        "node": 251,
+        "primitive": 0,
+        "name": "world_-1_0_t113"
+      },
+      {
+        "node": 252,
+        "primitive": 0,
+        "name": "world_-1_1_t113"
+      }
+    ],
+    "selectedTriangles": 5,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t113",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 253,
+        "primitive": 0,
+        "name": "world_0_-1_t113"
+      }
+    ],
+    "selectedTriangles": 1,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t113",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 254,
+        "primitive": 0,
+        "name": "world_0_0_t113"
+      }
+    ],
+    "selectedTriangles": 1,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa4bb1f55",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 255,
+        "primitive": 0,
+        "name": "world_-2_-1_pa4bb1f55"
+      },
+      {
+        "node": 258,
+        "primitive": 0,
+        "name": "world_-1_-1_pa4bb1f55"
+      }
+    ],
+    "selectedTriangles": 6991,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa4bb1f55",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 256,
+        "primitive": 0,
+        "name": "world_-2_0_pa4bb1f55"
+      },
+      {
+        "node": 257,
+        "primitive": 0,
+        "name": "world_-2_1_pa4bb1f55"
+      },
+      {
+        "node": 259,
+        "primitive": 0,
+        "name": "world_-1_0_pa4bb1f55"
+      },
+      {
+        "node": 260,
+        "primitive": 0,
+        "name": "world_-1_1_pa4bb1f55"
+      }
+    ],
+    "selectedTriangles": 11245,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa4bb1f55",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 261,
+        "primitive": 0,
+        "name": "world_0_-1_pa4bb1f55"
+      }
+    ],
+    "selectedTriangles": 601,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa4bb1f55",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 262,
+        "primitive": 0,
+        "name": "world_0_0_pa4bb1f55"
+      },
+      {
+        "node": 263,
+        "primitive": 0,
+        "name": "world_0_1_pa4bb1f55"
+      }
+    ],
+    "selectedTriangles": 1917,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "paa310ac9",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 264,
+        "primitive": 0,
+        "name": "world_-1_-1_paa310ac9"
+      }
+    ],
+    "selectedTriangles": 11207,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "paa310ac9",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 265,
+        "primitive": 0,
+        "name": "world_-1_0_paa310ac9"
+      }
+    ],
+    "selectedTriangles": 16953,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p0d65efac",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 266,
+        "primitive": 0,
+        "name": "world_-1_-1_p0d65efac"
+      }
+    ],
+    "selectedTriangles": 348,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p0d65efac",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 267,
+        "primitive": 0,
+        "name": "world_-1_0_p0d65efac"
+      },
+      {
+        "node": 268,
+        "primitive": 0,
+        "name": "world_-1_1_p0d65efac"
+      }
+    ],
+    "selectedTriangles": 174,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa5d5158f",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 269,
+        "primitive": 0,
+        "name": "world_-1_-1_pa5d5158f"
+      }
+    ],
+    "selectedTriangles": 174,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa5d5158f",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 270,
+        "primitive": 0,
+        "name": "world_-1_0_pa5d5158f"
+      },
+      {
+        "node": 271,
+        "primitive": 0,
+        "name": "world_-1_1_pa5d5158f"
+      }
+    ],
+    "selectedTriangles": 348,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p9e913eef",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 272,
+        "primitive": 0,
+        "name": "world_-2_-1_p9e913eef"
+      },
+      {
+        "node": 274,
+        "primitive": 0,
+        "name": "world_-1_-1_p9e913eef"
+      }
+    ],
+    "selectedTriangles": 1861,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p9e913eef",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 273,
+        "primitive": 0,
+        "name": "world_-2_0_p9e913eef"
+      },
+      {
+        "node": 275,
+        "primitive": 0,
+        "name": "world_-1_0_p9e913eef"
+      }
+    ],
+    "selectedTriangles": 2469,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p9e913eef",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 276,
+        "primitive": 0,
+        "name": "world_0_-1_p9e913eef"
+      }
+    ],
+    "selectedTriangles": 438,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p9e913eef",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 277,
+        "primitive": 0,
+        "name": "world_0_0_p9e913eef"
+      }
+    ],
+    "selectedTriangles": 742,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pf5b8db29",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 278,
+        "primitive": 0,
+        "name": "world_-2_-1_pf5b8db29"
+      },
+      {
+        "node": 280,
+        "primitive": 0,
+        "name": "world_-1_-1_pf5b8db29"
+      }
+    ],
+    "selectedTriangles": 2018,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pf5b8db29",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 279,
+        "primitive": 0,
+        "name": "world_-2_0_pf5b8db29"
+      },
+      {
+        "node": 281,
+        "primitive": 0,
+        "name": "world_-1_0_pf5b8db29"
+      },
+      {
+        "node": 282,
+        "primitive": 0,
+        "name": "world_-1_1_pf5b8db29"
+      }
+    ],
+    "selectedTriangles": 2818,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pf5b8db29",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 283,
+        "primitive": 0,
+        "name": "world_0_-1_pf5b8db29"
+      }
+    ],
+    "selectedTriangles": 924,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pf5b8db29",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 284,
+        "primitive": 0,
+        "name": "world_0_0_pf5b8db29"
+      },
+      {
+        "node": 285,
+        "primitive": 0,
+        "name": "world_0_1_pf5b8db29"
+      }
+    ],
+    "selectedTriangles": 1412,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pfd2df4db",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 286,
+        "primitive": 0,
+        "name": "world_-2_-1_pfd2df4db"
+      },
+      {
+        "node": 288,
+        "primitive": 0,
+        "name": "world_-1_-1_pfd2df4db"
+      }
+    ],
+    "selectedTriangles": 91,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pfd2df4db",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 287,
+        "primitive": 0,
+        "name": "world_-2_0_pfd2df4db"
+      },
+      {
+        "node": 289,
+        "primitive": 0,
+        "name": "world_-1_0_pfd2df4db"
+      }
+    ],
+    "selectedTriangles": 171,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pfd2df4db",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 290,
+        "primitive": 0,
+        "name": "world_0_-1_pfd2df4db"
+      }
+    ],
+    "selectedTriangles": 23,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pfd2df4db",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 291,
+        "primitive": 0,
+        "name": "world_0_0_pfd2df4db"
+      }
+    ],
+    "selectedTriangles": 35,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa060e2a7",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 292,
+        "primitive": 0,
+        "name": "world_-2_-1_pa060e2a7"
+      },
+      {
+        "node": 294,
+        "primitive": 0,
+        "name": "world_-1_-1_pa060e2a7"
+      }
+    ],
+    "selectedTriangles": 259,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa060e2a7",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 293,
+        "primitive": 0,
+        "name": "world_-2_0_pa060e2a7"
+      },
+      {
+        "node": 295,
+        "primitive": 0,
+        "name": "world_-1_0_pa060e2a7"
+      },
+      {
+        "node": 296,
+        "primitive": 0,
+        "name": "world_-1_1_pa060e2a7"
+      }
+    ],
+    "selectedTriangles": 358,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa060e2a7",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 297,
+        "primitive": 0,
+        "name": "world_0_-1_pa060e2a7"
+      }
+    ],
+    "selectedTriangles": 117,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa060e2a7",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 298,
+        "primitive": 0,
+        "name": "world_0_0_pa060e2a7"
+      },
+      {
+        "node": 299,
+        "primitive": 0,
+        "name": "world_0_1_pa060e2a7"
+      }
+    ],
+    "selectedTriangles": 176,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p6b14dedd",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 300,
+        "primitive": 0,
+        "name": "world_-2_-1_p6b14dedd"
+      },
+      {
+        "node": 302,
+        "primitive": 0,
+        "name": "world_-1_-1_p6b14dedd"
+      }
+    ],
+    "selectedTriangles": 703,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p6b14dedd",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 301,
+        "primitive": 0,
+        "name": "world_-2_0_p6b14dedd"
+      },
+      {
+        "node": 303,
+        "primitive": 0,
+        "name": "world_-1_0_p6b14dedd"
+      }
+    ],
+    "selectedTriangles": 1201,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p6b14dedd",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 304,
+        "primitive": 0,
+        "name": "world_0_-1_p6b14dedd"
+      }
+    ],
+    "selectedTriangles": 417,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p6b14dedd",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 305,
+        "primitive": 0,
+        "name": "world_0_0_p6b14dedd"
+      }
+    ],
+    "selectedTriangles": 801,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t51",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 306,
+        "primitive": 0,
+        "name": "world_-1_-4_t51"
+      }
+    ],
+    "selectedTriangles": 1552,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t81",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 307,
+        "primitive": 0,
+        "name": "world_-2_-1_t81"
+      },
+      {
+        "node": 309,
+        "primitive": 0,
+        "name": "world_-1_-1_t81"
+      }
+    ],
+    "selectedTriangles": 20,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t81",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 308,
+        "primitive": 0,
+        "name": "world_-2_0_t81"
+      },
+      {
+        "node": 310,
+        "primitive": 0,
+        "name": "world_-1_0_t81"
+      },
+      {
+        "node": 311,
+        "primitive": 0,
+        "name": "world_-1_1_t81"
+      }
+    ],
+    "selectedTriangles": 20,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t81",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 312,
+        "primitive": 0,
+        "name": "world_0_-1_t81"
+      }
+    ],
+    "selectedTriangles": 4,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t81",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 313,
+        "primitive": 0,
+        "name": "world_0_0_t81"
+      }
+    ],
+    "selectedTriangles": 4,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t2",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 314,
+        "primitive": 0,
+        "name": "world_-1_0_t2"
+      }
+    ],
+    "selectedTriangles": 104,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t14",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 315,
+        "primitive": 0,
+        "name": "world_-2_-1_t14"
+      },
+      {
+        "node": 318,
+        "primitive": 0,
+        "name": "world_-1_-1_t14"
+      }
+    ],
+    "selectedTriangles": 46,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t14",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 316,
+        "primitive": 0,
+        "name": "world_-2_0_t14"
+      },
+      {
+        "node": 317,
+        "primitive": 0,
+        "name": "world_-2_1_t14"
+      },
+      {
+        "node": 319,
+        "primitive": 0,
+        "name": "world_-1_0_t14"
+      }
+    ],
+    "selectedTriangles": 126,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t14",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 320,
+        "primitive": 0,
+        "name": "world_0_-1_t14"
+      }
+    ],
+    "selectedTriangles": 6,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t14",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 321,
+        "primitive": 0,
+        "name": "world_0_0_t14"
+      },
+      {
+        "node": 322,
+        "primitive": 0,
+        "name": "world_0_1_t14"
+      }
+    ],
+    "selectedTriangles": 6,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p28e52bc3",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 323,
+        "primitive": 0,
+        "name": "world_-2_-1_p28e52bc3"
+      },
+      {
+        "node": 325,
+        "primitive": 0,
+        "name": "world_-1_-1_p28e52bc3"
+      }
+    ],
+    "selectedTriangles": 92,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p28e52bc3",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 324,
+        "primitive": 0,
+        "name": "world_-2_0_p28e52bc3"
+      },
+      {
+        "node": 326,
+        "primitive": 0,
+        "name": "world_-1_0_p28e52bc3"
+      },
+      {
+        "node": 327,
+        "primitive": 0,
+        "name": "world_-1_1_p28e52bc3"
+      }
+    ],
+    "selectedTriangles": 92,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p28e52bc3",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 328,
+        "primitive": 0,
+        "name": "world_0_-1_p28e52bc3"
+      }
+    ],
+    "selectedTriangles": 14,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "p28e52bc3",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 329,
+        "primitive": 0,
+        "name": "world_0_0_p28e52bc3"
+      },
+      {
+        "node": 330,
+        "primitive": 0,
+        "name": "world_0_1_p28e52bc3"
+      }
+    ],
+    "selectedTriangles": 14,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa15535ed",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 331,
+        "primitive": 0,
+        "name": "world_-2_-1_pa15535ed"
+      },
+      {
+        "node": 333,
+        "primitive": 0,
+        "name": "world_-1_-1_pa15535ed"
+      }
+    ],
+    "selectedTriangles": 712,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa15535ed",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 332,
+        "primitive": 0,
+        "name": "world_-2_0_pa15535ed"
+      },
+      {
+        "node": 334,
+        "primitive": 0,
+        "name": "world_-1_0_pa15535ed"
+      }
+    ],
+    "selectedTriangles": 1160,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa15535ed",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 335,
+        "primitive": 0,
+        "name": "world_0_-1_pa15535ed"
+      }
+    ],
+    "selectedTriangles": 104,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "pa15535ed",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 336,
+        "primitive": 0,
+        "name": "world_0_0_pa15535ed"
+      }
+    ],
+    "selectedTriangles": 416,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t118",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 337,
+        "primitive": 0,
+        "name": "world_-1_-1_t118"
+      }
+    ],
+    "selectedTriangles": 281,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t118",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 338,
+        "primitive": 0,
+        "name": "world_-1_0_t118"
+      }
+    ],
+    "selectedTriangles": 281,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t118",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 339,
+        "primitive": 0,
+        "name": "world_0_0_t118"
+      }
+    ],
+    "selectedTriangles": 14,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t130",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 340,
+        "primitive": 0,
+        "name": "world_-2_-1_t130"
+      },
+      {
+        "node": 342,
+        "primitive": 0,
+        "name": "world_-1_-1_t130"
+      }
+    ],
+    "selectedTriangles": 65,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t130",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 341,
+        "primitive": 0,
+        "name": "world_-2_0_t130"
+      },
+      {
+        "node": 343,
+        "primitive": 0,
+        "name": "world_-1_0_t130"
+      }
+    ],
+    "selectedTriangles": 56,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t130",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 344,
+        "primitive": 0,
+        "name": "world_0_-1_t130"
+      }
+    ],
+    "selectedTriangles": 19,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t130",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 345,
+        "primitive": 0,
+        "name": "world_0_0_t130"
+      }
+    ],
+    "selectedTriangles": 28,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t117",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 346,
+        "primitive": 0,
+        "name": "world_-1_-4_t117"
+      }
+    ],
+    "selectedTriangles": 76,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t21",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 347,
+        "primitive": 0,
+        "name": "world_-1_-1_t21"
+      }
+    ],
+    "selectedTriangles": 12,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "world",
+      "t21",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 348,
+        "primitive": 0,
+        "name": "world_-1_0_t21"
+      }
+    ],
+    "selectedTriangles": 24,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "roof",
+      "pb8a19331",
+      -1,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 349,
+        "primitive": 0,
+        "name": "roof_-2_-1_pb8a19331"
+      },
+      {
+        "node": 351,
+        "primitive": 0,
+        "name": "roof_-1_-1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 5,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "roof",
+      "pb8a19331",
+      -1,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 350,
+        "primitive": 0,
+        "name": "roof_-2_0_pb8a19331"
+      },
+      {
+        "node": 352,
+        "primitive": 0,
+        "name": "roof_-1_0_pb8a19331"
+      },
+      {
+        "node": 353,
+        "primitive": 0,
+        "name": "roof_-1_1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 5,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "roof",
+      "pb8a19331",
+      0,
+      -1
+    ],
+    "sourceParts": [
+      {
+        "node": 354,
+        "primitive": 0,
+        "name": "roof_0_-1_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 1,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "roof",
+      "pb8a19331",
+      0,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 355,
+        "primitive": 0,
+        "name": "roof_0_0_pb8a19331"
+      }
+    ],
+    "selectedTriangles": 1,
+    "render": true,
+    "collision": true
+  },
+  {
+    "sourceBatch": [
+      "boundary",
+      "source-walkthrough",
+      356,
+      0
+    ],
+    "sourceParts": [
+      {
+        "node": 356,
+        "primitive": 0,
+        "name": "boundary"
+      }
+    ],
+    "selectedTriangles": 16,
+    "render": false,
+    "collision": true
+  }
+]

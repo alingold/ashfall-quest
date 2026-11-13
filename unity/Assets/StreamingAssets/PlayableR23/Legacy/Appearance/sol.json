@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "sol",
+  "label": "WITCH DOCTOR · GPT-6.1 SOL",
+  "sourceIndex": 4,
+  "eyeToShoulder": 0.29,
+  "bodyRear": 0.12,
+  "gloveMaterialIndex": 1,
+  "leftWrist": [
+    0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "rightWrist": [
+    -0.001026332217453563,
+    0.022985152075430573,
+    -0.05350169563455417
+  ],
+  "materials": [
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": true,
+      "baseColor": "sol-body-0-baseColor.png",
+      "normal": "sol-body-0-normal.png",
+      "metallicMap": "sol-body-0-metallic.png",
+      "occlusion": "",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    },
+    {
+      "color": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 1,
+      "roughness": 1,
+      "doubleSided": false,
+      "baseColor": "sol-glove-baseColor.png",
+      "normal": "sol-glove-normal.png",
+      "metallicMap": "sol-glove-metallic.png",
+      "occlusion": "sol-glove-occlusion.png",
+      "emission": "",
+      "emissionColor": [
+        0,
+        0,
+        0
+      ],
+      "normalScale": 1,
+      "occlusionStrength": 1
+    }
+  ]
+}

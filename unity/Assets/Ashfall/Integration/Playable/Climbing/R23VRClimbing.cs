@@ -114,6 +114,13 @@ namespace Ashfall.Integration.Playable.Climbing
             if(!float.IsPositiveInfinity(nearest))desired=start+motion*Mathf.Max(0,nearest/length-.002f);
             proxies[index]=desired;hasProxy[index]=true;return desired;
         }
+        internal const float GrappleReach=ClimbController.VrGrabRadius-.04f;
+        internal bool GrappleHandInReach(Vector3 hand,Collider anchor)
+        {
+            // Match the VR grab overlap with a small margin for the next tracking sample.
+            return System.Array.IndexOf(Physics.OverlapSphere(hand,GrappleReach+.01f,
+                Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore),anchor)>=0;
+        }
         public bool TryGrab(Float3 point,float radius,out SurfaceHit hit)
         {
             hit=new SurfaceHit();

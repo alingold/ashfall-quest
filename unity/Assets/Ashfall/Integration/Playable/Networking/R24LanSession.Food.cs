@@ -11,14 +11,14 @@ namespace Ashfall.Integration.Playable.Networking {
    if(!food.Consumed)FoodRequest(id,Math.Max(0,root.Consumables.HeldHand-1),1,new Float3());
    if(!peer.Lobby.TryReadFood(id,out food)||!food.Consumed)return false;if(food.Kind=="banana")root.Rig.RefillStamina();return true;
   }
-  bool DropFood(string id,Vector3 at){if(peer==null)return true;R24LanFoodState food;if(!peer.Lobby.TryReadFood(id,out food)||food.Consumed)return false;if(food.Owner=="")return true;if(food.Owner!=peer.Lobby.OwnActor)return false;FoodRequest(id,Math.Max(0,root.Consumables.HeldHand-1),2,V(at));return peer.Lobby.TryReadFood(id,out food)&&food.Owner=="";}
-  void SyncFood(){if(root.Consumables==null)return;var lobby=peer.Lobby;root.Consumables.SetSharedConsume(ConsumeFood);root.Consumables.SharedDrop=DropFood;
-   if(lobby.State==R24LanLobbyState.Hosting)foreach(string id in root.Consumables.WorldItemIds){R24LanFoodState known;if(lobby.TryReadFood(id,out known))continue;var info=root.Consumables.InspectItem(id);Vector3 at;Quaternion rotation;bool owned;if(info!=null&&!info.Removed&&info.Owner==null&&root.Consumables.TryReadWorldItem(id,out at,out rotation,out owned))lobby.RegisterSharedFood(id,info.Kind,V(at));}
-   foreach(var food in lobby.SharedFoods){if(food.Consumed&&food.Owner==lobby.OwnActor){if(root.Consumables.AcknowledgeSharedConsume(lobby,food)&&food.Kind=="banana")root.Rig.RefillStamina();continue;}var local=root.Consumables.InspectItem(food.Id);if(local==null){if(food.Owner!=""||food.Consumed)continue;root.Consumables.Spawn(food.Id,food.Kind,new Vector3(food.Position.X,food.Position.Y,food.Position.Z),false);}
+  bool DropFood(string id,Vector3 at){if(peer==null)return true;R24LanFoodState food;if(!peer.Lobby.TryReadFood(id,out food)||food.Consumed)return false;if(food.Owner==""){if(!completingConsumableDrop)pendingFoodDrops.Remove(id);return true;}if(food.Owner!=peer.Lobby.OwnActor)return false;bool sent=FoodRequest(id,Math.Max(0,root.Consumables.HeldHand-1),2,V(at));if(peer.Lobby.TryReadFood(id,out food)&&food.Owner=="")return true;if(sent)NoteConsumableDrop(pendingFoodDrops,id,id);return false;}
+  void SyncFood(){if(root.Consumables==null)return;var lobby=peer.Lobby;BindFoodSync();BindFoodLifetime();CompleteFoodDrops(lobby);foodSync.Begin(lobby,lobby.Epoch,Time.realtimeSinceStartupAsDouble,root.Consumables.SyncWorldItemCount);if(foodSync.Discover)root.Consumables.CopySyncWorldItemIds(foodIdBuffer);
+   if(foodSync.Discover&&lobby.State==R24LanLobbyState.Hosting)foreach(string id in foodIdBuffer){R24LanFoodState known;if(lobby.TryReadFood(id,out known))continue;var info=root.Consumables.InspectItem(id);Vector3 at;Quaternion rotation;bool owned;if(info!=null&&!info.Removed&&info.Owner==null&&root.Consumables.TryReadWorldItem(id,out at,out rotation,out owned))lobby.RegisterSharedFood(id,info.Kind,V(at));}
+   lobby.ChangedFood(foodSync);foreach(var food in foodSync.Rows){if(food.Consumed&&food.Owner==lobby.OwnActor){if(root.Consumables.AcknowledgeSharedConsume(lobby,food)&&food.Kind=="banana")root.Rig.RefillStamina();continue;}var local=root.Consumables.InspectItem(food.Id);if(local==null){if(food.Owner!=""||food.Consumed)continue;root.Consumables.Spawn(food.Id,food.Kind,new Vector3(food.Position.X,food.Position.Y,food.Position.Z),false);}
     if(food.Owner==""&&local!=null&&local.Owner==null)root.Consumables.RepositionWorldItem(food.Id,new Vector3(food.Position.X,food.Position.Y,food.Position.Z));
     root.Consumables.SetWorldItemVisible(food.Id,food.Owner==lobby.OwnActor||food.Owner==""&&!food.Consumed);
    }
-   foreach(string id in root.Consumables.WorldItemIds){R24LanFoodState known;if(!lobby.TryReadFood(id,out known))root.Consumables.SetWorldItemVisible(id,false);}
+   if(foodSync.Discover)foreach(string id in foodIdBuffer){R24LanFoodState known;if(!lobby.TryReadFood(id,out known))root.Consumables.SetWorldItemVisible(id,false);}
   }
  }
 }

@@ -1,0 +1,2721 @@
+{
+ "version": 1,
+ "generator": "Tools/PlayableR26/Maps/r26_map_treatments.py apply (r19 rows); earlier rows ~/ashfall/campaign/staging/MAPS/R26MapData.py",
+ "rule": "Visible non-colliding chunks whose every triangle lies inside a same-material source authoring marker AABB (+-0.01 m, Z reflected once), including cache markers and exact translated 110-triangle ring/arrow copies (0.0001 m tolerance). Semantics source hash must match. MAPKIT r19: rows may carry `parts` = per-chunk triangle ranges [start,count,...] of marker components (red hexagon rings and glyphs, warm-up/deathmatch rings, arrows, figures), including colliding chunks; the runtime drops exactly those triangles (material and triangle count must match).",
+ "maps": [
+  {
+   "id": "archive:battlefield-paintball-gods-pitdevil",
+   "sourceSha256": "1f2453276f150a5c04373ea92cb6c6e5f43707c0a7f1fc0dfe351b0a24573c0a",
+   "chunks": [
+    107
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2970
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:10000-days-gods-crazytrain",
+   "sourceSha256": "372abb96a7a8ca0e97e9586e6d5b537b92a2c09615633b7d1f5a00c1822fb35c",
+   "chunks": [
+    90
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:afterlife-gods-alamo-hank",
+   "sourceSha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+   "chunks": [
+    308
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    116
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:aftermath-light-vs-dark-gods-badbar",
+   "sourceSha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+   "chunks": [
+    147,
+    148
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    330,
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:atrocious-gods-trashpandakiller",
+   "sourceSha256": "53efdbbacc8a60a0e1644ce16ab9d6e72adc9f7d7512fbb92a5c1683ab7e352e",
+   "chunks": [
+    127
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:badlands-gods-pitdevil",
+   "sourceSha256": "86fc76c858cea8e444aac14fb1cda3e384c6af634f2546daad5287cc3e973254",
+   "chunks": [
+    216
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:beast-mode-gods-pitdevil",
+   "sourceSha256": "8a6bf7afcc48cb1488f441b1680bc5f82e847512c6f23f475b0f2313b0e2e587",
+   "chunks": [
+    423
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:bi-polar-gods-trashpandakiller",
+   "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+   "chunks": [
+    199
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:blue-gods-quietowl",
+   "sourceSha256": "be630548066e0469afcac0edd2a58b329bd788c5030f76530106438eafdd8d9b",
+   "chunks": [
+    174,
+    175
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1100,
+    440
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:candle-magic-gods-goodwitch",
+   "sourceSha256": "6fe3c4ef99a28bec532fff0711ca7981838b6c5961541a1152bd2794bf2577ab",
+   "chunks": [
+    179
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:caskades-gods-alamo-hank",
+   "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+   "chunks": [
+    17,
+    166
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    2640,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:chaotic-gods-alamo-hank",
+   "sourceSha256": "2292992c46d6eb1d4b33ea7a5d8bd7766bd874583b186d622c7685827055577c",
+   "chunks": [
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    116,
+    3300,
+    1555,
+    6220,
+    9330,
+    7775,
+    7775,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:cold-hearted-gods-pitdevil",
+   "sourceSha256": "6933493287e74ed2ad8cfdcffe8da2070a39cfc7fe766aee6339d549f0ecb299",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 269,
+     "material": "p2a61c272",
+     "triangles": 206,
+     "ranges": [
+      0,
+      206
+     ]
+    },
+    {
+     "chunk": 270,
+     "material": "p2a61c272",
+     "triangles": 208,
+     "ranges": [
+      0,
+      208
+     ]
+    },
+    {
+     "chunk": 271,
+     "material": "p2a61c272",
+     "triangles": 128,
+     "ranges": [
+      0,
+      128
+     ]
+    },
+    {
+     "chunk": 272,
+     "material": "p2a61c272",
+     "triangles": 412,
+     "ranges": [
+      0,
+      412
+     ]
+    },
+    {
+     "chunk": 273,
+     "material": "p2a61c272",
+     "triangles": 696,
+     "ranges": [
+      0,
+      696
+     ]
+    },
+    {
+     "chunk": 274,
+     "material": "p2a61c272",
+     "triangles": 522,
+     "ranges": [
+      0,
+      522
+     ]
+    },
+    {
+     "chunk": 275,
+     "material": "p2a61c272",
+     "triangles": 216,
+     "ranges": [
+      32,
+      184
+     ]
+    },
+    {
+     "chunk": 276,
+     "material": "p2a61c272",
+     "triangles": 492,
+     "ranges": [
+      0,
+      356,
+      388,
+      104
+     ]
+    },
+    {
+     "chunk": 277,
+     "material": "p2a61c272",
+     "triangles": 216,
+     "ranges": [
+      0,
+      216
+     ]
+    },
+    {
+     "chunk": 278,
+     "material": "p2a61c272",
+     "triangles": 384,
+     "ranges": [
+      0,
+      384
+     ]
+    },
+    {
+     "chunk": 279,
+     "material": "p2a61c272",
+     "triangles": 232,
+     "ranges": [
+      0,
+      232
+     ]
+    },
+    {
+     "chunk": 280,
+     "material": "p2a61c272",
+     "triangles": 88,
+     "ranges": [
+      0,
+      88
+     ]
+    },
+    {
+     "chunk": 281,
+     "material": "p2a61c272",
+     "triangles": 136,
+     "ranges": [
+      0,
+      136
+     ]
+    },
+    {
+     "chunk": 282,
+     "material": "p2a61c272",
+     "triangles": 88,
+     "ranges": [
+      0,
+      88
+     ]
+    },
+    {
+     "chunk": 306,
+     "material": "p054b1b60",
+     "triangles": 2200,
+     "ranges": [
+      0,
+      2200
+     ]
+    },
+    {
+     "chunk": 16,
+     "material": "vc",
+     "triangles": 708,
+     "ranges": [
+      580,
+      128
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 2196,
+     "ranges": [
+      0,
+      72,
+      2052,
+      144
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 128,
+     "ranges": [
+      0,
+      128
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:flash-gods-pitdevil",
+   "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+   "chunks": [
+    149
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:fortress-gods-putangfreyja",
+   "sourceSha256": "ed19b10297661fa13755a00b1c67af3c6013d2d42913603dc91e52265fa911a9",
+   "chunks": [
+    253
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    990
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:g0dtham-gods-poplightning",
+   "sourceSha256": "f91223630c8ceb8dcacb7a3bdf4be94f3825549fa76b26536e2217af848845ef",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 79,
+     "material": "p2a61c272",
+     "triangles": 679,
+     "ranges": [
+      0,
+      96,
+      120,
+      175
+     ]
+    },
+    {
+     "chunk": 80,
+     "material": "p2a61c272",
+     "triangles": 1528,
+     "ranges": [
+      1152,
+      376
+     ]
+    },
+    {
+     "chunk": 81,
+     "material": "p2a61c272",
+     "triangles": 893,
+     "ranges": [
+      0,
+      310,
+      334,
+      175
+     ]
+    },
+    {
+     "chunk": 82,
+     "material": "p2a61c272",
+     "triangles": 1424,
+     "ranges": [
+      384,
+      64,
+      832,
+      136,
+      1352,
+      72
+     ]
+    },
+    {
+     "chunk": 105,
+     "material": "p054b1b60",
+     "triangles": 2640,
+     "ranges": [
+      0,
+      2640
+     ]
+    },
+    {
+     "chunk": 16,
+     "material": "vc",
+     "triangles": 62,
+     "ranges": [
+      0,
+      24,
+      38,
+      24
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 128,
+     "ranges": [
+      0,
+      48,
+      104,
+      24
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 322,
+     "ranges": [
+      178,
+      144
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 19,
+     "material": "vc",
+     "triangles": 256,
+     "ranges": [
+      0,
+      24,
+      160,
+      96
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:high-ground-gods-thor",
+   "sourceSha256": "b857dca932b9e5585eb456b73e73134d4f051c8c4a29d89d35e0eaa41ad9ba0e",
+   "chunks": [
+    111,
+    112
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320,
+    1320
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:holy-ground-gods-pitdevil",
+   "sourceSha256": "d8ae9becfeec2c266618eb668984743f2f4a5f1166e3620076d72224dd9743d7",
+   "chunks": [
+    213
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2200
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:hunted-gods-pitdevil",
+   "sourceSha256": "69b8ac120f6f0f2e72bcbcd40b705bb9bb9a7c751d029f88cc5c0932c47910b7",
+   "chunks": [
+    166
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2750
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:hypnosis-gods-pitdevil",
+   "sourceSha256": "9d5a6c4091e1ab0d44c2739edc92e53fa6500b406b3ec506a7225ec9593eac08",
+   "chunks": [
+    147
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2052
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:la-la-la-gods-trashpandakiller",
+   "sourceSha256": "dfd4d287711e0fd9105c034131562084baeef7616c99666cdd413364eb062bcf",
+   "chunks": [
+    249
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:light-vs-dark-gods-badbar",
+   "sourceSha256": "ce6a8ddeeffd755b8d2b82d68f741ebd183ebca7e199f85855256f17b99a8ed5",
+   "chunks": [
+    22
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:melipop-gods-poplightning",
+   "sourceSha256": "dd7b22842678f875ab27fdb959505424be7f96755d1b9b5cea64f11b9c10a152",
+   "chunks": [
+    94
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2536
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:melis-cafe-gods-pitdevil",
+   "sourceSha256": "6c42e928f34a55ec6bd88f9b587c5bda53eece8c458351c8e33a3e6a74b4a61d",
+   "chunks": [
+    559,
+    560,
+    577,
+    578,
+    579
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1848,
+    132,
+    2640,
+    1320,
+    1320
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:mushy-2-gods-putangfreyja",
+   "sourceSha256": "9abec0557618ad864380479189069bfe94e5dd2c1b7c9004bd61b6b056fd7330",
+   "chunks": [
+    190
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    990
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:mushy-gods-putangfreyja",
+   "sourceSha256": "23f795914c354a9836e5d55852ba48119477239b2688d82f575326843b79fa21",
+   "chunks": [
+    196
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:oppression-gods-thor",
+   "sourceSha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+   "chunks": [
+    85,
+    87
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    66,
+    50
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:phantom-gods-badbar",
+   "sourceSha256": "b2c70b5530fa04dd3e4e274929637c223b38342d28e734056b85161243d51e95",
+   "chunks": [
+    157
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    782
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:plan-b-gods-pitdevil",
+   "sourceSha256": "45198e5157a98c297f0fa51672908b56793c5e53a6c43422afe90d162c06d204",
+   "chunks": [
+    410,
+    411
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1392,
+    2200
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:poppy-gods-poplightning",
+   "sourceSha256": "f607fde898b0e60add02e9d0a1c64c9955f23d10072002be3e4487d4901f740f",
+   "chunks": [
+    101,
+    102,
+    103
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    550,
+    110,
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:quantum-city-gods-pitdevil",
+   "sourceSha256": "2523b65982988c4eb8c105393a496cbb0585944f24cf1b8f6882790e1bd0097c",
+   "chunks": [
+    188
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    12
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:quietowl-gods-pitdevil",
+   "sourceSha256": "418cac4a7612b937d4d766e909eb840ec39e310c15874c170fb3e64e86306013",
+   "chunks": [
+    238,
+    240
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    66,
+    50
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:realtree-gods-poplightning",
+   "sourceSha256": "d9d89ab2587d68707f35ef310617fcadf689a7ca479f943d19d5358fcffc056f",
+   "chunks": [
+    68,
+    69,
+    70,
+    71
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1791,
+    1179,
+    330,
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:robotics-2-gods-pitdevil",
+   "sourceSha256": "9119b9d2eca2d39a17571866280bafdba190728d2fcd75036f15eb60ca79aff4",
+   "chunks": [
+    591,
+    632,
+    634
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320,
+    2640,
+    1210
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:sean0311-gods-sean0311",
+   "sourceSha256": "b78895f67cea47fe73be7ad758fda9211ccdd50d9ad2b606cd6e67a3df887377",
+   "chunks": [
+    105,
+    107
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    220,
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:showdown-gods-crazytrain",
+   "sourceSha256": "4f2171e67edfd8a1e004e810e79989fe85cfada34277f5e3e2d32c3be408006d",
+   "chunks": [
+    165,
+    166,
+    167
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    990,
+    1555,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:skb-paintball-gods-skblong",
+   "sourceSha256": "cd5aaaa7de37a9077a39283ffecd560e1cf56f087ac5e6a20096834ad0dbbdb8",
+   "chunks": [
+    148
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:stacked-gods-trashpandakiller",
+   "sourceSha256": "b60f507045111455f184941efcd1e772d81a3b3301b77389ad7c0ead70eb0532",
+   "chunks": [
+    126
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:suffering-gods-thor",
+   "sourceSha256": "cf68defaea8ceb9aa11a3579eb56fbe242767995b13bcbad98d1c9a80eee22ac",
+   "chunks": [
+    84
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:survive-gods-goodwitch",
+   "sourceSha256": "0473f193991ada44dd035fd2a6e96d2bf9c850627b400facc22866c6f40bef6f",
+   "chunks": [
+    361
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:swarm-gods-chriso",
+   "sourceSha256": "ca9088bac716f9f4081cb56b6785938465a1a51e108130133bf36655f0689db8",
+   "chunks": [
+    120
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:sweet-dreams-gods-badbar",
+   "sourceSha256": "f941aa69c2bccf048654b7ce79aaf833b47781a1f9d77403d89d7bf418a5c4c8",
+   "chunks": [
+    164
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    3300
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:tagd-gods-pitdevil",
+   "sourceSha256": "569eb7f52ccd20837dd99f8de190619995a71ec43e83f339c67605067859db1f",
+   "chunks": [
+    160
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:the-holler-gods-alamo-hank",
+   "sourceSha256": "a7e7c56f931ee49192ecdadd636ff8b09c80088bc326febfd81583cd4873cd32",
+   "chunks": [
+    17,
+    18
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1430,
+    880
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:the-powerpuff-g0ds-gods-meli",
+   "sourceSha256": "dc8310310317a595e60b86ec1433f8efbe80b030b6c1694f4248b98551eb1cae",
+   "chunks": [
+    146,
+    147
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320,
+    220
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:trashed-gods-pitdevil",
+   "sourceSha256": "e78ffd3eff470f3dd1930a4faf3e8daad8e2710089cb01db690d2e75e299f1da",
+   "chunks": [
+    223
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2310
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:trauma-gods-pitdevil",
+   "sourceSha256": "56f47a512e7948ec83d5fd18a8cc1eb225be02997f899c82a7e2efce69316a42",
+   "chunks": [
+    330,
+    331,
+    332
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    2640,
+    1848,
+    132
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:unbroken-gods-thor",
+   "sourceSha256": "24aadde52aeb72d532931917ef783d91648cbbc2c1b55b261a594f7a095c3360",
+   "chunks": [
+    117
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    880
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:viral-gods-ghostlymostly88",
+   "sourceSha256": "281e6a762653a21e7cddf556c323f0c3bd34776baaa5883af7ff150e7a905674",
+   "chunks": [
+    124,
+    204,
+    205,
+    206,
+    207
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    330,
+    1555,
+    1555,
+    1555,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:5-levels-zyro",
+   "sourceSha256": "2a5f30b621ed16c6e44526a2874e64406e12061ebaf4ad9856cc258772297b54",
+   "chunks": [
+    92,
+    93
+   ],
+   "materials": [
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    10885,
+    10885
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:aethelgard-solstis-kiki-80-bbb",
+   "sourceSha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+   "chunks": [
+    121,
+    122,
+    123
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    110,
+    494,
+    2146
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:alfa-aglae-souza",
+   "sourceSha256": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994",
+   "chunks": [
+    476,
+    477,
+    478,
+    479,
+    480,
+    481,
+    482,
+    483,
+    484
+   ],
+   "materials": [
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    3110,
+    1555,
+    3110,
+    3110,
+    6220,
+    4665,
+    4665,
+    550,
+    110
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:bamboo-gods-pitdevil",
+   "sourceSha256": "e11d43b8721ff9e31328837b62b46f2786f3648a4590c6dbbede4d87ef3345e0",
+   "chunks": [
+    321,
+    323
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1320,
+    110
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:banana-land-gods-pitdevil",
+   "sourceSha256": "a6e833cadf6025b53ef186084662264f75ed6874d0878930f04192c63594108a",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 204,
+     "material": "p2a61c272",
+     "triangles": 90,
+     "ranges": [
+      0,
+      88
+     ]
+    },
+    {
+     "chunk": 206,
+     "material": "p2a61c272",
+     "triangles": 130,
+     "ranges": [
+      0,
+      130
+     ]
+    },
+    {
+     "chunk": 207,
+     "material": "p2a61c272",
+     "triangles": 250,
+     "ranges": [
+      0,
+      250
+     ]
+    },
+    {
+     "chunk": 208,
+     "material": "p2a61c272",
+     "triangles": 570,
+     "ranges": [
+      0,
+      570
+     ]
+    },
+    {
+     "chunk": 209,
+     "material": "p2a61c272",
+     "triangles": 882,
+     "ranges": [
+      0,
+      152,
+      176,
+      426,
+      642,
+      240
+     ]
+    },
+    {
+     "chunk": 210,
+     "material": "p2a61c272",
+     "triangles": 260,
+     "ranges": [
+      0,
+      62,
+      64,
+      196
+     ]
+    },
+    {
+     "chunk": 211,
+     "material": "p2a61c272",
+     "triangles": 872,
+     "ranges": [
+      0,
+      872
+     ]
+    },
+    {
+     "chunk": 212,
+     "material": "p2a61c272",
+     "triangles": 1086,
+     "ranges": [
+      0,
+      72,
+      112,
+      974
+     ]
+    },
+    {
+     "chunk": 213,
+     "material": "p2a61c272",
+     "triangles": 1708,
+     "ranges": [
+      0,
+      232,
+      234,
+      176,
+      474,
+      1234
+     ]
+    },
+    {
+     "chunk": 214,
+     "material": "p2a61c272",
+     "triangles": 414,
+     "ranges": [
+      0,
+      414
+     ]
+    },
+    {
+     "chunk": 215,
+     "material": "p2a61c272",
+     "triangles": 182,
+     "ranges": [
+      0,
+      182
+     ]
+    },
+    {
+     "chunk": 216,
+     "material": "p2a61c272",
+     "triangles": 950,
+     "ranges": [
+      0,
+      224,
+      256,
+      694
+     ]
+    },
+    {
+     "chunk": 217,
+     "material": "p2a61c272",
+     "triangles": 100,
+     "ranges": [
+      0,
+      100
+     ]
+    },
+    {
+     "chunk": 219,
+     "material": "p054b1b60",
+     "triangles": 1320,
+     "ranges": [
+      0,
+      1320
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:bigbabyjesuz-classic-kiki-80",
+   "sourceSha256": "34522d0f636f2ea40bb234070353bec785045ef1c934918dbdab41d00f11bfa3",
+   "chunks": [
+    280,
+    281,
+    282,
+    283,
+    284,
+    285,
+    286,
+    287
+   ],
+   "materials": [
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1555,
+    1555,
+    1555,
+    1555,
+    1555,
+    1555,
+    1555,
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:chem-x-template",
+   "sourceSha256": "83c2cd3b982ab4c1ca66cf6e4155c6d12b8ca18ba6a246515845592b97fa3baf",
+   "chunks": [
+    52,
+    53
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    1650,
+    220
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:chess-ifun",
+   "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+   "chunks": [
+    50,
+    51
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    550,
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:classic-bw-187norvis",
+   "sourceSha256": "615df34fe80e4343d49aaf2277546d87f89d426d28975607e6fe9101a6166311",
+   "chunks": [
+    339,
+    340,
+    341
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    440,
+    3110,
+    3110
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:cont-cl-er-ssd-cjcoops",
+   "sourceSha256": "7b39c34dbaa5adbe0f5944c13f7c3b7e9c2c7eb5c7b056a442f86260252d8fd9",
+   "chunks": [
+    363,
+    364
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    446,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:cont-cl-ssd-cjcoops",
+   "sourceSha256": "03c7b9f3dd6a5f963c0ca6634a3892c68da1f285724bc52b07e62e5e56cc2e9d",
+   "chunks": [
+    389,
+    390,
+    391,
+    392,
+    393,
+    394,
+    395,
+    396,
+    398
+   ],
+   "materials": [
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p054b1b60"
+   ],
+   "triangles": [
+    3110,
+    1555,
+    1555,
+    1555,
+    3110,
+    4665,
+    1555,
+    1555,
+    446
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:dark-carnival-gods-pitdevil",
+   "sourceSha256": "64c020e6289085645e3586af7c38e20320b132cab402dfa9b2f5d7952688fe4f",
+   "chunks": [
+    621,
+    622
+   ],
+   "materials": [
+    "p054b1b60",
+    "p054b1b60"
+   ],
+   "triangles": [
+    2052,
+    2640
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:ga-fenix-ga-hikesa",
+   "sourceSha256": "255ec785c959697afaf93155f3fdf308774619b7c23c9fe799d5610144d00186",
+   "chunks": [
+    477,
+    478,
+    479,
+    480,
+    481,
+    483,
+    484,
+    485,
+    486
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    770,
+    3110,
+    1555,
+    1555,
+    1555,
+    696,
+    1555,
+    1555,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:ghost-ship-wintersoldier-egy",
+   "sourceSha256": "523184bf0cdd424ee7f88e9e159c86c2cd68c1b3dcba3b2f0451692ce1630290",
+   "chunks": [
+    98
+   ],
+   "materials": [
+    "p52c49b5d"
+   ],
+   "triangles": [
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:gun-game-star-wars-by-sam-sam",
+   "sourceSha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+   "chunks": [
+    167
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    440
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:halloween-5-level-x-ifun-ifun",
+   "sourceSha256": "b1753b4b495c7e21fc2c12fcff66e3743dac0ef6a43a177bb39f3350a4bfa1a4",
+   "chunks": [
+    196
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:king-of-the-balz-st1-spaceteam1",
+   "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+   "chunks": [
+    17
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:magnum-3-chaosvr",
+   "sourceSha256": "466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",
+   "chunks": [
+    45
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:magnum-chaosvr",
+   "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+   "chunks": [
+    41,
+    46
+   ],
+   "materials": [
+    "p52c49b5d",
+    "p054b1b60"
+   ],
+   "triangles": [
+    6220,
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:mortal-kombat-bwaynecs",
+   "sourceSha256": "257470dbebf0478f588661e996b1d6a9483bdb6e7327206f990e205979276b0e",
+   "chunks": [
+    158
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:pollen-panic-kiki-80",
+   "sourceSha256": "e5812d38562a67ab10057b8ff69d77657ddbc6875bb84f678d29eec12f07cd5b",
+   "chunks": [
+    121
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2212
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:rip-respect-integrity-pop1-armsreach",
+   "sourceSha256": "5e9296aad507ddf72cbd4dd6150cd386acc5ec55a37110295d3581aa09b9f4e6",
+   "chunks": [
+    18,
+    125
+   ],
+   "materials": [
+    "p054b1b60",
+    "p52c49b5d"
+   ],
+   "triangles": [
+    440,
+    1555
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:sharp-objects-kiwishade",
+   "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+   "chunks": [
+    46
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:statmaster-evolving-soulsmight",
+   "sourceSha256": "795a32676af36833b747ff2a5617dab5e31a3e927535b72a7d6c0043d4ab19f3",
+   "chunks": [
+    362
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    660
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:sunflower-city-kiki-80-bbb",
+   "sourceSha256": "cef6add47ad1f752e04e96fe7abf8d4d9f2ab734d4423fe0fd3099e4d006c13b",
+   "chunks": [
+    185
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    2218
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:the-swamp-taffy-dragon-vr",
+   "sourceSha256": "1dde98149b583b39dd9a421742f7198530516c9b8fc11c0493361bc54bedac6f",
+   "chunks": [
+    160
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    330
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+   "sourceSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+   "chunks": [
+    232
+   ],
+   "materials": [
+    "p054b1b60"
+   ],
+   "triangles": [
+    550
+   ],
+   "parts": []
+  },
+  {
+   "id": "archive:ice-and-fire-tdm-go-kc",
+   "sourceSha256": "c7d7e42389f67c4f6ef154490c50be45aad975170665b4bd639e59b82bbbd136",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 93,
+     "material": "p054b1b60",
+     "triangles": 440,
+     "ranges": [
+      0,
+      440
+     ]
+    },
+    {
+     "chunk": 94,
+     "material": "p054b1b60",
+     "triangles": 220,
+     "ranges": [
+      0,
+      220
+     ]
+    },
+    {
+     "chunk": 95,
+     "material": "p054b1b60",
+     "triangles": 220,
+     "ranges": [
+      0,
+      220
+     ]
+    },
+    {
+     "chunk": 96,
+     "material": "p054b1b60",
+     "triangles": 440,
+     "ranges": [
+      0,
+      440
+     ]
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 312,
+     "ranges": [
+      208,
+      104
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 208,
+     "ranges": [
+      0,
+      208
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 19,
+     "material": "vc",
+     "triangles": 208,
+     "ranges": [
+      0,
+      208
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:garden-of-eden-gods-crazytrain",
+   "sourceSha256": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 93,
+     "material": "p2a61c272",
+     "triangles": 56,
+     "ranges": [
+      0,
+      56
+     ]
+    },
+    {
+     "chunk": 94,
+     "material": "p2a61c272",
+     "triangles": 150,
+     "ranges": [
+      0,
+      150
+     ]
+    },
+    {
+     "chunk": 95,
+     "material": "p2a61c272",
+     "triangles": 192,
+     "ranges": [
+      0,
+      192
+     ]
+    },
+    {
+     "chunk": 96,
+     "material": "p2a61c272",
+     "triangles": 322,
+     "ranges": [
+      32,
+      290
+     ]
+    },
+    {
+     "chunk": 105,
+     "material": "p054b1b60",
+     "triangles": 173,
+     "ranges": [
+      0,
+      173
+     ]
+    },
+    {
+     "chunk": 106,
+     "material": "p054b1b60",
+     "triangles": 1037,
+     "ranges": [
+      0,
+      1037
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:doom-gods-pitdevil",
+   "sourceSha256": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 110,
+     "material": "p054b1b60",
+     "triangles": 2640,
+     "ranges": [
+      0,
+      220,
+      2420,
+      4,
+      2464,
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:cold-castle-gods-ghostlymostly88",
+   "sourceSha256": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 85,
+     "material": "p054b1b60",
+     "triangles": 2640,
+     "ranges": [
+      0,
+      2640
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:warpath-gods-pitdevil",
+   "sourceSha256": "f4c669a50e9df4d14e6d9dedc6a819e9f3f44839badbfca91d3c5028d1eb7611",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 113,
+     "material": "p2a61c272",
+     "triangles": 248,
+     "ranges": [
+      0,
+      248
+     ]
+    },
+    {
+     "chunk": 114,
+     "material": "p2a61c272",
+     "triangles": 202,
+     "ranges": [
+      0,
+      72,
+      104,
+      98
+     ]
+    },
+    {
+     "chunk": 115,
+     "material": "p2a61c272",
+     "triangles": 64,
+     "ranges": [
+      0,
+      64
+     ]
+    },
+    {
+     "chunk": 116,
+     "material": "p2a61c272",
+     "triangles": 14,
+     "ranges": [
+      0,
+      14
+     ]
+    },
+    {
+     "chunk": 117,
+     "material": "p2a61c272",
+     "triangles": 248,
+     "ranges": [
+      0,
+      56,
+      96,
+      152
+     ]
+    },
+    {
+     "chunk": 118,
+     "material": "p2a61c272",
+     "triangles": 136,
+     "ranges": [
+      0,
+      136
+     ]
+    },
+    {
+     "chunk": 119,
+     "material": "p2a61c272",
+     "triangles": 218,
+     "ranges": [
+      0,
+      218
+     ]
+    },
+    {
+     "chunk": 120,
+     "material": "p2a61c272",
+     "triangles": 128,
+     "ranges": [
+      0,
+      128
+     ]
+    },
+    {
+     "chunk": 121,
+     "material": "p2a61c272",
+     "triangles": 40,
+     "ranges": [
+      0,
+      40
+     ]
+    },
+    {
+     "chunk": 122,
+     "material": "p2a61c272",
+     "triangles": 262,
+     "ranges": [
+      0,
+      262
+     ]
+    },
+    {
+     "chunk": 222,
+     "material": "p2a61c272",
+     "triangles": 318,
+     "ranges": [
+      0,
+      318
+     ]
+    },
+    {
+     "chunk": 223,
+     "material": "p2a61c272",
+     "triangles": 258,
+     "ranges": [
+      0,
+      258
+     ]
+    },
+    {
+     "chunk": 224,
+     "material": "p2a61c272",
+     "triangles": 244,
+     "ranges": [
+      0,
+      244
+     ]
+    },
+    {
+     "chunk": 225,
+     "material": "p2a61c272",
+     "triangles": 124,
+     "ranges": [
+      0,
+      124
+     ]
+    },
+    {
+     "chunk": 226,
+     "material": "p2a61c272",
+     "triangles": 88,
+     "ranges": [
+      0,
+      88
+     ]
+    },
+    {
+     "chunk": 227,
+     "material": "p2a61c272",
+     "triangles": 440,
+     "ranges": [
+      0,
+      440
+     ]
+    },
+    {
+     "chunk": 228,
+     "material": "p2a61c272",
+     "triangles": 292,
+     "ranges": [
+      0,
+      292
+     ]
+    },
+    {
+     "chunk": 229,
+     "material": "p2a61c272",
+     "triangles": 396,
+     "ranges": [
+      0,
+      396
+     ]
+    },
+    {
+     "chunk": 247,
+     "material": "p054b1b60",
+     "triangles": 770,
+     "ranges": [
+      0,
+      770
+     ]
+    },
+    {
+     "chunk": 16,
+     "material": "vc",
+     "triangles": 208,
+     "ranges": [
+      0,
+      208
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 208,
+     "ranges": [
+      0,
+      208
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 19,
+     "material": "vc",
+     "triangles": 104,
+     "ranges": [
+      0,
+      104
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+   "sourceSha256": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 17,
+     "material": "p054b1b60",
+     "triangles": 330,
+     "ranges": [
+      0,
+      330
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:g0ds-of-war-gods-badbar",
+   "sourceSha256": "4c03349a09cef925d236c26d4f5345ccade8048206f5310af4811702138f74d0",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 39,
+     "material": "p054b1b60",
+     "triangles": 330,
+     "ranges": [
+      0,
+      330
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:havoc-gods-pitdevil",
+   "sourceSha256": "1f61276d979d42b87d18636ef55c678f1da364cefcd3534fae35d9cbab03b9bd",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 54,
+     "material": "p2a61c272",
+     "triangles": 376,
+     "ranges": [
+      0,
+      376
+     ]
+    },
+    {
+     "chunk": 55,
+     "material": "p2a61c272",
+     "triangles": 687,
+     "ranges": [
+      0,
+      552,
+      584,
+      103
+     ]
+    },
+    {
+     "chunk": 56,
+     "material": "p2a61c272",
+     "triangles": 128,
+     "ranges": [
+      0,
+      128
+     ]
+    },
+    {
+     "chunk": 57,
+     "material": "p2a61c272",
+     "triangles": 702,
+     "ranges": [
+      0,
+      533,
+      557,
+      145
+     ]
+    },
+    {
+     "chunk": 58,
+     "material": "p2a61c272",
+     "triangles": 688,
+     "ranges": [
+      0,
+      531,
+      555,
+      133
+     ]
+    },
+    {
+     "chunk": 59,
+     "material": "p2a61c272",
+     "triangles": 1387,
+     "ranges": [
+      0,
+      355
+     ]
+    },
+    {
+     "chunk": 60,
+     "material": "p2a61c272",
+     "triangles": 1244,
+     "ranges": [
+      0,
+      188,
+      1052,
+      192
+     ]
+    },
+    {
+     "chunk": 61,
+     "material": "p2a61c272",
+     "triangles": 96,
+     "ranges": [
+      0,
+      96
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:dark-void-gods-alamo-hank",
+   "sourceSha256": "9b5ccc108662ea03d1a0d2e99354c84ec1397d706869db24794b7a24e665349c",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 56,
+     "material": "p2a61c272",
+     "triangles": 15508,
+     "ranges": [
+      0,
+      688,
+      9952,
+      516
+     ]
+    },
+    {
+     "chunk": 58,
+     "material": "p2a61c272",
+     "triangles": 11922,
+     "ranges": [
+      1900,
+      474,
+      4054,
+      520,
+      7934,
+      688
+     ]
+    },
+    {
+     "chunk": 59,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      6145,
+      344
+     ]
+    },
+    {
+     "chunk": 60,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      7629,
+      516
+     ]
+    },
+    {
+     "chunk": 62,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      16031,
+      748
+     ]
+    },
+    {
+     "chunk": 64,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      3944,
+      88,
+      7952,
+      700
+     ]
+    },
+    {
+     "chunk": 65,
+     "material": "p2a61c272",
+     "triangles": 17735,
+     "ranges": [
+      1532,
+      348,
+      2720,
+      511,
+      17679,
+      56
+     ]
+    },
+    {
+     "chunk": 67,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      279,
+      558,
+      2517,
+      512
+     ]
+    },
+    {
+     "chunk": 68,
+     "material": "p2a61c272",
+     "triangles": 15614,
+     "ranges": [
+      1660,
+      344,
+      14054,
+      104,
+      15278,
+      266,
+      15546,
+      68
+     ]
+    },
+    {
+     "chunk": 69,
+     "material": "p2a61c272",
+     "triangles": 10888,
+     "ranges": [
+      2520,
+      964,
+      7684,
+      176,
+      9540,
+      508
+     ]
+    },
+    {
+     "chunk": 70,
+     "material": "p2a61c272",
+     "triangles": 250,
+     "ranges": [
+      0,
+      250
+     ]
+    },
+    {
+     "chunk": 72,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      5180,
+      1205,
+      16435,
+      216
+     ]
+    },
+    {
+     "chunk": 73,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      12501,
+      94
+     ]
+    },
+    {
+     "chunk": 74,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      11775,
+      618,
+      13233,
+      687
+     ]
+    },
+    {
+     "chunk": 75,
+     "material": "p2a61c272",
+     "triangles": 11064,
+     "ranges": [
+      4000,
+      344
+     ]
+    },
+    {
+     "chunk": 76,
+     "material": "p2a61c272",
+     "triangles": 5690,
+     "ranges": [
+      0,
+      540,
+      1612,
+      206,
+      1850,
+      198,
+      5408,
+      282
+     ]
+    },
+    {
+     "chunk": 77,
+     "material": "p2a61c272",
+     "triangles": 306,
+     "ranges": [
+      0,
+      306
+     ]
+    },
+    {
+     "chunk": 78,
+     "material": "p2a61c272",
+     "triangles": 12535,
+     "ranges": [
+      1848,
+      759,
+      4287,
+      688
+     ]
+    },
+    {
+     "chunk": 79,
+     "material": "p2a61c272",
+     "triangles": 166,
+     "ranges": [
+      32,
+      134
+     ]
+    },
+    {
+     "chunk": 16,
+     "material": "vc",
+     "triangles": 3342,
+     "ranges": [
+      290,
+      24,
+      3318,
+      24
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 418,
+     "ranges": [
+      394,
+      24
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 4058,
+     "ranges": [
+      996,
+      152,
+      1334,
+      544,
+      1982,
+      24
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 19,
+     "material": "vc",
+     "triangles": 208,
+     "ranges": [
+      0,
+      104
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:spherical-war-swt-estephen08",
+   "sourceSha256": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 30,
+     "material": "p054b1b60",
+     "triangles": 440,
+     "ranges": [
+      0,
+      440
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:meli-cafe-gods-meli",
+   "sourceSha256": "ccaefa89d6fa8ae3666cd81559c7ffb41c35d61269df72e38eda24bc48bc5464",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 117,
+     "material": "p2a61c272",
+     "triangles": 248,
+     "ranges": [
+      0,
+      248
+     ]
+    },
+    {
+     "chunk": 118,
+     "material": "p2a61c272",
+     "triangles": 192,
+     "ranges": [
+      0,
+      192
+     ]
+    },
+    {
+     "chunk": 119,
+     "material": "p2a61c272",
+     "triangles": 472,
+     "ranges": [
+      0,
+      472
+     ]
+    },
+    {
+     "chunk": 120,
+     "material": "p2a61c272",
+     "triangles": 432,
+     "ranges": [
+      0,
+      432
+     ]
+    },
+    {
+     "chunk": 181,
+     "material": "p054b1b60",
+     "triangles": 2640,
+     "ranges": [
+      0,
+      2640
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:fall-guys-with-swords-dirtymonkee78",
+   "sourceSha256": "f2bfbfa2a6adecac2aab31f3539492423c201a6c33e06d52f8f654dc230bd79b",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 116,
+     "material": "p054b1b60",
+     "triangles": 660,
+     "ranges": [
+      0,
+      660
+     ]
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 156,
+     "ranges": [
+      0,
+      156
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 52,
+     "ranges": [
+      0,
+      52
+     ],
+     "collisionOnly": true
+    }
+   ]
+  },
+  {
+   "id": "archive:mini-w-a-m-muniibunii-gfy",
+   "sourceSha256": "8c45bb2d1187092f9849fb706e9974d192d50063e877573f76544d04f780f4bf",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 92,
+     "material": "p054b1b60",
+     "triangles": 330,
+     "ranges": [
+      0,
+      330
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:eternal-gods-pitdevil",
+   "sourceSha256": "7811746aca99333896dd90dc05df52cd68bfaecb384610b281598b7463824735",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 66,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      17892,
+      140,
+      18088,
+      140
+     ]
+    },
+    {
+     "chunk": 68,
+     "material": "p2a61c272",
+     "triangles": 20000,
+     "ranges": [
+      16472,
+      140,
+      16748,
+      140
+     ]
+    },
+    {
+     "chunk": 112,
+     "material": "p2a61c272",
+     "triangles": 564,
+     "ranges": [
+      88,
+      194,
+      370,
+      194
+     ]
+    },
+    {
+     "chunk": 113,
+     "material": "p2a61c272",
+     "triangles": 5260,
+     "ranges": [
+      632,
+      30,
+      766,
+      30
+     ]
+    },
+    {
+     "chunk": 119,
+     "material": "p054b1b60",
+     "triangles": 660,
+     "ranges": [
+      0,
+      660
+     ]
+    }
+   ]
+  },
+  {
+   "id": "archive:rush-gods-chriso",
+   "sourceSha256": "0a6d50daf6e145f2f38dc2f1c4ad8e111a5cf0e495127497eba88570370c66c3",
+   "chunks": [],
+   "materials": [],
+   "triangles": [],
+   "parts": [
+    {
+     "chunk": 16,
+     "material": "vc",
+     "triangles": 1416,
+     "ranges": [
+      580,
+      24,
+      1184,
+      232
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 17,
+     "material": "vc",
+     "triangles": 336,
+     "ranges": [
+      0,
+      232
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 18,
+     "material": "vc",
+     "triangles": 104,
+     "ranges": [
+      0,
+      104
+     ],
+     "collisionOnly": true
+    },
+    {
+     "chunk": 19,
+     "material": "vc",
+     "triangles": 128,
+     "ranges": [
+      0,
+      128
+     ],
+     "collisionOnly": true
+    }
+   ]
+  }
+ ]
+}

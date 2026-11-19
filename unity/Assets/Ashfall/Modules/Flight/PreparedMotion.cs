@@ -13,7 +13,7 @@ namespace Ashfall.Modules.Flight
         internal bool Finished, Resolved, HasCollision;
         internal Float3 Output;
         internal FlightMode OutputMode;
-        internal float Fall, Clear;
+        internal float Fall, Clear, Pitch;
         internal bool Rising;
         public FlightMode Mode { get; private set; }
         internal PreparedFlightStep(FlightMachine owner,CommandContext c,FlightFrame frame,long revision,long generation,long motionRevision,FlightMode mode)
@@ -27,10 +27,10 @@ namespace Ashfall.Modules.Flight
         {
             plan=null;
             if(inactive||c.Tick<=lifecycleTick||lifecycleCommands.HasCommand(c.CommandId))return RuleResult.Reject("inactive lifecycle/replay");
-            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>.1f||!V.Bounded(f.Velocity,10000)||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("invalid prepared frame");
+            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>.1f||!V.Finite(f.DiveAxis)||Math.Abs(f.DiveAxis)>2||!V.Bounded(f.Velocity,10000)||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("invalid prepared frame");
             long sourceRevision=stateRevision;
-            Float3 velocity;FlightMode mode=Mode;float fall=fallTime,clear=clearance;bool rising=ascent;
-            Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising);
+            Float3 velocity;FlightMode mode=Mode;float fall=fallTime,clear=clearance,pitch=divePitch;bool rising=ascent;
+            Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising,ref pitch);
             if(f.CeilingBlocked&&velocity.Y>0&&mode!=FlightMode.Suspended)mode=f.Supported?FlightMode.Ground:FlightMode.Air;
             RuleResult r=commands.Validate(c);if(!r.Accepted)return r;
             if(sourceRevision!=stateRevision)return RuleResult.Reject("Flight changed during preparation");
@@ -46,12 +46,13 @@ namespace Ashfall.Modules.Flight
             if(plan.HasCollision||!V.Finite(yaw)||Math.Abs(yaw)>16||!V.Bounded(playerVelocity,10000))return RuleResult.Reject("prepared output");
             FlightFrame f=plan.Frame;
             f.Forward=Rotate(f.Forward,yaw);f.MoveDirection=Rotate(f.MoveDirection,yaw);f.WalkTarget=Rotate(f.WalkTarget,yaw);
-            FlightMode mode=Mode;float fall=fallTime,clear=clearance;bool rising=ascent;
-            Float3 velocity;Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising);
+            f.PlayerTurned|=yaw!=0;
+            FlightMode mode=Mode;float fall=fallTime,clear=clearance,pitch=divePitch;bool rising=ascent;
+            Float3 velocity;Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising,ref pitch);
             if(f.CeilingBlocked&&velocity.Y>0){velocity=new Float3(velocity.X,0,velocity.Z);clear=0;rising=false;if(mode!=FlightMode.Suspended)mode=f.Supported?FlightMode.Ground:FlightMode.Air;}
             if(mode==FlightMode.Ground||mode==FlightMode.Suspended)velocity=playerVelocity;
             if(!V.Bounded(velocity,10000))return RuleResult.Reject("prepared derived output");
-            plan.Output=velocity;plan.OutputMode=mode;plan.Fall=fall;plan.Clear=clear;plan.Rising=rising;plan.Resolved=true;
+            plan.Output=velocity;plan.OutputMode=mode;plan.Fall=fall;plan.Clear=clear;plan.Rising=rising;plan.Pitch=pitch;plan.Resolved=true;
             produced=velocity;return RuleResult.Accept();
         }
         public RuleResult ValidatePreparedStep(PreparedFlightStep plan)
@@ -75,9 +76,9 @@ namespace Ashfall.Modules.Flight
             if(!plan.Resolved||plan.HasCollision||!V.Bounded(result.Velocity,10000)||((result.Grounded||result.CeilingBlocked)&&result.Velocity.Y>0))return RuleResult.Reject("prepared collision");
             plan.Output=result.Velocity;plan.HasCollision=true;
             if(result.Grounded||result.CeilingBlocked||result.ExternalMotionOwner||result.Velocity.Y<=0){plan.Clear=0;plan.Rising=false;}
-            if(result.Grounded){plan.OutputMode=FlightMode.Ground;plan.Fall=0;}
-            else if(result.ExternalMotionOwner){plan.OutputMode=FlightMode.Suspended;plan.Fall=0;}
-            else if(result.CeilingBlocked){plan.OutputMode=FlightMode.Air;plan.Fall=0;}
+            if(result.Grounded){plan.OutputMode=FlightMode.Ground;plan.Fall=plan.Pitch=0;}
+            else if(result.ExternalMotionOwner){plan.OutputMode=FlightMode.Suspended;plan.Fall=plan.Pitch=0;}
+            else if(result.CeilingBlocked&&plan.OutputMode!=FlightMode.Glide){plan.OutputMode=FlightMode.Air;plan.Fall=plan.Pitch=0;}
             return r;
         }
         // Trusted host lane only: caller just validated ALL participants, then performs
@@ -87,7 +88,7 @@ namespace Ashfall.Modules.Flight
             if(plan==null||plan.Finished||plan.Owner!=this||plan.Revision!=stateRevision||plan.Generation!=generation||!plan.Resolved)
                 throw new InvalidOperationException("stale Flight publication");
             commands.Commit(plan.Context);plan.Finished=true;stateRevision++;motionRevision++;
-            Velocity=plan.Output;Mode=plan.OutputMode;fallTime=plan.Fall;clearance=plan.Clear;ascent=plan.Rising;
+            Velocity=plan.Output;Mode=plan.OutputMode;fallTime=plan.Fall;clearance=plan.Clear;ascent=plan.Rising;divePitch=plan.Pitch;armsHold=NextArmsHold(plan.Frame);
             plan.Receipt.ProposedVelocity=plan.Output;PendingMotion=plan.HasCollision?null:plan.Receipt;
         }
         // Compatibility module-only call. A root transaction uses the split methods.

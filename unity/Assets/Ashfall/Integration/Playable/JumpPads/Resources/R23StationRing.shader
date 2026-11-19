@@ -1,7 +1,7 @@
 Shader "Ashfall/R23StationRing"
 {
  Properties {_Recharge("Source INSTANCE_CUSTOM.r",Range(0,1))=0}
- SubShader {Tags {"Queue"="Transparent" "RenderType"="Transparent"}
+ SubShader {Tags {"Queue"="Transparent+200" "RenderType"="Transparent"}
  Pass {Cull Off ZWrite Off ZTest LEqual Blend SrcAlpha OneMinusSrcAlpha
  HLSLPROGRAM
  #pragma vertex Vert

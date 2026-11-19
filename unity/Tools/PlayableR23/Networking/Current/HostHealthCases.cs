@@ -50,7 +50,8 @@ partial class LobbyCases
             StartHealthRound(pair,true);string actor=pair.Client.OwnActor;var initial=Health(pair.Host,actor);pair.Now=initial.ProtectionUntil+.01;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
             Need(pair.Host.ApplyHostHealthLoss(actor,initial.Revision,80,25,true).Accepted,"Team-revive host producer accepts declared lethal revivable loss");var downed=Health(pair.Host,actor);
             Need(downed.Life==LifeState.Downed&&pair.Host.ReadAuthorityMember(actor).Life==SessionLife.Eliminated&&downed.DownedUntil>pair.Now,"Actual Downed state projects without fabricating a healthy Session actor");
-            pair.Now=downed.DownedUntil;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);var dead=Health(pair.Host,actor);Need(dead.Life==LifeState.Dead&&dead.Deaths==1&&dead.SpawnRevision==initial.SpawnRevision,"Actual bleedout changes producer life without automatic revive-mode respawn");
+            for(int i=0;i<3;i++)pair.Tick();Need(pair.Host.SelectedMap.Results&&pair.Client.SelectedMap.Results,"A 1v1 Team Revive down ends the round on both peers");
+            Need(Health(pair.Host,actor).Revision==downed.Revision&&Health(pair.Client,actor).Life==LifeState.Downed&&!pair.Host.ApplyHostHealthLoss(actor,downed.Revision,1,0,false).Accepted,"Celebration preserves final Health receipts and refuses further live damage");
             pair.ClientPipe.Close("server");R24LanHealthState absent;Need(pair.Host.ReadAuthorityMember(actor)==null&&!pair.Host.TryReadHealth(actor,out absent),"Actual Session departure retires host Health receipt and queued output");
         }
         using(var pair=new Pair()){

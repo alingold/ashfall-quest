@@ -141,7 +141,7 @@ namespace Ashfall.Editor.Playable
             loop.UI.OpenMatchRules();loop.UI.SelectMatchPreset("team_revive");Need(loop.UI.RequestMatchStart(),"Actual Start Match");
             float end=Time.realtimeSinceStartup+30;while(loop.ActualMatchRules==null&&loop.Failure==null&&Time.realtimeSinceStartup<end)yield return null;
             Need(loop.ActualMatchRules!=null,"Actual source team-revive rules active");
-            loop.UI.OpenMatchRules();Pointer(loop.UI,Button(loop.UI,"LOBBY"),false);yield return null;
+            loop.UI.OpenMatchRules();Pointer(loop.UI,Button(loop.UI,"END MATCH"),false);yield return null;
             Need(loop.ActualMatchRules==null&&loop.UI.LocalMatchLifeState==null,"Lobby action clears actual round/life state");
             Need(Vector3.Distance((Vector3)Read(loop.Rig,"spawn"),loop.Map.WarmupSpawn)<.001f,"Lobby action restores warmup spawn");
             loop.UI.OpenMatchRules();loop.UI.SelectMatchPreset("team_revive");Need(loop.UI.RequestMatchStart(),"Second actual round start");

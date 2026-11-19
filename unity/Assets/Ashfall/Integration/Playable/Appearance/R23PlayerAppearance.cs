@@ -26,7 +26,7 @@ namespace Ashfall.Integration.Playable.Appearance
     // Render-only adapter of actual R23 player_body.gd and gemini_player_models_099.gd.
     // Live tracked poses and the sole collision/root owner remain untouched.
     [DefaultExecutionOrder(1200)]
-    public sealed class R23PlayerAppearance:MonoBehaviour
+    public sealed partial class R23PlayerAppearance:MonoBehaviour
     {
         // 24 ASHFALL Originals, followed by three owner-requested private-use recreations. Archival originals: ashfall/retired/20261110-recreated-skins.
         public const string DefaultStyleId="cinder_scout";
@@ -48,7 +48,7 @@ namespace Ashfall.Integration.Playable.Appearance
         // Wire to R23HandsWeapons.SetGloveMaterial. We retain the existing hand mesh owner.
         public event Action<Material> GloveMaterialChanged;
         public event Action<string> StyleChanged;
-        Transform root,head,left,right;Asset current,pendingAsset;Coroutine loading;
+        Transform root,head,left,right;Asset current;Kit pendingKit;Coroutine loading;
         R23HandArtPointReader handArtPointReader;
         public void SetHandArtPointReader(R23HandArtPointReader reader){handArtPointReader=reader;}
         UnityWebRequest pendingRead;
@@ -75,7 +75,7 @@ namespace Ashfall.Integration.Playable.Appearance
         static Vector3 PresentationOffset(Vector3 value)
         {return float.IsNaN(value.x)||float.IsNaN(value.y)||float.IsNaN(value.z)||float.IsInfinity(value.x)||float.IsInfinity(value.y)||float.IsInfinity(value.z)||value.sqrMagnitude>16?Vector3.zero:value;}
         public void Initialize(Transform playerRoot,Transform headPose,Transform leftPose,Transform rightPose)
-        {InitializeBindings(playerRoot,headPose,leftPose,rightPose);SelectStyle(DefaultStyleId);}
+        {InitializeBindings(playerRoot,headPose,leftPose,rightPose);BeginPreferredStyle();}
         public void InitializeRemote(Transform playerRoot,Transform headPose,Transform leftArtPose,Transform rightArtPose,string initialStyleId)
         {InitializeBindings(playerRoot,headPose,leftArtPose,rightArtPose);RemoteMode=true;SelectStyle(initialStyleId);}
         // Separate presentation instance; supplied poses belong to the preview, never to XR.
@@ -90,25 +90,31 @@ namespace Ashfall.Integration.Playable.Appearance
         public bool SelectStyle(string id)
         {
             if(root==null||!isActiveAndEnabled)return false;
-            bool exists=false;foreach(var style in AvailableStyles)if(style.Id==id)exists=true;
-            if(!exists){if(RemoteMode&&id!=DefaultStyleId)return SelectStyle(DefaultStyleId);return false;}
+            if(!HasStyle(id)){if(RemoteMode&&id!=DefaultStyleId)return SelectStyle(DefaultStyleId);return false;}
+            // R26: a local selection is the player's persisted outfit choice.
+            if(!RemoteMode&&!PreviewMode)RememberChoice(id);
+            return RequestStyle(id);
+        }
+        bool RequestStyle(string id)
+        {
+            if(root==null||!isActiveAndEnabled)return false;
             if(Loading&&RequestedStyleId==id)return true;
             loadSerial++;
             CancelRead();
             if(loading!=null){StopCoroutine(loading);loading=null;}
-            if(pendingAsset!=null){pendingAsset.Dispose();pendingAsset=null;}
+            AbandonPending();
             Loading=false;Failure=null;RequestedStyleId=id;
             if(current!=null&&SelectedStyleId==id)return true;
             Loading=true;loading=StartCoroutine(LoadStyle(id,loadSerial));return true;
         }
         public void SetPresentationState(bool trackingAvailable,bool isPaused)
         {tracked=trackingAvailable;paused=isPaused;if(current!=null&&current.Root!=null&&!tracked)current.Root.SetActive(false);}
-        IEnumerator Read(string file,Dictionary<string,byte[]> files,int serial)
+        string StyleUrl(string id,string file)
+        {string path=Application.streamingAssetsPath+"/PlayableR23/"+(UI.R25LegacyPack.IsSkin(id)?"Legacy/Appearance/":"Appearance/")+file;return path.Contains("://")?path:new Uri(path).AbsoluteUri;}
+        IEnumerator Read(string id,string file,Dictionary<string,byte[]> files,int serial)
         {
             if(files.ContainsKey(file))yield break;
-            string path=Application.streamingAssetsPath+"/PlayableR23/"+(UI.R25LegacyPack.IsSkin(RequestedStyleId)?"Legacy/Appearance/":"Appearance/")+file;
-            if(!path.Contains("://"))path=new Uri(path).AbsoluteUri;
-            using(var request=UnityWebRequest.Get(path))
+            using(var request=UnityWebRequest.Get(StyleUrl(id,file)))
             {
                 pendingRead=request;
                 request.timeout=30;yield return request.SendWebRequest();
@@ -118,31 +124,59 @@ namespace Ashfall.Integration.Playable.Appearance
                 files.Add(file,request.downloadHandler.data);
             }
         }
-        void CancelRead(){if(pendingRead==null)return;var request=pendingRead;pendingRead=null;request.Abort();request.Dispose();}
+        void CancelRead()
+        {
+            if(pendingRead==null)return;var request=pendingRead;pendingRead=null;
+            // A finished texture request owns a decoded texture; never leak it on cancel.
+            var decoded=request.isDone&&request.result==UnityWebRequest.Result.Success?request.downloadHandler as DownloadHandlerTexture:null;
+            if(decoded!=null&&decoded.texture!=null)Destroy(decoded.texture);
+            request.Abort();request.Dispose();
+        }
         IEnumerator LoadStyle(string id,int serial)
         {
-            var files=new Dictionary<string,byte[]>(StringComparer.Ordinal);
-            yield return Read(id+".json",files,serial);
-            if(serial!=loadSerial)yield break;
-            if(Failure!=null){Loading=false;yield break;}
-            Manifest manifest=null;
-            try{manifest=JsonUtility.FromJson<Manifest>(System.Text.Encoding.UTF8.GetString(files[id+".json"]));if(manifest==null||manifest.version!=1||manifest.id!=id||manifest.materials==null)throw new IOException("appearance manifest");}
-            catch(Exception error){Failure=error.Message;}
-            if(Failure!=null){Loading=false;yield break;}
-            yield return Read(id+".meshbin",files,serial);
-            if(serial!=loadSerial)yield break;
-            if(Failure!=null){Loading=false;yield break;}
-            foreach(var material in manifest.materials)
-                foreach(string file in new[]{material.baseColor,material.normal,material.metallicMap,material.occlusion,material.emission})
-                    if(!String.IsNullOrEmpty(file))
-                    {yield return Read(file,files,serial);if(serial!=loadSerial)yield break;if(Failure!=null){Loading=false;yield break;}}
-            pendingAsset=new Asset();
-            try{pendingAsset.Build(manifest,files[id+".meshbin"],files);}
-            catch(Exception error){Failure=error.ToString();pendingAsset.Dispose();pendingAsset=null;Loading=false;}
-            files.Clear();
-            if(Failure!=null)yield break;
-            if(serial!=loadSerial){pendingAsset.Dispose();pendingAsset=null;yield break;}
-            var old=current;current=pendingAsset;pendingAsset=null;SelectedStyleId=id;Loading=false;loading=null;
+            // R26: reuse the decoded kit the podium or another avatar already holds, or wait for its build.
+            Kit kit=AcquireKit(id);float waitUntil=Time.unscaledTime+45;
+            while(kit==null&&buildingKits.Contains(id)&&Time.unscaledTime<waitUntil){yield return null;if(serial!=loadSerial)yield break;kit=AcquireKit(id);}
+            if(kit==null)
+            {
+                pendingKit=BeginKit(id);
+                var files=new Dictionary<string,byte[]>(StringComparer.Ordinal);
+                yield return Read(id,id+".json",files,serial);
+                if(serial!=loadSerial)yield break;
+                if(Failure!=null){FailLoad();yield break;}
+                Manifest manifest=null;
+                try{manifest=JsonUtility.FromJson<Manifest>(System.Text.Encoding.UTF8.GetString(files[id+".json"]));if(manifest==null||manifest.version!=1||manifest.id!=id||manifest.materials==null)throw new IOException("appearance manifest");}
+                catch(Exception error){Failure=error.Message;}
+                if(Failure!=null){FailLoad();yield break;}
+                yield return Read(id,id+".meshbin",files,serial);
+                if(serial!=loadSerial)yield break;
+                if(Failure!=null){FailLoad();yield break;}
+                foreach(var material in manifest.materials)
+                    for(int channel=0;channel<5;channel++)
+                    {
+                        string file=channel==0?material.baseColor:channel==1?material.normal:channel==2?material.metallicMap:channel==3?material.occlusion:material.emission;
+                        if(String.IsNullOrEmpty(file))continue;
+                        // Normal, metallic and occlusion maps are linear data; base colour and emission are sRGB.
+                        yield return ReadTexture(id,file,channel>=1&&channel<=3,files,serial);
+                        if(serial!=loadSerial)yield break;
+                        if(Failure!=null){FailLoad();yield break;}
+                    }
+                var build=pendingKit.Build(manifest,files[id+".meshbin"],files);
+                while(true)
+                {
+                    bool more=false;
+                    try{more=build.MoveNext();}catch(Exception error){Failure=error.ToString();}
+                    if(Failure!=null){FailLoad();yield break;}
+                    if(!more)break;
+                    yield return null;
+                    if(serial!=loadSerial)yield break;
+                }
+                files.Clear();kit=CompleteKit(pendingKit);pendingKit=null;
+            }
+            Asset asset=null;
+            try{asset=new Asset(kit);}catch(Exception error){Failure=error.ToString();}
+            if(asset==null){ReleaseKit(kit);Loading=false;loading=null;yield break;}
+            var old=current;current=asset;CacheJointGeometry();SelectedStyleId=id;Loading=false;loading=null;
             PublishGlove(current.GloveMaterial);if(old!=null)old.Dispose();
             Present(0);
             var changed=StyleChanged;if(changed!=null)foreach(Action<string> subscriber in changed.GetInvocationList())try{subscriber(id);}catch(Exception error){Debug.LogException(error,this);}
@@ -186,7 +220,7 @@ namespace Ashfall.Integration.Playable.Appearance
         }
         void LateUpdate()
         {
-            if(root==null)return;if(!RemoteMode&&!PreviewMode&&!UI.R25LegacyPack.SkinsEnabled&&UI.R25LegacyPack.IsSkin(RequestedStyleId))SelectStyle(DefaultStyleId);float seconds=Mathf.Max(.0001f,Time.unscaledDeltaTime);
+            if(root==null)return;if(RemoteMode)RetryRemoteStyle();else if(!PreviewMode)KeepPreferredStyle();PurgeKits();float seconds=Mathf.Max(.0001f,Time.unscaledDeltaTime);
             float speed=paused?0:Mathf.Min(10,new Vector2(root.position.x-previousRoot.x,root.position.z-previousRoot.z).magnitude/seconds);
             previousRoot=root.position;
             if(!PreviewMode)
@@ -212,7 +246,7 @@ namespace Ashfall.Integration.Playable.Appearance
             for(int i=0;i<2;i++)
             {
                 float side=i==0?-1:1;string prefix=i==0?"L":"R";
-                PresentArm(i,eye,shoulder,rightAxis,rear);
+                PresentJointArm(i,shoulder,rightAxis,rear);
                 float wave=Mathf.Sin(phase+i*Mathf.PI),stride=wave*Mathf.Min(speed*.045f,.25f);
                 Vector3 foot=new Vector3(eye.x,frame.GroundY+.07f,eye.z)+rightAxis*side*.115f+rear*(.10f+stride);
                 // Airborne feet never run ground probing or a walking cycle.
@@ -233,8 +267,8 @@ namespace Ashfall.Integration.Playable.Appearance
                 Segment(prefix+"Thigh",leg,knee,.14f);Segment(prefix+"Shin",knee,foot,.115f);Pose(prefix+"Boot",foot+frame.Front*.045f,bodyRotation,Vector3.one);
             }
             // No self head renderer reaches the VR eye. All 13 suit pieces remain independent of tracking.
-            if(RemoteMode)Pose("AvatarHead",head.position-head.rotation*new Vector3(0,1.68f,0),head.rotation,Vector3.one);
-            current.Parts["AvatarHead"].gameObject.SetActive(RemoteMode);current.Root.SetActive(true);
+            PresentJointHead(yaw);
+            PresentLocalMirrorHead();current.Root.SetActive(true);
         }
         struct BodyFrame
         {
@@ -252,23 +286,6 @@ namespace Ashfall.Integration.Playable.Appearance
             f.Front=Vector3.Cross(f.Right,f.Up);f.Rotation=Quaternion.LookRotation(f.Front,f.Up);f.Tilt=f.Rotation*Quaternion.Inverse(yaw);
             f.Hip=f.Shoulder+f.Tilt*(uprightHip-f.Shoulder);return f;
         }
-        void PresentArm(int i,Vector3 eye,Vector3 shoulder,Vector3 rightAxis,Vector3 rear)
-        {
-                float side=i==0?-1:1;string prefix=i==0?"L":"R";
-                Vector3 s=shoulder+rightAxis*side*.205f;
-                Transform hand=i==0?left:right;float[] wristOffset=i==0?current.Profile.leftWrist:current.Profile.rightWrist;
-                Vector3 localWrist=new Vector3(wristOffset[0],wristOffset[1],wristOffset[2]),wrist;
-                // Actual art already includes contact/support/recoil placement: never add it twice.
-                if(handArtPointReader==null||!handArtPointReader(i,localWrist,out wrist))
-                    wrist=hand.TransformPoint(localWrist)+(i==0?leftPresentationOffset:rightPresentationOffset);
-                Vector3 offset=wrist-s;float distance=Mathf.Max(.001f,offset.magnitude),length=Mathf.Max(.32f,distance*.501f);Vector3 axis=offset/distance;
-                Vector3 hint=rightAxis*side*.75f+rear*.3f-Vector3.up*.55f,bend=hint-axis*Vector3.Dot(hint,axis);
-                if(bend.sqrMagnitude<.001f)bend=Vector3.Cross(axis,Vector3.up);bend.Normalize();
-                Vector3 elbow=s+axis*distance*.5f+bend*Mathf.Sqrt(Mathf.Max(0,length*length-distance*distance*.25f));
-                Segment(prefix+"UpperArm",s,elbow,.105f);Segment(prefix+"Forearm",elbow,wrist,.085f);
-                current.Parts[prefix+"UpperArm"].gameObject.SetActive(RemoteMode||Distance(eye,s,elbow)>.17f);
-                current.Parts[prefix+"Forearm"].gameObject.SetActive(RemoteMode||Distance(eye,elbow,wrist)>.17f);
-        }
         // HandsWeapons' existing before-render art refresh is order1100.
         // Refit only the two render arms afterwards; no input, IK authority, legs or raycasts.
         [BeforeRenderOrder(1200)]
@@ -276,7 +293,7 @@ namespace Ashfall.Integration.Playable.Appearance
         {
             if(current==null||PreviewMode||!tracked||!isActiveAndEnabled||root==null||head==null||left==null||right==null||!current.Root.activeInHierarchy)return;
             var frame=ReadBodyFrame();
-            for(int i=0;i<2;i++)PresentArm(i,frame.Eye,frame.Shoulder,frame.Right,frame.Rear);
+            for(int i=0;i<2;i++)PresentJointArm(i,frame.Shoulder,frame.Right,frame.Rear);
         }
         void PresentPreview()
         {
@@ -287,15 +304,14 @@ namespace Ashfall.Integration.Playable.Appearance
             for(int i=0;i<2;i++)
             {
                 float side=i==0?-1:1;string prefix=i==0?"L":"R";
-                PreviewSegment(prefix+"UpperArm",new Vector3(side*.205f,1.47f,0),new Vector3(side*.30f,1.20f,-.015f),.105f);
-                PreviewSegment(prefix+"Forearm",new Vector3(side*.30f,1.20f,-.015f),new Vector3(side*.26f,.97f,.04f),.085f);
+                PresentJointArm(i,root.TransformPoint(new Vector3(0,1.47f,0)),root.right,-root.forward);
                 PreviewSegment(prefix+"Thigh",new Vector3(side*.105f,.91f,0),new Vector3(side*.12f,.51f,.02f),.14f);
                 PreviewSegment(prefix+"Shin",new Vector3(side*.12f,.51f,.02f),new Vector3(side*.13f,.12f,-.015f),.115f);
                 PosePreview(prefix+"Boot",new Vector3(side*.13f,.08f,.03f),Vector3.one);
                 current.Parts[prefix+"UpperArm"].gameObject.SetActive(true);current.Parts[prefix+"Forearm"].gameObject.SetActive(true);
             }
             // Source kit head vertices already include standing-avatar height (~1.68m eyes).
-            Pose("AvatarHead",root.position,root.rotation,Vector3.one);current.Parts["AvatarHead"].gameObject.SetActive(true);
+            PresentJointHead(root.rotation);current.Parts["AvatarHead"].gameObject.SetActive(true);
         }
         void PosePreview(string label,Vector3 at,Vector3 scale) { Pose(label,root.TransformPoint(at),root.rotation,scale); }
         void PreviewSegment(string label,Vector3 from,Vector3 to,float diameter)
@@ -314,12 +330,11 @@ namespace Ashfall.Integration.Playable.Appearance
         {var offset=to-from;Pose(label,(from+to)*.5f,offset.sqrMagnitude>.000001f?Quaternion.FromToRotation(Vector3.up,offset.normalized):Quaternion.identity,new Vector3(diameter,Mathf.Max(.001f,offset.magnitude),diameter));}
         void Pose(string label,Vector3 position,Quaternion rotation,Vector3 scale)
         {var part=current.Parts[label];part.SetPositionAndRotation(position,rotation);part.localScale=scale;}
-        static float Distance(Vector3 point,Vector3 a,Vector3 b)
-        {var offset=b-a;return Vector3.Distance(point,a+offset*Mathf.Clamp01(Vector3.Dot(point-a,offset)/Mathf.Max(offset.sqrMagnitude,.000001f)));}
-        void OnEnable(){Application.onBeforeRender+=RefreshTrackedArmsBeforeRender;}
-        void OnDisable(){Application.onBeforeRender-=RefreshTrackedArmsBeforeRender;if(current!=null&&current.Root!=null)current.Root.SetActive(false);}
+        void OnEnable(){Application.onBeforeRender+=RefreshTrackedArmsBeforeRender;ResumeLoad();}
+        void OnDisable(){Application.onBeforeRender-=RefreshTrackedArmsBeforeRender;if(current!=null&&current.Root!=null)current.Root.SetActive(false);SuspendLoad();}
         void OnDestroy()
-        {loadSerial++;CancelRead();StopAllCoroutines();PublishGlove(null);if(pendingAsset!=null)pendingAsset.Dispose();if(current!=null)current.Dispose();pendingAsset=current=null;}
+        {DisposeArmSurfaces();ReleaseMirrorHead();loadSerial++;CancelRead();StopAllCoroutines();PublishGlove(null);AbandonPending();if(current!=null)current.Dispose();current=null;}
+        void FailLoad(){AbandonPending();Loading=false;}
 
         [Serializable] sealed class Manifest
         {
@@ -337,10 +352,10 @@ namespace Ashfall.Integration.Playable.Appearance
             public bool doubleSided=false;
             public string baseColor="",normal="",metallicMap="",occlusion="",emission="";
         }
-        sealed class Asset:IDisposable
+        // Shared decoded outfit (R26 cache): read-only after Build. Per-avatar transforms live in Asset.
+        sealed partial class Kit:IDisposable
         {
-            public GameObject Root;public Manifest Profile;public Material GloveMaterial;public Material[] Materials;
-            public readonly Dictionary<string,Transform> Parts=new Dictionary<string,Transform>(StringComparer.Ordinal);
+            public Manifest Profile;public Material GloveMaterial;public Material[] Materials;
             readonly List<UnityEngine.Object> resources=new List<UnityEngine.Object>();
             readonly Dictionary<string,Texture2D> textures=new Dictionary<string,Texture2D>(StringComparer.Ordinal);
             Texture2D Texture(string file,bool linear,Dictionary<string,byte[]> files)
@@ -348,7 +363,7 @@ namespace Ashfall.Integration.Playable.Appearance
                 Texture2D value;if(textures.TryGetValue(file,out value))return value;
                 value=new Texture2D(2,2,TextureFormat.RGBA32,true,linear);resources.Add(value);
                 if(!value.LoadImage(files[file],true))throw new IOException("texture "+file);
-                value.name=file;value.wrapMode=TextureWrapMode.Repeat;value.filterMode=FilterMode.Trilinear;value.anisoLevel=4;textures.Add(file,value);return value;
+                FinishTexture(value,file);textures.Add(file,value);return value;
             }
             static Vector4 ShaderColor(float[] linear,float energy,bool alpha)
             {
@@ -425,9 +440,10 @@ namespace Ashfall.Integration.Playable.Appearance
                     else{if(material.shader.name!="Ashfall/R23AppearanceDoubleSided")throw new IOException("Part response wrapper missing");material.SetVector("_SpecColor",new Vector4(binding.roughnessFloor,binding.dielectricScale,source.roughness,binding.rawMapFactors?1:0));material.EnableKeyword("_SPECULAR_SETUP");}
                 }else throw new IOException("Part finish mode");return material;
             }
-            public void Build(Manifest profile,byte[] bytes,Dictionary<string,byte[]> files)
+            // Iterator: mesh parsing yields every KitSliceMilliseconds so a remote outfit change never stalls a frame for the whole kit.
+            public IEnumerator Build(Manifest profile,byte[] bytes,Dictionary<string,byte[]> files)
             {
-                Profile=profile;Root=new GameObject("R23 appearance "+profile.id);Root.SetActive(false);
+                Profile=profile;var budget=System.Diagnostics.Stopwatch.StartNew();
                 var shader=Shader.Find("Universal Render Pipeline/Lit");if(shader==null)throw new IOException("URP Lit missing");
                 var materials=new Material[profile.materials.Length];Materials=materials;
                 for(int i=0;i<materials.Length;i++)
@@ -458,11 +474,13 @@ namespace Ashfall.Integration.Playable.Appearance
                 }
                 for(int i=0;i<materials.Length;i++)ApplyScalarFinish(profile,i,materials[i]);
                 GloveMaterial=materials[profile.gloveMaterialIndex];
+                if(budget.ElapsedMilliseconds>=KitSliceMilliseconds){yield return null;budget.Reset();budget.Start();}
                 using(var stream=new MemoryStream(bytes,false))using(var reader=new BinaryReader(stream))
                 {
                     if(reader.ReadInt32()!=0x52323341)throw new IOException("appearance mesh header");int count=reader.ReadInt32();if(count<1||count>128)throw new IOException("source body surface count");
                     for(int p=0;p<count;p++)
                     {
+                        if(budget.ElapsedMilliseconds>=KitSliceMilliseconds){yield return null;budget.Reset();budget.Start();}
                         int length=reader.ReadInt32();if(length<1||length>128)throw new IOException("part name length");string label=System.Text.Encoding.UTF8.GetString(reader.ReadBytes(length));
                         int nv=reader.ReadInt32(),nt=reader.ReadInt32(),mi=reader.ReadInt32();
                         if(nv<3||nv>100000||nt<3||nt>300000||nt%3!=0||mi<0||mi>=materials.Length)throw new IOException("part mesh limits");
@@ -470,20 +488,19 @@ namespace Ashfall.Integration.Playable.Appearance
                         for(int v=0;v<nv;v++){positions[v]=new Vector3(reader.ReadSingle(),reader.ReadSingle(),reader.ReadSingle());normals[v]=new Vector3(reader.ReadSingle(),reader.ReadSingle(),reader.ReadSingle());uv[v]=new Vector2(reader.ReadSingle(),reader.ReadSingle());}
                         for(int t=0;t<nt;t++){indices[t]=reader.ReadInt32();if(indices[t]<0||indices[t]>=nv)throw new IOException("part index");}
                         var mesh=new Mesh();resources.Add(mesh);mesh.name=profile.id+"/"+label;mesh.indexFormat=UnityEngine.Rendering.IndexFormat.UInt32;mesh.vertices=positions;mesh.normals=normals;mesh.uv=uv;mesh.triangles=indices;mesh.RecalculateBounds();mesh.RecalculateTangents();
-                        Transform group;bool exists=Parts.TryGetValue(label,out group);var part=new GameObject(exists?label+" source surface "+p:label);part.transform.SetParent(exists?group:Root.transform,false);part.AddComponent<MeshFilter>().sharedMesh=mesh;part.AddComponent<MeshRenderer>().sharedMaterial=PartMaterial(profile,label,mi,materials[mi]);if(!exists)Parts.Add(label,part.transform);
+                        Parts.Add(new KitPart(label,mesh,PartMaterial(profile,label,mi,materials[mi])));
                     }
                     if(stream.Position!=stream.Length)throw new IOException("trailing mesh data");
                 }
-                foreach(string required in new[]{"Jacket","ChestPlate","Belt","LUpperArm","RUpperArm","LForearm","RForearm","LThigh","RThigh","LShin","RShin","LBoot","RBoot","AvatarHead"})if(!Parts.ContainsKey(required)){
+                foreach(string required in new[]{"Jacket","ChestPlate","Belt","LUpperArm","RUpperArm","LForearm","RForearm","LThigh","RThigh","LShin","RShin","LBoot","RBoot","AvatarHead"})if(!HasPart(required)){
                     // Actual R23 apply_style empties missing variant pieces; these original
                     // Witch Doctor kits intentionally have no separate ChestPlate mesh.
                     if(required!="ChestPlate"||profile.sourceIndex<3)throw new IOException("source part missing "+required);
-                    var empty=new GameObject(required+" (absent in source)");empty.transform.SetParent(Root.transform,false);Parts.Add(required,empty.transform);
+                    AbsentParts.Add(required);
                 }
-                Parts["AvatarHead"].gameObject.SetActive(false);
             }
             public void Dispose()
-            {if(Root!=null){Root.SetActive(false);UnityEngine.Object.Destroy(Root);}foreach(var resource in resources)if(resource!=null)UnityEngine.Object.Destroy(resource);resources.Clear();textures.Clear();Parts.Clear();partFinishes.Clear();Root=null;}
+            {foreach(var resource in resources)if(resource!=null)UnityEngine.Object.Destroy(resource);resources.Clear();textures.Clear();Parts.Clear();AbsentParts.Clear();partFinishes.Clear();}
         }
     }
 }

@@ -96,14 +96,14 @@ namespace Ashfall.Editor.Playable
             var before=Inventory();int starts=0,entries=0;Action start=delegate{starts++;};Action<string,bool> enter=delegate(string id,bool mode){entries++;};loop.UI.StartRequested+=start;loop.UI.MapSelected+=enter;
             try
             {
-                Transform loadout=Button("LOADOUT"),outfits=Button("OUTFITS");SourceButton(loadout,450,712,180,64);SourceButton(outfits,650,712,180,64);Capture(g,"r6-ui-menu",true);
-                Click(loadout);Need(loop.UI.Page==R23UiPage.Weapons,"Lobby LOADOUT failed to open independent inspection");
+                Transform weapons=Button("WEAPONS"),outfits=Button("OUTFITS");SourceButton(weapons,450,712,180,64);SourceButton(outfits,650,712,180,64);Capture(g,"r6-ui-menu",true);
+                Click(weapons);Need(loop.UI.Page==R23UiPage.Weapons,"Lobby WEAPONS failed to open independent inspection");
                 string first=loop.UI.CurrentViewedWeaponId;Need(!String.IsNullOrEmpty(first),"Actual source catalog first item not published");
                 float end=Time.realtimeSinceStartup+30;while(!loop.Gallery.IsWeaponReady(first)&&loop.Gallery.WeaponFailure(first)==null&&Time.realtimeSinceStartup<end)yield return null;
                 Need(loop.Gallery.Active&&loop.Gallery.ViewedWeaponId==first&&loop.Gallery.VisiblePreviewId==first&&loop.Gallery.VisiblePreviewCount==1,"Actual viewed item lacks a single genuine gallery model: "+loop.Gallery.WeaponFailure(first));
                 Need(starts==0&&entries==0&&loop.Map.MapId==map&&loop.Lobby.Visible&&Vector3.Distance(anchor,loop.Lobby.MenuAnchor.position)<.00001f,"Catalog click started/changed map or moved source menu anchor");Need(before==Inventory(),"Private inspection mutated actual carried ammo/instances");
-                Click(Button(">"));string changed=loop.UI.CurrentViewedWeaponId;Need(changed!=first,"Actual NEXT catalog pointer failed");Click(Button("BACK"));Click(Button("LOADOUT"));Need(loop.UI.CurrentViewedWeaponId==first,"Opening source LOADOUT did not reset inspection to source index0");
-                Note(g,"Actual pointer: 180x64px source LOADOUT/OUTFITS, private gallery, NEXT/BACK/reopen index0, no Start/map/inventory mutation");
+                Click(Button(">"));string changed=loop.UI.CurrentViewedWeaponId;Need(changed!=first,"Actual NEXT catalog pointer failed");Click(Button("BACK"));Click(Button("WEAPONS"));Need(loop.UI.CurrentViewedWeaponId==first,"Opening source WEAPONS did not reset inspection to source index0");
+                Note(g,"Actual pointer: 180x64px source WEAPONS/OUTFITS, private gallery, NEXT/BACK/reopen index0, no Start/map/inventory mutation");
             }
             finally{loop.UI.StartRequested-=start;loop.UI.MapSelected-=enter;}
         }

@@ -1,0 +1,697 @@
+{
+ "mapId": "archive:meli-cafe-gods-meli",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:meli-cafe-gods-meli",
+  "title": "MELI CAFE",
+  "creator": "GODS_Meli",
+  "template": "MapEditorSnow",
+  "center": [
+   10.064511567263674,
+   69.34931153011055,
+   -4.922885330694339
+  ],
+  "recorded_spawns": [
+   [
+    -7.54,
+    91.96,
+    192.28
+   ],
+   [
+    170.97,
+    91.96,
+    192.28
+   ],
+   [
+    144.44,
+    91.96,
+    192.28
+   ],
+   [
+    132.71,
+    91.96,
+    192.28
+   ],
+   [
+    120.87,
+    91.96,
+    192.28
+   ],
+   [
+    109.96,
+    91.96,
+    192.28
+   ],
+   [
+    102.21,
+    91.96,
+    192.28
+   ],
+   [
+    84.77,
+    91.96,
+    192.28
+   ],
+   [
+    73.83,
+    91.96,
+    192.28
+   ],
+   [
+    53.22,
+    91.96,
+    192.28
+   ],
+   [
+    35.52,
+    91.96,
+    192.28
+   ],
+   [
+    19.06,
+    91.96,
+    192.28
+   ],
+   [
+    26.12,
+    91.96,
+    -200.91
+   ],
+   [
+    -0.48,
+    91.96,
+    -200.91
+   ],
+   [
+    -16.94,
+    91.96,
+    -200.91
+   ],
+   [
+    -34.64,
+    91.96,
+    -200.91
+   ],
+   [
+    -55.25,
+    91.96,
+    -200.91
+   ],
+   [
+    -66.19,
+    91.96,
+    -200.91
+   ],
+   [
+    -83.63,
+    91.96,
+    -200.91
+   ],
+   [
+    -91.37,
+    91.96,
+    -200.91
+   ],
+   [
+    -102.29,
+    91.96,
+    -200.91
+   ],
+   [
+    -114.13,
+    91.96,
+    -200.91
+   ],
+   [
+    -125.86,
+    91.96,
+    -200.91
+   ],
+   [
+    -152.39,
+    91.96,
+    -200.91
+   ]
+  ],
+  "bounds_min": [
+   -441.36468505859375,
+   -76.85621643066406,
+   -504.78448486328125
+  ],
+  "bounds_max": [
+   454.0729675292969,
+   173.14378356933594,
+   495.21551513671875
+  ],
+  "solid_min": [
+   -593.3959350585938,
+   -76.85621643066406,
+   -604.7841796875
+  ],
+  "solid_max": [
+   606.6040649414062,
+   173.14378356933594,
+   595.2158813476562
+  ],
+  "source": "https://maps.deliciouswines.org/maps/meli-cafe-gods-meli/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "ccaefa89d6fa8ae3666cd81559c7ffb41c35d61269df72e38eda24bc48bc5464",
+  "cache_fingerprint": "d0e28e1ff932b5ecf21713468696270a01cbfec6d05264d76ad56168b71fbc60",
+  "warmup": [
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -42.78122
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -41.86608
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -45.03754
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -44.12241
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -42.78122
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -41.86608
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -44.12241
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -45.03754
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -52.2193
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -51.30416
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -53.56049
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -54.47563
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -52.2193
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -53.56049
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -54.47563
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -51.30416
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -47.43786
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -46.52272
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -150.62833,
+     140.19312,
+     -48.77905
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -149.71233,
+     140.19312,
+     -49.69419
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -47.43786
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -48.77905
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -152.19077,
+     140.19312,
+     -49.69419
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -153.10677,
+     140.19312,
+     -46.52272
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 24,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "d0e28e1ff932b5ecf21713468696270a01cbfec6d05264d76ad56168b71fbc60",
+  "sites": [
+   [
+    -153.60547,
+    64.8661,
+    0.69927
+   ],
+   [
+    -121.7868,
+    82.7399,
+    -0.62602
+   ],
+   [
+    1.07451,
+    92.24068,
+    191.37108
+   ],
+   [
+    114.69051,
+    82.61939,
+    0.45347
+   ],
+   [
+    179.85753,
+    78.34364,
+    -0.72526
+   ],
+   [
+    170.3808,
+    78.32473,
+    -0.41156
+   ],
+   [
+    133.58963,
+    82.884,
+    -0.76813
+   ]
+  ],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "trigger",
+   "sourceNode": "trigger",
+   "boundsMin": [
+    -63.00593566894531,
+    62.54682922363281,
+    -101.99994659423828
+   ],
+   "boundsMax": [
+    76.71150970458984,
+    68.55638122558594,
+    92.52690124511719
+   ],
+   "triangles": 48
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

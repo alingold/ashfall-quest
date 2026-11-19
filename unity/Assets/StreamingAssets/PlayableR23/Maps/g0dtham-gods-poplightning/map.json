@@ -2,31 +2,31 @@
   "version": 1,
   "mapId": "archive:g0dtham-gods-poplightning",
   "title": "G0DTHAM",
-  "sourceSha256": "46a3e69b394c4356f2fbb3e3bca9367f769d24c31b96cb9fa979098ce5eefd81",
+  "sourceSha256": "f91223630c8ceb8dcacb7a3bdf4be94f3825549fa76b26536e2217af848845ef",
   "spawn": [
-    175.76,
-    21.668849138698434,
-    -0.09
+    188.14,
+    62.11999958740101,
+    -19.94
   ],
   "gameSpawn": [
-    175.76,
-    21.668849138698434,
-    -0.09
+    188.14,
+    62.11999958740101,
+    -19.94
   ],
   "warmupSpawn": [
-    11.36557,
-    40.619984741210935,
-    -3.08991
+    -167.94,
+    62.12000162297146,
+    -37.82
   ],
   "boundsMin": [
-    -460.419281005859,
-    -98.6783294677734,
-    -561.716796875
+    -246.208984375,
+    -76.85621643066406,
+    -247.7786407470703
   ],
   "boundsMax": [
-    539.580688476563,
-    83.6337738037109,
-    438.283233642578
+    258.9172668457031,
+    176.77664184570312,
+    257.34759521484375
   ],
   "materials": [
     {
@@ -45,18 +45,6 @@
       "name": "p2a61c272",
       "color": "p2a61c272_c.jpg",
       "normal": "p2a61c272_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "p4227e4ec",
-      "color": "p4227e4ec_c.jpg",
-      "normal": "p4227e4ec_n.jpg",
       "metallic": 0,
       "roughness": 0.72,
       "alpha": false,
@@ -90,18 +78,6 @@
       "transparency": 0
     },
     {
-      "name": "p871ea67c",
-      "color": "p871ea67c_c.jpg",
-      "normal": "p871ea67c_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
       "name": "p8ad59c41",
       "color": "p8ad59c41_c.jpg",
       "normal": "p8ad59c41_n.jpg",
@@ -118,18 +94,6 @@
       "color": "p95447a31_c.jpg",
       "normal": "p95447a31_n.jpg",
       "metallic": 0.35,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "pa5d5158f",
-      "color": "pa5d5158f_c.jpg",
-      "normal": "pa5d5158f_n.jpg",
-      "metallic": 0,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -174,42 +138,6 @@
       "transparency": 0
     },
     {
-      "name": "t100",
-      "color": "t100_c.jpg",
-      "normal": "t100_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t104",
-      "color": "t104_c.jpg",
-      "normal": "t104_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t114",
-      "color": "t114_c.jpg",
-      "normal": "t114_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
       "name": "t117",
       "color": "t117_c.jpg",
       "normal": "t117_n.jpg",
@@ -225,21 +153,9 @@
       "name": "t130",
       "color": "t130_c.jpg",
       "normal": "t130_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t131",
-      "color": "t131_c.jpg",
-      "normal": "t131_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": true,
       "vertexColor": true,
       "normalScale": 0.6,
       "cull": 2,
@@ -261,19 +177,7 @@
       "name": "t133",
       "color": "t133_c.jpg",
       "normal": "t133_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t139",
-      "color": "t139_c.jpg",
-      "normal": "t139_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -297,7 +201,7 @@
       "name": "t147",
       "color": "t147_c.jpg",
       "normal": "t147_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -309,7 +213,7 @@
       "name": "t24",
       "color": "t24_c.jpg",
       "normal": "t24_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -321,7 +225,7 @@
       "name": "t26",
       "color": "t26_c.jpg",
       "normal": "t26_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -333,7 +237,7 @@
       "name": "t29",
       "color": "t29_c.jpg",
       "normal": "t29_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -345,31 +249,7 @@
       "name": "t31",
       "color": "t31_c.jpg",
       "normal": "t31_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t43",
-      "color": "t43_c.jpg",
-      "normal": "t43_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t5",
-      "color": "t5_c.jpg",
-      "normal": "t5_n.jpg",
-      "metallic": 0,
+      "metallic": 0.35,
       "roughness": 0.72,
       "alpha": false,
       "vertexColor": true,
@@ -426,42 +306,6 @@
       "transparency": 0
     },
     {
-      "name": "t59",
-      "color": "t59_c.jpg",
-      "normal": "t59_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t62",
-      "color": "t62_c.jpg",
-      "normal": "t62_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
-      "name": "t95",
-      "color": "t95_c.jpg",
-      "normal": "t95_n.jpg",
-      "metallic": 0,
-      "roughness": 0.72,
-      "alpha": false,
-      "vertexColor": true,
-      "normalScale": 0.6,
-      "cull": 2,
-      "transparency": 0
-    },
-    {
       "name": "t98",
       "color": "t98_c.jpg",
       "normal": "t98_n.jpg",
@@ -496,6 +340,6 @@
       "cull": 2
     }
   ],
-  "chunks": 222,
+  "chunks": 112,
   "cameraFarDistance": 2000
 }

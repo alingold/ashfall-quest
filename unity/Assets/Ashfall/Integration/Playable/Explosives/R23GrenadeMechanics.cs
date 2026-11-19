@@ -22,11 +22,11 @@ namespace Ashfall.Integration.Playable.Explosives
         {ItemId=item;Kind=kind;Tick=tick;Center=center;Radius=radius;Power=power;Falloff=falloff;}
         public float DamageAt(Float3 point)
         {if(!point.IsFinite||!Center.IsFinite||Radius<=0||Power<=0)return 0;float d=R23GrenadeMath.Length(R23GrenadeMath.Sub(point,Center));return d>Radius?0:Power*(Falloff?Math.Max(0,1-d/Radius):1);}
-        public int Apply(IR23ExplosiveEffects effects,Float3 acceptedPlayerHead,float targetMultiplier=1)
+        public int Apply(IR23ExplosiveEffects effects,Float3 acceptedPlayerHead,float targetMultiplier=1,Func<string,float> targetGain=null)
         {
             if(effects==null)throw new ArgumentNullException("effects");if(Radius<=0)return 0;if(Single.IsNaN(targetMultiplier)||Single.IsInfinity(targetMultiplier)||targetMultiplier<0)targetMultiplier=0;
             var targets=effects.ReadDamageTargets()??new R23ExplosiveTarget[0];var decisions=new List<KeyValuePair<string,float>>();var seen=new HashSet<string>(StringComparer.Ordinal);
-            foreach(var target in targets)if(target!=null&&!String.IsNullOrEmpty(target.Id)&&seen.Add(target.Id)){float amount=DamageAt(target.Center);if(amount>0)decisions.Add(new KeyValuePair<string,float>(target.Id,amount*targetMultiplier));}
+            foreach(var target in targets)if(target!=null&&!String.IsNullOrEmpty(target.Id)&&seen.Add(target.Id)){float amount=DamageAt(target.Center);if(amount>0)decisions.Add(new KeyValuePair<string,float>(target.Id,amount*(targetGain==null?targetMultiplier:targetGain(target.Id))));}
             float self=DamageAt(acceptedPlayerHead);int applied=0;
             // Original main.gd snapshots all target amounts BEFORE mutating any panel/health.
             // Original blast policy has no line-of-sight exclusion; do not invent one here.

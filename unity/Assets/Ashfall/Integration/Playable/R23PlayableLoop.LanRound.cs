@@ -8,7 +8,7 @@ namespace Ashfall.Integration.Playable
         public bool LanRoundBound{get{return lanRoundElapsed!=null;}}
         string MatchAuthorityLabel{get{return LanRoundBound?"LAN ROUND | HOST HEALTH / COMBAT":"LOCAL OFFLINE";}}
         public string ValidateLanRound(R24PlayableMatchRules rules)
-        {if(rules==null)return "No validated match rules";if(!rules.RetainInventory)return "Nonretaining inventory reset is not connected";if(rules.StartingBuilds!=999)return "Starting builds currently supports source999";if(rules.MaxPlayers>R24LanLobby.Capacity)return "LAN currently supports up to8 players";return null;}
+        {if(rules==null)return "No validated match rules";if(rules.StartingBuilds!=999)return "Starting builds currently supports source999";if(rules.MaxPlayers>R24LanLobby.Capacity)return "Rooms support up to "+R24LanLobby.Capacity+" players";return null;}
         public bool LanRoundAssetsReady(R24PlayableMatchRules rules)
         {bool deployment=rules.Mode=="revive"&&rules.Teams>0;return (!(rules.ZoneEnabled||deployment)||LaunchMapCatalog!=null&&LaunchMapCatalog.Ready)&&(!deployment||TeamLaunch!=null&&TeamLaunch.Ready);}
         public string LanRoundAssetFailure(R24PlayableMatchRules rules)
@@ -22,7 +22,7 @@ namespace Ashfall.Integration.Playable
         bool AdvanceMatchClock(float dt){return LanRoundBound?localMatchClock.Synchronize(lanRoundElapsed()):localMatchClock.Advance(dt);}
         void BindLanClock(){if(LanRoundBound)localMatchClock.BindNetworkRound(lanRoundIndex,lanRoundElapsed());}
         public void EndLanSessionRound(){if(!LanRoundBound)return;EndMatch();if(Ready)ReturnToLobby();}
-        public void FinishLanRound(){if(!LanRoundBound||!MatchActive)return;localMatchClock.Finish();EndTeamLaunch();if(MatchZone!=null)MatchZone.Suspend();Gameplay.SetGameplayPaused(true);SetMatchStatus("LAN MATCH RESULTS | HOST CONTROLS NEXT START");if(UI.Page==R23UiPage.Playing)UI.OpenMatchRules();}
+        public void FinishLanRound(){if(!LanRoundBound||!MatchActive)return;localMatchClock.Finish();EndTeamLaunch();if(MatchZone!=null)MatchZone.Suspend();Gameplay.SetGameplayPaused(true);SetMatchStatus("LAN MATCH RESULTS | HOST CONTROLS NEXT START");if(ActualMatchRules.Mode=="revive")PublishMatchLife(true);}
     }
 }
 #endif

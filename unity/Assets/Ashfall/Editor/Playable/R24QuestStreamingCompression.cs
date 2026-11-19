@@ -45,7 +45,7 @@ namespace Ashfall.Editor.Playable
         {
             string output=Argument("-ashfallQuestBuild");
             if(String.IsNullOrEmpty(output)||Argument("-ashfallCompressGeometry")!="true")return;
-            if(UnityEditor.PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android)!="org.alingold.ashfallunityquest")throw new InvalidDataException("Wrong package for Unity Quest geometry compression");
+            if(UnityEditor.PlayerSettings.GetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android).StartsWith("org.alingold.ashfallunityquest",StringComparison.Ordinal)==false)throw new InvalidDataException("Wrong package for Unity Quest geometry compression");
             string library=Path.GetFullPath(path),root=Path.GetDirectoryName(library);
             if(Path.GetFileName(library)!="unityLibrary")throw new InvalidDataException("Unexpected generated Gradle module: "+library);
             string gradle=File.ReadAllText(Path.Combine(library,"build.gradle"));

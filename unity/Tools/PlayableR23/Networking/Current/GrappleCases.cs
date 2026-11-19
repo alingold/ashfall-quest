@@ -24,7 +24,7 @@ partial class LobbyCases
         Need(Near(rope.FlightRemaining,.1f,.0001f),"Muzzle flight timing");rope.Tick(.1f,input.Held,true,false);
         input.Step(true,0);rope.Tick(.01f,input.Held,true,false);Need(!rope.Attached,"Release trigger terminates solver");
         Need(!rope.Fire(new Float3(),new Float3(0,0,12)),"Refire delay survives release");for(int i=0;i<4;i++)rope.Tick(.1f,false,true,false);Need(rope.Fire(new Float3(),new Float3(0,0,12)),"Unlimited next shot after 350ms");
-        var rules=R24PlayableMatchRules.ForPreset("practice");
+        var rules=R24PlayableMatchRules.ForPreset("free_for_all").With("catalog",true);
         Need(rules.GrappleGun&&rules.GrapplePull&&!rules.With("grapple_gun",false).GrappleGun,"New rule default and disable");
         Need(!rules.With("web_slingers",false).GrappleGun,"Old source key aliases new key");
         Need(!R24PlayableMatchRules.FromSourceValues(new Dictionary<string,object>{{"web_slingers",false}}).GrappleGun,"Legacy source decoder alias");

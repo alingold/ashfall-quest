@@ -8,7 +8,8 @@ namespace Ashfall.Integration.Playable.Vehicles
     // Purely visual, no damage colliders. The unbanked handlebars/cowl are the VR reference.
     public sealed class R25BikePresentation:MonoBehaviour
     {
-        public static Vector3 GunMuzzle {get{return new Vector3(0,.10f,1.4f);}}
+        Transform gunPivot;
+        public void SetGunAim(float yaw,float pitch){gunPivot.localRotation=Quaternion.Euler(-pitch,yaw,0);}
         Transform chassis,cowl,smoke,burst;LineRenderer dust;TextMesh marker;
         Material material,panelMaterial,glowMaterial;Renderer shell;
         Transform[] pods=new Transform[2]; MaterialPropertyBlock tintBlock; int colourway;R24ItemAudio bank;AudioSource engine,rev,cue;
@@ -67,10 +68,13 @@ namespace Ashfall.Integration.Playable.Vehicles
             dash.Loft(new Vector3(0,.46f,.57f),Quaternion.Euler(-26,0,0),new[]{-.09f,.09f},new[]{.16f,.13f},new[]{.018f,.10f},4,8);
             dash.Tube(new[]{new Vector3(-.425f,.55f,.55f),new Vector3(-.25f,.55f,.58f),new Vector3(-.12f,.48f,.65f),new Vector3(.12f,.48f,.65f),new Vector3(.25f,.55f,.58f),new Vector3(.425f,.55f,.55f)},.021f,8);dash.Attach(cowl,"Raked windscreen and swept handlebars",material);
             var grips=new R25VehicleMesh();for(int s=-1;s<=1;s+=2)grips.Tube(new[]{new Vector3(s*.34f,.55f,.55f),new Vector3(s*.425f,.55f,.55f)},.022f,8);grips.Attach(cowl,"Emissive grips",glowMaterial);
-            var gun=new R25VehicleMesh();gun.Paint=new Color(.15f,.18f,.20f);gun.Tube(new[]{GunMuzzle-Vector3.forward*.45f,GunMuzzle},.04f,10);gun.Attach(cowl,"Fairing machine gun",material);
+            var pivot=R25VehicleKinds.GunPivot("hoverbike");
+            gunPivot=new GameObject("Gun gimbal").transform;gunPivot.SetParent(cowl,false);gunPivot.localPosition=new Vector3(pivot.X,pivot.Y,pivot.Z);
+            var gun=new R25VehicleMesh();gun.Paint=new Color(.15f,.18f,.20f);gun.Tube(new[]{Vector3.zero,Vector3.forward*R25VehicleKinds.GunBarrelLength("hoverbike")},.04f,10);gun.Attach(gunPivot,"Fairing machine gun",material);
+            SetGunAim(0,R25VehicleKinds.RestGunPitch("hoverbike"));
             smoke=Part(chassis,"Low health smoke",PrimitiveType.Sphere,new Vector3(0,.7f,-.7f),Vector3.one*.3f,new Color(.25f,.25f,.25f,.6f));
             burst=Part(transform,"Destruction burst",PrimitiveType.Sphere,Vector3.zero,Vector3.one, new Color(1,.45f,.05f,.65f));burst.gameObject.SetActive(false);
-            marker=new GameObject("Handlebar grip marker").AddComponent<TextMesh>();marker.transform.SetParent(transform,false);marker.transform.localPosition=new Vector3(0,.85f,.55f);marker.font=Resources.Load<Font>("R23InventoryUI");marker.fontSize=48;marker.characterSize=.012f;marker.anchor=TextAnchor.MiddleCenter;marker.alignment=TextAlignment.Center;marker.color=Color.white;if(marker.font!=null)marker.GetComponent<MeshRenderer>().sharedMaterial=marker.font.material;
+            marker=new GameObject("Handlebar grip marker").AddComponent<TextMesh>();marker.transform.SetParent(transform,false);marker.transform.localPosition=new Vector3(0,.85f,.55f);marker.font=Resources.Load<Font>("R23InventoryUI");marker.fontSize=48;marker.characterSize=.012f;marker.anchor=TextAnchor.MiddleCenter;marker.alignment=TextAlignment.Center;marker.color=Color.white;R26WorldText.Bind(marker);
             dust=new GameObject("Hover ground dust").AddComponent<LineRenderer>();dust.transform.SetParent(transform,false);dust.sharedMaterial=material;dust.positionCount=33;dust.startWidth=dust.endWidth=.035f;dust.startColor=dust.endColor=new Color(.6f,.65f,.6f,.3f);
             bank=new R24ItemAudio();engine=bank.Voice(transform,"Engine idle",-22,30,true);rev=bank.Voice(transform,"Engine rev",-24,35,true);cue=bank.Voice(transform,"Bike cues",-15,30);StartCoroutine(Load());
         }

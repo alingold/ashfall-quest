@@ -36,6 +36,7 @@ def modules(output):
              ('Pickups/AdversarialR1Adapted.cs', [])]
     tests = [(TOOLS / 'Modules' / name, extras) for name, extras in cases]
     tests.append((PLAYABLE / 'TeamLaunch/Cases.cs', []))
+    tests.append((PLAYABLE / 'Match/MatchChecks.cs', []))
     rows = []
     for test, extras in tests:
         label = test.parent.name + '-' + test.stem

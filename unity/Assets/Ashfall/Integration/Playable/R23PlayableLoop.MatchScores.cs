@@ -10,17 +10,19 @@ namespace Ashfall.Integration.Playable
         R24LocalMatchScores localMatchScores;
         int lastHudSecond=int.MinValue,lastHudDeaths=-1;
         long lastHudScoreRevision=-1;
-        bool lastHudActive;
+        bool lastHudActive;float nextSurvivalHud;
         void BeginLocalMatchScoreRound()
         {
             // The current LAN round synchronizes rules/clock only. It must not
             // publish this player's local health as shared combat authority.
+            retainedLocalBoard=null;
             bool sharedRoster=LanSession!=null&&LanSession.Lobby!=null;
-            localMatchScores=LanRoundBound||sharedRoster?null:new R24LocalMatchScores(ActualMatchRules,delegate{return Gameplay.LocalMatchHealth;});
+            localMatchScores=LanRoundBound||sharedRoster?null:new R24LocalMatchScores(ActualMatchRules,delegate{return Gameplay.LocalMatchHealth;},delegate{return R26PlayerName.Current;});
             lastHudSecond=int.MinValue;lastHudDeaths=-1;lastHudScoreRevision=-1;
         }
         void ClearMatchScorePresentation()
         {
+            if(localMatchScores!=null&&ActualMatchRules!=null&&!MatchActive&&!LanRoundBound)retainedLocalBoard=ReadWorldScoreState();
             localMatchScores=null;lastHudSecond=int.MinValue;lastHudDeaths=-1;lastHudScoreRevision=-1;lastHudActive=false;
             if(UI!=null)UI.SetCompactMatchState(null,"player",-1);
         }
@@ -30,7 +32,9 @@ namespace Ashfall.Integration.Playable
             if(localMatchScores!=null&&MatchActive)localMatchScores.Observe(actualHealth,MatchClock);
             int remaining=ActualMatchRules.TimeLimit==0?-1:(int)Math.Ceiling(Math.Max(0,ActualMatchRules.TimeLimit-MatchClock));
             long revision=localMatchScores==null?-1:localMatchScores.Revision;
-            if(!force&&remaining==lastHudSecond&&actualHealth.Deaths==lastHudDeaths&&revision==lastHudScoreRevision&&MatchActive==lastHudActive)return;
+            bool survivalRefresh=ActualMatchRules.Mode=="revive"&&UnityEngine.Time.unscaledTime>=nextSurvivalHud;
+            if(!force&&!survivalRefresh&&remaining==lastHudSecond&&actualHealth.Deaths==lastHudDeaths&&revision==lastHudScoreRevision&&MatchActive==lastHudActive)return;
+            if(survivalRefresh)nextSurvivalHud=UnityEngine.Time.unscaledTime+.1f;
             lastHudSecond=remaining;lastHudDeaths=actualHealth.Deaths;lastHudScoreRevision=revision;lastHudActive=MatchActive;
             var lobby=LanSession==null?null:LanSession.Lobby;
             UI.SetCompactMatchState(R24CompactMatchHudState.ForRules(ReadWorldScoreState(),ActualMatchRules),lobby==null?"player":lobby.OwnActor,LocalMatchTeam);

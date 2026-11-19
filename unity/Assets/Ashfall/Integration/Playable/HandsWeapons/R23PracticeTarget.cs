@@ -25,7 +25,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var ringMaterial=new Material(Shader.Find("Universal Render Pipeline/Unlit"));ringMaterial.SetColor("_BaseColor",new Color(.98f,.47f,.13f));materials.Add(ringMaterial);
             for(int i=0;i<3;i++)Ring(.05f+i*.047f,.058f+i*.047f,new Vector3(0,1.15f,-.097f-i*.001f),ringMaterial);
             var label=new GameObject("PRACTICE TARGET native health readout");label.transform.SetParent(transform,false);label.transform.localPosition=new Vector3(0,2.15f,0);readout=label.AddComponent<TextMesh>();
-            readout.font=Resources.Load<Font>("R23GodotUI")??Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");readout.fontSize=40;readout.characterSize=.025f;readout.anchor=TextAnchor.MiddleCenter;readout.alignment=TextAlignment.Center;readout.color=Color.white;label.GetComponent<Renderer>().sharedMaterial=readout.font.material;
+            readout.font=Resources.Load<Font>("R23GodotUI")??Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");readout.fontSize=40;readout.characterSize=.025f;readout.anchor=TextAnchor.MiddleCenter;readout.alignment=TextAlignment.Center;readout.color=Color.white;R26WorldText.Bind(readout);
             label.AddComponent<R24SourceLabelBillboard>().Fallback=camera;
         }
         public bool Owns(Collider collider) { return collider==Body||collider==Head; }

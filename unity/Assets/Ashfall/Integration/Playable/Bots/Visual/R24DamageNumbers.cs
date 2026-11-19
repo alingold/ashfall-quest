@@ -10,7 +10,7 @@ namespace Ashfall.Integration.Playable.Bots
     public sealed class R24DamageNumbers:IDisposable
     {
         public const int Limit=48;public const float Lifetime=.85f;
-        sealed class Entry {internal TextMesh Text;internal Vector3 Start;internal float Remaining;internal Color Tint;}
+        sealed class Entry {internal TextMesh Text;internal MeshRenderer Renderer;internal Vector3 Start;internal float Remaining;internal Color Tint;}
         readonly Entry[] entries=new Entry[Limit];readonly Transform root,head;readonly Font font;readonly Material material;
         int cursor,serial;bool disposed;public long Emitted {get;private set;}public float LastAmount {get;private set;}
         public int ActiveCount {get{if(disposed||root==null)return 0;int count=0;foreach(var e in entries)if(e!=null&&e.Remaining>0)count++;return count;}}
@@ -22,17 +22,20 @@ namespace Ashfall.Integration.Playable.Bots
             material=new Material(shader){name="Shared depth-tested source damage numbers"};material.SetTexture("_MainTex",font.material.mainTexture);
             root=new GameObject("Source damage numbers48 / .85s").transform;Font.textureRebuilt+=FontRebuilt;
         }
-        void FontRebuilt(Font changed){if(!disposed&&material!=null&&font!=null&&changed==font)material.SetTexture("_MainTex",font.material.mainTexture);}
-        public bool Emit(float actualLoss,Vector3 sourceAnchor,bool shield)
+        void FontRebuilt(Font changed){if(!disposed&&font!=null&&changed==font)material.SetTexture("_MainTex",font.material.mainTexture);}
+        public bool Emit(float actualLoss,Vector3 sourceAnchor,bool shield){return Emit(actualLoss,sourceAnchor,shield,false);}
+        public bool EmitBlade(float actualLoss,Vector3 contact,bool shield){return Emit(actualLoss,contact,shield,true);}
+        bool Emit(float actualLoss,Vector3 sourceAnchor,bool shield,bool blade)
         {
             if(disposed||root==null||material==null||font==null||head==null||!Finite(actualLoss)||actualLoss<=0||!Finite(sourceAnchor))return false;
             float distance=Vector3.Distance(head.position,sourceAnchor);if(!Finite(distance))return false;
-            var point=sourceAnchor+head.right.normalized*(Mathf.Max(.55f,distance*.014f)+.04f*(serial%2))+Vector3.up*(.10f+.12f*(serial%4));
-            var entry=entries[cursor];if(entry==null){var node=new GameObject("One actual damage event "+cursor);node.layer=R24ValleyBots.CombatLayer;node.transform.SetParent(root,false);var text=node.AddComponent<TextMesh>();text.font=font;text.fontSize=26;text.richText=false;text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;var renderer=node.GetComponent<MeshRenderer>();renderer.sharedMaterial=material;renderer.shadowCastingMode=ShadowCastingMode.Off;renderer.receiveShadows=false;entry=new Entry{Text=text};entries[cursor]=entry;}
+            var point=blade?sourceAnchor:sourceAnchor+head.right.normalized*(Mathf.Max(.55f,distance*.014f)+.04f*(serial%2))+Vector3.up*(.10f+.12f*(serial%4));
+            var entry=entries[cursor];if(entry==null){var node=new GameObject("One actual damage event "+cursor);node.layer=R24ValleyBots.CombatLayer;node.transform.SetParent(root,false);var text=node.AddComponent<TextMesh>();text.font=font;text.fontSize=26;text.richText=false;text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;var renderer=node.GetComponent<MeshRenderer>();renderer.shadowCastingMode=ShadowCastingMode.Off;renderer.receiveShadows=false;entry=new Entry{Text=text,Renderer=renderer};entries[cursor]=entry;}
+            entry.Renderer.sharedMaterial=material;
             entry.Start=point;entry.Remaining=Lifetime;entry.Tint=shield?new Color(78/255f,216/255f,1):new Color(1,240/255f,173/255f);
             // TextMesh uses .1 units per font pixel at characterSize1. Source Label3D
             // pixel_size is metres per pixel; retain its distance-scaled angular size.
-            entry.Text.characterSize=10*Mathf.Clamp(distance*.00060f,.0015f,.025f);entry.Text.text=Mathf.Max(1,Mathf.FloorToInt(Mathf.Min(actualLoss,1000000)+.5f)).ToString(CultureInfo.InvariantCulture);
+            entry.Text.characterSize=10*Mathf.Max(distance*.00060f,.0015f)*(blade?2f:1f);entry.Text.text=Mathf.Max(1,Mathf.FloorToInt(Mathf.Min(actualLoss,1000000)+.5f)).ToString(CultureInfo.InvariantCulture);
             font.RequestCharactersInTexture(entry.Text.text,26);material.SetTexture("_MainTex",font.material.mainTexture);entry.Text.color=entry.Tint;entry.Text.transform.position=point;entry.Text.gameObject.SetActive(true);
             cursor=(cursor+1)%Limit;serial=(serial+1)%4;Emitted++;LastAmount=actualLoss;return true;
         }

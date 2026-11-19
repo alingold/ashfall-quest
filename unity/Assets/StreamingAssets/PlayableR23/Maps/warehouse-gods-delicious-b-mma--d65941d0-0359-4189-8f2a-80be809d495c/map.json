@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "mapId": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+  "title": "WAREHOUSE",
+  "sourceSha256": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+  "spawn": [
+    -3.03,
+    40.12,
+    9.39
+  ],
+  "gameSpawn": [
+    -3.03,
+    40.12,
+    9.39
+  ],
+  "warmupSpawn": [
+    15.5,
+    40.12,
+    1.49
+  ],
+  "boundsMin": [
+    -41.49127197265625,
+    -76.85621643066406,
+    -48.89283752441406
+  ],
+  "boundsMax": [
+    54.199554443359375,
+    173.14378356933594,
+    58.46179962158203
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t22",
+      "color": "t22_c.jpg",
+      "normal": "t22_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 21,
+  "cameraFarDistance": 2000
+}

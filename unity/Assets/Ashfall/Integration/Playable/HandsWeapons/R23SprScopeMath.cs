@@ -5,7 +5,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
     // spr_scope.gd angular stereo projection; +Z is reflected Godot forward.
     public static class R23SprScopeMath
     {
-        public const float Width=.055f,Height=.0325f,Magnification=2,ReticleDepth=1;
+        public const float Width=.055f,Height=.0325f,Magnification=3,ReticleDepth=1;
         public const int PixelWidth=520,PixelHeight=307;
         static bool Finite(float value) { return !float.IsNaN(value)&&!float.IsInfinity(value); }
         public static bool Alignment(float relief,float radial,float gazeDot,bool clear) {

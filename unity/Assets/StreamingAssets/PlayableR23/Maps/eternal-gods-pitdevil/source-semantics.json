@@ -1,0 +1,337 @@
+{
+ "mapId": "archive:eternal-gods-pitdevil",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:eternal-gods-pitdevil",
+  "title": "ETERNAL",
+  "creator": "GODS_PITDEVIL",
+  "template": "MapEditorSnow",
+  "center": [
+   -3.787511310441831,
+   80.87674683284493,
+   -17.452630438244572
+  ],
+  "recorded_spawns": [
+   [
+    -182.6,
+    85.18,
+    139.2
+   ],
+   [
+    -177.42,
+    85.18,
+    142.49
+   ],
+   [
+    -178.19,
+    85.18,
+    141.6
+   ],
+   [
+    -181.3,
+    85.18,
+    138.06
+   ],
+   [
+    -180.52,
+    85.18,
+    138.94
+   ],
+   [
+    -179.75,
+    85.18,
+    139.83
+   ],
+   [
+    -178.97,
+    85.18,
+    140.72
+   ],
+   [
+    -179.5,
+    85.18,
+    142.74
+   ],
+   [
+    -178.72,
+    85.18,
+    143.63
+   ],
+   [
+    -180.27,
+    85.18,
+    141.86
+   ],
+   [
+    -181.05,
+    85.18,
+    140.97
+   ],
+   [
+    -181.82,
+    85.18,
+    140.09
+   ],
+   [
+    170.55,
+    93.81,
+    -163.39
+   ],
+   [
+    171.38,
+    93.81,
+    -162.56
+   ],
+   [
+    170.16,
+    93.81,
+    -161.33
+   ],
+   [
+    169.32,
+    93.81,
+    -162.17
+   ],
+   [
+    172.21,
+    93.81,
+    -161.72
+   ],
+   [
+    170.99,
+    93.81,
+    -160.5
+   ],
+   [
+    173.05,
+    93.81,
+    -160.89
+   ],
+   [
+    171.82,
+    93.81,
+    -159.67
+   ],
+   [
+    173.88,
+    93.81,
+    -160.06
+   ],
+   [
+    174.71,
+    93.81,
+    -159.22
+   ],
+   [
+    173.49,
+    93.81,
+    -158.0
+   ],
+   [
+    172.65,
+    93.81,
+    -158.83
+   ]
+  ],
+  "bounds_min": [
+   -256.74139404296875,
+   -249.9871063232422,
+   -299.9489440917969
+  ],
+  "bounds_max": [
+   269.4496765136719,
+   509.487060546875,
+   290.3799743652344
+  ],
+  "solid_min": [
+   -300.0,
+   -249.9871063232422,
+   -347.4972839355469
+  ],
+  "solid_max": [
+   358.5003967285156,
+   509.487060546875,
+   347.5000915527344
+  ],
+  "source": "https://maps.deliciouswines.org/maps/eternal-gods-pitdevil/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "7811746aca99333896dd90dc05df52cd68bfaecb384610b281598b7463824735",
+  "cache_fingerprint": "d667684eab1ded61c01e2e9ea3c5b91cd8c2f8971ba09d65dee0cd9fea109605",
+  "warmup": [
+   {
+    "center": [
+     29.49846,
+     102.09293,
+     -88.69011
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     26.78375,
+     102.14677,
+     -90.20475
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     31.04696,
+     102.12753,
+     -89.89458
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     27.52086,
+     101.99003,
+     -86.67545
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     24.78367,
+     102.05315,
+     -87.67645
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     29.50152,
+     102.089,
+     -91.42764
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 6,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "d667684eab1ded61c01e2e9ea3c5b91cd8c2f8971ba09d65dee0cd9fea109605",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "killzone",
+   "sourceNode": "killzone",
+   "boundsMin": [
+    -192.78033447265625,
+    154.50001525878906,
+    -232.00015258789062
+   ],
+   "boundsMax": [
+    348.71923828125,
+    216.49998474121094,
+    168.00013732910156
+   ],
+   "triangles": 64
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

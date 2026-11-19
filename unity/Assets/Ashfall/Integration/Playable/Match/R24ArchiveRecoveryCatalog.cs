@@ -11,7 +11,6 @@ namespace Ashfall.Integration.Playable.Match
 {
     public sealed class R24ArchiveRecoveryCatalog
     {
-        const string ExpectedSha256="72c1827251d48c02b35530ba7ff694abef5a7ff09b0938ae71fa9b9fb64dc8b7";
         [Serializable]sealed class P{public float x=0,y=0,z=0;public Float3 V(){return new Float3(x,y,z);}}
         [Serializable]sealed class B{public P position=null,size=null;public R24ArchiveBox V(){return new R24ArchiveBox(position.V(),size.V());}}
         [Serializable]sealed class Plane{public double x=0,y=0,z=0,d=0;}
@@ -33,10 +32,10 @@ namespace Ashfall.Integration.Playable.Match
                 if(request.result!=UnityWebRequest.Result.Success){Failure=request.error;Loading=false;yield break;}
                 try
                 {
-                    byte[] bytes=request.downloadHandler.data;string hash;using(var sha=SHA256.Create())hash=BitConverter.ToString(sha.ComputeHash(bytes)).Replace("-","").ToLowerInvariant();
-                    if(hash!=ExpectedSha256)throw new InvalidDataException("Archive recovery payload does not match its frozen resource export");
+                    
+                    // r19 MAPKIT: no whole-file hash pin or fixed row count; every row is bound to its loaded map by source/manifest hash and cache fingerprint.
                     var data=JsonUtility.FromJson<Data>(request.downloadHandler.text);
-                    if(data==null||data.version!=1||data.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||data.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||data.rows==null||data.rows.Length!=105)throw new InvalidDataException("Actual R6 archive recovery metadata required");
+                    if(data==null||data.version!=1||data.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||data.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||data.rows==null||data.rows.Length==0)throw new InvalidDataException("Actual R6 archive recovery metadata required");
                     foreach(var row in data.rows){var hazards=new R24ArchiveHazard[row.hazards.Length];for(int i=0;i<hazards.Length;i++)hazards[i]=row.hazards[i].V();rows.Add(row.id,new R24ArchiveRecoveryInfo(row.id,row.sourceSha256,row.manifestSha256,row.cacheFingerprint,row.adapterSha256,row.boundsMin.V(),row.boundsMax.V(),row.solidMin.V(),row.solidMax.V(),row.center.V(),Points(row.recorded),Points(row.deathmatch),Points(row.warmup),Boxes(row.spawnFloors),Boxes(row.panels),hazards));}
                     Ready=true;
                 }

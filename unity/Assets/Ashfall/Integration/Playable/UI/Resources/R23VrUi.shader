@@ -1,12 +1,12 @@
 Shader "Ashfall/R23VrUi"
 {
-    Properties { _UiClipBounds("Catalog clip min/max/enabled",Vector)=(0,0,0,0) _UiClipY("Object-to-panel Y",Vector)=(0,1,0,0) _MainTex ("Font atlas", 2D) = "white" {} _Color ("Tint",Color) = (1,1,1,1) _Font ("Alpha-only font atlas",Float) = 0 }
+    Properties { [Enum(UnityEngine.Rendering.CompareFunction)] _ZTest("Depth test",Float)=8 _UiClipBounds("Catalog clip min/max/enabled",Vector)=(0,0,0,0) _UiClipY("Object-to-panel Y",Vector)=(0,1,0,0) _MainTex ("Font atlas", 2D) = "white" {} _Color ("Tint",Color) = (1,1,1,1) _Font ("Alpha-only font atlas",Float) = 0 }
     SubShader
     {
         Tags { "Queue"="Overlay+100" "RenderType"="Transparent" "IgnoreProjector"="True" }
         Pass
         {
-            ZTest Always ZWrite Off Cull Off Blend SrcAlpha OneMinusSrcAlpha
+            ZTest [_ZTest] ZWrite Off Cull Off Blend SrcAlpha OneMinusSrcAlpha
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag

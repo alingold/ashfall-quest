@@ -57,7 +57,7 @@ partial class LobbyCases {
  }}
 
  static void AdoptPodPresentation(){var runtime=new R24TeamLaunchRuntime(1);Need(runtime.Configure(new R24LaunchMap{Id="archive:alpha",Minimum=new Float3(-100,0,-100),Maximum=new Float3(100,0,100),Top=20,OriginY=0},new R24LaunchRules{Live=true,Mode="revive",Stage="match",Teams=2,Epoch=9}),"Actual presentation layout");
-  var plan=new CapsulePlan("9:0:0",0,0,new Float3(0,70,0),new Float3(0,75,10),new Float3(10,75,10),new Float3(10,0,10),new Float3(10,0,8),new Float3(0,0,-1),4);
+  var start=runtime.Layout.Pod(0,0).Origin;var plan=new CapsulePlan(runtime.Layout.PodId(0,0),0,0,start,new Float3(start.X,start.Y+5,start.Z-10),new Float3(start.X+10,start.Y+5,start.Z-10),new Float3(start.X+10,0,start.Z-10),new Float3(start.X+10,0,start.Z-12),new Float3(0,0,-1),4);
   Need(runtime.AdoptHostRide("player",plan,2,0,plan.Start),"Guest adopts host ride into existing presentation owner");var ride=runtime.ReadRide("player");Need(ride!=null&&ride.Plan==plan&&ride.State==R24LaunchRideState.Flying,"Guest controls can see actual flying state");
   Need(runtime.AdoptHostRide("player",plan,2,2,plan.ExitTarget)&&Object.ReferenceEquals(ride,runtime.ReadRide("player"))&&ride.State==R24LaunchRideState.Landed,"Terminal receipt updates same ride, stops flying controls");Need(!runtime.AdoptHostRide("player",plan,2,9,plan.ExitTarget),"Malformed phase cannot become presentation state");
  }

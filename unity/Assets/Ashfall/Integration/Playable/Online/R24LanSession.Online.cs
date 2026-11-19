@@ -53,9 +53,9 @@ namespace Ashfall.Integration.Playable.Networking
                     if(online.Hosting) StartHost(data);
                     else
                     {
-                        peer=R24LanPeer.JoinRelay(data,"Player",Time.realtimeSinceStartupAsDouble);
+                        peer=R24LanPeer.JoinRelay(data,R26PlayerName.Current,Time.realtimeSinceStartupAsDouble);
                         BindConstructionPresentation(); BindExplosivePresentation(); peer.Lobby.Changed+=Publish;
-                        addresses="Room code: "+online.Room.Code; Publish();
+                        addresses="Room code: "+online.Room.Code; EnterRoomLobby(); Publish();
                     }
                     if(peer==null) online.Fail("Cannot create the online room. Please try again");
                 }

@@ -21,7 +21,7 @@ partial class LobbyCases
         Need(flow.Begin(true,"",0)&&flow.State==OnlineRoomState.SigningIn,"Online starts sign-in");
         Need(!flow.Begin(true,"",0)&&service.Signs==1,"Double press ignored");
         service.Sign.SetResult(true); flow.Pump(1);
-        Need(flow.State==OnlineRoomState.CreatingRoom&&service.Capacity==8,"Host reserves seven joiners");
+        Need(flow.State==OnlineRoomState.CreatingRoom&&service.Capacity==24,"Host reserves 23 joiners");
         var room=new OnlineRoom("ABC123",null);service.Allocation.SetResult(room);flow.Pump(2);
         Need(flow.State==OnlineRoomState.RoomCode&&flow.Room.Code=="ABC123","Host gets code");
         flow.Leave();Need(room.Disposed&&flow.State==OnlineRoomState.Idle,"Leave releases room");

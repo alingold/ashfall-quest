@@ -31,9 +31,9 @@ namespace Ashfall.Integration.Playable.World.Loot
                 request.timeout=30;yield return request.SendWebRequest();if(request.result!=UnityWebRequest.Result.Success){Failure=request.error;yield break;}
                 try
                 {
-                    using(var sha=SHA256.Create())if(BitConverter.ToString(sha.ComputeHash(request.downloadHandler.data)).Replace("-","").ToLowerInvariant()!="86ff691387a253a4de63c63c4b264630f948b043d512ae19cb21927f4c606d52")throw new InvalidOperationException("Source rack payload changed");
-                    manifest=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);if(manifest==null||manifest.version!=1||manifest.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||manifest.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||manifest.maps==null||manifest.maps.Length!=37)throw new InvalidOperationException("Frozen R6 rack source required");
-                    var maps=new HashSet<string>();int total=0;foreach(var map in manifest.maps){if(map==null||!maps.Add(map.mapId)||map.sourceSha256.Length!=64||map.cacheFingerprint.Length!=64||map.boards==null)throw new InvalidOperationException("Unique source rack map");var ids=new HashSet<string>();foreach(var board in map.boards){if(board==null||!ids.Add(board.id))throw new InvalidOperationException("Unique source board");board.Read();total++;}}if(total!=1344)throw new InvalidOperationException("Complete prepared board membership");Ready=true;
+                    // r19 MAPKIT: the whole-file hash pin and the fixed 37-map / 1,344-board counts are gone so imported maps can add rows; every row is still bound to the loaded map by source hash + cache fingerprint (Prepare).
+                    manifest=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);if(manifest==null||manifest.version!=1||manifest.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||manifest.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||manifest.maps==null||manifest.maps.Length==0)throw new InvalidOperationException("Frozen R6 rack source required");
+                    var maps=new HashSet<string>();int total=0;foreach(var map in manifest.maps){if(map==null||!maps.Add(map.mapId)||map.sourceSha256.Length!=64||map.cacheFingerprint.Length!=64||map.boards==null)throw new InvalidOperationException("Unique source rack map");var ids=new HashSet<string>();foreach(var board in map.boards){if(board==null||!ids.Add(board.id))throw new InvalidOperationException("Unique source board");board.Read();total++;}}if(total==0)throw new InvalidOperationException("Prepared board membership required");Ready=true;
                 }catch(Exception e){Failure=e.ToString();}
             }
         }
@@ -60,7 +60,7 @@ namespace Ashfall.Integration.Playable.World.Loot
             if(mapId==root.Map.MapId&&row!=null){generation=root.ArchiveWorldGeneration;return;}
             WithdrawMap();mapId=root.Map.MapId;generation=root.ArchiveWorldGeneration;
             foreach(var item in manifest.maps)if(item.mapId==mapId){row=item;break;}if(row==null)return;
-            R24LaunchMapInfo frame;if(!root.LaunchMapCatalog.TryRead(mapId,out frame)||frame.SourceSha256!=row.sourceSha256||frame.CacheFingerprint!=row.cacheFingerprint||root.Map.SourceSha256!=row.sourceSha256){Failure="Source rack/map binding differs: "+mapId;return;}
+            R24LaunchMapInfo frame;if(!root.LaunchMapCatalog.TryRead(mapId,out frame)||frame.SourceSha256!=row.sourceSha256||frame.CacheFingerprint!=row.cacheFingerprint||root.Map.SourceSha256!=row.sourceSha256){LastRefusal="Source rack/map binding differs: "+mapId;row=null;return;}
             attempted=new bool[row.boards.Length];
         }
         void Update()

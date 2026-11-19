@@ -53,8 +53,8 @@ class Mechanics
         Check(flight.Step(C(1,"glide"),f).Accepted&&flight.Mode==FlightMode.Glide&&Math.Abs(flight.Velocity.Z-12)<.001f&&flight.Velocity.Y<0,"source spread starts 12m/s descending glide");
         f.LeftHand=new Float3(-.6f,1.4f,0);flight.Step(C(2,"bank"),f);Check(flight.Velocity.X>0,"source height difference banks right");
         var receipt=flight.PendingMotion;Check(flight.ApplyCollisionResult(C(2,"collision"),receipt,new FlightCollisionResult{Grounded=true},gate).Accepted&&flight.Mode==FlightMode.Ground,"accepted collision stops flight at floor");
-        f.HandsReady=false;f.Velocity=new Float3(2,-1,0);flight.Step(C(3,"fall"),f);Check(flight.Mode==FlightMode.Air&&flight.Velocity.Y< -1,"unready hands cannot glide and use source gravity");
-        f.Climbing=true;flight.Step(C(4,"climb"),f);Check(flight.Mode==FlightMode.Suspended,"climbing keeps sole root motion authority");
+        f.HandsReady=false;f.DeltaSeconds=.16f;f.Velocity=new Float3(2,-1,0);flight.Step(C(3,"fall"),f);Check(flight.Mode==FlightMode.Air&&flight.Velocity.Y< -1,"unready hands cannot glide and use source gravity");
+        f.DeltaSeconds=.02f;f.Climbing=true;flight.Step(C(4,"climb"),f);Check(flight.Mode==FlightMode.Suspended,"climbing keeps sole root motion authority");
         f.Climbing=false;f.DiveForward=true;f.Velocity=new Float3(0,-2,0);for(int i=5;i<=60;i++)flight.Step(C(i,"dive"+i),f);
         Check(flight.Mode==FlightMode.Dive,"one second fall plus forward enters source dive");
         flight=new FlightMachine("r23-playable","player",0,gate,6.5f,1);

@@ -15,33 +15,80 @@ namespace Ashfall.Integration.Playable.Climbing
         SphereCollider eyeSphere;
         Camera eyeCamera;
         readonly Vector3[] eyeCorners = new Vector3[4];
+        // WIN2: XR-off route bot only (null in play). Stands in for a headset's stereo
+        // camera: each eye's world position as the last RENDERED frame had it, and the
+        // largest frustum tangents (Quest 3: about 1.38 both ways).
+        public struct NetBotStereoEyes { public Vector3 Left, Right; public float TangentX, TangentY; }
+        public static System.Func<NetBotStereoEyes> NetBotStereo;
+        bool StereoEye(int index, out Vector3 position, out float tx, out float ty)
+        {
+            position = Vector3.zero; tx = ty = 0;
+            if (NetBotStereo != null)
+            { var eyes = NetBotStereo(); position = index == 0 ? eyes.Left : eyes.Right; tx = eyes.TangentX; ty = eyes.TangentY; return true; }
+            if (eyeCamera == null || !eyeCamera.stereoEnabled) return false;
+            var side = index == 0 ? Camera.StereoscopicEye.Left : Camera.StereoscopicEye.Right;
+            Matrix4x4 projection = eyeCamera.GetStereoProjectionMatrix(side);
+            tx = R25ObstructionFade.FrustumTangent(projection.m00, projection.m02);
+            ty = R25ObstructionFade.FrustumTangent(projection.m11, projection.m12);
+            Vector4 column = eyeCamera.GetStereoViewMatrix(side).inverse.GetColumn(3);
+            position = new Vector3(column.x, column.y, column.z);
+            return true;
+        }
+        // WIN2 (r12b, "cannot run through windows" in the headset): the radius must not
+        // depend on where the rig is. The stereo view matrices describe the last RENDERED
+        // frame, so measuring each eye against the live head position added every move made
+        // since then: about 0.155 m at rest on a Quest 3, 0.3-0.5 m right after a running
+        // step, and over 1 m right after the sill step lowers the tracking origin 0.9 m to
+        // crouch under the window header. The clearance test that follows that crouch then
+        // always failed, the step onto the sill was refused and the walk rolled back, every
+        // frame, with no visible crouch. (The XR-off bot has a mono camera: fixed 0.12 m.)
+        // Both eyes come from the same frame, so half their separation is free of rig
+        // motion. Computed once per frame, with a ceiling no tracking glitch can exceed.
+        public const float EyeSafetyRadiusLimit = .2f, HalfEyeSeparationLimit = .045f;
+        int eyeRadiusFrame = -1; float eyeRadius = .12f;
         public float EyeSafetyRadius
         {
             get
             {
+                if (eyeRadiusFrame == Time.frameCount) return eyeRadius;
                 if (eyeCamera == null && head != null) eyeCamera = head.GetComponent<Camera>();
                 float radius = .12f;
                 if (eyeCamera == null) return radius;
-                if (eyeCamera.stereoEnabled)
+                Vector3 left, right; float tx, ty, otherX, otherY;
+                if (StereoEye(0, out left, out tx, out ty) && StereoEye(1, out right, out otherX, out otherY))
                 {
-                    for (int index = 0; index < 2; index++)
-                    {
-                        var side = index == 0 ? Camera.StereoscopicEye.Left : Camera.StereoscopicEye.Right;
-                        Matrix4x4 projection = eyeCamera.GetStereoProjectionMatrix(side);
-                        float tx = R25ObstructionFade.FrustumTangent(projection.m00, projection.m02);
-                        float ty = R25ObstructionFade.FrustumTangent(projection.m11, projection.m12);
-                        Vector4 column = eyeCamera.GetStereoViewMatrix(side).inverse.GetColumn(3);
-                        float offset = Vector3.Distance(head.position, new Vector3(column.x, column.y, column.z));
-                        radius = Mathf.Max(radius, offset + eyeCamera.nearClipPlane * Mathf.Sqrt(1 + tx * tx + ty * ty) + EyeSurfaceMinimum + .005f);
-                    }
+                    float half = .5f * Vector3.Distance(left, right);
+                    if (float.IsNaN(half) || half > HalfEyeSeparationLimit) half = HalfEyeSeparationLimit;
+                    tx = Mathf.Max(tx, otherX); ty = Mathf.Max(ty, otherY);
+                    float reach = half + eyeCamera.nearClipPlane * Mathf.Sqrt(1 + tx * tx + ty * ty) + EyeSurfaceMinimum + .005f;
+                    if (!float.IsNaN(reach)) radius = Mathf.Max(radius, reach);
                 }
                 else
                 {
                     eyeCamera.CalculateFrustumCorners(new Rect(0, 0, 1, 1), eyeCamera.nearClipPlane, Camera.MonoOrStereoscopicEye.Mono, eyeCorners);
                     for (int i = 0; i < 4; i++) radius = Mathf.Max(radius, eyeCorners[i].magnitude + EyeSurfaceMinimum + .005f);
                 }
-                return radius;
+                eyeRadius = Mathf.Min(radius, EyeSafetyRadiusLimit); eyeRadiusFrame = Time.frameCount;
+                return eyeRadius;
             }
+        }
+        // Device evidence for the rule above, one player-log line per 15 s while a stereo
+        // camera is active: how far the live head was from the rendered eyes when sampled
+        // after the frame's moves, i.e. what r12 added to the radius.
+        float eyeLagMax, nextEyeLagLog;
+        public void ObserveEyeLag()
+        {
+            if (head == null) return;
+            if (eyeCamera == null) eyeCamera = head.GetComponent<Camera>();
+            Vector3 left, right; float tx, ty;
+            if (!StereoEye(0, out left, out tx, out ty) || !StereoEye(1, out right, out tx, out ty)) return;
+            eyeLagMax = Mathf.Max(eyeLagMax, Vector3.Distance(head.position, (left + right) * .5f));
+            float now = Time.realtimeSinceStartup;
+            if (now < nextEyeLagLog) return;
+            nextEyeLagLog = now + 15;
+            Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this, "R26 eye safety radius={0:F3} halfEyeSeparation={1:F3} headMovedSinceRenderedFrameMax={2:F3} r12RuleRadiusMax={3:F3}",
+                EyeSafetyRadius, .5f * Vector3.Distance(left, right), eyeLagMax, EyeSafetyRadius + eyeLagMax);
+            eyeLagMax = 0;
         }
         void EnsureEyeSphere()
         {

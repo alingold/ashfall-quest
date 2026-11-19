@@ -54,6 +54,6 @@ partial class LobbyCases
             var rows=R25StyleJson.Array(header["definitions"]);header["definitions"]="["+rows[0]+"]";
             Need(R25MapSolids.Parse(R25StyleJson.Encode(header),map,source,hash,Int32.Parse(header["chunks"]),out reason).Definitions.Length==1,"Trimmed real sidecar");
         }
-        Need(files==60 && definitions==24494,"Every installed r25 sidecar and geometry binding (Afterlife parsed but unused at runtime)");
+        Need(files==58 && definitions==23684,"All installed r18 solid sidecars and geometry bindings (files="+files+", definitions="+definitions+")");
     }
 }

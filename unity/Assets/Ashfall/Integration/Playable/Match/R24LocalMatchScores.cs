@@ -16,20 +16,21 @@ namespace Ashfall.Integration.Playable.Match
         }
         readonly RoundController scorer;
         readonly Func<HealthSnapshot> readHealth;
+        readonly Func<string> readName;
         long sequence;int observedDeaths;
         public long Revision {get;private set;}
         CommandContext Context(){long next=++sequence;return new CommandContext("r24-local-scores","director","score-"+next,next,0,true);}
-        public R24LocalMatchScores(R24PlayableMatchRules rules,Func<HealthSnapshot> actualPlayerHealth)
+        public R24LocalMatchScores(R24PlayableMatchRules rules,Func<HealthSnapshot> actualPlayerHealth,Func<string> actualPlayerName=null)
         {
             if(rules==null||actualPlayerHealth==null||actualPlayerHealth()==null)throw new ArgumentException("Actual configured local match player required");
-            readHealth=actualPlayerHealth;observedDeaths=readHealth().Deaths;
+            readName=actualPlayerName;readHealth=actualPlayerHealth;observedDeaths=readHealth().Deaths;
             scorer=new RoundController(new ModeRules(rules.Mode,rules.Teams,rules.ScoreLimit,rules.TimeLimit,1),this,"director","r24-local-scores",0,new Gate(),2048);
             if(!scorer.StartRound(Context(),0).Accepted)throw new InvalidOperationException("Local score round start refused");
         }
         public bool TryGet(string actorId,out ModeActor actor)
         {
             var p=readHealth();actor=new ModeActor();if(actorId!="player"||p==null)return false;
-            actor=new ModeActor("player","Player",p.Team,p.Life==LifeState.Alive?"alive":p.Life==LifeState.Downed?"downed":"eliminated",true,false);return true;
+            actor=new ModeActor("player",readName==null?actorId:readName(),p.Team,p.Life==LifeState.Alive?"alive":p.Life==LifeState.Downed?"downed":"eliminated",true,false);return true;
         }
         public ModeActor[] Snapshot(){ModeActor player;return TryGet("player",out player)?new[]{player}:new ModeActor[0];}
         public void Observe(HealthSnapshot actualHealth,double elapsed)

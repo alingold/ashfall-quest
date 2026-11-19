@@ -4,7 +4,7 @@ namespace Ashfall.Integration.Playable.Networking
 {
     public sealed partial class R24LanSession
     {
-        void SyncHealth(){if(root!=null&&root.Gameplay!=null&&root.Gameplay.PlayerHealthViewBound)root.RefreshLanPlayerHealth();}
+        void SyncHealth(){SyncRescueStations();if(root!=null&&root.Gameplay!=null&&root.Gameplay.PlayerHealthViewBound)root.RefreshLanPlayerHealth();}
         // Host-only zone owner port for remote members. Root.Update (order -100)
         // has already stepped the SAME R24MatchZoneHost this frame; the lobby
         // supplies only authenticated current-revision raw roots.

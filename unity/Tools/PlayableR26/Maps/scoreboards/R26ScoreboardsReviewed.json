@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "maps": [
+    {
+      "id": "archive:chill-gods-pitdevil",
+      "sourceSha256": "51357e7ae38620f0cf7dcbc035f7e3ca9001bac471f76dd9b0ca19a124406945",
+      "geometrySha256": "55c87fa287616e99b3a556fbedadd43806743d962c4d4de7ec10f766999f5542",
+      "frames": [
+        {
+          "center": [
+            -62.817,
+            96.7255,
+            -69.84705
+          ],
+          "width": 13.450000000000003,
+          "height": 14.296999999999997,
+          "normal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -69.95007496343976,
+            96.7255,
+            -62.721453636837495
+          ],
+          "width": 12.408000000000001,
+          "height": 14.296999999999997,
+          "normal": [
+            -0.9999999999694958,
+            -0.0,
+            7.810786136575262e-06
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -62.8255,
+            96.7255,
+            -55.58885
+          ],
+          "width": 13.448999999999998,
+          "height": 14.296999999999997,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -55.692099999999996,
+            96.7255,
+            -62.714
+          ],
+          "width": 12.408000000000008,
+          "height": 14.296999999999997,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -62.817143438034414,
+            96.7255,
+            65.31789689245925
+          ],
+          "width": 13.448999999999998,
+          "height": 14.296999999999997,
+          "normal": [
+            -5.458885213873831e-06,
+            -0.0,
+            -0.9999999999851004
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -69.95007496343973,
+            96.7255,
+            72.44354636728563
+          ],
+          "width": 12.408000000000001,
+          "height": 14.296999999999997,
+          "normal": [
+            -0.9999999999694958,
+            -0.0,
+            7.81078613657526e-06
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -62.8255,
+            96.7255,
+            79.57615000000001
+          ],
+          "width": 13.448999999999998,
+          "height": 14.296999999999997,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        },
+        {
+          "center": [
+            -55.692099999999996,
+            96.7255,
+            72.451
+          ],
+          "width": 12.408000000000001,
+          "height": 14.296999999999997,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reason": "source-reviewed four-sided KILLS scoreboard tower; lobby distance is not a role test"
+        }
+      ]
+    },
+    {
+      "id": "archive:flash-gods-pitdevil",
+      "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+      "geometrySha256": "9c4bd7f47aca48974621d4514bcf938ee4459cf6bc1baa1f5b34c563be05804a",
+      "frames": [
+        {
+          "center": [
+            -51.0539,
+            102.713,
+            -54.865
+          ],
+          "width": 20.36200000000001,
+          "height": 18.63199999999999,
+          "normal": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "reason": "source-reviewed paired KILLS scoreboard faces; remote elevated lobby is not a role test"
+        },
+        {
+          "center": [
+            -53.307050000000004,
+            102.713,
+            -54.8435
+          ],
+          "width": 20.361000000000004,
+          "height": 18.63199999999999,
+          "normal": [
+            -1.0,
+            0.0,
+            0.0
+          ],
+          "reason": "source-reviewed paired KILLS scoreboard faces; remote elevated lobby is not a role test"
+        }
+      ]
+    },
+    {
+      "id": "archive:bi-polar-gods-trashpandakiller",
+      "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+      "geometrySha256": "7bd9b2c60501af5730f648c8e345fc24b076c23007342e61af9ff14c4d69a923",
+      "frames": [
+        {
+          "center": [
+            234.16899999999998,
+            193.6025,
+            7.6181
+          ],
+          "width": 6.004000000000019,
+          "height": 6.763000000000005,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four touching lobby scoreboard outlines"
+        },
+        {
+          "center": [
+            240.65800000000002,
+            193.6025,
+            7.618075015629911
+          ],
+          "width": 6.004000000000019,
+          "height": 6.763000000000005,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four touching lobby scoreboard outlines"
+        },
+        {
+          "center": [
+            221.192,
+            193.6025,
+            7.6181
+          ],
+          "width": 6.003999999999991,
+          "height": 6.763000000000005,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four touching lobby scoreboard outlines"
+        },
+        {
+          "center": [
+            227.68099999999998,
+            193.6025,
+            7.6181
+          ],
+          "width": 6.004000000000019,
+          "height": 6.763000000000005,
+          "normal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "reason": "source-reviewed four touching lobby scoreboard outlines"
+        }
+      ]
+    }
+  ]
+}

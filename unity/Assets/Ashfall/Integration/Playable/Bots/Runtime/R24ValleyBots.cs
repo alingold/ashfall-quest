@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Ashfall.Core;
+using Ashfall.Integration.Playable.Networking;
 using Ashfall.Integration.Playable.Calibration;
 using Ashfall.Integration.Playable.Explosives;
 using UnityEngine;
@@ -115,7 +116,7 @@ namespace Ashfall.Integration.Playable.Bots
         }
         void Tick(float dt)
         {
-            corpses.Step(dt);
+            StepBullets(dt);corpses.Step(dt);
             routes.ProcessOne(requester=>{var agent=requester as Agent;return agent!=null&&!agent.Retired;});
             Vector3 feet=root.Rig.transform.position,head=root.Rig.Head.transform.position;
             float speed=root.Rig.MotionVelocity.magnitude;float exposure=-1;
@@ -239,19 +240,32 @@ namespace Ashfall.Integration.Playable.Bots
             a.Audio.Play("fire");
             a.StartBurst();
             if(a.Brain.Variant==3&&a.Brain.AreaAttack){ResolveGroundBlast(a,actualHead,report);a.Brain.CompleteShot(true);return;}
-            RaycastHit hit;bool overflow;bool found=Ray(from,to,SightMask,a,out hit,out overflow);report.queryOverflow=overflow;if(overflow){a.Brain.CompleteShot(true);return;}
-            Vector3 endpoint=found?hit.point:to;bool clear=!found||IsPlayer(hit.collider);
-            report.clear=clear;report.obstruction=found?hit.collider.name:"";
-            // Capture construction ownership BEFORE damage can retire its collider.
-            Ashfall.Modules.Construction.PlacedPanel panel;bool constructed=found&&root.Activities!=null&&root.Activities.TryReadPanel(hit.collider,out panel);
-            if(constructed){root.Activities.TryDamageCollider(hit.collider,(a.Brain.Variant==3?36:a.Brain.Variant==2?32:24)*a.Brain.DamageScale);CoverStops++;}
-            Vector3 guard=Vector3.zero;bool blocked=!constructed&&clear&&root.Gameplay.TryInterceptMeleeBullet(from,endpoint,out guard);if(blocked){endpoint=guard;GuardBlocks++;}
-            a.ShowShot(from,endpoint);Shots++;
-            float before=root.Gameplay.Health+root.Gameplay.Shield;
-            if(!constructed&&clear&&!blocked&&Vector3.Distance(to,actualHead)<.42f){root.Gameplay.ApplyPlayerDamage((a.Brain.Variant==3?16:a.Brain.Variant==2?19:12)*a.Brain.DamageScale);if(root.Gameplay.Health+root.Gameplay.Shield<before)PlayerHits++;}
-            else if(!clear&&!constructed)CoverStops++;
-            report.constructed=constructed;report.guarded=blocked;report.endpoint=endpoint;report.appliedPlayerDamage=before-root.Gameplay.Health-root.Gameplay.Shield;
-            a.Brain.CompleteShot(true);
+            R24LanBallisticProfile gun;R24LanBallisticProfile.TryRead("cx4",out gun);
+            bullets.Add(new BotBullet{Agent=a,Report=report,Direction=(to-from).normalized,Gun=gun});
+            Shots++;a.Brain.CompleteShot(true);
+        }
+        struct BotBullet{public Agent Agent;public R24KestrelDischarge Report;public Vector3 Direction;public float Distance;public double Age;public R24LanBallisticProfile Gun;}
+        readonly List<BotBullet> bullets=new List<BotBullet>(12);
+        void StepBullets(float dt)
+        {
+            for(int i=bullets.Count-1;i>=0;i--){
+                var b=bullets[i];b.Age+=dt;float next=b.Gun.Travel(b.Age);var report=b.Report;var a=b.Agent;
+                Vector3 from=report.muzzle+b.Direction*b.Distance,to=report.muzzle+b.Direction*next;
+                RaycastHit hit;bool overflow;bool found=Ray(from,to,SightMask,a,out hit,out overflow);
+                Vector3 endpoint=found?hit.point:to;float limit=(endpoint-from).magnitude;
+                Vector3 head=root.Rig.Head.transform.position;
+                float h=HandsWeapons.R26RemoteAimVolumes.SphereEntry(from.x,from.y,from.z,b.Direction.x,b.Direction.y,b.Direction.z,head.x,head.y,head.z,.42f);
+                bool player=h<=limit||found&&IsPlayer(hit.collider);if(h<=limit)endpoint=from+b.Direction*h;
+                Vector3 guard;bool blocked=root.Gameplay.TryInterceptMeleeBullet(from,endpoint,out guard);if(blocked){endpoint=guard;GuardBlocks++;}
+                if(!a.Retired)a.ShowShot(endpoint-b.Direction*Mathf.Min(4,(endpoint-from).magnitude),endpoint);
+                report.endpoint=endpoint;report.actualHead=head;report.guarded=blocked;report.queryOverflow=overflow;
+                if(!overflow&&!blocked){
+                    if(player){float before=root.Gameplay.Health+root.Gameplay.Shield;root.Gameplay.ApplyPlayerDamage((a.Brain.Variant==3?16:a.Brain.Variant==2?19:12)*a.Brain.DamageScale,report.muzzle);report.appliedPlayerDamage=before-root.Gameplay.Health-root.Gameplay.Shield;if(report.appliedPlayerDamage>0)PlayerHits++;}
+                    else if(found){Ashfall.Modules.Construction.PlacedPanel panel;report.constructed=root.Activities!=null&&root.Activities.TryReadPanel(hit.collider,out panel);if(report.constructed)root.Activities.TryDamageCollider(hit.collider,(a.Brain.Variant==3?36:a.Brain.Variant==2?32:24)*a.Brain.DamageScale);CoverStops++;}
+                }
+                report.clear=!found||player;report.obstruction=found?hit.collider.name:"";
+                if(found||player||overflow||blocked||next>=R24LanBallisticProfile.MaximumRange)bullets.RemoveAt(i);else{b.Distance=next;bullets[i]=b;}
+            }
         }
         void ResolveGroundBlast(Agent a,Vector3 actualHead,R24KestrelDischarge report)
         {
@@ -259,15 +273,16 @@ namespace Ashfall.Integration.Playable.Bots
             float horizontal=Vector2.Distance(new Vector2(feet.x,feet.z),new Vector2(point.x,point.z));if(horizontal>=2||Mathf.Abs(feet.y-point.y)>1.5f)return;
             RaycastHit hit;bool overflow;bool found=Ray(point+Vector3.up*.2f,actualHead,SightMask,a,out hit,out overflow);report.queryOverflow=overflow;if(overflow)return;
             if(found){report.obstruction=hit.collider.name;Ashfall.Modules.Construction.PlacedPanel panel;if(root.Activities!=null&&root.Activities.TryReadPanel(hit.collider,out panel)){report.constructed=true;root.Activities.TryDamageCollider(hit.collider,40*a.Brain.DamageScale);CoverStops++;return;}if(!IsPlayer(hit.collider)){CoverStops++;return;}}
-            report.clear=true;float before=root.Gameplay.Health+root.Gameplay.Shield;root.Gameplay.ApplyPlayerDamage(Mathf.Lerp(18,8,horizontal/2)*a.Brain.DamageScale);report.appliedPlayerDamage=before-root.Gameplay.Health-root.Gameplay.Shield;if(report.appliedPlayerDamage>0)PlayerHits++;
+            report.clear=true;float before=root.Gameplay.Health+root.Gameplay.Shield;root.Gameplay.ApplyPlayerDamage(Mathf.Lerp(18,8,horizontal/2)*a.Brain.DamageScale,point);report.appliedPlayerDamage=before-root.Gameplay.Health-root.Gameplay.Shield;if(report.appliedPlayerDamage>0)PlayerHits++;
         }
         public void NotifyGunshot(Vector3 origin,float loudness=1)
         {if(!Ready)return;foreach(var a in agents)a.Brain.HearShot(F(origin),F(a.Position),loudness);if(loudness>0&&agents.Exists(a=>Vector3.Distance(a.Position,origin)<=Mathf.Clamp(80*loudness,0,120)))active=true;}
         Agent Find(Collider collider){if(collider==null)return null;foreach(var a in agents)if(collider==a.Body||collider==a.Head)return a;return null;}
+        internal bool IsHeadCollider(Collider collider){var a=Find(collider);return a!=null&&collider==a.Head;}
         public string TargetId(Collider collider){var a=Find(collider);return a!=null&&a.Brain.State!=R24KestrelState.Dead?a.Id:null;}
         public void Hit(Collider collider,float amount){var a=Find(collider);if(a!=null)Damage(a,amount);}
         bool Damage(Agent a,float amount)
-        {if(!Ready)return false;float before=a.Brain.Health;if(!a.Brain.TakeDamage(amount,F(root.Rig.transform.position),F(root.Rig.Head.transform.position)))return false;if(damageNumbers!=null)damageNumbers.Emit(Mathf.Max(0,before-a.Brain.Health),a.Position+Vector3.up*1.85f,false);active=true;a.Audio.Play("hit",true);if(a.Brain.State==R24KestrelState.Dead){Mission.EnemyDefeated();root.SpawnValleyEnemySupply(a.Id,a.Position+Vector3.up*.75f);a.Audio.Play("death");a.SetCollision(false);a.HideTransient();a.SpawnCorpse();}return true;}
+        {if(!Ready)return false;float before=a.Brain.Health;if(!a.Brain.TakeDamage(amount,F(root.Rig.transform.position),F(root.Rig.Head.transform.position)))return false;if(damageNumbers!=null){float loss=Mathf.Max(0,before-a.Brain.Health);var blade=root.Gameplay.ActiveBladeDamagePoint;if(blade.HasValue)damageNumbers.EmitBlade(loss,blade.Value,false);else damageNumbers.Emit(loss,a.Position+Vector3.up*1.85f,false);}active=true;a.Audio.Play("hit",true);if(a.Brain.State==R24KestrelState.Dead){Mission.EnemyDefeated();root.SpawnValleyEnemySupply(a.Id,a.Position+Vector3.up*.75f);a.Audio.Play("death");a.SetCollision(false);a.HideTransient();a.SpawnCorpse();}return true;}
         public void SetSfxVolume(float value){if(!R24KestrelBrain.Finite(value))throw new ArgumentOutOfRangeException("sfx");sfxVolume=Mathf.Clamp01(value);foreach(var a in agents)a.Audio.SetSfxVolume(sfxVolume);}
         public bool ApplyTargetDamage(string id,float amount){foreach(var a in agents)if(a.Id==id)return Damage(a,amount);return false;}
         public void AppendTargets(List<R23ExplosiveTarget> targets){foreach(var a in agents)if(Ready&&a.Brain.State!=R24KestrelState.Dead)targets.Add(new R23ExplosiveTarget(a.Id,F(a.Position+Vector3.up*.7f)));}
@@ -277,7 +292,7 @@ namespace Ashfall.Integration.Playable.Bots
         public void Clear()
         {
             if(damageNumbers!=null){damageNumbers.Clear();damageNumbers=null;}
-            corpses.Clear();if(routes!=null)routes.CancelPending();foreach(var a in agents){a.Retired=true;a.SetCollision(false);a.HideTransient();a.Audio.Stop();}agents.Clear();if(encounter!=null){encounter.SetActive(false);Destroy(encounter);}encounter=null;
+            bullets.Clear();corpses.Clear();if(routes!=null)routes.CancelPending();foreach(var a in agents){a.Retired=true;a.SetCollision(false);a.HideTransient();a.Audio.Stop();}agents.Clear();if(encounter!=null){encounter.SetActive(false);Destroy(encounter);}encounter=null;
             if(ownsSkinWeights&&QualitySettings.skinWeights==SkinWeights.Unlimited)QualitySettings.skinWeights=previousSkinWeights;ownsSkinWeights=false;
             if(warningMaterial!=null)Destroy(warningMaterial);if(streakMaterial!=null)Destroy(streakMaterial);warningMaterial=streakMaterial=null;mapIdentity=null;active=Ready=false;Failure=null;accumulator=0;Shots=CoverStops=PlayerHits=GuardBlocks=OverflowRefusals=0;
         }
@@ -361,7 +376,7 @@ namespace Ashfall.Integration.Playable.Bots
                 if(Visual!=null&&Visual.HeadPose!=null&&Brain.Variant!=1){float ratio=R23CalibrationState.TargetEye/1.605f;Head.transform.SetPositionAndRotation(Visual.HeadPose.position+Visual.HeadPose.up*(.065f*ratio),Visual.HeadPose.rotation);Head.enabled=true;}
                 warning.enabled=false;if(Brain.State==R24KestrelState.Windup){Vector3 from=Muzzle,to=U(Brain.AreaAttack?Brain.ImpactPoint:Brain.LockedAim),direction=to-from;float length=direction.magnitude;if(length>1){direction/=length;to-=direction*.85f;RaycastHit hit;bool overflow;if(owner.Ray(from,to,WorldMask,this,out hit,out overflow))to=hit.point-direction*.03f;if(!overflow&&Vector3.Distance(from,to)>.03f){warning.SetPosition(0,from);warning.SetPosition(1,to);warning.enabled=true;}}}
             }
-            public void ShowShot(Vector3 from,Vector3 to){flashTime=.25f;streaks[cursor].SetPosition(0,from);streaks[cursor].SetPosition(1,to);streakTimes[cursor]=.065f;streaks[cursor].enabled=true;cursor=(cursor+1)%3;}
+            public void ShowShot(Vector3 from,Vector3 to){streaks[cursor].SetPosition(0,from);streaks[cursor].SetPosition(1,to);streakTimes[cursor]=.065f;streaks[cursor].enabled=true;cursor=(cursor+1)%3;}
             public void StartBurst(){flashTime=.25f;}
             public void SpawnCorpse()
             {

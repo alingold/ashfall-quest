@@ -18,10 +18,14 @@ namespace Ashfall.Integration.Playable.UI
             for(int i=0;i<numbers.Length;i++)fields.Add(numericKeys[i]+"="+numbers[i].ToString("R",CultureInfo.InvariantCulture));
             fields.Add("grip_toggle="+(value.GripToggle?"true":"false"));fields.Add("dominant_hand="+(value.DominantHand==0?"left":"right"));
             fields.Add("legacy_maps="+(value.RetiredMaps?"true":"false"));fields.Add("legacy_skins="+(value.RetiredSkins?"true":"false"));fields.Add("legacy_sounds="+(value.RetiredSounds?"true":"false"));
+            fields.Add("legacy_defaults=2");
             string result=string.Join(";",fields.ToArray());if(result.Length>MaximumLength)throw new InvalidOperationException("Settings record exceeds bound");return result;
         }
         public static R23UiSettings Decode(string record)
+        {bool migrated;return Decode(record,out migrated);}
+        public static R23UiSettings Decode(string record,out bool legacyDefaultsMigrated)
         {
+            legacyDefaultsMigrated=true;
             var defaults=new R23UiSettings();
             if(string.IsNullOrEmpty(record)||record.Length>MaximumLength)return defaults;
             var fields=record.Split(';');if(fields[0]!=Header)return defaults;
@@ -30,16 +34,18 @@ namespace Ashfall.Integration.Playable.UI
             {
                 int separator=fields[i].IndexOf('=');if(separator<1||separator!=fields[i].LastIndexOf('='))return defaults;
                 string key=fields[i].Substring(0,separator),value=fields[i].Substring(separator+1);
-                bool known=key=="legacy_maps"||key=="legacy_skins"||key=="legacy_sounds"||key=="turning_style"||key=="forward_reference"||key=="grip_toggle"||key=="dominant_hand"||Array.IndexOf(numericKeys,key)>=0;
+                bool known=key=="legacy_defaults"||key=="legacy_maps"||key=="legacy_skins"||key=="legacy_sounds"||key=="turning_style"||key=="forward_reference"||key=="grip_toggle"||key=="dominant_hand"||Array.IndexOf(numericKeys,key)>=0;
                 if(!known||values.ContainsKey(key))return defaults;values.Add(key,value);
             }
+            string marker;int version;
+            legacyDefaultsMigrated=!values.TryGetValue("legacy_defaults",out marker)||!int.TryParse(marker,NumberStyles.Integer,CultureInfo.InvariantCulture,out version)||version<2;
             string turn,forward,grip,dominant;values.TryGetValue("turning_style",out turn);values.TryGetValue("forward_reference",out forward);values.TryGetValue("grip_toggle",out grip);values.TryGetValue("dominant_hand",out dominant);
             return new R23UiSettings(turn=="snap"?R23Turning.Snap:R23Turning.Smooth,forward=="hand"?R23Forward.LeftController:R23Forward.Head,
                 Number(values,"snap_degrees",defaults.SnapDegrees),Number(values,"smooth_turn_speed",defaults.SmoothDegreesPerSecond),Number(values,"walk_speed_multiplier",defaults.WalkMultiplier),
                 Number(values,"master_volume",defaults.MasterVolume),Number(values,"sfx",defaults.SfxVolume),Number(values,"music",defaults.MusicVolume),Number(values,"ambience",defaults.AmbienceVolume),Number(values,"voice",defaults.VoiceVolume),
-                Number(values,"fling_power",defaults.FlingPower),Number(values,"motion_damping",defaults.MotionDamping),Number(values,"offhand_influence",defaults.OffhandInfluence),grip=="true",dominant=="left"?0:1,Number(values,"difficulty",defaults.BotDifficulty),Flag(values,"legacy_maps"),Flag(values,"legacy_skins"),Flag(values,"legacy_sounds"));
+                Number(values,"fling_power",defaults.FlingPower),Number(values,"motion_damping",defaults.MotionDamping),Number(values,"offhand_influence",defaults.OffhandInfluence),grip=="true",dominant=="left"?0:1,Number(values,"difficulty",defaults.BotDifficulty),legacyDefaultsMigrated||Flag(values,"legacy_maps"),legacyDefaultsMigrated||Flag(values,"legacy_skins"),legacyDefaultsMigrated||Flag(values,"legacy_sounds"));
         }
-        static bool Flag(Dictionary<string,string> fields,string key){string value;return fields.TryGetValue(key,out value)&&value=="true";}
+        static bool Flag(Dictionary<string,string> fields,string key){string value;return !fields.TryGetValue(key,out value)||value=="true";}
         static float Number(Dictionary<string,string> fields,string key,float fallback)
         {
             string text;float value;
@@ -59,7 +65,8 @@ namespace Ashfall.Integration.Playable.UI
         {
             try
             {
-                var value=R23UiSettingsCodec.Decode(UnityEngine.PlayerPrefs.GetString(Key,""));
+                bool legacyDefaultsMigrated;
+                var value=R23UiSettingsCodec.Decode(UnityEngine.PlayerPrefs.GetString(Key,""),out legacyDefaultsMigrated);
                 // R7 (playtest 6 "the sound still isn't working"): the playtest-3 hum
                 // test asked for master volume at zero, and that was saved. Restore a
                 // silent master volume to the default once; a later choice is kept.
@@ -76,6 +83,8 @@ namespace Ashfall.Integration.Playable.UI
                     }
                     else UnityEngine.PlayerPrefs.Save();
                 }
+                // Persist the one-time legacy opt-in even when no settings UI is opened.
+                if(legacyDefaultsMigrated)Save(value);
                 return value;
             }
             catch(UnityEngine.PlayerPrefsException error){UnityEngine.Debug.LogWarning("Could not load personal VR settings: "+error.Message);return new R23UiSettings();}

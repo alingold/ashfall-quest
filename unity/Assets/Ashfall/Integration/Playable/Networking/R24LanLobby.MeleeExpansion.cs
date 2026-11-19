@@ -39,7 +39,7 @@ namespace Ashfall.Integration.Playable.Networking
             R24LanSpawn spawn;
             R24LanSpawn targetSpawn;if(!TryReadSpawn(target,out targetSpawn))return false;
             if(!CombatLive||MeleeBlocked(actor)||meleeLosses.Count>=128||!TryReadSpawn(actor,out spawn))return false;
-            R24LanRawTrackingSample victim;if(Fresh(target,clock.Now,out victim)){var chest=R24KnifeMath.Add(victim.Pose.Head.Position,new Float3(0,-.45f,0));point=R24KnifeMath.Add(chest,R24KnifeMath.Scale(R24KnifeMath.Unit(R24KnifeMath.Sub(point,chest)),.29f));}
+            R24LanRawTrackingSample victim;if(kind=="fist"&&Fresh(target,clock.Now,out victim)){var chest=R24KnifeMath.Add(victim.Pose.Head.Position,new Float3(0,-.45f,0));point=R24KnifeMath.Add(chest,R24KnifeMath.Scale(R24KnifeMath.Unit(R24KnifeMath.Sub(point,chest)),.29f));}
             meleeLosses.Add(new MeleeLoss{Actor=actor,Target=target,Damage=damage,Point=point,Hand=hand,Kind=kind,At=clock.Now,Revision=spawn.Revision,TargetRevision=targetSpawn.Revision});return true;
         }
         void EmitMelee(string actor,string target,string kind,float damage,Float3 point,int hand,float stagger,int targetHand=0,float targetStagger=0)
@@ -66,9 +66,10 @@ namespace Ashfall.Integration.Playable.Networking
         {
             if(State!=R24LanLobbyState.Hosting)return;
             // Resolve after a short sampling window, so either blade's next accepted sample can cancel both contacts.
+            // Only a blade confirm uses the swept contact as its damage-number anchor.
             for(int i=meleeLosses.Count-1;i>=0;i--){var hit=meleeLosses[i];if(clock.Now-hit.At<.06)continue;meleeLosses.RemoveAt(i);R24LanSpawn spawn;R24LanRawTrackingSample raw;
                 R24LanSpawn targetSpawn;var attacker=sessions.Get(hit.Actor);var ah=attacker==null?null:hostHealth.Read(attacker.CanonicalActorId);var victim=sessions.Get(hit.Target);var before=victim==null?null:hostHealth.Read(victim.CanonicalActorId);
-                if(CombatLive&&ah!=null&&ah.Life==LifeState.Alive&&before!=null&&!MeleeBlocked(hit.Actor)&&TryReadSpawn(hit.Actor,out spawn)&&spawn.Revision==hit.Revision&&TryReadSpawn(hit.Target,out targetSpawn)&&targetSpawn.Revision==hit.TargetRevision&&Fresh(hit.Actor,clock.Now,out raw)&&ApplyCombatDamage(hit.Actor,hit.Target,hit.Damage,false)){var after=hostHealth.Read(victim.CanonicalActorId);float actual=(before.Health+before.Shield)-(after.Health+after.Shield);EmitMelee(hit.Actor,hit.Target,hit.Kind,actual,hit.Point,hit.Hand,0);}
+                if(CombatLive&&ah!=null&&ah.Life==LifeState.Alive&&before!=null&&!MeleeBlocked(hit.Actor)&&TryReadSpawn(hit.Actor,out spawn)&&spawn.Revision==hit.Revision&&TryReadSpawn(hit.Target,out targetSpawn)&&targetSpawn.Revision==hit.TargetRevision&&Fresh(hit.Actor,clock.Now,out raw)&&ApplyCombatDamage(hit.Actor,hit.Target,hit.Damage,false,int.MinValue,1,bladeContact:hit.Kind=="blade"?(Float3?)hit.Point:null)){MeleeHostApplied++;var after=hostHealth.Read(victim.CanonicalActorId);float actual=(before.Health+before.Shield)-(after.Health+after.Shield);EmitMelee(hit.Actor,hit.Target,hit.Kind,actual,hit.Point,hit.Hand,0);}
             }
             foreach(string peer in new List<string>(meleePending.Keys)){if(!peers.ContainsKey(peer)){meleePending.Remove(peer);continue;}var q=meleePending[peer];int budget=8;while(q.Count>0&&budget-->0){if(!Send(peer,q.Peek()))break;q.Dequeue();}if(q.Count==0)meleePending.Remove(peer);}
             foreach(string actor in new List<string>(bladeMotion.Keys))if(!HasMember(actor))bladeMotion.Remove(actor);

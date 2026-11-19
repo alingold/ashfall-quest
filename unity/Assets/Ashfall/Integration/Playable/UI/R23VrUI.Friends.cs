@@ -23,7 +23,7 @@ namespace Ashfall.Integration.Playable.UI
         }
         void FriendsBack()
         {
-            RequestLanLeave();friendsKeypad=false;friendsOther=false;enteringLanAddress=false;friendCode="";
+            roomConfirm=false;friendsBrowse=false;RequestLanLeave();friendsKeypad=false;friendsOther=false;enteringLanAddress=false;friendCode="";
             OpenFriends();
         }
         void MakeFriendRoom()
@@ -52,18 +52,22 @@ namespace Ashfall.Integration.Playable.UI
             Quad(panel,"Friends panel backdrop",new Vector3(0,0,.004f),new Vector2(2.2f,1.375f),Hex(R25Theme.Panel));
             Quad(panel,"Friends header backdrop",new Vector3(0,.612f,-.002f),new Vector2(2.2f,.151f),Hex(R25Theme.Header));
             Quad(panel,"Friends header accent",new Vector3(0,.536f,-.004f),new Vector2(.206f,.007f),Hex(R25Theme.Ember));
-            FrontText("PLAY WITH FRIENDS",640,60,38,1160);
+            FrontText("MULTIPLAYER",640,60,38,1160);
+            // In a room (code room or direct LAN) the panel is the room lobby, whatever opened it.
+            if(InRoomUi){BuildRoomPanel();return;}
             if(friendsOther)
             {
                 BuildLanFallback();FriendButton("BACK",40,710,240,FriendsBack);return;
             }
             FriendsScreen screen=R25FriendsFlow.Screen(onlineUiState,friendsKeypad);
+            if(screen==FriendsScreen.Choice&&friendsBrowse){BuildPublicRooms();return;}
             if(screen==FriendsScreen.Choice)
             {
-                FrontText("Make a room, or use your friend's code.",640,220,30,1160);
-                FriendButton("MAKE A ROOM",320,310,640,MakeFriendRoom,true);
-                FriendButton("JOIN A ROOM",320,414,640,delegate{friendsKeypad=true;friendCode="";Build();});
-                FrontButton("Other ways to connect",400,570,480,56,delegate{friendsOther=true;Build();},Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
+                FrontText("Make a room, find a public room, or use your friend's code.",640,196,28,1160);
+                FriendButton("MAKE A ROOM",320,262,640,MakeFriendRoom,true);
+                FriendButton("FIND A ROOM",320,358,640,OpenPublicRooms);
+                FriendButton("JOIN WITH A CODE",320,454,640,delegate{friendsKeypad=true;friendCode="";Build();});
+                FrontButton("Other ways to connect",400,582,480,56,delegate{friendsOther=true;Build();},Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
                 FriendButton("BACK",40,710,240,delegate{friendsOpen=false;Build();});return;
             }
             if(screen==FriendsScreen.Keypad)
@@ -95,21 +99,8 @@ namespace Ashfall.Integration.Playable.UI
                 FriendButton("TRY AGAIN",320,500,640,delegate{RequestLanLeave();if(friendHost)MakeFriendRoom();else{friendsKeypad=true;friendCode="";Build();}},true);
                 FriendButton("BACK",40,710,240,FriendsBack);return;
             }
-            FrontText(onlineUiState==OnlineRoomState.Connected?"You are in your friend's room":"Tell your friends this code",640,155,30,1160);
-            FrontText(SpacedFriendCode(onlineUiCode,false),640,237,76,1160).color=Hex(R25Theme.Teal);
-            FrontText("IN THE ROOM",640,325,27,1160);
-            string[] rows=lanMembers.Length==0?new[]{"Waiting for friends..."}:lanMembers.Split('\n');
-            for(int i=0;i<Math.Min(8,rows.Length);i++)FrontText(rows[i],i<4?340:940,380+(i%4)*51,27,550);
-            bool host=lanState==R24LanLobbyState.Hosting;
-            if(host)
-            {
-                var start=FrontButton("START MATCH",380,610,600,80,delegate{RequestMatchStart();},Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),36);
-                start.Enabled=CanStartSelectedMatch;
-                if(!start.Enabled)SetButtonStyle(start,Hex(R25Theme.Disabled),Hex(R25Theme.TextDisabled));
-            }
-            else FrontText("Your friend will start the match.",640,635,30,1160);
-            FriendButton("LEAVE ROOM",40,710,300,FriendsBack);
-            if(host)FriendButton("MATCH RULES",900,710,340,OpenMatchRules);
+            // The room code is known a frame before the lobby reports hosting/connected.
+            BuildRoomPanel();
         }
         static string SpacedFriendCode(string code,bool slots)
         {
@@ -119,6 +110,7 @@ namespace Ashfall.Integration.Playable.UI
         }
         void AnimateFriendsWaiting()
         {
+            TickRoomBrowser();
             if(friendWaiting==null)return;
             string caption=onlineUiState==OnlineRoomState.SigningIn?"Getting ready":onlineUiState==OnlineRoomState.CreatingRoom?"Making your room":"Joining";
             friendWaiting.text=caption+new string('.',1+(int)(Time.unscaledTime*2)%3);

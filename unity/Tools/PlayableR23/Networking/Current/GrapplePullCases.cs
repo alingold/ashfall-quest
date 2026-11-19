@@ -15,10 +15,11 @@ partial class LobbyCases
     {
         internal readonly Pair Pair=new Pair();internal readonly string Hash=new string('b',64);internal string Gun;
         internal bool Wall,Miss,GuestAim=false;internal float VictimX=0,HostX=8;
-        internal PullFixture(R24PlayableMatchRules rules=null)
+        internal PullFixture(R24PlayableMatchRules rules=null,bool teammates=false)
         {
             for(int i=0;i<5;i++)Pair.Tick();
             Pair.Host.BindCombatWorld(delegate(Float3 origin,Float3 direction,float range){return Wall?Math.Min(range,2):range;});
+            if(teammates)Need(Pair.Host.HostAssignRoomTeam(Pair.Client.OwnActor,Pair.Host.ReadAuthorityMember(Pair.Host.OwnActor).Team),"Explicit grapple teammate assignment");
             StartRound(Pair,new HazardWorld(),(rules??R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0)).With("catalog",true),Hash);
             R24LanSpawn hostSpawn;Need(Pair.Host.TryReadSpawn(Pair.Host.OwnActor,out hostSpawn),"Host fixture placement");HostX=hostSpawn.Feet.X;Sample();while(HostX<8){HostX=Math.Min(8,HostX+.3f);Sample();}
             for(int i=0;i<4;i++)Sample();
@@ -47,14 +48,14 @@ partial class LobbyCases
             var motor=new R25GrapplePull();motor.Begin(new Float3(100,0,0),0);float distance=0,previous=0;
             for(int k=0;k<20&&motor.Active;k++){
                 var wanted=motor.Propose(new Float3(distance,0,0),dt);float speed=wanted.X/dt;
-                Need(speed<=16.0001f&&speed>=previous-.001f,"Ramp monotonic and bounded");
+                Need(speed<=48.001f&&speed>=previous-.001f,"Ramp monotonic and bounded");
                 motor.Accept(wanted,wanted,dt);distance+=wanted.X;previous=speed;
             }
             motor.End();Need(R25TraversalVector.Length(motor.Velocity)<=6.0001f,"Residual velocity cap");
         }
         var m=new R25GrapplePull();m.Begin(new Float3(10,0,0),0);Float3 p=new Float3();
         for(int i=0;i<100&&m.Active;i++){var d=m.Propose(p,.02f);m.Accept(d,d,.02f);p=R25TraversalVector.Add(p,d);}
-        Need(Near(p.X,8.5f,.001f)&&!m.Active,"Stops exactly 1.5m away, no overshoot");
+        Need(Near(p.X,9.1f,.001f)&&!m.Active,"Stops exactly 0.9m away, no overshoot");
         foreach(bool overhang in new[]{false,true}){
             var world=new HfWorld{N=new[]{overhang?new Float3(1,1,0):new Float3(1,0,0)},D=new[]{overhang?3f:2f},GrazingError=true};
             p=new Float3(0,1.7f,0);m.Begin(new Float3(20,1.7f,0),0);int steps=0;
@@ -79,7 +80,7 @@ partial class LobbyCases
             // Real producer with a spoofed anchor: the host ignores the supplied point for hit selection.
             Need(f.Pair.Host.PublishWeb(new R25WebState(true,new Float3(8,1,40),false,new Float3()),1),"Host rope shot producer");
             Need(f.Pair.Host.GrapplePulls.Length==1&&f.Pair.Host.GrapplePulls[0].Victim==f.Pair.Client.OwnActor,"Host accepted body overrides spoofed point");
-            var row=f.Pair.Host.GrapplePulls[0];Need(Near(row.Target.X,8,.001f)&&Near(row.Target.Z,1.2f,.001f)&&Near(row.Target.Y,1.25f,.001f),"Frozen accepted head destination");
+            var row=f.Pair.Host.GrapplePulls[0];Need(Near(row.Target.X,8,.001f)&&Near(row.Target.Z,0,.001f)&&Near(row.Target.Y,1.25f,.001f),"Frozen accepted head destination");
             R25WebState web;Need(!f.Pair.Host.TryReadWeb(f.Pair.Host.OwnActor,out web),"Successful shot has no world tether");
             f.Sample();Need(f.Pair.Client.GrapplePulls.Length==1,"Reliable pull reaches victim");Need(!f.Fire(),"Successful shooter cooldown");
             int corrections=f.Pair.Host.CorrectedRawTracking;for(int i=0;i<12;i++)f.Sample();Need(f.Pair.Host.CorrectedRawTracking==corrections,"Stationary victim may ignore pull without punishment");
@@ -89,7 +90,7 @@ partial class LobbyCases
             Need(!f.Fire(),"Victim immune for three seconds after end");
             for(int i=0;i<61;i++)f.Sample();Need(f.Fire(),"Immunity expires after three seconds");
         }
-        foreach(bool friends in new[]{false,true})using(var f=new PullFixture(R24PlayableMatchRules.ForPreset("practice").With("teams",1).With("zone_enabled",false).With("grapple_pull_friends",friends))){
+        foreach(bool friends in new[]{false,true})using(var f=new PullFixture(R24PlayableMatchRules.ForPreset("team_respawn").With("grapple_pull_friends",friends),true)){
             Need(f.Pair.Host.ReadAuthorityMember(f.Pair.Host.OwnActor).Team==f.Pair.Host.ReadAuthorityMember(f.Pair.Client.OwnActor).Team,"Fixture actual teammates");Need(f.Fire()==friends,"Friend rule gates actual host decision");
         }
         using(var f=new PullFixture(R24PlayableMatchRules.ForPreset("free_for_all").With("grapple_pull",false)))Need(!f.Fire(),"Disabled pull rule refuses hit");
@@ -112,8 +113,8 @@ partial class LobbyCases
     static void PullLifecycleCases()
     {
         foreach(string cause in new[]{"death-victim","death-shooter","downed-victim","downed-shooter","disconnect-victim","disconnect-shooter","reset","rule-off","expiry"}){
-            var rules=R24PlayableMatchRules.ForPreset("team_revive").With("teams",1).With("grapple_pull_friends",true).With("zone_enabled",false).With("protection",0);
-            using(var f=new PullFixture(rules)){
+            var rules=R24PlayableMatchRules.ForPreset("team_revive").With("grapple_pull_friends",true).With("zone_enabled",false).With("protection",0);
+            using(var f=new PullFixture(rules,true)){
                 Need(f.Fire(),"Lifecycle starts pull "+cause);
                 if(cause.StartsWith("death")||cause.StartsWith("downed")){
                     string actor=cause.EndsWith("shooter")?f.Pair.Host.OwnActor:f.Pair.Client.OwnActor;var health=Health(f.Pair.Host,actor);

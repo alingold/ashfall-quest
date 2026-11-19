@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "mapId": "archive:cold-castle-gods-ghostlymostly88",
+  "title": "COLD CASTLE",
+  "sourceSha256": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+  "spawn": [
+    220.87,
+    63.675329680292684,
+    4.46
+  ],
+  "gameSpawn": [
+    220.87,
+    63.675329680292684,
+    4.46
+  ],
+  "warmupSpawn": [
+    218.05,
+    63.67532992233523,
+    4.46
+  ],
+  "boundsMin": [
+    -346.91656494140625,
+    -76.85621643066406,
+    -365.8699645996094
+  ],
+  "boundsMax": [
+    336.3599548339844,
+    173.14378356933594,
+    322.4073791503906
+  ],
+  "materials": [
+    {
+      "name": "p054b1b60",
+      "color": "p054b1b60_c.jpg",
+      "normal": "p054b1b60_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t104",
+      "color": "t104_c.jpg",
+      "normal": "t104_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t111",
+      "color": "t111_c.jpg",
+      "normal": "t111_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t112",
+      "color": "t112_c.jpg",
+      "normal": "t112_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t118",
+      "color": "t118_c.jpg",
+      "normal": "t118_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 88,
+  "cameraFarDistance": 2773.0576478539538
+}

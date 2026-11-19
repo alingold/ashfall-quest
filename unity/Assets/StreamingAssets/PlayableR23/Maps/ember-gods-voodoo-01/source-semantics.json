@@ -1,0 +1,92 @@
+{
+ "mapId": "archive:ember-gods-voodoo-01",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:ember-gods-voodoo-01",
+  "title": "EMBER",
+  "creator": "GODS_Voodoo_01",
+  "template": "MapEditorSnow",
+  "center": [
+   40.09871417882992,
+   42.755938159829824,
+   7.680555827947785
+  ],
+  "recorded_spawns": [],
+  "bounds_min": [
+   -69.99993891110991,
+   -76.85621643066406,
+   -102.41809726199205
+  ],
+  "bounds_max": [
+   150.19736726876977,
+   173.14378356933594,
+   117.77920891788762
+  ],
+  "solid_min": [
+   -300.0,
+   -76.85621643066406,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   173.14378356933594,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/ember-gods-voodoo-01/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "0e03374e80e6e71db16341eb2561e6318298b79bbe9d3054184ac065598bbeaf",
+  "cache_fingerprint": "b8b2088d107de99eb0892bd516874916fe631cbaaff8b2e9f18cce39735bd7c7",
+  "warmup": [],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 0,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "b8b2088d107de99eb0892bd516874916fe631cbaaff8b2e9f18cce39735bd7c7",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

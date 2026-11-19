@@ -34,27 +34,63 @@ namespace Ashfall.Integration.Playable
         public bool VehicleBoarding {get{return vehicleGlideLeft>0&&vehicleGlideBoarding&&Riding;}}
         bool tankTrigger,exitGripArmed;float vehicleGunCooldown;
         string ExitButtonName {get{return PrimaryHand==1?"X":"A";}}
-        // The right hand aims the tank; mounted guns follow hull yaw.
         public System.Func<string,Vector3,Vector3,bool> FireVehicleGun;
         public string RidingKind {get{return Riding?vehicleKind:null;}}
         public string RidingVehicleId {get{return Riding?vehicleId:null;}}
-        public Ray VehicleAimRay
-        {
-            get
-            {
-                if(RightAimTracked&&Right!=null){Vector3 f=RightAimRotation*Vector3.forward;if(f.sqrMagnitude>.0001f)return new Ray(RightAimPosition,f.normalized);}
-                return Head==null?new Ray(transform.position,transform.forward):new Ray(Head.transform.position,Head.transform.forward);
-            }
-        }
+        Vector3 vehicleAimLocal;
+        float vehicleAimStep;
+        int vehicleAimHand;
+        public bool VehicleAimReady {get;private set;}
+        public bool VehicleAimLimited {get;private set;}
+        Quaternion VehicleAimBasis {get{return Quaternion.Euler(0,vehicleKind=="tank"?transform.eulerAngles.y:VehicleHullYaw,0);}}
+        public float VehicleGunYaw {get{return R25VehicleKinds.AimYaw(F(vehicleAimLocal));}}
+        public float VehicleGunPitch {get{return R25VehicleKinds.AimPitch(F(vehicleAimLocal));}}
+        public float TankAimYaw {get{return R25VehicleKinds.AimYaw(F(VehicleAimBasis*vehicleAimLocal));}}
+        public float TankAimPitch {get{return R24LanLobby.ClampTankPitch(VehicleGunPitch);}}
         public Ray VehicleGunRay
         {
             get
             {
-                var yaw=Quaternion.Euler(0,VehicleHullYaw,0);
-                Vector3 muzzle=vehicleKind=="helicopter"?R25HelicopterPresentation.GunMuzzle:R25BikePresentation.GunMuzzle;
-                Vector3 direction=yaw*Quaternion.Euler(vehicleKind=="helicopter"?5:0,0,0)*Vector3.forward;
-                return new Ray(transform.position+yaw*muzzle,direction);
+                Vector3 direction=VehicleAimBasis*vehicleAimLocal;
+                if(vehicleKind=="tank")return new Ray(U(R25VehicleKinds.TankMuzzle(F(transform.position),F(direction))),direction);
+                Vector3 pivot=transform.position+VehicleAimBasis*U(R25VehicleKinds.GunPivot(vehicleKind));
+                return new Ray(pivot+direction*R25VehicleKinds.GunBarrelLength(vehicleKind),direction);
             }
+        }
+        void TrackVehicleAim(float dt)
+        {
+            bool left=PrimaryHand==0;Transform hand=left?Left:Right;
+            if(hand==null||!(left?LeftInput.Tracked:RightInput.Tracked)){VehicleAimReady=false;return;}
+            bool aimTracked=left?LeftAimTracked:RightAimTracked;
+            Quaternion rotation=aimTracked?(left?LeftAimRotation:RightAimRotation):hand.rotation;
+            var local=F((Quaternion.Inverse(VehicleAimBasis)*rotation*Vector3.forward).normalized);
+            if(!local.IsFinite||local.Equals(new Float3())){VehicleAimReady=false;return;}
+            Vector3 target=vehicleKind=="tank"
+                ?U(R24LanLobby.TankShellDirection(R25VehicleKinds.AimYaw(local),R25VehicleKinds.AimPitch(local)))
+                :U(R25VehicleKinds.ClampGunDirection(local));
+            VehicleAimLimited=Vector3.Dot(target,U(local))<.99999f;
+            // Filter in the turning rig's frame so snap turns don't drag the aim across the cockpit.
+            Vector3 smoothed=VehicleAimReady&&vehicleAimHand==PrimaryHand
+                ?Vector3.Slerp(vehicleAimLocal,target,1-Mathf.Exp(-dt/.045f)).normalized:target;
+            var filtered=F(smoothed);
+            vehicleAimLocal=vehicleKind=="tank"
+                ?U(R24LanLobby.TankShellDirection(R25VehicleKinds.AimYaw(filtered),R25VehicleKinds.AimPitch(filtered)))
+                :U(R25VehicleKinds.ClampGunDirection(filtered));
+            vehicleAimHand=PrimaryHand;VehicleAimReady=true;
+        }
+        void TickMountedWeapon(float dt)
+        {
+            TrackVehicleAim(dt);
+            bool trigger=RightInput.Tracked&&!RightHandOccupied&&RightInput.Trigger>.55f;
+            if(vehicleKind=="tank"){
+                if(VehicleAimReady&&trigger&&!tankTrigger&&FireTank!=null)FireTank(vehicleId);
+                tankTrigger=trigger;return;
+            }
+            vehicleGunCooldown-=dt;
+            if(!VehicleAimReady||!trigger||FireVehicleGun==null){vehicleGunCooldown=Mathf.Max(0,vehicleGunCooldown);return;}
+            if(vehicleGunCooldown>0)return;
+            var ray=VehicleGunRay;
+            if(FireVehicleGun(vehicleId,ray.origin,ray.direction))vehicleGunCooldown+=R24LanLobby.VehicleGunInterval;else vehicleGunCooldown=0;
         }
         Float3 VehicleExitRest()
         {
@@ -64,17 +100,6 @@ namespace Ashfall.Integration.Playable
                     return F(new Vector3(transform.position.x,hit.point.y+.65f,transform.position.z));
             }
             return F(transform.position);
-        }
-        public float TankAimYaw {get{Vector3 f=VehicleAimRay.direction;return Mathf.Atan2(f.x,f.z)*Mathf.Rad2Deg;}}
-        public float TankAimPitch {get{Vector3 f=VehicleAimRay.direction;return Networking.R24LanLobby.ClampTankPitch(Mathf.Asin(Mathf.Clamp(f.y,-1,1))*Mathf.Rad2Deg);}}
-        void TickVehicleGun(float dt)
-        {
-            vehicleGunCooldown-=dt;
-            bool trigger=RightInput.Tracked&&!RightHandOccupied&&RightInput.Trigger>.55f;
-            if(!trigger||FireVehicleGun==null||vehicleId==null){vehicleGunCooldown=Mathf.Max(0,vehicleGunCooldown);return;}
-            if(vehicleGunCooldown>0)return;
-            var ray=VehicleGunRay;
-            if(FireVehicleGun(vehicleId,ray.origin,ray.direction))vehicleGunCooldown+=Networking.R24LanLobby.VehicleGunInterval;else vehicleGunCooldown=0;
         }
         void StartVehicleExitGlide(string kind)
         {
@@ -103,7 +128,7 @@ namespace Ashfall.Integration.Playable
         {
             if(vehicleId!=null&&!vehicleExitPending&&DismountVehicle!=null)DismountVehicle(vehicleId,VehicleExitRest(),transform.eulerAngles.y);
             vehicleExitPending=true;vehicleId=null;mountCandidate=null;mountHold.Step(false,.01f,.4f);exitHold.Step(false,.01f,.5f);
-            VehicleHint="";
+            VehicleAimReady=false;VehicleHint="";HideVehicleSeat();
         }
 #if UNITY_EDITOR
         // Explicit editor fixture: same input projection and motor path, no XR device.
@@ -127,7 +152,8 @@ namespace Ashfall.Integration.Playable
 #endif
         void AcceptVehicleVelocity(Float3 velocity)
         {if(vehicleGlideArrived){vehicleGlideArrived=false;velocity=new Float3();}
-         if(vehicleKind=="helicopter"){helicopterMotor.Accept(velocity);motor.SetVelocity(helicopterMotor.Velocity);}else if(vehicleKind=="tank"){tankMotor.Accept(velocity);motor.SetVelocity(tankMotor.Velocity);}else{bikeMotor.Accept(velocity);motor.SetVelocity(bikeMotor.Velocity);}}
+         if(vehicleKind=="helicopter"){helicopterMotor.Accept(velocity);motor.SetVelocity(helicopterMotor.Velocity);}else if(vehicleKind=="tank"){tankMotor.Accept(velocity);motor.SetVelocity(tankMotor.Velocity);}else{bikeMotor.Accept(velocity);motor.SetVelocity(bikeMotor.Velocity);}
+         if(Riding&&vehicleAimStep>0)TickMountedWeapon(vehicleAimStep);}
         Vector3 VehicleChassisMotion(Vector3 desired)
         {
             // Boarding/exit glides move only the rider; the common head sweep still runs.
@@ -154,7 +180,7 @@ namespace Ashfall.Integration.Playable
         }
         bool EvaluateVehicle(InputFrame frame,float dt,out Vector3 displacement,out Vector3 velocity)
         {
-            displacement=velocity=Vector3.zero;
+            displacement=velocity=Vector3.zero;vehicleAimStep=0;
             var rules=ReadTraversalRules==null?null:ReadTraversalRules();
             bool allowed=R25BikeRider.Allowed((rules==null||rules.Vehicles)&&(VehicleEnabled==null||VehicleEnabled()),frame.Tracked&&!frame.Paused,
                 GameplayBlocked||MenuLocomotion,SourceGhostMotion,CarrierActive);
@@ -166,9 +192,9 @@ namespace Ashfall.Integration.Playable
             if(!allowed){vehicleGlideLeft=0;CancelVehicle();return false;}
             // Exit glide: the rider is already released; finish stepping off the hull.
             if(!vehicleGlideBoarding&&vehicleId==null&&VehicleGlide(dt,out displacement,out velocity))return true;
-            if(owned==null){if(vehicleId!=null){vehicleId=null;if(vehicleKind!="helicopter")RequestHeadRecovery(Exclusion.R25RecoveryReason.Respawn,false);}vehicleExitPending=false;}
+            if(owned==null){if(vehicleId!=null){vehicleId=null;VehicleAimReady=false;if(vehicleKind!="helicopter")RequestHeadRecovery(Exclusion.R25RecoveryReason.Respawn,false);}vehicleExitPending=false;}
             else if(!vehicleExitPending&&vehicleId!=owned.Id){
-                vehicleKind=owned.Kind;helicopterMotor.Reset(owned.Home.Y-.65f);tankMotor.Reset(owned.Yaw,motor.Velocity);tankClick=true;tankTrigger=true;exitGripArmed=false;vehicleGunCooldown=.3f;vehicleId=owned.Id;bikeMotor.Accept(motor.Velocity);CancelTraversal();
+                VehicleAimReady=false;vehicleKind=owned.Kind;helicopterMotor.Reset(owned.Home.Y-.65f);tankMotor.Reset(owned.Yaw,motor.Velocity);tankClick=true;tankTrigger=true;exitGripArmed=false;vehicleGunCooldown=.3f;vehicleId=owned.Id;bikeMotor.Accept(motor.Velocity);CancelTraversal();
                 // Bike: mount in place. Tank/helicopter: glide onto the hull's rest pose.
                 if(Climbing!=null)Climbing.ResetMotion();
                 vehicleGlideLeft=0;
@@ -185,25 +211,27 @@ namespace Ashfall.Integration.Playable
                 if(candidate!=mountCandidate){mountHold.Step(false,dt,.4f);mountCandidate=candidate;}
                 if(mountHold.Step(candidate!=null,dt,.4f)&&MountVehicle!=null&&MountVehicle(candidate,hand))mountRequestedUntil=Time.unscaledTime+2;
                 VehicleHint=Time.unscaledTime<mountRequestedUntil?"MOUNT REQUESTED":candidate!=null?"HOLD GRIP TO MOUNT":"";
-                return false;
+                HideVehicleSeat();return false;
             }
-            // R5 (playtest 4): one exit for every vehicle: hold the empty RIGHT grip
-            // Right trigger fires; only the tank uses hand aim.
-            VehicleHint=vehicleKind=="helicopter"?"LEFT GRIP: CLIMB / STICK CLICK: DESCEND / RIGHT TRIGGER: GUN / HOLD RIGHT GRIP: EXIT":vehicleKind=="tank"?"LEFT STICK: DRIVE / RIGHT HAND: AIM / RIGHT TRIGGER: FIRE / HOLD RIGHT GRIP: EXIT":"RIGHT TRIGGER: GUN / JUMP: HOP / HOLD RIGHT GRIP: EXIT";
+            string aimHint=(PrimaryHand==0?"LEFT":"RIGHT")+" HAND: AIM / RIGHT TRIGGER: FIRE / PULL OVERHEAD HANDLE: EJECT";
+            VehicleHint=vehicleKind=="helicopter"?"LEFT GRIP + TILT: COLLECTIVE / STICK CLICK: DESCEND / "+aimHint:vehicleKind=="tank"?"LEFT STICK: DRIVE / "+aimHint:"JUMP: HOP / "+aimHint;
             if(vehicleGlideBoarding&&vehicleGlideLeft>0){
                 if(VehicleGlide(dt,out displacement,out velocity))return true;
                 // Boarded: the motors take over from the hull's rest pose.
                 helicopterMotor.Accept(new Float3());tankMotor.Accept(new Float3());motor.SetVelocity(new Float3());
             }
+            // r19 EJECT-HANDLE: the overhead handle is the exit. Grab it with either grip and pull it down EjectPull.
+            if(TickVehicleSeat(dt)){string seatKind=vehicleKind;DismountedByHandle=true;CancelVehicle();DismountedByHandle=false;StartVehicleExitGlide(seatKind);return false;}
             bool rightGrip=frame.GripRight&&RightInput.Tracked&&!RightHandOccupied;
             // The grip that mounted the vehicle must be released before it can exit.
             if(!frame.GripRight)exitGripArmed=true;
-            bool gripExit=rightGrip&&exitGripArmed;
+            // Fallback exit (the pre-r19 right-grip hold): deliberate 1.5 s, and never while the right hand is on the handle.
+            bool gripExit=rightGrip&&exitGripArmed&&!VehicleSeatHandBusy(1);
             if(gripExit)RightObjectiveGripReserved=true;
             if(vehicleKind=="tank"){
-                if(exitHold.Step(gripExit,dt,.5f)){CancelVehicle();StartVehicleExitGlide("tank");return false;}
+                if(exitHold.Step(gripExit,dt,R26VehicleSeat.FallbackExitSeconds)){CancelVehicle();StartVehicleExitGlide("tank");return false;}
             }
-            else if(vehicleKind!="helicopter"&&exitHold.Step(gripExit||frame.Jump,dt,.5f)){CancelVehicle();return false;}
+            else if(vehicleKind!="helicopter"&&exitHold.Step(gripExit||frame.Jump&&!VehicleSeatHandBusy(1),dt,R26VehicleSeat.FallbackExitSeconds)){CancelVehicle();return false;}
             CancelTraversal();
             RaycastHit floor;bool ground;
             // Initialize separately because short-circuit support may not execute.
@@ -211,26 +239,24 @@ namespace Ashfall.Integration.Playable
             if(vehicleKind=="helicopter"){
                 ground=HeadCollision.HelicopterGround(transform.position,out floor);
                 float height=ground?transform.position.y-floor.point.y:200;
-                // Collective: LEFT GRIP climbs (X/A still works too).
-                bool climb=(LeftInput.Tracked&&LeftInput.Grip>.5f)||frame.Jump;
-                if(LeftInput.Grip>.5f)LeftObjectiveGripReserved=true;
+                // r19 HELI-COLLECTIVE: while the LEFT grip is held its controller pitch (relative to the press pose) sets the vertical speed.
+                // The left grip no longer climbs by itself; X/A still climbs and the stick click still descends fast.
+                TickCollective(dt);
+                bool climb=frame.Jump;
                 bool exit=R25HelicopterDynamics.CanExit(height,gripExit,true,RightInput.Tracked,climb,LeftInput.Click,frame.Paused||MenuLocomotion);
-                if(exitHold.Step(exit,dt,.6f)){CancelVehicle();StartVehicleExitGlide("helicopter");return false;}
-                helicopterMotor.Step(dt,frame.MoveX,frame.MoveY,transform.eulerAngles.y,climb,LeftInput.Click,transform.position.y,ground?floor.point.y:helicopterMotor.LaunchGround-200,VehicleMapTop==null?helicopterMotor.LaunchGround+82.3f:VehicleMapTop());
-                displacement=U(helicopterMotor.Displacement);velocity=U(helicopterMotor.Velocity);TickVehicleGun(dt);return true;
+                if(exitHold.Step(exit,dt,R26VehicleSeat.FallbackExitSeconds)){CancelVehicle();StartVehicleExitGlide("helicopter");return false;}
+                helicopterMotor.Step(dt,frame.MoveX,frame.MoveY,transform.eulerAngles.y,collectiveHeld,collectiveSmoothed,climb,LeftInput.Click,transform.position.y,ground?floor.point.y:helicopterMotor.LaunchGround-200,VehicleMapTop==null?helicopterMotor.LaunchGround+82.3f:VehicleMapTop());
+                displacement=U(helicopterMotor.Displacement);velocity=U(helicopterMotor.Velocity);vehicleAimStep=dt;return true;
             }
             if(vehicleKind=="tank"){
                 // Left stick: Y throttle, X steers the hull (35 deg/s at full deflection).
                 float steer=Mathf.Abs(frame.MoveX)<.15f?0:Mathf.Clamp(frame.MoveX,-1,1);
                 tankMotor.Step(dt,frame.MoveY,tankMotor.Yaw+steer*35*dt,ground,ground?transform.position.y-floor.point.y:3,ground?F(floor.normal):new Float3(0,1,0));
-                // Right trigger with an empty right hand fires the gun (it replaces
-                // empty-hand building while driving the tank).
-                bool trigger=RightInput.Tracked&&!RightHandOccupied&&RightInput.Trigger>.55f;
-                if(trigger&&!tankTrigger&&FireTank!=null)FireTank(vehicleId);tankTrigger=trigger;tankClick=LeftInput.Click;
+                tankClick=LeftInput.Click;vehicleAimStep=dt;
                 displacement=U(tankMotor.Displacement);velocity=U(tankMotor.Velocity);return true;
             }
             R25BikeRider.Drive(bikeMotor,dt,frame.MoveX,frame.MoveY,transform.eulerAngles.y,LeftInput.Click,frame.Jump,ground,ground?transform.position.y-floor.point.y:3,ground?F(floor.normal):new Float3(0,1,0));
-            displacement=U(bikeMotor.Displacement);velocity=U(bikeMotor.Velocity);TickVehicleGun(dt);return true;
+            displacement=U(bikeMotor.Displacement);velocity=U(bikeMotor.Velocity);vehicleAimStep=dt;return true;
         }
     }
 }

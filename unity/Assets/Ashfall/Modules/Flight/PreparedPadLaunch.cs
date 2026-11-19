@@ -94,24 +94,24 @@ namespace Ashfall.Modules.Flight
             stepMode=FlightMode.Ground;if(pad==null||!pad.ValidateLocal().Accepted||pad.Flight!=this||pad.Step!=null||c.Tick!=pad.Context.Tick||
                 !V.Finite(yaw)||Math.Abs(yaw)>16||!V.Bounded(playerVelocity,10000))return RuleResult.Reject("pad step scope");
             f.Velocity=pad.Velocity;
-            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>.1f||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("pad step frame");
+            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>.1f||!V.Finite(f.DiveAxis)||Math.Abs(f.DiveAxis)>2||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("pad step frame");
             var r=pad.Commands.Validate(c);if(!r.Accepted)return r;
             if(!pad.ValidateLocal().Accepted)return RuleResult.Reject("pad changed");
             f.Forward=Rotate(f.Forward,yaw);f.MoveDirection=Rotate(f.MoveDirection,yaw);f.WalkTarget=Rotate(f.WalkTarget,yaw);
-            FlightMode mode=FlightMode.Launch;float fall=0,clear=.3f;bool rising=pad.Pad.Normal.Y>.05f;Float3 output;
-            Calculate(f,out output,ref mode,ref fall,ref clear,ref rising);
+            FlightMode mode=FlightMode.Launch;float fall=0,clear=.3f,pitch=0;bool rising=pad.Pad.Normal.Y>.05f;Float3 output;
+            Calculate(f,out output,ref mode,ref fall,ref clear,ref rising,ref pitch);
             if(f.CeilingBlocked&&output.Y>0){output=new Float3(output.X,0,output.Z);clear=0;rising=false;if(mode!=FlightMode.Suspended)mode=f.Supported?FlightMode.Ground:FlightMode.Air;}
             if(mode==FlightMode.Ground||mode==FlightMode.Suspended)output=playerVelocity;
             if(!V.Bounded(output,10000))return RuleResult.Reject("pad step output");
             var plan=new PreparedFlightStep(this,c,f,stateRevision,generation,motionRevision,mode);stepMode=mode;
-            plan.Output=output;plan.OutputMode=mode;plan.Fall=fall;plan.Clear=clear;plan.Rising=rising;plan.Resolved=true;
+            plan.Output=output;plan.OutputMode=mode;plan.Fall=fall;plan.Clear=clear;plan.Rising=rising;plan.Pitch=pitch;plan.Resolved=true;
             pad.Step=plan;pad.Validated=false;pad.Commands=pad.Commands.Stage(c);return r;
         }
         internal void CommitPad(PreparedPadLaunch p)
         {
             commands=p.Commands;stateRevision++;reservedPad=null;
-            if(p.Step==null){Velocity=p.Velocity;Mode=FlightMode.Launch;fallTime=0;clearance=.3f;ascent=p.Pad.Normal.Y>.05f;PendingMotion=null;return;}
-            var s=p.Step;Velocity=s.Output;Mode=s.OutputMode;fallTime=s.Fall;clearance=s.Clear;ascent=s.Rising;motionRevision++;
+            if(p.Step==null){Velocity=p.Velocity;Mode=FlightMode.Launch;fallTime=divePitch=0;clearance=.3f;ascent=p.Pad.Normal.Y>.05f;PendingMotion=null;return;}
+            var s=p.Step;Velocity=s.Output;Mode=s.OutputMode;fallTime=s.Fall;clearance=s.Clear;ascent=s.Rising;divePitch=s.Pitch;armsHold=NextArmsHold(s.Frame);motionRevision++;
             s.Receipt.ProposedVelocity=s.Output;PendingMotion=s.HasCollision?null:s.Receipt;s.Finished=true;
         }
     }

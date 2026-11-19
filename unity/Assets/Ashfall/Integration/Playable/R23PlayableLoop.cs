@@ -233,6 +233,10 @@ namespace Ashfall.Integration.Playable
                 Activities=new GameObject("R23 flight and construction").AddComponent<R23VRActivities>();Activities.transform.SetParent(transform,false);
 
                 Activities.Initialize(Rig.transform,Rig.Head.transform,Rig.Left,Rig.Right,Rig.Body,Map.transform);Rig.Activities=Activities;
+                // MATCH RULES HEADSHOTS / BUILD DAMAGE (offline): read the live match, else the pending warm-up selection.
+                Activities.ReadBuildDamageMultiplier=delegate{return OfflineMatchRules.BuildDamage;};
+                Gameplay.ReadHeadshotMultiplier=delegate{return OfflineMatchRules.Headshots;};
+                Gameplay.WorldBulletHeadshot=delegate(Collider collider){return ValleyBots!=null&&ValleyBots.IsHeadCollider(collider);};
 
                 Gameplay.WorldHit+=DamageConstructedCover;
 
@@ -276,7 +280,7 @@ namespace Ashfall.Integration.Playable
 
                 Gameplay.DualLocomotionAnchor=delegate{return Rig.LocomotionAnchorPosition;};
 
-                Gameplay.PreferredPickupHand=UI.Settings.DominantHand;Gameplay.CanClaimWorldGrip=delegate(string id,int hand){return (LanSession==null||LanSession.AllowWeaponClaim(id,hand))&&(WorldLoot==null||WorldLoot.AllowsWorldClaim(id))&&(MountedRacks==null||MountedRacks.AllowsWorldClaim(id))&&(!routeObjectiveInput||selectedObjective.Kind==R23GripObjectiveKind.Weapon&&selectedObjective.Id==id&&selectedObjective.Hand==hand);};
+                Gameplay.PreferredPickupHand=UI.Settings.DominantHand;Gameplay.CanSelectWorldGrip=delegate(string id,int hand){return (WorldLoot==null||WorldLoot.AllowsWorldClaim(id))&&(MountedRacks==null||MountedRacks.AllowsWorldClaim(id))&&(!routeObjectiveInput||selectedObjective.Kind==R23GripObjectiveKind.Weapon&&selectedObjective.Id==id&&selectedObjective.Hand==hand);};Gameplay.CanClaimWorldGrip=delegate(string id,int hand){return Gameplay.CanSelectWorldGrip(id,hand)&&(LanSession==null||LanSession.AllowWeaponClaim(id,hand));};
 
                 Consumables.CanClaimObjectiveGrip=delegate(string id,int hand){return (LanSession==null||LanSession.AllowFoodClaim(id,hand))&&(!routeObjectiveInput||selectedObjective.Hand==hand-1&&(selectedObjective.Kind==R23GripObjectiveKind.Open&&id=="open"||selectedObjective.Kind==R23GripObjectiveKind.Consumable&&id=="pickup:"+selectedObjective.Id));};
 
@@ -284,7 +288,7 @@ namespace Ashfall.Integration.Playable
 
                 Rig.BeforeHandInteractions=PrepareTrackedObjectiveGrips;
 
-                WeaponWheel=new GameObject("R23 source held-A inventory wheel").AddComponent<R23WeaponWheel>();WeaponWheel.transform.SetParent(transform,false);WeaponWheel.Initialize(Rig.Head.transform,TryEquipOwnedItem,OpenBackpack,ToggleHeldItem,EquipPaddles);if(!WeaponWheel.Ready)throw new Exception(WeaponWheel.Failure);
+                WeaponWheel=new GameObject("R23 source held-A inventory wheel").AddComponent<R23WeaponWheel>();WeaponWheel.transform.SetParent(transform,false);WeaponWheel.Initialize(Rig.Head.transform,TryEquipOwnedItem,OpenBackpack,ToggleHeldItem,EquipPaddles);ConfigureWheelDrop();if(!WeaponWheel.Ready)throw new Exception(WeaponWheel.Failure);
 
                 JumpPads=new GameObject("R23 authored map jump pads").AddComponent<R23JumpPads>();JumpPads.transform.SetParent(transform,false);JumpPads.Initialize(Map.MapId,Rig.transform,Map.transform,Rig.TryLaunchPad);JumpPads.SetSfxVolume(UI.Settings.SfxVolume);
 
@@ -334,7 +338,7 @@ namespace Ashfall.Integration.Playable
 
             if(!Explosives.Ready){Fail(new Exception(Explosives.Failure??"Source grenade assets loading timed out"));yield break;}
 
-            Gameplay.SetPracticeTargetsVisible(false);if(RescueTraining!=null)RescueTraining.SetWorldVisible(false);Gameplay.SetPickupHome(activeSpawn+Vector3.up*1.3f,Quaternion.identity);
+            Gameplay.SetPracticeTargetsVisible(false);Gameplay.SetPickupHome(activeSpawn+Vector3.up*1.3f,Quaternion.identity);
 
             SpawnConsumables();Consumables.SetWorldVisible(false);if(Explosives!=null)Explosives.SetWorldVisible(false);if(Supplies!=null)Supplies.SetWorldVisible(false);RefreshLoadout();
 
@@ -358,7 +362,7 @@ namespace Ashfall.Integration.Playable
 
         void RefreshSlotBudget(){Gameplay.SlotCapacity=InventoryCapacity;Consumables.SlotCapacity=InventoryCapacity;Consumables.SetOtherSlotsUsed(Gameplay.OwnedWeaponActionIds.Length+ExplosiveSlotCount);if(Explosives!=null){Explosives.SlotCapacity=InventoryCapacity;Explosives.SetOtherSlotsUsed(Gameplay.OwnedWeaponActionIds.Length+ConsumableSlotCount);}}
 
-        bool CanCollectWeapon(){return Gameplay.OwnedWeaponActionIds.Length+ConsumableSlotCount+ExplosiveSlotCount<InventoryCapacity;}
+        bool CanCollectWeapon(){return Networking.R26InventorySlots.HasRoom(InventoryCapacity,Gameplay.OwnedWeaponActionIds.Length,ConsumableSlotCount,ExplosiveSlotCount);}
 
         int GrantWorldSupply(string receipt,string family,int amount)
 
@@ -438,6 +442,8 @@ namespace Ashfall.Integration.Playable
 
         void QueueDrop(string id){if(!roundStarted){UI.SetLoadoutStatus("PRESS START BEFORE DROPPING INTO THE MAP");return;}queuedDrop=id;if(!id.StartsWith("reserve/",StringComparison.Ordinal))UI.SetPlaying();}
 
+        // The rules offline damage multipliers read: the running match, else what the Match Rules page shows.
+        internal Ashfall.Integration.Playable.Match.R24PlayableMatchRules OfflineMatchRules{get{return ActualMatchRules??UI.SelectedMatchRules??Ashfall.Integration.Playable.Match.R24PlayableMatchRules.ForPreset("team_revive",Map==null?"range":Map.MapId);}}
         public R23ConsumableVitals ReadVitals(){return new R23ConsumableVitals{Health=Gameplay==null?0:Gameplay.Health,Shield=Gameplay==null?0:Gameplay.Shield,Stamina=Rig==null?0:Rig.Stamina,MaxStamina=Rig==null?6:Rig.StaminaMaximum,Alive=Gameplay!=null&&Gameplay.Health>0};}
 
         public bool TryApplyGain(float health,float shield,bool refillStamina)
@@ -485,7 +491,7 @@ namespace Ashfall.Integration.Playable
 
             if(!roundStarted||Gameplay==null||!origin.IsFinite||float.IsNaN(amount)||float.IsInfinity(amount)||amount<=0)return false;
 
-            float before=Gameplay.Health+Gameplay.Shield;Gameplay.ApplyPlayerDamage(amount);return Gameplay.Health+Gameplay.Shield<before;
+            float before=Gameplay.Health+Gameplay.Shield;Gameplay.ApplyPlayerDamage(amount,new Vector3(origin.X,origin.Y,origin.Z));return Gameplay.Health+Gameplay.Shield<before;
 
         }
 
@@ -559,13 +565,13 @@ namespace Ashfall.Integration.Playable
 
             UI.SetCreativeCatalog(CreativeCatalogAllowed);UI.SetOwnedLoadout(options,InventoryCapacity);
 
-            UI.SetOwnedBackpacks(InventoryCapacity-3,Gameplay.OwnedWeaponActionIds.Length+ConsumableSlotCount+ExplosiveSlotCount<InventoryCapacity);
+            UI.SetOwnedBackpacks(InventoryCapacity-3,CanCollectWeapon());
 
             var resources=new List<R23BackpackResource>();foreach(string family in new[]{"pistol","smg","rifle","shells","sniper"})resources.Add(new R23BackpackResource(family,Gameplay.ReadAmmoReserveFamily(family),true));
 
             resources.Add(new R23BackpackResource("builds",Activities==null?0:Activities.Balance,true));UI.SetBackpackResources(resources);
 
-            if(WeaponWheel!=null){var slots=new List<R23WeaponWheelSlot>();foreach(var option in options)slots.Add(new R23WeaponWheelSlot(option.Id,option.Label,option.ProfileId,option.Detail,option.CanEquip,option.Stars,option.Count));WeaponWheel.SetInventorySlots(InventoryCapacity,slots.ToArray());}
+            if(WeaponWheel!=null){var slots=new List<R23WeaponWheelSlot>();foreach(var option in options)slots.Add(new R23WeaponWheelSlot(option.Id,option.Label,option.ProfileId,option.Detail,option.CanEquip,option.Stars,option.Count,WheelItemDroppable(option.Id)));WeaponWheel.SetInventorySlots(InventoryCapacity,slots.ToArray());}
 
         }
 
@@ -611,7 +617,7 @@ namespace Ashfall.Integration.Playable
 
         {
 
-            ApplyBackpackDrop();ApplyCreativeItem();
+            ApplyBackpackDrop();ApplyCreativeItem();PumpWheelItemDrop();
 
             if(queuedEquip!=null){string id=queuedEquip;queuedEquip=null;bool okay=false;
 
@@ -644,7 +650,7 @@ namespace Ashfall.Integration.Playable
 
         bool PairedWeapon(string id){R23WeaponInstanceInfo info;return R23HandsWeapons.WeaponClaimsBothHands(Gameplay.TryReadWeaponInstance(id,out info)?info.ProfileId:id);}
 
-        bool CanClaimDualCustody(){return Ready&&roundStarted&&!switchingMap&&!PageBlocksGameplay&&Gameplay.Health>0&&!PaddleHands&&!Climbing.LeftAnchored&&!Climbing.RightAnchored;}
+        bool CanClaimDualCustody(){return Ready&&!PlatformUnarmed&&roundStarted&&!switchingMap&&!PageBlocksGameplay&&Gameplay.Health>0&&!PaddleHands&&!Climbing.LeftAnchored&&!Climbing.RightAnchored;}
 
         bool PrepareWorldWeaponPickup(string id,int hand)
 
@@ -672,7 +678,7 @@ namespace Ashfall.Integration.Playable
 
         {
 
-            if(!Ready||!roundStarted||switchingMap||Gameplay.Health<=0||hand<0||hand>1||!(hand==0?Rig.LeftInput.Tracked:Rig.RightInput.Tracked)||(hand==0?Climbing.LeftAnchored:Climbing.RightAnchored))return false;
+            if(!Ready||!roundStarted||PlatformUnarmed||switchingMap||Gameplay.Health<=0||hand<0||hand>1||!(hand==0?Rig.LeftInput.Tracked:Rig.RightInput.Tracked)||(hand==0?Climbing.LeftAnchored:Climbing.RightAnchored))return false;
 
             bool weapon=Gameplay.OwnsWeapon(id),explosive=OwnsExplosive(id),owned=weapon||explosive;foreach(var item in Consumables.OwnedItems)owned|=item.Id==id;if(!owned)return false;
 
@@ -692,9 +698,9 @@ namespace Ashfall.Integration.Playable
 
         }
 
-        void OpenBackpack(){if(Ready&&roundStarted){UI.OpenLoadout();Rig.GameplayBlocked=false;}}
+        void OpenBackpack(){if(Ready&&roundStarted&&!PlatformUnarmed){UI.OpenLoadout();Rig.GameplayBlocked=false;}}
 
-        void ToggleHeldItem(){if(!Ready||!roundStarted)return;if(PaddleHands)StowPaddles();else if(Explosives!=null&&Explosives.HeldId!=null)Explosives.Stow();else if(Consumables.HeldId!=null)Consumables.Stow();else if(Gameplay.HasWeapon)Gameplay.HolsterCurrent();else TryEquipOwnedItem(Gameplay.ActiveWeaponActionId,Gameplay.PrimaryHand);}
+        void ToggleHeldItem(){if(!Ready||!roundStarted||PlatformUnarmed)return;if(PaddleHands)StowPaddles();else if(Explosives!=null&&Explosives.HeldId!=null)Explosives.Stow();else if(Consumables.HeldId!=null)Consumables.Stow();else if(Gameplay.HasWeapon)Gameplay.HolsterCurrent();else TryEquipOwnedItem(Gameplay.ActiveWeaponActionId,Gameplay.PrimaryHand);}
 
         void ViewAppearance(string id){if(Preview!=null&&Lobby!=null&&Lobby.Visible&&UI.Page==R23UiPage.Appearance&&id!=null)Preview.Show(id);}
 
@@ -706,7 +712,7 @@ namespace Ashfall.Integration.Playable
 
         {
 
-            bool enabled=Ready&&roundStarted&&!switchingMap&&!PageBlocksGameplay&&!BackpackOpen&&!TacticalMapOpen&&Gameplay.Health>0&&Rig.Tracking&&Rig.SessionFocused&&!Rig.Paused;
+            bool enabled=Ready&&roundStarted&&!switchingMap&&!PageBlocksGameplay&&!BackpackOpen&&Gameplay.Health>0&&Rig.Tracking&&Rig.SessionFocused&&!Rig.Paused;
 
             if(WeaponWheel!=null)enabled&=!WeaponWheel.Active&&(Activities.BuildActive||!R23InputProjection.WheelHeld(Rig.LeftInput,Rig.RightInput,Gameplay.PrimaryHand));
 
@@ -715,7 +721,7 @@ namespace Ashfall.Integration.Playable
             PrepareObjectiveGrips(Rig.LeftInput,Rig.RightInput,enabled,Rig.LeftInputReady,Rig.RightInputReady);
 
             Rig.GrappleHands=Gameplay;Rig.ReadTraversalRules=()=>ActualMatchRules;Rig.TraversalInputAllowed=enabled;
-            Rig.ConstructionInputAllowed=R23BuildInputRules.Eligible(enabled,Gameplay.IsHolstered,
+            Rig.ConstructionInputAllowed=R23BuildInputRules.Eligible(enabled&&!TacticalMapOpen,Gameplay.IsHolstered,
 
                 Explosives!=null&&Explosives.HeldHand!=0,
 
@@ -949,7 +955,7 @@ namespace Ashfall.Integration.Playable
 
             mapHealthResetPending=true;activeSpawn=training?Map.GameSpawn:Map.WarmupSpawn;Rig.Head.farClipPlane=Map.CameraFarDistance;Map.SetWorldVisible(false);Lobby.Show();Rig.SetSpawn(Lobby.Spawn,Lobby.Spawn+Vector3.forward);Calibration.NotifyRootPoseReset();UI.SetMenuAnchor(Lobby.MenuAnchor);UI.Recenter();
 
-            Gameplay.SetPracticeTargetsVisible(false);if(RescueTraining!=null)RescueTraining.SetWorldVisible(false);Gameplay.SetPickupHome(activeSpawn+Vector3.up*1.3f,Quaternion.identity);
+            Gameplay.SetPracticeTargetsVisible(false);Gameplay.SetPickupHome(activeSpawn+Vector3.up*1.3f,Quaternion.identity);
 
             switchingMap=false;Ready=true;UI.SetSelectedMap(id);UI.ShowReady();SpawnConsumables();Consumables.SetWorldVisible(false);if(Explosives!=null)Explosives.SetWorldVisible(false);if(Supplies!=null)Supplies.SetWorldVisible(false);JumpPads.SetMap(id);if(HealthStations!=null)HealthStations.SetMap(id,true);if(enterOnReady)StartPlaying();
 
@@ -958,12 +964,12 @@ namespace Ashfall.Integration.Playable
         void ToggleMenu(){if(UI!=null){if(WeaponWheel!=null)WeaponWheel.Cancel();UI.ToggleMenu();if(Rig!=null)Rig.GameplayBlocked=PlayerMotionBlocked;}}
 
         public void StartPlaying(){if(BeginSourceArchiveEntry())return;StartPlayingCore();}
-        void StartPlayingCore(){if(LanSession!=null&&LanSession.MapEntryBlocked)return;if(Ready){if(mapHealthResetPending&&ActualMatchRules==null){if(!Gameplay.ResetMapVitals())throw new InvalidOperationException("Fresh map Health reset refused");mapHealthResetPending=false;}if(pendingMatch==null&&ActualMatchRules==null&&!sourceArchiveCommitting)activeSpawn=WarmupOrValleyCheckpoint();ClearLocalEffects();if(Gallery!=null)Gallery.Hide();if(!Gameplay.PlayerHealthViewBound&&Gameplay.Health<=0){Gameplay.ResetRound();Consumables.ResetRound();}Gameplay.SetWeaponPresentationSuppressed(false);Lobby.Hide();Map.SetWorldVisible(true);UI.ClearMenuAnchor();if(Preview!=null)Preview.Hide();Rig.SetSpawn(activeSpawn,Map.Bounds.center);Calibration.NotifyRootPoseReset();PositionPracticeTargets();Gameplay.SetPracticeTargetsVisible(ActualMatchRules==null&&pendingMatch==null);if(RescueTraining!=null)RescueTraining.SetWorldVisible(ActualMatchRules==null&&pendingMatch==null);Consumables.SetWorldVisible(true);if(Explosives!=null)Explosives.SetWorldVisible(true);if(Supplies!=null)Supplies.SetWorldVisible(true);Vector3 forward=Vector3.ProjectOnPlane(Rig.Head.transform.forward,Vector3.up).normalized;if(forward.sqrMagnitude<.5f)forward=Rig.transform.forward;Gameplay.SetPickupHome(Rig.Head.transform.position+forward*.5f+Rig.Head.transform.right*.2f-Vector3.up*.42f,Quaternion.LookRotation(forward,Vector3.up));roundStarted=true;EnsureCheckpointPickups(false);if(WorldLoot!=null)WorldLoot.SetWorldEnabled(true);UI.SetPlaying();BeginMatch();Debug.LogFormat(LogType.Log,LogOption.NoStacktrace,this,"R23 START {0} root={1} rawHead={2} origin={3}",Map.MapId,Rig.transform.position,Rig.Head.transform.localPosition,Rig.TrackingOrigin.localPosition);}}
+        void StartPlayingCore(){if(LanSession!=null&&LanSession.MapEntryBlocked)return;if(Ready){if(mapHealthResetPending&&ActualMatchRules==null){if(!Gameplay.ResetMapVitals())throw new InvalidOperationException("Fresh map Health reset refused");mapHealthResetPending=false;}if(pendingMatch==null&&ActualMatchRules==null&&!sourceArchiveCommitting)activeSpawn=WarmupOrValleyCheckpoint();ClearLocalEffects();if(Gallery!=null)Gallery.Hide();if(!Gameplay.PlayerHealthViewBound&&Gameplay.Health<=0){Gameplay.ResetRound();Consumables.ResetRound();}Gameplay.SetWeaponPresentationSuppressed(false);Lobby.Hide();Map.SetWorldVisible(true);UI.ClearMenuAnchor();if(Preview!=null)Preview.Hide();Rig.SetSpawn(activeSpawn,Map.Bounds.center);Calibration.NotifyRootPoseReset();PositionPracticeTargets();Gameplay.SetPracticeTargetsVisible(false);Consumables.SetWorldVisible(true);if(Explosives!=null)Explosives.SetWorldVisible(true);if(Supplies!=null)Supplies.SetWorldVisible(true);Vector3 forward=Vector3.ProjectOnPlane(Rig.Head.transform.forward,Vector3.up).normalized;if(forward.sqrMagnitude<.5f)forward=Rig.transform.forward;Gameplay.SetPickupHome(Rig.Head.transform.position+forward*.5f+Rig.Head.transform.right*.2f-Vector3.up*.42f,Quaternion.LookRotation(forward,Vector3.up));roundStarted=true;EnsureCheckpointPickups(false);if(WorldLoot!=null)WorldLoot.SetWorldEnabled(true);UI.SetPlaying();BeginMatch();Debug.LogFormat(LogType.Log,LogOption.NoStacktrace,this,"R23 START {0} root={1} rawHead={2} origin={3}",Map.MapId,Rig.transform.position,Rig.Head.transform.localPosition,Rig.TrackingOrigin.localPosition);}}
 
         public void ReturnToMapLobby(){if(!Ready||switchingMap)return;if(LanSession!=null&&LanSession.RouteMapEntry(Map.MapId))return;EndMatch();activeSpawn=Map.WarmupSpawn;StartPlaying();}
 
         public void ReturnToLobby(){if(!Ready)return;lanHome.Home(delegate{return LanSession!=null&&LanSession.LeaveForHome();},ReturnToLobbyCore);}
-        void ReturnToLobbyCore(){CancelSourceArchiveEntry();if(ValleyMission!=null)ValleyMission.Withdraw();if(Soundscape!=null)Soundscape.SuspendEnvironment();if(ValleyBots!=null)ValleyBots.Clear();EndTeamLaunch();EndMatch();activeSpawn=Map.WarmupSpawn;ClearLocalEffects();if(WeaponWheel!=null)WeaponWheel.Cancel();if(Gallery!=null)Gallery.Hide();roundStarted=false;PrepareArchiveWorld(false);if(MountedRacks!=null)MountedRacks.SetWorldEnabled(false,false);if(WorldLoot!=null)WorldLoot.SetWorldEnabled(false);Rig.GameplayBlocked=true;Gameplay.SetGameplayPaused(true);Gameplay.HolsterCurrent();Gameplay.SetPracticeTargetsVisible(false);if(RescueTraining!=null)RescueTraining.SetWorldVisible(false);Consumables.CancelGestures();Consumables.SetWorldVisible(false);if(Explosives!=null){Explosives.Stow();Explosives.SetWorldVisible(false);}if(Supplies!=null)Supplies.SetWorldVisible(false);Activities.ResetRound();Climbing.ResetMotion();Map.SetWorldVisible(false);Lobby.Show();Rig.SetSpawn(Lobby.Spawn,Lobby.Spawn+Vector3.forward);Calibration.NotifyRootPoseReset();UI.SetMenuAnchor(Lobby.MenuAnchor);UI.BeginLoading("MENU");UI.ShowReady();}
+        void ReturnToLobbyCore(){CancelSourceArchiveEntry();if(ValleyMission!=null)ValleyMission.Withdraw();if(Soundscape!=null)Soundscape.SuspendEnvironment();if(ValleyBots!=null)ValleyBots.Clear();EndTeamLaunch();EndMatch();activeSpawn=Map.WarmupSpawn;ClearLocalEffects();if(WeaponWheel!=null)WeaponWheel.Cancel();if(Gallery!=null)Gallery.Hide();roundStarted=false;PrepareArchiveWorld(false);if(MountedRacks!=null)MountedRacks.SetWorldEnabled(false,false);if(WorldLoot!=null)WorldLoot.SetWorldEnabled(false);Rig.GameplayBlocked=true;Gameplay.SetGameplayPaused(true);Gameplay.HolsterCurrent();Gameplay.SetPracticeTargetsVisible(false);Consumables.CancelGestures();Consumables.SetWorldVisible(false);if(Explosives!=null){Explosives.Stow();Explosives.SetWorldVisible(false);}if(Supplies!=null)Supplies.SetWorldVisible(false);Activities.ResetRound();Climbing.ResetMotion();Map.SetWorldVisible(false);Lobby.Show();Rig.SetSpawn(Lobby.Spawn,Lobby.Spawn+Vector3.forward);Calibration.NotifyRootPoseReset();UI.SetMenuAnchor(Lobby.MenuAnchor);UI.BeginLoading("MENU");UI.ShowReady();}
 
         // Same dispatch for live tracked input and focused native probes. Objective
 
@@ -979,7 +985,7 @@ namespace Ashfall.Integration.Playable
 
             try{
 
-            if(Explosives!=null)Explosives.UpdateInputAvailability(ExplosiveInput(hardware&&!blocked&&!TacticalMapOpen&&!inspecting,left,right,itemUi,leftUi,rightUi));
+            if(Explosives!=null)Explosives.UpdateInputAvailability(ExplosiveInput(hardware&&!blocked&&!inspecting,left,right,itemUi,leftUi,rightUi));
 
             if(Supplies!=null)Supplies.UpdateInputAvailability(SupplyInput(hardware&&!blocked&&!itemUi&&!inspecting,left,right));
 
@@ -995,15 +1001,15 @@ namespace Ashfall.Integration.Playable
 
                 LeftHandReserved=PaddleHands||leftUi||Consumables.LeftOccupied||Climbing.LeftAnchored||Explosives!=null&&Explosives.LeftOccupied,
 
-                LeftGrip=leftUi||itemUi?0:left.Grip,LeftTrigger=leftUi||itemUi?0:left.Trigger,LeftPrimary=left.Primary,LeftSecondary=left.Secondary,LeftStickClick=left.Click,LeftStickX=itemUi?0:left.StickX,LeftStickY=itemUi?0:left.StickY,
+                LeftGrip=leftUi||itemUi?0:left.Grip,LeftTrigger=leftUi||itemUi?0:left.Trigger,LeftPrimary=!itemUi&&left.Primary,LeftSecondary=left.Secondary,LeftStickClick=left.Click,LeftStickX=itemUi?0:left.StickX,LeftStickY=itemUi?0:left.StickY,
 
-                RightGrip=rightUi||itemUi?0:right.Grip,RightTrigger=rightUi||itemUi?0:right.Trigger,RightPrimary=right.Primary,RightSecondary=right.Secondary,RightStickClick=!itemUi&&right.Click,RightStickX=itemUi?0:right.StickX,RightStickY=itemUi?0:right.StickY,ReloadRequested=!itemUi&&reloadRequested,
+                RightGrip=rightUi||itemUi?0:right.Grip,RightTrigger=rightUi||itemUi?0:right.Trigger,RightPrimary=!itemUi&&right.Primary,RightSecondary=right.Secondary,RightStickClick=!itemUi&&right.Click,RightStickX=itemUi?0:right.StickX,RightStickY=itemUi?0:right.StickY,ReloadRequested=!itemUi&&reloadRequested,
 
                 NextWeaponPressed=false,RestartPressed=false};
 
             if(inspecting){var galleryInput=handsInput;galleryInput.LeftPrimary=galleryInput.RightPrimary=false;galleryInput.ReloadRequested=reloadRequested||right.Click;Gallery.Sample(Mathf.Clamp(seconds,0,.1f),galleryInput,hardware,Gameplay.PrimaryHand);}
 
-            bool shot=Gameplay.TickInput(Mathf.Clamp(seconds,0,.1f),handsInput);StepPaddles(Mathf.Clamp(seconds,0,.1f),hardware,blocked,itemUi,inspecting,left,right);if(Explosives!=null)Explosives.Tick(Mathf.Clamp(seconds,0,.1f),ExplosiveInput(hardware&&!blocked&&!TacticalMapOpen&&!inspecting,left,right,itemUi,leftUi,rightUi));reloadRequested=false;if(shot)NotifyValleyGunshot();return shot;
+            bool shot=Gameplay.TickInput(Mathf.Clamp(seconds,0,.1f),handsInput);StepPaddles(Mathf.Clamp(seconds,0,.1f),hardware,blocked,itemUi,inspecting,left,right);if(Explosives!=null)Explosives.Tick(Mathf.Clamp(seconds,0,.1f),ExplosiveInput(hardware&&!blocked&&!inspecting,left,right,itemUi,leftUi,rightUi));reloadRequested=false;if(shot)NotifyValleyGunshot();return shot;
 
             }finally{routeObjectiveInput=false;}
 
@@ -1103,7 +1109,7 @@ namespace Ashfall.Integration.Playable
 
             bool rightUi=UI.UpdateLoadoutPointer(1,Rig.RightAimPosition,R23TrackedGripPose.Forward(Rig.Right),right.Trigger>.65f,right.Grip>.65f,menuPointerRightEligible);
 
-            if(Appearance!=null){Appearance.SetPresentationState(hardware,PageBlocksGameplay);Appearance.SetCrouchFloor(Rig.CrouchFloorValid,Rig.CrouchFloorY);Appearance.SetMotionState(Rig.Supported,
+            if(Appearance!=null){Appearance.SetPresentationState(hardware,PageBlocksGameplay);Appearance.SetCrouchFloor(Rig.CrouchFloorValid,Rig.CrouchFloorY);Appearance.SetFlightTrailMode(Activities!=null&&!Rig.CarrierActive&&!Climbing.LeftAnchored&&!Climbing.RightAnchored&&!Climbing.Mantling?Activities.Mode:Ashfall.Modules.Flight.FlightMode.Air);Appearance.SetMotionState(Rig.Supported,
 
                 Activities!=null&&Activities.Mode==Ashfall.Modules.Flight.FlightMode.Glide&&!Rig.CarrierActive&&!Climbing.LeftAnchored&&!Climbing.RightAnchored&&!Climbing.Mantling,
 
@@ -1163,15 +1169,16 @@ namespace Ashfall.Integration.Playable
 
             if(TeamMarks!=null){var primary=wheelHand==0?left:right;TeamMarks.Sample(Mathf.Clamp(Time.unscaledDeltaTime,0,.1f),primary.Secondary,new Vector2(primary.StickX,primary.StickY),aim,!Activities.BuildActive&&hardware&&!blocked&&!TacticalMapOpen&&!BackpackOpen&&!inspecting&&primary.Tracked&&(WeaponWheel==null||!WeaponWheel.Active),Rig.LocomotionAnchorPosition);}
 
-            bool itemUi=TacticalMapOpen||BackpackOpen||WeaponWheel!=null&&WeaponWheel.Active||TeamMarks!=null&&TeamMarks.InputHeld;
+            bool bothHandsUi=BackpackOpen||TeamMarks!=null&&TeamMarks.InputHeld;
+            bool wheelOpen=WeaponWheel!=null&&WeaponWheel.Active,itemUi=bothHandsUi||wheelOpen;
 
-            Rig.LeftHandOccupied|=itemUi;Rig.RightHandOccupied|=itemUi;
+            Rig.LeftHandOccupied|=bothHandsUi||wheelOpen&&wheelHand==0;Rig.RightHandOccupied|=bothHandsUi||wheelOpen&&wheelHand==1;
 
             Vector3 leftArt=hardware&&!PlayerMotionBlocked&&!Rig.LeftHandOccupied?Climbing.LeftContactProxy-Rig.Left.position:Vector3.zero,rightArt=hardware&&!PlayerMotionBlocked&&!Rig.RightHandOccupied?Climbing.RightContactProxy-Rig.Right.position:Vector3.zero;
 
             Gameplay.SetFreeHandContactOffsets(leftArt,rightArt);if(Appearance!=null)Appearance.SetFreeHandPresentationOffsets(leftArt,rightArt);
 
-            Gameplay.SetWeaponPresentationSuppressed(inspecting||!roundStarted||itemUi);
+            Gameplay.SetWeaponPresentationSuppressed(inspecting||!roundStarted||itemUi||PlatformUnarmed);
 
             Activities.TickStructure(Mathf.Min(Time.unscaledDeltaTime,.1f),!hardware||blocked);
 
@@ -1199,7 +1206,7 @@ namespace Ashfall.Integration.Playable
 
             if(Keyboard.current!=null&&Keyboard.current.enterKey.wasPressedThisFrame)RestartRound();
 
-            if(roundStarted&&!MatchActive&&Rig.transform.position.y<Ashfall.Integration.Playable.Match.R25OfflineFallPolicy.Level(Map.Bounds.min.y,activeSpawn.y)){Gameplay.ApplyPlayerDamage(1000);Rig.ResetPose();}
+            TickLocalWarmupFallFailsafe();
 
         }
 
@@ -1265,7 +1272,7 @@ namespace Ashfall.Integration.Playable
 
         void InitializePaddles(){Paddles=new GameObject("R24 actual reusable revive gear").AddComponent<R24VRRevivePaddles>();Paddles.transform.SetParent(transform,false);Paddles.Initialize(ActualReviveTargets,ReviveLineClear,CompleteActualRevive);Paddles.SetSfxVolume(UI.Settings.SfxVolume);UI.PaddlesRequested+=TogglePaddles;UI.BackpackDropRequested+=QueueBackpackDrop;}
 
-        bool PaddleAllowed(bool tracked){return Ready&&roundStarted&&!switchingMap&&tracked&&Gameplay.Health>0&&!PageBlocksGameplay&&!BackpackOpen&&!Climbing.Mantling&&!Climbing.LeftAnchored&&!Climbing.RightAnchored&&Rig.HeadCollision!=null&&Rig.HeadCollision.Clear(Rig.Head.transform.position,Vector3.zero);}
+        bool PaddleAllowed(bool tracked){return Ready&&!PlatformUnarmed&&roundStarted&&!switchingMap&&tracked&&Gameplay.Health>0&&!PageBlocksGameplay&&!BackpackOpen&&!Climbing.Mantling&&!Climbing.LeftAnchored&&!Climbing.RightAnchored&&Rig.HeadCollision!=null&&Rig.HeadCollision.Clear(Rig.Head.transform.position,Vector3.zero);}
 
         public bool EquipPaddles(){bool tracked=haveItemAvailability?itemHardware&&itemLeftTracked&&itemRightTracked:Rig!=null&&Rig.SessionFocused&&Rig.Tracking&&Rig.LeftInput.Tracked&&Rig.RightInput.Tracked;if(Paddles==null||!Paddles.Ready||!PaddleAllowed(tracked))return false;Consumables.Stow();if(Explosives!=null)Explosives.Stow();if(Gameplay.HasWeapon)Gameplay.HolsterCurrent();bool accepted=Paddles.Equip(true);if(accepted)UI.SetPaddlesStatus("REVIVE PADDLES");return accepted;}
 
@@ -1277,7 +1284,7 @@ namespace Ashfall.Integration.Playable
 
         static R23ShotPose Pose(Transform t,bool corrected=false){var q=corrected?t.rotation*R23TrackedGripPose.LocalRotation:t.rotation;return new R23ShotPose(PF(t.position),PF(q*Vector3.right),PF(q*Vector3.up),PF(q*Vector3.forward));}
 
-        void StepPaddles(float dt,bool hardware,bool blocked,bool itemUi,bool inspecting,HandSample leftInput,HandSample rightInput){if(Paddles==null||!Paddles.Ready)return;bool active=PaddleHands;bool tracked=hardware&&leftInput.Tracked&&rightInput.Tracked;bool allowed=PaddleAllowed(tracked)&&!itemUi&&!inspecting&&!blocked;bool paused=!hardware||blocked;var leftPose=R24VRRevivePaddles.FromCorrectedGrip(Pose(Rig.Left,true));var rightPose=R24VRRevivePaddles.FromCorrectedGrip(Pose(Rig.Right,true));Paddles.Step(dt,allowed,paused,Pose(Rig.transform),leftPose,rightPose,Rig.Head);if(active){Gameplay.SamplePaddleAuthority(dt,true,allowed,paused,Paddles.State.Facing,leftPose.Origin,rightPose.Origin,PF(Rig.transform.InverseTransformPoint(new Vector3(leftPose.Origin.X,leftPose.Origin.Y,leftPose.Origin.Z))),PF(Rig.transform.InverseTransformPoint(new Vector3(rightPose.Origin.X,rightPose.Origin.Y,rightPose.Origin.Z))));UI.SetPaddlesStatus(Paddles.State.Ready?"PADDLES READY "+Paddles.State.Remaining.ToString("F1")+"s":"PADDLES CHARGE "+Mathf.RoundToInt(Paddles.State.Charge*100)+"%");}}
+        void StepPaddles(float dt,bool hardware,bool blocked,bool itemUi,bool inspecting,HandSample leftInput,HandSample rightInput){if(Paddles==null||!Paddles.Ready)return;bool active=PaddleHands;bool tracked=hardware&&leftInput.Tracked&&rightInput.Tracked;bool allowed=PaddleAllowed(tracked)&&!itemUi&&!inspecting&&!blocked;bool paused=!hardware||blocked;var leftPose=R24VRRevivePaddles.FromCorrectedGrip(Pose(Rig.Left,true));var rightPose=R24VRRevivePaddles.FromCorrectedGrip(Pose(Rig.Right,true));Paddles.SharedTouch=LanRoundBound&&ActualMatchRules!=null&&ActualMatchRules.Mode=="revive";Paddles.Step(dt,allowed,paused,Pose(Rig.transform),leftPose,rightPose,Rig.Head);if(active){Gameplay.SamplePaddleAuthority(dt,true,allowed,paused,Paddles.State.Facing,leftPose.Origin,rightPose.Origin,PF(Rig.transform.InverseTransformPoint(new Vector3(leftPose.Origin.X,leftPose.Origin.Y,leftPose.Origin.Z))),PF(Rig.transform.InverseTransformPoint(new Vector3(rightPose.Origin.X,rightPose.Origin.Y,rightPose.Origin.Z))));UI.SetPaddlesStatus(Paddles.PresentedRemaining>0?"PADDLES READY "+Paddles.PresentedRemaining.ToString("F1")+"s":"PADDLES CHARGE "+Mathf.RoundToInt(Paddles.PresentedCharge*100)+"%");}}
 
     }
 

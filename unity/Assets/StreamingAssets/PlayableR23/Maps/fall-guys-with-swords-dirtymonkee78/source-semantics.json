@@ -1,0 +1,370 @@
+{
+ "mapId": "archive:fall-guys-with-swords-dirtymonkee78",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:fall-guys-with-swords-dirtymonkee78",
+  "title": "FALL GUYS [WITH SWORDS]",
+  "creator": "DirtyMonkee78",
+  "template": "MapEditorDefault",
+  "center": [
+   -37.53299331665039,
+   137.953339141117,
+   -8.512109231747893
+  ],
+  "recorded_spawns": [
+   [
+    152.17,
+    130.52,
+    6.59
+   ],
+   [
+    152.17,
+    130.52,
+    -18.41
+   ],
+   [
+    152.17,
+    130.52,
+    -21.66
+   ],
+   [
+    152.19,
+    130.52,
+    -28.91
+   ],
+   [
+    152.17,
+    130.52,
+    8.09
+   ],
+   [
+    152.17,
+    130.52,
+    -26.16
+   ],
+   [
+    152.17,
+    130.52,
+    -12.66
+   ],
+   [
+    152.17,
+    130.52,
+    -17.08
+   ],
+   [
+    152.18,
+    130.52,
+    -24.66
+   ],
+   [
+    152.17,
+    130.52,
+    -1.92
+   ],
+   [
+    152.17,
+    130.52,
+    9.51
+   ],
+   [
+    152.17,
+    130.52,
+    -27.58
+   ],
+   [
+    152.18,
+    130.52,
+    -23.16
+   ],
+   [
+    152.17,
+    130.52,
+    -6.34
+   ],
+   [
+    152.17,
+    130.52,
+    5.09
+   ],
+   [
+    152.17,
+    130.52,
+    -3.34
+   ],
+   [
+    152.17,
+    130.52,
+    -14.16
+   ],
+   [
+    152.17,
+    130.52,
+    3.59
+   ],
+   [
+    152.17,
+    130.52,
+    -4.84
+   ],
+   [
+    152.17,
+    130.52,
+    -0.59
+   ],
+   [
+    152.17,
+    130.52,
+    10.84
+   ],
+   [
+    152.17,
+    130.52,
+    -11.16
+   ],
+   [
+    152.19,
+    130.52,
+    -15.66
+   ],
+   [
+    152.17,
+    130.52,
+    -7.84
+   ]
+  ],
+  "bounds_min": [
+   -188.9991455078125,
+   -76.85621643066406,
+   -30.53295135498047
+  ],
+  "bounds_max": [
+   156.3052978515625,
+   216.72943115234375,
+   13.802882194519043
+  ],
+  "solid_min": [
+   -300.0,
+   -76.85621643066406,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   216.72943115234375,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/fall-guys-with-swords-dirtymonkee78/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "f2bfbfa2a6adecac2aab31f3539492423c201a6c33e06d52f8f654dc230bd79b",
+  "cache_fingerprint": "6bb7ce6ab8d09d129a6f4f753721d575480f03cd24c3566b9edaaa78cbdfcfe3",
+  "warmup": [
+   {
+    "center": [
+     -176.41814,
+     174.60726,
+     -5.15173
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -176.5832,
+     174.59158,
+     -12.59095
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -175.78065,
+     174.63587,
+     -11.08223
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -175.78196,
+     174.5901,
+     -9.59517
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -175.78068,
+     174.60033,
+     -6.63879
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -175.78881,
+     174.59539,
+     -8.03271
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -1e-05
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [
+   {
+    "center": [
+     0.23082,
+     -1.41537,
+     -5e-05
+    ],
+    "normal": [
+     0.0318,
+     0.99949,
+     -0.0
+    ],
+    "radius": 1.3,
+    "speed": 45,
+    "evidence": "paired gold52-triangle chevrons +jumppad material; three triangular launch-frame supports",
+    "tilted": false
+   },
+   {
+    "center": [
+     159.40054,
+     5.17711,
+     11.01459
+    ],
+    "normal": [
+     -0.0,
+     1.0,
+     -0.0
+    ],
+    "radius": 1.3,
+    "speed": 45,
+    "evidence": "paired gold52-triangle chevrons +jumppad material; thin hexagonal launch rim",
+    "tilted": false
+   }
+  ],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 6,
+   "deathmatch": 0,
+   "jump": 2,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "6bb7ce6ab8d09d129a6f4f753721d575480f03cd24c3566b9edaaa78cbdfcfe3",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "killzone",
+   "sourceNode": "killzone",
+   "boundsMin": [
+    -188.00001525878906,
+    8.999999046325684,
+    -97.0000228881836
+   ],
+   "boundsMax": [
+    212.00001525878906,
+    137.39675903320312,
+    103.0039291381836
+   ],
+   "triangles": 128
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -19.665206909179688,
+    59.54522705078125,
+    -28.911983489990234
+   ],
+   "boundsMax": [
+    154.1344451904297,
+    131.4193115234375,
+    10.83804702758789
+   ],
+   "triangles": 12
+  }
+ ]
+}

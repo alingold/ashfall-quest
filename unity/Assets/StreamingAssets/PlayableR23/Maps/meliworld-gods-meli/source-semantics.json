@@ -1,0 +1,303 @@
+{
+ "mapId": "archive:meliworld-gods-meli",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:meliworld-gods-meli",
+  "title": "MELIWORLD",
+  "creator": "GODS_Meli",
+  "template": "MapEditorMoon",
+  "center": [
+   1.8961475324134838,
+   96.8574823134643,
+   -30.285951158254957
+  ],
+  "recorded_spawns": [
+   [
+    -191.44,
+    94.02,
+    -33.82
+   ],
+   [
+    -191.44,
+    94.02,
+    -35.0
+   ],
+   [
+    -43.91,
+    95.69,
+    -208.91
+   ],
+   [
+    169.79,
+    92.69,
+    -31.91
+   ],
+   [
+    -180.41,
+    93.02,
+    110.59
+   ],
+   [
+    -180.41,
+    93.02,
+    112.09
+   ],
+   [
+    169.79,
+    92.69,
+    -30.08
+   ],
+   [
+    -45.41,
+    95.69,
+    -208.91
+   ],
+   [
+    -180.41,
+    93.02,
+    113.59
+   ],
+   [
+    164.59,
+    93.52,
+    111.59
+   ],
+   [
+    164.59,
+    93.52,
+    113.41
+   ],
+   [
+    18.64,
+    95.52,
+    96.91
+   ],
+   [
+    5.75,
+    159.95,
+    -238.25
+   ],
+   [
+    -191.45,
+    94.02,
+    -36.18
+   ],
+   [
+    -42.41,
+    95.69,
+    -208.91
+   ],
+   [
+    169.79,
+    92.69,
+    -33.58
+   ],
+   [
+    -75.01,
+    160.11,
+    154.25
+   ],
+   [
+    -54.25,
+    160.14,
+    154.61
+   ],
+   [
+    -56.2,
+    159.88,
+    154.62
+   ],
+   [
+    -72.77,
+    160.0,
+    154.6
+   ],
+   [
+    -27.77,
+    159.97,
+    -237.71
+   ],
+   [
+    164.59,
+    93.52,
+    115.59
+   ],
+   [
+    42.49,
+    160.0,
+    -237.53
+   ],
+   [
+    -64.3,
+    159.52,
+    -237.72
+   ],
+   [
+    -67.47,
+    159.47,
+    -237.97
+   ],
+   [
+    -46.75,
+    159.71,
+    -237.76
+   ],
+   [
+    -48.22,
+    159.84,
+    -237.85
+   ],
+   [
+    -29.23,
+    160.21,
+    -237.85
+   ],
+   [
+    24.07,
+    159.97,
+    -237.69
+   ],
+   [
+    7.19,
+    159.81,
+    -238.36
+   ],
+   [
+    25.87,
+    160.1,
+    -237.73
+   ],
+   [
+    0.68,
+    160.33,
+    154.51
+   ],
+   [
+    18.64,
+    95.52,
+    100.59
+   ],
+   [
+    18.64,
+    95.52,
+    98.59
+   ],
+   [
+    44.81,
+    160.29,
+    -237.18
+   ],
+   [
+    -1.33,
+    160.2,
+    154.51
+   ],
+   [
+    19.22,
+    159.72,
+    154.74
+   ],
+   [
+    37.82,
+    159.58,
+    154.7
+   ],
+   [
+    16.66,
+    159.8,
+    154.66
+   ],
+   [
+    36.32,
+    159.75,
+    153.95
+   ],
+   [
+    -35.4,
+    160.06,
+    154.71
+   ],
+   [
+    -37.33,
+    159.91,
+    154.86
+   ]
+  ],
+  "bounds_min": [
+   -508.42901611328125,
+   -1.8562202453613281,
+   -463.59307861328125
+  ],
+  "bounds_max": [
+   405.4983825683594,
+   298.1437683105469,
+   464.4997863769531
+  ],
+  "solid_min": [
+   -300.0,
+   -1.8562202453613281,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   298.1437683105469,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/meliworld-gods-meli/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "101a2b",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.6,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "ea13fe1c9020a2afeb5f8b6fde259db11500738fd0e94ef69f3da5b177f03638",
+  "cache_fingerprint": "3ad3471d437f22fab4aba1e82603a23a4183b2e1293881021643e38fdc9ee748",
+  "warmup": [],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 0,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "3ad3471d437f22fab4aba1e82603a23a4183b2e1293881021643e38fdc9ee748",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -47.249855041503906,
+    1.3616209030151367,
+    -29.24993896484375
+   ],
+   "boundsMax": [
+    2.7501449584960938,
+    19.999996185302734,
+    20.75006103515625
+   ],
+   "triangles": 12
+  }
+ ]
+}

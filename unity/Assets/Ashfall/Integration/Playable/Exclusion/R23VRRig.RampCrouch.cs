@@ -174,12 +174,19 @@ namespace Ashfall.Integration.Playable
             if (!CanRampCrouch || add <= .005f) return false;
             float standingY = StandingOriginY();
             crouch += add; ApplyCrouchOrigin(standingY);
+            // WIN2: keep this frame's stand-up rate measured from the crouch just taken.
+            // The render-time sample of the same frame (headset only) measured it from
+            // the crouch the frame STARTED with and stood straight back up, so stepping
+            // onto a window sill moved the view 0.75 m in one frame. It now rises at
+            // CrouchRiseSpeed from the first frame, as the next frame always did.
+            if (crouchFrame == SimFrame) crouchFrameStart += add;
             return true;
         }
         void UndoCrouchForRise(float add)
         {
             float standingY = StandingOriginY();
             crouch = Mathf.Max(0, crouch - add); ApplyCrouchOrigin(standingY);
+            if (crouchFrame == SimFrame) crouchFrameStart = Mathf.Max(0, crouchFrameStart - add);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace Ashfall.Integration.Playable.World.Loot
         public void Initialize(R23PlayableMap sourceMap,R23HandsWeapons owner,Transform player)
         {Initialize(sourceMap,owner,null,player);}
         public void Initialize(R23PlayableMap sourceMap,R23HandsWeapons owner,R23VRExplosives grenadeOwner,Transform player)
-        {if(map!=null)throw new InvalidOperationException("loot already initialized");if(sourceMap==null||owner==null||player==null)throw new ArgumentException("real map, weapon owner and player required");map=sourceMap;weapons=owner;weapons.BindSourceGroundLayout();weapons.WorldPickupCollisionReady=delegate{return map!=null&&map.IsLoaded&&enabledWorld&&SourceWorldReady;};explosives=grenadeOwner;if(explosives!=null)explosives.WorldCollisionReady=delegate{return map!=null&&map.IsLoaded;};actor=player;StartCoroutine(Load());}
+        {if(map!=null)throw new InvalidOperationException("loot already initialized");if(sourceMap==null||owner==null||player==null)throw new ArgumentException("real map, weapon owner and player required");map=sourceMap;weapons=owner;weapons.BindSourceGroundLayout();weapons.WorldPickupCollisionReady=delegate{return map!=null&&map.IsLoaded&&enabledWorld&&SourceWorldReady;};explosives=grenadeOwner;if(explosives!=null)explosives.WorldCollisionReady=delegate{return map!=null&&map.IsLoaded;};actor=player;BindCulling();StartCoroutine(Load());}
         IEnumerator Load()
         {
             string url=Application.streamingAssetsPath+"/PlayableR23/Loot/caches.json";if(!url.Contains("://"))url=new Uri(url).AbsoluteUri;
@@ -54,7 +54,7 @@ namespace Ashfall.Integration.Playable.World.Loot
             {
                 request.timeout=30;yield return request.SendWebRequest();
                 if(request.result!=UnityWebRequest.Result.Success){Failure=request.error;yield break;}
-                try{data=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);if(data==null||data.version!=1||data.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||data.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||data.maps==null||data.maps.Length!=105)throw new InvalidOperationException("Actual R6 cache manifest");var ids=new HashSet<string>();foreach(var item in data.maps)if(item==null||!ids.Add(item.mapId)||item.sourceSha256==null||item.sourceSha256.Length!=64)throw new InvalidOperationException("Actual unique source cache row required");Ready=true;}catch(Exception e){Failure=e.Message;}
+                try{data=JsonUtility.FromJson<Manifest>(request.downloadHandler.text);if(data==null||data.version!=1||data.contentId!="23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520"||data.sourceManifestSha256!="b62578d419897f741f119eec885d199dc966824a21452bc60326d54a23e01111"||data.maps==null||data.maps.Length==0)throw new InvalidOperationException("Actual R6 cache manifest");var ids=new HashSet<string>();foreach(var item in data.maps)if(item==null||!ids.Add(item.mapId)||item.sourceSha256==null||item.sourceSha256.Length!=64)throw new InvalidOperationException("Actual unique source cache row required");Ready=true;}catch(Exception e){Failure=e.Message;}
             }
         }
         public void SetWorldEnabled(bool value)
@@ -124,7 +124,7 @@ namespace Ashfall.Integration.Playable.World.Loot
                 else{RejectedSites++;if(rejection==R23LootSiteRejection.Floor)InitialRejectedFloor++;else if(rejection==R23LootSiteRejection.Outside)InitialRejectedOutside++;else InitialRejectedHazard++;}
                 if(++work%32==0)yield return null;
             }
-            InitialAcceptedSites=accepted.Count;PlacementMode="source-exported-cache-sites";
+            InitialAcceptedSites=accepted.Count;R26MapsLootDensity.SpaceCrowdedCaches(accepted);PlacementMode="source-exported-cache-sites";
             // archive_gameplay_r8 uses every third EXACT source loot_point only
             // when prepared/R17 sites yielded none. Never run a second grid here.
             var loot=plan.Loot;
@@ -190,20 +190,22 @@ namespace Ashfall.Integration.Playable.World.Loot
         {string kind=R23LootRecipe.GrenadeKind(catalog);if(kind!=null){kind=Ashfall.Integration.Playable.FlashSmoke.R25Throwables.LootKind(kind,currentMap,unchecked((int)grenadeSerial),0,explosives==null?null:explosives.KindAllowed);id="r6-ground/grenade/"+(++grenadeSerial);return explosives!=null&&explosives.SpawnWorldItem(id,kind,stars,at,Quaternion.identity,visible);}return weapons.SpawnWorldWeapon(Profile(catalog),stars,at,Quaternion.identity,out id,visible);}
         void Update()
         {
-            RetireWithdrawnFoods();
+            RetireWithdrawnFoods();StepCulling();
             if(!enabledWorld||!Ready||!map.IsLoaded||!weapons.Ready||explosives!=null&&!explosives.Ready||foods!=null&&!foods.Ready)return;
             if(preparingArchive!=null)return;
             if(UsesSourceWorld&&!SourceWorldReady){if(!prepared)PlacementMode="awaiting-source-world";return;}
             if(!prepared||currentMap!=map.MapId||UsesSourceWorld&&cacheSourceGeneration!=sourceWorld.ArchiveWorldGeneration){PrepareMap();return;}
             RefreshRangeGrapple();clock+=Time.deltaTime;visualClock+=Time.deltaTime;if(clock>=.2f){clock=0;Activate(false);}if(visualClock>=.35f){visualClock=0;StreamVisuals();}
         }
+        // Grants eligibility only: R26 culling builds and shows eligible art by viewer distance (40 m).
+        // In a LAN/online session the shared-state sync owns eligibility every frame, so this stays out of it.
         void StreamVisuals()
         {
-            bool available=enabledWorld&&prepared&&SourceWorldReady&&(!UsesSourceWorld||cacheSourceGeneration==sourceWorld.ArchiveWorldGeneration);StreamCacheBackpacks(available);int shown=0;foreach(string id in AllWeaponWorldIds)
-            {string instance;Vector3 center,at;Quaternion rotation;if(!weapons.TryReadWorldWeapon(id,out instance,out center,out at,out rotation))continue;bool near=available&&(baselineEager.Contains(id)||(at-actor.position).sqrMagnitude<1600);
-                if(!near)weapons.SetWorldWeaponVisible(id,false);else if(!weapons.IsWorldWeaponVisible(id)&&shown<12){if(weapons.SetWorldWeaponVisible(id,true))shown++;}}
-            if(explosives!=null)foreach(string id in AllGrenadeWorldIds){Vector3 at;Quaternion rotation;bool owned;if(!explosives.TryReadWorldItem(id,out at,out rotation,out owned)||owned)continue;bool near=available&&(baselineEager.Contains(id)||(at-actor.position).sqrMagnitude<1600);if(!near)explosives.SetWorldItemVisible(id,false);else if(!explosives.IsWorldItemVisible(id)&&shown<12){if(explosives.SetWorldItemVisible(id,true))shown++;}}
-            if(foods!=null)foreach(string id in foodInstances){Vector3 at;Quaternion rotation;bool owned;if(!foods.TryReadWorldItem(id,out at,out rotation,out owned)||owned)continue;foods.SetWorldItemVisible(id,available&&(at-actor.position).sqrMagnitude<1600);}
+            if(SessionOwnsEligibility)return;
+            bool available=enabledWorld&&prepared&&SourceWorldReady&&(!UsesSourceWorld||cacheSourceGeneration==sourceWorld.ArchiveWorldGeneration);StreamCacheBackpacks(available);
+            foreach(string id in AllWeaponWorldIds)weapons.SetWorldWeaponVisible(id,available);
+            if(explosives!=null)foreach(string id in AllGrenadeWorldIds){Vector3 at;Quaternion rotation;bool owned;if(explosives.TryReadWorldItem(id,out at,out rotation,out owned)&&!owned)explosives.SetWorldItemVisible(id,available);}
+            if(foods!=null)foreach(string id in foodInstances){Vector3 at;Quaternion rotation;bool owned;if(foods.TryReadWorldItem(id,out at,out rotation,out owned)&&!owned)foods.SetWorldItemVisible(id,available);}
         }
         bool Terrain(Collider c){return c!=null&&c.gameObject.layer==0&&c.transform.IsChildOf(map.transform);}
         bool TryFloor(Vector3 origin,float depth,out Vector3 floor)
@@ -222,7 +224,7 @@ namespace Ashfall.Integration.Playable.World.Loot
         bool Outside(Vector3 world)
         {if(UsesSourceWorld){Float3 source;return !SourceWorldReady||!sourceWorld.TryArchiveWorldToSource(world,out source)||sourceWorld.ArchiveWorldOutside(source);}if(row==null)return false;Vector3 warmup=world-map.WarmupSpawn;if(Mathf.Abs(warmup.y)<=4&&warmup.x*warmup.x+warmup.z*warmup.z<=64)return false;Vector3 p=map.transform.InverseTransformPoint(world),low=V(row.solidMin),high=V(row.solidMax);if(p.y<low.y-25||p.y>high.y+100)return true;if(currentMap==R23MapCatalog.AlphaId)return false;low=V(row.boundsMin);high=V(row.boundsMax);return p.x<low.x-10||p.x>high.x+10||p.z<low.z-10||p.z>high.z+10;}
         bool Clear(Vector3 a,Vector3 b){Vector3 v=b-a;if(v.sqrMagnitude<1e-10f)return true;foreach(var h in Physics.RaycastAll(a,v.normalized,v.magnitude,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(Terrain(h.collider))return false;return true;}
-        void OnDestroy(){CancelArchivePreparation();ClearWorldCopies();}
+        void OnDestroy(){CancelArchivePreparation();ClearWorldCopies();R26PickupCulling.HasViewer=false;}
         static Float3 F(Vector3 p){return new Float3(p.x,p.y,p.z);}
         static Vector3 V3(Float3 p){return new Vector3(p.X,p.Y,p.Z);}
         static Vector3 V(float[] p){if(p==null||p.Length!=3)throw new InvalidOperationException("source cache vector");return new Vector3(p[0],p[1],p[2]);}

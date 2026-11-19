@@ -8,6 +8,15 @@ namespace Ashfall.Integration.Playable.Networking
 {
     public sealed partial class R24LanLobby
     {
+        // Presentation only: results intentionally revoke live spawn/Health capabilities.
+        // Keep the current epoch's committed life visible without granting either capability.
+        public bool TryReadSurvivalLife(string actor,out string life)
+        {
+            Check();life=null;R24LanHealthState health;R24LanSpawn spawn;
+            if(actor==null||!healthStates.TryGetValue(actor,out health)||health.Epoch!=Epoch||health.MapHash!=MapManifestHash||!health.Connected||!spawnStates.TryGetValue(actor,out spawn)||spawn.Epoch!=Epoch||spawn.MapHash!=MapManifestHash||spawn.Revision!=health.SpawnRevision)return false;
+            bool member=false;foreach(var row in members)if(row.Actor==actor){member=true;break;}if(!member)return false;
+            life=health.Life==LifeState.Alive?"alive":health.Life==LifeState.Downed?"downed":health.Life==LifeState.Spectator?"spectator":"eliminated";return true;
+        }
         sealed class FiveLevelsRoster:IModeRoster
         {
             internal ModeActor[] Actors=new ModeActor[0];
@@ -17,7 +26,7 @@ namespace Ashfall.Integration.Playable.Networking
         RoundController fiveLevelsElimination;FiveLevelsRoster fiveLevelsRoster;long fiveLevelsEpoch=-1,fiveLevelsHealthSequence=-1,fiveLevelsRosterRevision=-1;
         bool FiveLevelsSideEliminated()
         {
-            if(!R24ArchiveRoundPolicy.FiveLevels(MapId)||roundRules==null||roundRules.Mode!="revive"||roundRules.Teams<2||hostHealth==null)return false;
+            if(roundRules==null||roundRules.Mode!="revive"||roundRules.Teams<2||hostHealth==null)return false;
             if(fiveLevelsEpoch==Epoch&&fiveLevelsHealthSequence==healthStateSequence&&fiveLevelsRosterRevision==revision)return fiveLevelsElimination!=null&&fiveLevelsElimination.Stage==RoundStage.Results;
             fiveLevelsHealthSequence=healthStateSequence;fiveLevelsRosterRevision=revision;
             var actors=new List<ModeActor>();var teams=new HashSet<int>();
@@ -34,9 +43,9 @@ namespace Ashfall.Integration.Playable.Networking
             if(fiveLevelsEpoch!=Epoch||fiveLevelsElimination==null){
                 fiveLevelsEpoch=Epoch;fiveLevelsRoster=new FiveLevelsRoster();fiveLevelsRoster.Actors=actors.ToArray();
                 fiveLevelsElimination=new RoundController(new ModeRules("revive",roundRules.Teams,0,0,1),fiveLevelsRoster,OwnActor,SessionId,Epoch,new HostGate(OwnActor),16);
-                var started=fiveLevelsElimination.StartRound(LifecycleContext(),clock.Now);if(!started.Accepted)throw new InvalidOperationException("Five Levels round start: "+started.Reason);
+                var started=fiveLevelsElimination.StartRound(LifecycleContext(),clock.Now);if(!started.Accepted)throw new InvalidOperationException("Team Revive round start: "+started.Reason);
             }else fiveLevelsRoster.Actors=actors.ToArray();
-            var result=fiveLevelsElimination.AdvanceClock(clock.Now);if(!result.Accepted)throw new InvalidOperationException("Five Levels elimination clock: "+result.Reason);
+            var result=fiveLevelsElimination.AdvanceClock(clock.Now);if(!result.Accepted)throw new InvalidOperationException("Team Revive elimination clock: "+result.Reason);
             return fiveLevelsElimination.Stage==RoundStage.Results&&fiveLevelsElimination.EndReason=="last_side";
         }
     }

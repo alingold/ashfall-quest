@@ -24,9 +24,6 @@ namespace Ashfall.Integration.Playable.World.Loot
                 var part=GameObject.CreatePrimitive(PrimitiveType.Cube);part.name="Grapple table support";part.transform.SetParent(rangeGrappleTable.transform,false);part.transform.localPosition=row;
                 part.transform.localScale=row.y>.5f?new Vector3(.9f,.1f,.65f):new Vector3(.08f,.5f,.5f);part.GetComponent<Renderer>().sharedMaterial=rangeTableMaterial;
             }
-            var title=new GameObject("GRAPPLE GUN table label");title.transform.SetParent(rangeGrappleTable.transform,false);title.transform.localPosition=new Vector3(0,.82f,-.34f);
-            var text=title.AddComponent<TextMesh>();text.text="GRAPPLE GUN";text.font=Resources.Load<Font>("R23InventoryUI");text.fontSize=64;text.characterSize=.009f;text.anchor=TextAnchor.MiddleCenter;text.color=Color.white;
-            if(text.font!=null)text.GetComponent<Renderer>().sharedMaterial=text.font.material;
         }
         void RefreshRangeGrapple()
         {

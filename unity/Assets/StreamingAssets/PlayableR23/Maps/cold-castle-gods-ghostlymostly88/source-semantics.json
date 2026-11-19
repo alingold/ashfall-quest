@@ -1,0 +1,646 @@
+{
+ "mapId": "archive:cold-castle-gods-ghostlymostly88",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:cold-castle-gods-ghostlymostly88",
+  "title": "COLD CASTLE",
+  "creator": "GODS_GhostlyMostly88",
+  "template": "MapEditorSnow",
+  "center": [
+   7.377096027366184,
+   63.77998512983321,
+   1.822031709593733
+  ],
+  "recorded_spawns": [
+   [
+    -232.4,
+    63.69,
+    -10.84
+   ],
+   [
+    -232.4,
+    63.69,
+    -4.78
+   ],
+   [
+    -232.4,
+    63.69,
+    -6.0
+   ],
+   [
+    -232.4,
+    63.69,
+    -7.22
+   ],
+   [
+    -232.4,
+    63.69,
+    -8.46
+   ],
+   [
+    -232.4,
+    63.69,
+    -9.65
+   ],
+   [
+    -236.19,
+    63.69,
+    -10.84
+   ],
+   [
+    -236.19,
+    63.69,
+    -9.65
+   ],
+   [
+    -236.19,
+    63.69,
+    -8.46
+   ],
+   [
+    -236.19,
+    63.69,
+    -7.22
+   ],
+   [
+    -236.19,
+    63.69,
+    -6.0
+   ],
+   [
+    -236.19,
+    63.69,
+    -4.78
+   ],
+   [
+    218.05,
+    63.65,
+    -4.46
+   ],
+   [
+    218.05,
+    63.65,
+    -6.87
+   ],
+   [
+    218.05,
+    63.65,
+    -5.65
+   ],
+   [
+    218.05,
+    63.65,
+    -8.05
+   ],
+   [
+    218.05,
+    63.65,
+    -9.25
+   ],
+   [
+    218.05,
+    63.65,
+    -10.46
+   ],
+   [
+    220.87,
+    63.65,
+    -4.46
+   ],
+   [
+    220.87,
+    63.65,
+    -5.65
+   ],
+   [
+    220.87,
+    63.65,
+    -6.87
+   ],
+   [
+    220.87,
+    63.65,
+    -8.05
+   ],
+   [
+    220.87,
+    63.65,
+    -9.25
+   ],
+   [
+    220.87,
+    63.65,
+    -10.46
+   ]
+  ],
+  "bounds_min": [
+   -346.91656494140625,
+   -76.85621643066406,
+   -322.4073791503906
+  ],
+  "bounds_max": [
+   336.3599548339844,
+   173.14378356933594,
+   365.8699645996094
+  ],
+  "solid_min": [
+   -608.2984619140625,
+   -76.85621643066406,
+   -598.9129028320312
+  ],
+  "solid_max": [
+   591.70166015625,
+   173.14378356933594,
+   601.0870971679688
+  ],
+  "source": "https://maps.deliciouswines.org/maps/cold-castle-gods-ghostlymostly88/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+  "cache_fingerprint": "d07f784d23067a635aab99106446bafdcf590e7e277b02aef903930e74196cb6",
+  "warmup": [
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -110.26695
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -109.05516
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -107.84396
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -106.63216
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -103.04292
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -101.83112
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -100.61992
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -303.46561,
+     80.05058,
+     -99.40813
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -110.26695
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -109.05516
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -107.84396
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -106.63216
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -103.04292
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -101.83112
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -100.61992
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -301.44003,
+     80.05058,
+     -99.40813
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -110.26695
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -109.05516
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -107.84396
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -106.63216
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -103.04292
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -101.83112
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -100.61992
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -299.40125,
+     80.05058,
+     -99.40813
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 24,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "d07f784d23067a635aab99106446bafdcf590e7e277b02aef903930e74196cb6",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

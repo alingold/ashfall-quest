@@ -15,7 +15,7 @@ namespace Ashfall.Integration.Playable.Vehicles
                 var text=new GameObject("HOLD GRIP prompt").AddComponent<TextMesh>();text.transform.SetParent(group,false);
                 text.transform.localPosition=at+Vector3.up*.26f;text.transform.localRotation=Quaternion.Euler(0,-side*90,0);
                 text.font=Resources.Load<Font>("R23InventoryUI");text.fontSize=48;text.characterSize=.018f;text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.color=Color.white;
-                if(text.font!=null)text.GetComponent<MeshRenderer>().sharedMaterial=text.font.material;
+                R26WorldText.Bind(text);
                 text.text="EMPTY HAND\nHOLD GRIP 0.4s";
             }
             return group;

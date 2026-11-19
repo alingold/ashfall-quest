@@ -31,6 +31,11 @@ namespace Ashfall.Core
     {
         public long Tick, Sequence;
         public float MoveX, MoveY, TurnX, TurnY;
+        // Continuous XR flight controls do not depend on weapon-button neutral rearming.
+        public float DiveAxis;
+        public bool HandsTracked;
+        // Local XR support falls at least 30 degrees along the requested run.
+        public bool GlideDownhillRun;
         public bool Tracked, Paused, Jump, Sprint, GripLeft, GripRight, TriggerLeft, TriggerRight, Reload, Menu, Ping;
         public Float3 HeadPosition, LeftHandPosition, RightHandPosition;
     }

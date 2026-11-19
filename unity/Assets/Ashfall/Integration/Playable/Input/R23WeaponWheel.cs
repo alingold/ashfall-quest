@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 namespace Ashfall.Integration.Playable.Input
 {
-    public sealed class R23WeaponWheel:MonoBehaviour
+    public sealed partial class R23WeaponWheel:MonoBehaviour
     {
         readonly R23WeaponWheelState state=new R23WeaponWheelState();readonly List<UnityEngine.Object> owned=new List<UnityEngine.Object>();
         readonly Dictionary<string,Texture2D> textures=new Dictionary<string,Texture2D>();readonly Material[] sectors=new Material[8];readonly Transform[] cards=new Transform[R23WeaponWheelRules.MaximumSlots];readonly Transform[] lockedMarks=new Transform[6];
@@ -32,7 +32,7 @@ namespace Ashfall.Integration.Playable.Input
                 foreach(float x in new[]{-.033f,.033f})Bar("Source backpack strap",bag+new Vector3(x,.060f,0),new Vector2(.014f,.035f),Hex("d8e4e9"),0);
                 foreach(int i in new[]{5,6,7}){int k=(i-5)*2;lockedMarks[k]=Bar("Locked cross A",At(i,.215f),new Vector2(.009f,.070f),Hex("b8c0c7"),45);lockedMarks[k+1]=Bar("Locked cross B",At(i,.215f),new Vector2(.009f,.070f),Hex("b8c0c7"),-45);}
                 status=Label("",new Vector3(0,.39f,-.025f),.03024f,Color.white);pointer=new GameObject("Source clamped wheel pointer").transform;pointer.SetParent(root,false);Shape("Pointer",Disc(.009f),Material(new Color(1,.85f,.2f)),pointer);pointer.gameObject.SetActive(false);
-                Ready=true;UpdateSlots();UpdateHighlight();
+                InitializeDropRing();Ready=true;UpdateSlots();UpdateHighlight();
             }catch(Exception error){Failure=error.ToString();Ready=false;if(root!=null)root.gameObject.SetActive(false);}
         }
         public void SetSlots(params R23WeaponWheelSlot[] slots){SetInventorySlots(Math.Max(3,slots==null?0:slots.Length),slots);}
@@ -43,17 +43,18 @@ namespace Ashfall.Integration.Playable.Input
             for(int i=0;i<R23WeaponWheelRules.MaximumSlots;i++){var old=state.Slot(i);var next=i<slots.Length?slots[i]:null;if((old==null)!=(next==null)||(old!=null&&next!=null&&(old.Id!=next.Id||old.Label!=next.Label||old.WeaponId!=next.WeaponId||old.CanEquip!=next.CanEquip||old.Count!=next.Count)))changed=true;}
             state.SetSlots(slots,capacity);if(Ready){if(changed)UpdateSlots();SyncVisibility(was);UpdateHighlight();}
         }
-        public void Cancel(){bool was=Active;state.Cancel();SyncVisibility(was);}
+        public void Cancel(){pendingDropId=null;bool was=Active;state.Cancel();SyncVisibility(was);}
         // Root combines session focus, aim tracking, alive/game input and menu/backpack
         // availability into valid. This component never pauses gameplay or emits jump.
         public bool Step(float seconds,bool aHeld,bool valid,Ray aim,Vector3 locomotionAnchor,int primaryHand=1)
         {
             if(!Ready)return false;bool was=Active;valid=valid&&Finite(aim.origin)&&Finite(aim.direction)&&aim.direction.sqrMagnitude>.000001f&&Finite(locomotionAnchor)&&head!=null&&isActiveAndEnabled;
             if(was&&valid){root.position+=locomotionAnchor-anchor;anchor=locomotionAnchor;}
-            int pointed=was&&valid?Point(aim):-1;var request=state.Step(seconds,aHeld,valid,pointed,primaryHand);
+            PollDropConfirmation(valid,primaryHand);int pointed=was&&valid?Point(aim):-1;var request=state.Step(seconds,aHeld,valid,pointed,primaryHand);
             if(!was&&Active){Open(aim,locomotionAnchor);Point(aim);}
-            SyncVisibility(was);UpdateHighlight();if(request==null)return false;
-            bool accepted=false;if(request.Action==R23WeaponWheelAction.Equip){accepted=equip(request.Id,request.Hand);LastRejectedId=accepted?null:request.Id;}
+            SyncVisibility(was);UpdateHighlight();UpdateDropProgress(primaryHand);if(request==null)return false;
+            bool accepted=false;if(request.Action==R23WeaponWheelAction.Drop){accepted=RequestDrop(request);LastRejectedId=accepted?null:request.Id;}
+            else if(request.Action==R23WeaponWheelAction.Equip){accepted=equip(request.Id,request.Hand);LastRejectedId=accepted?null:request.Id;}
             else if(request.Action==R23WeaponWheelAction.Revive){accepted=revive!=null&&revive();LastRejectedId=accepted?null:request.Id;}
             else if(request.Action==R23WeaponWheelAction.Backpack&&backpack!=null){backpack();accepted=true;}
             else if(request.Action==R23WeaponWheelAction.QuickToggle&&quickToggle!=null){quickToggle();accepted=true;}
@@ -71,7 +72,7 @@ namespace Ashfall.Integration.Playable.Input
             float distance=-origin.z/direction.z;if(float.IsNaN(distance)||float.IsInfinity(distance)||distance<=0)return -1;Vector3 hit=origin+direction*distance;if(!Finite(hit))return -1;
             var xy=Vector2.ClampMagnitude(new Vector2(hit.x,hit.y),.34f);pointer.localPosition=new Vector3(xy.x,xy.y,-.012f);pointer.gameObject.SetActive(true);return R23WeaponWheelRules.Sector(hit.x,hit.y);
         }
-        void SyncVisibility(bool before){if(root!=null)root.gameObject.SetActive(Active&&Ready&&isActiveAndEnabled);if(before!=Active&&ActiveChanged!=null)ActiveChanged(Active);}
+        void SyncVisibility(bool before){if(!Active)HideDropRing();if(root!=null)root.gameObject.SetActive(Active&&Ready&&isActiveAndEnabled);if(before!=Active&&ActiveChanged!=null)ActiveChanged(Active);}
         void UpdateHighlight()
         {
             int selected=state.HighlightedSector;for(int i=0;i<8;i++){int slot=R23WeaponWheelRules.SlotForSector(i);var item=slot>=0?state.Slot(slot):null;string color=slot>=state.Capacity?"747b84":i==3?(i==selected?"b16a20":"202d37"):slot>=0&&item==null?(i==selected?"26323a":"10232d"):i==selected&&(i==4||item!=null&&item.CanEquip)?"b16a20":"16313a";sectors[i].SetColor("_Color",Hex(color));}

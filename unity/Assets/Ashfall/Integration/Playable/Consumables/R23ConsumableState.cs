@@ -36,7 +36,8 @@ namespace Ashfall.Integration.Playable.Consumables
         public string HeldId {get{return rules.HeldInstance(Actor);}}
         public Preparation Phase {get{return rules.Phase(Actor);}}
         public float PendingSoda {get{return rules.PendingSoda(Actor);}}
-        public bool AcknowledgeSharedConsume(string id){if(SharedConsume==null||!owned.Exists(delegate(R23OwnedConsumable item){return item.Id==id;}))return false;var r=rules.AcknowledgeConsumed(new CommandContext(Session,Actor,"shared-"+(++serial),tick,0,true),id);if(!r.Accepted)return false;owned.RemoveAll(delegate(R23OwnedConsumable item){return item.Id==id;});return true;}
+        public bool AcknowledgeSharedConsume(string id){return SharedConsume!=null&&RetireOwned(id);}
+        internal bool RetireOwned(string id){if(!owned.Exists(delegate(R23OwnedConsumable item){return item.Id==id;}))return false;var r=rules.AcknowledgeConsumed(new CommandContext(Session,Actor,"shared-"+(++serial),tick,0,true),id);if(!r.Accepted)return false;owned.RemoveAll(delegate(R23OwnedConsumable item){return item.Id==id;});return true;}
         public R23OwnedConsumable[] OwnedItems {get{return owned.ToArray();}}
         public R23ConsumableState(IR23ConsumableEffects effectPort,IInteractionQuery query)
         {if(effectPort==null||query==null)throw new ArgumentNullException();effects=effectPort;this.query=query;CreateRules();}

@@ -28,6 +28,16 @@ namespace Ashfall.Integration.Playable
             Rig.ReadCarrierMotion=ReadLocalCarrierMotion;
             Rig.CarrierMotionAccepted=delegate(Vector3 accepted){if(TeamLaunch!=null)TeamLaunch.AcceptCarrierMotion("player",accepted);};
         }
+        public bool PlatformUnarmed{get{return Rig!=null&&(Rig.CarrierActive||TeamLaunch!=null&&TeamLaunch.Eligible&&TeamLaunch.Runtime.Layout.PlatformAt(LaunchF(Rig.transform.position))>=0);}}
+        void DisarmPlatform()
+        {
+            if(Gameplay.HasWeapon)Gameplay.HolsterCurrent();
+            if(Consumables!=null&&Consumables.HeldId!=null)Consumables.Stow();
+            if(Explosives!=null&&Explosives.HeldId!=null)Explosives.Stow();
+            if(PaddleHands)StowPaddles();
+            if(WeaponWheel!=null&&WeaponWheel.Active)WeaponWheel.Cancel();
+            if(BackpackOpen)UI.SetPlaying();
+        }
         void BeginTeamLaunch()
         {
             LaunchFailure=null;ejectLocalCarrier=false;Rig.ClearCarrierMotion();OnLaunchDeck=false;
@@ -47,7 +57,7 @@ namespace Ashfall.Integration.Playable
             if(assignment==null)throw new InvalidOperationException("Actual local-team deck assignment refused");
             OnLaunchDeck=true;
             Vector3 spawn=LaunchV(assignment.Spawn);
-            Rig.SetSpawn(spawn,Map.Bounds.center);Calibration.NotifyRootPoseReset();
+            Rig.SetSpawn(spawn,Map.Bounds.center);Calibration.NotifyRootPoseReset();DisarmPlatform();
             if(!info.CandidatesReady)StartCoroutine(LaunchMapCatalog.LoadCandidates(Map.MapId));
         }
         void EndTeamLaunch()
@@ -65,6 +75,8 @@ namespace Ashfall.Integration.Playable
         void TickTeamLaunch(float dt,bool hardware)
         {
             if(TeamLaunch==null||!MatchActive||!roundStarted||switchingMap||!TeamLaunch.Eligible)return;
+            OnLaunchDeck=TeamLaunch.Runtime.Layout.PlatformAt(LaunchF(Rig.transform.position))>=0;
+            if(PlatformUnarmed)DisarmPlatform();
             TeamLaunch.Refresh(MatchClock,Mathf.Max(0,dt));
             var left=Rig.LeftInput;var right=Rig.RightInput;
             bool xr=Rig.DisplayRunning;

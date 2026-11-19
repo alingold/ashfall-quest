@@ -1,0 +1,133 @@
+{
+  "mapId": "archive:cold-castle-gods-ghostlymostly88",
+  "title": "COLD CASTLE",
+  "creator": "GODS_GhostlyMostly88",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "653ad5e3b1b68d37c0cbdec8596c2e493d0686c421cc24647a9aa5e8b60849af",
+    "cached live map.glb": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/cold-castle-gods-ghostlymostly88/map.glb": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+    "https://maps.deliciouswines.org/maps/cold-castle-gods-ghostlymostly88/map.json": "653ad5e3b1b68d37c0cbdec8596c2e493d0686c421cc24647a9aa5e8b60849af"
+  },
+  "sourceGlbSha256": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+  "cacheFingerprint": "d07f784d23067a635aab99106446bafdcf590e7e277b02aef903930e74196cb6",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 180298,
+  "sourceRoles": {
+    "world": 180298,
+    "false": 8000,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 188298,
+  "collisionTriangles": 180314,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 88,
+  "materials": 9,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "pb8a19331_c.png": {
+      "source": "authoring/textures-v1/out/by-sha/5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f.png",
+      "sha256": "c3f48b86ec7e938b587fc4109d0bfb4e22e0063ed59e73538bea0070691dd87e",
+      "bytes": 12129
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/65284fc5db79b92f87f1f5cd3cb4d7594e1c2b353d433ccff2114f12ba80d83a.jpg",
+      "sha256": "9aa86f21ec1445cd69b0af98b279f236803e8b8cde03baaffccda7f26d2998df",
+      "bytes": 509522
+    },
+    "t104_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a5fd14df92aa1d0eca8aba0cfa11877234a0dcc17bafd05944fc15fd23098d7d.jpg",
+      "sha256": "ea184f2561d9cd45b1e034c0c5bec297e5448727e50666638403be3989702fb1",
+      "bytes": 54575
+    },
+    "t104_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/70fbe7c56d92e4daf86615dee2fe7f3d98d2bf1975793cb6b3cab81be0b525a5.jpg",
+      "sha256": "27c16af0c4689303a988d4e101e0b80f703a429fe3783d934060a6d1a5f2a933",
+      "bytes": 63927
+    },
+    "t111_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/f5cee2e245233e03f584925593ec8ebfd8cdd3dfdb0bce8b528bf430db73eae7.jpg",
+      "sha256": "d367e358a31ac8339726bb60882e2280315ae4592ffa416e6089ff571685911d",
+      "bytes": 58740
+    },
+    "t111_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/533e5cd48763120c2ef4ff276f188c53171f6d28b62978b398235ad9f551354a.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t112_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/20acb6e8aba96b3dd57991c9e1c7934393555733b21744005d5d391a00814259.jpg",
+      "sha256": "cfafd52e5b646fb9581f2227dc8a5fa5c2a66f428d0d7a6d18916c452234c312",
+      "bytes": 50230
+    },
+    "t112_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a429d65e152054fb10ac793270b266517eb257a9fcc0bd3cb2470caf53929545.jpg",
+      "sha256": "9fbe553fe9d685748bd99de65a00cf3476e4a1ac58e3e6607de3da4d9de9fa90",
+      "bytes": 62785
+    },
+    "t118_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/8de60f896574c0cb1f14c12519e17163f4af7b85262de60d59e763d44c686d64.jpg",
+      "sha256": "2df9e697f691b8acf573fba157c6d2ffb07b0be8bebcb8a68a30630b1511a287",
+      "bytes": 58204
+    },
+    "t118_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1d07205203ad8f938fa4e084ceb70eead783d9b0a61ddb34ee225fba329c07fb.jpg",
+      "sha256": "1879de15e3950fdfb804146524e6030fc95d7972ca60491ca55d51c44aa1714e",
+      "bytes": 43731
+    }
+  },
+  "spawn": [
+    220.87,
+    63.675329680292684,
+    4.46
+  ],
+  "warmupSpawn": [
+    218.05,
+    63.67532992233523,
+    4.46
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "586dc21cc39539d14a3f413c0ce4fde24a41e73c4a5b2a279093042528838567",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 1.345,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "b89b13d72551b723035d71b8d0864ea4b6c8f24d2c9bc6c11fdfa5beff31e237",
+  "sourceRetainedCollisionAttributesSha256": "64255010c179763f0c7ea7d21364e6426c4426869d098052cb838b43ef4e39f3",
+  "payloadBytes": 18048782,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/cold-castle-gods-ghostlymostly88/",
+  "archivePage": "https://maps.deliciouswines.org/m/cold-castle-gods-ghostlymostly88/",
+  "sourceFirst": "2026-11-14",
+  "sourceLast": "2026-11-14",
+  "archiveCaptureId": "bcea69d1-26c1-421d-b7d7-caa512ffa810",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "653ad5e3b1b68d37c0cbdec8596c2e493d0686c421cc24647a9aa5e8b60849af",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "6c3724d91418ee143062d63c0e77c6d68bd17291ea064b4e49a14e3c58a4c6f3"
+}

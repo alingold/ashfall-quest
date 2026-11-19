@@ -45,7 +45,7 @@ namespace Ashfall.Integration.Playable.Input
                 Bar("Cancel X A",new Vector3(0,0,-.016f),new Vector2(.01155f,.0777f),Hex("173443"),45,123);
                 Bar("Cancel X B",new Vector3(0,0,-.016f),new Vector2(.01155f,.0777f),Hex("173443"),-45,123);
                 pointer=Part("Source pointer sphere",Sphere(.009f,.018f,1),Material(new Color(1,.85f,.2f),125),wheel);
-                var text=new GameObject("Source mark title");text.transform.SetParent(wheel,false);text.transform.localPosition=new Vector3(0,.39f,-.02f);
+                var text=new GameObject("Source mark title");text.layer=5;text.transform.SetParent(wheel,false);text.transform.localPosition=new Vector3(0,.39f,-.02f);
                 header=text.AddComponent<TextMesh>();header.font=font;header.fontSize=30;header.characterSize=1;header.richText=false;header.anchor=TextAnchor.MiddleCenter;header.alignment=TextAlignment.Center;
                 var textMaterial=Material(Color.white,126,font.material.mainTexture);textMaterial.SetFloat("_Font",1);text.GetComponent<MeshRenderer>().sharedMaterial=textMaterial;
                 markMaterial=Material(Color.white,120);icon=Part("Source angular billboard ping",Quad(1,1),markMaterial,mark);

@@ -44,10 +44,10 @@ namespace Ashfall.Integration.Playable.Input
             {
                 blue=Finish(shader,new Color(.1f,.48f,1));outline=Finish(shader,new Color(.005f,.01f,.025f));
                 float radius=R23WorldPingState.FontPixels*R23WorldPingState.PixelSize*.5f;
-                float inner=radius-R23WorldPingState.PixelSize*2.5f;
-                float border=8*R23WorldPingState.PixelSize*Mathf.Sqrt(2);
-                blueMesh=Diamond(radius,inner);outlineMesh=Diamond(radius+border,Mathf.Max(0,inner-border));
-                Part("Source dark8px outline",outlineMesh,outline,.0005f);Part("Source blue hollow diamond",blueMesh,blue,0);
+                float inner=radius*.36f;
+                float border=R23WorldPingState.PixelSize*2;
+                blueMesh=Diamond(radius,inner);outlineMesh=Diamond(radius+border,inner);
+                Part("Source dark rim",outlineMesh,outline,.0005f);Part("Solid blue diamond with open center",blueMesh,blue,0);
                 initialized=true;ClearAll();
             }
             catch{if(marker!=null)Destroy(marker.gameObject);Release();throw;}

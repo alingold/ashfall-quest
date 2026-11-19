@@ -2,8 +2,8 @@ using System;using Ashfall.Core;using Ashfall.Modules.HealthStates;using Ashfall
 namespace Ashfall.Integration.Playable.Networking
 {
     // Bound by the actual host map owner; no client-supplied origin/height flag.
-    public interface IR24LanWarmupFrame
-    {bool TrySourceHeight(string map,Float3 representedWorldFeet,out float sourceY);}
+    public interface IR26LanFallFrame
+    {bool IsBelowFallFailsafe(string map,Float3 representedWorldFeet);}
     public sealed partial class R24LanLobby
     {
         public int WarmupRecoveries{get;private set;}public string LastWarmupRecoveryFailure{get;private set;}
@@ -17,12 +17,12 @@ namespace Ashfall.Integration.Playable.Networking
         }
         void TickWarmupRecovery()
         {
-            var frame=spawnWorld.Bound as IR24LanWarmupFrame;
+            var frame=spawnWorld.Bound as IR26LanFallFrame;
             if(State!=R24LanLobbyState.Hosting||hostHealth==null||frame==null||SelectedMap==null||SelectedMap.Rules!=null||!SelectedMap.Active||SelectedMap.Cancelled||sessions.Stage!=SessionStage.Lobby||!SpawnWorldReady())return;
             var rules=SelectedMap.SourceRules;if(rules==null)return;
             foreach(var member in sessions.CaptureMembers()){
-                R24LanRawTrackingSample accepted;float height;var health=hostHealth.Read(member.CanonicalActorId);
-                if(!member.Loaded||!member.HasPosition||member.Life!=SessionLife.Alive||health==null||!health.Connected||health.Life!=LifeState.Alive||!TryWarmupRecoveryPose(member.ActorId,out accepted)||!frame.TrySourceHeight(MapId,accepted.Pose.Root.Position,out height)||Single.IsNaN(height)||Single.IsInfinity(height)||height>=-25)continue;
+                R24LanRawTrackingSample accepted;var health=hostHealth.Read(member.CanonicalActorId);
+                if(!member.Loaded||!member.HasPosition||member.Life!=SessionLife.Alive||health==null||!health.Connected||health.Life!=LifeState.Alive||!TryWarmupRecoveryPose(member.ActorId,out accepted)||!frame.IsBelowFallFailsafe(MapId,accepted.Pose.Root.Position))continue;
                 using(spawnWorld.Begin(MapId,member.ActorId,true)){
                     var sites=spawnWorld.Sites(MapId,true);if(sites==null)continue;
                     foreach(var site in sites){

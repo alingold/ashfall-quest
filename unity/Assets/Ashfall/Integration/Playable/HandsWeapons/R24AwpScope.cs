@@ -3,14 +3,14 @@ using System;using UnityEngine.Rendering;using Ashfall.Core;using UnityEngine;us
 namespace Ashfall.Integration.Playable.HandsWeapons
 {
     public struct R24AwpScopeInput {public bool Valid,Supported,SupportHeld,PrimaryReady,SupportReady;public Vector2 Stick;}
-    // Actual awp_scope.gd: one768x768 shared binocular scene at30Hz, 4/8x.
+    // Calibrated AWP: one768x768 shared binocular scene at30Hz, 6.2/8x.
     // Aperture uses each render's inverse projection; never changes the HMD/IPD.
     [DefaultExecutionOrder(1200)]
     public sealed class R24AwpScope:MonoBehaviour
     {
-        LineRenderer shotTrace;Vector3 worldTraceStart;float worldStartWidth,worldEndWidth;bool traceRebased;LineAlignment worldAlignment;Quaternion worldTraceRotation;
+        LineRenderer shotTrace;bool movingShot;Vector3 worldTraceStart;float worldStartWidth,worldEndWidth;bool traceRebased;LineAlignment worldAlignment;Quaternion worldTraceRotation;
         // Reuse the accepted line, once per camera. Never create a second shot or raycast.
-        public void BindTracer(LineRenderer line){shotTrace=line;elapsed=1f/30;}
+        public void BindTracer(LineRenderer line,bool moving=false){movingShot=moving;shotTrace=line;elapsed=1f/30;}
         void BeginCamera(ScriptableRenderContext context,Camera camera)
         {
             if(camera!=view||!Active||shotTrace==null||!shotTrace.enabled)return;
@@ -18,9 +18,9 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             // A ribbon through the optical camera origin clips into a screen-sized wedge.
             // Start just below the crosshair, beyond the near plane; keep the exact impact.
             float depth=Mathf.Max(.5f,view.nearClipPlane*2),tangent=Mathf.Tan(view.fieldOfView*Mathf.Deg2Rad*.5f);
-            shotTrace.SetPosition(0,view.transform.position+view.transform.forward*depth-view.transform.up*(depth*tangent*.25f));
+            if(!movingShot||Vector3.Dot(worldTraceStart-view.transform.position,view.transform.forward)<depth)shotTrace.SetPosition(0,view.transform.position+view.transform.forward*depth-view.transform.up*(depth*tangent*.25f));
             float endDepth=Mathf.Max(depth,Vector3.Dot(shotTrace.GetPosition(1)-view.transform.position,view.transform.forward));
-            shotTrace.startWidth=depth*tangent*4/768;shotTrace.endWidth=endDepth*tangent*4/768;
+            shotTrace.startWidth=Mathf.Max(depth,Vector3.Dot(shotTrace.GetPosition(0)-view.transform.position,view.transform.forward))*tangent*4/768;shotTrace.endWidth=endDepth*tangent*4/768;
         }
         void EndCamera(ScriptableRenderContext context,Camera camera){if(camera==view)RestoreTracer();}
         void RestoreTracer(){if(traceRebased&&shotTrace!=null){shotTrace.SetPosition(0,worldTraceStart);shotTrace.startWidth=worldStartWidth;shotTrace.endWidth=worldEndWidth;shotTrace.alignment=worldAlignment;shotTrace.transform.rotation=worldTraceRotation;}traceRebased=false;}
@@ -34,7 +34,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(initialized||viewer==null||cameraRoot==null||currentUnpublishedCandidate==null||actualPathClear==null)throw new ArgumentException("AWP actual optical inputs");head=viewer;candidate=currentUnpublishedCandidate;clear=actualPathClear;
             var shader=Resources.Load<Shader>("R24AwpScope");if(shader==null)throw new InvalidOperationException("Source AWP angular compositor missing");material=new Material(shader);material.enableInstancing=true;
             image=new RenderTexture(768,768,24,RenderTextureFormat.ARGB32);image.name="Source AWP shared infinite-distance optical image";image.antiAliasing=1;image.useMipMap=false;image.filterMode=FilterMode.Bilinear;image.wrapMode=TextureWrapMode.Clamp;image.Create();material.SetTexture("_OpticalView",image);
-            var cameraObject=new GameObject("Source AWP30Hz shared optical camera");cameraObject.transform.SetParent(cameraRoot,false);view=cameraObject.AddComponent<Camera>();view.enabled=false;view.GetUniversalAdditionalCameraData().allowXRRendering=false;view.stereoTargetEye=StereoTargetEyeMask.None;view.targetTexture=image;view.aspect=1;view.nearClipPlane=.05f;view.farClipPlane=Mathf.Max(220,head.farClipPlane);view.cullingMask=1|(1<<8)|(1<<19)|(1<<24);/* World, committed builds8, ballistic fragments19 and live enemy actors24; exclude own weapon art18 and candidate previews2. */view.clearFlags=head.clearFlags;view.backgroundColor=head.backgroundColor;view.allowHDR=false;view.allowMSAA=false;view.depth=head.depth-20;view.fieldOfView=R24AwpMath.OpticalFov(4);
+            var cameraObject=new GameObject("Source AWP30Hz shared optical camera");cameraObject.transform.SetParent(cameraRoot,false);view=cameraObject.AddComponent<Camera>();view.enabled=false;view.GetUniversalAdditionalCameraData().allowXRRendering=false;view.stereoTargetEye=StereoTargetEyeMask.None;view.targetTexture=image;view.aspect=1;view.nearClipPlane=.05f;view.farClipPlane=Mathf.Max(220,head.farClipPlane);view.cullingMask=1|(1<<8)|(1<<19)|(1<<24);/* World, committed builds8, ballistic fragments19 and live enemy actors24; exclude own weapon art18 and candidate previews2. */view.clearFlags=head.clearFlags;view.backgroundColor=head.backgroundColor;view.allowHDR=false;view.allowMSAA=false;view.depth=head.depth-20;view.fieldOfView=R24AwpMath.OpticalFov(R24AwpMath.BaseMagnification);
             overlay=new GameObject("Source AWP central angular scope and black surround").transform;overlay.SetParent(head.transform,false);overlay.localPosition=new Vector3(0,0,.45f);overlay.gameObject.layer=18;
             mesh=new Mesh();mesh.vertices=new[]{new Vector3(-.5f,-.5f,0),new Vector3(.5f,-.5f,0),new Vector3(.5f,.5f,0),new Vector3(-.5f,.5f,0)};mesh.triangles=new[]{0,2,1,0,3,2};mesh.bounds=new Bounds(Vector3.zero,Vector3.one*10000);overlay.gameObject.AddComponent<MeshFilter>().sharedMesh=mesh;renderer=overlay.gameObject.AddComponent<MeshRenderer>();renderer.sharedMaterial=material;renderer.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;renderer.receiveShadows=false;renderer.allowOcclusionWhenDynamic=false;renderer.enabled=false;initialized=true;Application.onBeforeRender+=RefreshPresentation;RenderPipelineManager.beginCameraRendering+=BeginCamera;RenderPipelineManager.endCameraRendering+=EndCamera;
         }

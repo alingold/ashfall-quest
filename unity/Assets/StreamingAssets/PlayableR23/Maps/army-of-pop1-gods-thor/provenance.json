@@ -1,0 +1,132 @@
+{
+  "mapId": "archive:army-of-pop1-gods-thor",
+  "title": "ARMY OF POP1",
+  "creator": "GODS_THOR",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "e02d714836cf067a9cc3f1776e8ed86cd330902228ff976bd6409273754b9143",
+    "cached live map.glb": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/army-of-pop1-gods-thor/map.glb": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+    "https://maps.deliciouswines.org/maps/army-of-pop1-gods-thor/map.json": "e02d714836cf067a9cc3f1776e8ed86cd330902228ff976bd6409273754b9143"
+  },
+  "sourceGlbSha256": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+  "cacheFingerprint": "d2bf9657530e8ad8aa25673c729735fc6944dfb3bfe26f9dc4fc7d0b4aca094b",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 58844,
+  "sourceRoles": {
+    "world": 58684,
+    "roof": 160,
+    "false": 1086
+  },
+  "renderTriangles": 59930,
+  "collisionTriangles": 58844,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 68,
+  "materials": 9,
+  "textureInputs": {
+    "pb8a19331_c.png": {
+      "source": "authoring/textures-v1/out/by-sha/5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f.png",
+      "sha256": "c3f48b86ec7e938b587fc4109d0bfb4e22e0063ed59e73538bea0070691dd87e",
+      "bytes": 12129
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/55db55e0a047fba34146515d0a8cb9d0435a78aec8a382165b57d186ae884d38.jpg",
+      "sha256": "23c2ad365d91f1ebd3711d455068a5ec700590cadc9954fe5a7b6b7eefd6a541",
+      "bytes": 541884
+    },
+    "t124_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5291021a71faa2c3b45baee726623d660104409f7bd9cca8842741ab091b347e.jpg",
+      "sha256": "f0c0a1771baa76ff74d6f306aa5e74b9e97279c5e702ae37e592bdafa27bc5e9",
+      "bytes": 72969
+    },
+    "t124_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/bf0249f3541ad3577d5a996458f73038af19fca581917c1877245b4ee3938a83.jpg",
+      "sha256": "2248ebe7dafec16051aff63c240d7fed27192673fdeb8f2c9082ff13154f362b",
+      "bytes": 68588
+    },
+    "t22_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781.jpg",
+      "sha256": "9c65c58fda105486638098ebdd72a97be85dc6979a549d088e351e081b4fa6db",
+      "bytes": 25860
+    },
+    "t22_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t51_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/699656b11168fc4d00c0bad2ba1642bd58e880e88070c419bde7c108a8cc2663.jpg",
+      "sha256": "2d10ff0ff60218ec47ad7b24b333e68ace1aed46d1180193edfea4f21557570a",
+      "bytes": 3356
+    },
+    "t51_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t52_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/dd70782dfa2fe66e7540e349d91f0626d768704314ef95b4abc3f7a1fcda7e72.jpg",
+      "sha256": "102c9b9e23ffcab0e05f76d4eab154cf21d8361a94367f66b6ad23293a8186fd",
+      "bytes": 3356
+    },
+    "t52_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t53_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/d695733be3e6587573858064dd0ffded61b765c481b609c0c0ead60d81a2c67f.jpg",
+      "sha256": "6b1f7caaffbd1243b587cfe596cf838ced76e281037064008d9382929574ccc5",
+      "bytes": 3360
+    },
+    "t53_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    }
+  },
+  "spawn": [
+    24.999607235214675,
+    100.12001525878907,
+    9.795693705833969
+  ],
+  "warmupSpawn": [
+    24.999607235214675,
+    100.12001525878907,
+    9.795693705833969
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "9f1a9d50e0263d1bf3cd23b9b46a61ff58005aa7b8dcd69318ddb41479c1eb7a",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 0.709,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "cbe693aedec9daabf8e125807d13d01bbb782fffd054103752e39927b5331788",
+  "sourceRetainedCollisionAttributesSha256": "e478a5e2a5631f8d9bb64c97f49a4ad2e389518abc26fdfc9b9d0bd31837acec",
+  "payloadBytes": 5123896,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/army-of-pop1-gods-thor/",
+  "archivePage": "https://maps.deliciouswines.org/m/army-of-pop1-gods-thor/",
+  "sourceFirst": "2026-11-08",
+  "sourceLast": "2026-11-08",
+  "archiveCaptureId": "c99d22b3-e024-4886-846a-85532e0448e3",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "e02d714836cf067a9cc3f1776e8ed86cd330902228ff976bd6409273754b9143",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "c2cc4f561a169b2f14ae0652a94b57caf730b88c369bb28cc394083a2a86d134"
+}

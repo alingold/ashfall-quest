@@ -39,7 +39,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(!displayedPoseValid||head==null)return;if(IsMelee){displayedAimPoint=From(displayedShot.Origin);displayedAimBlocked=false;return;}if(IsSmaw&&smawView!=null){displayedAimPoint=smawView.AimPosition;displayedAimBlocked=smawView.HeadBlocked;return;}
             Vector3 origin=From(displayedShot.Origin),direction=From(displayedShot.Forward),segment=origin-head.transform.position;RaycastHit hit;
             displayedAimPoint=origin+direction*ActiveRange;displayedAimBlocked=Nearest(head.transform.position,segment.normalized,segment.magnitude,out hit);
-            if(displayedAimBlocked)displayedAimPoint=hit.point;else if(Nearest(origin,direction,ActiveRange,out hit))displayedAimPoint=hit.point;
+            if(displayedAimBlocked)displayedAimPoint=hit.point;else{if(Nearest(origin,direction,ActiveRange,out hit))displayedAimPoint=hit.point;displayedAimPoint=RemoteAimPoint(origin,direction,displayedAimPoint);} // MP-RETICLE: collider-free remote avatars
         }
         [BeforeRenderOrder(1100)]
         void RefreshLateTrackedPresentation(){try{
@@ -47,7 +47,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             // recoil integration, native owner tick or player/controller transform writes.
             if(!FeedbackAllowed){ApplyFreeHandContactOffsets();return;}
             if(IsDual&&DualReady){ActiveDualView.RefreshTrackedPresentation();RenderDualPose();ApplyFreeHandContactOffsets();return;}RenderDisplayedPose();ResolveDisplayedAim();PresentDisplayedAim();ApplyFreeHandContactOffsets();
-        }finally{PresentObstruction(true);LogHandsHiddenState();RefreshLocalTracers();}}
+        }finally{PresentObstruction(true);LogHandsHiddenState();}}
         void PresentDisplayedAim(){
             if(IsGrapple||IsDual||IsMelee||IsSmaw)return;if(gunFeedback==null||!displayedPoseValid)return;
             Vector3 origin=From(displayedShot.Origin),direction=From(displayedShot.Forward);var feedback=ActiveFeedback;

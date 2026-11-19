@@ -17,8 +17,7 @@ namespace Ashfall.Integration.Playable.Networking
             if(root==null||root.Rig==null)return;
             if(peer==null){ClearGrapplePullPresentation();return;}
             if(pullEpoch!=peer.Lobby.Epoch){ClearGrapplePullPresentation();pullEpoch=peer.Lobby.Epoch;}
-            var rules=peer.Lobby.SelectedMap==null?null:peer.Lobby.SelectedMap.SourceRules;
-            if(rules==null||!rules.GrapplePull||!rules.GrappleGun||PresenceScene=="menu"){if(root.Rig.BeingGrappled)peer.Lobby.PublishWeb(root.Rig.WebState,2);ClearGrapplePullPresentation();return;}
+            if(!MapGrapplePullEnabled()){if(root.Rig.BeingGrappled)peer.Lobby.PublishWeb(root.Rig.WebState,2);ClearGrapplePullPresentation();return;}
             if(pullMaterial==null){
                 pullMaterial=new Material(Shader.Find("Sprites/Default"));
                 pullAudio=new R24ItemAudio();pullVoice=pullAudio.Voice(transform,"Grapple tug",-17,15);pullLoad=StartCoroutine(LoadPullSound());
@@ -29,6 +28,9 @@ namespace Ashfall.Integration.Playable.Networking
             bool own=false;var live=new HashSet<string>();double now=peer.Lobby.EstimatedHostTime;
             foreach(var row in peer.Lobby.GrapplePulls){
                 if(now>=row.Start+1.5)continue;
+                if(row.Shooter==peer.Lobby.OwnActor){float trigger=row.Hand==0?root.Rig.LeftInput.Trigger:root.Rig.RightInput.Trigger;
+                    if(trigger<=.5f||!root.Rig.SessionFocused)peer.Lobby.PublishWeb(root.Rig.WebState,3);
+                }
                 live.Add(row.Victim);LineRenderer line;
                 if(!pullLines.TryGetValue(row.Victim,out line)){line=PullLine("Grapple player tether",2,.012f);pullLines[row.Victim]=line;}
                 Vector3 from=Vector3.zero,to=Vector3.zero;bool visible=PullEndpoint(row.Shooter,row.Hand,true,out from)&&PullEndpoint(row.Victim,0,false,out to);

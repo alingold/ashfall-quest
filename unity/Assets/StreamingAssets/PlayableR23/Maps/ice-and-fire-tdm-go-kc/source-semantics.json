@@ -1,0 +1,405 @@
+{
+ "mapId": "archive:ice-and-fire-tdm-go-kc",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:ice-and-fire-tdm-go-kc",
+  "title": "ICE AND FIRE TDM",
+  "creator": "GO_KC",
+  "template": "MapEditorDefault",
+  "center": [
+   -14.28537515471506,
+   54.94861478169806,
+   -12.971308250748113
+  ],
+  "recorded_spawns": [
+   [
+    68.51,
+    46.88,
+    27.48
+   ],
+   [
+    67.57,
+    46.91,
+    32.44
+   ],
+   [
+    67.41,
+    46.51,
+    37.43
+   ],
+   [
+    28.75,
+    44.51,
+    -79.01
+   ],
+   [
+    -113.69,
+    65.97,
+    -10.11
+   ],
+   [
+    -114.05,
+    66.41,
+    -17.47
+   ],
+   [
+    -27.64,
+    69.3,
+    48.59
+   ],
+   [
+    73.81,
+    67.16,
+    16.8
+   ],
+   [
+    73.77,
+    66.97,
+    11.86
+   ],
+   [
+    -103.39,
+    42.76,
+    23.15
+   ],
+   [
+    -103.97,
+    42.72,
+    18.32
+   ],
+   [
+    -104.07,
+    42.94,
+    13.55
+   ],
+   [
+    -115.2,
+    66.35,
+    -20.46
+   ],
+   [
+    71.78,
+    66.79,
+    21.81
+   ],
+   [
+    -72.7,
+    46.19,
+    61.69
+   ],
+   [
+    -49.6,
+    69.8,
+    -58.85
+   ]
+  ],
+  "bounds_min": [
+   -502.2572937011719,
+   -76.85621643066406,
+   -457.02410888671875
+  ],
+  "bounds_max": [
+   478.394775390625,
+   174.6253204345703,
+   476.34503173828125
+  ],
+  "solid_min": [
+   -302.27972412109375,
+   -76.85621643066406,
+   -322.02691650390625
+  ],
+  "solid_max": [
+   300.0,
+   174.6253204345703,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/ice-and-fire-tdm-go-kc/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "c7d7e42389f67c4f6ef154490c50be45aad975170665b4bd639e59b82bbbd136",
+  "cache_fingerprint": "03d36ff1b1b1481ec7fad7ee9dc162968143a9437c7ea15c17700532abd2dfe4",
+  "warmup": [
+   {
+    "center": [
+     -95.25519,
+     107.02155,
+     34.55947
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.92267,
+     0,
+     -0.38559
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -73.42395,
+     107.47363,
+     50.16127
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.3846,
+     0,
+     -0.92308
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -97.14123,
+     107.02155,
+     12.91199
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -51.29892,
+     108.52155,
+     50.49967
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.3846,
+     0,
+     -0.92308
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -98.91013,
+     105.47363,
+     -13.77838
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -98.99005,
+     105.52155,
+     -50.12859
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.92309,
+     0,
+     0.38459
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     46.15164,
+     103.97363,
+     15.27226
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.92308,
+     0,
+     -0.38461
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     30.54981,
+     103.52155,
+     37.10336
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.38558,
+     0,
+     -0.92267
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     46.49006,
+     105.02155,
+     -6.85294
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.92308,
+     0,
+     -0.38461
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     32.10466,
+     105.52939,
+     -72.48833
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.7071,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     42.47175,
+     104.54585,
+     -69.83357
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.70711,
+     0,
+     0.70711
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     50.19447,
+     103.97363,
+     -62.81899
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.98419,
+     0,
+     0.17712
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 12,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "03d36ff1b1b1481ec7fad7ee9dc162968143a9437c7ea15c17700532abd2dfe4",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "killzone",
+   "sourceNode": "killzone",
+   "boundsMin": [
+    -141.6716766357422,
+    36.70766830444336,
+    -115.46261596679688
+   ],
+   "boundsMax": [
+    114.88931274414062,
+    79.84100341796875,
+    77.75547790527344
+   ],
+   "triangles": 128
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -114.99988555908203,
+    -0.5,
+    -84.99993133544922
+   ],
+   "boundsMax": [
+    89.49999237060547,
+    65.8022232055664,
+    58.50000762939453
+   ],
+   "triangles": 24
+  }
+ ]
+}

@@ -9,6 +9,7 @@ Shader "Ashfall/R23PlayableWorld"
   _BaseMap("Source albedo", 2D) = "white" {}
   _NormalMap("Source normal", 2D) = "bump" {}
   _NormalStrength("Normal strength", Float) = 0
+  _R26UvScale("UV scale (r15 grass)", Float) = 1
   _Metallic("Metallic", Range(0,1)) = 0
   _Roughness("Roughness", Range(0,1)) = .72
   _Cutoff("Alpha clip", Float) = 0
@@ -35,6 +36,7 @@ Shader "Ashfall/R23PlayableWorld"
    float _R25DetailStrength, _R25DetailMetres;
    float4 _R25GroundTint;
    float _NormalStrength, _Metallic, _Roughness, _Cutoff;
+   float _R26UvScale;
    CBUFFER_END
    #include "R25Detail.hlsl"
    struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; float2 uv:TEXCOORD0; float4 color:COLOR; UNITY_VERTEX_INPUT_INSTANCE_ID };
@@ -43,7 +45,7 @@ Shader "Ashfall/R23PlayableWorld"
    {
     Varyings o; UNITY_SETUP_INSTANCE_ID(a); UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
     o.positionWS=TransformObjectToWorld(a.positionOS.xyz);o.positionCS=TransformWorldToHClip(o.positionWS);
-    o.normalWS=TransformObjectToWorldNormal(a.normalOS);o.uv=a.uv;o.color=a.color;return o;
+    o.normalWS=TransformObjectToWorldNormal(a.normalOS);o.uv=a.uv*_R26UvScale;o.color=a.color;return o;
    }
    half4 Frag(Varyings i):SV_Target
    {

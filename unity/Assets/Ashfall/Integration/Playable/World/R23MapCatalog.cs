@@ -24,9 +24,11 @@ namespace Ashfall.Integration.Playable.World
             R24ArchiveCatalog.Install();
 #endif
         }
-        public static R23MapChoice[] AvailableMaps {get{Install();var result=new List<R23MapChoice>(maps);
+        // Broken imports (two source maps glitched together) stay loadable by id but are never offered.
+        public static readonly HashSet<string> Excluded=new HashSet<string>(StringComparer.Ordinal);
+        public static R23MapChoice[] AvailableMaps {get{Install();var result=new List<R23MapChoice>();foreach(var map in maps)if(!Excluded.Contains(map.Id))result.Add(map);
 #if UNITY_6000_0_OR_NEWER
-            if(UI.R25LegacyPack.MapsEnabled)foreach(var row in UI.R25LegacyPack.Maps)result.Add(new R23MapChoice(row.id,row.title+" [RETIRED]",row.relativeFolder));
+            if(UI.R25LegacyPack.MapsEnabled)foreach(var row in UI.R25LegacyPack.Maps)if(!Excluded.Contains(row.id))result.Add(new R23MapChoice(row.id,row.title+" [RETIRED]",row.relativeFolder));
 #endif
             return result.ToArray();}}
         internal static void Add(string id,string label,string folder)

@@ -159,9 +159,9 @@ namespace Ashfall.Editor.Playable
                 UnityEditor.Android.AndroidExternalToolsSettings.sdkRootPath=sdk;
                 Debug.Log("Unity Quest private SDK: "+sdk);
                 Prepare();Xr(BuildTargetGroup.Android);
-                PlayerSettings.productName="ASHFALL Unity Quest";
-                PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,"org.alingold.ashfallunityquest");
-                PlayerSettings.bundleVersion="1.3.10-playtest-r11";PlayerSettings.Android.bundleVersionCode=20;
+                PlayerSettings.productName=Argument("-ashfallQuestName","ASHFALL Unity Quest");
+                PlayerSettings.SetApplicationIdentifier(UnityEditor.Build.NamedBuildTarget.Android,Argument("-ashfallQuestAppId","org.alingold.ashfallunityquest"));
+                PlayerSettings.bundleVersion="1.3.18-playtest-r19";PlayerSettings.Android.bundleVersionCode=29;
                 PlayerSettings.SetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Android,ScriptingImplementation.IL2CPP);
                 PlayerSettings.SetManagedStrippingLevel(UnityEditor.Build.NamedBuildTarget.Android,ManagedStrippingLevel.Low);
                 PlayerSettings.Android.targetArchitectures=AndroidArchitecture.ARM64;

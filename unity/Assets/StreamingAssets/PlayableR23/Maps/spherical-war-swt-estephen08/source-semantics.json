@@ -1,0 +1,361 @@
+{
+ "mapId": "archive:spherical-war-swt-estephen08",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:spherical-war-swt-estephen08",
+  "title": "SPHERICAL WAR",
+  "creator": "SWT_Estephen08",
+  "template": "MapEditorDefault",
+  "center": [
+   11.736152361756268,
+   64.01926041948708,
+   -20.499999843572834
+  ],
+  "recorded_spawns": [
+   [
+    -18.41,
+    64.03,
+    -74.64
+   ],
+   [
+    -28.41,
+    64.13,
+    -74.91
+   ],
+   [
+    -3.41,
+    64.13,
+    -74.91
+   ],
+   [
+    -13.41,
+    64.03,
+    -74.41
+   ],
+   [
+    -8.09,
+    64.03,
+    -74.41
+   ],
+   [
+    -23.59,
+    64.03,
+    -74.64
+   ],
+   [
+    1.59,
+    64.03,
+    -74.91
+   ],
+   [
+    25.09,
+    64.03,
+    -74.91
+   ],
+   [
+    -19.41,
+    67.03,
+    36.41
+   ],
+   [
+    30.59,
+    67.03,
+    36.64
+   ],
+   [
+    5.59,
+    67.13,
+    36.64
+   ],
+   [
+    0.59,
+    67.13,
+    36.64
+   ],
+   [
+    20.41,
+    67.03,
+    36.41
+   ],
+   [
+    25.59,
+    67.03,
+    36.64
+   ],
+   [
+    -9.41,
+    67.03,
+    36.64
+   ],
+   [
+    -4.59,
+    67.03,
+    36.64
+   ],
+   [
+    45.59,
+    67.03,
+    36.64
+   ],
+   [
+    34.59,
+    64.13,
+    -74.91
+   ],
+   [
+    35.59,
+    67.03,
+    36.64
+   ],
+   [
+    29.59,
+    64.03,
+    -74.91
+   ],
+   [
+    50.59,
+    67.03,
+    36.64
+   ],
+   [
+    55.41,
+    67.02,
+    36.41
+   ],
+   [
+    -14.59,
+    67.03,
+    36.41
+   ],
+   [
+    11.09,
+    64.03,
+    -74.91
+   ],
+   [
+    54.09,
+    64.13,
+    -74.91
+   ],
+   [
+    49.59,
+    64.13,
+    -74.91
+   ],
+   [
+    16.09,
+    64.03,
+    -74.91
+   ],
+   [
+    6.59,
+    64.13,
+    -74.91
+   ],
+   [
+    -29.41,
+    67.02,
+    36.41
+   ],
+   [
+    -24.59,
+    67.02,
+    36.64
+   ],
+   [
+    39.59,
+    64.13,
+    -74.91
+   ],
+   [
+    20.59,
+    64.13,
+    -74.91
+   ],
+   [
+    44.59,
+    64.13,
+    -74.91
+   ],
+   [
+    10.59,
+    67.02,
+    36.64
+   ],
+   [
+    40.59,
+    67.03,
+    36.64
+   ],
+   [
+    15.59,
+    67.03,
+    36.41
+   ]
+  ],
+  "bounds_min": [
+   -41.49994659423828,
+   -76.85621643066406,
+   -100.49999237060547
+  ],
+  "bounds_max": [
+   61.0,
+   284.0,
+   39.999759674072266
+  ],
+  "solid_min": [
+   -300.0,
+   -76.85621643066406,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   284.0,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/spherical-war-swt-estephen08/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+  "cache_fingerprint": "27405806ef37646d200ee1adb12e4f638ec8280e27893734974c5484f536366a",
+  "warmup": [
+   {
+    "center": [
+     -66.39947,
+     283.52155,
+     62.82049
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -66.91198,
+     283.97363,
+     56.85877
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -69.999,
+     283.52155,
+     59.10303
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -70.43453,
+     283.52155,
+     56.19226
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 4,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "27405806ef37646d200ee1adb12e4f638ec8280e27893734974c5484f536366a",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "killzone",
+   "sourceNode": "killzone",
+   "boundsMin": [
+    -44.298683166503906,
+    -5.375668048858643,
+    -228.07200622558594
+   ],
+   "boundsMax": [
+    63.50001525878906,
+    33.238441467285156,
+    170.50001525878906
+   ],
+   "triangles": 32
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -13.43850326538086,
+    -0.024188518524169922,
+    -39.463111877441406
+   ],
+   "boundsMax": [
+    36.56149673461914,
+    7.348155975341797,
+    10.536887168884277
+   ],
+   "triangles": 12
+  }
+ ]
+}

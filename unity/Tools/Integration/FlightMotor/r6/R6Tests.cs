@@ -19,13 +19,16 @@ sealed class R6Tests : IAuthorityGate,IFlightCollisionAuthorization,IFlightLifec
   foreach(TurnStyle style in new[]{TurnStyle.Smooth,TurnStyle.Snap,TurnStyle.AutoSnap})foreach(bool xr in new[]{false,true})foreach(float sign in new[]{-1f,1f})
   {
    var tuning=new PlayerTuning{Turning=style};var motor=new PlayerFlightMotor("s","a",3,this,tuning,1);var reference=new Locomotion(tuning);
+   float course=0;
    for(int t=1;t<=8;t++)
    {
     var input=I(t,t==5?0:sign);var env=new MotionEnvironment{IsXr=xr,DesktopYawRadians=xr?0:.07f};var f=F();f.HandsReady=true;f.LeftHand=new Float3(-1,0,0);f.RightHand=new Float3(1,0,0);
     MotionStep motion;Check(motor.Step(C("turn"+t,t),input,env,f,out motion).Accepted,"accepted turn "+style+xr+sign+t);
     env.ExternalMotionOwner=true;var expected=reference.Step(input,env,.1f);Near(motion.YawRadians,expected.YawRadians,"actual Player yaw");
     float speed=(float)Math.Sqrt(motion.Velocity.X*motion.Velocity.X+motion.Velocity.Z*motion.Velocity.Z);
-    Near(motion.Velocity.X,speed*(float)Math.Sin(expected.YawRadians),"same tick signed heading x");Near(motion.Velocity.Z,speed*(float)Math.Cos(expected.YawRadians),"same tick signed heading z");
+    float target=expected.YawRadians;float limit=(float)Math.PI*.1f;
+    course=xr&&t>1&&expected.YawRadians==0?course+Math.Max(-limit,Math.Min(limit,target-course)):target;
+    Near(motion.Velocity.X,speed*(float)Math.Sin(course),"same tick signed heading x");Near(motion.Velocity.Z,speed*(float)Math.Cos(course),"same tick signed heading z");
     Near(motion.Displacement.X,motion.Velocity.X*.1f,"single plan displacement");Near(motor.PendingMotion.ProposedVelocity.X,motion.Velocity.X,"receipt final heading");
    }
   }
@@ -47,7 +50,7 @@ sealed class R6Tests : IAuthorityGate,IFlightCollisionAuthorization,IFlightLifec
   Check(motor2.Step(C("retry",1),I(1,1),new MotionEnvironment(),F(),out m).Accepted,"rejected step consumed no Player input");
   var hit=FlightPhysicalFeedback.Resolve(new Float3(0,.2f,.3f),.1f,false,true,false);Near(hit.Velocity.X,0,"wall removes normal momentum");Near(hit.Velocity.Y,0,"ceiling clips ascent");Near(hit.Velocity.Z,3,"partial slide physical momentum");
   Check(motor2.ApplyCollisionResult(C("solver",1),motor2.PendingMotion,hit,this).Accepted,"actual resolved feedback publication");
-  Check(motor2.Step(C("released",2),I(2,0),new MotionEnvironment(),new FlightFrame{InputEnabled=true,DeltaSeconds=.1f,Forward=new Float3(0,0,1)},out m).Accepted,"released collision");Near(m.Velocity.Y,-1.62f,"fixed one gravity oracle");Near(m.Velocity.Z,2.92f,"slide persists next frame");
+  Check(motor2.Step(C("released",2),I(2,0),new MotionEnvironment(),new FlightFrame{InputEnabled=true,DeltaSeconds=.1f,Forward=new Float3(0,0,1)},out m).Accepted,"released collision");Near(m.Velocity.Y,R26Freefall.Fall(0,0,.1f),"fixed one gravity oracle");Near(m.Velocity.Z,2.92f,"slide persists next frame");
   // Pivot never enters this API: supplied physical delta is .3m even if root also moved
   // .4m for turning. A partial pivot similarly cannot become physical momentum.
   Near(FlightPhysicalFeedback.Resolve(new Float3(.3f,0,0),.1f,false,false,false).Velocity.X,3,"full pivot excluded by explicit physical delta");

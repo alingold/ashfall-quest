@@ -21,15 +21,16 @@ namespace Ashfall.Integration.Playable.Networking
         readonly Dictionary<string,float> localHelicopterImpact=new Dictionary<string,float>();
         R24LanProjectileState[] NonVehicleProjectiles(R24LanProjectileState[] rows)
         {SyncTankShells();return System.Array.FindAll(rows,delegate(R24LanProjectileState row){return row.Kind!="shell";});}
+        float LocalShellTargetGain(string id)
+        {return id.StartsWith("r23-build/",System.StringComparison.Ordinal)?1:Mathf.Max(0,root.Explosives.TargetDamageMultiplier);}
         bool FireLocalTank(string id)
         {
             for(int i=0;i<localBikes.Count;i++){
                 var row=localBikes[i];if(row.Id!=id||row.Kind!="tank"||row.Rider!="local"||row.Destroyed||localShells.Count>=8||row.FiredAt>0&&Time.unscaledTimeAsDouble-row.FiredAt<R25VehicleKinds.TankReloadSeconds)continue;
-                var forward=Quaternion.Euler(0,row.TurretYaw,0)*Vector3.forward;var aimed=R24LanLobby.TankShellDirection(row.TurretYaw,root.Rig.TankAimPitch);var shellDirection=new Vector3(aimed.X,aimed.Y,aimed.Z);
-                var at=root.Rig.transform.position+forward*3.6f+Vector3.up*(.65f+shellDirection.y*3.6f);
-                if(Physics.Linecast(root.Rig.transform.position+Vector3.up*.65f,at,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore))return false;
+                var ray=root.Rig.VehicleGunRay;var at=ray.origin;var shellDirection=ray.direction;
+                if(Physics.Linecast(root.Rig.transform.position+Vector3.up*R25VehicleKinds.TankMuzzleHeight,at,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore))return false;
                 localShells.Add(new LocalShell{At=at,Velocity=shellDirection*45});
-                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,row.TurretYaw,System.Math.Max(.000001,Time.unscaledTimeAsDouble));return true;
+                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,root.Rig.TankAimYaw,System.Math.Max(.000001,Time.unscaledTimeAsDouble),root.Rig.TankAimPitch);return true;
             }return false;
         }
         void TickLocalTank()
@@ -50,17 +51,17 @@ namespace Ashfall.Integration.Playable.Networking
                 }continue;}if(row.Kind!="tank")continue;
                 if(row.Destroyed){if(Time.unscaledTimeAsDouble>=row.RespawnAt)localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Home,row.HomeYaw,1800,"",0,row.Revision+1,"tank");continue;}
                 if(row.Rider!="local")continue;
-                // R5: the turret follows the right-hand aim.
-                float target=root.Rig.TankAimYaw;
-                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,V(root.Rig.transform.position),root.Rig.VehicleHullYaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,R25VehicleKinds.Turn(row.TurretYaw,target,dt,90),row.FiredAt);
+                float yaw=root.Rig.VehicleAimReady?root.Rig.TankAimYaw:row.TurretYaw;
+                float pitch=root.Rig.VehicleAimReady?root.Rig.TankAimPitch:row.GunPitch;
+                localBikes[i]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,V(root.Rig.transform.position),root.Rig.VehicleHullYaw,row.Health,row.Rider,0,row.Revision+1,row.Kind,yaw,row.FiredAt,pitch);
             }
             for(int i=localShells.Count-1;i>=0;i--){
                 var shell=localShells[i];shell.Age+=dt;shell.Velocity+=Vector3.down*9.8f*dt;var next=shell.At+shell.Velocity*dt;
                 float distance;Float3 normal;bool hit=new RootProjectileWorld(this).Sweep(V(shell.At),V(next),.035f,out distance,out normal);
                 if(hit||shell.Age>=8){
                     if(hit)next=shell.At+shell.Velocity.normalized*distance;
-                    var blast=new R23GrenadeBlast("local/tank/shell","shell",0,V(next),15,225,true);root.Explosives.Deliver(blast);root.Explosives.PlaySourceVisual("frag",next);
-                    for(int j=0;j<localBikes.Count;j++){var row=localBikes[j];if(row.Destroyed)continue;float health=Mathf.Max(0,row.Health-blast.DamageAt(row.Rest));localBikes[j]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,health,health<=0?"":row.Rider,health<=0?Time.unscaledTimeAsDouble+20:0,row.Revision+1,row.Kind,row.TurretYaw,row.FiredAt);}
+                    var blast=new R23GrenadeBlast("local/tank/shell","shell",0,V(next),15,225,true);root.Explosives.Deliver(blast,LocalShellTargetGain);root.Explosives.PlaySourceVisual("frag",next);
+                    for(int j=0;j<localBikes.Count;j++){var row=localBikes[j];if(row.Destroyed)continue;float health=Mathf.Max(0,row.Health-blast.DamageAt(row.Rest));localBikes[j]=new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,health,health<=0?"":row.Rider,health<=0?Time.unscaledTimeAsDouble+20:0,row.Revision+1,row.Kind,row.TurretYaw,row.FiredAt,row.GunPitch);}
                     localShells.RemoveAt(i);
                 }else shell.At=next;
             }
@@ -98,7 +99,7 @@ namespace Ashfall.Integration.Playable.Networking
             root.Rig.VehicleEnabled=delegate{var r=peer==null?root.ActualMatchRules:(peer.Lobby.SelectedMap==null?null:peer.Lobby.SelectedMap.SourceRules);return r==null||r.Vehicles;};
             root.Rig.ReadVehicleActor=delegate{return peer==null?"local":peer.Lobby.OwnActor;};
             root.Rig.FireTank=delegate(string id){return peer!=null?peer.Lobby.RequestTankFire(id):FireLocalTank(id);};
-            root.Rig.MountVehicle=MountBike;root.Rig.DismountVehicle=DismountBike;BindVehicleAim();
+            root.Rig.MountVehicle=MountBike;root.Rig.DismountVehicle=DismountBike;BindVehicleAim();BindVehicleSeat();
         }
         bool MountBike(string id,int hand)
         {
@@ -130,7 +131,7 @@ namespace Ashfall.Integration.Playable.Networking
             foreach(var view in bikeViews.Values)if(view!=null)Destroy(view.gameObject);
             foreach(var view in helicopterViews.Values)if(view!=null)Destroy(view.gameObject);helicopterViews.Clear();
             foreach(var view in armourViews.Values)if(view!=null)Destroy(view.gameObject);armourViews.Clear();
-            ClearVehicleAim();foreach(var v in shellViews.Values)if(v!=null){Destroy(v.GetComponent<MeshFilter>().sharedMesh);Destroy(v);}shellViews.Clear();localShells.Clear();localHelicopterImpact.Clear();if(shellMaterial!=null)Destroy(shellMaterial);shellMaterial=null;
+            ClearVehicleAim();ClearVehicleSeats();foreach(var v in shellViews.Values)if(v!=null){Destroy(v.GetComponent<MeshFilter>().sharedMesh);Destroy(v);}shellViews.Clear();localShells.Clear();localHelicopterImpact.Clear();if(shellMaterial!=null)Destroy(shellMaterial);shellMaterial=null;
             bikeViews.Clear();localBikes.Clear();bikeRows=new R25VehicleState[0];bikeMap=null;
         }
         void SyncVehicles()
@@ -179,21 +180,25 @@ namespace Ashfall.Integration.Playable.Networking
                     }
                     if(peer!=null)foreach(var member in peer.Lobby.Members)if(member.Actor==row.Rider)team=member.Team;
                 }
+                bool localAim=root.Rig.RidingVehicleId==row.Id&&root.Rig.VehicleAimReady;
+                float gunYaw=localAim?(row.Kind=="tank"?root.Rig.TankAimYaw:root.Rig.VehicleGunYaw):row.TurretYaw;
+                float gunPitch=localAim?(row.Kind=="tank"?root.Rig.TankAimPitch:root.Rig.VehicleGunPitch):row.GunPitch;
                 if(row.Kind=="helicopter"){
                     R25HelicopterPresentation helicopter;if(!helicopterViews.TryGetValue(row.Id,out helicopter)){helicopter=new GameObject("Helicopter / "+row.Id).AddComponent<R25HelicopterPresentation>();helicopter.Initialize();helicopterViews.Add(row.Id,helicopter);}
                     bool own=row.Rider==(peer==null?"local":peer.Lobby.OwnActor);
-                    helicopter.Show(at,yaw,own?root.Rig.LastFrame.MoveX:bank/10,own?root.Rig.LastFrame.MoveY:speed/18,row.Health,row.Rider!="",show&&(rules==null||rules.Helicopters),team,RenderSettings.ambientLight.grayscale<.25f);continue;
+                    helicopter.Show(at,yaw,own?root.Rig.LastFrame.MoveX:bank/10,own?root.Rig.LastFrame.MoveY:speed/18,row.Health,row.Rider!="",show&&(rules==null||rules.Helicopters),team,RenderSettings.ambientLight.grayscale<.25f);helicopter.SetGunAim(gunYaw,gunPitch);continue;
                 }
                 if(row.Kind=="tank"){
                     R25ArmourPresentation armour;if(!armourViews.TryGetValue(row.Id,out armour)){armour=new GameObject("Tank / "+row.Id).AddComponent<R25ArmourPresentation>();armour.Initialize();armourViews.Add(row.Id,armour);}
-                    armour.Show(at,row.Rider==(peer==null?"local":peer.Lobby.OwnActor)?yaw:row.Yaw,row.TurretYaw,speed,row.Health,row.FiredAt,row.Rider!="",enabled&&(rules==null||rules.Tanks),team);continue;
+                    armour.Show(at,row.Rider==(peer==null?"local":peer.Lobby.OwnActor)?yaw:row.Yaw,gunYaw,speed,row.Health,row.FiredAt,row.Rider!="",enabled&&(rules==null||rules.Tanks),team);armour.SetGunPitch(gunPitch);continue;
                 }
-                view.Show(at,yaw,speed,bank,row.Health,row.Rider!="",team,show,root.Rig.VehicleHint);
+                view.Show(at,yaw,speed,bank,row.Health,row.Rider!="",team,show,root.Rig.VehicleHint);view.SetGunAim(gunYaw,gunPitch);
             }
             var heliGone=new List<string>();foreach(var id in helicopterViews.Keys)if(!live.Contains(id))heliGone.Add(id);foreach(var id in heliGone){Destroy(helicopterViews[id].gameObject);helicopterViews.Remove(id);}
             var gone=new List<string>();foreach(var id in armourViews.Keys)if(!live.Contains(id))gone.Add(id);foreach(var id in gone){Destroy(armourViews[id].gameObject);armourViews.Remove(id);}
             var remove=new List<string>();foreach(var id in bikeViews.Keys)if(!live.Contains(id))remove.Add(id);
             foreach(var id in remove){Destroy(bikeViews[id].gameObject);bikeViews.Remove(id);}
+            SyncVehicleSeats(enabled,rules==null||rules.Tanks,rules==null||rules.Helicopters);
         }
     }
 }

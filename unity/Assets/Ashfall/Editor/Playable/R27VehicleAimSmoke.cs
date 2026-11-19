@@ -67,8 +67,16 @@ namespace Ashfall.Editor.Playable
                 rig.DismountVehicle=delegate(string id,Float3 at,float yaw){Call(session,"DismountBike",id,at,yaw);};
                 var left=Hand(new Vector3(-.2f,1.1f,.3f));var right=Hand(new Vector3(.2f,1.1f,.3f));
                 Set(rig,"vehicleExitPending",false);Step(rig,left,right,100);Need(rig.Riding,kind+" fixture riding");Set(session,"bikeRows",rows.ToArray());
+                var headRotation=rig.Head.transform.rotation;
                 if(kind=="tank"){
-                    var view=new GameObject("Tank evidence").AddComponent<R25ArmourPresentation>();view.Initialize();view.Show(rig.transform.position,0,0,0,1800,0,true,true,-1);
+                    rig.Right.rotation=Quaternion.Euler(-70,135,0);Step(rig,left,right,42);
+                    Need(Mathf.Abs(Mathf.DeltaAngle(rig.TankAimYaw,135))<.1f&&Mathf.Abs(rig.TankAimPitch-35)<.1f,"Tank traverses behind the hull and limits elevation to +35 degrees");
+                    rig.Right.rotation=Quaternion.Euler(30,18,0);Step(rig,left,right,42);
+                    Need(Mathf.Abs(rig.TankAimPitch+10)<.1f,"Tank limits depression to -10 degrees");
+                    int shells=0;rig.FireTank=delegate(string id){if((bool)Call(session,"FireLocalTank",id)){shells++;return true;}return false;};
+                    right.Trigger=1;Step(rig,left,right,1);right.Trigger=0;Step(rig,left,right,1);Need(shells==1,"Tank trigger launches shell along aimed muzzle");
+                    var view=new GameObject("Tank evidence").AddComponent<R25ArmourPresentation>();view.Initialize();
+                    view.Show(rig.transform.position,0,rig.TankAimYaw,0,1800,0,true,true,-1);view.SetGunPitch(rig.TankAimPitch);
                     Call(session,"TickVehicleAim");
                     Need(GameObject.Find("R5 vehicle aim reticle")!=null&&GameObject.Find("R5 tank shell arc")==null,"Tank shows dot without arc object");
                     var dot=GameObject.Find("R5 vehicle aim reticle");Need(dot.transform.position.y<.1f,"Tank dot at predicted floor impact");
@@ -78,15 +86,40 @@ namespace Ashfall.Editor.Playable
                     MonoBehaviour view=kind=="helicopter"?(MonoBehaviour)new GameObject("Helicopter evidence").AddComponent<R25HelicopterPresentation>():new GameObject("Bike evidence").AddComponent<R25BikePresentation>();
                     if(kind=="helicopter")((R25HelicopterPresentation)view).Initialize();else ((R25BikePresentation)view).Initialize();
                     rig.transform.rotation=Quaternion.Euler(0,30,0);
-                    Ray initial=rig.VehicleGunRay;rig.Right.position+=new Vector3(2,1,-2);rig.Right.rotation=Quaternion.Euler(-40,110,0);
-                    Ray moved=rig.VehicleGunRay;Need(Vector3.Distance(initial.origin,moved.origin)<.001f&&Vector3.Angle(initial.direction,moved.direction)<.001f,kind+" gun unaffected by moved/rotated hand");
-                    Vector3 expected=Quaternion.Euler(0,30,0)*Quaternion.Euler(kind=="helicopter"?5:0,0,0)*Vector3.forward;
-                    Need(Vector3.Angle(expected,moved.direction)<.01f&&Vector3.Distance(moved.origin,rig.transform.position)<2,kind+" muzzle on hull and direction follows hull yaw");
-                    int shots=0;rig.FireVehicleGun=delegate(string id,Vector3 o,Vector3 d){shots++;return (bool)Call(session,"FireVehicleGunLocal",id,o,d);};
+                    var rightAim=Quaternion.Euler(-5,45,0);rig.Right.rotation=rightAim;
+                    Step(rig,left,right,35);
+                    Ray initial=rig.VehicleGunRay;
+                    Need(Vector3.Angle(initial.direction,rightAim*Vector3.forward)<.1f,kind+" follows the controller ray inside the cone");
+                    var atLimit=Quaternion.Euler(0,125,0);rig.Right.rotation=atLimit;
+                    Step(rig,left,right,1);
+                    float partial=Vector3.Angle(initial.direction,rig.VehicleGunRay.direction);
+                    Need(partial>0&&partial<20,kind+" smooths a controller step");
+                    Step(rig,left,right,35);
+                    Need(rig.VehicleAimLimited&&Mathf.Abs(Vector3.Angle(rig.transform.forward,rig.VehicleGunRay.direction)-40)<.1f,kind+" limits aim to 40 degrees from the nose");
+                    rig.PrimaryHand=0;rig.Left.rotation=Quaternion.Euler(11,12,0);
+                    Step(rig,left,right,1);
+                    Need(Vector3.Angle(rig.VehicleGunRay.direction,rig.Left.forward)<.1f,kind+" follows the configured left hand");
+                    left.Tracked=false;Step(rig,left,right,1);Call(session,"TickVehicleAim");
+                    Need(!rig.VehicleAimReady,kind+" drops aim when the active controller loses tracking");
+                    left.Tracked=true;Step(rig,left,right,1);
+                    Quaternion turnedHead=rig.Head.transform.rotation;
+                    rig.Left.rotation=Quaternion.Euler(10,55,0);Step(rig,left,right,35);
+                    Need(Quaternion.Angle(turnedHead,rig.Head.transform.rotation)<.01f,kind+" aim leaves the camera rotation alone");
+                    rig.PrimaryHand=1;rig.Right.rotation=rightAim;Step(rig,left,right,2);
+                    Ray shotRay=rig.VehicleGunRay;var target=Box(kind+" reticle target",shotRay.GetPoint(8),new Vector3(1.5f,1.5f,1.5f));
+                    RaycastHit targetHit;bool hitTarget=Physics.Raycast(shotRay,out targetHit,12,(1<<0)|(1<<8),QueryTriggerInteraction.Ignore);
+                    Call(session,"TickVehicleAim");var reticle=GameObject.Find("R5 vehicle aim reticle");
+                    Need(hitTarget&&targetHit.collider.gameObject==target&&reticle!=null&&Vector3.Distance(reticle.transform.position,targetHit.point)<.01f,kind+" reticle matches muzzle ray impact");
+                    camera.transform.position=shotRay.GetPoint(.5f)+Vector3.up*.9f;camera.transform.LookAt(shotRay.GetPoint(8));
+                    Capture(camera,Path.Combine(output,kind+"-reticle.png"));
+                    UnityEngine.Object.DestroyImmediate(target);
+                    int shots=0;Vector3 firedDirection=Vector3.zero;
+                    rig.FireVehicleGun=delegate(string id,Vector3 o,Vector3 d){shots++;firedDirection=d;return (bool)Call(session,"FireVehicleGunLocal",id,o,d);};
                     right.Trigger=1;Step(rig,left,right,72);right.Trigger=0;Need(shots>=9&&shots<=10,kind+" cadence "+shots+" shots/s");
+                    Need(Vector3.Angle(firedDirection,rig.VehicleGunRay.direction)<.01f,kind+" trigger fires along the displayed ray");
                     if(kind=="helicopter"){
                         var helicopter=(R25HelicopterPresentation)view;
-                        helicopter.Show(rig.transform.position,30,0,0,600,true,true,-1,false,1);
+                        helicopter.Show(rig.transform.position,30,0,0,600,true,true,-1,false,1);helicopter.SetGunAim(rig.VehicleGunYaw,rig.VehicleGunPitch);
                         Call(session,"TickVehicleAim");
                         camera.transform.position=rig.transform.position+new Vector3(7,2,6);camera.transform.LookAt(rig.transform.position+Vector3.forward*2);Capture(camera,Path.Combine(output,"helicopter-firing.png"));
                         Call(session,"ClearVehicleAim");
@@ -113,11 +146,12 @@ namespace Ashfall.Editor.Playable
                         camera.transform.position=U(row.Rest)+new Vector3(7,3,6);camera.transform.LookAt(U(row.Rest));Capture(camera,Path.Combine(output,"helicopter-parked.png"));
                     }
                     if(kind=="hoverbike"){
-                        ((R25BikePresentation)view).Show(rig.transform.position,30,0,0,300,true,-1,true,"");
+                        ((R25BikePresentation)view).Show(rig.transform.position,30,0,0,300,true,-1,true,"");((R25BikePresentation)view).SetGunAim(rig.VehicleGunYaw,rig.VehicleGunPitch);
                         Call(session,"TickVehicleAim");camera.transform.position=rig.transform.position+new Vector3(3,2,4);camera.transform.LookAt(rig.transform.position);Capture(camera,Path.Combine(output,"bike-firing.png"));
                     }
                     UnityEngine.Object.DestroyImmediate(view.gameObject);
                 }
+                if(kind=="tank")Need(Quaternion.Angle(headRotation,rig.Head.transform.rotation)<.01f,"Tank aim leaves the camera rotation alone");
                 Call(session,"ClearVehicleAim");rig.DismountVehicle=null;
                 UnityEngine.Object.DestroyImmediate(session.gameObject);UnityEngine.Object.DestroyImmediate(loop.gameObject);UnityEngine.Object.DestroyImmediate(rig.gameObject);
             }

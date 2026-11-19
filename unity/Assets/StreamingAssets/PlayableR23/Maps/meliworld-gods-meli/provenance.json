@@ -1,0 +1,484 @@
+{
+  "mapId": "archive:meliworld-gods-meli",
+  "title": "MELIWORLD",
+  "creator": "GODS_Meli",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "63e9b655f95b09781440cef367fdff5f4342fcb4bae4acfd889c84aed8003fa9",
+    "cached live map.glb": "ea13fe1c9020a2afeb5f8b6fde259db11500738fd0e94ef69f3da5b177f03638",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/meliworld-gods-meli/map.glb": "ea13fe1c9020a2afeb5f8b6fde259db11500738fd0e94ef69f3da5b177f03638",
+    "https://maps.deliciouswines.org/maps/meliworld-gods-meli/map.json": "63e9b655f95b09781440cef367fdff5f4342fcb4bae4acfd889c84aed8003fa9"
+  },
+  "sourceGlbSha256": "ea13fe1c9020a2afeb5f8b6fde259db11500738fd0e94ef69f3da5b177f03638",
+  "cacheFingerprint": "3ad3471d437f22fab4aba1e82603a23a4183b2e1293881021643e38fdc9ee748",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 263250,
+  "sourceRoles": {
+    "world": 257602,
+    "roof": 5648,
+    "false": 1068,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 264318,
+  "collisionTriangles": 263266,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 184,
+  "materials": 44,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c.jpg",
+      "sha256": "5d5ff7ffe8ee01ea2c771f15c5d3e0e4471dee8b58eff291b65bf8e3985751b7",
+      "bytes": 19014
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf.jpg",
+      "sha256": "54bc3b7ea1910a1fa89c4cb81b5e661fe839b3b1dda87f4e37eec66db47a64db",
+      "bytes": 31523
+    },
+    "pb8a19331_c.png": {
+      "source": "authoring/textures-v1/out/by-sha/5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f.png",
+      "sha256": "c3f48b86ec7e938b587fc4109d0bfb4e22e0063ed59e73538bea0070691dd87e",
+      "bytes": 12129
+    },
+    "pd959969c_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/10ea7ab836cd8286ca05426ae286cc32da8bbe99ad547bf27fc3d95f3801ebde.jpg",
+      "sha256": "e6f87f1a80398a15a556ae59a6e6a5b369706eb6e65a23554365ca0d826f821d",
+      "bytes": 39563
+    },
+    "pd959969c_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/042f2a3cf1581114d253d4abb579700232c7cbaac50b53e5b39a10f9c2780fde.jpg",
+      "sha256": "5d61bb162dc09aad7e95cd6c06af834c764b072702ad7c72b2cc14749fd610bb",
+      "bytes": 59240
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/23daf71975b2721152c634fb7aac912c82aa944822fb5968778235763a322c9a.jpg",
+      "sha256": "6d50354b11031a04be86e3fbe34f46a3d2a54907883dcae73ed50febf6394da1",
+      "bytes": 557884
+    },
+    "t1_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/9d5ed22c38351e0e4d5bd3fe4c82c8397ca9194bfdc6dd38ea07681b9de051dd.jpg",
+      "sha256": "b96afa11ceb2a93bff21a460f012b23c5b47599fae6787e94761d6401f08b505",
+      "bytes": 153107
+    },
+    "t1_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/b04516ec01d22f5cb2c3a9e25be8495a38508a46592f50b10f0da137427cc6d0.jpg",
+      "sha256": "87ee5303a48e599328cc78e9a728772cbcc91c744d957a1ba6214c5c69fc4c9a",
+      "bytes": 46352
+    },
+    "t100_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/7c8af823e462cf17a988c45c26a2590e252d17b4108adfcf5af09a5b861a177f.jpg",
+      "sha256": "e3261c937f258d935d9cbe6fb4ee0cb4f141120e6308f2febebb51eb60ed3ae5",
+      "bytes": 69419
+    },
+    "t100_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/f98f48fda1d7b6880792b524134259c99fe3e0cd4ce86c785a80c9cceb345339.jpg",
+      "sha256": "59c64129f5d3e333da9b23fa22c9f3fe31b3e678c41e1130ad34e8e05acc6ba4",
+      "bytes": 45121
+    },
+    "t117_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/9f7d77c8d978044e95cac17d499d12dc99c4ce49bd1077a3a491469d17330248.jpg",
+      "sha256": "4e182be09783f785c96ff81a8255cfb3224f00806404b55f75ca1088c84d9ce4",
+      "bytes": 3378
+    },
+    "t117_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/45a546d9a67be9dce9bfb1d86350eef1ce03c7fbfdb0c78b1be7d556f3abc5c7.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t132_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/d30593f171fa558c4969788524b2d84f34b19bc0cb7f5530c6f6a2d081541816.jpg",
+      "sha256": "3c3954745137b97abf43bbf4581e099b066dd876a4a5b571c3face46d24efd09",
+      "bytes": 39162
+    },
+    "t132_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t18_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/61093648fd9f263f3aec9223aa287425b4694bab36c928c1de4663c33dc94f95.jpg",
+      "sha256": "034553f7211dc4c59a64c265df1a321b1906ebd83740af1ea867d3a0b7d6da2e",
+      "bytes": 40168
+    },
+    "t18_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t20_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ce6f7827a45552c365f4d1c1f462de335bfc67251a89087487284b45141858a5.jpg",
+      "sha256": "1a017eddb9610e2b44c99ecfd59394e1e36fe5e61aca4bcf06c4063bbd02c6e8",
+      "bytes": 54414
+    },
+    "t20_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t22_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781.jpg",
+      "sha256": "9c65c58fda105486638098ebdd72a97be85dc6979a549d088e351e081b4fa6db",
+      "bytes": 25860
+    },
+    "t22_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t26_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/005cf0558b23f683be8273adc3840f6b3347408fd3976bc30a1909261b08877d.jpg",
+      "sha256": "eb6a364cd2f472e8347d62058c566c4a5f6e77070824bbf1ca2ddce3536c5c44",
+      "bytes": 34659
+    },
+    "t26_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t27_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/deb4ba424c9555ace258249a68c63b14b4122eaabf5faf5c3ab151da6048eae3.jpg",
+      "sha256": "e8c0e20db66fad9fb9ee4c6bca85679eac565c81a15891a09654ce7b980d07e0",
+      "bytes": 57419
+    },
+    "t27_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t43_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/f5333e489097e09d77ae332cbe81b490128ee1ae7601fe1ceee6a6159538088a.jpg",
+      "sha256": "3b37b4a9f6c79ec85966e6bece0a1214926b63c854cf93e731f38500def4de24",
+      "bytes": 3359
+    },
+    "t43_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t44_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/36e6cb480febc640ecc3ecf2e4bc7de7c45444aee05399036eb8a5f57c214016.jpg",
+      "sha256": "249a146521811b81597e87e928195b3d6204a77d7679e18a8879649d9a396926",
+      "bytes": 3359
+    },
+    "t44_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t45_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a8d728b4b0a721282eadaff42a63b1720ead7688779f655f35f439ad23065020.jpg",
+      "sha256": "cb561a05a5eb3bae59512aa1cc0d923afd96b7e2d910a0ae0e7f7aaaaa244870",
+      "bytes": 3360
+    },
+    "t45_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t46_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/14e42fb0e63412cad16a87c953cf5a1385cfeb2fb3dae5487d1ab53c6cbe545c.jpg",
+      "sha256": "7114b1943f0b420f906180815f095dbd930ed1ca2aaad2554bce6c70999e24d9",
+      "bytes": 3360
+    },
+    "t46_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t47_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/13ec482d8205eacbaf5dd9353d444ff2a85c422b7854ac0687de2e449dc1da5d.jpg",
+      "sha256": "19cd0959bb868e121882ce4b73192b9bd2ca6295e989df62a5783e3a145045b6",
+      "bytes": 3360
+    },
+    "t47_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t48_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/873f066cdb6bb62da2dd0e0097e6086e7848a8f2ceeb8e55974a8d56f929dcbe.jpg",
+      "sha256": "b242a1ac97075bbef8f453ec29169907b45a085461a86273498ee01a7f6e0be0",
+      "bytes": 3360
+    },
+    "t48_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t49_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/322eb05e3182ce8c82d899777cb077d1bec1028b6c81488899037d2306d47f88.jpg",
+      "sha256": "e6d2185ef70f607bb66124bbc4d25092499ccb942741c0a80029c5447b9cd9ee",
+      "bytes": 3360
+    },
+    "t49_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t5_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/cc631b53ea40bffeacf811d7e9406364083cc9b90929ee9cefe581e78e733073.jpg",
+      "sha256": "264558e508165bda2bdc57e4c04aeef273077ef623936ee5b2c67c48eda9b52c",
+      "bytes": 39057
+    },
+    "t5_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5521e58f088e7a3549e3cb69a50c0cf4b68a3aa9c235bedb38ff05623bbb1ae0.jpg",
+      "sha256": "3dfa196caf26f6bc1571c617ec07a067ab59a84f70ce5866fe7d79701f07488f",
+      "bytes": 27967
+    },
+    "t50_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/6ae7625a71a98c858ff9f8da136d1161042914f6cd907677057af926bf8dc60a.jpg",
+      "sha256": "9f09b7f71032c56726ec71d5b40d81345d6703baa389e94967d5a95c5a0156d6",
+      "bytes": 3359
+    },
+    "t50_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t51_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/699656b11168fc4d00c0bad2ba1642bd58e880e88070c419bde7c108a8cc2663.jpg",
+      "sha256": "2d10ff0ff60218ec47ad7b24b333e68ace1aed46d1180193edfea4f21557570a",
+      "bytes": 3356
+    },
+    "t51_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t52_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/dd70782dfa2fe66e7540e349d91f0626d768704314ef95b4abc3f7a1fcda7e72.jpg",
+      "sha256": "102c9b9e23ffcab0e05f76d4eab154cf21d8361a94367f66b6ad23293a8186fd",
+      "bytes": 3356
+    },
+    "t52_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t53_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/d695733be3e6587573858064dd0ffded61b765c481b609c0c0ead60d81a2c67f.jpg",
+      "sha256": "6b1f7caaffbd1243b587cfe596cf838ced76e281037064008d9382929574ccc5",
+      "bytes": 3360
+    },
+    "t53_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t55_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2c6eb60dce1556facd064065cddc3800742df85bad9dcf62b5cdba07dfe192b2.jpg",
+      "sha256": "2ee2a6a08eac20ce3b5254916034549acf6321d19bc5871fa5caf6b29c053fa5",
+      "bytes": 3361
+    },
+    "t55_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t56_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5ebff68c5b9117d7cd08dfc8ec27371182e1881afcb3d37a90905510bcae5b14.jpg",
+      "sha256": "3bbab77d5a9c9e11a10cc4b3f1b34e0fe9af46de2a224f48936e2ecbfccd75ba",
+      "bytes": 3360
+    },
+    "t56_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t57_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/8ef12ca985e6fad0bece4d36ba6678183080b8f5bc2d3b47c17ab7225e2b907b.jpg",
+      "sha256": "0f413b5fdaac5eae7c8cbbc2f6c1545693296f5886a0936f52c82e0317412755",
+      "bytes": 3360
+    },
+    "t57_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t58_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "t58_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t59_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/f693ebf4173b86dd02298216c0d09049ee258063515ea20cb3f07acc8241f832.jpg",
+      "sha256": "e5ce2525435abb893907301d94588434f6e111f025e141b445e6300c05c1f272",
+      "bytes": 3360
+    },
+    "t59_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79.jpg",
+      "sha256": "7ac7c0d984e24d78b51967c64af8bc85dfff48f85fb7c1a916aaa67968124634",
+      "bytes": 3360
+    },
+    "t60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t61_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/cfd380276e2afd0970ba0e7b6f0a3f9b1310725f6ea685c86e1920476e2397b7.jpg",
+      "sha256": "20639398f18934e5ccbfbadad77f3954650cced6fd072f16f3e2a1d0464a1754",
+      "bytes": 3359
+    },
+    "t61_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t62_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a4bc407059df6080c54de3df0e32e983eb6b021ca63aa9c82819cca6e8b25d16.jpg",
+      "sha256": "fd57b0bda479cdf031d07c81eafc68bdb0ed35775a62b4694e25424a706291a9",
+      "bytes": 3360
+    },
+    "t62_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t63_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/839319b77fe2d7a506564376d1abb9bfe4eb5439e87d835dd40995f1763a0058.jpg",
+      "sha256": "6c42eebd7aa5c3f85240ecef3c8e38e958b62573df98a1b0565e0b6662e91490",
+      "bytes": 3360
+    },
+    "t63_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t64_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/41e18e6bdec590853d88fef6d8c7963794d755f20eaf4b3a50fd655980e721e9.jpg",
+      "sha256": "3d830fae172a71bbd98f75b4998667fd82d88f20c544665b86c6608b6f6ea998",
+      "bytes": 3360
+    },
+    "t64_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t65_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2f59f52a42e6e728e9bffc41069ab65aed991a778908278fc58aed05a9fefb84.jpg",
+      "sha256": "f3fc755816ea457113b7e5c04f4fa5dfa025f9e712d360c9a9388288030269b2",
+      "bytes": 3360
+    },
+    "t65_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t66_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/aaa0c99b3d234d13c13f55925bf7c0cd71f622e3735915a0c8e43bc3ee45b921.jpg",
+      "sha256": "4d6ac6ac673c98c12f316a399922d3a4d1da7f5f8618c351b762d4a9c439794d",
+      "bytes": 3359
+    },
+    "t66_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t67_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/9452961b74c0d4ae890e7dbb03e666adec6a9052515e7b820196502f6c0f7870.jpg",
+      "sha256": "00a870efe313839d1b8a64f76d02613a8d90a7e5bdbc76aa3baed2cc26b79d68",
+      "bytes": 3360
+    },
+    "t67_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t90_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/38ec307f9c9ee7314936aad056eb9b7278367d32396ff079fe3a9320d57ab7f4.jpg",
+      "sha256": "9ff3002ca2f46579e851937bda4ac3d24fbb222ea8100864276571d261c638d7",
+      "bytes": 55482
+    },
+    "t90_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1645c6b548b2d1b6b8673227a483dfd70bc29a3f322552cf8809a6c5f12c1fa8.jpg",
+      "sha256": "fc69a1aa5e630dadbf37740e5ead4b6c632c562d9ebb962cdf77b662aa1bc542",
+      "bytes": 66852
+    },
+    "t92_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/086823cafd3f5727274bfbb4c4948780e3376c80162cd78a5dca931435d7914e.jpg",
+      "sha256": "4b7edd171b9e5a9786fd2e4184a892e20f09c373c0936f728644abe4a93ebc5c",
+      "bytes": 71343
+    },
+    "t92_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/4b67cc3702e83e40d99ec3cadfe8d86ab7cb39a72efeceffc83e9454a964f088.jpg",
+      "sha256": "a07a54e9d2ec209f5f49bfa25d1bd49ff8fff2e20c2efb243b759cbe459f011a",
+      "bytes": 101626
+    },
+    "t95_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/fd82d05dcc9834561878edf05a234c788b1d730224611355cf803fb37a4469ba.jpg",
+      "sha256": "19846bbae7c57faabc1b07b3b6c4c5d7661d8b5a5e15322aaf7cb261de7b30e0",
+      "bytes": 3360
+    },
+    "t95_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/24ee54a8782046abf798ea732874ef521c95f1bc837b19069ffead4e0d4b2602.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    }
+  },
+  "spawn": [
+    169.79,
+    92.44883453369141,
+    31.91
+  ],
+  "warmupSpawn": [
+    18.64,
+    95.6453619591956,
+    -96.91
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "f36cb2cc19a1eab0e42aaeb449afdbc6f6a364b49442538e7580cd5726c7b991",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 2.259,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "c6a6119dfdc6f45e3cbd51a48de40aa673a9b4efcbfcf9b588835f1c634be5eb",
+  "sourceRetainedCollisionAttributesSha256": "b95578ce18c280fa6ad376522c896d88e3cbe1e73e8c986ffc17384efbe8138e",
+  "payloadBytes": 21732414,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/meliworld-gods-meli/",
+  "archivePage": "https://maps.deliciouswines.org/m/meliworld-gods-meli/",
+  "sourceFirst": "2026-11-12",
+  "sourceLast": "2026-11-15",
+  "archiveCaptureId": "98b37816-c669-47bf-87f3-ed5d47e5aca3",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "63e9b655f95b09781440cef367fdff5f4342fcb4bae4acfd889c84aed8003fa9",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "28f5c9b7372f5521cddd4753a3ecc1a0abc9ce9c655fc745a5af15de801edf0d"
+}

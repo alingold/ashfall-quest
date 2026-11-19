@@ -69,6 +69,12 @@ namespace Ashfall.Modules.Flight
         public float DeltaSeconds;
         public bool CeilingBlocked, Supported, InputEnabled, Tracked, Paused, InventoryOpen, Climbing, Mantling, DesktopGlide, XR, HandsReady, DiveForward;
         public Float3 Velocity, Forward, MoveDirection, WalkTarget, LeftHand, RightHand;
+        // Analog forward stick (-1..1) for dive pitch; 0 means DiveForward alone requests a full dive.
+        public float DiveAxis;
+        // NearGround is the legacy desktop step-down hint. DownhillRun comes from a directional support query.
+        public bool NearGround, DownhillRun;
+        // The heading and stick direction already include this frame's player turn.
+        public bool PlayerTurned;
     }
     public sealed partial class FlightMachine
     {
@@ -96,7 +102,8 @@ namespace Ashfall.Modules.Flight
         long generation, lifecycleTick=-1, motionRevision;
         public FlightMotionReceipt PendingMotion { get; private set; }
         bool inactive;
-        float fallTime, clearance; bool ascent;
+        float fallTime, clearance, divePitch; bool ascent;
+        float armsHold;
         public FlightMode Mode { get; private set; }
         public Float3 Velocity { get; private set; }
         public float GlideSpeed { get; private set; }
@@ -116,7 +123,7 @@ namespace Ashfall.Modules.Flight
             lifecycleCommands.Commit(c);commands.AdvanceFloor(c.Tick);generation=nextGeneration;lifecycleTick=c.Tick;
             stateRevision++;PendingMotion=null;
             inactive=reason!=FlightLifecycle.Respawn;
-            Velocity=new Float3();Mode=FlightMode.Ground;fallTime=clearance=0;ascent=false;
+            Velocity=new Float3();Mode=FlightMode.Ground;fallTime=clearance=divePitch=0;ascent=false;armsHold=0;
             return r;
         }
         // r2 public numeric envelope: SI per-component limits, inclusive.
@@ -124,37 +131,60 @@ namespace Ashfall.Modules.Flight
         public RuleResult Step(CommandContext c, FlightFrame f)
         {
             if(inactive||c.Tick<=lifecycleTick||lifecycleCommands.HasCommand(c.CommandId))return RuleResult.Reject("inactive lifecycle/replay");
-            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>1||!V.Bounded(f.Velocity,10000)||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("invalid frame");
+            if(!V.Finite(f.DeltaSeconds)||f.DeltaSeconds<=0||f.DeltaSeconds>1||!V.Finite(f.DiveAxis)||Math.Abs(f.DiveAxis)>2||!V.Bounded(f.Velocity,10000)||!V.Bounded(f.Forward,2)||!V.Bounded(f.MoveDirection,2)||!V.Bounded(f.WalkTarget,1000)||!V.Bounded(f.LeftHand,10)||!V.Bounded(f.RightHand,10))return RuleResult.Reject("invalid frame");
             long before=stateRevision;
-            Float3 velocity;FlightMode mode=Mode;float fall=fallTime,clear=clearance;bool rising=ascent;
-            Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising);
+            Float3 velocity;FlightMode mode=Mode;float fall=fallTime,clear=clearance,pitch=divePitch;bool rising=ascent;
+            Calculate(f,out velocity,ref mode,ref fall,ref clear,ref rising,ref pitch);
             if(f.CeilingBlocked&&velocity.Y>0){velocity=new Float3(velocity.X,0,velocity.Z);clear=0;rising=false;if(mode!=FlightMode.Suspended)mode=f.Supported?FlightMode.Ground:FlightMode.Air;}
-            if(!V.Bounded(velocity,10000)||!V.Finite(fall)||!V.Finite(clear))return RuleResult.Reject("invalid derived frame");
+            if(!V.Bounded(velocity,10000)||!V.Finite(fall)||!V.Finite(clear)||!V.Finite(pitch))return RuleResult.Reject("invalid derived frame");
             RuleResult r=commands.Validate(c);if(!r.Accepted)return r;
             if(before!=stateRevision)return RuleResult.Reject("Flight changed during step");
             commands.Commit(c);
-            Velocity=velocity;Mode=mode;fallTime=fall;clearance=clear;ascent=rising;
+            Velocity=velocity;Mode=mode;fallTime=fall;clearance=clear;ascent=rising;divePitch=pitch;armsHold=NextArmsHold(f);
             stateRevision++;PendingMotion=new FlightMotionReceipt(c,generation,++motionRevision,velocity);return r;
         }
-        void Calculate(FlightFrame f,out Float3 velocity,ref FlightMode mode,ref float fall,ref float clear,ref bool rising)
+        // Arm span is horizontal and root-relative, so seated height, calibration and yaw drop out.
+        // Prime on the ground as well. Only committed frames consume the grace interval.
+        float NextArmsHold(FlightFrame f)
+        {
+            if(!f.XR||!f.InputEnabled||!f.Tracked||f.Paused||f.InventoryOpen||f.Climbing||f.Mantling)return 0;
+            if(f.HandsReady)return HorizontalDistance(f.LeftHand,f.RightHand)>=R26FreefallTuning.GlideSpread?R26FreefallTuning.GlidePoseGrace:0;
+            // Bridge missing tracking only. A measured fold releases on this frame.
+            return Math.Max(0,armsHold-f.DeltaSeconds);
+        }
+        // Bound course changes from tracked poses and movement input between player turns.
+        static Float3 SteerGlide(Float3 heading,Float3 velocity,float dt)
+        {
+            Float3 prior=V.Unit(new Float3(velocity.X,0,velocity.Z));
+            if(V.Len(prior)<.1f)return heading;
+            double angle=Math.Atan2(prior.Z*heading.X-prior.X*heading.Z,V.Dot(prior,heading));
+            double limit=Math.PI*dt, step=Math.Max(-limit,Math.Min(limit,angle));
+            float c=(float)Math.Cos(step),s=(float)Math.Sin(step);
+            return new Float3(prior.X*c+prior.Z*s,0,prior.Z*c-prior.X*s);
+        }
+        void Calculate(FlightFrame f,out Float3 velocity,ref FlightMode mode,ref float fall,ref float clear,ref bool rising,ref float pitch)
         {
             velocity=f.Velocity;
 
-            if(!f.InputEnabled||!f.Tracked||f.Paused||f.Climbing||f.Mantling){mode=FlightMode.Suspended;fall=0;clear=0;rising=false;return;}
-            bool wants=!f.InventoryOpen&&(f.XR?(f.HandsReady&&HorizontalDistance(f.LeftHand,f.RightHand)>.95890625f):f.DesktopGlide);
+            if(!f.InputEnabled||!f.Tracked||f.Paused||f.Climbing||f.Mantling){mode=FlightMode.Suspended;fall=0;clear=0;rising=false;pitch=0;return;}
+            bool wants=f.XR?NextArmsHold(f)>0:!f.InventoryOpen&&f.DesktopGlide;
+            if(!f.XR&&R26GlideEntry.StepDownRule&&f.NearGround&&mode!=FlightMode.Glide&&velocity.Y<=0)wants=false;
             bool launched=(rising&&velocity.Y>0)||clear>0;
             clear=Math.Max(0,clear-f.DeltaSeconds);
             if(launched&&wants&&clear<=0){rising=false;launched=false;}
             if(launched)wants=false;else rising=false;
-            bool ground=f.Supported&&!launched;
-            // A controlled glide descends, but is not accumulating free fall.
-            // The source bug let a held forward stick force a dive after one
-            // second of spread-hand flight and poisoned the next glide release.
+            bool slopeTakeoff=f.XR&&f.Supported&&f.DownhillRun&&wants;
+            bool ground=f.Supported&&!launched&&!slopeTakeoff;
+            float requested=!f.InventoryOpen?R26Freefall.DiveCommand(f.DiveAxis,f.DiveForward):0;
+            // Fold the wings to freefall/dive in XR. Desktop keeps its existing dive command.
+            if(!f.XR&&!ground&&!launched&&velocity.Y<=0&&requested>0)wants=false;
             bool controlledGlide=wants&&!ground;
-            fall=!ground&&!launched&&!controlledGlide&&velocity.Y<-.5f?Math.Min(1,fall+f.DeltaSeconds):0;
-            bool dive=!controlledGlide&&!f.InventoryOpen&&fall>=1&&f.DiveForward;
+            fall=!ground&&!launched&&!controlledGlide&&velocity.Y<-.5f?Math.Min(R26FreefallTuning.DiveGateSeconds,fall+f.DeltaSeconds):0;
+            // FLIGHT-DIVE: forward stick commands a body pitch; drag (R26Freefall), not thrust, sets fall speed.
+            float command=!controlledGlide&&fall>=R26FreefallTuning.DiveGateSeconds?requested:0;
+            bool dive=command>0;
             if(dive)wants=false;
-            if(ground){mode=FlightMode.Ground;fall=0;return;}
+            if(ground){mode=FlightMode.Ground;fall=0;pitch=0;return;}
             if(wants)
             {
                 Float3 heading=V.Unit(new Float3(f.Forward.X,0,f.Forward.Z));
@@ -166,12 +196,15 @@ namespace Ashfall.Modules.Flight
                     // Reflection of Godot forward.cross(UP) gives Unity right=(z,0,-x).
                     heading=V.Unit(V.Add(heading,V.Mul(new Float3(heading.Z,0,-heading.X),bank*.715f*settings.GlideSteeringGain)));
                 }
-                Float3 target=V.Mul(V.Unit(V.Add(heading,V.Mul(new Float3(f.MoveDirection.X,0,f.MoveDirection.Z),.35f))),GlideSpeed);
-                velocity=new Float3(target.X,-GlideSpeed/7,target.Z);mode=FlightMode.Glide;return;
+                Float3 move=new Float3(f.MoveDirection.X,0,f.MoveDirection.Z);
+                heading=slopeTakeoff?V.Unit(move):V.Unit(V.Add(heading,V.Mul(move,.35f)));
+                if(f.XR&&mode==FlightMode.Glide&&!f.PlayerTurned)heading=SteerGlide(heading,velocity,f.DeltaSeconds);
+                Float3 target=V.Mul(heading,GlideSpeed);
+                velocity=new Float3(target.X,-GlideSpeed/7,target.Z);mode=FlightMode.Glide;pitch=0;return;
             }
-            if(clear>0){mode=FlightMode.Launch;return;}
-            float y=velocity.Y-16.2f*f.DeltaSeconds;
-            if(dive)y=Math.Max(Math.Min(-150,y),y-96*f.DeltaSeconds);
+            if(clear>0){mode=FlightMode.Launch;pitch=0;return;}
+            float average;pitch=R26Freefall.StepPitch(pitch,command,f.DeltaSeconds,out average);
+            float y=R26Freefall.Fall(velocity.Y,average,f.DeltaSeconds);
             Float3 horizontal=V.Toward(new Float3(velocity.X,0,velocity.Z),new Float3(f.WalkTarget.X,0,f.WalkTarget.Z),(V.Len(f.MoveDirection)<.00001f?.8f:6f)*f.DeltaSeconds);
             velocity=new Float3(horizontal.X,y,horizontal.Z);mode=dive?FlightMode.Dive:(launched?FlightMode.Launch:FlightMode.Air);return;
         }
@@ -182,7 +215,7 @@ namespace Ashfall.Modules.Flight
             Float3 n=V.Unit(normal),velocity=V.Mul(n,speed);
             if(!velocity.IsFinite)return RuleResult.Reject("invalid launch velocity");
             RuleResult r=commands.Take(c);if(!r.Accepted)return r;
-            stateRevision++;PendingMotion=null;Velocity=velocity;clearance=.3f;ascent=n.Y>.05f;fallTime=0;Mode=FlightMode.Launch;return r;
+            stateRevision++;PendingMotion=null;Velocity=velocity;clearance=.3f;ascent=n.Y>.05f;fallTime=divePitch=0;Mode=FlightMode.Launch;return r;
         }
         public RuleResult ApplyCollisionResult(CommandContext c,FlightMotionReceipt receipt,FlightCollisionResult result,IFlightCollisionAuthorization authorization)
         {
@@ -198,9 +231,9 @@ namespace Ashfall.Modules.Flight
             commands.Commit(c);stateRevision++;PendingMotion=null;Velocity=result.Velocity;
             if(result.Grounded||result.CeilingBlocked||result.ExternalMotionOwner){clearance=0;ascent=false;}
             else if(Velocity.Y<=0)ascent=false; // Horizontal/tilted pads retain their authored .3s clearance.
-            if(result.Grounded){Mode=FlightMode.Ground;fallTime=0;}
-            else if(result.ExternalMotionOwner){Mode=FlightMode.Suspended;fallTime=0;}
-            else if(result.CeilingBlocked){Mode=FlightMode.Air;fallTime=0;}
+            if(result.Grounded){Mode=FlightMode.Ground;fallTime=divePitch=0;}
+            else if(result.ExternalMotionOwner){Mode=FlightMode.Suspended;fallTime=divePitch=0;}
+            else if(result.CeilingBlocked&&Mode!=FlightMode.Glide){Mode=FlightMode.Air;fallTime=divePitch=0;}
             return r;
         }
         static float HorizontalDistance(Float3 a,Float3 b){return V.Len(new Float3(a.X-b.X,0,a.Z-b.Z));}
@@ -242,6 +275,72 @@ namespace Ashfall.Modules.Flight
             if(!world.ClearPadContact(pad.Id,V.Add(pad.Center,V.Mul(pad.Normal,.2f)),V.Add(contact,V.Mul(pad.Normal,.12f))))return RuleResult.Reject("pad occluded");
             RuleResult r=flight.Launch(c,pad.Normal,pad.Speed,ready,climbing,mantling);
             if(r.Accepted){cooldown[pad.Id]=now+1.2;clock=now;padRevision++;}return r;
+        }
+    }
+    // FLIGHT-DIVE (playtest 2026-11-15): the single home of every freefall/dive tuning number.
+    // Pop1-style skydive: gravity is opposed by quadratic air drag, so speed settles at a
+    // tunable terminal velocity. Forward stick sets a target body pitch (0 belly-to-earth,
+    // 1 head-down); pitch ramps at a fixed rate and only changes the drag coefficient, so
+    // speed approaches the new terminal through drag, never through direct acceleration.
+    // Kept in this file because Tools/ CPU source lists name Flight files explicitly.
+    public static class R26FreefallTuning
+    {
+        // Slightly stronger descent (r13 9.81, r14 12, r15 13). Source ascent retains authored jump/pad height and timing.
+        public const float Gravity=13f, AscentGravity=16.2f;
+        // Raise the two sustained descent limits together while keeping gravity and the pitch ramp.
+        public const float BellyTerminalSpeed=70f, DiveTerminalSpeed=100f;
+        // Forward stick below the dead zone keeps belly pitch; at Full it commands head-down.
+        public const float DiveStickDeadZone=.35f, DiveStickFull=.9f;
+        // Root-relative horizontal hand separation in metres, for both entry and release.
+        public const float GlideSpread=.9f+.1016f;
+        public const float GlidePoseGrace=.15f;
+        // Pitch ramp times for the full 0..1 range: tuck into the dive, and arch back out.
+        public const float DiveTuckSeconds=.8f, DiveRecoverSeconds=1f;
+        // Source rule: a dive is available only after this much uncontrolled freefall.
+        public const float DiveGateSeconds=1f;
+    }
+    // FLY4 evidence controls only (scripted before/after runs); always true in play.
+    public static class R26GlideEntry
+    {
+        // The archived FLY4 test harness sets CarriedStickRule. XR pose ownership is unconditional.
+        public static bool CarriedStickRule=true, StepDownRule=true, InferredPoseRule=true;
+    }
+    // Pure frame-rate-independent freefall mechanics. Ascent keeps the exact source gravity
+    // step so authored jump heights and pad apexes are unchanged; drag acts on descent.
+    public static class R26Freefall
+    {
+        static float Clamp01(float a){return a<0?0:a>1?1:a;}
+        // Body drag area blends linearly with pitch; k=g/vt^2 per pitch.
+        public static float TerminalSpeed(float pitch)
+        {
+            double p=Clamp01(pitch),b=R26FreefallTuning.BellyTerminalSpeed,d=R26FreefallTuning.DiveTerminalSpeed;
+            return (float)(1/Math.Sqrt((1-p)/(b*b)+p/(d*d)));
+        }
+        // Analog forward stick wins; callers that only know the boolean dive request get full pitch.
+        public static float DiveCommand(float forwardAxis,bool diveForward)
+        {
+            if(forwardAxis>0)return Clamp01((forwardAxis-R26FreefallTuning.DiveStickDeadZone)/(R26FreefallTuning.DiveStickFull-R26FreefallTuning.DiveStickDeadZone));
+            return diveForward?1:0;
+        }
+        // Constant-rate pitch ramp toward the command; average is the exact time-average over the step.
+        public static float StepPitch(float pitch,float command,float dt,out float average)
+        {
+            pitch=Clamp01(pitch);command=Clamp01(command);
+            float rate=command>pitch?1/R26FreefallTuning.DiveTuckSeconds:1/R26FreefallTuning.DiveRecoverSeconds,travel=Math.Abs(command-pitch),reach=rate*dt;
+            if(travel<=reach){float settle=travel/rate;average=dt>0?((pitch+command)*.5f*settle+command*(dt-settle))/dt:command;return command;}
+            float next=pitch+(command>pitch?reach:-reach);average=(pitch+next)*.5f;return next;
+        }
+        // Exact solution of dv/dt=-g+k v^2 (descent) over dt at the step's average pitch.
+        public static float Fall(float vy,float pitch,float dt)
+        {
+            float g=R26FreefallTuning.Gravity,rise=vy-R26FreefallTuning.AscentGravity*dt;
+            if(vy>0&&rise>=0)return rise;
+            double t=dt,s=-(double)vy,vt=TerminalSpeed(pitch);
+            if(vy>0){t-=vy/(double)R26FreefallTuning.AscentGravity;s=0;}
+            double x=t*g/vt;
+            if(s<vt){double u=s/vt;s=vt*Math.Tanh(.5*Math.Log((1+u)/(1-u))+x);}
+            else if(s>vt){double u=vt/s;s=vt/Math.Tanh(.5*Math.Log((1+u)/(1-u))+x);}
+            return (float)-s;
         }
     }
 }

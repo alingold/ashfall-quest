@@ -43,7 +43,7 @@ namespace Ashfall.Integration.Playable.UI
         public R23UiSettings(R23Turning turning=R23Turning.Smooth, R23Forward forward=R23Forward.Head,
             float snapDegrees=30, float smoothDegreesPerSecond=360, float walkMultiplier=2.5f,
             float masterVolume=1, float sfxVolume=1, float musicVolume=0, float ambienceVolume=0, float voiceVolume=1,
-            float flingPower=3,float motionDamping=1,float offhandInfluence=0,bool gripToggle=false,int dominantHand=1,float botDifficulty=.5f,bool retiredMaps=false,bool retiredSkins=false,bool retiredSounds=false)
+            float flingPower=3,float motionDamping=1,float offhandInfluence=0,bool gripToggle=false,int dominantHand=1,float botDifficulty=.5f,bool retiredMaps=true,bool retiredSkins=true,bool retiredSounds=true)
         {
             RetiredMaps=retiredMaps;RetiredSkins=retiredSkins;RetiredSounds=retiredSounds;
             Turning=turning==R23Turning.Snap?R23Turning.Snap:R23Turning.Smooth;

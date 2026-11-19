@@ -142,6 +142,8 @@ unity/Assets/Ashfall/Integration/Playable/Networking/R24LanLobby.RawTracking.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanLobby.Rounds.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanLobby.Spawns.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanLobby.WarmupRecovery.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.DeathDrops.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.InventoryRecovery.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanPlayerHealthView.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanPose.cs
 unity/Assets/Ashfall/Integration/Playable/Networking/R24LanRawTracking.cs
@@ -166,6 +168,7 @@ unity/Assets/Ashfall/Integration/Playable/R23PlayableLoop.Match.cs
 unity/Assets/Ashfall/Integration/Playable/TeamLaunch/R24LaunchMapCatalog.cs
 unity/Assets/Ashfall/Integration/Playable/TeamLaunch/R24TeamLaunch.cs
 unity/Assets/Ashfall/Integration/Playable/TeamLaunch/R24TeamLaunchRuntime.cs
+unity/Assets/Ashfall/Integration/Playable/TeamLaunch/R26MapPodPolicy.cs
 unity/Assets/Ashfall/Integration/Playable/UI/R23VrUI.cs
 unity/Assets/Ashfall/Integration/Playable/UI/R24MatchLifeText.cs
 unity/Assets/Ashfall/Integration/Playable/UI/R24MatchRulesUi.cs
@@ -318,3 +321,23 @@ unity/Assets/Ashfall/Integration/Playable/Online/R26OnlineRooms.cs
 
 unity/Assets/Ashfall/Integration/Playable/UI/R25FriendsFlow.cs
 unity/Assets/Ashfall/Integration/Playable/Exclusion/R25RampCrouch.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanAmmoProjection.cs
+unity/Assets/Ashfall/Integration/Playable/HandsWeapons/R26RemoteAimVolumes.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26RoomStatus.cs
+unity/Assets/Ashfall/Integration/Playable/Online/R26RoomDirectory.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.Hitreg.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26WarmupFeedback.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26MatchEndResults.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.MatchEnd.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.WarmupSpawns.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26SpawnSides.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26TeamVisibility.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.RescueStations.cs
+unity/Assets/Ashfall/Integration/Playable/JumpPads/R23HealthStations.cs
+unity/Assets/Ashfall/Integration/Playable/JumpPads/R23HealthStationRecharge.cs
+unity/Assets/Ashfall/Modules/HealthStates/R26HealthService.NearbyRevive.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanSession.RescueStations.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.MaxPlayers.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.PaddleRescue.cs
+unity/Assets/Ashfall/Integration/Playable/Networking/R26LanLobby.BulletTravel.cs
+unity/Assets/Ashfall/Integration/Playable/Input/R26TacticalMapFollow.cs

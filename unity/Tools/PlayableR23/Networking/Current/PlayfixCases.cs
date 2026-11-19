@@ -56,8 +56,8 @@ partial class LobbyCases
         {
             var runtime=new R24TeamLaunchRuntime(1);
             runtime.Configure(new R24LaunchMap{Id="archive:alpha",Minimum=new Float3(-100,0,-100),Maximum=new Float3(100,0,100),Top=20,OriginY=0},new R24LaunchRules{Live=true,Mode="revive",Stage="match",Teams=2,Epoch=9});
-            var plan=new CapsulePlan("9:0:0",0,0,new Float3(0,70,0),new Float3(0,75,10),new Float3(10,75,10),new Float3(10,0,10),new Float3(10,0,8),new Float3(0,0,-1),4);
-            runtime.AdoptHostRide("player",plan,2,0,plan.Start);
+            var start=runtime.Layout.Pod(0,0).Origin;var plan=new CapsulePlan(runtime.Layout.PodId(0,0),0,0,start,new Float3(start.X,start.Y+5,start.Z-10),new Float3(start.X+10,start.Y+5,start.Z-10),new Float3(start.X+10,0,start.Z-10),new Float3(start.X+10,0,start.Z-12),new Float3(0,0,-1),4);
+            Need(runtime.AdoptHostRide("player",plan,2,0,plan.Start),"Ride starts at its actual r18 cabin");
             var player=new R24LaunchPlayer{Id="player",Team=0,Alive=true,Position=plan.Start};
             for(int frame=0;frame<3;frame++)
             {

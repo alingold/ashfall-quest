@@ -1,0 +1,208 @@
+{
+ "mapId": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+  "title": "WAREHOUSE",
+  "creator": "GODS_Delicious.B_MMA",
+  "template": "MapEditorSnow",
+  "center": [
+   109.57608794408551,
+   40.10556411743164,
+   104.08082198339216
+  ],
+  "recorded_spawns": [
+   [
+    -3.03,
+    40.02,
+    -9.39
+   ],
+   [
+    -3.03,
+    40.02,
+    -6.79
+   ],
+   [
+    15.5,
+    40.02,
+    -11.8
+   ],
+   [
+    15.5,
+    40.02,
+    -9.22
+   ],
+   [
+    15.5,
+    40.02,
+    -6.63
+   ],
+   [
+    -3.03,
+    40.02,
+    -1.49
+   ],
+   [
+    15.5,
+    40.02,
+    -14.52
+   ],
+   [
+    15.5,
+    40.02,
+    -4.07
+   ],
+   [
+    -3.03,
+    40.02,
+    -11.95
+   ],
+   [
+    -3.03,
+    40.02,
+    -4.21
+   ],
+   [
+    -3.03,
+    40.02,
+    -14.52
+   ],
+   [
+    15.5,
+    40.02,
+    -1.49
+   ]
+  ],
+  "bounds_min": [
+   -41.49127197265625,
+   -76.85621643066406,
+   -58.46179962158203
+  ],
+  "bounds_max": [
+   54.199554443359375,
+   173.14378356933594,
+   48.89283752441406
+  ],
+  "solid_min": [
+   -300.0,
+   -76.85621643066406,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   173.14378356933594,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+  "cache_fingerprint": "45d280d0d741a40ed17eb75d128834c3256435efb1cbdfeb602703d9542aa401",
+  "warmup": [
+   {
+    "center": [
+     4.28578,
+     40.02489,
+     -18.79996
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     6.06333,
+     40.02489,
+     -18.79996
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     7.78578,
+     40.02489,
+     -18.79994
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 3,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "45d280d0d741a40ed17eb75d128834c3256435efb1cbdfeb602703d9542aa401",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

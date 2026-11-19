@@ -5,6 +5,7 @@ namespace Ashfall.Modules.Climbing
     public sealed partial class ClimbController
     {
         public const string ApiVersion = "Climbing/3";
+        internal const float VrGrabRadius = .18f;
         private readonly IClimbCollision world;
         private readonly bool[] held=new bool[2];
         private readonly Float3[] anchors=new Float3[2];
@@ -74,7 +75,7 @@ namespace Ashfall.Modules.Climbing
                     // definite assignment when forward was refused before the query
                     if(!found) hit=new SurfaceHit();
                 }
-                else found=world.TryGrab(contacts[i],.18f,out hit);
+                else found=world.TryGrab(contacts[i],VrGrabRadius,out hit);
                 if(found && hit.Point.IsFinite && (desktop ? Math.Abs(hit.Normal.Y)<.75f && hit.Normal.IsFinite : (!hit.ArchiveGeometry||hit.AuthoredClimbable)))
                 { held[i]=true; anchors[i]=hands[i]; releaseVelocity=new Float3(); }
             }

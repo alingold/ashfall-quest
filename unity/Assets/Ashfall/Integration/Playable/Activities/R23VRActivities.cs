@@ -103,17 +103,24 @@ namespace Ashfall.Integration.Playable.Activities
                 texture.wrapMode=TextureWrapMode.Repeat;texture.filterMode=FilterMode.Bilinear;panelFinish=texture;builtMaterial.SetTexture("_BaseMap",texture);builtMaterial.SetTexture("_MainTex",texture);SourceFinishLoaded=true;
             }
         }
+        internal bool IsBuildCollider(Collider collider)
+        {return collider!=null&&collider.enabled&&!collider.isTrigger&&collider.gameObject.activeInHierarchy&&panelColliders.ContainsKey(collider);}
         public bool TryReadPanel(Collider collider,out PlacedPanel panel)
         {
-            panel=null;string id;if(collider==null||!collider.enabled||collider.isTrigger||!collider.gameObject.activeInHierarchy||!panelColliders.TryGetValue(collider,out id)||construction==null)return false;
+            panel=null;string id;if(!IsBuildCollider(collider)||!panelColliders.TryGetValue(collider,out id)||construction==null)return false;
             foreach(var candidate in construction.Snapshot())if(candidate.Id==id){panel=candidate;return true;}return false;
         }
         // Call only for a committed physical impact. Preview/map/actor colliders
         // and old withdrawn collider references cannot authorize a panel hit.
+        // MATCH RULES BUILD DAMAGE (offline): every source (guns, bots, melee, blasts, vehicle guns) passes raw damage here.
+        // The rule is applied exactly once, below. Unbound means 1. Rooms are host-owned (DamageSharedPanel).
+        internal Func<float> ReadBuildDamageMultiplier;
+        float ScaleBuildDamage(float amount){float m=ReadBuildDamageMultiplier==null?1:ReadBuildDamageMultiplier();return float.IsNaN(m)||float.IsInfinity(m)||m<0?amount:amount*m;}
         public bool TryDamageCollider(Collider collider,float amount)
         {
             PlacedPanel panel;if(SharedBuildRequested!=null)return false;
             if(structurePaused||!TryReadPanel(collider,out panel))return false;
+            amount=ScaleBuildDamage(amount);if(amount<=0)return false;
             var result=construction.Damage(panel.Id,amount,tick);if(!result.Accepted)return false;
             flashes[panel.Id]=.12f;ReconcileStructure();return true;
         }
@@ -121,6 +128,7 @@ namespace Ashfall.Integration.Playable.Activities
         {
             if(SharedBuildRequested!=null)return false;
             if(structurePaused||construction==null||String.IsNullOrEmpty(id)||float.IsNaN(amount)||float.IsInfinity(amount)||amount<=0)return false;
+            amount=ScaleBuildDamage(amount);if(amount<=0)return false;
             var result=construction.Damage(id,amount,tick);if(!result.Accepted)return false;flashes[id]=.12f;ReconcileStructure();return true;
         }
         public void TickStructure(float seconds,bool paused)
@@ -168,13 +176,13 @@ namespace Ashfall.Integration.Playable.Activities
             flight=new FlightMachine("r23-playable","player",0,new FlightGate(),effectiveWalkSpeed,1);
             gesture.Cancel();HidePreview();MotionStatus="";
         }
-        public R23ActivityMotion EvaluateMotion(InputFrame input,float seconds,bool grounded,bool ceiling,Vector3 acceptedVelocity,Vector3 walkTarget,Vector3 moveDirection,bool handsReady,bool climbing,bool mantling,Vector3? movementForward=null)
+        public R23ActivityMotion EvaluateMotion(InputFrame input,float seconds,bool grounded,bool ceiling,Vector3 acceptedVelocity,Vector3 walkTarget,Vector3 moveDirection,bool handsReady,bool climbing,bool mantling,Vector3? movementForward=null,bool playerTurned=false)
         {
             var output=new R23ActivityMotion{Velocity=acceptedVelocity,Displacement=acceptedVelocity*seconds,Mode=FlightMode.Suspended};
             if(flight==null||seconds<=0||seconds>.1f||float.IsNaN(seconds))return output;
             tick=Math.Max(tick,input.Tick);
             Vector3 handL=root.InverseTransformPoint(left.position),handR=root.InverseTransformPoint(right.position);
-            var frame=new FlightFrame{DeltaSeconds=seconds,Supported=grounded,CeilingBlocked=ceiling,InputEnabled=input.Tracked&&!input.Paused,Tracked=input.Tracked,Paused=input.Paused,Climbing=climbing,Mantling=mantling,XR=true,HandsReady=handsReady,Forward=F(movementForward??head.forward),MoveDirection=F(moveDirection),WalkTarget=F(walkTarget),Velocity=F(acceptedVelocity),LeftHand=F(handL),RightHand=F(handR),DiveForward=input.MoveY>.65f};
+            var frame=new FlightFrame{PlayerTurned=playerTurned,DownhillRun=input.GlideDownhillRun,DeltaSeconds=seconds,Supported=grounded,CeilingBlocked=ceiling,InputEnabled=input.Tracked&&!input.Paused,Tracked=input.Tracked,Paused=input.Paused,Climbing=climbing,Mantling=mantling,XR=true,HandsReady=input.HandsTracked||handsReady,Forward=F(movementForward??head.forward),MoveDirection=F(moveDirection),WalkTarget=F(walkTarget),Velocity=F(acceptedVelocity),LeftHand=F(handL),RightHand=F(handR),DiveForward=false,DiveAxis=float.IsNaN(input.DiveAxis)?0:Mathf.Clamp(input.DiveAxis,-1,1)};
             var result=flight.Step(Context("flight"),frame);
             if(!result.Accepted){MotionStatus=result.Reason;return output;}
             output.Mode=flight.Mode;output.OwnsMotion=flight.Mode!=FlightMode.Ground&&flight.Mode!=FlightMode.Suspended;

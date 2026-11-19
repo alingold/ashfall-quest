@@ -64,7 +64,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         // Called only for an actual aimed, reachable, still-live world instance. Root
         // stages/drops the selected whole slot when full; no fourth-slot entitlement.
         public Func<string,int,bool> MakeRoomForWorldWeapon;
-        public Func<string,int,bool> CanClaimWorldGrip;
+        public Func<string,int,bool> CanSelectWorldGrip,CanClaimWorldGrip;
         // Physical reach and configured receiving hand are separate authorities.
         public int PreferredPickupHand=-1;
         int PickupReceiver(int reaching){return PreferredPickupHand==0||PreferredPickupHand==1?PreferredPickupHand:reaching;}
@@ -84,7 +84,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public long ImpactMarkSequence {get{return impactMarks==null?0:impactMarks.Sequence;}}
         public int ImpactLastProjectionRays {get{return impactMarks==null?0:impactMarks.LastProjectionRays;}}
         public int ImpactLastSlot {get{return impactMarks==null?-1:impactMarks.LastSlot;}}
-        public void ClearImpactMarks(){if(impactMarks!=null)impactMarks.Clear();}
+        public void ClearImpactMarks(){ClearFlights();if(impactMarks!=null)impactMarks.Clear();}
         public bool TryReadImpactMarkVertex(int slot,int vertex,out Vector3 point){point=Vector3.zero;return impactMarks!=null&&impactMarks.TryReadWorldVertex(slot,vertex,out point);}
         public float ReadImpactMarkAge(int slot){return impactMarks==null?-1:impactMarks.ReadAge(slot);}
 #if UNITY_EDITOR
@@ -101,11 +101,13 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public float VisualRecoilDistance {get{return IsDual&&round!=null&&round.Dual!=null?round.ReadDualFeedback(activeActionId,0).Distance:ActiveFeedback.Distance*ActiveRecoilScale;}}
         public float VisualRecoilPitchRadians {get{return IsDual&&round!=null&&round.Dual!=null?round.ReadDualFeedback(activeActionId,0).Pitch:ActiveFeedback.PitchRadians*ActiveRecoilScale;}}
         public long FeedbackAcceptedShots {get{return IsDual&&round!=null&&round.Dual!=null?round.Dual.TotalShots:ActiveFeedback.AcceptedShots;}}
-        public bool TracerVisible {get{return tracer!=null&&tracer.enabled;}}
-        public Vector3 TracerWorldStart {get{return tracer==null?Vector3.zero:tracer.GetPosition(0);}}
-        public Vector3 TracerWorldEnd {get{return tracer==null?Vector3.zero:tracer.GetPosition(1);}}
+        public bool TracerVisible {get{return LatestLocalTrace(0)!=null;}}
+        public Vector3 TracerWorldStart {get{var line=LatestLocalTrace(0);return line==null?Vector3.zero:line.GetPosition(0);}}
+        public Vector3 TracerWorldEnd {get{var line=LatestLocalTrace(0);return line==null?Vector3.zero:line.GetPosition(1);}}
         public event Action<int,float,float> HapticRequested;
-        readonly Transform[] feedbackLenses=new Transform[27],feedbackRearSights=new Transform[27],feedbackFrontSights=new Transform[27];
+        readonly R23ReflexOptic[] feedbackOptics=new R23ReflexOptic[27];
+        int retainedSight=-1;
+        readonly Transform[] feedbackRearSights=new Transform[27],feedbackFrontSights=new Transform[27];
         float sfxVolume=1;
         readonly R23MagazineControls magazineControls=new R23MagazineControls();
         Transform p90InsertArrow,p90ChargeArrow;R23Mp9Laser mp9Laser;
@@ -113,7 +115,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public Vector3 Mp9LaserStart {get{return mp9Laser==null?Vector3.zero:mp9Laser.WorldStart;}}
         public Vector3 Mp9LaserEnd {get{return mp9Laser==null?Vector3.zero:mp9Laser.WorldEnd;}}
         float LogicalReloadScale {get{var definition=WeaponDefinition(ActiveWeaponId);return definition==null?modelScales[selectedWeapon]:definition.ReloadScale;}}
-        R23SprScope sprScope;R23ReflexOptic cx4Optic;
+        R23SprScope sprScope;
         readonly R23SemiTriggerLatch sprTrigger=new R23SemiTriggerLatch();
         bool previousTrigger,weaponHandReserved;
         HandlingInput trackedControls;
@@ -143,8 +145,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         Vector3 GripPoint(int index){return Vector3.zero;}
         bool IsShotgun {get{return ActiveWeaponId=="m1014";}}
         bool IsMagnum {get{return ActiveWeaponId=="magnum";}}
-        float ActiveRange {get{return IsDual?180:IsDt11?40:IsMelee?2.5f:IsSmaw?180:IsShotgun?40:IsMagnum?R23MagnumRuntime.MaximumRange:WeaponDefinition(ActiveWeaponId).MaximumRange;}}
-        float ActiveBodyDamage {get{R23WeaponInstanceInfo info;return round!=null&&round.TryReadWeaponInstance(activeActionId,out info)?info.BodyDamage:IsShotgun?77:IsMagnum?R23MagnumRuntime.BodyDamage:WeaponDefinition(ActiveWeaponId).BodyDamage;}}
+        float ActiveRange {get{return IsMelee?2.5f:IsDual||IsDt11||IsSmaw||IsShotgun?SourceRifleDefinition.FirearmRange:IsMagnum?R23MagnumRuntime.MaximumRange:WeaponDefinition(ActiveWeaponId).MaximumRange;}}
         bool TransientWeaponArt(int index,Transform item){return index==M60Index&&m60View!=null&&m60View.IsTransient(item)||index==AwpIndex&&awpView!=null&&awpView.IsTransient(item)||index==21&&dt11View!=null&&dt11View.IsTransient(item)||BladeTransient(index,item)||index==3&&magnumView!=null&&magnumView.IsTransient(item)||index==6&&m1014View!=null&&m1014View.IsTransient(item)||index==8&&(p90InsertArrow!=null&&(item==p90InsertArrow||item.IsChildOf(p90InsertArrow))||p90ChargeArrow!=null&&(item==p90ChargeArrow||item.IsChildOf(p90ChargeArrow)));}
         public bool ScopeActive { get { return sprScope!=null&&sprScope.Active; } }
 #if UNITY_EDITOR
@@ -179,11 +180,10 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public void NotifyFocus(bool value){hadFocus=value;if(!value)pickupRearmRequired[0]=pickupRearmRequired[1]=true;if(impactMarks!=null)impactMarks.SetPaused(gameplayPaused||!value);if(!value&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();}if(!value&&audioCues!=null)audioCues.Stop();UpdateWeaponPresentation();}
         // A lobby inspection owns a separate weapon; retain carried inventory without drawing it.
         public void SetWeaponPresentationSuppressed(bool value){if(value&&!presentationSuppressed&&round!=null){round.SuspendActiveWeapon();sprTrigger.Suspend();m1014Controls.Reset();magazineControls.Reset();dt11Controls.Reset();m60Controls.Reset();awpControls.Reset();}presentationSuppressed=value;UpdateWeaponPresentation();if(value&&tracer!=null)tracer.enabled=false;}
-        float flashUntil,muzzleFlashUntil;
-        readonly List<LineRenderer> pelletTracers=new List<LineRenderer>();
+        float muzzleFlashUntil;
         public int LastShotgunPelletCount {get;private set;}public int LastShotgunTargetGroups {get;private set;}
-        public int ShotgunTracerCount {get{int count=0;if(tracer!=null&&tracer.enabled)count++;foreach(var line in pelletTracers)if(line.enabled)count++;return IsPelletGun?count:0;}}
-        public bool TryReadShotgunTracer(int pellet,out Vector3 start,out Vector3 end){start=end=Vector3.zero;if(!IsPelletGun||pellet<0||pellet>=8)return false;var line=pellet==0?tracer:pelletTracers[pellet-1];if(line==null||!line.enabled)return false;start=line.GetPosition(0);end=line.GetPosition(1);return true;}
+        public int ShotgunTracerCount {get{int count=0;for(int i=0;i<8;i++)if(LatestLocalTrace(i)!=null)count++;return IsPelletGun?count:0;}}
+        public bool TryReadShotgunTracer(int pellet,out Vector3 start,out Vector3 end){start=end=Vector3.zero;if(!IsPelletGun||pellet<0||pellet>=8)return false;var line=LatestLocalTrace(pellet);if(line==null||!line.enabled)return false;start=line.GetPosition(0);end=line.GetPosition(1);return true;}
         LineRenderer tracer;
         public bool Ready { get; private set; }
         public Vector3 WeaponGripPosition { get { return weapon==null?Vector3.zero:weapon.TransformPoint(GripPoint(selectedWeapon)*modelScales[selectedWeapon]); } }
@@ -214,7 +214,6 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         // Gallery previews have a different owner and never publish world damage.
         public event Action<Collider,float> WorldHit;
         public event Action<Vector3,Collider> SurfaceImpact;
-        void PresentSurfaceImpact(RaycastHit hit,bool pellet=false,bool muzzleBlocked=false){if(impactMarks!=null)impactMarks.AddHit(hit.point,hit.normal,hit.collider,pellet);if(!muzzleBlocked&&SurfaceImpact!=null)SurfaceImpact(hit.point,hit.collider);}
         public HealthSnapshot ReadPracticeTarget(int index) { return round==null||index<0||index>=targets.Count?null:round.ReadTarget(targets[index].TargetId); }
         public Vector3 PracticeAimPoint(int index,bool headshot) { if(index<0||index>=targets.Count)throw new ArgumentOutOfRangeException("index");return targets[index].transform.TransformPoint(new Vector3(0,headshot?1.72f:1.14f,0)); }
         public void RepositionTrainingTargets(Vector3[] positions,Quaternion rotation) {
@@ -306,10 +305,9 @@ namespace Ashfall.Integration.Playable.HandsWeapons
                 var target=go.AddComponent<R23PracticeTarget>();target.Initialize("target/"+i,head);targets.Add(target);
             }
             var ids=new string[targets.Count];for(int i=0;i<ids.Length;i++)ids[i]="target/"+i;
-            round=new R23RoundState(ids,this,true);round.SetGripToggle(requestedGripToggle);
+            round=new R23RoundState(ids,this,true);round.ReadHeadshotMultiplier=()=>HeadshotMultiplier;round.SetGripToggle(requestedGripToggle);
             var line=new GameObject("R23 shot trace");line.transform.SetParent(content,false);tracer=line.AddComponent<LineRenderer>();tracer.positionCount=2;tracer.startWidth=.006f;tracer.endWidth=.002f;tracer.useWorldSpace=true;
-            var traceMaterial=new Material(Shader.Find("Universal Render Pipeline/Unlit"));traceMaterial.SetColor("_BaseColor",Color.yellow);targetMaterials.Add(traceMaterial);tracer.sharedMaterial=traceMaterial;tracer.enabled=false;
-            for(int i=1;i<8;i++){var go=new GameObject("R23 accepted pellet trace "+i);go.transform.SetParent(content,false);var extra=go.AddComponent<LineRenderer>();extra.positionCount=2;extra.startWidth=.006f;extra.endWidth=.002f;extra.useWorldSpace=true;extra.sharedMaterial=traceMaterial;extra.enabled=false;pelletTracers.Add(extra);}
+            var traceMaterial=new Material(Resources.Load<Shader>("R23GunFeedback"));traceMaterial.SetColor("_Color",Color.yellow);traceMaterial.SetFloat("_Cull",0);targetMaterials.Add(traceMaterial);tracer.sharedMaterial=traceMaterial;tracer.enabled=false;
             impactMarks=new R23ImpactMarks(content,ImpactActorOrIgnored);impactMarks.SetPaused(gameplayPaused||!hadFocus);
             visuals=new R23Visuals();ResetRound();Application.onBeforeRender+=RefreshLateTrackedPresentation;StartCoroutine(LoadVisuals());
         }
@@ -328,7 +326,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var shotgunOptic=weaponModels[6].gameObject.AddComponent<R23ReflexOptic>();shotgunOptic.Initialize(1,m1014View.Muzzle,.139f);
             var scopeRoot=new GameObject("Accepted Gemini SPR scope").transform;scopeRoot.SetParent(weaponModels[2],false);yield return visuals.Load("spr-scope",scopeRoot);
             sprScope=scopeRoot.gameObject.AddComponent<R23SprScope>();sprScope.Initialize(head,muzzle,content,ScopePathClear,delegate{return displayedAimPoint;});
-            cx4Optic=weaponModels[4].gameObject.AddComponent<R23ReflexOptic>();cx4Optic.InitializeCx4Rings(muzzle);
+            var cx4Optic=weaponModels[4].gameObject.AddComponent<R23ReflexOptic>();cx4Optic.InitializeCx4Rings(muzzle);
             feedbackRearSights[4]=cx4Optic.RearReference;feedbackFrontSights[4]=cx4Optic.FrontReference;
             feedbackRearSights[5]=new GameObject("Source PX4 rear sight reference").transform;feedbackRearSights[5].SetParent(weaponModels[5],false);feedbackRearSights[5].localPosition=new Vector3(0,.083f,.015f);
             feedbackFrontSights[5]=new GameObject("Source PX4 front sight reference").transform;feedbackFrontSights[5].SetParent(weaponModels[5],false);feedbackFrontSights[5].localPosition=new Vector3(0,.083f+(.045f-.083f)*(.245f-.015f)/(35.29f-.015f),.245f);
@@ -357,7 +355,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             BuildMagazinePresentation();
             var reflex=weaponModels[0].gameObject.AddComponent<R23ReflexOptic>();reflex.Initialize(modelScales[0],muzzle);
             weaponModels[1].gameObject.AddComponent<R23ReflexOptic>().InitializeAkRings();
-            for(int i=0;i<weaponModels.Count;i++)foreach(var renderer in weaponModels[i].GetComponentsInChildren<Renderer>(true)){if(renderer.name=="Clear reflex window and stereo bore dot")feedbackLenses[i]=renderer.transform;else if(renderer.name=="Source rear luminous alignment ring")feedbackRearSights[i]=renderer.transform;else if(renderer.name=="Source solid red front bead")feedbackFrontSights[i]=renderer.transform;}
+            for(int i=0;i<weaponModels.Count;i++)feedbackOptics[i]=weaponModels[i].GetComponentInChildren<R23ReflexOptic>(true);
             gunFeedback=new R23GunFeedback(content,muzzle);
             audioCues=new R23Audio(weapon,muzzle,transform);audioCues.SetSfxVolume(sfxVolume);yield return audioCues.Load();
             yield return LoadSmawPresentation();yield return LoadKnifePresentation();yield return LoadBladePresentation();yield return LoadDt11Presentation();yield return LoadAwpPresentation();yield return LoadM60Presentation();yield return LoadDualPresentation();visuals.ReleaseLoadedBytes();sourceArtReady=true;CreateWorldStarterPickups();ApplyWeaponSelection();Ready=true;UpdateWeaponPresentation();
@@ -442,10 +440,10 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public bool SpawnWorldWeapon(string profile,int stars,Vector3 position,Quaternion rotation,out string actionId,bool visible=true){
             actionId=null;int index=Array.IndexOf(weaponIds,profile);if(!Ready||index<0||!To(position).IsFinite||!ValidRotation(rotation))return false;
             string created;if(!round.CreateWeaponInstance(profile,stars,out created))return false;
-            var record=new WorldWeapon{Position=position,Rotation=rotation,Visible=visible,CenterSet=!visible};droppedWeapons.Add(created,record);if(visible)record.Visual=CreateWorldWeaponVisual(created,index,position,rotation);actionId=created;UpdateWeaponPresentation();if(visible)QueueWorldWeaponSettle(created);return true;
+            var record=new WorldWeapon{Position=position,Rotation=rotation,Visible=visible,CenterSet=!visible};droppedWeapons.Add(created,record);if(visible&&WorldVisualNow(created,record))PresentWorldVisual(created,record);actionId=created;UpdateWeaponPresentation();return true;
         }
-        public bool RegisterWorldWeapon(string actionId,string profile,int stars,Vector3 position,Quaternion rotation,bool visible=true){int index=Array.IndexOf(weaponIds,profile);if(!Ready||index<0||!To(position).IsFinite||!ValidRotation(rotation)||!round.RegisterWeaponInstance(actionId,profile,stars))return false;var record=new WorldWeapon{Position=position,Rotation=rotation,Visible=visible,CenterSet=!visible};droppedWeapons.Add(actionId,record);if(visible)record.Visual=CreateWorldWeaponVisual(actionId,index,position,rotation);UpdateWeaponPresentation();if(visible)QueueWorldWeaponSettle(actionId);return true;}
-        public bool SetWorldWeaponVisible(string actionId,bool visible){WorldWeapon record;if(!Ready||actionId==null||!droppedWeapons.TryGetValue(actionId,out record))return false;if(record.Visible==visible)return true;record.Visible=visible;if(visible){record.Visual=CreateWorldWeaponVisual(actionId,Array.IndexOf(weaponIds,ResolveWeaponProfile(actionId)),record.Position,record.Rotation);QueueWorldWeaponSettle(actionId);}else if(record.Visual!=null){WorldPickupCenter(record);record.Visual.gameObject.SetActive(false);Destroy(record.Visual.gameObject);record.Visual=null;}UpdateWeaponPresentation();return true;}
+        public bool RegisterWorldWeapon(string actionId,string profile,int stars,Vector3 position,Quaternion rotation,bool visible=true){int index=Array.IndexOf(weaponIds,profile);if(!Ready||index<0||!To(position).IsFinite||!ValidRotation(rotation)||!round.RegisterWeaponInstance(actionId,profile,stars))return false;var record=new WorldWeapon{Position=position,Rotation=rotation,Visible=visible,CenterSet=!visible};droppedWeapons.Add(actionId,record);if(visible&&WorldVisualNow(actionId,record))PresentWorldVisual(actionId,record);UpdateWeaponPresentation();return true;}
+        public bool SetWorldWeaponVisible(string actionId,bool visible){WorldWeapon record;if(!Ready||actionId==null||!droppedWeapons.TryGetValue(actionId,out record))return false;if(record.Visible==visible)return true;record.Visible=visible;if(visible){if(!WorldVisualNow(actionId,record))return true;PresentWorldVisual(actionId,record);}else if(record.Visual!=null)WithdrawWorldVisual(record);else return true;UpdateWeaponPresentation();return true;}
         public bool DespawnWorldWeapon(string actionId){
             WorldWeapon record;if(!Ready||actionId==null||ownedWeapons.Contains(actionId)||!droppedWeapons.TryGetValue(actionId,out record))return false;
             if(actionId==activeActionId){string fallback=null;foreach(string id in OwnedWeaponActionIds)if(id!=actionId){fallback=id;break;}if(fallback==null)foreach(string id in round.WeaponActionIds)if(id!=actionId&&Array.IndexOf(weaponIds,ResolveWeaponProfile(id))>=0){fallback=id;break;}if(fallback==null||!round.SelectWeapon(fallback))return false;activeActionId=fallback;selectedWeapon=Array.IndexOf(weaponIds,ResolveWeaponProfile(fallback));HasWeapon=false;holstered=true;starterPickup=false;ApplyWeaponSelection();}
@@ -484,7 +482,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(HasWeapon)weapon.localPosition=R23TrackedGripPose.GripCenteredOffset(GripPoint(selectedWeapon),modelScales[selectedWeapon]);
         }
         public void ResetRound() {
-            if(PlayerHealthViewBound)return; // Preserve actual weapon owners until host lifecycle unbinds.
+            if(PlayerHealthViewBound||NetworkInventoryRetained)return; // Preserve actual weapon owners until host lifecycle unbinds.
             if(!initialized)return;if(smawView!=null){smawView.Holster();smawView.ClearProjectiles();}
             foreach(var drop in droppedWeapons.Values)if(drop.Visual!=null){drop.Visual.gameObject.SetActive(false);Destroy(drop.Visual.gameObject);}droppedWeapons.Clear();ownedWeapons.Clear();ownedWeaponOrder.Clear();foreach(var id in StarterWeaponIds){ownedWeapons.Add(id);ownedWeaponOrder.Add(id);}starterWorldAtHome.Clear();holstered=sourceGroundLayoutManaged;starterPickup=!sourceGroundLayoutManaged;pickupRearmRequired[0]=pickupRearmRequired[1]=haveInputSnapshot;primaryHand=1;weapon.gameObject.SetActive(!sourceGroundLayoutManaged);
             lastAcceptedPoseValid=displayedPoseValid=false;LastAcceptedShotActionId=null;LastAcceptedNativeShot=0;ClearImpactMarks();round.Reset();round.EnsureMagnumState("r23-world/magnum");if(!ownedWeapons.Contains(activeActionId))selectedWeapon=Array.IndexOf(weaponIds,"cx4");activeActionId=ActiveWeaponId;round.SelectWeapon(activeActionId);HasWeapon=false;weapon.SetParent(content,true);weapon.position=pickupPosition;weapon.rotation=pickupRotation;weapon.localScale=Vector3.one;ApplyWeaponSelection();
@@ -494,7 +492,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             foreach(var target in targets)target.Refresh(round);
             CreateWorldStarterPickups();UpdateWeaponPresentation();
         }
-        float PickupDistance(int hand) { string id;Transform drop;float distance;FindNearestPickup(hand,out id,out drop,out distance);return pickupRearmRequired[hand]||id!=null&&CanClaimWorldGrip!=null&&!CanClaimWorldGrip(id,hand)?float.PositiveInfinity:distance; }
+        float PickupDistance(int hand) { string id;Transform drop;float distance;FindNearestPickup(hand,out id,out drop,out distance);return pickupRearmRequired[hand]||id!=null&&CanSelectWorldGrip!=null&&!CanSelectWorldGrip(id,hand)?float.PositiveInfinity:distance; }
         Vector3 PickupCenter(Transform prop){bool found=false;var bounds=new Bounds();foreach(var renderer in prop.GetComponentsInChildren<MeshRenderer>(false)){if(!renderer.enabled||renderer.name.StartsWith("R23 feedback"))continue;if(!found){bounds=renderer.bounds;found=true;}else bounds.Encapsulate(renderer.bounds);}return found?bounds.center:prop.position;}
         Vector3 WorldPickupCenter(WorldWeapon record){if(!record.CenterSet){record.LocalCenter=record.Visual==null?Vector3.zero:Quaternion.Inverse(record.Rotation)*(PickupCenter(record.Visual)-record.Position);record.CenterSet=true;}return record.Position+record.Rotation*record.LocalCenter;}
         bool PickupLineClear(Vector3 from,Vector3 to){Vector3 delta=to-from;if(delta.sqrMagnitude<.000001f)return true;foreach(var hit in Physics.RaycastAll(from,delta.normalized,delta.magnitude,(1<<0)|(1<<19),QueryTriggerInteraction.Ignore))if(!ImpactActorOrIgnored(hit.collider))return false;return true;}
@@ -527,7 +525,8 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         public bool TryPickup(int hand) {
             if(!Ready||gameplayPaused||!hadFocus||!PickupHandAvailable(hand)||pickupRearmRequired[hand]||Health<=0)return false;
             string id;Transform drop;float distance;if(!FindNearestPickup(hand,out id,out drop,out distance))return false;
-            if(CanClaimWorldGrip!=null&&!CanClaimWorldGrip(id,hand))return false;int receiving=PickupReceiver(hand);if(!PickupHandAvailable(receiving))return false;if(R23RoundState.IsDualProfile(ResolveWeaponProfile(id))&&!DualCustodyAvailable(receiving))return false;
+            int receiving=PickupReceiver(hand);if(!PickupHandAvailable(receiving))return false;if(R23RoundState.IsDualProfile(ResolveWeaponProfile(id))&&!DualCustodyAvailable(receiving))return false;
+            if(CanClaimWorldGrip!=null&&!CanClaimWorldGrip(id,hand))return false;
             WorldWeapon candidate;if(droppedWeapons.TryGetValue(id,out candidate))return CollectWorldWeapon(id,hand,candidate,drop);
             round.SuspendActiveWeapon();AttachWeapon(receiving);pickupRearmRequired[hand]=pickupRearmRequired[receiving]=true;if(audioCues!=null)audioCues.Play(ActiveWeaponId,"pickup",false);return true;
         }
@@ -537,8 +536,8 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         {
             WorldWeapon candidate;
             if(!Ready||gameplayPaused||!hadFocus||hand<0||hand>1||!PickupHandAvailable(hand)||Health<=0||id==null||!droppedWeapons.TryGetValue(id,out candidate)||!candidate.Visible||candidate.Visual==null)return false;
-            if(CanClaimWorldGrip!=null&&!CanClaimWorldGrip(id,hand))return false;
             if(!PickupHandAvailable(PickupReceiver(hand))||R23RoundState.IsDualProfile(ResolveWeaponProfile(id))&&!DualCustodyAvailable(PickupReceiver(hand)))return false;
+            if(CanClaimWorldGrip!=null&&!CanClaimWorldGrip(id,hand))return false;
             return CollectWorldWeapon(id,hand,candidate,candidate.Visual);
         }
         bool CollectWorldWeapon(string id,int hand,WorldWeapon candidate,Transform drop)
@@ -608,50 +607,9 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(semi)sprTrigger.Shot();
             if(audioCues!=null)audioCues.Play(ActiveWeaponId,"shot",true);
             if(IsShotgun)return TraceShotgun(round.LastM1014Volley);
-            PublishBallistic(acceptedPose.Origin,new[]{acceptedPose.Forward});Vector3 origin=From(acceptedPose.Origin),direction=From(acceptedPose.Forward),end=origin+direction*100;RaycastHit hit;
-            // A bore inside a wall must not shoot through that wall. Check head-to-muzzle segment first.
-            Vector3 segment=origin-head.transform.position;
-            bool blocked=Nearest(head.transform.position,segment.normalized,segment.magnitude,out hit);
-            if(blocked||Nearest(origin,direction,ActiveRange,out hit)) {
-                end=hit.point;
-                if(gunFeedback!=null)gunFeedback.Impact(hit.point,hit.normal,Time.unscaledTime);
-                PresentSurfaceImpact(hit,false,blocked);
-                if(!blocked&&WorldHit!=null)WorldHit(hit.collider,ActiveBodyDamage);
-                for(int i=0;!blocked&&i<targets.Count;i++)if(targets[i].Owns(hit.collider)) {
-                    var target=targets[i];var before=round.ReadTarget(target.TargetId);bool headshot=hit.collider==target.Head;
-                    if(round.Hit(target.TargetId,To(origin),To(hit.point),headshot,ActiveWeaponId)) {
-                        var after=round.ReadTarget(target.TargetId);target.Refresh(round);if(audioCues!=null)audioCues.Play(ActiveWeaponId,"hit",false);
-                        if(TargetDamaged!=null)TargetDamaged(target.TargetId,headshot,before.Shield-after.Shield,before.Health-after.Health);
-                    }
-                    break;
-                }
-            }
-            PresentLocalTracer(tracer,origin,end);flashUntil=Time.unscaledTime+R23WeaponFeedbackState.TracerSeconds;muzzleFlashUntil=Time.unscaledTime+R23WeaponFeedbackState.FlashSeconds;return true;
+            return LaunchBullets(acceptedPose.Origin,new[]{acceptedPose.Forward},R23WeaponFeedbackState.FlashSeconds);
         }
-        bool TraceShotgun(R23M1014Volley volley){
-            if(volley==null)return false;PublishBallistic(volley.Origin,volley.Directions);LastShotgunPelletCount=LastShotgunTargetGroups=0;Vector3 origin=From(volley.Origin),segment=origin-head.transform.position;RaycastHit blocked;
-            muzzleFlashUntil=Time.unscaledTime+.055f;flashUntil=Time.unscaledTime+R23WeaponFeedbackState.TracerSeconds;
-            if(Nearest(head.transform.position,segment.normalized,segment.magnitude,out blocked)){
-                if(gunFeedback!=null)gunFeedback.Impact(blocked.point,blocked.normal,Time.unscaledTime);PresentSurfaceImpact(blocked,true,true);
-                tracer.enabled=false;foreach(var line in pelletTracers)line.enabled=false;round.ApplyM1014Contacts(volley,new R23M1014Contact[0],true);return true;
-            }
-            var contacts=new List<R23M1014Contact>();var before=new Dictionary<string,HealthSnapshot>();var touched=new Dictionary<string,R23PracticeTarget>();var worldDamage=new Dictionary<Collider,float>();var directions=volley.Directions;
-            for(int pellet=0;pellet<directions.Length;pellet++){
-                Vector3 direction=From(directions[pellet]),end=origin+direction*volley.Range;RaycastHit hit;LastShotgunPelletCount++;
-                if(Nearest(origin,direction,volley.Range,out hit)){
-                    end=hit.point;if(gunFeedback!=null)gunFeedback.Impact(hit.point,hit.normal,Time.unscaledTime);PresentSurfaceImpact(hit,true);
-                    R23PracticeTarget target=null;foreach(var candidate in targets)if(candidate.Owns(hit.collider)){target=candidate;break;}
-                    if(target!=null){if(!before.ContainsKey(target.TargetId))before.Add(target.TargetId,round.ReadTarget(target.TargetId));touched[target.TargetId]=target;contacts.Add(new R23M1014Contact(pellet,target.TargetId,To(hit.point),hit.collider==target.Head));}
-                    else{float amount;worldDamage.TryGetValue(hit.collider,out amount);worldDamage[hit.collider]=amount+R23M1014Definition.DamageAtDistance(hit.distance);}
-                }
-                var line=pellet==0?tracer:pelletTracers[pellet-1];PresentLocalTracer(line,origin,end);
-            }
-            LastShotgunTargetGroups=round.ApplyM1014Contacts(volley,contacts.ToArray());
-            foreach(var pair in touched){var after=round.ReadTarget(pair.Key);var prior=before[pair.Key];pair.Value.Refresh(round);float shield=prior.Shield-after.Shield,health=prior.Health-after.Health;if(shield+health>0&&TargetDamaged!=null)TargetDamaged(pair.Key,round.LastTargetHeadshot(pair.Key),shield,health);}
-            if(LastShotgunTargetGroups>0&&audioCues!=null)audioCues.Play("m1014","hit",false);
-            if(WorldHit!=null)foreach(var pair in worldDamage)if(pair.Key!=null&&pair.Value>0)WorldHit(pair.Key,pair.Value);
-            return true;
-        }
+        bool TraceShotgun(R23M1014Volley volley){return volley!=null&&LaunchBullets(volley.Origin,volley.Directions,.055f);}
         bool FeedbackAllowed {get{return Ready&&HasWeapon&&!holstered&&!presentationSuppressed&&!gameplayPaused&&hadFocus&&(IsDual||!inputTrackingUnavailable&&!weaponHandReserved)&&isActiveAndEnabled&&Health>0;}}
         void Pulse(int hand,float amplitude,float duration)
         {
@@ -660,12 +618,12 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var device=InputDevices.GetDeviceAtXRNode(hand==0?XRNode.LeftHand:XRNode.RightHand);HapticCapabilities capabilities;
             if(device.isValid&&device.TryGetHapticCapabilities(out capabilities)&&capabilities.supportsImpulse&&capabilities.numChannels>0)device.SendHapticImpulse(0,amplitude,duration);
         }
-        void ClearFeedbackPresentation(){followedTraces.Clear();SuspendDualPresentation();if(m60View!=null)m60View.ClearTransient();if(awpView!=null)awpView.ClearTransient();displayedPoseValid=false;if(mp9Laser!=null)mp9Laser.Hide();if(gunFeedback!=null)gunFeedback.Hide();if(tracer!=null)tracer.enabled=false;foreach(var line in pelletTracers)line.enabled=false;flashUntil=muzzleFlashUntil=0;foreach(var feedback in feedbackStates)feedback.ClearPresentation();foreach(var feedback in instanceFeedback.Values)feedback.ClearPresentation();foreach(var model in weaponModels){model.localPosition=Vector3.zero;model.localRotation=Quaternion.identity;}}
+        void ClearFeedbackPresentation(){retainedSight=-1;awpRightStick=Vector2.zero;SuspendDualPresentation();if(m60View!=null)m60View.ClearTransient();if(awpView!=null)awpView.ClearTransient();displayedPoseValid=false;if(mp9Laser!=null)mp9Laser.Hide();if(gunFeedback!=null)gunFeedback.Hide();if(tracer!=null)tracer.enabled=false;muzzleFlashUntil=0;foreach(var feedback in feedbackStates)feedback.ClearPresentation();foreach(var feedback in instanceFeedback.Values)feedback.ClearPresentation();foreach(var model in weaponModels){model.localPosition=Vector3.zero;model.localRotation=Quaternion.identity;}}
         // A native fixture may render synchronously before Unity's first LateUpdate.
         public void RefreshFeedbackPresentation(){LateUpdate();}
         void LateUpdate()
         {try{
-            RefreshHandsVisibility();ApplyFreeHandContactOffsets();
+            AdvanceFlights();RefreshHandsVisibility();ApplyFreeHandContactOffsets();
             if(gunFeedback==null)return;gunFeedback.Tick(Time.unscaledTime);
             if(!FeedbackAllowed){if(awpView!=null)awpView.ClearTransient();ClearFeedbackPresentation();return;}
             if(IsGrapple){RenderDisplayedPose();if(gunFeedback!=null)gunFeedback.Hide();ApplyFreeHandContactOffsets();return;}if(IsDual){SyncDualPresentation();RenderDualPose();ApplyFreeHandContactOffsets();return;}if(IsMelee){SyncKnifePresentation();ApplyFreeHandContactOffsets();return;}if(IsSmaw){SyncSmawPresentation();ApplyFreeHandContactOffsets();return;}var feedback=ActiveFeedback;feedback.SetSupported(round.ActiveSnapshot.Supported);if(feedbackAdvancedFrame!=Time.frameCount){feedback.Advance(Mathf.Clamp(Time.unscaledDeltaTime,0,.25f));feedbackAdvancedFrame=Time.frameCount;}
@@ -673,16 +631,21 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             RenderDisplayedPose();ApplyFreeHandContactOffsets();
             var model=weaponModels[selectedWeapon];gunFeedback.PresentAmmo(model,modelScales[selectedWeapon],Ammo,Reserve,primaryHand==0,true);bool fitted=selectedWeapon>=7,compact=ActiveWeaponId=="ump"||ActiveWeaponId=="p90";float flashScale=fitted?modelScales[selectedWeapon]:1;gunFeedback.PresentFlash(Time.unscaledTime<muzzleFlashUntil,IsM60&&M60Ready?m60View.Flash:muzzle,(fitted&&compact?.055f:.07f)*flashScale,(fitted&&compact?.015f:.018f)*flashScale);
             ResolveDisplayedAim();PresentAwp();PresentM60();PresentDisplayedAim();
-        }finally{PresentObstruction(false);RefreshLocalTracers();}}
+        }finally{PresentObstruction(false);}}
         bool ViewingSight(Vector3 point)
         {
-            if(ActiveWeaponId=="cx4"&&cx4Optic!=null)cx4Optic.SetAimTarget(point);
-            Transform lens=feedbackLenses[selectedWeapon],rear=feedbackRearSights[selectedWeapon],front=feedbackFrontSights[selectedWeapon];
-            if(lens!=null)lens.GetComponent<Renderer>().sharedMaterial.SetVector("_AimTarget",point);
+            var optic=feedbackOptics[selectedWeapon];
+            if(optic!=null){
+                optic.SetAimTarget(point);
+                bool viewing=R26ScopeSight.Viewing(optic.Window,optic.RearReference,optic.FrontReference,point,head.transform.position,R26ScopeSight.EyeOffset(head),head.transform.forward,retainedSight==selectedWeapon);
+                retainedSight=viewing?selectedWeapon:-1;return viewing;
+            }
+            retainedSight=-1;
+            Transform rear=feedbackRearSights[selectedWeapon],front=feedbackFrontSights[selectedWeapon];
+            if(rear==null||front==null)return false;
             for(int eye=0;eye<(head.stereoEnabled?2:1);eye++){
                 Vector3 eyePosition=head.transform.position,eyeForward=head.transform.forward;if(head.stereoEnabled){var inverse=head.GetStereoViewMatrix(eye==0?Camera.StereoscopicEye.Left:Camera.StereoscopicEye.Right).inverse;eyePosition=inverse.GetColumn(3);eyeForward=-inverse.GetColumn(2);}
-                if(lens!=null){Vector3 localEye=lens.InverseTransformPoint(eyePosition);float relief=-localEye.z*lens.lossyScale.z;Vector3 ray=point-eyePosition;float divisor=Vector3.Dot(ray,lens.forward);if(relief<.035f||relief>.85f||Mathf.Abs(divisor)<.00001f||Vector3.Dot(eyeForward,(point-eyePosition).normalized)<Mathf.Cos(10*Mathf.Deg2Rad))continue;float travel=Vector3.Dot(lens.position-eyePosition,lens.forward)/divisor;Vector3 local=lens.InverseTransformPoint(eyePosition+ray*travel);if(travel>0&&travel<1&&Mathf.Abs(local.x)<=.5f&&Mathf.Abs(local.y)<=.5f)return true;}
-                else if(rear!=null&&front!=null){Vector3 axis=(front.position-rear.position).normalized,offset=rear.position-eyePosition;float relief=Vector3.Dot(offset,axis);if(relief>.025f&&relief<.65f&&(offset-axis*relief).magnitude<.024f&&Vector3.Dot(eyeForward.normalized,axis)>.985f)return true;}
+                Vector3 axis=(front.position-rear.position).normalized,offset=rear.position-eyePosition;float relief=Vector3.Dot(offset,axis);if(relief>.025f&&relief<.65f&&(offset-axis*relief).magnitude<.024f&&Vector3.Dot(eyeForward.normalized,axis)>.985f)return true;
             }
             return false;
         }
@@ -706,6 +669,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(round==null)return false;
             if(float.IsNaN(dt)||float.IsInfinity(dt)||dt<0||dt>.25f)throw new ArgumentOutOfRangeException("dt");
             if(!pickupIntentSampled){pickupRearmRequired[0]=pickupRearmRequired[1]=true;pickupIntentSampled=true;}
+            awpRightStick=new Vector2(input.Right.StickX,input.Right.StickY);
             lastInput=input;haveInputSnapshot=true;RefreshTrackedControls(input);
             for(int hand=0;hand<2;hand++)if(!input.Hand(hand).Tracked)pickupRearmRequired[hand]=true;else if(R23WeaponPickupRules.GripNeutral(input.Hand(hand)))pickupRearmRequired[hand]=false;
             bool restart=input.RestartRequested,selection=input.NextWeaponRequested;
@@ -729,8 +693,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             return shot;
         }
         void Update() {
-            UpdateDualTraces();if(impactMarks!=null)impactMarks.Advance(Time.deltaTime);
-            if(tracer!=null&&Time.unscaledTime>=flashUntil){tracer.enabled=false;foreach(var line in pelletTracers)line.enabled=false;}
+            if(impactMarks!=null)impactMarks.Advance(Time.deltaTime);
             if(round==null||ExternalInputPump)return;
             var r=InputDevices.GetDeviceAtXRNode(XRNode.RightHand);var l=InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
             var input=new R23HandsInputFrame();

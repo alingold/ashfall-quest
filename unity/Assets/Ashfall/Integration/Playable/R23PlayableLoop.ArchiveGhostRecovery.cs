@@ -99,7 +99,7 @@ namespace Ashfall.Integration.Playable
         {var at=ArchiveToWorld(point,frame);if(TeamLaunch!=null&&(TeamLaunch.Staging(at)||TeamLaunch.AuthorizedFlight(at,MatchClock)))return false;return info.Hazard(point);}
         bool ArchiveRoom(Float3 floor,bool initial,R24ArchiveRecoveryInfo info,R24LaunchMapInfo frame)
         {
-            if(initial&&info.PanelBlocks(floor,ArchiveStandingClearance))return false;
+            if(initial&&info.PanelBlocks(floor,ArchiveStandingClearance)||!Map.SpawnClearsShell(ArchiveToWorld(floor,frame))||!SourcePlayerVolumeClear(floor,frame))return false;
             Float3 at;foreach(var offset in new[]{new Float3(.4f,0,0),new Float3(-.4f,0,0),new Float3(0,0,.4f),new Float3(0,0,-.4f)})
                 if(!ArchiveFloor(new Float3(floor.X+offset.X,floor.Y+.6f,floor.Z+offset.Z),1.2f,frame,out at)||Math.Abs(at.Y-floor.Y)>.3f)return false;
             if(!ArchiveCapsuleClear(floor,.3f,frame))return false;
@@ -119,12 +119,13 @@ namespace Ashfall.Integration.Playable
             if(R24ArchiveMapPolicy.MagnumOnly(info.Id)&&actual.Y<plan.MagnumFallLevel){CommitArchiveGhostRecovery(plan.MagnumCenter,false);return;}
             if(!ArchiveOutside(actual,info,frame))return;
             var candidates=new List<Float3>(plan.Spawns);
-            if(Gameplay.LocalMatchHealth.Deaths==0){bool separated=false;foreach(var p in candidates)if(DistanceArchive(p,plan.SourceWarmup)>=144){separated=true;break;}if(!separated)foreach(var p in plan.Loot)candidates.Add(new Float3(p.X,p.Y-.48f,p.Z));}
+            bool boxed=R26MapPodPolicy.InteriorSpawn(info.Id,info.SourceSha256);
+            if(!boxed&&Gameplay.LocalMatchHealth.Deaths==0){bool separated=false;foreach(var p in candidates)if(DistanceArchive(p,plan.SourceWarmup)>=144){separated=true;break;}if(!separated)foreach(var p in plan.Loot)candidates.Add(new Float3(p.X,p.Y-.48f,p.Z));}
             bool zone=MatchZoneOwner!=null&&MatchZoneOwner.State!=null,zoneGrid=false;
             if(zone)
             {
                 var rect=MatchZoneOwner.State.Next;candidates.RemoveAll(delegate(Float3 p){return p.X<rect.X||p.X>=rect.MaxX||p.Z<rect.Z||p.Z>=rect.MaxZ;});
-                if(candidates.Count==0){zoneGrid=true;for(int z=0;z<7;z++)for(int x=0;x<7;x++)candidates.Add(new Float3((float)(rect.X+1+(rect.Size-2)*(x+.5)/7),100,(float)(rect.Z+1+(rect.Size-2)*(z+.5)/7)));}
+                if(!boxed&&candidates.Count==0){zoneGrid=true;for(int z=0;z<7;z++)for(int x=0;x<7;x++)candidates.Add(new Float3((float)(rect.X+1+(rect.Size-2)*(x+.5)/7),100,(float)(rect.Z+1+(rect.Size-2)*(z+.5)/7)));}
             }
             int random=UnityEngine.Random.Range(0,Math.Max(1,candidates.Count));Float3 selected=plan.SourceSpawn;bool accepted=false;
             for(int i=0;i<candidates.Count;i++)

@@ -99,8 +99,8 @@ namespace Ashfall.Editor.Playable
             Unchanged();result.heldInputsBlocked=true;
             }else Note("Accepted walk/turn/held-input groups skipped; neutral real floor support is setup only.");
             // Actual pointer callback opens source catalog; no direct Gallery.Show.
-            yield return Click(Button("LOADOUT"),1-loop.Gameplay.PrimaryHand);
-            Check(loop.UI.Page==R23UiPage.Weapons&&loop.Gallery.Active,"actual lobby LOADOUT callback opened private gallery");
+            yield return Click(Button("WEAPONS"),1-loop.Gameplay.PrimaryHand);
+            Check(loop.UI.Page==R23UiPage.Weapons&&loop.Gallery.Active,"actual lobby WEAPONS callback opened private gallery");
             string first=loop.UI.CurrentViewedWeaponId;result.profile=first;Check(SourceRifleDefinition.ForId(first)!=null,"one current standard source gallery profile required: "+first);
             yield return WaitGallery(first);var model=Model(first);Vector3 dock=model.position;Quaternion dockQ=model.rotation;Dock(model);
             loop.Rig.Head.transform.localPosition+=new Vector3(.18f,.02f,.08f);loop.Rig.Head.transform.localRotation=Quaternion.Euler(0,17,0);Pump();yield return null;

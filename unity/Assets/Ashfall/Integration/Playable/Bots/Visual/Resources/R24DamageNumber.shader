@@ -1,13 +1,13 @@
 Shader "Ashfall/R24DamageNumber"
 {
- Properties { _MainTex("Font atlas",2D)="white"{} }
+ Properties { _MainTex("Font atlas",2D)="white"{} [HideInInspector] _ZTest("Depth Test",Float)=4 }
  SubShader
  {
   Tags {"RenderPipeline"="UniversalPipeline" "RenderType"="Transparent" "Queue"="Transparent+50"}
   Pass
   {
    Name "DepthTestedCameraFacingNumber" Tags {"LightMode"="UniversalForward"}
-   Cull Off ZTest LEqual ZWrite Off Blend SrcAlpha OneMinusSrcAlpha
+   Cull Off ZTest [_ZTest] ZWrite Off Blend SrcAlpha OneMinusSrcAlpha
    HLSLPROGRAM
    #pragma vertex Vert
    #pragma fragment Frag

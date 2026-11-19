@@ -11,6 +11,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         readonly List<Material> materials=new List<Material>();
         Material reticle;
         Mesh rings,secondaryRing;
+        public Transform Window {get;private set;}
         public Transform RearReference {get;private set;}public Transform FrontReference {get;private set;}
         public void SetAimTarget(Vector3 point){if(reticle!=null)reticle.SetVector("_AimTarget",point);}
         Transform muzzle;
@@ -20,9 +21,9 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var glow=new Material(Shader.Find("Universal Render Pipeline/Unlit"));glow.SetColor("_BaseColor",new Color(.96f,.025f,.76f));materials.Add(glow);
             var dot=new Material(Shader.Find("Universal Render Pipeline/Unlit"));dot.SetColor("_BaseColor",new Color(1,.045f,.025f));materials.Add(dot);
             rings=RingMesh();
-            Ring("Source rear luminous alignment ring",new Vector3(0,rear,.0125f),1,glow);
+            RearReference=Ring("Source rear luminous alignment ring",new Vector3(0,rear,.0125f),1,glow);
             Ring("Source forward alignment ring",new Vector3(0,(rear+front)*.5f,.31f),.0101f/.016f,glow);
-            var bead=GameObject.CreatePrimitive(PrimitiveType.Sphere);bead.name="Source solid red front bead";bead.transform.SetParent(transform,false);bead.transform.localPosition=new Vector3(0,front,.605f);bead.transform.localScale=Vector3.one*.0044f;Destroy(bead.GetComponent<Collider>());bead.GetComponent<Renderer>().sharedMaterial=dot;
+            var bead=GameObject.CreatePrimitive(PrimitiveType.Sphere);bead.name="Source solid red front bead";FrontReference=bead.transform;bead.transform.SetParent(transform,false);bead.transform.localPosition=new Vector3(0,front,.605f);bead.transform.localScale=Vector3.one*.0044f;Destroy(bead.GetComponent<Collider>());bead.GetComponent<Renderer>().sharedMaterial=dot;
         }
         public void InitializeCx4Rings(Transform bore){
             muzzle=bore;float rear=.135f,front=Mathf.Lerp(rear,.045f,(.465f-.015f)/(80.62f-.015f));
@@ -36,8 +37,8 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var lens=GameObject.CreatePrimitive(PrimitiveType.Quad);lens.name="Source CX4 R5 circular collimated dot";lens.transform.SetParent(FrontReference,false);lens.transform.localPosition=new Vector3(0,0,-.004f);lens.transform.localScale=new Vector3(.034f,.034f,1);Destroy(lens.GetComponent<Collider>());lens.GetComponent<Renderer>().sharedMaterial=reticle;
             Update();
         }
-        void Ring(string label,Vector3 at,float scale,Material material,Mesh mesh=null) {
-            var go=new GameObject(label);go.transform.SetParent(transform,false);go.transform.localPosition=at;go.transform.localScale=Vector3.one*scale;go.AddComponent<MeshFilter>().sharedMesh=mesh==null?rings:mesh;go.AddComponent<MeshRenderer>().sharedMaterial=material;
+        Transform Ring(string label,Vector3 at,float scale,Material material,Mesh mesh=null) {
+            var go=new GameObject(label);go.transform.SetParent(transform,false);go.transform.localPosition=at;go.transform.localScale=Vector3.one*scale;go.AddComponent<MeshFilter>().sharedMesh=mesh==null?rings:mesh;go.AddComponent<MeshRenderer>().sharedMaterial=material;return go.transform;
         }
         static Mesh RingMesh(float radius=.016f,float tube=.0004f) {
             const int steps=48,sides=8;var v=new Vector3[(steps+1)*(sides+1)];var n=new Vector3[v.Length];var indices=new int[steps*sides*6];int cursor=0;
@@ -68,7 +69,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             var shader=Resources.Load<Shader>("R23ReflexReticle");
             if(shader==null)throw new InvalidOperationException("Missing R23ReflexReticle shader");
             reticle=new Material(shader);materials.Add(reticle);
-            var lens=GameObject.CreatePrimitive(PrimitiveType.Quad);lens.name="Clear reflex window and stereo bore dot";lens.transform.SetParent(mount,false);lens.transform.localPosition=new Vector3(0,0,-.004f);lens.transform.localScale=new Vector3(width,height,1);Destroy(lens.GetComponent<Collider>());lens.GetComponent<Renderer>().sharedMaterial=reticle;
+            var lens=GameObject.CreatePrimitive(PrimitiveType.Quad);lens.name="Clear reflex window and stereo bore dot";Window=lens.transform;lens.transform.SetParent(mount,false);lens.transform.localPosition=new Vector3(0,0,-.004f);lens.transform.localScale=new Vector3(width,height,1);Destroy(lens.GetComponent<Collider>());lens.GetComponent<Renderer>().sharedMaterial=reticle;
             Update();
         }
         Material Material(Color color,float metallic,float smoothness) {

@@ -25,17 +25,19 @@ namespace Ashfall.Integration.Playable.JumpPads
                 go.AddComponent<MeshFilter>().sharedMesh=mesh;var renderer=go.AddComponent<MeshRenderer>();var material=new Material(shader);materials[i*2]=material;renderer.sharedMaterial=material;renderer.shadowCastingMode=ShadowCastingMode.Off;renderer.receiveShadows=false;
                 var label=new GameObject("R18 station countdown "+i);label.transform.SetParent(root,false);label.transform.position=go.transform.position-Vector3.up*.64f;
                 var text=label.AddComponent<TextMesh>();text.font=font;text.fontSize=36;text.characterSize=1;text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.richText=false;text.color=new Color(1,217f/255,128f/255);labels[i]=text;
-                var ink=new Material(textShader);ink.SetColor("_Color",new Color(1,217f/255,128f/255));ink.SetFloat("_Font",1);ink.SetFloat("_Cull",0);ink.SetFloat("_Depth",4);ink.SetTexture("_MainTex",font.material.mainTexture);materials[i*2+1]=ink;label.GetComponent<MeshRenderer>().sharedMaterial=ink;label.SetActive(false);
+                var ink=new Material(textShader);ink.renderQueue=3201;ink.SetColor("_Color",new Color(1,217f/255,128f/255));ink.SetFloat("_Font",1);ink.SetFloat("_Cull",0);ink.SetFloat("_Depth",4);ink.SetTexture("_MainTex",font.material.mainTexture);materials[i*2+1]=ink;label.GetComponent<MeshRenderer>().sharedMaterial=ink;label.SetActive(false);
             }
             var audio=new GameObject("Original R18 station restore 3D SFX");audio.transform.SetParent(root,false);voice=audio.AddComponent<AudioSource>();voice.playOnAwake=false;voice.spatialBlend=1;voice.minDistance=3;voice.maxDistance=25;voice.rolloffMode=AudioRolloffMode.Logarithmic;voice.dopplerLevel=0;voice.clip=Resources.Load<AudioClip>("R23HealthStations/station_restore");
         }
         public void SetSfxVolume(float value){voice.volume=float.IsNaN(value)||float.IsInfinity(value)?0:Mathf.Clamp01(value);}
         public void PlayRestore(Vector3 feet){if(voice.clip!=null){voice.transform.position=feet;voice.Play();}}
         public void Refresh(double now,R23HealthStationRecharge recharge)
+        {RefreshShared(delegate(int i){return recharge.Remaining(i,now);});}
+        public void RefreshShared(Func<int,double> remainingAt)
         {
             for(int i=0;i<rings.Length;i++)
             {
-                float remaining=(float)recharge.Remaining(i,now);rings[i].rotation=head.rotation;materials[i*2].SetFloat("_Recharge",remaining/15);
+                float remaining=(float)remainingAt(i);rings[i].rotation=head.rotation;materials[i*2].SetFloat("_Recharge",remaining/15);
                 var label=labels[i];bool show=remaining>0&&(label.transform.position-head.position).sqrMagnitude<3600;label.gameObject.SetActive(show);if(!show)continue;
                 label.transform.rotation=head.rotation;label.text=Mathf.CeilToInt(remaining)+"s";
                 font.RequestCharactersInTexture(label.text,36,FontStyle.Normal);materials[i*2+1].SetTexture("_MainTex",font.material.mainTexture);CharacterInfo cap;

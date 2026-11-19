@@ -1,7 +1,7 @@
 // Translation of frozen R6 scripts/awp_scope.gd angular compositor.
 Shader "Ashfall/R24AwpScope" {
 Properties { _OpticalView("Source shared binocular view",2D)="black"{} }
-SubShader {Tags {"RenderPipeline"="UniversalPipeline" "Queue"="Overlay+900" "RenderType"="Transparent"}
+SubShader {Tags {"RenderPipeline"="UniversalPipeline" "Queue"="Overlay-1" "RenderType"="Transparent"}
 Pass { ZTest Always ZWrite Off Cull Off Blend One Zero
 HLSLPROGRAM
 #pragma target 3.5

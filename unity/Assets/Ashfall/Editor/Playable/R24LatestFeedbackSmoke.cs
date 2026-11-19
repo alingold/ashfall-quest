@@ -113,15 +113,14 @@ namespace Ashfall.Editor.Playable
     foreach(object row in (IEnumerable)Read(loop.UI,"labels")){var text=(TextMesh)Read(row,"Text");if(text.text.StartsWith("Use the same local network.",StringComparison.Ordinal))footer=text;}
     Need(footer!=null&&footer.gameObject.activeInHierarchy,"Actual offline LAN footer");var f=footer.GetComponent<MeshRenderer>().bounds;
     foreach(string caption in new[]{"HOST LAN","JOIN IP"}){var b=((MeshRenderer)Read(Button(loop.UI,caption),"Renderer")).bounds;bool overlap=f.min.x<b.max.x&&f.max.x>b.min.x&&f.min.y<b.max.y&&f.max.y>b.min.y;note("Actual footer="+f+" button="+caption+" bounds="+b+" overlaps="+overlap);Need(!overlap,"Actual glyph bounds clear button "+caption);}
-    foreach(string preset in new[]{"practice","team_respawn"}){
+    foreach(string preset in new[]{"free_for_all","team_respawn"}){
      loop.EndMatch();loop.UI.OpenMatchRules();loop.UI.SelectMatchPreset(preset);Need(loop.UI.RequestMatchStart(),"Actual UI start "+preset);
      float until=Time.realtimeSinceStartup+35;while((loop.ActualMatchRules==null||!loop.MatchActive)&&loop.Failure==null&&Time.realtimeSinceStartup<until)yield return null;
      Need(loop.ActualMatchRules!=null&&loop.MatchActive,"Actual Root match ready "+preset);loop.TickMatch(.02f,true);
      note("Actual "+preset+" HUDvisible="+loop.UI.CompactMatchHudVisible+" clock="+loop.UI.CompactMatchClock+" personal="+loop.UI.CompactPersonalScore+" worldActive="+loop.ReadWorldScoreState().Active);
-     if(preset=="practice")Need(!loop.UI.CompactMatchHudVisible&&loop.ReadWorldScoreState().Active,"Practice hides compact competitive HUD without removing world scoreboard state");
-     else Need(loop.UI.CompactMatchHudVisible&&loop.UI.CompactMatchClock=="TIME 10:00","Accepted finite TDM timer remains visible");
+     Need(loop.UI.CompactMatchHudVisible&&loop.UI.CompactMatchClock=="TIME 10:00","Accepted finite TDM timer remains visible");
     }
-    note("Actual glyph bounds and practice/TDM UI flow only; no screenshot/HMD visual acceptance, LAN connection or timer-expiry replay.");
+    note("Actual glyph bounds and FFA/TDM UI flow only; no screenshot/HMD visual acceptance, LAN connection or timer-expiry replay.");
    }finally{loop.EndMatch();loop.ReturnToLobby();}
   }
  }

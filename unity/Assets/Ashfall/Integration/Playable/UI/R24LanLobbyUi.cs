@@ -18,14 +18,28 @@ namespace Ashfall.Integration.Playable.UI
             if(friendsOpen && onlineUiState!=Ashfall.Integration.Playable.Online.OnlineRoomState.Idle && members!=null && members.Length>1 && members.Length>friendRosterCount && MenuAudioActive())menuAudio.Play(R23MenuCue.Click);
             friendRosterCount=members==null?0:members.Length;
             lanState=state;lanStatus=status;lanRoom=room;lanMembers=names;lanAddress=address;
+            // A room made or joined without the friends panel (direct LAN, scripted player) still shows its room panel.
+            if(state!=R24LanLobbyState.Offline&&!friendsOpen){friendsOpen=true;changed=true;}
             if(changed&&(Page==R23UiPage.MatchRules&&matchTab==0||Page==R23UiPage.Maps||Page==R23UiPage.Ready))Build();
+        }
+        public R24LanLobby TeamAssignmentLobby{private get;set;}
+        void DrawRoomTeamRows(string[] rows,int top,int spacing,int font)
+        {
+            var lobby=TeamAssignmentLobby;var members=lobby==null?null:lobby.Members;
+            for(int i=0;i<Math.Min(24,rows.Length);i++){
+                int x=240+(i/8)*400,y=top+(i%8)*spacing;
+                if(lobby!=null&&lobby.CanEditRoomTeams&&members!=null&&i<members.Length&&members[i].Team>=0&&SelectedMatchRules!=null&&SelectedMatchRules.Teams>=2){
+                    string actor=members[i].Actor;int team=(members[i].Team+1)%SelectedMatchRules.Teams;
+                    FrontButton(rows[i]+"  ›",x-190,y-spacing/2,380,spacing-2,delegate{lobby.HostAssignRoomTeam(actor,team);},Hex(R25Theme.Raised),Hex(R25Theme.Text),font);
+                }else FrontText(rows[i],x,y,font,380).richText=false;
+            }
         }
         public void RequestLanHost(){if(LanHostRequested!=null)LanHostRequested();}
         public void RequestLanJoin(string address){if(LanJoinRequested!=null)LanJoinRequested(address);}
         public void RequestLanLeave(){if(LanLeaveRequested!=null)LanLeaveRequested();}
         void BuildLanHosting()
         {
-            if(!friendsOther){FrontButton("PLAY WITH FRIENDS",340,330,600,88,OpenFriends,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),32);return;}
+            if(!friendsOther){FrontButton("MULTIPLAYER",340,330,600,88,OpenFriends,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),32);return;}
             BuildLanFallback();
         }
         void BuildLanFallback()

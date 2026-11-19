@@ -144,7 +144,7 @@ namespace Ashfall.Modules.Sessions
         // Canonical IDs bind each command to its sequence; no receipt eviction. Tick is
         // a host-owned sequence, NOT wall time. Clock.Now remains the only time source.
         // Sequence never resets on epoch or host migration; exhaustion fails closed.
-        public RuleResult Lifecycle(CommandContext c, LifecycleAction action, SessionRules next, string mapHash, bool match)
+        public RuleResult Lifecycle(CommandContext c, LifecycleAction action, SessionRules next, string mapHash, bool match, bool externalLoadingTimeout=false)
         {
             if (!c.IsAuthority || c.SessionId!=Id || c.AuthorityEpoch!=Epoch || c.Tick<0 ||
                 String.IsNullOrWhiteSpace(c.ActorId) ||
@@ -159,7 +159,7 @@ namespace Ashfall.Modules.Sessions
             switch(action)
             {
                 case LifecycleAction.AdvanceTime: return AdvanceLoadingCore();
-                case LifecycleAction.BeginLoading: return BeginLoadingCore(next,match);
+                case LifecycleAction.BeginLoading: return BeginLoadingCore(next,match,externalLoadingTimeout);
                 case LifecycleAction.WorldReady: return WorldReadyCore(mapHash);
                 case LifecycleAction.Activate: return ActivateCore();
                 case LifecycleAction.EnterResults: return EnterResultsCore();
@@ -193,7 +193,6 @@ namespace Ashfall.Modules.Sessions
                 if(saved.Epoch!=Epoch)
                 {
                     ResetRound(p);
-                    if(p.TeamLayout!=teamLayout) { p.Team=BalancedTeam(); p.TeamLayout=teamLayout; }
                     SetJoinLife(p);
                 }
             }
@@ -205,7 +204,8 @@ namespace Ashfall.Modules.Sessions
                 p=new Member {CanonicalId=c.ActorId,Name=CleanName(request.Name),Token=token,Team=BalancedTeam(),Spectator=request.Spectator};
                 p.TeamLayout=teamLayout; SetJoinLife(p);
             }
-            p.ConnectionIdentity=new object();p.Id=c.ActorId; p.Loaded=false; players.Add(p.Id,p); reconnectToken=p.Token; return RuleResult.Accept();
+            if(p.TeamLayout!=teamLayout){p.Team=BalancedTeam();p.TeamLayout=teamLayout;}
+            p.ConnectionIdentity=new object();p.Id=c.ActorId; p.Loaded=false; players.Add(p.Id,p); BalanceLobbyJoin(); reconnectToken=p.Token; return RuleResult.Accept();
         }
         // Trusted receipt stream cannot be populated by gameplay IDs, nor saturated
         // by gameplay traffic. Gate must authenticate this entry independently.
@@ -256,7 +256,7 @@ namespace Ashfall.Modules.Sessions
                 Member old=saved.Player;
                 p=new Member {Id=c.ActorId,CanonicalId=old.CanonicalId,Name=old.Name,Token=old.Token,Team=old.Team,Revision=old.Revision,Deaths=old.Deaths,
                     Loaded=false,Waiting=old.Waiting,HasPosition=old.HasPosition,Spectator=old.Spectator,Position=old.Position,Life=old.Life,RespawnAt=old.RespawnAt,TeamLayout=old.TeamLayout};
-                if(saved.Epoch!=Epoch) { ResetRound(p); if(p.TeamLayout!=teamLayout) { p.Team=BalancedTeam(); p.TeamLayout=teamLayout; } SetJoinLife(p); }
+                if(saved.Epoch!=Epoch) { ResetRound(p); SetJoinLife(p); }
             }
             else
             {
@@ -265,6 +265,7 @@ namespace Ashfall.Modules.Sessions
                 p=new Member {Id=c.ActorId,CanonicalId=c.ActorId,Name=CleanName(request.Name),Token=token,Team=BalancedTeam(),Spectator=request.Spectator,TeamLayout=teamLayout};
                 SetJoinLife(p);
             }
+            if(p.TeamLayout!=teamLayout){p.Team=BalancedTeam();p.TeamLayout=teamLayout;}
             var nextPlayers=new Dictionary<string,Member>(players,StringComparer.Ordinal); nextPlayers.Add(p.Id,p);
             var nextReservations=new Dictionary<string,Reservation>(StringComparer.Ordinal);
             foreach(var pair in reservations)if(pair.Value.Until>now && (saved==null || pair.Key!=request.ReconnectToken))nextReservations.Add(pair.Key,pair.Value);
@@ -284,7 +285,7 @@ namespace Ashfall.Modules.Sessions
         {
             if(p!=null && p.Owner==this && p.Committed)return;
             if(p==null || p.Owner!=this || !p.Validated || p.Aborted || p.Revision!=admissionRevision)throw new InvalidOperationException("join-not-validated");
-            players=p.Players; reservations=p.Reservations; issuedTokens=p.Tokens;
+            players=p.Players; BalanceLobbyJoin(); reservations=p.Reservations; issuedTokens=p.Tokens;
             hostReceipt=p.Context.Tick; lastTime=p.Time; admissionRevision=p.NextRevision; p.Committed=true;checkpointReservations.Remove(p);
         }
         public void AbortJoin(PreparedJoin p)
@@ -293,6 +294,37 @@ namespace Ashfall.Modules.Sessions
         { token=null; RuleResult r=Trusted(c); return r.Accepted ? JoinCore(c,request,out token) : r; }
         public RuleResult DisconnectTrusted(CommandContext c, bool kicked)
         { RuleResult r=Trusted(c); return r.Accepted ? DisconnectCore(c,kicked) : r; }
+        // Only room management may edit a lobby roster. The following match keeps
+        // this layout when its team count matches the room's selection.
+        public RuleResult SetLobbyTeams(CommandContext c,int count,string actor,int team)
+        {
+            RuleResult check=Validate(c);if(!check.Accepted)return check;
+            if(!management.CanManage(c)||Stage!=SessionStage.Lobby||count<0||count>8||count==1)return RuleResult.Reject("host-lobby-teams");
+            Member target=null;
+            if(actor!=null&&(count!=Rules.Teams||team<0||team>=count||!players.TryGetValue(actor,out target)))return RuleResult.Reject("team-member");
+            if(count!=Rules.Teams){
+                if(teamLayout==Int64.MaxValue)return RuleResult.Reject("team-layout");
+                Rules=new SessionRules(Rules.MapId,Rules.Mode,Rules.MapHash,count,Rules.Capacity,Rules.Indoor,Rules.Locked,Rules.LateJoin,Rules.Spectators,Rules.RespawnDelay);
+                teamLayout++;var ids=new List<string>(players.Keys);ids.Sort(StringComparer.Ordinal);
+                for(int i=0;i<ids.Count;i++){var p=players[ids[i]];p.Team=count==0?-1:i%count;p.TeamLayout=teamLayout;}
+            }
+            if(target!=null)target.Team=team;
+            return RuleResult.Accept();
+        }
+        private readonly int[] lobbyTeamSizes=new int[8];
+        private void BalanceLobbyJoin()
+        {
+            if(Stage!=SessionStage.Lobby||Rules.Teams<2)return;
+            var counts=lobbyTeamSizes;Array.Clear(counts,0,counts.Length);
+            foreach(var p in players.Values){if(p.HasPosition)return;counts[p.Team]++;}
+            while(true){
+                int least=0,most=0;
+                for(int i=1;i<Rules.Teams;i++){if(counts[i]<counts[least])least=i;if(counts[i]>counts[most])most=i;}
+                if(counts[most]-counts[least]<=1)return;
+                Member move=null;foreach(var p in players.Values)if(p.Team==most&&(move==null||String.CompareOrdinal(p.Id,move.Id)>0))move=p;
+                move.Team=least;counts[most]--;counts[least]++;
+            }
+        }
         private int BalancedTeam()
         {
             if(Rules.Teams==0)return -1;
@@ -341,14 +373,15 @@ namespace Ashfall.Modules.Sessions
             if(!management.CanManage(c))return RuleResult.Reject("manager-required");
             return BeginLoadingCore(next, match);
         }
-        private RuleResult BeginLoadingCore(SessionRules next, bool match)
+        private RuleResult BeginLoadingCore(SessionRules next, bool match, bool externalLoadingTimeout=false)
         {
             // Reserve one epoch for timeout invalidation, even at lifetime exhaustion.
             if(next==null || Epoch>=Int64.MaxValue-1 || (next.Teams!=Rules.Teams && teamLayout==Int64.MaxValue))return RuleResult.Reject("rules-or-epoch");
             bool redistribute=next.Teams!=Rules.Teams;
             if(redistribute)teamLayout++;
             Rules=next; Epoch++; Stage=SessionStage.Loading; worldReady=false;
-            LoadingDeadline=lastTime+LoadingTimeoutSeconds; LastLoadingRecovery=String.Empty;
+            // A trusted owner can keep the barrier open while it disconnects unready peers.
+            LoadingDeadline=externalLoadingTimeout?0:lastTime+LoadingTimeoutSeconds; LastLoadingRecovery=String.Empty;
             loadingTarget=match ? SessionStage.Match : SessionStage.Lobby;
             commands.Clear(); ticks.Clear();
             var actors=new List<string>(players.Keys); actors.Sort(StringComparer.Ordinal);
@@ -403,7 +436,7 @@ namespace Ashfall.Modules.Sessions
         }
         private bool RecoverLoading()
         {
-            if(Stage!=SessionStage.Loading || lastTime<=LoadingDeadline)return false;
+            if(Stage!=SessionStage.Loading || LoadingDeadline==0 || lastTime<=LoadingDeadline)return false;
             Stage=SessionStage.Lobby; Epoch++; worldReady=false; LoadingDeadline=0;
             LastLoadingRecovery="loading-timeout"; commands.Clear(); ticks.Clear();
             foreach(Member p in players.Values)ResetRound(p);

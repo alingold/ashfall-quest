@@ -70,8 +70,12 @@ namespace Ashfall.Integration.Playable.HandsWeapons
                     if (late)
                     {
                         bool wasHidden = specialWeaponLatch.Hidden;
+                        // SWORD-VANISH: a held blade is never hidden by the hand-behind-world rule. A sword is
+                        // swung and stabbed into map geometry all the time; hiding the whole weapon the moment the
+                        // head->hand segment clips a collider read as "the sword disappears when it touches the
+                        // map". It now stays in the hand and simply clips; only the head-in-wall fade hides it.
                         bool blocked = IsDual ? SegmentBlocked(eye, left.position) || SegmentBlocked(eye, right.position)
-                            : IsMelee ? SegmentBlocked(eye, PrimaryTransform.position)
+                            : IsMelee ? false
                             : SegmentBlocked(eye, From(displayedShot.Origin));
                         specialWeaponLatch.Step(blocked, seconds);
                         if (specialWeaponLatch.Hidden && !wasHidden) Pulse(primaryHand, weaponObstruction.HapticAmplitude, weaponObstruction.HapticDuration);
@@ -104,6 +108,8 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         void StepGlove(R25ObstructionLatch latch, Transform glove, bool enabled, float seconds)
         {
             if (!enabled || glove == null || !glove.gameObject.activeInHierarchy) { latch.Reset(); return; }
+            // SWORD-VANISH: the glove gripping a visible blade stays visible with it (no floating sword).
+            if (IsMelee && FeedbackAllowed && glove == (primaryHand == 0 ? leftVisual : rightVisual)) { latch.Reset(); return; }
             latch.Step(SegmentBlocked(head.transform.position, glove.position), seconds);
         }
 

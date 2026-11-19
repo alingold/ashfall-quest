@@ -1,0 +1,147 @@
+{
+ "mapId": "archive:g0ds-of-war-gods-badbar",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:g0ds-of-war-gods-badbar",
+  "title": "G0DS OF WAR",
+  "creator": "GODS_BADBAR",
+  "template": "MapEditorMoon",
+  "center": [
+   -38.66282956302166,
+   56.162096202373505,
+   2.777752525470053
+  ],
+  "recorded_spawns": [],
+  "bounds_min": [
+   -270.45869557512395,
+   -4.519439697265625,
+   -229.01811348663225
+  ],
+  "bounds_max": [
+   193.13303644908063,
+   371.3380432128906,
+   234.57361853757234
+  ],
+  "solid_min": [
+   -300.0,
+   -4.519439697265625,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   371.3380432128906,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/g0ds-of-war-gods-badbar/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "101a2b",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.6,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "4c03349a09cef925d236c26d4f5345ccade8048206f5310af4811702138f74d0",
+  "cache_fingerprint": "6be1b585b809edbb3f7ccb5cc41babfa9eabb16c6c4b96e49d6b67ce3ef1b07c",
+  "warmup": [
+   {
+    "center": [
+     -18.13319,
+     57.52154,
+     -31.23468
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -15.58672,
+     57.52154,
+     -31.23467
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -13.13315,
+     57.52154,
+     -31.23467
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.0,
+     0,
+     1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 3,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "6be1b585b809edbb3f7ccb5cc41babfa9eabb16c6c4b96e49d6b67ce3ef1b07c",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -47.249855041503906,
+    1.3616209030151367,
+    -29.24993896484375
+   ],
+   "boundsMax": [
+    2.7501449584960938,
+    19.999996185302734,
+    20.75006103515625
+   ],
+   "triangles": 12
+  }
+ ]
+}

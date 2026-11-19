@@ -3,7 +3,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
 {
     public static class R24AwpDefinition
     {
-        public const string Id="awp",Family="sniper";public const int Capacity=3;public const float Interval=.95f,Scale=1,Range=180;
+        public const string Id="awp",Family="sniper";public const int Capacity=3;public const float Interval=.95f,Scale=1,Range=SourceRifleDefinition.FirearmRange;
         public static readonly Float3 Muzzle=new Float3(0,.047f,1.01f),Bolt=new Float3(.072f,.045f,.07f),Offer=new Float3(0,-.1764f,.1061082762f),Insert=new Float3(0,-.18f,.1061082762f),Foregrip=new Float3(0,-.025f,.36f),MagazineHome=new Float3(.0002487176f,-.0128027467f,.1061082762f);
     }
     public sealed class R24AwpShot

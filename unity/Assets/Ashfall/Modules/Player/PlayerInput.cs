@@ -15,12 +15,14 @@ namespace Ashfall.Modules.Player
         private long sequence, lastTick = -1;
         private float leftNeutral, rightNeutral, desktopNeutral;
         private bool leftReady, rightReady, desktopReady;
+        private bool recoverWalk;
+        public bool PreserveWalkOnHandReacquire { get; set; }
         public bool DesktopReady { get { return desktopReady; } }
         public bool LeftReady { get { return leftReady; } }
         public bool RightReady { get { return rightReady; } }
         public void Disarm()
         {
-            leftReady = rightReady = desktopReady = false;
+            recoverWalk = leftReady = rightReady = desktopReady = false;
             leftNeutral = rightNeutral = desktopNeutral = 0;
         }
         public InputFrame Read(long tick, float dt, DeviceSample sample)
@@ -47,6 +49,12 @@ namespace Ashfall.Modules.Player
             if (sample.IsXr)
             {
                 HandSample left = sample.Left, right = sample.Right;
+                // Poses and the physical movement stick remain available while gripping a weapon.
+                // The early pause/focus return still suspends all flight control.
+                frame.HandsTracked = FlightTracked(left) && FlightTracked(right);
+                // FLY4: the stick is read by radio. Optical tracking loss (arms out of the cameras' view)
+                // must not read as a release followed by a fresh push.
+                frame.DiveAxis = Axis(sample.MoveY);
                 bool leftWeapon = Ownership.Dominant == DominantHand.Left;
                 if (leftWeapon) { right.Primary |= sample.Jump; left.Secondary |= sample.Reload || sample.Ping; }
                 else { left.Primary |= sample.Jump; right.Secondary |= sample.Reload || sample.Ping; }
@@ -55,11 +63,20 @@ namespace Ashfall.Modules.Player
                 if (Math.Abs(sample.MoveY) > Math.Abs(left.StickY)) left.StickY = sample.MoveY;
                 if (Math.Abs(sample.TurnX) > Math.Abs(right.StickX)) right.StickX = sample.TurnX;
                 if (Math.Abs(sample.TurnY) > Math.Abs(right.StickY)) right.StickY = sample.TurnY;
+                // A support grip near the headset can briefly hide the movement controller.
+                // Resume only previously armed stick axes after tracking returns. Buttons
+                // still require neutral, and a session-wide Disarm also clears this permit.
+                if (!PreserveWalkOnHandReacquire || (left.Tracked && (!FlightTracked(left) || !Finite(left.Grip) || !Finite(left.Trigger)))) recoverWalk = false;
+                else if (!left.Tracked && leftReady) recoverWalk = true;
                 Rearm(left, dt, ref leftReady, ref leftNeutral);
                 Rearm(right, dt, ref rightReady, ref rightNeutral);
-                if (leftReady)
+                if (leftReady || (recoverWalk && FlightTracked(left)))
                 {
                     frame.MoveX = Axis(sample.MoveX); frame.MoveY = Axis(sample.MoveY);
+                }
+                if (leftReady)
+                {
+                    recoverWalk = false;
                     frame.GripLeft = sample.Left.Grip > .65f;
                     frame.TriggerLeft = sample.Left.Trigger > .5f;
                     frame.Sprint = sample.Sprint;
@@ -97,6 +114,8 @@ namespace Ashfall.Modules.Player
             }
             return frame;
         }
+        private static bool FlightTracked(HandSample hand)
+        { return hand.Tracked && hand.Position.IsFinite && Finite(hand.StickX) && Finite(hand.StickY); }
         private static void Rearm(HandSample hand, float dt, ref bool ready, ref float time)
         {
             if (!hand.Tracked || !hand.Position.IsFinite || !Finite(hand.Grip) || !Finite(hand.Trigger) || !Finite(hand.StickX) || !Finite(hand.StickY))

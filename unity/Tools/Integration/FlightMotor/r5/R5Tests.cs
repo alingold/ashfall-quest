@@ -44,7 +44,7 @@ sealed class R5Tests : IAuthorityGate,IFlightWorld,IFlightLifecycleAuthorization
   Check(!m.ApplyCollisionResult(C("again",2),receipt,hit,this).Accepted,"same receipt another command denied");
   Check(!m.Step(C("hit",3),I(3),new MotionEnvironment(),F(),out motion).Accepted,"feedback ID cannot rebind Step");
   Check(m.Step(C("next",3),I(3),new MotionEnvironment(),F(),out motion).Accepted,"release after contact");
-  Near(motion.Velocity.Y,-1.62f,"one gravity after root correction");Near(motion.Velocity.Z,6.92f,"actual root slide feeds next frame");
+  Near(motion.Velocity.Y,R26Freefall.Fall(0,0,.1f),"one gravity after root correction");Near(motion.Velocity.Z,6.92f,"actual root slide feeds next frame");
   var old=m.PendingMotion;
   Check(m.Step(C("new",4),I(4),new MotionEnvironment(),F(),out motion).Accepted,"new proposal");
   Check(!m.ApplyCollisionResult(C("stale",3),old,hit,this).Accepted,"stale receipt denied");
@@ -68,7 +68,7 @@ sealed class R5Tests : IAuthorityGate,IFlightWorld,IFlightLifecycleAuthorization
   Check(m.Step(C("return",7),I(7),new MotionEnvironment(),F(),out motion).Accepted,"climb to flight");Near(m.Velocity.Y,1.38f,"climb velocity next frame one gravity");
   for(int t=8;t<=12;t++){
    Check(m.ApplyCollisionResult(C("block"+t,t-1),m.PendingMotion,new FlightCollisionResult{Velocity=new Float3()},this).Accepted,"full block "+t);
-   Check(m.Step(C("frame"+t,t),I(t),new MotionEnvironment(),F(),out motion).Accepted,"repeated collision frame "+t);Near(m.Velocity.Y,-1.62f,"repeated block gravity once "+t);
+   Check(m.Step(C("frame"+t,t),I(t),new MotionEnvironment(),F(),out motion).Accepted,"repeated collision frame "+t);Near(m.Velocity.Y,R26Freefall.Fall(0,0,.1f),"repeated block gravity once "+t);
   }
   old=m.PendingMotion;Check(m.ResetActor(C("life",13),1,FlightLifecycle.Respawn,this).Accepted,"real lifecycle reset");
   Check(!m.ApplyCollisionResult(C("prelife",12),old,hit,this).Accepted,"prior generation receipt rejected");

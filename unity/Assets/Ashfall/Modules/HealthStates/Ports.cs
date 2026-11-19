@@ -14,6 +14,7 @@ namespace Ashfall.Modules.HealthStates
     {
         public bool Tracked, Paused, PaddlesActive, Desktop, Facing;
         public Float3 Left, Right, Chest, LocalLeft, LocalRight;
+        public Float3 BodyCenter;
     }
     // Combat evaluates armor/shield split, friendly fire, weapon and zone multipliers.
     // Revision binds its evaluated losses to exactly the health state it inspected.

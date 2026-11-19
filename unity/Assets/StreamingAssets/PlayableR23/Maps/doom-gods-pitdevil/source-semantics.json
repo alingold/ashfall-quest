@@ -1,0 +1,250 @@
+{
+ "mapId": "archive:doom-gods-pitdevil",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:doom-gods-pitdevil",
+  "title": "DOOM",
+  "creator": "GODS_PITDEVIL",
+  "template": "MapEditorSnow",
+  "center": [
+   10.388062070220489,
+   47.18367302705687,
+   -5.8710281366686425
+  ],
+  "recorded_spawns": [
+   [
+    -283.64,
+    51.71,
+    -10.41
+   ],
+   [
+    -283.64,
+    51.71,
+    -9.24
+   ],
+   [
+    -283.64,
+    51.71,
+    -8.06
+   ],
+   [
+    -283.64,
+    51.71,
+    -6.88
+   ],
+   [
+    -283.64,
+    51.71,
+    -5.71
+   ],
+   [
+    -283.64,
+    51.71,
+    -4.53
+   ],
+   [
+    -283.64,
+    51.71,
+    -3.36
+   ],
+   [
+    -283.64,
+    51.71,
+    -2.18
+   ],
+   [
+    -283.64,
+    51.71,
+    -1.0
+   ],
+   [
+    -283.64,
+    51.71,
+    0.17
+   ],
+   [
+    -283.64,
+    51.71,
+    1.35
+   ],
+   [
+    -283.64,
+    51.71,
+    2.52
+   ],
+   [
+    295.14,
+    51.69,
+    -19.91
+   ],
+   [
+    295.14,
+    51.69,
+    -18.74
+   ],
+   [
+    295.14,
+    51.69,
+    -17.56
+   ],
+   [
+    295.14,
+    51.69,
+    -16.38
+   ],
+   [
+    295.14,
+    51.69,
+    -15.21
+   ],
+   [
+    295.14,
+    51.69,
+    -14.03
+   ],
+   [
+    295.14,
+    51.69,
+    -12.86
+   ],
+   [
+    295.14,
+    51.69,
+    -11.68
+   ],
+   [
+    295.14,
+    51.69,
+    -10.5
+   ],
+   [
+    295.14,
+    51.69,
+    -9.33
+   ],
+   [
+    295.14,
+    51.69,
+    -8.15
+   ],
+   [
+    295.14,
+    51.69,
+    -6.98
+   ]
+  ],
+  "bounds_min": [
+   -441.3648376464844,
+   -80.43238830566406,
+   -326.0
+  ],
+  "bounds_max": [
+   454.0731201171875,
+   173.14378356933594,
+   294.99945068359375
+  ],
+  "solid_min": [
+   -593.273681640625,
+   -80.43238830566406,
+   -603.8929443359375
+  ],
+  "solid_max": [
+   606.7265014648438,
+   173.14378356933594,
+   596.1071166992188
+  ],
+  "source": "https://maps.deliciouswines.org/maps/doom-gods-pitdevil/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+  "cache_fingerprint": "8340f730720fe141be768b8c0b5d93684451e3e19ad8de6b550f98e2adcf892b",
+  "warmup": [
+   {
+    "center": [
+     -3.08802,
+     120.75125,
+     204.41009
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -4.91198,
+     120.75126,
+     204.64123
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 2,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "8340f730720fe141be768b8c0b5d93684451e3e19ad8de6b550f98e2adcf892b",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

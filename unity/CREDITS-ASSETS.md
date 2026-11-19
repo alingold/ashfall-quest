@@ -60,10 +60,11 @@ in the build; copies are kept outside it in `retired/20261110-copied-audio/`.
 
 ## Community maps
 
-The 61 active community maps are the work of their creators (see `outreach/CREATOR-PERMISSIONS.md`).
-Each map folder carries `SOURCE-LICENSE.txt`: "UNKNOWN REUSE LICENSE - LOCAL ONLY". Map layouts
-are built from another game's editor pieces. They are included for private, local use and must
-not be redistributed without the creators' permission.
+Community maps retain their creator credit and archive source URL in each map's
+`SOURCE-LICENSE.txt`. This includes optional Legacy community maps and Battlefield
+Paintball, the default map. The map layouts and archive-derived material are outside
+the ASHFALL code license and original-asset dedication. See
+[Third-party notices](THIRD-PARTY-NOTICES.md).
 
 ## Player skins
 

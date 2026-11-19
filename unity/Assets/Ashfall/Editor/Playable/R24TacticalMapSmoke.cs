@@ -47,7 +47,22 @@ namespace Ashfall.Editor.Playable
                     var left=new HandSample{Tracked=true};var right=left;loop.Rig.SmokeTrackedHands(left,right);loop.StepTacticalMap(left,right,true);Need(!map.Opened,"Neutral hold closed");
                     var primary=left;primary.Trigger=1;if(hand==0)left=primary;else right=primary;loop.StepTacticalMap(left,right,true);Need(!map.Opened,"Dominant trigger alone never opens support map");
                     left.Trigger=right.Trigger=0;if(hand==0)right.Trigger=1;else left.Trigger=1;loop.Rig.SmokeTrackedHands(left,right);loop.SmokeUiUpdate();Need(map.Opened,"Actual Root support-trigger map for dominant "+hand);
-                    Need(!loop.Rig.ConstructionInputAllowed,"Tactical view owns build input without blocking walking");Need(map.Board.GetComponentsInChildren<Collider>(true).Length==0,"Map board has no physical blockers");Need(Mathf.Abs(Vector3.Distance(map.Board.position,loop.Rig.Head.transform.position)-1.7f)<.001f,"Source board distance");
+                    Need(!loop.Rig.ConstructionInputAllowed,"Tactical view owns build input without blocking walking");Need(map.Board.GetComponentsInChildren<Collider>(true).Length==0,"Map board has no physical blockers");var head=loop.Rig.Head.transform;var savedHead=head.rotation;var savedBody=loop.Rig.transform.position;
+                    try
+                    {
+                        var yaw=Quaternion.LookRotation(Vector3.ProjectOnPlane(head.forward,Vector3.up));
+                        map.Sample(false,true);head.rotation=Quaternion.AngleAxis(180,Vector3.up)*yaw*Quaternion.Euler(24,0,0);
+                        var forward=Vector3.ProjectOnPlane(head.forward,Vector3.up).normalized;
+                        loop.StepTacticalMap(left,right,true);Need(map.Opened,"Support trigger opens after 180 degree head turn");
+                        var expectedAnchor=head.position+forward*.8f-Vector3.up*.2f;
+                        Need(Vector3.Distance(map.Board.position,expectedAnchor)<.001f,"Board opens .8m in front of turned head and .2m below eye level");
+                        Need(Vector3.Dot(Vector3.ProjectOnPlane(map.Board.forward,Vector3.up).normalized,forward)>.9999f,"Board yaw matches turned head");
+                        Vector3 pinned=map.Board.position;Quaternion facing=map.Board.rotation;
+                        head.rotation=savedHead;loop.Rig.transform.position+=Vector3.right*.25f;
+                        loop.StepTacticalMap(left,right,true);map.Refresh();
+                        Need(Vector3.Distance(map.Board.position,pinned)<.001f&&Quaternion.Angle(map.Board.rotation,facing)<.001f,"Held board stays at world pose after head and body motion");
+                    }
+                    finally{loop.Rig.transform.position=savedBody;head.rotation=savedHead;map.Close();loop.StepTacticalMap(left,right,true);}
                     var h=loop.Rig.Left.position;var q=loop.Rig.Left.rotation;map.Refresh();Need(loop.Rig.Left.position==h&&Quaternion.Angle(loop.Rig.Left.rotation,q)<.001f,"Map never writes tracked pose");
                     var frame=loop.Rig.transform.position;var info=loop.LaunchMapCatalog;Ashfall.Integration.Playable.TeamLaunch.R24LaunchMapInfo row;Need(info.TryRead("range",out row),"Actual authored Range bounds");var origin=loop.Map.transform.TransformPoint(new Vector3(row.RepresentedOriginUnity.X,row.RepresentedOriginUnity.Y,row.RepresentedOriginUnity.Z));var expected=new TacticalProjection(new Float3(origin.x,origin.y,origin.z),row.CatalogMinX,row.CatalogMinZ,row.CatalogMaxX,row.CatalogMaxZ).Pixel(new Float3(frame.x,frame.y,frame.z));Need(Vector2.Distance(map.PlayerPixel,new Vector2((float)expected.X,(float)expected.Y))<.001f,"Actual represented Range origin reflected once");
                     note("Dominant="+hand+" actualRoot holdOpen=true playerPixel="+map.PlayerPixel+" heading="+map.PlayerHeading+" sourceOrigin="+origin+" trackingRetained=true");

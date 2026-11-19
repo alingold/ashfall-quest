@@ -143,14 +143,14 @@ partial class LobbyCases
     }
     static void SharedRevive()
     {
-        using(var pair=new Pair()){
+        foreach(bool enable in new[]{false,true})using(var pair=new Pair()){
             var pipe=new Pipe();var ally=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));pipe.Lost=ally.TransportDisconnected;
             pair.HostPipe.Links.Add("ally",new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=pair.HostPipe,Back="ally"});ally.StartClient("server","Ally",pair.Now);pair.Host.TransportConnected("ally");
             Action tick=delegate{pair.Tick();ally.Tick(pair.Now);};
             try{
                 for(int i=0;i<8;i++)tick();Need(ally.State==R24LanLobbyState.Connected&&pair.Host.Members.Length==3,"Three members");
-                pair.Host.BindSpawnWorld(new ReviveWorld());pair.Host.BindRawTrackingWorldQuery(Open);pair.Host.BindCombatWorld(delegate(Float3 o,Float3 d,float r){return r;});
-                var rules=R24PlayableMatchRules.ForPreset("team_revive","range").With("zone_enabled",false).With("protection",0f);string hash=new string('b',64);
+                pair.Host.BindSpawnWorld(new ReviveWorld());bool clear=true;pair.Host.BindRawTrackingWorldQuery(delegate(Float3 x,Float3 y){return clear;});pair.Host.BindCombatWorld(delegate(Float3 o,Float3 d,float r){return r;});
+                var rules=R24PlayableMatchRules.ForPreset("team_revive","range").With("enemy_revive",enable).With("friendly_fire",enable).With("zone_enabled",false).With("protection",0f);string hash=new string('b',64);
                 Need(pair.Host.BeginRoundSelection(rules,hash,77)&&pair.Host.ReportMapLoaded(hash),"Round");for(int i=0;i<3;i++)tick();pair.Client.ReportMapLoaded(hash);ally.ReportMapLoaded(hash);for(int i=0;i<5;i++)tick();
                 pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);ally.Tick(pair.Now);
                 string host=pair.Host.OwnActor,enemy=pair.Client.OwnActor,friend=ally.OwnActor;
@@ -158,13 +158,81 @@ partial class LobbyCases
                 Need(ally.RequestSpawn(),"Ally spawn");for(int i=0;i<4;i++)tick();Need(pair.Host.RequestSpawn(),"Host spawn");for(int i=0;i<4;i++)tick();Need(pair.Client.RequestSpawn(),"Enemy spawn");for(int i=0;i<5;i++)tick();
                 Action raw=delegate{ally.PublishRawTracking(Body(hash,Rev(ally),0,0,0));pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),10,0,0));};
                 for(int i=0;i<3;i++){raw();pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),0,0,0));tick();}
+                var muzzle=new Float3(-1,1.6f,0);var chest=new Float3(0,1.25f,0);
+                float before=Health(pair.Host,friend).Shield;
+                Need(pair.Host.SubmitShot("cx4",0,muzzle,new[]{Dir(muzzle,chest)}),"Host volley against teammate");tick();
+                Need((Health(pair.Host,friend).Shield<before)==enable,"Friendly fire damage switch");
                 var f=Health(pair.Host,friend);Need(pair.Host.ApplyHostHealthLoss(friend,f.Revision,f.Health,f.Shield,true).Accepted&&Health(pair.Host,friend).Life==LifeState.Downed,"Ally downed (revivable)");
-                Need(!pair.Host.RequestRevive(friend)&&pair.Host.LastReviveRejection!=null,"Uncharged paddles cannot revive ("+pair.Host.LastReviveRejection+")");
-                // Host rubs paddles: both hands near the ally chest, facing, moving (source charge 5.5..10 s).
-                for(int i=0;i<140;i++){float wobble=(i%2==0?.03f:-.03f);raw();pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),0,0,0,15,-.25f+wobble,1.1f,.3f,.25f-wobble,1.1f,.3f,.7071068f,.7071068f,-.7071068f,.7071068f));tick();}
-                pair.Client.SubmitShot("cx4",0,new Float3(10,1.6f,0),new[]{Dir(new Float3(10,1.6f,0),new Float3(0,1.25f,0))});
-                Need(!pair.Client.RequestRevive(friend)||true,"Enemy request queued");raw();tick();tick();Need(Health(pair.Host,friend).Life==LifeState.Downed,"Enemy cannot revive");
-                Need(pair.Host.RequestRevive(friend),"Charged facing paddles in contact revive the downed ally ("+pair.Host.LastReviveRejection+")");
+                Need(pair.Client.SelectedMap.Rules.EnemyRevive==enable&&ally.SelectedMap.Rules.FriendlyFire==enable,"Both host switches replicated");
+                Need(!pair.Host.RequestRevive(friend),"Unarmed contact refused");
+                // Move the opposing peer in legal steps; it can touch once only when the toggle permits.
+                for(int i=0;i<21;i++){float x=Math.Max(0,10-i*.5f);ally.PublishRawTracking(Body(hash,Rev(ally),0,0,0));pair.Client.PublishRawTracking(Body(hash,Rev(pair.Client),x,0,0));tick();}
+                var outside=Body(hash,Rev(pair.Host),0,0,0,15,-.7f,1.1f,.6f,.7f,1.1f,.6f);
+                pair.Host.PublishRawTracking(outside);Need(Health(pair.Host,friend).Life==LifeState.Downed,"Both paddles miss");
+                var touch=Body(hash,Rev(pair.Host),0,0,0,15,-.7f,1.1f,.6f,.05f,1.1f,.1f);
+                clear=false;pair.Host.PublishRawTracking(touch);Need(Health(pair.Host,friend).Life==LifeState.Downed,"Wall rejects contact");clear=true;
+                for(int i=0;i<12;i++)tick();pair.Host.PublishRawTracking(touch);
+                Need(Health(pair.Host,friend).Life==LifeState.Downed,"Stale patient pose");
+                ally.PublishRawTracking(Body(hash,Rev(ally),0,0,0));tick();
+                pair.Host.PublishRawTracking(Body(hash,Rev(pair.Host),0,0,0,11,-.7f,1.1f,.6f,.05f,1.1f,.1f));
+                Need(Health(pair.Host,friend).Life==LifeState.Downed,"Lost controller rejected");
+                foreach(bool enemySwitch in new[]{false,true}){
+                    Need(!R26TeamVisibility.ShowAvatar(true,false,true,LifeState.Dead,enemySwitch),"Enemy eliminated hidden");
+                    Need(!R26TeamVisibility.ShowAvatar(true,false,true,LifeState.Spectator,enemySwitch),"Enemy spectator hidden");
+                    Need(!R26TeamVisibility.ShowAvatar(true,false,false,LifeState.Alive,enemySwitch),"Unplaced enemy spectator hidden");
+                    Need(R26TeamVisibility.ShowAvatar(true,true,true,LifeState.Dead,enemySwitch),"Friendly ghost visible");
+                    Need(R26TeamVisibility.ShowAvatar(true,false,true,LifeState.Downed,enemySwitch)==enemySwitch,"Only rescuable enemy casualty visible");
+                    Need(R26TeamVisibility.ShowAvatar(true,false,true,LifeState.Alive,enemySwitch),"Enemy living visible");
+                }
+                // Send a valid strike before charge. Try both the automatic route and the explicit command.
+                var rescuer=enable?pair.Client:pair.Host;string rescuerActor=rescuer.OwnActor;
+                var paddle=Body(hash,Rev(rescuer),0,0,0,15,-.6f,1.1f,.3f,.05f,1.1f,.1f);
+                rescuer.PublishRawTracking(paddle);tick();tick();
+                rescuer.RequestRevive(friend);tick();tick();
+                Need(Health(pair.Host,friend).Life==LifeState.Downed&&pair.Host.LastReviveRejection=="paddles-not-ready","Uncharged strike/reflected request rejected");
+                if(!enable){
+                    Need(!pair.Host.ApplyRevive(enemy,friend)&&pair.Host.LastReviveRejection=="ally-required","Enemy rescue off");
+                }
+
+                Action feedPatient=delegate{ally.PublishRawTracking(Body(hash,Rev(ally),0,0,0));};
+                Func<int,R24LanRawTracking> spin=delegate(int i){
+                    float offset=i%2==0?.05f:-.05f;
+                    const float half=.70710678f;
+                    var left=new R24LanTransform(new Float3(-.55f,1.1f,.6f+offset),new R24LanRotation(0,0,half,half));
+                    var right=new R24LanTransform(new Float3(.55f,1.1f,.6f-offset),new R24LanRotation(0,0,-half,half));
+                    return new R24LanRawTracking(hash,15,PoseAt(0,0,0),PoseAt(0,1.7f,0),left,right,0,0,Rev(rescuer));
+                };
+                Func<double> charge=delegate{
+                    double start=pair.Now;
+                    for(int i=0;i<135;i++){
+                        feedPatient();rescuer.PublishRawTracking(spin(i));tick();
+                        if(i==75)Need(Health(pair.Host,rescuerActor).ReadyUntil==0,"No early ready window");
+                        var deadline=Health(pair.Host,rescuerActor).ReadyUntil;
+                        if(deadline>0){
+                            Need(pair.Now-start>=5.45&&pair.Now-start<5.9,"Historical fast charge timing");
+                            Need(deadline-pair.Now>3.35&&deadline-pair.Now<=3.5,"Historical 3.5 second ready deadline");
+                            return deadline;
+                        }
+                    }
+                    throw new Exception("No authority charge from opposing corrected paddle normals");
+                };
+                double readyUntil=charge();
+                var miss=Body(hash,Rev(rescuer),0,0,0,15,-.6f,1.1f,.6f,.6f,1.1f,.6f);
+                while(pair.Now<readyUntil+.05){feedPatient();rescuer.PublishRawTracking(miss);tick();}
+                Need(Health(pair.Host,rescuerActor).ReadyUntil==0,"Host clears expired ready receipt");
+                feedPatient();rescuer.PublishRawTracking(paddle);tick();tick();
+                Need(Health(pair.Host,friend).Life==LifeState.Downed,"Strike after ready expiry rejected");
+                readyUntil=charge();
+                for(int i=0;i<6;i++){feedPatient();rescuer.PublishRawTracking(miss);tick();}
+                Need(Health(ally,rescuerActor).ReadyUntil==readyUntil,"Patient receives same-revision authority ready deadline");
+
+                clear=false;feedPatient();rescuer.PublishRawTracking(paddle);tick();tick();
+                Need(Health(pair.Host,friend).Life==LifeState.Downed,"Wall blocks a charged strike");
+                clear=true;
+                feedPatient();rescuer.PublishRawTracking(paddle);tick();tick();
+                Need(Health(pair.Host,friend).Life==LifeState.Alive,"First unobstructed one-electrode strike inside window");
+                Need(Health(pair.Host,rescuerActor).ReadyUntil==readyUntil,"Original window persists after a successful strike");
+                Console.WriteLine("D11 paddles: uncharged and expired touches rejected; charged " +(enable?"enemy guest":"allied host")+" accepted");
                 var back=Health(pair.Host,friend);Need(back.Life==LifeState.Alive&&back.Health==50&&back.Shield==0,"Source revive: 50 health, no shield");
                 for(int i=0;i<3;i++){raw();tick();}Need(Health(ally,friend).Life==LifeState.Alive,"Revived ally receives its host life");
                 Need(!pair.Host.RequestRevive(friend)&&pair.Host.LastReviveRejection=="downed-required","Alive target cannot be revived again");

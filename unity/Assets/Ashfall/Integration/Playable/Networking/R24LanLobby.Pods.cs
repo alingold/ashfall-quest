@@ -6,6 +6,7 @@ namespace Ashfall.Integration.Playable.Networking
     // authenticated root is inside its own team's unused cabin (TryCabin).
     public interface IR24LanPodWorld
     {bool TryPlan(string rideKey,int team,string podId,Float3 authenticatedRoot,double roundClock,out CapsulePlan plan);}
+    public interface IR26LanPlatformWorld{bool OnPlatform(Float3 feet);}
     public enum R24LanPodPhase:byte{Flying=0,Released=1,Landed=2}
     public sealed class R24LanPodState
     {
@@ -26,6 +27,17 @@ namespace Ashfall.Integration.Playable.Networking
         public int PodLaunches{get;private set;}public int PodLandings{get;private set;}public string LastPodRejection{get;private set;}
         public void BindPodWorld(IR24LanPodWorld world){Check();if(State!=R24LanLobbyState.Hosting||world==null||podWorld!=null)throw new InvalidOperationException("One host pod world required");podWorld=world;}
         void ClearPods(){ClearVehicles();ClearWeb();pods.Clear();usedPods.Clear();podStates.Clear();foreach(var p in peers.Values)p.Pods.Clear();}
+        internal bool PodSpent(string pod){return usedPods.Contains(pod);}
+        internal bool PlatformProtected(string actor)
+        {
+            var world=podWorld as IR26LanPlatformWorld;
+            if(actor==null||roundRules==null||roundRules.Mode!="revive"||world==null)return false;
+            if(PodCarried(actor))return true;
+            R24LanSpawn spawn;if(!spawnStates.TryGetValue(actor,out spawn)||spawn.Epoch!=Epoch)return false;
+            R24LanRawTrackingHistory history;
+            var latest=rawTracking.TryGetValue(actor,out history)?history.Latest:null;
+            return world.OnPlatform(latest!=null&&latest.Pose.SpawnRevision==spawn.Revision?latest.Pose.Root.Position:spawn.Feet);
+        }
         bool PodCarried(string actor){PodRide ride;return pods.TryGetValue(actor,out ride)&&ride.Phase==R24LanPodPhase.Flying;}
         public bool TryReadPod(string actor,out R24LanPodState state){Check();state=null;return actor!=null&&podStates.TryGetValue(actor,out state);}
         public static string RideKey(string actor,string hostActor){return actor==hostActor?"player":actor;}

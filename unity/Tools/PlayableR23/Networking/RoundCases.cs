@@ -4,7 +4,7 @@ partial class LobbyCases
  static void SkewTick(Pair pair){pair.Now+=.05;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now+1000);}
  static void RoundCases()
  {
-  foreach(string preset in new[]{"practice","team_revive","team_respawn","free_for_all"}){
+  foreach(string preset in new[]{"team_revive","team_respawn","free_for_all"}){
    var source=R24PlayableMatchRules.ForPreset(preset,"range");using(var stream=new MemoryStream()){using(var writer=new BinaryWriter(stream,System.Text.Encoding.UTF8,true))R24LanRoundCodec.Write(writer,source);Need(stream.Length<280,"Compact source rule snapshot fits bounded map frame");stream.Position=0;var read=R24LanRoundCodec.Read(new BinaryReader(stream),"range");foreach(string key in R24PlayableMatchRules.SourceKeys)Need(Object.Equals(source.ReadSourceValue(key),read.ReadSourceValue(key)),"Every actual source rule roundtrips: "+preset+"/"+key);Need(stream.Position==stream.Length,"No unread rule bytes");}
   }
   var clock=new R24LanHostClock();Need(clock.Reply(1000,.05,1000.1)&&Math.Abs(clock.Now(1000.2)-.2)<1e-8,"NTP-style midpoint removes1000s peer clock offset");Need(!clock.Reply(12,12,11)&&!clock.Reply(1,Double.NaN,2),"Invalid or backward clock samples refused");Need(clock.Reply(1012,12.1,1012.2),"Rolling RTT sample permits route-latency change after10s");

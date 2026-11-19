@@ -1,6 +1,12 @@
 # Large files (Google Drive)
 
-GitHub refuses big files, so every project file of 10 MB or more lives in the shared Google Drive folder **ASHFALL/large-files/unity/** with the same relative path. Download that folder into `unity/` after cloning (or use `rclone copy gdrive:ASHFALL/large-files/unity unity`). The playable APK is in **ASHFALL/** on the same Drive.
+GitHub refuses big files, so every project file of 10 MB or more lives in the Google Drive folder [**ASHFALL/large-files/unity/**](https://drive.google.com/drive/folders/1xvVT8zCFNfqmFMItjZYmZSi3wlFrEIIe) under the same relative path. After cloning, put the files in this list into `unity/`. Either download the folder from the Drive website (right-click → Download) and unzip it over `unity/`, or use rclone with any Google Drive remote:
+
+```sh
+rclone copy remote: unity --drive-root-folder-id 1xvVT8zCFNfqmFMItjZYmZSi3wlFrEIIe --files-from large-files-rclone.txt
+```
+
+This list is for version r19 (1.3.18-playtest-r19): 192 files, 5.46 GiB. Files in the Drive folder that are not listed here are leftovers from older versions and are not needed. The playable APK is in the [ASHFALL Drive folder](https://drive.google.com/drive/folders/1QeGxet4-fbRLOVT6Gc7maXNHUxReXewm); see [PLAY.md](PLAY.md).
 
 | Path | MB | SHA-256 |
 |---|---:|---|
@@ -50,28 +56,39 @@ GitHub refuses big files, so every project file of 10 MB or more lives in the sh
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/asylum-gods-pitdevil/geometry.bytes` | 20.2 | `f4a8b057ee69212481a7fa6ab95625034e07bda59fce992d754b9a66d17eb5aa` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/atrocious-gods-trashpandakiller/geometry.bytes` | 14.8 | `33962e1e19d5b32817f6a9c076eb5ea43ffb33242287f0138522f5c705739041` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/badlands-gods-pitdevil/geometry.bytes` | 21.1 | `7a453cf0b5bebc5a6716191003458e063f77c464f30d43b3c6fea0f0264489dd` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/banana-land-gods-pitdevil/geometry.bytes` | 20.4 | `29a0a71c9d0c23c46dc3a39934830c05a8b84f15e4d4385c9931a5b28bf35b29` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/beast-mode-gods-pitdevil/geometry.bytes` | 49.6 | `6a0e4340339386e1cad68c6b1cf5afe8f88c2f995b2fe08a755c7ccb734450d0` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/bi-polar-gods-trashpandakiller/geometry.bytes` | 17.6 | `7bd9b2c60501af5730f648c8e345fc24b076c23007342e61af9ff14c4d69a923` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/candle-magic-gods-goodwitch/geometry.bytes` | 22.1 | `eeca5831a85d0744dfdf60396af1e33d2913e629a406d214451c5a1844b5d796` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/caskades-gods-alamo-hank/geometry.bytes` | 12 | `b2788c7181b4a956bd18b84f7c22fd8916b6e49d22f8da9f3b359f6fbfb0b040` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/chaotic-gods-alamo-hank/geometry.bytes` | 28.3 | `b9a5ce3ba1348f5a8f59b5cc5cfe1c7e0a7ae18b6ad886a1e1144389f9187fca` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/chill-gods-pitdevil/geometry.bytes` | 18.2 | `55c87fa287616e99b3a556fbedadd43806743d962c4d4de7ec10f766999f5542` |
-| `unity/Assets/StreamingAssets/PlayableR23/Maps/cold-hearted-gods-pitdevil/geometry.bytes` | 49.3 | `cb857dde99b9bafa6c8994820fb5167d0e9eff21da3dcd9357a0408341d0db85` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/cold-castle-gods-ghostlymostly88/geometry.bytes` | 16.3 | `586dc21cc39539d14a3f413c0ce4fde24a41e73c4a5b2a279093042528838567` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/cold-hearted-gods-pitdevil/geometry.bytes` | 16.3 | `d97ea3257516530655f22e26b5b8c2d1bf53157022a2485a5d8f221dbdea0b29` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/cyber_bird/geometry.bytes` | 205.2 | `a35bed39018b171b9cae940ac7769b8dc9623f01dfbd5b6f9bfd8b4fd43e2af6` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/dark-void-gods-alamo-hank/geometry.bytes` | 39.3 | `c1630c0f4acd26fa1fafe613960d65b4ff1c5794c9a18ab27b2dd1a660504afc` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/doom-gods-pitdevil/geometry.bytes` | 14.5 | `999b5d7cd60e5192e09741737a1b5187fd1332a0bd7cd67031bf57e84ed1883f` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/ember-gods-voodoo-01/geometry.bytes` | 14.1 | `4c85f65361817686fceb9292c56a53ea819f49b62ad7c8a4f9a5ee4170993a14` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/ereptile-disfunction-gods-pitdevil/geometry.bytes` | 14.6 | `ad68d6f9d80a62be7661537c2c263b740bdc3a9976656e93d661261dd4080695` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/eternal-gods-pitdevil/geometry.bytes` | 25.1 | `d59c95deeda0a3f8b09d4cffd093f410cbbdab13c576f46380c2fddfadd62ab2` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/flash-gods-pitdevil/geometry.bytes` | 16.5 | `9c4bd7f47aca48974621d4514bcf938ee4459cf6bc1baa1f5b34c563be05804a` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/fortress-gods-putangfreyja/geometry.bytes` | 12.4 | `77c468e896c07bbfc4116950525eb930edede10079e7fed8f2ccb3532600a0c6` |
-| `unity/Assets/StreamingAssets/PlayableR23/Maps/g0dtham-gods-poplightning/geometry.bytes` | 28.3 | `59fffeb59dda2a5e81c993d2e9253dd9f5733e9c5ef1dc2281cc8a0e9df6747b` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/g-spot-gods-pitdevil/geometry.bytes` | 17.1 | `c987929c3072df2b22f0aac1901f05f02732c87e3171fa397fd8c4a90b3ada6f` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/g0dtham-gods-poplightning/geometry.bytes` | 19.7 | `f866c745af5420284ff6a1207c36e74effc56efbc2e32c598221596d0a2bb4ad` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/garden-of-eden-gods-crazytrain/geometry.bytes` | 16.1 | `58572ceedefea299ad96737d7f3714098ed82d93c6998573b6b02dd8b9accefe` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/havoc-gods-pitdevil/geometry.bytes` | 15.9 | `4459c5ef8c381efa0b5ff724f68aee57584cf1fe68acd5ec825ef00af775177b` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/high-ground-gods-thor/geometry.bytes` | 17.5 | `7c1f00332da2d3a362ab2eee64c0db15d737d2e576d3edc8b3d38b8bf1cac448` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/hildrs-echo-gods-pitdevil/geometry.bytes` | 15.7 | `5ff5e86f53e285b7a920cd7d22dd0a3216ec19d813b8a6c8160f0bdb868d3b1d` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/holy-ground-gods-pitdevil/geometry.bytes` | 17.2 | `319bc62ed91c064900c861a0b6191b0272049f6b0b0bf37c6dc0726adab1d270` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/hunted-gods-pitdevil/geometry.bytes` | 13.1 | `f03b7093eeb154c4f313d8a51c9b923fa8a8c9f32f114bb992a2310b0b195af7` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/hypnosis-gods-pitdevil/geometry.bytes` | 18.1 | `0309d0c2a39d6a705a191d76ec88298d8a5569c1c4b543b462a047dc8825daff` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/ice-and-fire-tdm-go-kc/geometry.bytes` | 18.8 | `6601bce5b5746c23a14951f181b8592131090fcea309cb9b7502a71bd1df63dd` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/la-la-la-gods-trashpandakiller/geometry.bytes` | 16.6 | `2cf8b4bc1de970326b56fdac35241998f9956233f36fb0b15c6bb9d671cd08aa` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/light-vs-dark-gods-badbar/geometry.bytes` | 12.2 | `0b5044ebfc55affd5797a2d1722e83f0ae747052a708029f11dd8f12d6f74b09` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/meli-cafe-gods-meli/geometry.bytes` | 17.7 | `8ead2cac547c7d3eabf50afdd5d63d9d7c447c4352a6de7f67d629dee33e6c90` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/melipop-gods-poplightning/geometry.bytes` | 10.5 | `89fbf2c9068ece9b9ce3db50b62890b8d325d63eb8f6e45b6dc28cbca09a588a` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/melis-cafe-gods-pitdevil/geometry.bytes` | 66.5 | `56a78961f0de094123acd5799a636ac9121176cf981a459791d9ea9057bdd99e` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/meliworld-gods-meli/geometry.bytes` | 18.8 | `f36cb2cc19a1eab0e42aaeb449afdbc6f6a364b49442538e7580cd5726c7b991` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/metal-mayhem-ghostlymostly88/geometry.bytes` | 15.9 | `ff4cb7d768fdcc748987a1036ebec78d9fd0d03d70f4ff6ed7707f5dc8e0d54c` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/mushy-2-gods-putangfreyja/geometry.bytes` | 17.8 | `81836e096c0f51c49ea399e1c4f01070400e89b964d88b7b20573e3d72a36a6d` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/mushy-gods-putangfreyja/geometry.bytes` | 19.3 | `06edaf1705ec9af3b092747159042fcbd178f917ccf0cc1f2f0fee3773085de7` |
@@ -84,6 +101,7 @@ GitHub refuses big files, so every project file of 10 MB or more lives in the sh
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/realtree-gods-poplightning/geometry.bytes` | 14.1 | `c76502deec54b29ce0e635ee13b52a00a1c4d2018388035df4723f89528097f8` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/robotics-2-gods-pitdevil/geometry.bytes` | 96.6 | `4087563791f292c6c2a4ab1992fcd4181dbd45ee5201e6eb9c33ebe09bbc4997` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/romulus-gods-skblong/geometry.bytes` | 18.8 | `26900f4eabe81dbe54aba8b159fb9f0c115726da1320399f76b309737fb96ed2` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/rush-gods-chriso/geometry.bytes` | 14.6 | `77df423d831e2c18a917453f74c150418537dfd602d3145c31f933f863a22c09` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/sean0311-gods-sean0311/geometry.bytes` | 10.6 | `8d2246eeaff0a1c94cdde4891c9e7ec5ccadf7814846c096e5d37ca15dabfddc` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/suffering-gods-thor/geometry.bytes` | 11.9 | `81185ba42a86ce78b62b8df688d18c43339949ab77f42d6791382e02d39f4b72` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/survive-gods-goodwitch/geometry.bytes` | 20.9 | `7e3f247a464caa20c8de7b1d2a8b813e63e9711793d10b90d5571a1970b510e8` |
@@ -99,6 +117,7 @@ GitHub refuses big files, so every project file of 10 MB or more lives in the sh
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/trauma-gods-pitdevil/geometry.bytes` | 30 | `6bf3d058ab85a3033dbc12a918b0663a720b603e5bed80f16edc0ae053e32121` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/valley/geometry.bytes` | 132 | `189381acf43228a9298daf07116d572372d56c7032531f014947de80e36f5e56` |
 | `unity/Assets/StreamingAssets/PlayableR23/Maps/viral-gods-ghostlymostly88/geometry.bytes` | 13.4 | `584255df109234ec243f9c667330d6338a53450134014310203820ed6618ace4` |
+| `unity/Assets/StreamingAssets/PlayableR23/Maps/warpath-gods-pitdevil/geometry.bytes` | 15.2 | `968d143e6bf390e0a93b70af9dbb3dadef25846c5d6d90f9b81aa7288ef89a8a` |
 | `unity/Assets/StreamingAssets/PlayableR23/World/geometry.bytes` | 30.6 | `d8d7eaae4e85c4a3480a1c7424c93828b3d7ff89d405f21d5c39e59828995eb1` |
 | `unity/Tools/PlayableR23/SourceWorldExport/runs/prepared-r23-valley-range/reference/assets/models/custom_skins/ace/player_kit_ace_pcvr.glb` | 14.3 | `b0c4cdb9bcee7631d5d888a3f829159cba9cc338b9581a49a7643814d1bb17a6` |
 | `unity/Tools/PlayableR23/SourceWorldExport/runs/prepared-r23-valley-range/reference/assets/models/custom_skins/ace_sergeant/player_kit_ace_sergeant_pcvr.glb` | 16.3 | `2ca3655b330ad8922c9770192b8981c012110cd82f856e1adae29c7cb000db64` |

@@ -1,5 +1,5 @@
 #if UNITY_6000_0_OR_NEWER
-using System;using UnityEngine;using Ashfall.Modules.HealthStates;
+using System;using UnityEngine;using Ashfall.Modules.HealthStates;using Ashfall.Modules.WeaponHandling;
 namespace Ashfall.Integration.Playable.HandsWeapons {
  public sealed partial class R23HandsWeapons {
   public HealthSnapshot LocalMatchHealth{get{return round==null?null:round.PlayerHealthState;}}public bool LocalMatchHealthConfigured{get{return round!=null&&round.LocalMatchHealthConfigured;}}
@@ -7,6 +7,19 @@ namespace Ashfall.Integration.Playable.HandsWeapons {
   public bool ResetMapVitals(){return round!=null&&round.ResetMapVitals();}
   public bool ApplyLocalMatchFall(){return round!=null&&round.ApplyLocalMatchFall();}
   public void AdvanceLocalMatchHealth(double clock){if(round!=null)round.AdvanceLocalMatchHealth(clock);}public bool TryRespawnLocalMatch(){return round!=null&&round.TryRespawnLocalMatch();}public void EndLocalMatchHealth(){if(round!=null)round.EndLocalMatchHealth();}public void SetLocalMatchInfiniteAmmo(bool enabled){if(round!=null)round.SetLocalMatchInfiniteAmmo(enabled);}public int ReadStoredAmmoReserveFamily(string family){return round==null?0:round.ReadStoredAmmoReserveFamily(family);}
+  internal bool ScatterOwnedForDeath(string id,Vector3 at,out string dropped)
+  {
+   dropped=null;R23WeaponInstanceInfo info;
+   if(!ownedWeapons.Contains(id)||!round.TryReadWeaponInstance(id,out info))return false;
+   // Keep the reusable bare profile for the fresh starter. The ground copy has its own native owner.
+   if(info.ProfileId!=id){if(!DropOwned(id,at,Quaternion.identity))return false;dropped=id;return true;}
+   if(!SpawnWorldWeapon(info.ProfileId,info.Stars,at,Quaternion.identity,out dropped))return false;
+   if(Networking.R24LanLoadout.Melee(id)||id=="grapple")return true;
+   var magazine=round.ReadWeapon(id);int loaded=magazine.Phase==ReloadPhase.NeedsRack?magazine.Seated:magazine.Loaded;
+   string family=Networking.R24LanLoadout.Family(id);int reserve=family==null?round.ReadReserve(id):round.ReadStoredAmmoReserveFamily(family);
+   round.ReconcileNetworkAmmo(dropped,loaded,-1,-1,reserve);
+   return true;
+  }
   public bool ConfigureLocalMatchLoadout(int[] catalog){
    if(!Ready||catalog==null||catalog.Length==0||catalog.Length>3)return false;
    var profiles=new string[catalog.Length];

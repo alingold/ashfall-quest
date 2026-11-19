@@ -12,11 +12,12 @@ namespace Ashfall.Integration.Playable
     public sealed partial class R23PlayableLoop
     {
         Coroutine sourceArchiveEntry;long sourceArchiveEntryTicket;bool sourceArchiveCommitting,sourceArchiveRoundStartValid;
+        R24ArchiveSpawnPlan entrySpawnPlan;Transform entrySpawnGeometry;Matrix4x4 entrySpawnMatrix;
         Vector3 sourceArchiveRoundStart;string sourceArchiveRoundMap,sourceArchiveRoundManifest;
         public bool SourceArchiveEntryPending{get{return sourceArchiveEntry!=null;}}
         public string SourceArchiveEntryFailure{get;private set;}
         void CancelSourceArchiveEntry()
-        {sourceArchiveEntryTicket++;if(sourceArchiveEntry!=null)StopCoroutine(sourceArchiveEntry);sourceArchiveEntry=null;sourceArchiveCommitting=false;sourceArchiveRoundStartValid=false;}
+        {sourceArchiveEntryTicket++;entrySpawnPlan=null;entrySpawnGeometry=null;if(sourceArchiveEntry!=null)StopCoroutine(sourceArchiveEntry);sourceArchiveEntry=null;sourceArchiveCommitting=false;sourceArchiveRoundStartValid=false;}
         bool BeginSourceArchiveEntry()
         {
             if(!Ready||Map==null||!Map.IsLoaded||!Map.MapId.StartsWith("archive:",StringComparison.Ordinal)||ActualMatchRules!=null||sourceArchiveCommitting||LanSession!=null&&LanSession.Lobby!=null)return false;
@@ -52,6 +53,7 @@ namespace Ashfall.Integration.Playable
                 }
                 Vector3 world;if(!found||!TryArchiveSourceToWorld(selected,out world)){RefuseSourceArchiveEntry(ticket,"No validated authored source spawn is clear");yield break;}
                 activeSpawn=world;sourceArchiveRoundStart=world;sourceArchiveRoundStartValid=pendingMatch!=null;sourceArchiveRoundMap=map;sourceArchiveRoundManifest=hash;
+                entrySpawnPlan=plan;entrySpawnGeometry=CurrentArchiveGeometry();entrySpawnMatrix=Map.transform.localToWorldMatrix;
                 sourceArchiveCommitting=true;StartPlayingCore();sourceArchiveCommitting=false;
             }
             finally{if(ticket==sourceArchiveEntryTicket)sourceArchiveEntry=null;sourceArchiveCommitting=false;}
@@ -69,14 +71,18 @@ namespace Ashfall.Integration.Playable
         bool TrySourceRoundStart(int round,out Vector3 world)
         {
             world=Map.GameSpawn;
-            if(LanRoundBound||!R24ArchiveRoundPolicy.GroundTeams(Map.MapId))return true;
+            if(LanRoundBound||R26MapPodPolicy.UsesPods(Map.MapId))return true;
             if(R24ArchiveRoundPolicy.FiveLevels(Map.MapId)&&(round<1||round>5))return false;
             if(round==1&&sourceArchiveCommitting&&sourceArchiveRoundStartValid&&sourceArchiveRoundMap==Map.MapId&&sourceArchiveRoundManifest==Map.ManifestSha256){world=sourceArchiveRoundStart;sourceArchiveRoundStartValid=false;return true;}
             R24ArchiveRecoveryInfo info;R24LaunchMapInfo frame;
             if(!archiveRecoveryCatalog.TryRead(Map.MapId,out info)||!LaunchMapCatalog.TryRead(Map.MapId,out frame)||info.SourceSha256!=Map.SourceSha256||frame.SourceSha256!=info.SourceSha256)return false;
-            if(R24ArchiveRoundPolicy.Forcefield(Map.MapId)){
-                if(!ArchiveWorldReady)return false;int team=ActualMatchRules.Teams>0?LocalMatchTeam:-1;
-                var choice=R24LanSourceSpawnSelection.Archive(info,ArchiveWorldPlan,new ArchiveRecoveryWorld(this,info,frame),"player",0,team,ActualMatchRules.Teams,true,new R24LanSpawnNeighbour[0],null,delegate(int n){return UnityEngine.Random.Range(0,n);},delegate(Float3 p){return SourcePlayerVolumeClear(p,frame);},round);
+            if(R24ArchiveRoundPolicy.Forcefield(Map.MapId)||R26MapPodPolicy.HasExplicitOrAutoRow(Map.MapId)){
+                // Restart changes the clock epoch before the map planner has a frame to rebuild.
+                // Reuse its same-geometry candidate list. Archive() repeats live floor, volume and round checks.
+                var plan=ArchiveWorldPlan;
+                if(plan==null&&sourceArchiveRoundMap==Map.MapId&&sourceArchiveRoundManifest==Map.ManifestSha256&&entrySpawnGeometry!=null&&entrySpawnGeometry==CurrentArchiveGeometry()&&entrySpawnMatrix.Equals(Map.transform.localToWorldMatrix))plan=entrySpawnPlan;
+                if(plan==null||!plan.Ready)return false;int team=ActualMatchRules.Teams>0?LocalMatchTeam:-1;
+                var choice=R24LanSourceSpawnSelection.Archive(info,plan,new ArchiveRecoveryWorld(this,info,frame),"player",0,team,ActualMatchRules.Teams,true,new R24LanSpawnNeighbour[0],null,delegate(int n){return UnityEngine.Random.Range(0,n);},delegate(Float3 p){return SourcePlayerVolumeClear(p,frame);},round);
                 if(!choice.Validated)return false;world=ArchiveToWorld(choice.Position,frame);return true;
             }
             IEnumerable<Float3> hints=R24ArchiveRoundPolicy.FiveLevels(Map.MapId)?(IEnumerable<Float3>)info.Deathmatch:info.Recorded;

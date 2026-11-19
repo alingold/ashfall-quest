@@ -12,7 +12,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
     // No shared rocket pool or tactical loaded-round refund exists in R5.
     public sealed class R24SmawRuntime:IAuthorityGate,ISourceWeaponLifetimeAuthority,ISourceLaunchBinding
     {
-        public const int Capacity=1,InitialReloads=2;public const float ModelScale=1.6f,RocketSpeed=200,Radius=4,ProjectileSeconds=8,CollisionRadius=.035f;
+        public const int Capacity=1,InitialReloads=2;public const float ModelScale=1.6f,RocketSpeed=200,Radius=4,ProjectileSeconds=SourceRifleDefinition.FirearmRange/RocketSpeed,CollisionRadius=.035f;
         public static readonly Float3 SourceMuzzle=new Float3(0,.045f,.85f),Grip=new Float3(0,-.105f,.55f),ModelOffset=new Float3(0,.111f,-.905f),Insert=new Float3(0,.045f,.96f);
         public static Float3 Offer {get{return new Float3(0,.045f,1.15f-.3048f/ModelScale);}}
         public static Float3 RearOffer {get{return new Float3(0,.045f,Offer.Z-.06f/ModelScale);}}

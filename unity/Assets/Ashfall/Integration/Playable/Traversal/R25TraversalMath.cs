@@ -46,6 +46,8 @@ namespace Ashfall.Integration.Playable.Traversal
     }
     public sealed class R25WebRope
     {
+        const float ReelSpeed=27,ReelTugSpeed=18;
+        public const float MaxReelSpeed=ReelSpeed+ReelTugSpeed;
         public bool Attached { get; private set; }
         public Float3 Anchor { get; private set; }
         public float Length { get; private set; }
@@ -66,6 +68,28 @@ namespace Ashfall.Integration.Playable.Traversal
             if(!Attached)return;life+=dt;FlightRemaining=Math.Max(0,FlightRemaining-dt);blocked=obstructed?blocked+dt:0;
             if(!held||!anchorAlive||life>=12||blocked>.3f)Detach();
         }
+        public Float3 Reel(Float3 head,float trigger,float tug,float dt)
+        {
+            if(!Attached||FlightRemaining>0||!head.IsFinite||float.IsNaN(trigger)||float.IsInfinity(trigger)||float.IsNaN(tug)||float.IsInfinity(tug)||float.IsNaN(dt)||dt<=0||dt>.1f)return new Float3();
+            float speed=ReelSpeed*Math.Max(0,Math.Min(1,trigger));
+            if(Zip(tug))speed+=ReelTugSpeed;
+            // The reel owns displacement. Previous motion and gravity never bend its path.
+            return R25TraversalVector.Limit(R25TraversalVector.Sub(Anchor,head),speed*dt);
+        }
+        public static float ReachFraction(Float3 hand,Float3 anchor,Float3 outward,Float3 motion,float reach)
+        {
+            float gap=R25TraversalVector.Dot(R25TraversalVector.Sub(hand,anchor),outward);
+            float advance=-R25TraversalVector.Dot(motion,outward);
+            if(gap<=reach)return 0;
+            return advance>0?Math.Min(1,(gap-reach)/advance):1;
+        }
+        bool Zip(float tug)
+        {
+            if(tug<=2.2f||zipCooldown>0)return false;
+            zipCooldown=.6f;Zipped=true;return true;
+        }
+        // Preserve the swing solver API for existing callers. The gun's held
+        // trigger uses Reel, whose displacement has neither gravity nor slack.
         public Float3 Forces(Float3 p,Float3 velocity,float trigger,float tug,float dt)
         {
             if(!velocity.IsFinite||!p.IsFinite||float.IsNaN(trigger)||float.IsInfinity(trigger)||float.IsNaN(tug)||float.IsInfinity(tug)||float.IsNaN(dt)||dt<=0||dt>.1f)return new Float3();
@@ -73,7 +97,7 @@ namespace Ashfall.Integration.Playable.Traversal
             trigger=Math.Max(0,Math.Min(1,trigger));Length=Math.Max(2,Length-9*trigger*dt);
             Float3 delta=R25TraversalVector.Sub(Anchor,p);float distance=R25TraversalVector.Length(delta);Float3 n=R25TraversalVector.Unit(delta);
             if(distance>=Length-.05f)velocity=R25TraversalVector.Add(velocity,R25TraversalVector.Mul(n,22*trigger*dt));
-            if(tug>2.2f&&zipCooldown<=0){velocity=R25TraversalVector.Add(velocity,R25TraversalVector.Mul(n,6));zipCooldown=.6f;Zipped=true;}
+            if(Zip(tug))velocity=R25TraversalVector.Add(velocity,R25TraversalVector.Mul(n,6));
             return R25TraversalVector.Limit(velocity,32);
         }
         public Float3 Constrain(Float3 p,ref Float3 velocity)
@@ -86,7 +110,7 @@ namespace Ashfall.Integration.Playable.Traversal
             return R25TraversalVector.Add(Anchor,R25TraversalVector.Mul(n,Length));
         }
         // Corrections are never launch energy: only accepted physical displacement enters here.
-        public static Float3 Accept(Float3 physical,float dt) { return dt>0&&dt<=.1f?R25TraversalVector.Limit(R25TraversalVector.Mul(physical,1/dt),32):new Float3(); }
+        public static Float3 Accept(Float3 physical,float dt,float cap=32) { return dt>0&&dt<=.1f?R25TraversalVector.Limit(R25TraversalVector.Mul(physical,1/dt),cap):new Float3(); }
     }
     public sealed class R25WebState
     {

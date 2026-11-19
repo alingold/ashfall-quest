@@ -1,0 +1,2602 @@
+{
+  "recipe": "source native marker validation, recorded support, then 19x19 floor-grid fallback; fallback ranks floors near archive arena center",
+  "spawnFloorsAdded": false,
+  "standingClearance": 1.9288,
+  "capsuleRadius": 0.3,
+  "fallback": {
+    "recipe": "archive_map1003._settle 19x19 floor-grid fallback + community_map1002._room + _separate_spawns_r8",
+    "gridCandidates": 361,
+    "validFloorRoomCandidates": 249,
+    "selectedFallbackCandidates": [
+      {
+        "grid": [
+          9,
+          9
+        ],
+        "floor": [
+          40.09871417882994,
+          40.5,
+          -7.680555827947799
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          40.09871417882994,
+          40.62,
+          -7.680555827947799
+        ]
+      },
+      {
+        "grid": [
+          10,
+          9
+        ],
+        "floor": [
+          51.62488818829728,
+          40.5,
+          -7.680555827947799
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          51.62488818829728,
+          40.62,
+          -7.680555827947799
+        ]
+      },
+      {
+        "grid": [
+          9,
+          10
+        ],
+        "floor": [
+          40.09871417882994,
+          40.5,
+          -19.20672983741514
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          40.09871417882994,
+          40.62,
+          -19.20672983741514
+        ]
+      },
+      {
+        "grid": [
+          9,
+          8
+        ],
+        "floor": [
+          40.09871417882994,
+          48.0,
+          3.845618181519569
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          62,
+          18
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          40.09871417882994,
+          48.12,
+          3.845618181519569
+        ]
+      },
+      {
+        "grid": [
+          8,
+          9
+        ],
+        "floor": [
+          28.57254016936257,
+          48.0,
+          -7.680555827947799
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          41
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 17,
+            "minimumDistance": 5.7859900174164425
+          }
+        },
+        "spawn": [
+          28.57254016936257,
+          48.12,
+          -7.680555827947799
+        ]
+      },
+      {
+        "grid": [
+          10,
+          10
+        ],
+        "floor": [
+          51.62488818829728,
+          40.5,
+          -19.20672983741514
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          51.62488818829728,
+          40.62,
+          -19.20672983741514
+        ]
+      },
+      {
+        "grid": [
+          10,
+          8
+        ],
+        "floor": [
+          51.62488818829728,
+          48.0,
+          3.845618181519569
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          62,
+          18
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                18
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          51.62488818829728,
+          48.12,
+          3.845618181519569
+        ]
+      },
+      {
+        "grid": [
+          8,
+          10
+        ],
+        "floor": [
+          28.57254016936257,
+          48.0,
+          -19.20672983741514
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          41
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          28.57254016936257,
+          48.12,
+          -19.20672983741514
+        ]
+      },
+      {
+        "grid": [
+          8,
+          8
+        ],
+        "floor": [
+          28.57254016936257,
+          52.0,
+          3.845618181519569
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          45
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          28.57254016936257,
+          52.12,
+          3.845618181519569
+        ]
+      },
+      {
+        "grid": [
+          9,
+          11
+        ],
+        "floor": [
+          40.09871417882994,
+          40.5,
+          -30.732903846882493
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          40.09871417882994,
+          40.62,
+          -30.732903846882493
+        ]
+      },
+      {
+        "grid": [
+          9,
+          7
+        ],
+        "floor": [
+          40.09871417882994,
+          48.0,
+          15.371792190986909
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          62,
+          121
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          40.09871417882994,
+          48.12,
+          15.371792190986909
+        ]
+      },
+      {
+        "grid": [
+          7,
+          9
+        ],
+        "floor": [
+          17.04636615989523,
+          52.0,
+          -7.680555827947799
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          45
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 52.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                45
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          17.04636615989523,
+          52.12,
+          -7.680555827947799
+        ]
+      },
+      {
+        "grid": [
+          10,
+          11
+        ],
+        "floor": [
+          51.62488818829728,
+          40.5,
+          -30.732903846882493
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          23,
+          294
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 40.5,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                23,
+                294
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          51.62488818829728,
+          40.62,
+          -30.732903846882493
+        ]
+      },
+      {
+        "grid": [
+          8,
+          7
+        ],
+        "floor": [
+          28.57254016936257,
+          48.0,
+          15.371792190986909
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          41
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 17,
+            "minimumDistance": 2.8412783127770354
+          }
+        },
+        "spawn": [
+          28.57254016936257,
+          48.12,
+          15.371792190986909
+        ]
+      },
+      {
+        "grid": [
+          10,
+          7
+        ],
+        "floor": [
+          51.62488818829728,
+          48.0,
+          15.371792190986909
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          62,
+          121
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                62,
+                121
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          51.62488818829728,
+          48.12,
+          15.371792190986909
+        ]
+      },
+      {
+        "grid": [
+          7,
+          10
+        ],
+        "floor": [
+          17.04636615989523,
+          48.0,
+          -19.20672983741514
+        ],
+        "normal": [
+          -0.0,
+          1.0,
+          -0.0
+        ],
+        "witness": [
+          61,
+          41
+        ],
+        "proof": {
+          "footprint": [
+            {
+              "offset": [
+                0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                -0.4,
+                0
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            },
+            {
+              "offset": [
+                0,
+                -0.4
+              ],
+              "height": 48.0,
+              "normal": [
+                -0.0,
+                1.0,
+                -0.0
+              ],
+              "witness": [
+                61,
+                41
+              ]
+            }
+          ],
+          "capsule": {
+            "candidateTriangles": 0,
+            "minimumDistance": null
+          }
+        },
+        "spawn": [
+          17.04636615989523,
+          48.12,
+          -19.20672983741514
+        ]
+      }
+    ],
+    "game": {
+      "grid": [
+        9,
+        9
+      ],
+      "floor": [
+        40.09871417882994,
+        40.5,
+        -7.680555827947799
+      ],
+      "normal": [
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      "witness": [
+        23,
+        294
+      ],
+      "proof": {
+        "footprint": [
+          {
+            "offset": [
+              0.4,
+              0
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              -0.4,
+              0
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              0,
+              0.4
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              0,
+              -0.4
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          }
+        ],
+        "capsule": {
+          "candidateTriangles": 0,
+          "minimumDistance": null
+        }
+      },
+      "spawn": [
+        40.09871417882994,
+        40.62,
+        -7.680555827947799
+      ]
+    },
+    "warmup": {
+      "grid": [
+        9,
+        9
+      ],
+      "floor": [
+        40.09871417882994,
+        40.5,
+        -7.680555827947799
+      ],
+      "normal": [
+        -0.0,
+        1.0,
+        -0.0
+      ],
+      "witness": [
+        23,
+        294
+      ],
+      "proof": {
+        "footprint": [
+          {
+            "offset": [
+              0.4,
+              0
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              -0.4,
+              0
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              0,
+              0.4
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          },
+          {
+            "offset": [
+              0,
+              -0.4
+            ],
+            "height": 40.5,
+            "normal": [
+              -0.0,
+              1.0,
+              -0.0
+            ],
+            "witness": [
+              23,
+              294
+            ]
+          }
+        ],
+        "capsule": {
+          "candidateTriangles": 0,
+          "minimumDistance": null
+        }
+      },
+      "spawn": [
+        40.09871417882994,
+        40.62,
+        -7.680555827947799
+      ]
+    },
+    "standingClearance": 1.9288,
+    "capsuleRadius": 0.3,
+    "footprintOffsets": 0.4,
+    "capsuleBottomGap": 0.02,
+    "recordedSpawns": 0,
+    "authoredDeathmatchSpawns": 0,
+    "authoredWarmupSpawns": 0,
+    "spawnFloorsAdded": false
+  },
+  "game": {
+    "spawn": [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    "floor": [
+      40.09871417882992,
+      40.5,
+      -7.680555827947785
+    ],
+    "normal": [
+      -0.0,
+      1.0,
+      -0.0
+    ],
+    "witness": [
+      23,
+      294
+    ],
+    "source": "collision floor nearest public arena center",
+    "proof": {
+      "footprint": [
+        {
+          "offset": [
+            0.4,
+            0
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            -0.4,
+            0
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            0,
+            0.4
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            0,
+            -0.4
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        }
+      ],
+      "capsule": {
+        "candidateTriangles": 0,
+        "minimumDistance": null
+      }
+    }
+  },
+  "warmup": {
+    "spawn": [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    "floor": [
+      40.09871417882992,
+      40.5,
+      -7.680555827947785
+    ],
+    "normal": [
+      -0.0,
+      1.0,
+      -0.0
+    ],
+    "witness": [
+      23,
+      294
+    ],
+    "source": "collision floor nearest public arena center",
+    "proof": {
+      "footprint": [
+        {
+          "offset": [
+            0.4,
+            0
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            -0.4,
+            0
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            0,
+            0.4
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        },
+        {
+          "offset": [
+            0,
+            -0.4
+          ],
+          "height": 40.5,
+          "normal": [
+            -0.0,
+            1.0,
+            -0.0
+          ],
+          "witness": [
+            23,
+            294
+          ]
+        }
+      ],
+      "capsule": {
+        "candidateTriangles": 0,
+        "minimumDistance": null
+      }
+    }
+  },
+  "nativeValid": {
+    "deathmatch": 0,
+    "warmup": 0
+  },
+  "recordedInput": 0,
+  "verifiedMatchSites": [
+    [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      41.09871417882992,
+      40.62,
+      -5.948505020378908
+    ],
+    [
+      39.09871417882992,
+      40.62,
+      -5.948505020378907
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      39.09871417882992,
+      40.62,
+      -9.412606635516662
+    ],
+    [
+      41.09871417882992,
+      40.62,
+      -9.412606635516662
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      43.56281579396768,
+      40.62,
+      -5.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -4.216454212810031
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -3.680555827947785
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -4.21645421281003
+    ],
+    [
+      36.634612563692166,
+      40.62,
+      -5.680555827947785
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -7.680555827947784
+    ],
+    [
+      36.634612563692166,
+      40.62,
+      -9.680555827947783
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -11.144657443085539
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -11.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -11.144657443085539
+    ],
+    [
+      43.56281579396767,
+      40.62,
+      -9.680555827947787
+    ],
+    [
+      48.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      47.02691740910543,
+      40.62,
+      -3.6805558279477855
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -0.7523525976722762
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      0.319444172052215
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -0.7523525976722754
+    ],
+    [
+      33.170510948554416,
+      40.62,
+      -3.6805558279477855
+    ],
+    [
+      32.09871417882992,
+      40.62,
+      -7.680555827947784
+    ],
+    [
+      33.17051094855441,
+      40.62,
+      -11.680555827947783
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -14.608759058223292
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -15.680555827947785
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -14.608759058223294
+    ],
+    [
+      47.02691740910543,
+      40.62,
+      -11.680555827947789
+    ]
+  ],
+  "verifiedWarmupSites": [
+    [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      41.09871417882992,
+      40.62,
+      -5.948505020378908
+    ],
+    [
+      39.09871417882992,
+      40.62,
+      -5.948505020378907
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      39.09871417882992,
+      40.62,
+      -9.412606635516662
+    ],
+    [
+      41.09871417882992,
+      40.62,
+      -9.412606635516662
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      43.56281579396768,
+      40.62,
+      -5.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -4.216454212810031
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -3.680555827947785
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -4.21645421281003
+    ],
+    [
+      36.634612563692166,
+      40.62,
+      -5.680555827947785
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -7.680555827947784
+    ],
+    [
+      36.634612563692166,
+      40.62,
+      -9.680555827947783
+    ],
+    [
+      38.09871417882992,
+      40.62,
+      -11.144657443085539
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -11.680555827947785
+    ],
+    [
+      42.09871417882992,
+      40.62,
+      -11.144657443085539
+    ],
+    [
+      43.56281579396767,
+      40.62,
+      -9.680555827947787
+    ],
+    [
+      48.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    [
+      47.02691740910543,
+      40.62,
+      -3.6805558279477855
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -0.7523525976722762
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      0.319444172052215
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -0.7523525976722754
+    ],
+    [
+      33.170510948554416,
+      40.62,
+      -3.6805558279477855
+    ],
+    [
+      32.09871417882992,
+      40.62,
+      -7.680555827947784
+    ],
+    [
+      33.17051094855441,
+      40.62,
+      -11.680555827947783
+    ],
+    [
+      36.09871417882992,
+      40.62,
+      -14.608759058223292
+    ],
+    [
+      40.09871417882992,
+      40.62,
+      -15.680555827947785
+    ],
+    [
+      44.09871417882992,
+      40.62,
+      -14.608759058223294
+    ],
+    [
+      47.02691740910543,
+      40.62,
+      -11.680555827947789
+    ]
+  ],
+  "finalRuntimeValidation": {
+    "gameSpawn": [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    "warmupSpawn": [
+      40.09871417882992,
+      40.62,
+      -7.680555827947785
+    ],
+    "matchSites": [
+      [
+        40.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        41.09871417882992,
+        40.62,
+        -5.948505020378908
+      ],
+      [
+        39.09871417882992,
+        40.62,
+        -5.948505020378907
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        39.09871417882992,
+        40.62,
+        -9.412606635516662
+      ],
+      [
+        41.09871417882992,
+        40.62,
+        -9.412606635516662
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        43.56281579396768,
+        40.62,
+        -5.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -4.216454212810031
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -3.680555827947785
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -4.21645421281003
+      ],
+      [
+        36.634612563692166,
+        40.62,
+        -5.680555827947785
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -7.680555827947784
+      ],
+      [
+        36.634612563692166,
+        40.62,
+        -9.680555827947783
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -11.144657443085539
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -11.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -11.144657443085539
+      ],
+      [
+        43.56281579396767,
+        40.62,
+        -9.680555827947787
+      ],
+      [
+        48.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        47.02691740910543,
+        40.62,
+        -3.6805558279477855
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -0.7523525976722762
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        0.319444172052215
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -0.7523525976722754
+      ],
+      [
+        33.170510948554416,
+        40.62,
+        -3.6805558279477855
+      ],
+      [
+        32.09871417882992,
+        40.62,
+        -7.680555827947784
+      ],
+      [
+        33.17051094855441,
+        40.62,
+        -11.680555827947783
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -14.608759058223292
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -15.680555827947785
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -14.608759058223294
+      ],
+      [
+        47.02691740910543,
+        40.62,
+        -11.680555827947789
+      ]
+    ],
+    "warmupSites": [
+      [
+        40.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        41.09871417882992,
+        40.62,
+        -5.948505020378908
+      ],
+      [
+        39.09871417882992,
+        40.62,
+        -5.948505020378907
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        39.09871417882992,
+        40.62,
+        -9.412606635516662
+      ],
+      [
+        41.09871417882992,
+        40.62,
+        -9.412606635516662
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        43.56281579396768,
+        40.62,
+        -5.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -4.216454212810031
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -3.680555827947785
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -4.21645421281003
+      ],
+      [
+        36.634612563692166,
+        40.62,
+        -5.680555827947785
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -7.680555827947784
+      ],
+      [
+        36.634612563692166,
+        40.62,
+        -9.680555827947783
+      ],
+      [
+        38.09871417882992,
+        40.62,
+        -11.144657443085539
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -11.680555827947785
+      ],
+      [
+        42.09871417882992,
+        40.62,
+        -11.144657443085539
+      ],
+      [
+        43.56281579396767,
+        40.62,
+        -9.680555827947787
+      ],
+      [
+        48.09871417882992,
+        40.62,
+        -7.680555827947785
+      ],
+      [
+        47.02691740910543,
+        40.62,
+        -3.6805558279477855
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -0.7523525976722762
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        0.319444172052215
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -0.7523525976722754
+      ],
+      [
+        33.170510948554416,
+        40.62,
+        -3.6805558279477855
+      ],
+      [
+        32.09871417882992,
+        40.62,
+        -7.680555827947784
+      ],
+      [
+        33.17051094855441,
+        40.62,
+        -11.680555827947783
+      ],
+      [
+        36.09871417882992,
+        40.62,
+        -14.608759058223292
+      ],
+      [
+        40.09871417882992,
+        40.62,
+        -15.680555827947785
+      ],
+      [
+        44.09871417882992,
+        40.62,
+        -14.608759058223294
+      ],
+      [
+        47.02691740910543,
+        40.62,
+        -11.680555827947789
+      ]
+    ],
+    "sourceKillzoneGroups": 0,
+    "convexRuntimeKillzones": 0
+  }
+}

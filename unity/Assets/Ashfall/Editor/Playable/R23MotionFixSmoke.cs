@@ -62,7 +62,9 @@ namespace Ashfall.Editor.Playable
                 for(int i=0;i<90;i++){rig.SmokeXrMove(Vector2.up,.02f);Need(activity.Mode==FlightMode.Glide&&Mathf.Abs(rig.MotionVelocity.y-glideY)<.01f,"Forward spread glide unexpectedly dived or lost controlled descent: tick="+i+" mode="+activity.Mode+" vy="+rig.MotionVelocity.y+" expected="+glideY+" supported="+rig.Supported+" status="+activity.MotionStatus);}
                 CloseHands(rig);for(int i=0;i<15;i++){rig.SmokeXrMove(Vector2.up,.02f);Need(activity.Mode==FlightMode.Air&&rig.MotionVelocity.y> -9,"Glide release inherited a fast-fall/dive counter");}
                 SpreadHands(rig);rig.SmokeXrMove(Vector2.up,.02f);Need(activity.Mode==FlightMode.Glide&&Mathf.Abs(rig.MotionVelocity.y-glideY)<.01f,"Spread glide reentry failed to recover actual descent: "+rig.MotionVelocity.y);
-                Reset(rig,activity,site+Vector3.up*100);CloseHands(rig);for(int i=0;i<75;i++)rig.SmokeXrMove(Vector2.up,.02f);Need(activity.Mode==FlightMode.Dive&&rig.MotionVelocity.y< -25,"Genuine arms-folded forward freefall dive was disabled");
+                Reset(rig,activity,site+Vector3.up*100);CloseHands(rig);for(int i=0;i<150;i++)rig.SmokeXrMove(Vector2.up,.02f);
+                // FLIGHT-DIVE r12: 3 s full-forward dive is drag-limited (~32 m/s, belly ~24, terminal 40), no 96 m/s2 snap.
+                Need(activity.Mode==FlightMode.Dive&&rig.MotionVelocity.y< -28&&rig.MotionVelocity.y> -Ashfall.Modules.Flight.R26FreefallTuning.DiveTerminalSpeed-.6f,"Genuine arms-folded forward freefall dive was disabled or exceeded drag terminal: vy="+rig.MotionVelocity.y);
                 // Back-facing single-sided wall: source hand_wall_r2 rays explicitly
                 // request both faces. Proxy must stay on head side; raw pose survives.
                 Reset(rig,activity,site);var wall=new GameObject("MotionFix one-sided hand wall");wall.transform.SetParent(map.transform,false);wall.transform.position=site+Vector3.forward;

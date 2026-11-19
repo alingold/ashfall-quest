@@ -136,12 +136,14 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             input.Paused|=suspended;input.DeltaSeconds=dt;var command=Command();input.Sequence=command.Tick;R23M1014Volley volley;M1014.Apply(command,action,input,pose,out volley,ejectAfterShot);LastM1014Volley=volley;pendingShot=volley!=null;return pendingShot;
         }
         // Real accepted native pellet contacts are grouped once per registered target.
-        // No fabricated health pool, head multiplier, or second ammunition debit.
+        internal Func<float> ReadHeadshotMultiplier{get;set;}
+        float HeadshotMultiplier{get{if(ReadHeadshotMultiplier==null)return 1;float m=ReadHeadshotMultiplier();return float.IsNaN(m)||float.IsInfinity(m)||m<0?1:m;}}
+        // No fabricated health pool or second ammunition debit; heads use the match headshot factor (1 in fixtures).
         public int ApplyM1014Contacts(R23M1014Volley volley,R23M1014Contact[] contacts,bool muzzleBlocked=false){
             if(!pendingShot||selectedRifle!="m1014"||volley==null||!object.ReferenceEquals(volley,LastM1014Volley)||M1014==null||volley.InstanceId!=M1014.InstanceId)return 0;
             pendingShot=false;if(muzzleBlocked||contacts==null||contacts.Length>8)return 0;
             var groups=new Dictionary<string,float>();var heads=new Dictionary<string,bool>();var seen=new System.Collections.Generic.HashSet<int>();
-            foreach(var contact in contacts){if(contact.Pellet<0||contact.Pellet>=8||!seen.Add(contact.Pellet))return 0;if(string.IsNullOrEmpty(contact.TargetId)||!practice.ContainsKey(contact.TargetId)||!contact.Point.IsFinite)continue;float x=contact.Point.X-volley.Origin.X,y=contact.Point.Y-volley.Origin.Y,z=contact.Point.Z-volley.Origin.Z,distance=(float)Math.Sqrt(x*x+y*y+z*z);float damage=R23M1014Definition.DamageAtDistance(distance);if(damage<=0||!query.HasLineOfSight("player",contact.TargetId,volley.Origin,contact.Point,volley.Range))continue;float prior;groups.TryGetValue(contact.TargetId,out prior);groups[contact.TargetId]=prior+damage;bool head;heads.TryGetValue(contact.TargetId,out head);heads[contact.TargetId]=head||contact.Head;}
+            foreach(var contact in contacts){if(contact.Pellet<0||contact.Pellet>=8||!seen.Add(contact.Pellet))return 0;if(string.IsNullOrEmpty(contact.TargetId)||!practice.ContainsKey(contact.TargetId)||!contact.Point.IsFinite)continue;float x=contact.Point.X-volley.Origin.X,y=contact.Point.Y-volley.Origin.Y,z=contact.Point.Z-volley.Origin.Z,distance=(float)Math.Sqrt(x*x+y*y+z*z);float damage=R23M1014Definition.DamageAtDistance(distance);if(contact.Head)damage*=HeadshotMultiplier;if(damage<=0||!query.HasLineOfSight("player",contact.TargetId,volley.Origin,contact.Point,volley.Range))continue;float prior;groups.TryGetValue(contact.TargetId,out prior);groups[contact.TargetId]=prior+damage;bool head;heads.TryGetValue(contact.TargetId,out head);heads[contact.TargetId]=head||contact.Head;}
             int applied=0;foreach(var group in groups){var before=health.Read(group.Key);if(before==null||before.Life!=LifeState.Alive)continue;float shield=Math.Min(before.Shield,group.Value),loss=Math.Min(before.Health,group.Value-shield);var command=Command();var receipt=health.ApplyDamage(command,command.CommandId,group.Key,before.Revision,loss,shield,false);if(!receipt.Result.Accepted)continue;var target=practice[group.Key];target.Last=(before.Shield-receipt.Snapshot.Shield)+(before.Health-receipt.Snapshot.Health);target.Total+=target.Last;target.Head=heads[group.Key];target.ResetLeft=1.5f;Hits++;applied++;}health.DrainTransitions();return applied;
         }
         public HealthSnapshot ReadTarget(string id) { return practice.ContainsKey(id)?health.Read(id):null; }
@@ -161,20 +163,22 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             if(!pendingShot)return false;pendingShot=false;
             Target target;if((sourceLoadout&&weaponId!=selectedRifle)||!practice.TryGetValue(id,out target))return false;var before=health.Read(id);
             float dx=point.X-origin.X,dy=point.Y-origin.Y,dz=point.Z-origin.Z;
-            var rangeDefinition=SourceRifleDefinition.ForId(weaponId);float range=weaponId=="magnum"?R23MagnumRuntime.MaximumRange:rangeDefinition==null?100:rangeDefinition.MaximumRange;
+            var definition=SourceRifleDefinition.ForId(weaponId);if(definition==null&&weaponId!="magnum")return false;
+            float range=definition==null?R23MagnumRuntime.MaximumRange:definition.MaximumRange;
             if(before.Life!=LifeState.Alive||!origin.IsFinite||!point.IsFinite||dx*dx+dy*dy+dz*dz>range*range||!query.HasLineOfSight("player",id,origin,point,range))return false;
             // one_star0991.json, first rarity: MK18 22/33; AKM 20/30. No invented head multiplier.
-            var definition=SourceRifleDefinition.ForId(weaponId);if(definition==null&&weaponId!="magnum")return false;R23WeaponInstanceInfo info;float amount=sourceLoadout&&instances.TryGetValue(selectedAction,out info)?(headshot?info.HeadDamage:info.BodyDamage):(headshot?definition.HeadDamage:definition.BodyDamage);
+            R23WeaponInstanceInfo info;float amount=weaponId=="magnum"?0:sourceLoadout&&instances.TryGetValue(selectedAction,out info)?(headshot?info.HeadDamage:info.BodyDamage):(headshot?definition.HeadDamage:definition.BodyDamage);if(headshot)amount*=HeadshotMultiplier;
             float shieldLoss=Math.Min(before.Shield,amount),healthLoss=Math.Min(before.Health,amount-shieldLoss);
             var c=Command();DamageReceipt receipt;
-            if(weaponId=="magnum"){if(!Magnum.TryApplyHit(health,c,query,id,origin,point,headshot,out receipt))return false;}else receipt=health.ApplyDamage(c,c.CommandId,id,before.Revision,healthLoss,shieldLoss,false);
+            if(weaponId=="magnum"){if(!Magnum.TryApplyHit(health,c,query,id,origin,point,headshot,out receipt,HeadshotMultiplier))return false;}else receipt=health.ApplyDamage(c,c.CommandId,id,before.Revision,healthLoss,shieldLoss,false);
             if(!receipt.Result.Accepted)return false;
             target.Last=(before.Health-receipt.Snapshot.Health)+(before.Shield-receipt.Snapshot.Shield);target.Total+=target.Last;target.Head=headshot;target.ResetLeft=1.5f;Hits++;health.DrainTransitions();return true;
         }
-        public bool ApplyTargetDamage(string id,float amount){
+        public bool ApplyTargetDamage(string id,float amount){return ApplyTargetDamage(id,amount,false);}
+        public bool ApplyTargetDamage(string id,float amount,bool headshot){
             Target target;if(retiredRound||float.IsNaN(amount)||float.IsInfinity(amount)||amount<=0||id==null||!practice.TryGetValue(id,out target))return false;
             var before=health.Read(id);if(before==null||before.Life!=LifeState.Alive)return false;float shield=Math.Min(before.Shield,amount),loss=Math.Min(before.Health,amount-shield);if(shield+loss<=0)return false;
-            var command=Command();var receipt=health.ApplyDamage(command,command.CommandId,id,before.Revision,loss,shield,false);if(!receipt.Result.Accepted)return false;target.Last=(before.Shield-receipt.Snapshot.Shield)+(before.Health-receipt.Snapshot.Health);target.Total+=target.Last;target.Head=false;target.ResetLeft=1.5f;Hits++;health.DrainTransitions();return true;
+            var command=Command();var receipt=health.ApplyDamage(command,command.CommandId,id,before.Revision,loss,shield,false);if(!receipt.Result.Accepted)return false;target.Last=(before.Shield-receipt.Snapshot.Shield)+(before.Health-receipt.Snapshot.Health);target.Total+=target.Last;target.Head=headshot;target.ResetLeft=1.5f;Hits++;health.DrainTransitions();return true;
         }
         public void Damage(float amount) {
             if(playerHealthView!=null){playerHealthView.ApplyDamage(amount,false,"damage");return;}

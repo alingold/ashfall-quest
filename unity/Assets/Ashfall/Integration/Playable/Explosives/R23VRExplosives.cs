@@ -16,7 +16,7 @@ namespace Ashfall.Integration.Playable.Explosives
     // Passive input/custody port. Only owned grenade bodies have independent FixedUpdate motion.
     public sealed partial class R23VRExplosives:MonoBehaviour
     {
-        sealed class Item {internal string Id,Kind;internal Vector3 Position,InitialPosition;internal Quaternion Rotation,InitialRotation;internal GameObject View;internal bool Visible=true;internal int Revision;}
+        sealed class Item {internal string Id,Kind;internal Vector3 Position,InitialPosition;internal Quaternion Rotation,InitialRotation;internal GameObject View;internal bool Visible=true,Culled;internal int Revision;}
         readonly Dictionary<string,Item> items=new Dictionary<string,Item>(StringComparer.Ordinal);readonly R23GrenadeState state=new R23GrenadeState();
         readonly List<R23NativeGrenade> projectiles=new List<R23NativeGrenade>();readonly List<Vector3> preview=new List<Vector3>();
         Transform actor,head,left,right,content,fragTemplate,zoneTemplate,flashTemplate,smokeTemplate;IR23ExplosiveEffects effects;R23GrenadeAssets assets;Coroutine loading;
@@ -38,7 +38,8 @@ namespace Ashfall.Integration.Playable.Explosives
         public Func<Vector3,Vector3,bool> LaunchLineClear;
         public Func<string,int,bool> SharedClaim,SharedThrow;public Func<string,Vector3,bool> SharedDrop;
         public string[] WorldItemIds{get{return new List<string>(items.Keys).ToArray();}}
-        internal bool ReconcileNetworkItem(string id,bool owned,bool spent){bool ok=state.ReconcileNetworkItem(id,owned,spent);if(ok)Changed();return ok;}
+        // The session reconciles every shared grenade each frame; only a real change refreshes art and inventory.
+        internal bool ReconcileNetworkItem(string id,bool owned,bool spent){R23GrenadeItemState before,after;bool known=state.TryRead(id,out before);string held=state.HeldId;int hand=state.HeldHand;if(!state.ReconcileNetworkItem(id,owned,spent))return false;state.TryRead(id,out after);if(!known||before.Owned!=after.Owned||before.Spent!=after.Spent||before.Slot!=after.Slot||held!=state.HeldId||hand!=state.HeldHand)Changed();return true;}
         internal Ashfall.Integration.Playable.FlashSmoke.R25FlashSmokePresentation FlashSmoke;
         public Func<string,bool> KindAllowed;
         string ReadHeldKind(){R23GrenadeItemState i;return state.TryRead(state.HeldId,out i)?i.Kind:"";}
@@ -80,7 +81,7 @@ namespace Ashfall.Integration.Playable.Explosives
         Transform Template(string kind){return kind=="flash"?flashTemplate:kind=="smoke"?smokeTemplate:kind=="zone"?zoneTemplate:fragTemplate;}
         static float ArtScale(string kind){return kind=="zone"?2:.9f;}
         void CreateView(Item item)
-        {R23GrenadeItemState value;if(item.View!=null||!state.TryRead(item.Id,out value)||value.Spent||!value.Owned&&!item.Visible)return;item.View=Instantiate(Template(item.Kind).gameObject,content);item.View.name="R23 "+item.Kind+" "+item.Id;item.View.transform.localScale=Vector3.one*ArtScale(item.Kind);item.View.transform.SetPositionAndRotation(item.Position,item.Rotation);item.View.SetActive(worldVisible);QueueWorldSettle(item);}
+        {R23GrenadeItemState value;if(item.View!=null||!state.TryRead(item.Id,out value)||value.Spent||!value.Owned&&(!item.Visible||item.Culled))return;item.View=Instantiate(Template(item.Kind).gameObject,content);item.View.name="R23 "+item.Kind+" "+item.Id;item.View.transform.localScale=Vector3.one*ArtScale(item.Kind);item.View.transform.SetPositionAndRotation(item.Position,item.Rotation);item.View.SetActive(worldVisible);QueueWorldSettle(item);}
         public bool GrantOwned(string id,string kind,int hand,bool handAvailable)
         {if(!handAvailable||hand<1||hand>2||!state.CanStore(kind)||!Spawn(id,kind,Hand(hand).position)||!state.Pickup(id,hand,true))return false;Changed();return true;}
         public bool TryEquip(string id,int hand,bool handAvailable){if(!state.Equip(id,hand,handAvailable))return false;Changed();return true;}
@@ -91,7 +92,7 @@ namespace Ashfall.Integration.Playable.Explosives
         public bool RepositionWorldItem(string id,Vector3 position,bool settle=true)
         {Item i;R23GrenadeItemState s;if(!Finite(position)||id==null||!items.TryGetValue(id,out i)||!state.TryRead(id,out s)||s.Owned||s.Spent)return false;if((i.Position-position).sqrMagnitude<.0000001f)return true;i.Revision++;i.Position=i.InitialPosition=position;if(i.View!=null)i.View.transform.position=position;if(settle)QueueWorldSettle(i);if(WorldItemMoved!=null)WorldItemMoved(id,position);return true;}
         public void SetWorldVisible(bool visible){worldVisible=visible;RefreshViews();}
-        public bool SetWorldItemVisible(string id,bool visible){Item i;if(id==null||!items.TryGetValue(id,out i))return false;bool changed=i.Visible!=visible,hadView=i.View!=null;if(changed)i.Revision++;i.Visible=visible;if(visible&&Ready){CreateView(i);if(changed&&hadView)QueueWorldSettle(i);}RefreshViews();return true;}
+        public bool SetWorldItemVisible(string id,bool visible){Item i;if(id==null||!items.TryGetValue(id,out i))return false;if(i.Visible==visible)return true;bool hadView=i.View!=null;i.Revision++;i.Visible=visible;RefreshView(i);if(visible&&hadView)QueueWorldSettle(i);return true;}
         public bool Drop(string id,Vector3 position,Quaternion rotation)
         {Item item;if(id==null||!Finite(position)||!Finite(rotation)||!items.TryGetValue(id,out item)||SharedDrop!=null&&!SharedDrop(id,position)||!state.Drop(id))return false;item.Revision++;item.Position=position;item.Rotation=rotation.normalized;item.Visible=true;Changed();QueueWorldSettle(item);return true;}
         public bool Drop(string id){return Drop(id,actor.position+actor.forward*.5f+Vector3.up*.3f,Quaternion.identity);}
@@ -106,7 +107,7 @@ namespace Ashfall.Integration.Playable.Explosives
             if(positions==null||rotations==null)return false;var members=new List<R23OwnedGrenade>();foreach(var i in OwnedItems)if(i.Slot==slot)members.Add(i);
             if(members.Count<1||members.Count>2||positions.Length!=members.Count||rotations.Length!=members.Count)return false;
             for(int i=0;i<members.Count;i++)if(!Finite(positions[i])||!Finite(rotations[i])||!items.ContainsKey(members[i].Id))return false;
-            if(SharedDrop!=null)for(int i=0;i<members.Count;i++)if(!SharedDrop(members[i].Id,positions[i]))return false;
+            if(SharedDrop!=null){bool accepted=true;for(int i=0;i<members.Count;i++)if(!SharedDrop(members[i].Id,positions[i]))accepted=false;if(!accepted)return false;}
             if(!state.DropSlot(slot))return false;for(int i=0;i<members.Count;i++){var item=items[members[i].Id];item.Revision++;item.Position=positions[i];item.Rotation=rotations[i].normalized;item.Visible=true;}Changed();foreach(var member in members)QueueWorldSettle(items[member.Id]);return true;
         }
         // Projection-only: Root may call before motion/aim arbitration without pumping fire/time.
@@ -143,15 +144,7 @@ namespace Ashfall.Integration.Playable.Explosives
             }
             RefreshViews();UpdateArc();
         }
-        void RefreshViews()
-        {
-            foreach(var item in items.Values)
-            {
-                R23GrenadeItemState s;state.TryRead(item.Id,out s);bool held=HeldId==item.Id;bool show=!s.Spent&&(held?SimulationEnabled&&HandReady(HeldHand):!s.Owned&&worldVisible&&item.Visible);if(item.View==null&&show&&Ready)CreateView(item);if(item.View==null)continue;item.View.SetActive(show);
-                if(held&&Hand(HeldHand)!=null){var h=Hand(HeldHand);var q=Grip(h);item.View.transform.SetPositionAndRotation(h.position+q*new Vector3(0,-.015f,.03f),q);}
-                else if(!s.Owned)item.View.transform.SetPositionAndRotation(item.Position,item.Rotation);
-            }
-        }
+        void RefreshViews(){foreach(var item in items.Values)RefreshView(item);}
         void Changed(){RefreshViews();if(InventoryChanged!=null)InventoryChanged();}
         void UpdateArc()
         {
@@ -167,8 +160,9 @@ namespace Ashfall.Integration.Playable.Explosives
             var visual=Instantiate(Template(launch.Kind).gameObject,go.transform);visual.transform.localPosition=Vector3.zero;visual.transform.localRotation=Quaternion.identity;visual.transform.localScale=Vector3.one*ArtScale(launch.Kind)*(.035f/.047f);visual.SetActive(true);
             var projectile=go.AddComponent<R23NativeGrenade>();projectiles.Add(projectile);projectile.Initialize(this,actor,launch,assets.Clip(launch.Kind+"_warning"));projectile.SetSfx(sfx);foreach(var other in projectiles)if(other!=projectile)Physics.IgnoreCollision(projectile.Shape,other.Shape);
         }
-        internal void Deliver(R23GrenadeBlast blast)
-        {if(Blast!=null)Blast(blast);blast.Apply(effects,F(head.position),Mathf.Max(0,TargetDamageMultiplier));}
+        internal void Deliver(R23GrenadeBlast blast){Deliver(blast,null);}
+        internal void Deliver(R23GrenadeBlast blast,Func<string,float> targetGain)
+        {if(Blast!=null)Blast(blast);blast.Apply(effects,F(head.position),Mathf.Max(0,TargetDamageMultiplier),targetGain);}
         internal void Finished(R23NativeGrenade projectile){projectiles.Remove(projectile);}
         internal void Play(string action,Vector3 position,float gain,float distance,float pitch=1,bool effect=false)
         {

@@ -67,7 +67,7 @@ namespace Ashfall.Integration.Playable.Online
                 if(signing!=null && signing.IsCompleted)
                 {
                     signing.GetAwaiter().GetResult(); signing=null;
-                    allocating=hosting?service.CreateRoom(8):service.JoinRoom(requestedCode);
+                    allocating=hosting?service.CreateRoom(Ashfall.Integration.Playable.Networking.R24LanLobby.Capacity):service.JoinRoom(requestedCode);
                     Set(hosting?OnlineRoomState.CreatingRoom:OnlineRoomState.Joining);
                 }
                 if(allocating!=null && allocating.IsCompleted)

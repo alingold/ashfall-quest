@@ -15,32 +15,885 @@
       "mapId": "archive:battlefield-paintball-gods-pitdevil",
       "sourceSha256": "1f2453276f150a5c04373ea92cb6c6e5f43707c0a7f1fc0dfe351b0a24573c0a",
       "pads": 0,
-      "tilted": 0
+      "tilted": 0,
+      "scaled": 0
     },
     {
       "mapId": "archive:alfa-aglae-souza",
       "sourceSha256": "0f0a7c9ee9b89314d7b3797fffd8344e8b310469b01e06a069fc9ac153bd2994",
       "pads": 115,
-      "tilted": 44
+      "tilted": 44,
+      "scaled": 0
     },
     {
       "mapId": "archive:classic-bigbox-vr",
       "sourceSha256": "0179873e65c372825682725737bfcd34762132cf9d759342425fff0d2bb8079d",
-      "pads": 0,
-      "tilted": 0
+      "pads": 31,
+      "tilted": 1,
+      "scaled": 0
     },
     {
       "mapId": "range",
       "sourceSha256": "7bee5a91411b095f44f4b69d8e20a2b2d0d26e28b57865e042c79463e960cee7",
       "pads": 0,
-      "tilted": 0
+      "tilted": 0,
+      "scaled": 0
     },
     {
       "mapId": "valley",
       "sourceSha256": "52d05443eaf9ffe0f872ac46eba670da05e3a86c55d45e57aa980ce46ed029d5",
       "pads": 0,
-      "tilted": 0
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:10000-days-gods-crazytrain",
+      "sourceSha256": "372abb96a7a8ca0e97e9586e6d5b537b92a2c09615633b7d1f5a00c1822fb35c",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:afterlife-gods-alamo-hank",
+      "sourceSha256": "c8a4f3ab47fe79acf3821c9e60d37fefaf567b756fd73bd99f60b7bb25c6063f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:aftermath-light-vs-dark-gods-badbar",
+      "sourceSha256": "7729f956381d61d42da380e94938c74b8ba456c25e2867bbee8d6272eb053371",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:asylum-gods-pitdevil",
+      "sourceSha256": "02b9923d1052bccee37ccf60dcf930ee185cbd31ecbfc544ef40ab8c4ff4725e",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:atrocious-gods-trashpandakiller",
+      "sourceSha256": "53efdbbacc8a60a0e1644ce16ab9d6e72adc9f7d7512fbb92a5c1683ab7e352e",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:badlands-gods-pitdevil",
+      "sourceSha256": "86fc76c858cea8e444aac14fb1cda3e384c6af634f2546daad5287cc3e973254",
+      "pads": 3,
+      "tilted": 2,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:beast-mode-gods-pitdevil",
+      "sourceSha256": "8a6bf7afcc48cb1488f441b1680bc5f82e847512c6f23f475b0f2313b0e2e587",
+      "pads": 14,
+      "tilted": 1,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:bi-polar-gods-trashpandakiller",
+      "sourceSha256": "0c720b4d66030bf034df8ff837596c23ba542de3d43966214ad3818e4c7825c4",
+      "pads": 4,
+      "tilted": 4,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:blue-gods-quietowl",
+      "sourceSha256": "be630548066e0469afcac0edd2a58b329bd788c5030f76530106438eafdd8d9b",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:candle-magic-gods-goodwitch",
+      "sourceSha256": "6fe3c4ef99a28bec532fff0711ca7981838b6c5961541a1152bd2794bf2577ab",
+      "pads": 2,
+      "tilted": 2,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:caskades-gods-alamo-hank",
+      "sourceSha256": "778bc2ec22f13dcea6bcafe5b84f91e87ee3f027bdeaa7f012d1f07b34e3d12a",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:chaotic-gods-alamo-hank",
+      "sourceSha256": "2292992c46d6eb1d4b33ea7a5d8bd7766bd874583b186d622c7685827055577c",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:chill-gods-pitdevil",
+      "sourceSha256": "51357e7ae38620f0cf7dcbc035f7e3ca9001bac471f76dd9b0ca19a124406945",
+      "pads": 3,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:cold-hearted-gods-pitdevil",
+      "sourceSha256": "6933493287e74ed2ad8cfdcffe8da2070a39cfc7fe766aee6339d549f0ecb299",
+      "pads": 2,
+      "tilted": 2,
+      "scaled": 0
+    },
+    {
+      "mapId": "cyber_bird",
+      "sourceSha256": "9a35ad5e52e1181613a11b56544a16e6da0002eeb81f65800054403894efc647",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ereptile-disfunction-gods-pitdevil",
+      "sourceSha256": "a238f905d290ce71b6396810315eebbff95cabf1c4bb2cb04179c33880f6665e",
+      "pads": 3,
+      "tilted": 1,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:flash-gods-pitdevil",
+      "sourceSha256": "0a7fa23b2c56af779a597ce7f9604864cccb4ca5471c9fe71b158b843ad2fb5d",
+      "pads": 8,
+      "tilted": 1,
+      "scaled": 1
+    },
+    {
+      "mapId": "archive:fortress-gods-putangfreyja",
+      "sourceSha256": "ed19b10297661fa13755a00b1c67af3c6013d2d42913603dc91e52265fa911a9",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:g-spot-gods-pitdevil",
+      "sourceSha256": "6946df672418a57c92200c5bb3b95d590fc1f78ae1a50a5eb1ee94cf0ca9fc23",
+      "pads": 4,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:g0dtham-gods-poplightning",
+      "sourceSha256": "f91223630c8ceb8dcacb7a3bdf4be94f3825549fa76b26536e2217af848845ef",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:high-ground-gods-thor",
+      "sourceSha256": "b857dca932b9e5585eb456b73e73134d4f051c8c4a29d89d35e0eaa41ad9ba0e",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:hildrs-echo-gods-pitdevil",
+      "sourceSha256": "72e73d43d64d6672d7dbd1a040194f55ace61d6a88b4ea4c364d8c1c11f014aa",
+      "pads": 14,
+      "tilted": 1,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:holy-ground-gods-pitdevil",
+      "sourceSha256": "d8ae9becfeec2c266618eb668984743f2f4a5f1166e3620076d72224dd9743d7",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:hunted-gods-pitdevil",
+      "sourceSha256": "69b8ac120f6f0f2e72bcbcd40b705bb9bb9a7c751d029f88cc5c0932c47910b7",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:hypnosis-gods-pitdevil",
+      "sourceSha256": "9d5a6c4091e1ab0d44c2739edc92e53fa6500b406b3ec506a7225ec9593eac08",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:la-la-la-gods-trashpandakiller",
+      "sourceSha256": "dfd4d287711e0fd9105c034131562084baeef7616c99666cdd413364eb062bcf",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:light-vs-dark-gods-badbar",
+      "sourceSha256": "ce6a8ddeeffd755b8d2b82d68f741ebd183ebca7e199f85855256f17b99a8ed5",
+      "pads": 4,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:melipop-gods-poplightning",
+      "sourceSha256": "dd7b22842678f875ab27fdb959505424be7f96755d1b9b5cea64f11b9c10a152",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:melis-cafe-gods-pitdevil",
+      "sourceSha256": "6c42e928f34a55ec6bd88f9b587c5bda53eece8c458351c8e33a3e6a74b4a61d",
+      "pads": 5,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:metal-mayhem-ghostlymostly88",
+      "sourceSha256": "38445692ae79198f71b4de70ba7c2a7dedc98bffc4b2f3782bfee2e8dabdb7ca",
+      "pads": 6,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:mushy-2-gods-putangfreyja",
+      "sourceSha256": "9abec0557618ad864380479189069bfe94e5dd2c1b7c9004bd61b6b056fd7330",
+      "pads": 6,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:mushy-gods-putangfreyja",
+      "sourceSha256": "23f795914c354a9836e5d55852ba48119477239b2688d82f575326843b79fa21",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:oppression-gods-thor",
+      "sourceSha256": "c2afa0909f1020ccb0325df0eacd9c6ab839bcdc1f75ec749ef23fa5ba539cd0",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:phantom-gods-badbar",
+      "sourceSha256": "b2c70b5530fa04dd3e4e274929637c223b38342d28e734056b85161243d51e95",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:plan-b-gods-pitdevil",
+      "sourceSha256": "45198e5157a98c297f0fa51672908b56793c5e53a6c43422afe90d162c06d204",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:poppy-gods-poplightning",
+      "sourceSha256": "f607fde898b0e60add02e9d0a1c64c9955f23d10072002be3e4487d4901f740f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:quantum-city-gods-pitdevil",
+      "sourceSha256": "2523b65982988c4eb8c105393a496cbb0585944f24cf1b8f6882790e1bd0097c",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:quietowl-gods-pitdevil",
+      "sourceSha256": "418cac4a7612b937d4d766e909eb840ec39e310c15874c170fb3e64e86306013",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:realtree-gods-poplightning",
+      "sourceSha256": "d9d89ab2587d68707f35ef310617fcadf689a7ca479f943d19d5358fcffc056f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:robotics-2-gods-pitdevil",
+      "sourceSha256": "9119b9d2eca2d39a17571866280bafdba190728d2fcd75036f15eb60ca79aff4",
+      "pads": 16,
+      "tilted": 16,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:romulus-gods-skblong",
+      "sourceSha256": "0ac3f983fcc3bf18eeb6b272eb8a80e676ad127e36571ddd6e617f02b40a39e1",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:sean0311-gods-sean0311",
+      "sourceSha256": "b78895f67cea47fe73be7ad758fda9211ccdd50d9ad2b606cd6e67a3df887377",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:showdown-gods-crazytrain",
+      "sourceSha256": "4f2171e67edfd8a1e004e810e79989fe85cfada34277f5e3e2d32c3be408006d",
+      "pads": 2,
+      "tilted": 2,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:skb-paintball-gods-skblong",
+      "sourceSha256": "cd5aaaa7de37a9077a39283ffecd560e1cf56f087ac5e6a20096834ad0dbbdb8",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:stacked-gods-trashpandakiller",
+      "sourceSha256": "b60f507045111455f184941efcd1e772d81a3b3301b77389ad7c0ead70eb0532",
+      "pads": 4,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:suffering-gods-thor",
+      "sourceSha256": "cf68defaea8ceb9aa11a3579eb56fbe242767995b13bcbad98d1c9a80eee22ac",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:survive-gods-goodwitch",
+      "sourceSha256": "0473f193991ada44dd035fd2a6e96d2bf9c850627b400facc22866c6f40bef6f",
+      "pads": 2,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:swarm-gods-chriso",
+      "sourceSha256": "ca9088bac716f9f4081cb56b6785938465a1a51e108130133bf36655f0689db8",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:sweet-dreams-gods-badbar",
+      "sourceSha256": "f941aa69c2bccf048654b7ce79aaf833b47781a1f9d77403d89d7bf418a5c4c8",
+      "pads": 36,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:tagd-gods-pitdevil",
+      "sourceSha256": "569eb7f52ccd20837dd99f8de190619995a71ec43e83f339c67605067859db1f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-citadel-gods-thor",
+      "sourceSha256": "bd7182b904229b1d3b7982c92dd47d89dda66dd22e94af0782cbbf766a9403f0",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-fortress-gods-alamo-hank",
+      "sourceSha256": "a3002111c0dcb070d792f0ff6d4f362d402d238dda278c1e891dff6f279b17f7",
+      "pads": 19,
+      "tilted": 4,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-holler-gods-alamo-hank",
+      "sourceSha256": "a7e7c56f931ee49192ecdadd636ff8b09c80088bc326febfd81583cd4873cd32",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-powerpuff-g0ds-gods-meli",
+      "sourceSha256": "dc8310310317a595e60b86ec1433f8efbe80b030b6c1694f4248b98551eb1cae",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-shining-gods-ghostlymostly88",
+      "sourceSha256": "e41e2ab9ca6de3a41ce607f277b7e7087bf8ef76e095d568c3a08f990049efc8",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-white-house-gods-osprey-kat",
+      "sourceSha256": "4ce15e966db225cc08e8512a9f4cdbf976a42ffbad8375c2972c93894d55e331",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:thor-city-gods-thor",
+      "sourceSha256": "ee7d45ed854d134474e499b396fcef7af9a72a4c3c23829c53850c53aee0f6f1",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:trashed-gods-pitdevil",
+      "sourceSha256": "e78ffd3eff470f3dd1930a4faf3e8daad8e2710089cb01db690d2e75e299f1da",
+      "pads": 4,
+      "tilted": 4,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:trauma-gods-pitdevil",
+      "sourceSha256": "56f47a512e7948ec83d5fd18a8cc1eb225be02997f899c82a7e2efce69316a42",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:unbroken-gods-thor",
+      "sourceSha256": "24aadde52aeb72d532931917ef783d91648cbbc2c1b55b261a594f7a095c3360",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:viral-gods-ghostlymostly88",
+      "sourceSha256": "281e6a762653a21e7cddf556c323f0c3bd34776baaa5883af7ff150e7a905674",
+      "pads": 10,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:5-levels-zyro",
+      "sourceSha256": "2a5f30b621ed16c6e44526a2874e64406e12061ebaf4ad9856cc258772297b54",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:aaa-tree-house-oldschoolshyit",
+      "sourceSha256": "9eb49f3937a7ed23eec2807eb3d1f760339a2eb6e6d180952e80cc823094671c",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:aethelgard-solstis-kiki-80-bbb",
+      "sourceSha256": "9918d39cfc9312c4cc6eb49c8848f171f7f3a7f4b5b47fec4559d65756805803",
+      "pads": 78,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:bamboo-gods-pitdevil",
+      "sourceSha256": "e11d43b8721ff9e31328837b62b46f2786f3648a4590c6dbbede4d87ef3345e0",
+      "pads": 5,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:banana-land-gods-pitdevil",
+      "sourceSha256": "a6e833cadf6025b53ef186084662264f75ed6874d0878930f04192c63594108a",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:bigbabyjesuz-classic-kiki-80",
+      "sourceSha256": "34522d0f636f2ea40bb234070353bec785045ef1c934918dbdab41d00f11bfa3",
+      "pads": 5,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:chem-x-template",
+      "sourceSha256": "83c2cd3b982ab4c1ca66cf6e4155c6d12b8ca18ba6a246515845592b97fa3baf",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:chess-ifun",
+      "sourceSha256": "68ffd188af1f5a29d0415873347af1b9dc48628da100508bc78984014172a70f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:classic-bw-187norvis",
+      "sourceSha256": "615df34fe80e4343d49aaf2277546d87f89d426d28975607e6fe9101a6166311",
+      "pads": 15,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:cont-cl-er-ssd-cjcoops",
+      "sourceSha256": "7b39c34dbaa5adbe0f5944c13f7c3b7e9c2c7eb5c7b056a442f86260252d8fd9",
+      "pads": 50,
+      "tilted": 22,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:cont-cl-ssd-cjcoops",
+      "sourceSha256": "03c7b9f3dd6a5f963c0ca6634a3892c68da1f285724bc52b07e62e5e56cc2e9d",
+      "pads": 57,
+      "tilted": 25,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:dark-carnival-gods-pitdevil",
+      "sourceSha256": "64c020e6289085645e3586af7c38e20320b132cab402dfa9b2f5d7952688fe4f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:deep-space-5-stand-alone-pro-yt",
+      "sourceSha256": "b14fc430b54b958baf45da847cd0d197fe8d730dcda9dd6e8a3ebe89a28a5807",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:evolving-map-bigbox",
+      "sourceSha256": "f5b9c42f6f00a6ce7c3f37efe9929fe6c7d11984561920eb62105e8cad082903",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:fear-thy-neighbor-oitc-steve-qc",
+      "sourceSha256": "8e7cb8a22dcb0557951d9b6560e15b8958d28de299804b64a840a9546fd218a3",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ga-fenix-ga-hikesa",
+      "sourceSha256": "255ec785c959697afaf93155f3fdf308774619b7c23c9fe799d5610144d00186",
+      "pads": 14,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ghost-ship-wintersoldier-egy",
+      "sourceSha256": "523184bf0cdd424ee7f88e9e159c86c2cd68c1b3dcba3b2f0451692ce1630290",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:gun-game-star-wars-by-sam-sam",
+      "sourceSha256": "70aab6a0b20d51d37f84e8492789be23ae201ea288ae91d06d1eecf4886bd51e",
+      "pads": 26,
+      "tilted": 1,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:halloween-5-level-x-ifun-ifun",
+      "sourceSha256": "b1753b4b495c7e21fc2c12fcff66e3743dac0ef6a43a177bb39f3350a4bfa1a4",
+      "pads": 1,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:heavens-arena-big-battles-swa-wildbarnacle",
+      "sourceSha256": "2f3297adc92631cc9c2b24e1e54e3a8ff3816970a10c56b03b40b5813221c0a6",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:home-town-sir-dave-sir-dave",
+      "sourceSha256": "a4c93cd39a87134623aae864ee41c926e970334f85d118b90ab860687feb2b27",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ivars-village-trigger-apex",
+      "sourceSha256": "6389df2a132b4f6f11f9fa72074e3583de8f7548862fafde90dde1e8d0dae561",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:king-of-the-balz-st1-spaceteam1",
+      "sourceSha256": "560513e07234315f9369ee2854e56cd40a57b362501a89cba4809c5374c3eb0e",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:kokiri-forest-atc-garden-porfavortiktok",
+      "sourceSha256": "276f98e23ba96cf3cc422778794b811d576752f46209b4dacbcdbdb20ec2dd21",
+      "pads": 13,
+      "tilted": 3,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:magnum-3-chaosvr",
+      "sourceSha256": "466cd3c90f652296d0d03730a261df29e23df8681c8c1dfc88ffccddac6f6ae0",
+      "pads": 89,
+      "tilted": 89,
+      "scaled": 89
+    },
+    {
+      "mapId": "archive:magnum-chaosvr",
+      "sourceSha256": "004822a2c5be370957ce1732be5a633a0619522b1382fdae429a424ef30b538d",
+      "pads": 114,
+      "tilted": 114,
+      "scaled": 114
+    },
+    {
+      "mapId": "archive:marksman-remarkabled",
+      "sourceSha256": "f2f6e58b7ca877b0ae66b195d2b560de21bff01f08d48d18a261ca3802d255c9",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:mortal-kombat-bwaynecs",
+      "sourceSha256": "257470dbebf0478f588661e996b1d6a9483bdb6e7327206f990e205979276b0e",
+      "pads": 2,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:muddy26-muddyfartz",
+      "sourceSha256": "622c9257a7748b9aa0d854f7a7cf418098d56626b196e7033479f2bdedc3287f",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:odf-5-level-odf-birdshot",
+      "sourceSha256": "68bcb9ce68ab722351a9e8c814652ce670bdebb1d986a8bacb5a81253c773fe0",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:phoenix-bigbox-vr",
+      "sourceSha256": "915590b61ba40e7b7b5f0ae28b238b79aff3f36314ac788b6f41e501a250b3c5",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:pollen-panic-kiki-80",
+      "sourceSha256": "e5812d38562a67ab10057b8ff69d77657ddbc6875bb84f678d29eec12f07cd5b",
+      "pads": 15,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:rip-respect-integrity-pop1-armsreach",
+      "sourceSha256": "5e9296aad507ddf72cbd4dd6150cd386acc5ec55a37110295d3581aa09b9f4e6",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:sharp-objects-kiwishade",
+      "sourceSha256": "f53c8852e18a08ca02e7ef879088266d5ddad3d076a3ee32a6eeb49a5c8e1505",
+      "pads": 49,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:statmaster-classic-soulsmight",
+      "sourceSha256": "36579e8cf66cbd73d9f55b12562e63bfe1fcef3f3235d8281c4748dcbeb4139b",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:statmaster-evolving-soulsmight",
+      "sourceSha256": "795a32676af36833b747ff2a5617dab5e31a3e927535b72a7d6c0043d4ab19f3",
+      "pads": 30,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:sunflower-city-kiki-80-bbb",
+      "sourceSha256": "cef6add47ad1f752e04e96fe7abf8d4d9f2ab734d4423fe0fd3099e4d006c13b",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:the-swamp-taffy-dragon-vr",
+      "sourceSha256": "1dde98149b583b39dd9a421742f7198530516c9b8fc11c0493361bc54bedac6f",
+      "pads": 15,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:train-rmx-armsreach",
+      "sourceSha256": "cb9e2eb5f9202b0874a8e6feb09bf08bf6b6285da2682a76c4e665961e8014a5",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ultimate-5-levels-rexryan",
+      "sourceSha256": "4618a055707531fbadeb1638d65da182b8715c3d7a8a9039d7291f92c9e5b46a",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:vortex-sd-stumpdawg",
+      "sourceSha256": "76db6dfecf8bebe95d19e5514235b607c0487aaddfd1f5330170870de1a8889e",
+      "pads": 5,
+      "tilted": 4,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:zelda-kokiri-forest-solos-ilikepies1211",
+      "sourceSha256": "dbb5e9f5ae23dc5f9e05a63b783de2299f34b5dde623adaaab8e7c4b97ddf527",
+      "pads": 3,
+      "tilted": 1,
+      "scaled": 1
+    },
+    {
+      "mapId": "archive:ice-and-fire-tdm-go-kc",
+      "sourceSha256": "c7d7e42389f67c4f6ef154490c50be45aad975170665b4bd639e59b82bbbd136",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:garden-of-eden-gods-crazytrain",
+      "sourceSha256": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:doom-gods-pitdevil",
+      "sourceSha256": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:cold-castle-gods-ghostlymostly88",
+      "sourceSha256": "c90545972f5baf7dd7e3bb746788ff0570af4c01d9c4e9c5135780d5fe962856",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:warpath-gods-pitdevil",
+      "sourceSha256": "f4c669a50e9df4d14e6d9dedc6a819e9f3f44839badbfca91d3c5028d1eb7611",
+      "pads": 5,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+      "sourceSha256": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:rush-gods-chriso",
+      "sourceSha256": "0a6d50daf6e145f2f38dc2f1c4ad8e111a5cf0e495127497eba88570370c66c3",
+      "pads": 5,
+      "tilted": 5,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:meliworld-gods-meli",
+      "sourceSha256": "ea13fe1c9020a2afeb5f8b6fde259db11500738fd0e94ef69f3da5b177f03638",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:g0ds-of-war-gods-badbar",
+      "sourceSha256": "4c03349a09cef925d236c26d4f5345ccade8048206f5310af4811702138f74d0",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:havoc-gods-pitdevil",
+      "sourceSha256": "1f61276d979d42b87d18636ef55c678f1da364cefcd3534fae35d9cbab03b9bd",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:ember-gods-voodoo-01",
+      "sourceSha256": "0e03374e80e6e71db16341eb2561e6318298b79bbe9d3054184ac065598bbeaf",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:dark-void-gods-alamo-hank",
+      "sourceSha256": "9b5ccc108662ea03d1a0d2e99354c84ec1397d706869db24794b7a24e665349c",
+      "pads": 5,
+      "tilted": 3,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:spherical-war-swt-estephen08",
+      "sourceSha256": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:meli-cafe-gods-meli",
+      "sourceSha256": "ccaefa89d6fa8ae3666cd81559c7ffb41c35d61269df72e38eda24bc48bc5464",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:fall-guys-with-swords-dirtymonkee78",
+      "sourceSha256": "f2bfbfa2a6adecac2aab31f3539492423c201a6c33e06d52f8f654dc230bd79b",
+      "pads": 2,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:army-of-pop1-gods-thor",
+      "sourceSha256": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:mini-w-a-m-muniibunii-gfy",
+      "sourceSha256": "8c45bb2d1187092f9849fb706e9974d192d50063e877573f76544d04f780f4bf",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
+    },
+    {
+      "mapId": "archive:eternal-gods-pitdevil",
+      "sourceSha256": "7811746aca99333896dd90dc05df52cd68bfaecb384610b281598b7463824735",
+      "pads": 0,
+      "tilted": 0,
+      "scaled": 0
     }
   ],
-  "conversion": "Actual source rows only. Reflect local center/normal Z once, no campaign4800 offset. Preserve source order, radius and speed. Paintball has no native rows or legacy jump-pad material; no replacement pads invented."
+  "conversion": "Actual source rows only. Reflect local center/normal Z once, no campaign4800 offset. Preserve source order, radius and speed. Paintball has no native rows or legacy jump-pad material; no replacement pads invented.",
+  "r26": "Campaign r12 MAPS: rows after the first five come from each map's source-semantics.json jump list (importer rows, Z reflected once, radius/speed preserved) and from ~/ashfall/campaign/staging/MAPS/R26MapData.py geometry detection of down-scaled three-support launch frames (radius max(1.3*scale,0.6), speed aimed at walkable landing geometry including connected floors; model includes Flight 0.3s launch clearance, g=16.2 and belly terminal=25). The first five rows are unchanged."
 }

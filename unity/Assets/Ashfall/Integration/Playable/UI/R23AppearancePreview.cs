@@ -12,7 +12,7 @@ namespace Ashfall.Integration.Playable.UI
     [DefaultExecutionOrder(50)]
     public sealed class R23AppearancePreview:MonoBehaviour
     {
-        const float SourceRadiansPerSecond=.54f,SourceFacingHoldSeconds=.6f;
+        const float SourceRadiansPerSecond=.27f,SourceFacingHoldSeconds=.6f;
         const float NormalizedStandingEye=1.7088f;
         Transform viewer,fixture,avatar,head,left,right,ownerObject,sourceAnchor;
         R23PlayerAppearance appearance;

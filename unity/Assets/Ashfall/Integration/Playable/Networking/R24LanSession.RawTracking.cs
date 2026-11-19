@@ -19,7 +19,7 @@ namespace Ashfall.Integration.Playable.Networking
             if(peer==null||root==null||!root.Ready||!root.Map.IsLoaded||root.Lobby!=null&&root.Lobby.Visible||root.Rig.CarrierActive||!root.Rig.Tracking||!root.Rig.SessionFocused)return;
             R24LanSpawn spawn;if(!peer.Lobby.TryReadSpawn(peer.Lobby.OwnActor,out spawn)||!root.ApplyLanSpawn(spawn))return;
             bool left=root.Rig.LeftInput.Tracked,right=root.Rig.RightInput.Tracked;
-            PublishEquipment();PublishFoodEquipment();PublishGrenadeEquipment();peer.Lobby.PublishRawTracking(new R24LanRawTracking(root.Map.ManifestSha256,(byte)(1|(left?2:0)|(right?4:0)|(root.Paddles!=null&&root.Paddles.State.Active?8:0)),T(root.Rig.transform),T(root.Rig.Head.transform),T(root.Rig.Left),T(root.Rig.Right),left&&!root.Climbing.LeftAnchored?Mathf.Clamp01(root.Rig.LeftInput.Grip):0,right&&!root.Climbing.RightAnchored?Mathf.Clamp01(root.Rig.RightInput.Grip):0,spawn.Revision));
+            PublishEquipment();PublishFoodEquipment();PublishGrenadeEquipment();peer.Lobby.PublishRawTracking(new R24LanRawTracking(root.Map.ManifestSha256,(byte)(1|(left?2:0)|(right?4:0)|(root.Paddles!=null&&root.Paddles.State.Active&&root.Paddles.State.Visible?8:0)),T(root.Rig.transform),T(root.Rig.Head.transform),T(root.Rig.Left),T(root.Rig.Right),left&&!root.Climbing.LeftAnchored?Mathf.Clamp01(root.Rig.LeftInput.Grip):0,right&&!root.Climbing.RightAnchored?Mathf.Clamp01(root.Rig.RightInput.Grip):0,spawn.Revision));
         }
     }
 }

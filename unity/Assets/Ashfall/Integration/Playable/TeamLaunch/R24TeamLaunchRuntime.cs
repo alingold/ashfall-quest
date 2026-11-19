@@ -22,19 +22,19 @@ namespace Ashfall.Integration.Playable.TeamLaunch
     }
     public sealed class R24LaunchAssignment
     {
-        public readonly string PlayerId,PodId;public readonly int Team,Slot;public readonly Float3 Spawn;
-        public R24LaunchAssignment(string player,string pod,int team,int slot,Float3 spawn){PlayerId=player;PodId=pod;Team=team;Slot=slot;Spawn=spawn;}
+        public readonly string PlayerId,PodId;public readonly int Team,Platform,Slot;public readonly Float3 Spawn;
+        public R24LaunchAssignment(string player,string pod,int team,int slot,Float3 spawn,int platform=-1){Platform=platform<0?team:platform;PlayerId=player;PodId=pod;Team=team;Slot=slot;Spawn=spawn;}
     }
     public sealed class R24LaunchLayout
     {
         public const int Slots=12;public readonly R24LaunchMap Map;public readonly R24LaunchRules Rules;readonly R24LaunchFrame[] stations;
-        public int TeamCount{get{return stations.Length;}}public float Ceiling{get{return Map.Top+65+TeamCount*18+20;}}
-        public static bool UsesSkyPlatform(string id){return !Ashfall.Integration.Playable.Match.R24ArchiveRoundPolicy.GroundTeams(id);}
+        public int TeamCount{get{return Rules.Teams;}}public int PlatformCount{get{return stations.Length;}}public float Ceiling{get{return Map.Top+65+PlatformCount*18+20;}}
+        public static bool UsesSkyPlatform(string id){return R26MapPodPolicy.UsesPods(id);} // MAP-PODS-MAGNUM: per-map data, legacy GroundTeams fallback
         public static bool Eligible(R24LaunchMap map,R24LaunchRules rules){return rules.Live&&UsesSkyPlatform(map.Id)&&rules.Mode=="revive"&&rules.Teams>0&&rules.Teams<=8&&(rules.Stage=="lobby"||rules.Stage=="countdown"||rules.Stage=="match");}
         public R24LaunchLayout(R24LaunchMap map,R24LaunchRules rules)
         {
             if(!Eligible(map,rules)||String.IsNullOrEmpty(map.Id)||!map.Minimum.IsFinite||!map.Maximum.IsFinite||map.Span<=0||!R24LaunchMath.Finite(map.Top)||!R24LaunchMath.Finite(map.OriginY))throw new ArgumentException("Actual eligible launch map/rules required");
-            Map=map;Rules=rules;stations=new R24LaunchFrame[rules.Teams];
+            Map=map;Rules=rules;stations=new R24LaunchFrame[Math.Min(2,rules.Teams)];
             float[,] corner={{0,1},{1,0},{1,1},{0,0},{.5f,1},{.5f,0},{0,.5f},{1,.5f}};
             var directions=new[]{new Float3(0,0,-1),new Float3(0,0,1),new Float3(-1,0,0),new Float3(1,0,0),new Float3(0,0,-1),new Float3(0,0,1),new Float3(1,0,0),new Float3(-1,0,0)};
             for(int team=0;team<stations.Length;team++)
@@ -45,19 +45,34 @@ namespace Ashfall.Integration.Playable.TeamLaunch
             }
         }
         public string PodId(int team,int slot){return Rules.Epoch+":"+team+":"+slot;}
-        public R24LaunchFrame Station(int team){if(team<0||team>=TeamCount)throw new ArgumentOutOfRangeException("team");return stations[team];}
+        public R24LaunchFrame Station(int team){if(team<0||team>=PlatformCount)throw new ArgumentOutOfRangeException("team");return stations[team];}
         public R24LaunchFrame Pod(int team,int slot){if(slot<0||slot>=Slots)throw new ArgumentOutOfRangeException("slot");var f=Station(team);f.Origin=f.Point(new Float3((slot-5.5f)*3.6f,.14f,6));return f;}
-        public R24LaunchAssignment Assign(string player,int team,IEnumerable<R24LaunchAssignment> roster)
+        public R24LaunchAssignment Assign(string player,int team,IEnumerable<R24LaunchAssignment> roster,Func<string,bool> spent=null)
         {
-            if(String.IsNullOrEmpty(player))throw new ArgumentException("actual player");team=Math.Max(0,Math.Min(TeamCount-1,team));var used=new bool[Slots];
-            if(roster!=null)foreach(var other in roster)if(other!=null&&other.PlayerId!=player&&other.Team==team&&other.Slot>=0&&other.Slot<Slots)used[other.Slot]=true;
-            int slot=0;while(used[slot]&&slot<Slots-1)slot++;
-            return new R24LaunchAssignment(player,PodId(team,slot),team,slot,Station(team).Point(new Float3((slot-5.5f)*3.6f,.12f,-3)));
+            if(String.IsNullOrEmpty(player)||team<0||team>=TeamCount)throw new ArgumentException("actual player/team");
+            var used=new bool[PlatformCount,Slots];
+            if(roster!=null)foreach(var other in roster)
+                if(other!=null&&other.PlayerId!=player&&other.Platform>=0&&other.Platform<PlatformCount&&other.Slot>=0&&other.Slot<Slots)used[other.Platform,other.Slot]=true;
+            for(int n=0;n<PlatformCount;n++){
+                int platform=(team+n)%PlatformCount;
+                for(int slot=0;slot<Slots;slot++)if(!used[platform,slot]&&(spent==null||!spent(PodId(platform,slot))))
+                    return new R24LaunchAssignment(player,PodId(platform,slot),team,slot,Station(platform).Point(new Float3((slot-5.5f)*3.6f,.12f,-3)),platform);
+            }
+            return null;
+        }
+        public int PlatformAt(Float3 point)
+        {
+            int nearest=-1;float height=float.PositiveInfinity;
+            if(point.IsFinite)for(int i=0;i<PlatformCount;i++){
+                var p=stations[i].Local(point);
+                if(Math.Abs(p.X)<=25&&Math.Abs(p.Z)<=10&&p.Y>=-.5f&&p.Y<19.5f&&Math.Abs(p.Y)<height){nearest=i;height=Math.Abs(p.Y);}
+            }
+            return nearest;
         }
         public bool TryCabin(R24LaunchPlayer player,out int slot,out R24LaunchFrame pod)
         {
-            slot=-1;pod=new R24LaunchFrame();if(player.Team<0||player.Team>=TeamCount||!player.Position.IsFinite)return false;
-            for(int i=0;i<Slots;i++){var f=Pod(player.Team,i);var p=f.Local(player.Position);if(Math.Abs(p.X)<.95f*R24TeamLaunchRuntime.PodScale&&Math.Abs(p.Z)<1.3f*R24TeamLaunchRuntime.PodScale&&Math.Abs(p.Y)<.7f){slot=i;pod=f;return true;}}return false;
+            int platform=PlatformAt(player.Position);slot=-1;pod=new R24LaunchFrame();if(platform<0||player.Team<0||player.Team>=TeamCount)return false;
+            for(int i=0;i<Slots;i++){var f=Pod(platform,i);var p=f.Local(player.Position);if(Math.Abs(p.X)<.95f*R24TeamLaunchRuntime.PodScale&&Math.Abs(p.Z)<1.3f*R24TeamLaunchRuntime.PodScale&&Math.Abs(p.Y)<.7f){slot=i;pod=f;return true;}}return false;
         }
         public bool Staging(Float3 point){if(!point.IsFinite)return false;foreach(var f in stations){var p=f.Local(point);if(p.X>=-25&&p.X<25&&p.Y>=-8.5f&&p.Y<19.5f&&p.Z>=-10&&p.Z<10)return true;}return false;}
     }
@@ -114,14 +129,14 @@ namespace Ashfall.Integration.Playable.TeamLaunch
         public R24LaunchRide ReadRide(string player){R24LaunchRide value;return player!=null&&rides.TryGetValue(player,out value)?value:null;}
         // Presentation adoption only. The LAN lobby retains movement authority;
         // this feeds the existing cabin controls, colliders, audio and visuals.
-        public bool AdoptHostRide(string actor,CapsulePlan plan,double started,int phase,Float3 terminal){if(Layout==null||String.IsNullOrEmpty(actor)||plan==null||plan.Team<0||plan.Team>=Layout.TeamCount||plan.Slot<0||plan.Slot>=12||!R24LaunchMath.Finite(started)||started<0||phase<0||phase>2||!terminal.IsFinite)return false;R24LaunchRide ride;if(!rides.TryGetValue(actor,out ride)||ride.Plan.PodId!=plan.PodId||ride.Started!=started){ride=new R24LaunchRide(actor,plan,Layout.Pod(plan.Team,plan.Slot),started);rides[actor]=ride;}ride.State=(R24LaunchRideState)phase;ride.TerminalTarget=terminal;return true;}
+        public bool AdoptHostRide(string actor,CapsulePlan plan,double started,int phase,Float3 terminal){if(Layout==null||String.IsNullOrEmpty(actor)||plan==null||plan.Team<0||plan.Team>=Layout.TeamCount||plan.Slot<0||plan.Slot>=12||!R24LaunchMath.Finite(started)||started<0||phase<0||phase>2||!terminal.IsFinite)return false;int platform=Layout.PlatformAt(plan.Start);if(platform<0||plan.PodId!=Layout.PodId(platform,plan.Slot))return false;R24LaunchRide ride;if(!rides.TryGetValue(actor,out ride)||ride.Plan.PodId!=plan.PodId||ride.Started!=started){ride=new R24LaunchRide(actor,plan,Layout.Pod(platform,plan.Slot),started);rides[actor]=ride;}ride.State=(R24LaunchRideState)phase;ride.TerminalTarget=terminal;return true;}
         public bool Used(string pod){foreach(var ride in rides.Values)if(ride.Plan.PodId==pod)return true;return false;}
         public void RemovePlayer(string id){if(id!=null)rides.Remove(id);}
         bool Refuse(string why){Failure=why;return false;}
         public bool TryLaunch(R24LaunchPlayer player,string pod,double clock,IList<Float3> spawns,IList<Float3> loot,Float3 arenaFallback,IR24LaunchWorld world,out R24LaunchRide ride)
         {
             ride=null;Failure=null;if(Layout==null||Rules.Stage!="match"||!player.Alive||!player.OnDeck||String.IsNullOrEmpty(player.Id)||rides.ContainsKey(player.Id)||world==null||!R24LaunchMath.Finite(clock)||clock<0)return Refuse("source match/living/deck/copy/world required");
-            int slot;R24LaunchFrame frame;if(!Layout.TryCabin(player,out slot,out frame)||pod!=Layout.PodId(player.Team,slot)||Math.Abs(frame.Local(player.Position).Y)>.65f||Used(pod))return Refuse("actual own-team cabin/key unused and within source bounds required");
+            int slot;R24LaunchFrame frame;if(!Layout.TryCabin(player,out slot,out frame)||pod!=Layout.PodId(Layout.PlatformAt(player.Position),slot)||Math.Abs(frame.Local(player.Position).Y)>.65f||Used(pod))return Refuse("actual own-team cabin/key unused and within source bounds required");
             var candidates=new List<Float3>();if(spawns!=null)foreach(var p in spawns)if(p.IsFinite)candidates.Add(p);if(loot!=null)foreach(var p in loot)if(p.IsFinite)candidates.Add(R24LaunchMath.Add(p,new Float3(0,-.48f,0)));if(candidates.Count==0&&arenaFallback.IsFinite)candidates.Add(arenaFallback);
             for(int i=candidates.Count-1;i>0;i--){int j=random.Next(i+1);var p=candidates[i];candidates[i]=candidates[j];candidates[j]=p;}
             var map=Layout.Map;float inset=Math.Min(4,map.Span*.1f),minX=map.Minimum.X+inset,maxX=map.Maximum.X-inset,minZ=map.Minimum.Z+inset,maxZ=map.Maximum.Z-inset;
@@ -156,7 +171,7 @@ namespace Ashfall.Integration.Playable.TeamLaunch
         {
             var none=new R24LaunchIntent();if(Layout==null||!player.Alive){controlHeld=true;return none;}
             var ride=ReadRide(player.Id);bool flying=ride!=null&&ride.State==R24LaunchRideState.Flying;int slot;R24LaunchFrame frame;bool inside=Layout.TryCabin(player,out slot,out frame);
-            string board=inside&&!flying?Layout.PodId(player.Team,slot):"";if(board!=""&&board!=boardKey)controlHeld=true;boardKey=board;
+            string board=inside&&!flying?Layout.PodId(Layout.PlatformAt(player.Position),slot):"";if(board!=""&&board!=boardKey)controlHeld=true;boardKey=board;
             if(flying){frame=ride.Frame;frame.Origin=R24LaunchMath.Add(ride.Position(clock),new Float3(0,-.12f,0));}
             var control=frame.Point(ControlLocalPoint);
             if(flying&&input.HeadTracked&&input.Head.IsFinite&&input.HeadForward.IsFinite){ride.Control=RiderControl(input.Head,input.HeadForward);var d=R24LaunchMath.Sub(ride.Control,input.Head);ride.ControlForward=new Float3(d.X,0,d.Z);ride.HasControl=true;}

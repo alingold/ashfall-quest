@@ -3,14 +3,14 @@ using System;using System.Collections.Generic;using System.IO;using System.Text;
 // through the production lobby + simulated transport. Native UTP/Root unrun.
 partial class LobbyCases
 {
-    sealed class HazardWorld:IR24LanSpawnWorld,IR24LanWarmupFrame
+    sealed class HazardWorld:IR24LanSpawnWorld,IR26LanFallFrame
     {
         internal int Picks;internal bool Frame=true;
         public bool ReadyForSpawn(string map,bool warmup){return map=="range";}
         public SpawnSite[] Sites(string map,bool warmup){Picks++;return new[]{new SpawnSite("hazard-a",new Float3(0,.12f,0),-1,false,false),new SpawnSite("hazard-b",new Float3(8,.12f,0),-1,false,false)};}
         public bool IsSafe(string map,string actor,Float3 feet){return map=="range";}
-        // Declared map frame: represented Y equals source Y (no removed origin).
-        public bool TrySourceHeight(string map,Float3 feet,out float y){y=feet.Y;return Frame&&map=="range"&&feet.IsFinite;}
+        // Fixture map geometry bottom is Y=0.
+        public bool IsBelowFallFailsafe(string map,Float3 feet){return Frame&&map=="range"&&feet.IsFinite&&feet.Y< -100;}
     }
     // Fixture world whose first source site is the fixture origin used by raw-pose helpers.
     sealed class OriginSpawnWorld:IR24LanSpawnWorld
@@ -22,6 +22,10 @@ partial class LobbyCases
     static void StartRound(Pair pair,IR24LanSpawnWorld world,R24PlayableMatchRules rules,string hash)
     {
         for(int i=0;i<5;i++)pair.Tick();pair.Host.BindSpawnWorld(world);pair.Host.BindRawTrackingWorldQuery(Open);
+        StartBoundRound(pair,rules,hash);
+    }
+    static void StartBoundRound(Pair pair,R24PlayableMatchRules rules,string hash)
+    {
         Need(pair.Host.BeginRoundSelection(rules,hash,321)&&pair.Host.ReportMapLoaded(hash),"Regression round uses actual host selection/load");for(int i=0;i<3;i++)pair.Tick();
         Need(pair.Client.ReportMapLoaded(hash),"Regression round actual guest load");for(int i=0;i<4;i++)pair.Tick();
         pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);
@@ -140,24 +144,25 @@ partial class LobbyCases
     // D4: LAN members' match falls must be resolved by the Health owner (host).
     static void RemoteMatchFall()
     {
-        using(var pair=new Pair()){
-            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("protection",2f).With("respawn_delay",1f).With("zone_enabled",false);string hash=new string('b',64);
+        foreach(var preset in new[]{"free_for_all","team_respawn","team_revive"})using(var pair=new Pair()){
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset(preset,"range").With("protection",2f).With("respawn_delay",1f).With("zone_enabled",false);string hash=new string('b',64);
             StartRound(pair,world,rules,hash);string guest=pair.Client.OwnActor,host=pair.Host.OwnActor;var g=Health(pair.Host,guest);var h=Health(pair.Host,host);
-            Need(g.Life==LifeState.Alive,"Guest alive at round start");Descend(pair,hash,g.SpawnRevision,0,-24.9f,8.3f);
-            Need(Health(pair.Host,guest).Life==LifeState.Alive&&pair.Host.CorrectedRawTracking==0,"Source fall line is strictly below minus25 (continuous accepted descent)");
-            Need(pair.Client.PublishRawTracking(WarmupPose(hash,-30,g.SpawnRevision)),"Guest raw tracking below the source fall line during protection");for(int i=0;i<3;i++)pair.Tick();
+            Need(g.Life==LifeState.Alive,"Guest alive at round start");Descend(pair,hash,g.SpawnRevision,0,-100f,10f);
+            Need(Health(pair.Host,guest).Life==LifeState.Alive&&pair.Host.CorrectedRawTracking==0,"100 m below map geometry is still in bounds (continuous accepted descent)");
+            Need(pair.Client.PublishRawTracking(WarmupPose(hash,-105,g.SpawnRevision)),"Guest raw tracking below the source fall line during protection");for(int i=0;i<3;i++)pair.Tick();
             var dead=Health(pair.Host,guest);Need(dead.Life==LifeState.Dead&&dead.Deaths==1&&dead.Revision>g.Revision,"Host Health resolves a remote member's match fall (source: fatal even during protection)");
+            if(preset=="team_revive"){Need(dead.RespawnAt==0&&dead.Life==LifeState.Dead,"Team Revive fall is eliminated without a respawn");continue;}
             for(int i=0;i<3;i++)pair.Tick();Need(Health(pair.Client,guest).Life==LifeState.Dead,"Guest receives its host-owned fall death");
-            for(float y=0;y>=-30;y-=10){Need(pair.Host.PublishRawTracking(new R24LanRawTracking(hash,7,PoseAt(8,y,0),PoseAt(8,y+1.7f,0),PoseAt(7.7f,y+1.2f,.2f),PoseAt(8.3f,y+1.2f,.2f),0,0,h.SpawnRevision)),"Host own continuous raw "+y);pair.Tick();pair.Tick();}
+            for(float y=0;y>=-110;y-=10){Need(pair.Host.PublishRawTracking(new R24LanRawTracking(hash,7,PoseAt(8,y,0),PoseAt(8,y+1.7f,0),PoseAt(7.7f,y+1.2f,.2f),PoseAt(8.3f,y+1.2f,.2f),0,0,h.SpawnRevision)),"Host own continuous raw "+y);pair.Tick();pair.Tick();}
             Need(Health(pair.Host,host).Life==LifeState.Alive,"Listen host's own fall stays with its local Root owner (no duplicate remote path)");
-            pair.Now=dead.RespawnAt+.01;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);for(int i=0;i<5;i++)pair.Tick();
+            pair.Now=Math.Max(pair.Now,dead.RespawnAt+.01);pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);for(int i=0;i<5;i++)pair.Tick();
             var back=Health(pair.Client,guest);Need(back.Life==LifeState.Alive&&back.SpawnRevision==g.SpawnRevision+1,"Existing host respawn follows the remote fall death");
-            Need(!pair.Client.PublishRawTracking(WarmupPose(hash,-30,g.SpawnRevision))&&Health(pair.Host,guest).Life==LifeState.Alive,"Old-revision fall pose cannot be replayed against the new life");
+            Need(!pair.Client.PublishRawTracking(WarmupPose(hash,-105,g.SpawnRevision))&&Health(pair.Host,guest).Life==LifeState.Alive,"Old-revision fall pose cannot be replayed against the new life");
         }
         using(var pair=new Pair()){
             var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("free_for_all","range").With("respawn_delay",1f).With("zone_enabled",false);string hash=new string('b',64);
             StartRound(pair,world,rules,hash);string guest=pair.Client.OwnActor;var g=Health(pair.Host,guest);
-            world.Frame=false;Descend(pair,hash,g.SpawnRevision,0,-30,10);
+            world.Frame=false;Descend(pair,hash,g.SpawnRevision,0,-110,10);
             Need(Health(pair.Host,guest).Life==LifeState.Alive,"Unavailable authoritative map frame cannot kill");
             pair.Now+=1.5;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);world.Frame=true;for(int i=0;i<3;i++)pair.Tick();
             Need(Health(pair.Host,guest).Life==LifeState.Alive,"Stale (>1s) raw evidence never kills");
@@ -196,7 +201,7 @@ partial class LobbyCases
     static void LateJoinWaitsForNextRound()
     {
         using(var pair=new Pair()){
-            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("team_revive","range").With("time_limit",30).With("rounds",2).With("zone_enabled",false);string hash=new string('b',64);
+            var world=new HazardWorld();var rules=R24PlayableMatchRules.ForPreset("team_revive","range").With("rounds",2).With("protection",0f).With("zone_enabled",false);string hash=new string('b',64);
             StartRound(pair,world,rules,hash);Need(pair.Host.MapStage==SessionStage.Match,"Revive round active");
             var pipe=new Pipe();var late=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));pipe.Lost=late.TransportDisconnected;
             pair.HostPipe.Links.Add("late",new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=pair.HostPipe,Back="late"});late.StartClient("server","Late",pair.Now);pair.Host.TransportConnected("late");
@@ -207,7 +212,9 @@ partial class LobbyCases
                 Need(late.ReportMapLoaded(hash),"Late joiner loads the shared map");for(int i=0;i<4;i++)tick();
                 Need(late.RequestSpawn(),"Late joiner requests placement");for(int i=0;i<5;i++)tick();
                 Need(late.SpawnFailure!=null&&late.SpawnWaitingForNextRound&&late.State==R24LanLobbyState.Connected,"Spectator refusal is reported as waiting for next round, connection retained");
-                pair.Now=pair.Host.SelectedMap.StartsAt+30.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);late.Tick(pair.Now);for(int i=0;i<4;i++)tick();
+                // r19: Team Revive has no clock; the round ends when one team is eliminated (the guest is the other team).
+                {var h=Health(pair.Host,pair.Client.OwnActor);Need(pair.Host.ApplyHostHealthLoss(pair.Client.OwnActor,h.Revision,h.Health,h.Shield,true).Accepted,"Knock down the guest, the only member of the other team");}
+                for(int i=0;i<6;i++)tick();
                 Need(pair.Host.SelectedMap.Round==2&&late.SelectedMap.Round==2&&!late.SpawnWaitingForNextRound,"Next host round clears the waiting state");
                 Need(pair.Host.ReportMapLoaded(hash)&&pair.Client.ReportMapLoaded(hash)&&late.ReportMapLoaded(hash),"All three acknowledge round two");for(int i=0;i<5;i++)tick();
                 pair.Now=pair.Host.SelectedMap.StartsAt+.1;pair.Host.Tick(pair.Now);pair.Client.Tick(pair.Now);late.Tick(pair.Now);
@@ -267,7 +274,7 @@ partial class LobbyCases
             new KeyValuePair<string,Action>("D17 remote loot/malformed frames/shutdown",RemoteLootAndMalformed),
             new KeyValuePair<string,Action>("D18 authoritative pod presentation adoption",AdoptPodPresentation),
             new KeyValuePair<string,Action>("D19 acknowledged native ammo reconciliation",AmmoReconciliation),
-            new KeyValuePair<string,Action>("D20 warmup and round inventory retention",WarmupAndRoundRetention),
+            new KeyValuePair<string,Action>("D20 fresh inventory at match start and same-map restart",WarmupAndRoundRetention),
             new KeyValuePair<string,Action>("D21 shared construction/build supplies/reserve drops",ConstructionAndResources),
             new KeyValuePair<string,Action>("D22 host source melee contacts/custody/world",MeleeAuthority),
             new KeyValuePair<string,Action>("D23 host finite explosive custody/projectiles/PvP",ExplosiveAuthority),
@@ -332,6 +339,20 @@ partial class LobbyCases
             new KeyValuePair<string,Action>("D80 build tap hold selection",BuildSelectionControls),
             new KeyValuePair<string,Action>("D81 build dismantle ownership refund collapse",BuildDismantlePolicy),
             new KeyValuePair<string,Action>("D82 build compound clearance host edit admission",Build2Admission),
+            new KeyValuePair<string,Action>("D83 r12 combat: held auto fire, bunched admission, hit confirms, reticle volumes",R26Combat),
+            new KeyValuePair<string,Action>("D84 r12 MP pickup full-inventory swap, refusal log, backpack cap, release",LobbyCases.R26Run),
+            new KeyValuePair<string,Action>("D85 r12 guest grenade/food drop receipts",LobbyCases.R26DropRun),
+            new KeyValuePair<string,Action>("D86 shotgun local/host falloff and shared firearm reach",LobbyCases.R26ShotgunChecks),
+            new KeyValuePair<string,Action>("D87 r12 durable rooms: home, late join, directory",LobbyCases.RunRoomCases),
+            new KeyValuePair<string,Action>("D88 r12b retained inventory fills the last slot (host/guest, cap 4-6)",LobbyCases.Pickup2Run),
+            new KeyValuePair<string,Action>("D89 r12b Team Revive elimination, kill cap ignored, survival presentation",LobbyCases.R26UIBITSRun),
+            new KeyValuePair<string,Action>("D90 r12b remote equipment, accepted volleys, remote life presentation",LobbyCases.RemoteCases),
+            new KeyValuePair<string,Action>("D91 r12b warmup vs round damage, hit admission under low fps",LobbyCases.R26Hitreg),
+            new KeyValuePair<string,Action>("D92 r13 grapple other players: admission, pull lifecycle, abuse",LobbyCases.R26GrapplePvp),
+            new KeyValuePair<string,Action>("r18 guest warm-up catalog and fresh match kit",GuestWarmupCatalog),
+            new KeyValuePair<string,Action>("r18 death and knockdown drops, recovery and expiry",DeathDropCases),
+            new KeyValuePair<string,Action>("r17 match boundary reset and repeated LAN respawns",MatchResetCases),
+            new KeyValuePair<string,Action>("r18 teams, seats, roster and platform authority",Teams2),
 
         };
         foreach(var group in groups){try{group.Value();Console.WriteLine("REGRESSION PASS "+group.Key);}catch(Exception e){failures.Add(group.Key+": "+e.Message);Console.WriteLine("REGRESSION FAIL "+group.Key+": "+e.GetType().Name+": "+e.Message);}}

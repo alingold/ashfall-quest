@@ -36,6 +36,6 @@ partial class LobbyCases
         var t=new R24LanTransform(root,new R24LanRotation(0,0,0,1));R24LanPose read;
         var pose=new R24LanPose("menu",114,127,t,t,t,t,velocity,0,0);
         Need(pose.Riding&&pose.Jetting&&R24LanPose.TryDecode(pose.Encode(),out read)&&read.Riding,"Bit 64 accepted with prior flags");
-        Need(!new R24LanPose("menu",0,128,t,t,t,t,velocity,0,0).Valid,"Bit 128 rejected");Need(!new R24LanPose("menu",139,64,t,t,t,t,velocity,0,0).Valid,"Style 139 excluded after optional legacy extension");
+        Need(!new R24LanPose("menu",0,144,t,t,t,t,velocity,0,0).Valid,"r12b: Glide+Dive bits 144 rejected");Need(!new R24LanPose("menu",139,64,t,t,t,t,velocity,0,0).Valid,"Style 139 excluded after optional legacy extension");
     }
 }

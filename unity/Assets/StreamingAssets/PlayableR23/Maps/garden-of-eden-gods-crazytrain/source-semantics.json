@@ -1,0 +1,443 @@
+{
+ "mapId": "archive:garden-of-eden-gods-crazytrain",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:garden-of-eden-gods-crazytrain",
+  "title": "GARDEN OF EDEN",
+  "creator": "GODS_CRAZYTRAIN",
+  "template": "MapEditorSnow",
+  "center": [
+   16.080660582521034,
+   65.38541859380094,
+   -3.2245192395050557
+  ],
+  "recorded_spawns": [
+   [
+    -119.72,
+    68.52,
+    153.16
+   ],
+   [
+    -120.36,
+    68.53,
+    158.2
+   ],
+   [
+    -125.13,
+    68.52,
+    159.02
+   ],
+   [
+    -131.76,
+    68.5,
+    160.2
+   ],
+   [
+    -136.3,
+    68.5,
+    159.65
+   ],
+   [
+    -141.14,
+    68.5,
+    160.32
+   ],
+   [
+    -145.65,
+    68.5,
+    159.64
+   ],
+   [
+    -145.24,
+    68.52,
+    155.13
+   ],
+   [
+    -141.44,
+    68.52,
+    154.55
+   ],
+   [
+    -136.28,
+    68.52,
+    153.59
+   ],
+   [
+    -131.54,
+    68.52,
+    153.24
+   ],
+   [
+    -125.06,
+    68.52,
+    153.65
+   ],
+   [
+    159.64,
+    62.53,
+    -131.91
+   ],
+   [
+    123.95,
+    65.74,
+    -177.51
+   ],
+   [
+    129.12,
+    65.84,
+    -177.35
+   ],
+   [
+    134.89,
+    65.83,
+    -177.39
+   ],
+   [
+    141.54,
+    65.86,
+    -177.26
+   ],
+   [
+    137.24,
+    65.84,
+    -173.34
+   ],
+   [
+    131.6,
+    65.85,
+    -173.65
+   ],
+   [
+    161.2,
+    62.53,
+    -155.76
+   ],
+   [
+    161.14,
+    62.53,
+    -152.91
+   ],
+   [
+    160.41,
+    62.53,
+    -148.41
+   ],
+   [
+    160.14,
+    62.53,
+    -143.09
+   ],
+   [
+    159.91,
+    62.53,
+    -138.41
+   ]
+  ],
+  "bounds_min": [
+   -194.15982055664062,
+   -76.85621643066406,
+   -229.73919677734375
+  ],
+  "bounds_max": [
+   206.86810302734375,
+   208.0,
+   220.1702423095703
+  ],
+  "solid_min": [
+   -300.0,
+   -76.85621643066406,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   208.0,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/garden-of-eden-gods-crazytrain/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+  "cache_fingerprint": "4f9e5479a6d4316b8e0df36ea2a4cf38591630347d35c88e741ef9737ebbaf53",
+  "warmup": [
+   {
+    "center": [
+     -0.58805,
+     129.47364,
+     -33.35874
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -0.08801,
+     129.47364,
+     -30.08991
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     9.58802,
+     126.52155,
+     -28.58987
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     12.41199,
+     125.47363,
+     -34.08991
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     10.86556,
+     126.97363,
+     -24.81235
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     12.91199,
+     126.52155,
+     -24.81237
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     12.91195,
+     125.97363,
+     -28.58991
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     5.91199,
+     126.52155,
+     -37.58992
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     6.36625,
+     127.02155,
+     -30.5899
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     2.91199,
+     127.97363,
+     -33.35874
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     3.41199,
+     127.97363,
+     -30.35877
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1e-05,
+     0,
+     -1.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 11,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "4f9e5479a6d4316b8e0df36ea2a4cf38591630347d35c88e741ef9737ebbaf53",
+  "sites": [
+   [
+    -62.35439,
+    70.6273,
+    -1.4037
+   ],
+   [
+    166.81458,
+    64.84573,
+    -1.1751
+   ],
+   [
+    128.19638,
+    66.81192,
+    1.36816
+   ]
+  ],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "killzone",
+   "sourceNode": "killzone",
+   "boundsMin": [
+    -163.51536560058594,
+    148.0,
+    -194.5040740966797
+   ],
+   "boundsMax": [
+    173.51052856445312,
+    206.49996948242188,
+    185.0496368408203
+   ],
+   "triangles": 32
+  },
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

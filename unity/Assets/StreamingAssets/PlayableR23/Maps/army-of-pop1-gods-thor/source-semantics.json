@@ -1,0 +1,76 @@
+{
+ "mapId": "archive:army-of-pop1-gods-thor",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:army-of-pop1-gods-thor",
+  "title": "ARMY OF POP1",
+  "creator": "GODS_THOR",
+  "template": "MapEditorDefault",
+  "center": [
+   24.999607235214675,
+   100.5000230669971,
+   -9.795693705833969
+  ],
+  "recorded_spawns": [],
+  "bounds_min": [
+   -285.99998182369467,
+   -76.85621643066406,
+   -300.10260009765625
+  ],
+  "bounds_max": [
+   300.87799072265625,
+   173.14378356933594,
+   301.2038953530754
+  ],
+  "solid_min": [
+   -300.4999084472656,
+   -76.85621643066406,
+   -300.10260009765625
+  ],
+  "solid_max": [
+   300.87799072265625,
+   173.14378356933594,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/army-of-pop1-gods-thor/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+  "cache_fingerprint": "d2bf9657530e8ad8aa25673c729735fc6944dfb3bfe26f9dc4fc7d0b4aca094b",
+  "warmup": [],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 0,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "d2bf9657530e8ad8aa25673c729735fc6944dfb3bfe26f9dc4fc7d0b4aca094b",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": []
+}

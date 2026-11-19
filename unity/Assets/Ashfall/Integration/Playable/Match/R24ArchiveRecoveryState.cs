@@ -67,27 +67,37 @@ namespace Ashfall.Integration.Playable.Match
         static List<Float3> Sorted(IEnumerable<Float3> values,Comparison<Float3> compare){var result=new List<Float3>();foreach(var p in values){int at=result.Count;while(at>0&&compare(result[at-1],p)>0)at--;result.Insert(at,p);}return result;}
         public IEnumerator Build()
         {
-            Float3 floor;int work=0;
-            foreach(var p in info.Recorded){if(world.Floor(Add(p,0,2,0),5,out floor)&&!world.Outside(floor)&&world.Room(floor,true))Unique(spawns,Add(floor,0,.12f,0),1);if(++work%12==0)yield return null;}
+            Float3 floor;int work=0;bool boxed=Ashfall.Integration.Playable.TeamLaunch.R26MapPodPolicy.InteriorSpawn(info.Id,info.SourceSha256);
+            if(boxed)foreach(var hint in Ashfall.Integration.Playable.TeamLaunch.R26MapPodPolicy.InteriorHints(info.Id,info.SourceSha256)){
+                if(world.Floor(Add(hint,0,.6f,0),3,out floor)&&Math.Abs(floor.Y-hint.Y)<2&&!world.Outside(floor)&&world.Room(floor,true))Unique(spawns,Add(floor,0,.12f,0),1);if(++work%12==0)yield return null;
+            }
+            if(!boxed)foreach(var p in info.Recorded){if(world.Floor(Add(p,0,2,0),5,out floor)&&!world.Outside(floor)&&world.Room(floor,true))Unique(spawns,Add(floor,0,.12f,0),1);if(++work%12==0)yield return null;}
             float minX=Math.Max(info.SolidMin.X,info.BoundsMin.X+.6f),maxX=Math.Min(info.SolidMax.X,info.BoundsMax.X-.6f),minZ=Math.Max(info.SolidMin.Z,info.BoundsMin.Z+.6f),maxZ=Math.Min(info.SolidMax.Z,info.BoundsMax.Z-.6f),top=info.SolidMax.Y+5,bottom=info.SolidMin.Y-5;
             if(maxX<=minX||maxZ<=minZ){Failure="No usable source solid/play-bounds intersection";yield break;}
             for(int z=0;z<19;z++)for(int x=0;x<19;x++){var p=new Float3(minX+(maxX-minX)*(x+.5f)/19,top,minZ+(maxZ-minZ)*(z+.5f)/19);if(world.Floor(p,top-bottom,out floor)&&!world.Outside(floor)&&world.Room(floor,true))loot.Add(Add(floor,0,.6f,0));if(++work%12==0)yield return null;}
             bool recorded=spawns.Count>0;
-            if(!recorded)foreach(var p in Sorted(loot,delegate(Float3 a,Float3 b){return Distance2(a,info.Center).CompareTo(Distance2(b,info.Center));})){Unique(spawns,Add(p,0,-.48f,0),2);if(spawns.Count>=16)break;}
+            if(!boxed&&!recorded)foreach(var p in Sorted(loot,delegate(Float3 a,Float3 b){return Distance2(a,info.Center).CompareTo(Distance2(b,info.Center));})){Unique(spawns,Add(p,0,-.48f,0),2);if(spawns.Count>=16)break;}
             if(loot.Count==0)foreach(var p in spawns)loot.Add(Add(p,0,.48f,0));
             if(spawns.Count==0||loot.Count==0){Failure="No native floor/headroom-validated source archive sites";yield break;}
             var ordered=Sorted(spawns,delegate(Float3 a,Float3 b){return a.Y.CompareTo(b.Y);});float median=ordered[ordered.Count/2].Y;
             var lobby=new List<Float3>();var arena=new List<Float3>();foreach(var p in ordered){if(p.Y>median+20&&Safe(p,true)&&recorded)lobby.Add(p);if(p.Y<=median+20&&Safe(p,true))arena.Add(p);}
-            if(arena.Count>0){spawns.Clear();spawns.AddRange(arena);}SourceSpawn=spawns[0];
+            if(!boxed&&arena.Count>0){spawns.Clear();spawns.AddRange(arena);}SourceSpawn=spawns[0];
             SourceWarmup=lobby.Count>0?lobby[0]:Sorted(spawns,delegate(Float3 a,Float3 b){return Distance2(a,info.Center).CompareTo(Distance2(b,info.Center));})[0];
             R24ArchiveBox upper=null;foreach(var box in info.SpawnFloors)if(upper==null||box.Top>upper.Top)upper=box;
-            if(upper!=null&&upper.Top>median+20){lobby.Clear();arena.Clear();foreach(var p in ordered){if(upper.Contains(p,.6f)&&Safe(p,true))lobby.Add(p);if(p.Y<upper.Position.Y-5&&Safe(p,true))arena.Add(p);}var center=upper.Center;SourceWarmup=lobby.Count>0?lobby[0]:new Float3(center.X,upper.Top+.12f,center.Z);if(arena.Count>0){spawns.Clear();spawns.AddRange(arena);SourceSpawn=spawns[0];}}
+            if(upper!=null&&upper.Top>median+20){lobby.Clear();arena.Clear();foreach(var p in ordered){if(upper.Contains(p,.6f)&&Safe(p,true))lobby.Add(p);if(p.Y<upper.Position.Y-5&&Safe(p,true))arena.Add(p);}var center=upper.Center;SourceWarmup=lobby.Count>0?lobby[0]:new Float3(center.X,upper.Top+.12f,center.Z);if(!boxed&&arena.Count>0){spawns.Clear();spawns.AddRange(arena);SourceSpawn=spawns[0];}}
             var native=new List<Float3>();foreach(var hint in info.Deathmatch){if(world.Floor(Add(hint,0,1.5f,0),8,out floor)&&floor.Y>=hint.Y-6&&floor.Y<=hint.Y+1){var p=Add(floor,0,.12f,0);if(Safe(p,true)&&p.X>=info.BoundsMin.X&&p.X<=info.BoundsMax.X&&p.Z>=info.BoundsMin.Z&&p.Z<=info.BoundsMax.Z)Unique(native,p,1);}if(++work%12==0)yield return null;}
-            if(native.Count>0){spawns.Clear();spawns.AddRange(native);SourceSpawn=spawns[0];}
+            if(!boxed&&native.Count>0){spawns.Clear();spawns.AddRange(native);SourceSpawn=spawns[0];}
             foreach(var hint in info.Warmup)
             {
                 if(world.Floor(Add(hint,0,1.5f,0),8,out floor)&&floor.Y>=hint.Y-6&&floor.Y<=hint.Y+1&&world.Room(floor,true)){var point=Add(floor,0,.12f,0);warmupSites.Add(point);if(warmupSites.Count==1)SourceWarmup=point;}
                 if(++work%12==0)yield return null;
+            }
+            Float3 reviewedWarmup;
+            if(warmupSites.Count==0&&TeamLaunch.R26MapPodPolicy.ReviewedDefault(info.Id,info.SourceSha256,true,out reviewedWarmup)){
+                // Archive defaults use represented Unity-local coordinates. All archived maps
+                // here have their source origin removed; reflect Z into the planner frame.
+                var warm=new Float3(reviewedWarmup.X,reviewedWarmup.Y,-reviewedWarmup.Z);
+                if(Safe(warm,true)){SourceWarmup=warm;warmupSites.Add(warm);}
             }
             if(R24ArchiveMapPolicy.MagnumOnly(info.Id)){var center=new Float3();foreach(var p in spawns)center=Add(center,p.X,p.Y,p.Z);center=new Float3(center.X/spawns.Count,center.Y/spawns.Count,center.Z/spawns.Count);MagnumFallLevel=center.Y-20;MagnumCenter=Add(world.Floor(Add(center,0,6,0),12,out floor)?floor:SourceSpawn,0,2.5f,0);}
             Ready=true;

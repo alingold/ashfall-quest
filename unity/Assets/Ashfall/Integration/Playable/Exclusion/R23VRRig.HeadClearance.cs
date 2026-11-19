@@ -8,7 +8,7 @@ namespace Ashfall.Integration.Playable
     public sealed partial class R23VRRig
     {
         readonly R25HeadClearance headClearance = new R25HeadClearance();
-        float nextClearanceLog;
+        float nextClearanceLog, nextRiseLog;
         int pushFrame = -1;
         float pushUsed;
         Vector3 physicalNeutral;
@@ -172,6 +172,7 @@ namespace Ashfall.Integration.Playable
 #endif
         void LogClearance(string reason, float amount)
         {
+            if (amount >= .0001f) TraceNote(reason, amount, 0);
             if (amount < .0001f || Time.realtimeSinceStartup < nextClearanceLog) return;
             nextClearanceLog = Time.realtimeSinceStartup + 1;
             Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this,
@@ -209,6 +210,7 @@ namespace Ashfall.Integration.Playable
                     }
                 }
                 Vector3 escape = HeadCollision.EscapeEyeMotion(head, requested, slide, out hitCeiling);
+                if (rootMotion) TraceNote("eye-in-margin", requested.magnitude, escape.magnitude);
                 if (rootMotion && standing) escape = LevelStandingWalk(head, requested, escape);
                 return rootMotion && HoldPhysicalSupport && escape.y < 0 ? Vector3.zero : escape;
             }
@@ -254,17 +256,21 @@ namespace Ashfall.Integration.Playable
             Vector3 level = new Vector3(accepted.x, allowed, accepted.z);
             return HeadCollision.HeadClear(head + level) ? level : Vector3.zero;
         }
-        bool ResolveVerifiedSupport(Vector3 feet, Vector3 eye, Vector3 velocity, float seconds, float maximumRise, bool drop, out Vector3 correction)
+        bool ResolveVerifiedSupport(Vector3 feet, Vector3 eye, Vector3 velocity, float seconds, float maximumRise, bool drop, out Vector3 correction, bool gliding)
         {
-            if (!R25Features.HeadClearance) return HeadCollision.ResolveSupport(feet, eye, velocity, seconds, maximumRise, drop, out correction);
+            if (!R25Features.HeadClearance && !gliding) return HeadCollision.ResolveSupport(feet, eye, velocity, seconds, maximumRise, drop, out correction);
             correction = Vector3.zero;
             RaycastHit floor;
-            if (!HeadCollision.Support(feet, eye, out floor)) return HoldPhysicalSupport;
+            if (!HeadCollision.Support(feet, eye, out floor)) return !gliding && HoldPhysicalSupport;
+            // Walking follows a descending ramp. A glider lands only when its feet reach the surface.
+            if (gliding && floor.point.y < feet.y - .001f) return false;
+            if (!R25Features.HeadClearance) return HeadCollision.ResolveSupport(feet, eye, velocity, seconds, maximumRise, drop, out correction);
             if (HoldPhysicalSupport && floor.point.y <= feet.y + .0001f) return true;
             float rise = floor.point.y-feet.y;
             float allowance = .03f + (floor.normal.y < .999f ? Vector3.ProjectOnPlane(velocity,Vector3.up).magnitude*seconds*Mathf.Tan(65*Mathf.Deg2Rad) : 0);
             if (rise > maximumRise+.005f)
             {
+                TraceNote("rise-over-limit", rise, maximumRise);
                 // R4: the surface under the eye is above the chin (e.g. leaning
                 // over a high ledge). Keep standing on the floor under the feet
                 // instead of losing support and sinking through it.
@@ -297,6 +303,18 @@ namespace Ashfall.Integration.Playable
                     ok = eyeMoves(rise - add);
                     if (ok) correction = Vector3.up * rise; // feet go up the full rise
                     else UndoCrouchForRise(add);
+                }
+            }
+            if (!ok)
+            {
+                TraceNote("rise-blocked-eye-radius", rise, HeadCollision.EyeSafetyRadius);
+                // WIN2: a step up (a sill, a kerb under an overhang) that the eye could not
+                // take, with the numbers that decide it. At most one line per 2 s.
+                if (rise > .3f && Time.realtimeSinceStartup >= nextRiseLog)
+                {
+                    nextRiseLog = Time.realtimeSinceStartup + 2;
+                    Debug.LogFormat(LogType.Log, LogOption.NoStacktrace, this, "R26 step up blocked rise={0:F3} eyeHeight={1:F3} eyeRadius={2:F3} crouch={3:F3} canCrouch={4} head={5}",
+                        rise, eye.y - feet.y, HeadCollision.EyeSafetyRadius, crouch, CanRampCrouch, eye.ToString("F3"));
                 }
             }
             return ok;

@@ -104,9 +104,9 @@ namespace Ashfall.Integration.Playable.UI
             BeginLoading("MAP");
         }
         void RefreshFont(Font rebuilt) { if(rebuilt==font&&fontMaterial!=null)fontMaterial.mainTexture=font.material.mainTexture; }
-        public void BeginLoading(string mapName) { Require();map=Clean(mapName,32);progress=0;stage="LOADING MAP";SetPage(R23UiPage.Loading); }
+        public void BeginLoading(string mapName) { Require();map=Clean(mapName,32);progress=0;stage="LOADING MAP";AnchorLoadingLogo();SetPage(R23UiPage.Loading); }
         public void SetLoadingProgress(string phase,float fraction)
-        { if(Page!=R23UiPage.Loading)return;stage=Clean(phase,40);progress=Mathf.Clamp01(float.IsNaN(fraction)?0:fraction);if(detail!=null)detail.text=map+"  /  "+stage;SetBar(progressFill,progress,.98f); }
+        { if(Page!=R23UiPage.Loading)return;stage=Clean(phase,40);progress=Mathf.Clamp01(float.IsNaN(fraction)?0:fraction);if(detail!=null)detail.text="LOADING  "+Mathf.RoundToInt(progress*100)+"%";SetBar(progressFill,progress,.98f); }
         public void ShowReady() { Require();if(Page==R23UiPage.Loading)SetPage(R23UiPage.Ready); }
         public void ShowFailure(string message) { Require();failure=Clean(message,76);SetPage(R23UiPage.Error); }
         public void SetPlaying() { Require();if(snapshot!=null&&snapshot.Health<=0)snapshot=null;SetPage(R23UiPage.Playing); }
@@ -160,7 +160,7 @@ namespace Ashfall.Integration.Playable.UI
         }
         public void SetLoadoutStatus(string value)
         {Require();loadoutStatus=Clean(value,55);if(loadoutStatusText!=null)loadoutStatusText.text=loadoutStatus;}
-        public void OpenMaps(){RefreshLegacyMaps();OpenSubpage(R23UiPage.Maps);}
+        public void OpenMaps(){ResetMapSearch();RefreshLegacyMaps();OpenSubpage(R23UiPage.Maps);}
         public void SetMapOptions(IEnumerable<R23MapOption> values)
         {
             Require();mapSelection.SetOptions(values);mapPage=Mathf.Min(mapPage,Mathf.Max(0,(mapSelection.Count-1)/4));
@@ -176,7 +176,9 @@ namespace Ashfall.Integration.Playable.UI
         public bool ChooseMap(string id)
         {
             Require();if(Page!=R23UiPage.Maps||LanMapHostOnly)return false;
-            if(!mapSelection.Select(id))return false;returnPage=R23UiPage.Ready;SetPage(R23UiPage.Ready);
+            if(!mapSelection.Select(id))return false;
+            if(lanState!=Networking.R24LanLobbyState.Offline){SetPage(returnPage==R23UiPage.Ready?R23UiPage.Ready:R23UiPage.Pause);if(MapSelected!=null)MapSelected(SelectedMapId,false);return true;}
+            returnPage=R23UiPage.Ready;SetPage(R23UiPage.Ready);
             if(MapChoiceChanged!=null)MapChoiceChanged(SelectedMapId);
             // A map choice enters its lobby, never its game spawn or match rules.
             if(MapSelected!=null)MapSelected(SelectedMapId,false);return true;
@@ -188,7 +190,7 @@ namespace Ashfall.Integration.Playable.UI
         {
             Require();var request=mapSelection.LobbyEntry();
             if(request==null||LanMapHostOnly||Page==R23UiPage.Loading||Page==R23UiPage.Error||Page==R23UiPage.Dead||MapSelected==null)return false;
-            SetPage(R23UiPage.Ready);if(MapChoiceChanged!=null)MapChoiceChanged(request.Id);MapSelected(request.Id,false);return true;
+            SetPage(R23UiPage.Ready);if(MapChoiceChanged!=null&&lanState==Networking.R24LanLobbyState.Offline)MapChoiceChanged(request.Id);MapSelected(request.Id,false);return true;
         }
         // Both visible START MATCH buttons use the same immutable-rules dispatch.
         public void RequestStart(){Require();RequestMatchStart();}
@@ -289,7 +291,7 @@ namespace Ashfall.Integration.Playable.UI
             if(healthText!=null)healthText.text=Mathf.CeilToInt(Mathf.Max(0,value.Health)).ToString();
             if(shieldText!=null)shieldText.text=value.Shield>=0?Mathf.CeilToInt(value.Shield).ToString():"";
             if(resourceText!=null)resourceText.text=value.BuildCharges>=999?"\u221e":value.BuildCharges.ToString();
-            if(shieldGroup!=null)shieldGroup.gameObject.SetActive(value.Shield>=0);
+            if(shieldGroup!=null)shieldGroup.gameObject.SetActive(value.Shield>=0);PositionCompactMatchHud();
             if(staminaGroup!=null)staminaGroup.gameObject.SetActive(value.Stamina>=0);
             if(buildGroup!=null)buildGroup.gameObject.SetActive(value.BuildCharges>=0);
             SetBar(healthFill,value.MaxHealth>0?Mathf.Clamp01(value.Health/value.MaxHealth):0,.29f);
@@ -389,16 +391,17 @@ namespace Ashfall.Integration.Playable.UI
         }
         static bool Finite(Vector3 v) { return !(float.IsNaN(v.x)||float.IsInfinity(v.x)||float.IsNaN(v.y)||float.IsInfinity(v.y)||float.IsNaN(v.z)||float.IsInfinity(v.z)); }
         void Require() { if(!initialized)throw new InvalidOperationException("Initialize UI with the tracked camera first"); }
-        void SetPage(R23UiPage page) { FlushPreferences();if(page!=R23UiPage.SpawnChoice)mapSelection.CancelSpawn();Page=page;if(page==R23UiPage.Playing)returnPage=R23UiPage.Pause;Recenter();Build(); }
+        void SetPage(R23UiPage page) { FlushPreferences();if(page!=R23UiPage.Pause&&page!=R23UiPage.Dead)homeConfirm=false;if(page!=R23UiPage.SpawnChoice)mapSelection.CancelSpawn();Page=page;if(page==R23UiPage.Playing)returnPage=R23UiPage.Pause;Recenter();Build(); }
         public void Recenter()
         {
             Require();
+            if(Page==R23UiPage.Loading){panel.SetPositionAndRotation(loadingPosition,loadingRotation);return;}
             if(menuAnchor!=null&&(Page==R23UiPage.Ready||Page==R23UiPage.Weapons||Page==R23UiPage.Appearance||Page==R23UiPage.Maps||Page==R23UiPage.SpawnChoice||Page==R23UiPage.MatchRules||Page==R23UiPage.Credits)){panel.SetPositionAndRotation(menuAnchor.position,menuAnchor.rotation);return;}
             Vector3 forward=Vector3.ProjectOnPlane(view.transform.forward,Vector3.up);if(forward.sqrMagnitude<.0001f)forward=Vector3.forward;forward.Normalize();
             panel.position=view.transform.position+forward*1.6f;panel.rotation=Quaternion.LookRotation(forward,Vector3.up);
             SnapshotLoadoutAnchor();
         }
-        void Build()
+        void BuildPage()
         {
             if(Page!=R23UiPage.Weapons)PublishWeaponViewed(null);
             if(Page!=R23UiPage.Appearance)PublishAppearanceViewed(null);
@@ -411,8 +414,7 @@ namespace Ashfall.Integration.Playable.UI
             if(Page==R23UiPage.Playing){BuildHud();if(snapshot!=null)UpdateHud(snapshot);return;}
             if(Page==R23UiPage.Loading)
             {
-                Quad(panel,"Loading panel",Vector3.zero,new Vector2(.65f,.23f),Hex(R25Theme.Panel));
-                Text(panel,"LOADING MAP",new Vector3(0,0,-.01f),.0576f,.61f,Hex(R25Theme.Text));return;
+                BuildLoadingLogo();return;
             }
             bool popup=Page==R23UiPage.Settings||Page==R23UiPage.Pause||Page==R23UiPage.Dead||Page==R23UiPage.Error;
             if(popup&&Page!=R23UiPage.Dead)Quad(panel,"SettingsBoard",Vector3.zero,new Vector2(1.3f,1.48f),Hex(R25Theme.Panel));
@@ -428,31 +430,23 @@ namespace Ashfall.Integration.Playable.UI
             if(Page==R23UiPage.Maps){BuildMaps();return;}
             if(Page==R23UiPage.SpawnChoice){BuildReady();return;}
             if(Page==R23UiPage.MatchRules){BuildMatchRules();return;}
+            if(Page==R23UiPage.Dead&&homeConfirm){BuildHomeConfirm();return;}
             if(Page==R23UiPage.Dead&&localMatchLife!=null){BuildMatchLifePage();return;}
-            if(Page==R23UiPage.Dead){title.text="YOU DIED";MenuCard("RESTART",.40f,"pause0993_0",delegate{if(RestartRequested!=null)RestartRequested();});MenuCard("HOME",-.09f,"pause0993_3",delegate{if(MainMenuRequested!=null)MainMenuRequested();});return;}
+            if(Page==R23UiPage.Dead){title.text="YOU DIED";MenuCard("RESTART",.40f,"pause0993_0",delegate{if(RestartRequested!=null)RestartRequested();});MenuCard(HomeCaption(),-.09f,"pause0993_3",RequestHome);return;}
             if(Page==R23UiPage.Ready){BuildReady();return;}
-            title.text="ASHFALL";
-            MenuCard("RESUME",.40f,"pause0993_0",SetPlaying);
-            MenuCard("SETTINGS",.14f,"pause0993_1",OpenSettings);
-            MenuCard("CALIBRATE HEIGHT",-.12f,"pause0993_2",delegate{if(RecalibrationRequested!=null)RecalibrationRequested();});
-            MenuCard("HOME",-.38f,"pause0993_3",delegate{if(MainMenuRequested!=null)MainMenuRequested();});
-            AddButton(panel,"MAP SELECT",-.40f,-.61f,.36f,.08f,OpenMaps,.022f);
-            AddButton(panel,"MATCH RULES",0,-.61f,.36f,.08f,OpenMatchRules,.022f);
-            bool startRound=!pauseRoundActive;
-            var roundAction=AddButton(panel,startRound?"START ROUND":"RESTART ROUND",.40f,-.61f,.36f,.08f,delegate{if(startRound)RequestMatchStart();else if(RestartRequested!=null)RestartRequested();},.022f);
-            if(startRound)roundAction.Enabled=CanStartSelectedMatch;SetHovered(roundAction,false);
+            BuildPause(); // R26VrUI.Rooms.cs: shared match actions, HOME confirmation, bottom BACK
         }
         void BuildReady()
         {
-            if(friendsOpen){BuildFriends();return;}
+            if(friendsOpen||InRoomUi){BuildFriends();return;} // a room always shows its panel in the menu city
             title.text="";
-            FrontButton("PLAY WITH FRIENDS",340,374,600,88,OpenFriends,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),32);
+            FrontButton("MULTIPLAYER",340,374,600,88,OpenFriends,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),32);
             FrontText(mapSelection.Selected==null?map:Clean(mapSelection.Selected.Label,44),640,485,17,350);
             FrontButton("MAP SELECT",465,506,350,58,OpenMaps,Hex(R25Theme.Raised),Hex(R25Theme.Text),24);
-            var ready=FrontButton(LanMapHostOnly?"WAIT FOR HOST":"START MATCH",465,574,350,88,RequestStart,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),38);ready.Enabled=CanStartSelectedMatch;if(!ready.Enabled)SetButtonStyle(ready,Hex(R25Theme.Disabled),Hex(R25Theme.TextDisabled));
+            var ready=FrontButton(LanMapHostOnly?"WAIT FOR HOST":StartActionLabel,465,574,350,88,RequestStart,Hex(R25Theme.Primary),Hex(R25Theme.TextOnEmber),38);ready.Enabled=CanStartSelectedMatch;if(!ready.Enabled)SetButtonStyle(ready,Hex(R25Theme.Disabled),Hex(R25Theme.TextDisabled));
             FrontButton("CREDITS",240,726,170,48,OpenCredits,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
             FrontButton("SETTINGS",40,726,170,48,OpenSettings,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
-            FrontButton("LOADOUT",450,712,180,64,OpenWeapons,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
+            FrontButton("WEAPONS",450,712,180,64,OpenWeapons,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
             FrontButton("OUTFITS",650,712,180,64,OpenAppearance,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
             FrontButton("MATCH RULES",970,655,270,64,OpenMatchRules,Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
             BuildValleyCampaignActions();FrontText(NextMatchCaption(),640,686,17,650).color=Hex(R25Theme.TextDim);
@@ -483,20 +477,7 @@ namespace Ashfall.Integration.Playable.UI
             BuildCompactMatchHud();
             // Gameplay has meters/readouts only. Menu buttons are deliberately absent.
         }
-        void BuildMaps()
-        {
-            title.text="";var heading=FrontText("SELECT MAP  "+(mapPage+1)+" / "+Mathf.Max(1,(mapSelection.Count+3)/4),42,42,28,1196);heading.anchor=TextAnchor.MiddleLeft;heading.alignment=TextAlignment.Left;
-            if(LanMapHostOnly)FrontText("The LAN host opens the shared map. You can browse while waiting.",640,102,20,1196).color=Hex(R25Theme.Teal);
-            for(int slot=0;slot<4;slot++)
-            {
-                int index=mapPage*4+slot;if(index>=mapSelection.Count)break;var choice=mapSelection.Option(index);float x=90+(slot%2)*590,y=145+(slot/2)*270;
-                MapThumbnail(choice,x,y);
-                var card=FrontButton(Clean(choice.Label,48),x,y+180,440,60,delegate{ChooseMap(choice.Id);},Hex(choice.Id==SelectedMapId?R25Theme.RaisedSelected:R25Theme.Raised),Hex(R25Theme.Text),23);card.Frames=ThemeFrameAt(panel,FrontPoint(x+220,y+85),new Vector2(440*R25Theme.MetresPerPixel,170*R25Theme.MetresPerPixel));SetHovered(card,false);if(LanMapHostOnly){card.Enabled=false;SetButtonStyle(card,Hex(R25Theme.Disabled),Hex(R25Theme.TextDisabled));}
-            }
-            var previous=FrontButton("PREVIOUS",390,710,220,58,delegate{mapPage=Mathf.Max(0,mapPage-1);Build();},Hex(R25Theme.Raised),Hex(R25Theme.Text),22);previous.Enabled=mapPage>0;
-            var next=FrontButton("NEXT",670,710,220,58,delegate{mapPage=Mathf.Min((mapSelection.Count-1)/4,mapPage+1);Build();},Hex(R25Theme.Raised),Hex(R25Theme.Text),22);next.Enabled=(mapPage+1)*4<mapSelection.Count;
-            FrontButton("BACK",40,720,170,58,delegate{SetPage(returnPage);},Hex(R25Theme.Raised),Hex(R25Theme.Text),22);
-        }
+        void BuildMaps(){BuildMapSearchPicker();}
         void MapThumbnail(R23MapOption option,float x,float y)
         {
             string resource=SourceMapThumbnailResource(option);if(string.IsNullOrEmpty(resource))return;
@@ -648,11 +629,12 @@ namespace Ashfall.Integration.Playable.UI
             for(int i=0;i<3;i++){int part=i;float y=.32f-i*.24f;
                 var button=AddButton(panel,names[i]+"    "+(available[i]?(on[i]?"ON":"OFF"):"UNAVAILABLE"),0,y,1.08f,.09f,delegate{Publish(Settings.With(retiredMaps:part==0?(bool?)!Settings.RetiredMaps:null,retiredSkins:part==1?(bool?)!Settings.RetiredSkins:null,retiredSounds:part==2?(bool?)!Settings.RetiredSounds:null));R25LegacyPack.Apply(Settings);Build();},.028f);
                 button.Enabled=available[i];SetButtonStyle(button,Hex(R25Theme.Raised),Hex(available[i]?R25Theme.Text:R25Theme.TextDisabled));
-                Text(panel,available[i]?"Private legacy content. Off by default.":"This part is absent from the installed pack.",new Vector3(0,y-.075f,-.025f),.019f,1.12f,Hex(R25Theme.TextDisabled));}
+                Text(panel,available[i]?"Private legacy content. On by default.":"This part is absent from the installed pack.",new Vector3(0,y-.075f,-.025f),.019f,1.12f,Hex(R25Theme.TextDisabled));}
             AddButton(panel,"BACK TO SETTINGS",0,-.56f,.90f,.08f,delegate{settingsPage=-1;Build();},.026f);
         }
         void BuildSettings()
         {
+            if(settingsPage==NameKeyboardSettingsPage){BuildNameKeyboard();return;} // NAMES: on-screen keyboard (R26VrUI.PlayerName.cs)
             if(settingsPage==3){BuildLegacySettings();return;}
             title.text=settingsPage<0?"SETTINGS":settingsPage==0?"ASHFALL / MOVEMENT":settingsPage==2?"ASHFALL / WEAPONS":"ASHFALL / GENERAL";
             if(settingsPage<0)
@@ -740,13 +722,14 @@ namespace Ashfall.Integration.Playable.UI
             var at=FrontPoint(x+width*.5f,y+height*.5f);var button=AddButton(panel,caption,at.x,at.y,width*2.2f/1280,height*1.375f/800,action,Mathf.Max(R25Theme.MinimumPixels,fontPixels)*1.375f/800*.72f);
             SetButtonStyle(button,fill,ink);return button;
         }
-        void MenuCard(string caption,float y,string icon,Action action)
+        Button MenuCard(string caption,float y,string icon,Action action,float height=.21f)
         {
-            var button=AddButton(panel,"",0,y,Page==R23UiPage.Settings?.90f:.94f,.21f,action,.027f);button.Caption.transform.localPosition=new Vector3(0,-.052f,-.004f);button.Caption.text=caption;
+            var button=AddButton(panel,"",0,y,Page==R23UiPage.Settings?.90f:.94f,height,action,.027f);button.Caption.transform.localPosition=new Vector3(0,-.052f,-.004f);button.Caption.text=caption;
             button.Focus=Quad(button.Surface,"Menu focus bar",new Vector3(-button.Size.x*.5f+.003f,0,-.003f),new Vector2(.006f,button.Size.y),Hex(R25Theme.Ember)).GetComponent<Renderer>();button.Focus.sortingOrder=11;button.Focus.gameObject.SetActive(false);
             Icon(button.Surface,icon,new Vector3(0,.037f,-.005f),new Vector2(.074f,.074f));
             if(Page==R23UiPage.Settings&&settingsPage<0){button.Help=R24SettingsHelpCopy.PersonalMenu(icon);RegisterSettingsHelp(button.Surface,Vector3.zero,button.Size,button.Help);}
             if(focusButton==null){focusButton=button;SetHovered(button,true);}
+            return button;
         }
         Transform Icon(Transform parent,string key,Vector3 at,Vector2 size)
         {
@@ -822,7 +805,7 @@ namespace Ashfall.Integration.Playable.UI
             var text=t.gameObject.AddComponent<TextMesh>();text.font=font;text.fontSize=96;text.characterSize=1;text.anchor=TextAnchor.MiddleCenter;text.alignment=TextAlignment.Center;text.richText=false;text.color=color;text.text=value;
             var renderer=t.GetComponent<MeshRenderer>();renderer.sharedMaterial=fontMaterial;renderer.sortingOrder=20;var label=new Label{Text=text,Height=height,MaxWidth=width};labels.Add(label);FitText(label);return text;
         }
-        static Transform Child(Transform parent,string name) { var t=new GameObject(name).transform;t.SetParent(parent,false);return t; }
+        static Transform Child(Transform parent,string name) { var t=new GameObject(name).transform;t.gameObject.layer=5;t.SetParent(parent,false);return t; }
         Transform Quad(Transform parent,string name,Vector3 at,Vector2 size,Color color)
         {
             Transform t=Child(parent,name);t.localPosition=at;
@@ -870,7 +853,6 @@ namespace Ashfall.Integration.Playable.UI
             if(soundEdges.Initialize(MenuAudioActive()&&returnPage==R23UiPage.Ready,MenuHeadTracked(),Application.isFocused,menuAudio.HasCue(R23MenuCue.Initialize)))menuAudio.Play(R23MenuCue.Initialize);
             // Retain nominal source em size, with actual generated width as an overflow guard.
             foreach(var label in labels)FitText(label);
-            if(Page==R23UiPage.Loading){panel.position=view.transform.TransformPoint(new Vector3(0,-.08f,1));panel.rotation=view.transform.rotation;}
             if(Page==R23UiPage.Playing&&compass.Count==24)
             {
                 float yaw=view.transform.eulerAngles.y;
@@ -883,7 +865,7 @@ namespace Ashfall.Integration.Playable.UI
         }
         void OnDestroy()
         {
-            FlushPreferences();DisposeTitleMoment();
+            FlushPreferences();DisposeTitleMoment();if(loadingTexture!=null)Destroy(loadingTexture);
             if(menuAudio!=null)Destroy(menuAudio.gameObject);
             Font.textureRebuilt-=RefreshFont;
             if(panel!=null)Clear(panel);if(hud!=null){Clear(hud);Destroy(hud.gameObject);}if(shroud!=null){var mesh=shroud.GetComponent<MeshFilter>().sharedMesh;Destroy(mesh);Destroy(shroud.gameObject);}

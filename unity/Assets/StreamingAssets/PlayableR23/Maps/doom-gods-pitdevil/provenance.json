@@ -1,0 +1,182 @@
+{
+  "mapId": "archive:doom-gods-pitdevil",
+  "title": "DOOM",
+  "creator": "GODS_PITDEVIL",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "906e80046e22bdf22a239cc4f820ca092252fee2c80b2e86ab69c95d6a066ec7",
+    "cached live map.glb": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/doom-gods-pitdevil/map.glb": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+    "https://maps.deliciouswines.org/maps/doom-gods-pitdevil/map.json": "906e80046e22bdf22a239cc4f820ca092252fee2c80b2e86ab69c95d6a066ec7"
+  },
+  "sourceGlbSha256": "11e037b87bfac4c5101acc5cb9493f3268e9686e851f640fe776492c21c49324",
+  "cacheFingerprint": "8340f730720fe141be768b8c0b5d93684451e3e19ad8de6b550f98e2adcf892b",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 167724,
+  "sourceRoles": {
+    "world": 167724,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 167724,
+  "collisionTriangles": 167740,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 112,
+  "materials": 14,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c.jpg",
+      "sha256": "5d5ff7ffe8ee01ea2c771f15c5d3e0e4471dee8b58eff291b65bf8e3985751b7",
+      "bytes": 19014
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf.jpg",
+      "sha256": "54bc3b7ea1910a1fa89c4cb81b5e661fe839b3b1dda87f4e37eec66db47a64db",
+      "bytes": 31523
+    },
+    "pb8a19331_c.png": {
+      "source": "authoring/textures-v1/out/by-sha/5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f.png",
+      "sha256": "c3f48b86ec7e938b587fc4109d0bfb4e22e0063ed59e73538bea0070691dd87e",
+      "bytes": 12129
+    },
+    "pd959969c_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/10ea7ab836cd8286ca05426ae286cc32da8bbe99ad547bf27fc3d95f3801ebde.jpg",
+      "sha256": "e6f87f1a80398a15a556ae59a6e6a5b369706eb6e65a23554365ca0d826f821d",
+      "bytes": 39563
+    },
+    "pd959969c_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/042f2a3cf1581114d253d4abb579700232c7cbaac50b53e5b39a10f9c2780fde.jpg",
+      "sha256": "5d61bb162dc09aad7e95cd6c06af834c764b072702ad7c72b2cc14749fd610bb",
+      "bytes": 59240
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/65284fc5db79b92f87f1f5cd3cb4d7594e1c2b353d433ccff2114f12ba80d83a.jpg",
+      "sha256": "9aa86f21ec1445cd69b0af98b279f236803e8b8cde03baaffccda7f26d2998df",
+      "bytes": 509522
+    },
+    "t108_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5810c4be156e89f9e71f7b730148eb66a99f644f224da16b70327b9cf3f9f452.jpg",
+      "sha256": "af242815a497688aaec99e63d023325f317cc35b4b78dfc3bcbdeb0326bebb55",
+      "bytes": 58451
+    },
+    "t108_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/e2ef043516cc61f7041c44c2aaabf421d804684377934947c747daa5e0f186d7.jpg",
+      "sha256": "48c491b8128576725c49672dea78851faaeac206b1802d20d3f76625e5546d50",
+      "bytes": 28633
+    },
+    "t110_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2ad5dc34100c3a342dbcbc4453c65a768e410c11ede4cee43524b42c2db48617.jpg",
+      "sha256": "d266545f398729109efadb0f75852489a289d92945597c5e3fef6c058cbe5044",
+      "bytes": 65462
+    },
+    "t110_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a89718ad4cb47ef6ee4f346e5a44a76f4f1828a9f030bf0fdccf705744a1f4bd.jpg",
+      "sha256": "41b2d925c39faaa509afcf3cebd7ba63bbf6c424e19b03c8500384dd5f101989",
+      "bytes": 31956
+    },
+    "t139_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2e8432acce09ad22b1092f526d0126494476951fd85328220c68b01579d9d027.jpg",
+      "sha256": "31eb15dcadb8931a5a6874786bacb1c44a7e97a08a395f54b6c4490be35b8f96",
+      "bytes": 76873
+    },
+    "t139_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/e7e2056fd4a489c0497011efbfba3a69594fa593c7a889d1f802621c22fd5fee.jpg",
+      "sha256": "04e902d0d820ca758f555978c58a3011780d2dcf53c3a4d3d42923b5b31096a3",
+      "bytes": 57377
+    },
+    "t20_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ce6f7827a45552c365f4d1c1f462de335bfc67251a89087487284b45141858a5.jpg",
+      "sha256": "1a017eddb9610e2b44c99ecfd59394e1e36fe5e61aca4bcf06c4063bbd02c6e8",
+      "bytes": 54414
+    },
+    "t20_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t5_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/cc631b53ea40bffeacf811d7e9406364083cc9b90929ee9cefe581e78e733073.jpg",
+      "sha256": "264558e508165bda2bdc57e4c04aeef273077ef623936ee5b2c67c48eda9b52c",
+      "bytes": 39057
+    },
+    "t5_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5521e58f088e7a3549e3cb69a50c0cf4b68a3aa9c235bedb38ff05623bbb1ae0.jpg",
+      "sha256": "3dfa196caf26f6bc1571c617ec07a067ab59a84f70ce5866fe7d79701f07488f",
+      "bytes": 27967
+    },
+    "t60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79.jpg",
+      "sha256": "7ac7c0d984e24d78b51967c64af8bc85dfff48f85fb7c1a916aaa67968124634",
+      "bytes": 3360
+    },
+    "t60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t98_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/379c0e54d1ebf5de4613b1fbf0e5b2bb0cd295f8a1c343882ef677942c664d07.jpg",
+      "sha256": "38cf0a10cdcdcbf3d20c4f594ed41678dc0389f09248fc14c7afd8f0a854ad92",
+      "bytes": 65662
+    },
+    "t98_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/78542b149c226ea18158048b51b71b36869d645ef36db4b34ddd48e49ff0cdf5.jpg",
+      "sha256": "5a16dc404305c01ed49ed90e94c5d656f97f7a63613be583105ecbd99ae3fe03",
+      "bytes": 88478
+    }
+  },
+  "spawn": [
+    -283.64,
+    51.66503485614923,
+    -2.52
+  ],
+  "warmupSpawn": [
+    295.14,
+    51.66506509532105,
+    6.98
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "999b5d7cd60e5192e09741737a1b5187fd1332a0bd7cd67031bf57e84ed1883f",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 0.574,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "2fba533b2b43e8a46ebaab2c3a9595c47da7f37ca0b1705cb29f7817fbbd7176",
+  "sourceRetainedCollisionAttributesSha256": "2959b4e39f4f569f92d3688cb3ceabcf3e5345fbec46296db10a878e190f9fde",
+  "payloadBytes": 16543876,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/doom-gods-pitdevil/",
+  "archivePage": "https://maps.deliciouswines.org/m/doom-gods-pitdevil/",
+  "sourceFirst": "2026-11-15",
+  "sourceLast": "2026-11-15",
+  "archiveCaptureId": "a1a4c2ca-7cd9-41b2-90cb-dfb9bcd1514b",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "906e80046e22bdf22a239cc4f820ca092252fee2c80b2e86ab69c95d6a066ec7",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "6d960a65395af7ac5e1b305c79af5ccc0e6933e9239966fbf66e9f4373256dd8"
+}

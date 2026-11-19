@@ -39,10 +39,10 @@ static class SprMechanics
   float width=R23SprScopeMath.Width*1.32f,height=R23SprScopeMath.Height*1.32f;
   var corners=new[]{new Float3(-width/2,-height/2,.2f),new Float3(width/2,-height/2,.2f),new Float3(-width/2,height/2,.2f),new Float3(width/2,height/2,.2f)};
   float extent=R23SprScopeMath.HalfVerticalTangent(corners);
-  Check(Math.Abs(extent-.053625f)<.00001f&&R23SprScopeMath.PixelWidth==520&&R23SprScopeMath.PixelHeight==307,"SPR optical camera extent matches physical source window and exact2x angular magnification");
+  Check(Math.Abs(extent-.03575f)<.00001f&&R23SprScopeMath.PixelWidth==520&&R23SprScopeMath.PixelHeight==307,"SPR optical camera extent matches physical source window and exact3x angular magnification");
   for(int i=0;i<corners.Length;i++)corners[i]=new Float3(corners[i].X+.03f,corners[i].Y,corners[i].Z);float left=R23SprScopeMath.HalfVerticalTangent(corners);for(int i=0;i<corners.Length;i++)corners[i]=new Float3(corners[i].X-.06f,corners[i].Y,corners[i].Z);float right=R23SprScopeMath.HalfVerticalTangent(corners);
   Check(left>extent&&Math.Abs(left-right)<.00001f,"per-eye off-axis optical extents cover actual eye-dependent aperture corners symmetrically");
-  Check(Math.Abs(R23SprScopeMath.SampleAngle(.04f,.02f,.01f)-.02f)<.00001f&&R23SprScopeMath.ReticleDepth==1,"SPR angular scene reprojection uses2x and fixed one-metre virtual reticle plane");
+  Check(Math.Abs(R23SprScopeMath.SampleAngle(.04f,.02f,.01f)-.01666667f)<.00001f&&R23SprScopeMath.ReticleDepth==1,"SPR angular scene reprojection uses3x and fixed one-metre virtual reticle plane");
   Check(R23SprScopeMath.Alignment(.05f,.085f,.96f,true)&&R23SprScopeMath.Alignment(.60f,0,1,true)&&!R23SprScopeMath.Alignment(.049f,0,1,true)&&!R23SprScopeMath.Alignment(.601f,0,1,true)&&!R23SprScopeMath.Alignment(.2f,.086f,1,true)&&!R23SprScopeMath.Alignment(.2f,0,.959f,true)&&!R23SprScopeMath.Alignment(.2f,0,1,false),"SPR scope respects source eye relief, alignment, gaze and map-occlusion gates");
  }
 }

@@ -1,0 +1,388 @@
+{
+ "mapId": "archive:mini-w-a-m-muniibunii-gfy",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:mini-w-a-m-muniibunii-gfy",
+  "title": "MINI W.A.M.",
+  "creator": "MuniiBunii_GFY",
+  "template": "MapEditorMoon",
+  "center": [
+   -45.38259208565483,
+   169.35691776124762,
+   1.4009150711904843
+  ],
+  "recorded_spawns": [
+   [
+    104.41,
+    166.17,
+    -14.91
+   ],
+   [
+    103.1,
+    166.02,
+    -7.91
+   ],
+   [
+    103.41,
+    166.38,
+    10.75
+   ],
+   [
+    102.83,
+    166.17,
+    8.91
+   ],
+   [
+    103.1,
+    166.17,
+    -12.41
+   ],
+   [
+    103.1,
+    166.02,
+    6.59
+   ],
+   [
+    103.33,
+    166.02,
+    -0.59
+   ],
+   [
+    102.83,
+    166.17,
+    -10.09
+   ],
+   [
+    103.1,
+    166.02,
+    1.91
+   ],
+   [
+    102.6,
+    166.17,
+    -3.09
+   ],
+   [
+    102.83,
+    166.02,
+    -5.41
+   ],
+   [
+    102.6,
+    166.02,
+    4.09
+   ],
+   [
+    103.1,
+    169.52,
+    -14.91
+   ],
+   [
+    103.1,
+    169.52,
+    -12.41
+   ],
+   [
+    102.83,
+    169.52,
+    -10.09
+   ],
+   [
+    103.1,
+    169.38,
+    -7.91
+   ],
+   [
+    102.83,
+    169.38,
+    -5.41
+   ],
+   [
+    102.6,
+    169.52,
+    -3.09
+   ],
+   [
+    103.33,
+    169.38,
+    -0.59
+   ],
+   [
+    103.1,
+    169.38,
+    1.91
+   ],
+   [
+    102.6,
+    169.38,
+    4.09
+   ],
+   [
+    103.1,
+    169.38,
+    6.59
+   ],
+   [
+    102.83,
+    169.52,
+    8.91
+   ],
+   [
+    104.29,
+    169.74,
+    10.75
+   ],
+   [
+    -128.14,
+    166.17,
+    10.91
+   ],
+   [
+    -128.14,
+    166.17,
+    8.41
+   ],
+   [
+    -127.87,
+    166.17,
+    6.09
+   ],
+   [
+    -128.14,
+    166.02,
+    3.91
+   ],
+   [
+    -127.87,
+    166.02,
+    1.41
+   ],
+   [
+    -127.64,
+    166.17,
+    -0.91
+   ],
+   [
+    -128.37,
+    166.02,
+    -3.41
+   ],
+   [
+    -128.14,
+    166.02,
+    -5.91
+   ],
+   [
+    -127.64,
+    166.02,
+    -8.09
+   ],
+   [
+    -128.14,
+    166.02,
+    -10.59
+   ],
+   [
+    -127.87,
+    166.17,
+    -12.91
+   ],
+   [
+    -128.45,
+    166.38,
+    -14.75
+   ],
+   [
+    -128.14,
+    169.52,
+    10.91
+   ],
+   [
+    -128.14,
+    169.52,
+    8.41
+   ],
+   [
+    -127.87,
+    169.52,
+    6.09
+   ],
+   [
+    -128.14,
+    169.38,
+    3.91
+   ],
+   [
+    -127.87,
+    169.38,
+    1.41
+   ],
+   [
+    -127.64,
+    169.52,
+    -0.91
+   ],
+   [
+    -128.37,
+    169.38,
+    -3.41
+   ],
+   [
+    -128.14,
+    169.38,
+    -5.91
+   ],
+   [
+    -127.64,
+    169.38,
+    -8.09
+   ],
+   [
+    -128.14,
+    169.38,
+    -10.59
+   ],
+   [
+    -127.87,
+    169.52,
+    -12.91
+   ],
+   [
+    -128.45,
+    169.74,
+    -14.75
+   ]
+  ],
+  "bounds_min": [
+   -332.4915771484375,
+   -1.8562202453613281,
+   -294.5464172363281
+  ],
+  "bounds_max": [
+   246.93878173828125,
+   302.89593505859375,
+   343.89862060546875
+  ],
+  "solid_min": [
+   -300.0,
+   -1.8562202453613281,
+   -300.0
+  ],
+  "solid_max": [
+   300.0,
+   302.89593505859375,
+   305.5196533203125
+  ],
+  "source": "https://maps.deliciouswines.org/maps/mini-w-a-m-muniibunii-gfy/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "101a2b",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.6,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "8c45bb2d1187092f9849fb706e9974d192d50063e877573f76544d04f780f4bf",
+  "cache_fingerprint": "8b70550f2b586a96b5bd48b4d03eec65f160e8ce7491b50f9dc510327db1c6e3",
+  "warmup": [
+   {
+    "center": [
+     -31.97939,
+     1.72235,
+     6.51255
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.92308,
+     0,
+     -0.3846
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -34.47943,
+     1.72235,
+     10.84267
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.92308,
+     0,
+     -0.3846
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     -33.25261,
+     1.72235,
+     8.71781
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -0.92308,
+     0,
+     -0.3846
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 3,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "8b70550f2b586a96b5bd48b4d03eec65f160e8ce7491b50f9dc510327db1c6e3",
+  "sites": [],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -47.249855041503906,
+    1.3616209030151367,
+    -29.24993896484375
+   ],
+   "boundsMax": [
+    2.7501449584960938,
+    19.999996185302734,
+    20.75006103515625
+   ],
+   "triangles": 12
+  }
+ ]
+}

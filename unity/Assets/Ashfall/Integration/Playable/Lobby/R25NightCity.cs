@@ -96,7 +96,7 @@ namespace Ashfall.Integration.Playable.Lobby
         {
             var go=new GameObject(text);go.transform.SetParent(root.transform,false);go.transform.localPosition=at;
             var t=go.AddComponent<TextMesh>();t.text=text;t.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");t.fontSize=64;t.characterSize=size;t.anchor=TextAnchor.MiddleCenter;t.color=color;
-            go.GetComponent<Renderer>().sharedMaterial=t.font.material;
+            R26WorldText.Bind(t);
         }
         void StageLight(string label,Vector3 at,Color color,float intensity,float range)
         {

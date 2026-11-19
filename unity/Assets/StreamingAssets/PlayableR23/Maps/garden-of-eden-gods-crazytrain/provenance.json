@@ -1,0 +1,413 @@
+{
+  "mapId": "archive:garden-of-eden-gods-crazytrain",
+  "title": "GARDEN OF EDEN",
+  "creator": "GODS_CRAZYTRAIN",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "b5cf617d893a6521a5f6c308ccc70322fb8ee303f95e87d6bbb12a234f5e6aa8",
+    "cached live map.glb": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/garden-of-eden-gods-crazytrain/map.glb": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+    "https://maps.deliciouswines.org/maps/garden-of-eden-gods-crazytrain/map.json": "b5cf617d893a6521a5f6c308ccc70322fb8ee303f95e87d6bbb12a234f5e6aa8"
+  },
+  "sourceGlbSha256": "aea3992d94711d0800e47e80117344b3a27b438ac5149e645d77a960ef1c459a",
+  "cacheFingerprint": "4f9e5479a6d4316b8e0df36ea2a4cf38591630347d35c88e741ef9737ebbaf53",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 643660,
+  "sourceRoles": {
+    "world": 643648,
+    "roof": 12,
+    "false": 36,
+    "boundary": 16,
+    "killzone": 32,
+    "playfield": 12
+  },
+  "renderTriangles": 293536,
+  "collisionTriangles": 293516,
+  "sourceMarkerTrianglesRemoved": {
+    "r8RedRing": 64672,
+    "r8RedQuestion": 285488
+  },
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 113,
+  "materials": 36,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "p182f9ff7_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/dc4745f1b3afcf02ea46432d0a02acc1bc3f241f3e189e10316b955d18fc94e9.jpg",
+      "sha256": "6b2177e5fac0dc80da0efe3176222cc18c5f114d1e8a8e80cd9e436a6ef3b3d4",
+      "bytes": 72961
+    },
+    "p182f9ff7_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/c5b43845471799c413b2af693ae5f5667887c03aee2514e3eaf153d4c576c69f.jpg",
+      "sha256": "9be8d6327d32b89eadade83f629751e589e38a8dbf8398f0720d5de0b7941a86",
+      "bytes": 47484
+    },
+    "p2a61c272_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79.jpg",
+      "sha256": "7ac7c0d984e24d78b51967c64af8bc85dfff48f85fb7c1a916aaa67968124634",
+      "bytes": 3360
+    },
+    "p2a61c272_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c.jpg",
+      "sha256": "5d5ff7ffe8ee01ea2c771f15c5d3e0e4471dee8b58eff291b65bf8e3985751b7",
+      "bytes": 19014
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf.jpg",
+      "sha256": "54bc3b7ea1910a1fa89c4cb81b5e661fe839b3b1dda87f4e37eec66db47a64db",
+      "bytes": 31523
+    },
+    "pd959969c_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/10ea7ab836cd8286ca05426ae286cc32da8bbe99ad547bf27fc3d95f3801ebde.jpg",
+      "sha256": "e6f87f1a80398a15a556ae59a6e6a5b369706eb6e65a23554365ca0d826f821d",
+      "bytes": 39563
+    },
+    "pd959969c_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/042f2a3cf1581114d253d4abb579700232c7cbaac50b53e5b39a10f9c2780fde.jpg",
+      "sha256": "5d61bb162dc09aad7e95cd6c06af834c764b072702ad7c72b2cc14749fd610bb",
+      "bytes": 59240
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/65284fc5db79b92f87f1f5cd3cb4d7594e1c2b353d433ccff2114f12ba80d83a.jpg",
+      "sha256": "9aa86f21ec1445cd69b0af98b279f236803e8b8cde03baaffccda7f26d2998df",
+      "bytes": 509522
+    },
+    "t120_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a50ab4be50ee5175cb0fc1596941799e3c4d2418e3b053e94b215cb29e9e4aed.jpg",
+      "sha256": "01f0757c7653e25efeb3dab457f991235983d8f296785382c40874b618cc8994",
+      "bytes": 68584
+    },
+    "t120_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/74e133b132d053d516deab5cd728a2fb8b0754b7584eaef1e979febe99d95879.jpg",
+      "sha256": "dfb473f6d91b3010b9f976d62a6cfe732e9cfa5536ea2f205eba56ffce4e33de",
+      "bytes": 95813
+    },
+    "t124_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5291021a71faa2c3b45baee726623d660104409f7bd9cca8842741ab091b347e.jpg",
+      "sha256": "f0c0a1771baa76ff74d6f306aa5e74b9e97279c5e702ae37e592bdafa27bc5e9",
+      "bytes": 72969
+    },
+    "t124_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/bf0249f3541ad3577d5a996458f73038af19fca581917c1877245b4ee3938a83.jpg",
+      "sha256": "2248ebe7dafec16051aff63c240d7fed27192673fdeb8f2c9082ff13154f362b",
+      "bytes": 68588
+    },
+    "t21_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/03a462bc03327fb4b733307877ce5b44a34ade7f5cc38ee76ed8b9e74b42377f.jpg",
+      "sha256": "420bbbbd4cbd0f7dc39bce03bdb214ca1f5798a0d9c12a43f164dd5ff62f13a3",
+      "bytes": 42234
+    },
+    "t21_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t22_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781.jpg",
+      "sha256": "9c65c58fda105486638098ebdd72a97be85dc6979a549d088e351e081b4fa6db",
+      "bytes": 25860
+    },
+    "t22_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t23_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/c680f526941cfb429b171635ef14c00de85656d92bb7a7a86ec5e21ee137b0e5.jpg",
+      "sha256": "43fd04f9887c2f73f8203756d95f8017b234056a8cdc3043d1ff39de64d3ad46",
+      "bytes": 24335
+    },
+    "t23_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t24_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/fba0d0b6f66680fc6eae793d8dc1d5972e59649a332d9d702de56ed28722ae8f.jpg",
+      "sha256": "a8aa35aec8b6155e0463224d9234f97bcbf311c24e3ebe9e3402891b259014ab",
+      "bytes": 23863
+    },
+    "t24_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t25_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/501c060d446c141ec38eccb79119d4ca9138a221ddb576a694fcc683a0772dc6.jpg",
+      "sha256": "01f0d8d242296040e1f9de87dd870b6e65221e741bc7d7394e5ba99fa6863dd8",
+      "bytes": 27105
+    },
+    "t25_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    },
+    "t26_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/005cf0558b23f683be8273adc3840f6b3347408fd3976bc30a1909261b08877d.jpg",
+      "sha256": "eb6a364cd2f472e8347d62058c566c4a5f6e77070824bbf1ca2ddce3536c5c44",
+      "bytes": 34659
+    },
+    "t26_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1e9e47a0bda06d8d1467fd6b9557a6dce0256172135a640ef2aed6c4bfe7c405.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t38_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/09a1ec6f8504241e5eff2214f3fd54764aaf2f35960d235df95e1a001153ffb8.jpg",
+      "sha256": "2916263a38468a1f6355f6aca5a90efda14d142c42b2a58a9af5118234da3361",
+      "bytes": 43459
+    },
+    "t38_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2263b74f6a1df8f60be59c838ae6c911d3ce42069a4b492be30ca05407e88c01.jpg",
+      "sha256": "8b522bdbc815c5cc6c6fc3d83fdd0cf20dd48da2f2229c4ed003433a468e212f",
+      "bytes": 35036
+    },
+    "t42_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/15d0cd9fc6033a64e736156022ca687277d8695e185d717097d2cffccbfff7b7.jpg",
+      "sha256": "520488cbbf5a4a0ed6e77768e2f02f8d1c763b4d91a4d5a7a74800d3631a7ef6",
+      "bytes": 41698
+    },
+    "t42_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/67d865c29b4b221d6d62e8548bbaafc91611ce0fb6f3bfe1bd420268d58c2069.jpg",
+      "sha256": "17b2aa1fe8f5506669492d0b372174d07186ec5e7966fc3b9ba868db971698f8",
+      "bytes": 46791
+    },
+    "t43_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/f5333e489097e09d77ae332cbe81b490128ee1ae7601fe1ceee6a6159538088a.jpg",
+      "sha256": "3b37b4a9f6c79ec85966e6bece0a1214926b63c854cf93e731f38500def4de24",
+      "bytes": 3359
+    },
+    "t43_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t45_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a8d728b4b0a721282eadaff42a63b1720ead7688779f655f35f439ad23065020.jpg",
+      "sha256": "cb561a05a5eb3bae59512aa1cc0d923afd96b7e2d910a0ae0e7f7aaaaa244870",
+      "bytes": 3360
+    },
+    "t45_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t46_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/14e42fb0e63412cad16a87c953cf5a1385cfeb2fb3dae5487d1ab53c6cbe545c.jpg",
+      "sha256": "7114b1943f0b420f906180815f095dbd930ed1ca2aaad2554bce6c70999e24d9",
+      "bytes": 3360
+    },
+    "t46_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t47_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/13ec482d8205eacbaf5dd9353d444ff2a85c422b7854ac0687de2e449dc1da5d.jpg",
+      "sha256": "19cd0959bb868e121882ce4b73192b9bd2ca6295e989df62a5783e3a145045b6",
+      "bytes": 3360
+    },
+    "t47_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t49_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/322eb05e3182ce8c82d899777cb077d1bec1028b6c81488899037d2306d47f88.jpg",
+      "sha256": "e6d2185ef70f607bb66124bbc4d25092499ccb942741c0a80029c5447b9cd9ee",
+      "bytes": 3360
+    },
+    "t49_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t50_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/6ae7625a71a98c858ff9f8da136d1161042914f6cd907677057af926bf8dc60a.jpg",
+      "sha256": "9f09b7f71032c56726ec71d5b40d81345d6703baa389e94967d5a95c5a0156d6",
+      "bytes": 3359
+    },
+    "t50_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t51_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/699656b11168fc4d00c0bad2ba1642bd58e880e88070c419bde7c108a8cc2663.jpg",
+      "sha256": "2d10ff0ff60218ec47ad7b24b333e68ace1aed46d1180193edfea4f21557570a",
+      "bytes": 3356
+    },
+    "t51_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t52_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/dd70782dfa2fe66e7540e349d91f0626d768704314ef95b4abc3f7a1fcda7e72.jpg",
+      "sha256": "102c9b9e23ffcab0e05f76d4eab154cf21d8361a94367f66b6ad23293a8186fd",
+      "bytes": 3356
+    },
+    "t52_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t53_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/d695733be3e6587573858064dd0ffded61b765c481b609c0c0ead60d81a2c67f.jpg",
+      "sha256": "6b1f7caaffbd1243b587cfe596cf838ced76e281037064008d9382929574ccc5",
+      "bytes": 3360
+    },
+    "t53_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t55_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/2c6eb60dce1556facd064065cddc3800742df85bad9dcf62b5cdba07dfe192b2.jpg",
+      "sha256": "2ee2a6a08eac20ce3b5254916034549acf6321d19bc5871fa5caf6b29c053fa5",
+      "bytes": 3361
+    },
+    "t55_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t57_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/8ef12ca985e6fad0bece4d36ba6678183080b8f5bc2d3b47c17ab7225e2b907b.jpg",
+      "sha256": "0f413b5fdaac5eae7c8cbbc2f6c1545693296f5886a0936f52c82e0317412755",
+      "bytes": 3360
+    },
+    "t57_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t58_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "t58_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5e41013624c3ea83afb3859bd2a4c4ef87931c4ef4b1998a8166005c29aefe79.jpg",
+      "sha256": "7ac7c0d984e24d78b51967c64af8bc85dfff48f85fb7c1a916aaa67968124634",
+      "bytes": 3360
+    },
+    "t60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t62_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a4bc407059df6080c54de3df0e32e983eb6b021ca63aa9c82819cca6e8b25d16.jpg",
+      "sha256": "fd57b0bda479cdf031d07c81eafc68bdb0ed35775a62b4694e25424a706291a9",
+      "bytes": 3360
+    },
+    "t62_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t63_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/839319b77fe2d7a506564376d1abb9bfe4eb5439e87d835dd40995f1763a0058.jpg",
+      "sha256": "6c42eebd7aa5c3f85240ecef3c8e38e958b62573df98a1b0565e0b6662e91490",
+      "bytes": 3360
+    },
+    "t63_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t64_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/41e18e6bdec590853d88fef6d8c7963794d755f20eaf4b3a50fd655980e721e9.jpg",
+      "sha256": "3d830fae172a71bbd98f75b4998667fd82d88f20c544665b86c6608b6f6ea998",
+      "bytes": 3360
+    },
+    "t64_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t67_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/9452961b74c0d4ae890e7dbb03e666adec6a9052515e7b820196502f6c0f7870.jpg",
+      "sha256": "00a870efe313839d1b8a64f76d02613a8d90a7e5bdbc76aa3baed2cc26b79d68",
+      "bytes": 3360
+    },
+    "t67_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "t70_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/abc19cd4178fe0adc51bce0df6c43adbf2a6a8f02b221c464912c2a08e7cc296.jpg",
+      "sha256": "bf511525809d067e81519d13a54ebb612d2c25063f4bd475266c0b096848f927",
+      "bytes": 19040
+    },
+    "t70_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/1c4d55d6e1df0cfaa18fa90c9ebb6129c133fd241dd89f3803e6070861a08ed2.jpg",
+      "sha256": "7f8e3bf2ce1254f4980fd86e8d878785b922c7a24dd2f786151c10c9008f7300",
+      "bytes": 29909
+    }
+  },
+  "spawn": [
+    161.2,
+    62.61999670738321,
+    155.76
+  ],
+  "warmupSpawn": [
+    159.64,
+    62.62000058099949,
+    131.91
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "58572ceedefea299ad96737d7f3714098ed82d93c6998573b6b02dd8b9accefe",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 2.589,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "2b8297517be8c257b360d28b85c4ea5d3dcb032c1206c2ed22cfed3c7a82833e",
+  "sourceRetainedCollisionAttributesSha256": "3555f2bfbd1122799300960d0646f96d2505d736db40b751d5f25e8a248a1c50",
+  "payloadBytes": 18773257,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/garden-of-eden-gods-crazytrain/",
+  "archivePage": "https://maps.deliciouswines.org/m/garden-of-eden-gods-crazytrain/",
+  "sourceFirst": "2026-11-15",
+  "sourceLast": "2026-11-15",
+  "archiveCaptureId": "7b43430d-47ca-46ef-82b5-b8482a64e569",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "b5cf617d893a6521a5f6c308ccc70322fb8ee303f95e87d6bbb12a234f5e6aa8",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "398717a4831e544cc699b09e748a8a0c4bc3c44ccca963981022e65c4d4a1979"
+}

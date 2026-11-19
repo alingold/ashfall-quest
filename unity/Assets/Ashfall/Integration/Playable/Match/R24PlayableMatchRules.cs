@@ -12,7 +12,7 @@ namespace Ashfall.Integration.Playable.Match
         public readonly string Mode;
         public readonly int MaxPlayers;
         public readonly int Teams;
-        public readonly bool FriendlyFire;
+        public readonly bool FriendlyFire,EnemyRevive;
         public readonly float Damage;
         public readonly float NpcDamage;
         public readonly float BuildDamage;
@@ -51,6 +51,12 @@ namespace Ashfall.Integration.Playable.Match
         public readonly bool Tanks,Helicopters;
         public readonly bool Jetpack,GrappleGun,Fists,Parry;
         public bool WebSlingers {get{return GrappleGun;}} // source compatibility only
+        // True when the match clock can end a round (TDM and FFA). Team Revive ends on elimination only.
+        public bool HasTimeCap {get{return Mode!="revive";}}
+        // The one place the HEADSHOTS rule is applied: a head contact's own damage times the rule; body unchanged.
+        public float ScaleHeadshotDamage(float amount,bool headshot){return headshot?amount*Headshots:amount;}
+        // The one place the BUILD DAMAGE rule is applied to damage that lands on a build piece.
+        public float ScaleBuildDamage(float amount){return amount*BuildDamage;}
         public readonly bool GrapplePull;
         public readonly bool GrapplePullFriends;
         public bool TeamRespawn {get{return Mode=="respawn"&&Teams>0;}}
@@ -65,7 +71,7 @@ namespace Ashfall.Integration.Playable.Match
             Mode=(string)values["mode"];
             MaxPlayers=(int)values["max_players"];
             Teams=(int)values["teams"];
-            FriendlyFire=(bool)values["friendly_fire"];
+            FriendlyFire=(bool)values["friendly_fire"];EnemyRevive=(bool)values["enemy_revive"];
             Damage=(float)values["damage"];
             NpcDamage=(float)values["npc_damage"];
             BuildDamage=(float)values["build_damage"];
@@ -88,15 +94,16 @@ namespace Ashfall.Integration.Playable.Match
             Protection=(float)values["protection"];
             RetainInventory=(bool)values["retain_inventory"];
             DownedSeconds=(float)values["downed_seconds"];
-            TimeLimit=(int)values["time_limit"];
+            // Team Revive has no clock: the match ends only when one team remains. The stored
+            // value is kept (and synced) so switching back to a timed mode restores the cap.
+            TimeLimit=Mode=="revive"?0:(int)values["time_limit"];
             ScoreLimit=(int)values["score_limit"];
             Rounds=(int)values["rounds"];
             LateJoin=(bool)values["late_join"];
             Spectators=(bool)values["spectators"];
             Locked=(bool)values["locked"];
             Loadout=(string)values["loadout"];
-            // Current Unity design: team deathmatch is timer-driven, without a zone.
-            ZoneEnabled=!(Mode=="respawn"&&Teams>0)&&(bool)values["zone_enabled"];
+            ZoneEnabled=Mode=="revive"&&(bool)values["zone_enabled"];
             values["zone_enabled"]=ZoneEnabled;
             ZoneDamage=(float)values["zone_damage"];
             ZoneSpeed=(float)values["zone_speed"];
@@ -111,17 +118,17 @@ namespace Ashfall.Integration.Playable.Match
         {
             {"map","range"},
             {"mode","revive"},
-            {"max_players",8},
+            {"max_players",24},
             {"teams",2},
-            {"friendly_fire",false},
-            {"damage",1.0f},
-            {"npc_damage",1.0f},
-            {"build_damage",1.0f},
+            {"friendly_fire",false},{"enemy_revive",false},
+            {"damage",3.0f},
+            {"npc_damage",2.5f},
+            {"build_damage",2.5f},
             {"headshots",1.0f},
-            {"walk",2.5f},
+            {"walk",2.0f},
             {"run",1.0f},
             {"flight",1.0f},
-            {"fling",3.0f},
+            {"fling",2.5f},
             {"stamina",1.0f},
             {"starting_health",100},
             {"starting_shield",100},
@@ -134,7 +141,7 @@ namespace Ashfall.Integration.Playable.Match
             {"catalog",false},
             {"respawn_delay",5.0f},
             {"protection",3.0f},
-            {"retain_inventory",true},
+            {"retain_inventory",false},
             {"downed_seconds",60.0f},
             {"time_limit",600},
             {"score_limit",25},
@@ -142,7 +149,7 @@ namespace Ashfall.Integration.Playable.Match
             {"late_join",true},
             {"spectators",true},
             {"locked",false},
-            {"loadout","standard"},
+            {"loadout","ump"},
             {"zone_enabled",true},
             {"zone_damage",5.0f},
             {"zone_speed",2.0f},
@@ -153,9 +160,9 @@ namespace Ashfall.Integration.Playable.Match
         };
         static readonly Dictionary<string,double[]> Limits=new Dictionary<string,double[]>(StringComparer.Ordinal)
         {
-            {"max_players",new double[]{2,8}},
-            {"teams",new double[]{0,8}},
-            {"damage",new double[]{0.0,3.0}},
+            {"max_players",new double[]{2,24}},
+            {"teams",new double[]{2,8}},
+            {"damage",new double[]{0.0,6.0}},
             {"npc_damage",new double[]{0.0,3.0}},
             {"build_damage",new double[]{0.0,3.0}},
             {"headshots",new double[]{0.0,3.0}},
@@ -181,7 +188,7 @@ namespace Ashfall.Integration.Playable.Match
         {
             {"map",new string[]{"valley","range","cyber_bird","community_local"}},
             {"mode",new string[]{"revive","respawn"}},
-            {"loadout",new string[]{"standard","pistols","swords"}},
+            {"loadout",new string[]{"ump","standard","pistols","swords"}},
         };
         public static R24PlayableMatchRules FromSourceValues(IDictionary<string,object> input,Func<string,bool> playableMap=null)
         {
@@ -204,11 +211,13 @@ namespace Ashfall.Integration.Playable.Match
                 else
                 {
                     double n;if(!Number(v,out n))continue;double[] bounds=Limits[row.Key];
-                    n=Math.Max(bounds[0],Math.Min(bounds[1],n));
+                    // Zero is the serialized team count for the FFA preset.
+                    if(row.Key!="teams"||n!=0)n=Math.Max(bounds[0],Math.Min(bounds[1],n));
                     // Assign separately: a conditional int/float expression would box every int as float.
                     if(row.Value is int)result[row.Key]=(int)n;else result[row.Key]=(float)n;
                 }
             }
+            if((string)result["mode"]=="revive"&&(int)result["teams"]==0)result["teams"]=Defaults["teams"];
             return new R24PlayableMatchRules(result);
         }
         static bool Number(object value,out double number)
@@ -225,10 +234,6 @@ namespace Ashfall.Integration.Playable.Match
                 case "team_revive":break;
                 case "team_respawn":patch["mode"]="respawn";break;
                 case "free_for_all":patch["mode"]="respawn";patch["teams"]=0;break;
-                case "practice":
-                    patch["mode"]="respawn";patch["damage"]=0f;patch["catalog"]=true;
-                    patch["infinite_ammo"]=true;patch["infinite_builds"]=true;
-                    patch["score_limit"]=0;patch["time_limit"]=0;patch["zone_enabled"]=false;break;
                 default:throw new ArgumentException("Unknown source match preset","id");
             }
             return FromSourceValues(patch).WithMap(mapId);
@@ -240,7 +245,7 @@ namespace Ashfall.Integration.Playable.Match
             if(String.IsNullOrEmpty(selectedCatalogMapId)||selectedCatalogMapId.Length>180||selectedCatalogMapId.IndexOfAny(new[]{'\r','\n','\0'})>=0)
                 throw new ArgumentException("A selected installed map ID is required","selectedCatalogMapId");
             var next=new Dictionary<string,object>(values,StringComparer.Ordinal);next["map"]=selectedCatalogMapId;
-            if(R24ArchiveRoundPolicy.FiveLevels(selectedCatalogMapId)&&PresetId!="practice"){next["rounds"]=5;if(MapId!=selectedCatalogMapId)next["time_limit"]=300;}
+            if(R24ArchiveRoundPolicy.FiveLevels(selectedCatalogMapId)){next["rounds"]=5;if(MapId!=selectedCatalogMapId)next["time_limit"]=300;}
             return new R24PlayableMatchRules(next);
         }
         public R24PlayableMatchRules With(string sourceKey,object value)
@@ -249,6 +254,8 @@ namespace Ashfall.Integration.Playable.Match
             if(sourceKey==null||!Defaults.ContainsKey(sourceKey))throw new ArgumentException("Unknown source rule","sourceKey");
             if(sourceKey=="map")throw new ArgumentException("Use WithMap with an installed catalog selection","sourceKey");
             var next=new Dictionary<string,object>(values,StringComparer.Ordinal);next[sourceKey]=value;
+            double count;if(sourceKey=="teams"&&Number(value,out count)&&count<2)next[sourceKey]=2;
+            if(sourceKey=="mode"&&Mode=="respawn"&&Equals(value,"revive"))next["zone_enabled"]=Defaults["zone_enabled"];
             return FromSourceValues(next,delegate(string id){return id==MapId;});
         }
         public object ReadSourceValue(string key)
@@ -262,8 +269,6 @@ namespace Ashfall.Integration.Playable.Match
         {
             get
             {
-                // front_menu1000._preset_selected_r5: derived state, including edited presets.
-                if(Mode=="respawn"&&Damage==0&&Catalog&&InfiniteAmmo&&!ZoneEnabled)return "practice";
                 if(Mode=="revive")return "team_revive";
                 return Teams==0?"free_for_all":"team_respawn";
             }
@@ -273,7 +278,7 @@ namespace Ashfall.Integration.Playable.Match
             get
             {
                 if(MapId=="archive:magnum-chaosvr"||MapId=="archive:magnum-3-chaosvr")return new[]{7};
-                return Loadout=="pistols"?new[]{2,7,19}:Loadout=="swords"?new[]{14,15,16}:new[]{0,2,9};
+                return Loadout=="pistols"?new[]{2,7,19}:Loadout=="swords"?new[]{14,15,16}:Loadout=="ump"?new[]{6}:new[]{0,2,9};
             }
         }
         public static bool Editable(string stage,string key)
@@ -291,6 +296,7 @@ namespace Ashfall.Integration.Playable.Match
                 return Math.Floor(Convert.ToDouble(value,CultureInfo.InvariantCulture)*100+.5).ToString(CultureInfo.InvariantCulture)+"%";
             if(key=="mode")return Mode=="respawn"?"DEATHMATCH":"TEAM REVIVE";
             if(key=="teams"&&Teams==0)return "FREE-FOR-ALL";
+            if(key=="time_limit"&&Mode=="revive")return "NO CAP";
             if(key=="time_limit")return TimeLimit==0?"UNLIMITED":Math.Floor(TimeLimit/60d+.5).ToString(CultureInfo.InvariantCulture)+" MIN";
             if(key=="score_limit"&&ScoreLimit==0)return "UNLIMITED";
             if(key=="zone_damage")return ZoneDamage.ToString("F1",CultureInfo.InvariantCulture)+" HP / s";

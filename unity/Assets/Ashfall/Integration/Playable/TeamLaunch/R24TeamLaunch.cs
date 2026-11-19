@@ -79,9 +79,9 @@ namespace Ashfall.Integration.Playable.TeamLaunch
         void EnsureStructure()
         {
             if(!Eligible){ClearStructure();return;}if(structure!=null&&built==Runtime.Layout){structure.SetActive(enabledWorld);return;}ClearStructure();built=Runtime.Layout;structure=new GameObject("Original team launch decks R12");structure.transform.SetParent(transform,false);structure.transform.SetPositionAndRotation(Vector3.zero,Quaternion.identity);structure.transform.localScale=Vector3.one;
-            for(int team=0;team<built.TeamCount;team++)
+            for(int team=0;team<built.PlatformCount;team++)
             {
-                var station=new GameObject("TEAM "+(team+1)+" original sky deck").transform;station.SetParent(structure.transform,false);Pose(station,built.Station(team));Render(station,deck);var floor=station.gameObject.AddComponent<BoxCollider>();floor.center=new Vector3(0,-.35f,0);floor.size=new Vector3(49,.7f,18);var frame=station.gameObject.AddComponent<MeshCollider>();frame.sharedMesh=deck;
+                var station=new GameObject("Sky platform "+(team+1)).transform;station.SetParent(structure.transform,false);Pose(station,built.Station(team));Render(station,deck);var floor=station.gameObject.AddComponent<BoxCollider>();floor.center=new Vector3(0,-.35f,0);floor.size=new Vector3(49,.7f,18);var frame=station.gameObject.AddComponent<MeshCollider>();frame.sharedMesh=deck;
                 for(int slot=0;slot<12;slot++){string key=built.PodId(team,slot);var pod=CreatePod("Source dock "+key,false);Pose(pod.Root,built.Pod(team,slot));docks.Add(key,pod);}
             }
             exitVoice=Voice(structure.transform,"pod_exit",false,-7);structure.SetActive(enabledWorld);RefreshVisuals(.1f);
@@ -99,7 +99,7 @@ namespace Ashfall.Integration.Playable.TeamLaunch
         void Box(Transform parent,Vector3 at,Vector3 size,int color)
         {var go=GameObject.CreatePrimitive(PrimitiveType.Cube);go.name="Original launch console art";go.layer=0;go.transform.SetParent(parent,false);go.transform.localPosition=at;go.transform.localScale=size;var collider=go.GetComponent<Collider>();collider.enabled=false;Destroy(collider);go.GetComponent<MeshRenderer>().sharedMaterial=materials[color];}
         Transform Label(Transform parent,string text,Vector3 at,float pixelSize)
-        {var go=new GameObject(text.Replace('\n',' '));go.layer=0;go.transform.SetParent(parent,false);go.transform.localPosition=at;var label=go.AddComponent<TextMesh>();label.font=Resources.Load<Font>("R23GodotUI");if(label.font==null)label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.fontSize=48;label.characterSize=48*pixelSize;label.anchor=TextAnchor.MiddleCenter;label.alignment=TextAlignment.Center;label.color=new Color(216f/255,228f/255,222f/255);label.text=text;go.GetComponent<MeshRenderer>().sharedMaterial=label.font.material;return go.transform;}
+        {var go=new GameObject(text.Replace('\n',' '));go.layer=0;go.transform.SetParent(parent,false);go.transform.localPosition=at;var label=go.AddComponent<TextMesh>();label.font=Resources.Load<Font>("R23GodotUI");if(label.font==null)label.font=Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");label.fontSize=48;label.characterSize=48*pixelSize;label.anchor=TextAnchor.MiddleCenter;label.alignment=TextAlignment.Center;label.color=new Color(216f/255,228f/255,222f/255);label.text=text;Ashfall.Integration.Playable.R26WorldText.Bind(label);return go.transform;}
         AudioSource Voice(Transform parent,string cue,bool loop,float db)
         {var go=new GameObject("Original R18 "+cue);go.transform.SetParent(parent,false);var voice=go.AddComponent<AudioSource>();voice.playOnAwake=false;voice.clip=clips[cue];voice.loop=loop;voice.spatialBlend=1;voice.minDistance=3;voice.maxDistance=50;voice.rolloffMode=AudioRolloffMode.Logarithmic;voice.volume=Mathf.Pow(10,db/20)*volume;return voice;}
         void ApplyVolume(Pod pod){if(pod.Launch!=null)pod.Launch.volume=Mathf.Pow(10,-7f/20)*volume;if(pod.Land!=null)pod.Land.volume=Mathf.Pow(10,-7f/20)*volume;if(pod.Engine!=null)pod.Engine.volume=Mathf.Pow(10,-11f/20)*volume;}

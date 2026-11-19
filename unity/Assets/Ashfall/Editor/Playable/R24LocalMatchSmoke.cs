@@ -18,8 +18,8 @@ namespace Ashfall.Editor.Playable
     // fixture is not a native pass, a peer session or headset acceptance.
     public sealed class R24LocalMatchSmoke
     {
-        readonly bool focusedFixes,practiceOnly;
-        public R24LocalMatchSmoke(bool focusedFixes=false,bool practiceOnly=false){this.focusedFixes=focusedFixes;this.practiceOnly=practiceOnly;}
+        readonly bool focusedFixes,equipmentOnly;
+        public R24LocalMatchSmoke(bool focusedFixes=false,bool equipmentOnly=false){this.focusedFixes=focusedFixes;this.equipmentOnly=equipmentOnly;}
         [Serializable] sealed class Group {public string name="",error="";public bool passed;public List<string> notes=new List<string>();}
         [Serializable] sealed class Receipt {public bool success,nativeExecuted,headsetVerified=false;public string error="",startedUtc="",finishedUtc="";public List<Group> groups=new List<Group>();}
         R23PlayableLoop loop;Receipt receipt;Saved saved;float deadline;long buildTick=9000000;
@@ -43,9 +43,9 @@ namespace Ashfall.Editor.Playable
                 loop.Rig.Head.transform.SetLocalPositionAndRotation(new Vector3(0,1.7088f,0),Quaternion.identity);
                 loop.Rig.Left.SetLocalPositionAndRotation(new Vector3(-.22f,1.16f,.24f),Quaternion.identity);
                 loop.Rig.Right.SetLocalPositionAndRotation(new Vector3(.22f,1.16f,.24f),Quaternion.identity);
-                foreach(string name in practiceOnly?new[]{"ActualPracticeInfiniteOwners"}:focusedFixes?new[]{"ActualPracticeInfiniteOwners","ActualFfaZoneHealthRespawn"}:new[]{"ActualDefaultExploreUnchanged","ActualPracticeInfiniteOwners","ActualFfaZoneHealthRespawn","ActualTeamReviveDeckConsoleCarrier"})
+                foreach(string name in equipmentOnly?new[]{"ActualCustomDeathmatchInfiniteOwners"}:focusedFixes?new[]{"ActualCustomDeathmatchInfiniteOwners","ActualFfaNoZoneHealthRespawn"}:new[]{"ActualDefaultWarmup","ActualCustomDeathmatchInfiniteOwners","ActualFfaNoZoneHealthRespawn","ActualTeamReviveDeckConsoleCarrier"})
                 {
-                    var g=Add(name);IEnumerator routine=name=="ActualDefaultExploreUnchanged"?Explore(g):name=="ActualPracticeInfiniteOwners"?Practice(g):name=="ActualFfaZoneHealthRespawn"?Ffa(g):Revive(g);
+                    var g=Add(name);IEnumerator routine=name=="ActualDefaultWarmup"?Warmup(g):name=="ActualCustomDeathmatchInfiniteOwners"?InfiniteEquipment(g):name=="ActualFfaNoZoneHealthRespawn"?Ffa(g):Revive(g);
                     var work=Drive(g,routine);while(work.MoveNext())yield return work.Current;
                 }
                 var cleanup=Add("ActualSceneCleanup");var restore=Drive(cleanup,Restore(cleanup));while(restore.MoveNext())yield return restore.Current;
@@ -75,21 +75,21 @@ namespace Ashfall.Editor.Playable
         }
         void Finish()
         {
-            receipt.success=receipt.nativeExecuted&&receipt.error.Length==0&&receipt.groups.Count==(practiceOnly?2:focusedFixes?3:5);foreach(var g in receipt.groups)receipt.success&=g.passed&&g.error.Length==0;
+            receipt.success=receipt.nativeExecuted&&receipt.error.Length==0&&receipt.groups.Count==(equipmentOnly?2:focusedFixes?3:5);foreach(var g in receipt.groups)receipt.success&=g.passed&&g.error.Length==0;
             receipt.finishedUtc=DateTime.UtcNow.ToString("o");Passed=receipt.success;Json=JsonUtility.ToJson(receipt,true);Debug.Log("R24 LOCAL MATCH TERMINAL "+Json);if(AutoFinish)R23SmokeControl.Finish(Passed,Json);
         }
-        IEnumerator Explore(Group g)
+        IEnumerator Warmup(Group g)
         {
             Note(g,"INITIAL actual defaults selected="+(loop.UI.SelectedMatchRules==null?"null":loop.UI.SelectedMatchRules.PresetId)+" active="+loop.MatchActive);
             Need(loop.UI.SelectedMatchRules==null&&loop.ActualMatchRules==null&&!loop.MatchActive,"Fresh Root auto-selected a local match; do not clear it to manufacture a default pass");
             loop.ReturnToLobby();Need(loop.UI.SetSelectedMap("range"),"Actual installed Range choice unavailable");loop.UI.OpenMatchRules();
             Note(g,"BEFORE default rules: selected="+(loop.UI.SelectedMatchRules==null?"null":loop.UI.SelectedMatchRules.PresetId)+" match="+loop.MatchActive+" actual="+(loop.ActualMatchRules!=null));
             Need(loop.UI.SelectedMatchRules==null&&!loop.UI.RequestMatchStart()&&!loop.MatchActive,"Opening source rule page silently selected/started a match");
-            loop.UI.ToggleMenu();loop.UI.OpenSpawnChoice();Need(loop.UI.ConfirmMapSpawn(true),"Existing source Explore GAME SPAWN route refused");
-            yield return Wait(delegate{return loop.Ready&&loop.Map.MapId=="range"&&loop.UI.Page==R23UiPage.Playing;},65,"actual Explore Range entry");Pump();
-            Need(!loop.MatchActive&&loop.ActualMatchRules==null&&loop.MatchZoneOwner==null&&!loop.TeamLaunch.Eligible&&!loop.Rig.CarrierActive&&loop.UI.LocalMatchLifeState==null,"Explore inherited local match/zone/deck/life policy");
-            Need(FloorAt(loop.Rig.transform.position,loop.Map.transform,2)!=null,"Actual Range Explore spawn has no native floor");
-            Note(g,"Actual pre-existing UI GAME SPAWN callback loaded Range and entered Explore; no match owner/zone/deck. No peer or scene stand-in.");
+            loop.UI.ToggleMenu();loop.UI.OpenSpawnChoice();Need(loop.UI.ConfirmMapSpawn(true),"Existing source warm-up GAME SPAWN route refused");
+            yield return Wait(delegate{return loop.Ready&&loop.Map.MapId=="range"&&loop.UI.Page==R23UiPage.Playing;},65,"actual warm-up Range entry");Pump();
+            Need(!loop.MatchActive&&loop.ActualMatchRules==null&&loop.MatchZoneOwner==null&&!loop.TeamLaunch.Eligible&&!loop.Rig.CarrierActive&&loop.UI.LocalMatchLifeState==null,"warm-up inherited local match/zone/deck/life policy");
+            Need(FloorAt(loop.Rig.transform.position,loop.Map.transform,2)!=null,"Actual Range warm-up spawn has no native floor");
+            Note(g,"Actual pre-existing UI GAME SPAWN callback loaded Range and entered warm-up; no match owner/zone/deck. No peer or scene stand-in.");
         }
         IEnumerator Begin(Group g,string preset)
         {
@@ -102,27 +102,27 @@ namespace Ashfall.Editor.Playable
             Need(loop.UI.RequestMatchStart(),"Public actual UI START MATCH request refused");yield return Wait(delegate{return loop.Ready&&loop.MatchActive&&loop.UI.Page==R23UiPage.Playing;},65,"actual UI->Root match start: "+loop.MatchStatus);
             Pump();Need(loop.Gameplay.LocalMatchHealthConfigured&&loop.Map.MapId=="range","UI request did not configure actual loaded map/Health owner");State(g,"AFTER actual start");
         }
-        IEnumerator Practice(Group g)
+        IEnumerator InfiniteEquipment(Group g)
         {
-            yield return Begin(g,"practice");yield return Start(g);var h=loop.Gameplay;var r=loop.ActualMatchRules;
-            Need(r.Mode=="respawn"&&r.Damage==0&&r.Catalog&&r.InfiniteAmmo&&r.InfiniteBuilds&&r.ScoreLimit==0&&r.TimeLimit==0&&!r.ZoneEnabled,"Actual practice lost source overrides");
-            Need(loop.MatchZoneOwner.State==null&&!loop.TeamLaunch.Eligible,"Practice unexpectedly created zone or team deck");
-            Need(h.OwnedWeaponActionIds.Length==3&&h.OwnsWeapon("cx4")&&h.OwnsWeapon("px4")&&h.OwnsWeapon("m1014"),"Practice actual source standard kit differs");
+            yield return Begin(g,"team_respawn");foreach(var option in new[]{new KeyValuePair<string,object>("damage",0f),new KeyValuePair<string,object>("catalog",true),new KeyValuePair<string,object>("infinite_ammo",true),new KeyValuePair<string,object>("infinite_builds",true),new KeyValuePair<string,object>("time_limit",0),new KeyValuePair<string,object>("loadout","standard")})Need(loop.UI.SetMatchRule(option.Key,option.Value),"Custom match rule unavailable: "+option.Key);yield return Start(g);var h=loop.Gameplay;var r=loop.ActualMatchRules;
+            Need(r.Mode=="respawn"&&r.Damage==0&&r.Catalog&&r.InfiniteAmmo&&r.InfiniteBuilds&&r.TimeLimit==0&&!r.ZoneEnabled,"Actual custom deathmatch lost source overrides");
+            Need(loop.MatchZoneOwner.State==null&&!loop.TeamLaunch.Eligible,"Custom deathmatch unexpectedly created zone or team deck");
+            Need(h.OwnedWeaponActionIds.Length==3&&h.OwnsWeapon("cx4")&&h.OwnsWeapon("px4")&&h.OwnsWeapon("m1014"),"Custom deathmatch actual source standard kit differs");
             h.NotifyFocus(true);h.SetGameplayPaused(false);
             Action<string> binding=stage=>{var active=h.ReadWeaponState(h.ActiveWeaponActionId);var expected=h.ReadWeaponState("m1014");string instance;Vector3 center,at;Quaternion rotation;bool oldMagnum=h.TryReadWorldWeapon("magnum",out instance,out center,out at,out rotation);Note(g,stage+": action="+h.ActiveWeaponActionId+" profile="+h.ActiveWeaponId+" held="+h.HasWeapon+" primary="+h.PrimaryHand+" activeLoaded="+h.Ammo+" phase="+active.Phase+" shots="+active.Shots+" m1014Loaded="+expected.Loaded+" m1014Seated="+expected.Seated+" m1014Phase="+expected.Phase+" owned="+string.Join(",",h.OwnedWeaponActionIds)+" worlds="+h.WorldWeaponActionIds.Length+" legacyMagnumGround="+oldMagnum+" shells="+h.ReadAmmoReserveFamily("shells")+" storedShells="+h.ReadStoredAmmoReserveFamily("shells"));};
             Action<string> reloadState=stage=>{binding(stage);HandlingInput controls;Vector3 local,origin;Quaternion rotation;float scale;bool sampled=h.TryReadReloadControls(out controls,out local,out origin,out rotation,out scale);Vector3 art;Quaternion artRotation;bool artVisible=h.TryReadHandArtPose(0,out art,out artRotation);var state=h.ReadWeaponState(h.ActiveWeaponActionId);Note(g,stage+" reload: bolt="+state.BoltTravel.ToString("F6")+" seated="+state.Seated+" nativeContact="+h.ReloadHandOccupied+" sampled="+sampled+" sampledLocal="+V(controls.SupportLocal).ToString("F6")+" currentLocal="+local.ToString("F6")+" frameOrigin="+origin.ToString("F6")+" frameEuler="+rotation.eulerAngles.ToString("F3")+" scale="+scale+" rawLeft="+loop.Rig.Left.position.ToString("F6")+" rawRight="+loop.Rig.Right.position.ToString("F6")+" leftArt="+art.ToString("F6")+" artVisible="+artVisible+" grip="+controls.Grip+" tracked="+controls.PrimaryTracked+"/"+controls.SupportTracked+" reserved="+controls.PrimaryClimbing+"/"+controls.SupportReserved+" inputEnabled="+controls.Enabled+" paused="+controls.Paused+" headBlocked="+controls.HeadObstructed);};
-            binding("BEFORE actual practice equip");Need(h.EquipOwned("m1014",1),"Actual source owned M1014 equip refused");binding("AFTER actual practice equip");
+            binding("BEFORE actual custom deathmatch equip");Need(h.EquipOwned("m1014",1),"Actual source owned M1014 equip refused");binding("AFTER actual custom deathmatch equip");
             Vector3 forward=Vector3.ProjectOnPlane(loop.Rig.Head.transform.forward,Vector3.up).normalized;if(forward.sqrMagnitude<.5f)forward=Vector3.forward;
             loop.Rig.Right.SetPositionAndRotation(loop.Rig.Head.transform.position+forward*.24f-Vector3.up*.22f,Quaternion.LookRotation(forward)*Quaternion.Inverse(R23TrackedGripPose.LocalRotation));
             loop.Rig.Left.position=loop.Rig.Head.transform.position-forward*.15f-Vector3.up*.25f;Physics.SyncTransforms();
-            h.TickInput(.02f,WeaponFrame());binding("AFTER actual practice neutral grip");
-            Need(h.ActiveWeaponActionId=="m1014"&&h.ActiveWeaponId=="m1014"&&h.HasWeapon,"Practice neutral grip replaced the actual equipped M1014 instance");int stored=h.ReadStoredAmmoReserveFamily("shells"),before=h.Ammo;
-            R23ShotPose bore;Need(h.TryReadDisplayedShotPose(out bore)&&MapClear(loop.Rig.Head.transform.position,V(bore.Origin)),"Actual practice head-to-muzzle lane blocked");
-            bool shot=h.TickInput(.02f,WeaponFrame(trigger:1));binding("AFTER actual practice trigger");Note(g,"BEFORE unlimited reload acceptedShot="+shot+" loaded="+h.Ammo+" reserve="+h.ReadAmmoReserveFamily("shells")+" stored="+stored);
-            Need(shot&&h.Ammo==before-1&&h.ReadAmmoReserveFamily("shells")==-1,"Actual native practice shot/unlimited family policy failed");
+            h.TickInput(.02f,WeaponFrame());binding("AFTER actual custom deathmatch neutral grip");
+            Need(h.ActiveWeaponActionId=="m1014"&&h.ActiveWeaponId=="m1014"&&h.HasWeapon,"Custom deathmatch neutral grip replaced the actual equipped M1014 instance");int stored=h.ReadStoredAmmoReserveFamily("shells"),before=h.Ammo;
+            R23ShotPose bore;Need(h.TryReadDisplayedShotPose(out bore)&&MapClear(loop.Rig.Head.transform.position,V(bore.Origin)),"Actual custom deathmatch head-to-muzzle lane blocked");
+            bool shot=h.TickInput(.02f,WeaponFrame(trigger:1));binding("AFTER actual custom deathmatch trigger");Note(g,"BEFORE unlimited reload acceptedShot="+shot+" loaded="+h.Ammo+" reserve="+h.ReadAmmoReserveFamily("shells")+" stored="+stored);
+            Need(shot&&h.Ammo==before-1&&h.ReadAmmoReserveFamily("shells")==-1,"Actual native custom deathmatch shot/unlimited family policy failed");
             reloadState("BEFORE actual eject neutral");h.TickInput(.02f,WeaponFrame());reloadState("BEFORE actual stick-click eject");h.TickInput(.02f,WeaponFrame(click:true));reloadState("AFTER actual stick-click eject");Need(h.ReloadStage==ReloadPhase.NeedsMagazine,"Actual source M1014 stick-click eject refused");h.TickInput(.02f,WeaponFrame());reloadState("AFTER actual offer neutral");
             loop.Rig.Left.position=h.ReloadOfferPosition;reloadState("BEFORE actual offer grip");h.TickInput(.02f,WeaponFrame(left:.8f));reloadState("AFTER actual offer grip");
-            loop.Rig.Left.position=h.ReloadInsertionPosition;reloadState("BEFORE actual UP insertion");h.TickInput(.02f,WeaponFrame(left:.8f));reloadState("AFTER actual UP insertion");Need(h.ReloadStage==ReloadPhase.NeedsRack,"Actual practice UP shell-pack insertion refused");
+            loop.Rig.Left.position=h.ReloadInsertionPosition;reloadState("BEFORE actual UP insertion");h.TickInput(.02f,WeaponFrame(left:.8f));reloadState("AFTER actual UP insertion");Need(h.ReloadStage==ReloadPhase.NeedsRack,"Actual custom deathmatch UP shell-pack insertion refused");
             reloadState("BEFORE actual handle neutral");h.TickInput(.02f,WeaponFrame());reloadState("AFTER actual handle neutral");
             loop.Rig.Left.position=h.ChargingGripPosition;reloadState("BEFORE actual handle grip");
             string aimed;Vector3 aimedCenter;float aimedScore;
@@ -140,34 +140,23 @@ namespace Ashfall.Editor.Playable
             h.HolsterCurrent();loop.Rig.Right.position=loop.Rig.transform.position+new Vector3(.3f,1.2f,.2f);loop.Rig.Right.rotation=Quaternion.Inverse(R23TrackedGripPose.LocalRotation);Physics.SyncTransforms();int panels=loop.Activities.PanelCount,balance=loop.Activities.Balance;
             Note(g,"Actual construction tracked pose corrected bore="+R23TrackedGripPose.Forward(loop.Rig.Right)+" hand="+loop.Rig.Right.position+" root="+loop.Rig.transform.position);
             Build(false);Build(true);Build(false);Note(g,"AFTER actual construction panels="+loop.Activities.PanelCount+" balance="+loop.Activities.Balance+" status="+loop.Activities.BuildStatus);
-            Need(loop.Activities.PanelCount>panels&&loop.Activities.Balance==balance,"Source practice real construction did not place without finite debit");
-            AdvanceTo(loop.Gameplay.LocalMatchHealth.ProtectionUntil+.05);float vitality=h.Health+h.Shield;h.ApplyPlayerDamage(25);Need(h.Health+h.Shield==vitality,"Source practice DAMAGE0 mutated actual Health after protection");
+            Need(loop.Activities.PanelCount>panels&&loop.Activities.Balance==balance,"Source custom deathmatch real construction did not place without finite debit");
+            AdvanceTo(loop.Gameplay.LocalMatchHealth.ProtectionUntil+.05);float vitality=h.Health+h.Shield;h.ApplyPlayerDamage(25);Need(h.Health+h.Shield==vitality,"Source custom deathmatch DAMAGE0 mutated actual Health after protection");
             Note(g,"PASS actual source kit, accepted native M1014 discharge and physical UP/BACK unlimited reload, stored reserve unchanged, actual native supported construction free, damage0 after protection.");
         }
         IEnumerator Ffa(Group g)
         {
-            yield return Begin(g,"free_for_all");foreach(var pair in new[]{new KeyValuePair<string,object>("zone_wait",0f),new KeyValuePair<string,object>("zone_speed",20f),new KeyValuePair<string,object>("zone_damage",8f),new KeyValuePair<string,object>("damage",0f),new KeyValuePair<string,object>("starting_shield",73),new KeyValuePair<string,object>("protection",10f),new KeyValuePair<string,object>("respawn_delay",1f),new KeyValuePair<string,object>("time_limit",60)})Need(loop.UI.SetMatchRule(pair.Key,pair.Value),"Actual supported rule unavailable: "+pair.Key);
-            yield return Start(g);Need(loop.LocalMatchTeam==-1&&loop.ActualMatchRules.Teams==0&&!loop.TeamLaunch.Eligible&&loop.MatchZoneOwner.State!=null,"Actual FFA team/zone/deck mode differs");
-            R24LaunchMapInfo info;Need(loop.LaunchMapCatalog.TryRead("range",out info),"Actual source Range zone bounds missing");var initial=R24ZoneMath.Initial(info.CatalogMinX,info.CatalogMinZ,info.CatalogMaxX,info.CatalogMaxZ);var first=loop.MatchZoneOwner.State;
-            Need(Math.Abs(first.From.X-initial.X)<.0001&&Math.Abs(first.From.Z-initial.Z)<.0001&&Math.Abs(first.From.Size-initial.Size)<.0001&&Math.Abs(first.Next.Size-Math.Max(12,initial.Size*.65))<.0001,"Actual source square bounds/ratio changed");
-            Vector3 outside=Vector3.zero;bool found=false;for(int n=0;n<12&&!found;n++){loop.TickMatch(.1f,true);found=FindZoneFloor(info,false,out outside);}Need(found,"Shrinking actual square left no supported native outside Range floor within source protection window");
-            loop.Rig.SetSpawn(outside+Vector3.up*.02f,loop.Map.Bounds.center);loop.Calibration.NotifyRootPoseReset();Physics.SyncTransforms();double protection=loop.Gameplay.LocalMatchHealth.ProtectionUntil;
-            Need(loop.MatchClock+.1<protection,"Fixture failed to find genuine outside floor before protection ended");float hp=loop.Gameplay.Health,shield=loop.Gameplay.Shield;
-            loop.TickMatch(.1f,true);State(g,"BEFORE protected outside assert");Need(loop.MatchZone.PlayerOutside&&!loop.MatchZone.LastDamageAccepted&&loop.MatchZone.LastDamageRequest==null&&loop.Gameplay.Health==hp&&loop.Gameplay.Shield==shield,"Actual protected outside actor received zone damage");
-            AdvanceTo(protection+.25);State(g,"AFTER actual unprotected zone interval");
-            Need(loop.MatchZone.PlayerOutside&&loop.Gameplay.Health<hp&&loop.Gameplay.Shield==73&&loop.ActualMatchRules.Damage==0,"Actual zone failed direct Health/damage0 bypass or debited shield");
-            float healthBefore=loop.Gameplay.Health;loop.Gameplay.ApplyPlayerDamage(10);Need(loop.Gameplay.Health==healthBefore&&loop.Gameplay.Shield==73,"Weapon damage0 did not stay separate from actual zone");
-            yield return null;
-            Need(loop.MatchZone.Visible&&loop.MatchZone.SurfaceCount>0&&loop.MatchZone.LastDrawCalls>=4&&loop.MatchZone.OmittedSurfaceCount==0,"Actual zone surface/view submission unavailable");
-            Note(g,"Actual zone view: surfaces="+loop.MatchZone.SurfaceCount+" submittedDraws="+loop.MatchZone.LastDrawCalls+" omitted="+loop.MatchZone.OmittedSurfaceCount+"; appearance parity is not inferred");
-            R23SmokeControl.Capture(loop.Rig.Head,"local-match-ffa-direct-zone");
+            yield return Begin(g,"free_for_all");foreach(var pair in new[]{new KeyValuePair<string,object>("starting_shield",73),new KeyValuePair<string,object>("protection",10f),new KeyValuePair<string,object>("respawn_delay",1f),new KeyValuePair<string,object>("time_limit",60)})Need(loop.UI.SetMatchRule(pair.Key,pair.Value),"Actual supported rule unavailable: "+pair.Key);
+            Need(!loop.UI.IsMatchRuleAvailable("zone_enabled"),"FFA still exposes the zone setting");
+            yield return Start(g);Need(loop.LocalMatchTeam==-1&&loop.ActualMatchRules.Teams==0&&!loop.TeamLaunch.Eligible&&loop.MatchZoneOwner.State==null,"FFA created a zone, team or launch deck");
+            AdvanceTo(loop.Gameplay.LocalMatchHealth.ProtectionUntil+.05);
             Need(loop.Gameplay.ApplyDirectPlayerDamage(1000),"Actual FFA lethal direct Health callback refused");loop.TickMatch(.01f,true);Pump();var dead=loop.Gameplay.LocalMatchHealth;State(g,"BEFORE actual delayed respawn");
             Need(dead.Life==LifeState.Dead&&!loop.MatchLocalInputAllowed&&loop.UI.LocalMatchLifeState=="respawning"&&loop.UI.LocalMatchLifeCaption.StartsWith("YOU DIED \u00b7 RESPAWN",StringComparison.Ordinal),"Actual FFA death did not bind source respawning life UI/input block");
             AdvanceTo(dead.RespawnAt-.02);Need(loop.Gameplay.LocalMatchHealth.Life==LifeState.Dead,"Actual source respawn occurred before delay");AdvanceTo(dead.RespawnAt+.02);Pump();State(g,"AFTER actual delayed respawn");
             Need(loop.Gameplay.LocalMatchHealth.Life==LifeState.Alive&&loop.Gameplay.Health==100&&loop.Gameplay.Shield==73&&loop.MatchLocalInputAllowed&&loop.UI.Page==R23UiPage.Playing&&loop.Gameplay.LocalMatchHealth.ProtectionUntil>loop.MatchClock,"Actual source respawn HP/shield/protection/input/UI restore failed");
             Need(!loop.Gameplay.ApplyDirectPlayerDamage(5)&&loop.Gameplay.Health==100,"Actual respawn protection rejected neither direct damage nor source loss");
             AdvanceTo(60.01);State(g,"AFTER actual time cap");Need(!loop.MatchActive&&!loop.MatchLocalInputAllowed&&loop.UI.LocalMatchLifeCaption=="ROUND COMPLETE","Actual source clock did not end round and publish results");
-            Note(g,"PASS catalog-local square65% shrink, real source floor outside, protected interval, directHP with shield73/damage0, actual1s respawn and protection, actual60s results. Public TickMatch advanced the real owner clock, not a fake Health clock.");
+            Note(g,"PASS zone-free FFA with a one-second respawn, restored protection and 60-second results.");
         }
         IEnumerator Revive(Group g)
         {
@@ -216,18 +205,6 @@ namespace Ashfall.Editor.Playable
         void Build(bool trigger){loop.Activities.TickConstruction(new InputFrame{Tick=++buildTick,Tracked=true,TriggerRight=trigger},true,true,false,false);}
         void AdvanceTo(double target){while(loop.MatchActive&&loop.MatchClock+1e-6<target){Bound();loop.TickMatch((float)Math.Min(.1,target-loop.MatchClock),true);}}
         void State(Group g,string stage){var h=loop.Gameplay.LocalMatchHealth;Note(g,stage+": active="+loop.MatchActive+" clock="+loop.MatchClock.ToString("F3")+" life="+(h==null?"null":h.Life.ToString())+" hp/shield="+loop.Gameplay.Health+"/"+loop.Gameplay.Shield+" protection="+(h==null?0:h.ProtectionUntil)+" root="+loop.Rig.transform.position+" deck="+loop.OnLaunchDeck+" carrier="+loop.Rig.CarrierActive+" page="+loop.UI.Page+" lifeCaption="+loop.UI.LocalMatchLifeCaption);}
-        bool FindZoneFloor(R24LaunchMapInfo info,bool inside,out Vector3 position)
-        {
-            var square=loop.MatchZoneOwner.State.Current(loop.MatchClock);Vector3 origin=V(info.RepresentedOriginUnity);var bounds=loop.Map.Bounds;
-            for(int z=1;z<20;z++)for(int x=1;x<20;x++)
-            {
-                var probe=new Vector3(Mathf.Lerp(bounds.min.x,bounds.max.x,x/20f),bounds.max.y+3,Mathf.Lerp(bounds.min.z,bounds.max.z,z/20f));RaycastHit best=new RaycastHit();float distance=float.PositiveInfinity;
-                foreach(var hit in Physics.RaycastAll(probe,Vector3.down,bounds.size.y+8,1<<0,QueryTriggerInteraction.Ignore))if(hit.collider.transform.IsChildOf(loop.Map.transform)&&hit.normal.y>.7f&&Mathf.Abs(hit.point.y-loop.Map.Spawn.y)<1&&hit.distance<distance){best=hit;distance=hit.distance;}
-                if(float.IsPositiveInfinity(distance))continue;Vector3 p=loop.Map.transform.InverseTransformPoint(best.point)-origin;if(square.Contains(p.x,-p.z)!=inside)continue;
-                bool blocked=false;foreach(var c in Physics.OverlapCapsule(best.point+Vector3.up*.35f,best.point+Vector3.up*1.45f,.23f,1<<0,QueryTriggerInteraction.Ignore))if(c.transform.IsChildOf(loop.Map.transform)){blocked=true;break;}if(blocked)continue;position=best.point;return true;
-            }
-            position=Vector3.zero;return false;
-        }
         static Collider FloorAt(Vector3 foot,Transform owner,float distance){Physics.SyncTransforms();foreach(var hit in Physics.RaycastAll(foot+Vector3.up*.35f,Vector3.down,distance,1<<0,QueryTriggerInteraction.Ignore))if(hit.collider.transform.IsChildOf(owner)&&hit.normal.y>.7f)return hit.collider;return null;}
         bool MapClear(Vector3 a,Vector3 b){Vector3 delta=b-a;if(delta.sqrMagnitude<.000001f)return true;foreach(var hit in Physics.RaycastAll(a,delta.normalized,delta.magnitude,(1<<0)|(1<<19),QueryTriggerInteraction.Ignore))if(hit.collider.transform.IsChildOf(loop.Map.transform))return false;return true;}
         sealed class Saved

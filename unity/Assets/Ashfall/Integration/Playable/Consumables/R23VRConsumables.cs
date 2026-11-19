@@ -17,7 +17,7 @@ namespace Ashfall.Integration.Playable.Consumables
     // Props have no collision, matching source field_consumables. No player/root pose writes.
     public sealed partial class R23VRConsumables:MonoBehaviour,IInteractionQuery
     {
-        sealed class WorldItem {internal string Id,Kind;internal bool WorldVisible=true;internal GameObject View;internal Vector3 InitialPosition;internal Quaternion InitialRotation=Quaternion.identity;internal Mesh RingMesh,PeelMesh;internal Transform Ring,Peels;internal float RingFill=-1;internal float[] PeelAmounts;}
+        sealed class WorldItem {internal string Id,Kind;internal bool WorldVisible=true,Culled,RestPosed;internal GameObject View;internal Vector3 InitialPosition;internal Quaternion InitialRotation=Quaternion.identity;internal Mesh RingMesh,PeelMesh;internal Transform Ring,Peels;internal float RingFill=-1;internal float[] PeelAmounts;}
         Transform root,head,left,right,content;IR23ConsumableEffects effects;R23ConsumableState state;
         readonly Dictionary<string,Asset> assets=new Dictionary<string,Asset>(StringComparer.Ordinal);
         readonly Dictionary<string,WorldItem> items=new Dictionary<string,WorldItem>(StringComparer.Ordinal);
@@ -123,16 +123,16 @@ namespace Ashfall.Integration.Playable.Consumables
         {
             Asset asset;if(String.IsNullOrEmpty(id)||String.IsNullOrEmpty(kind)||!Ready||!assets.TryGetValue(kind,out asset)||items.ContainsKey(id)||!F(position).IsFinite)return false;
             if(!state.Register(id,kind,F(position),restoreOnReset))return false;
-            var go=Instantiate(asset.Template);go.name=id;go.transform.SetParent(content,false);go.transform.position=position;go.SetActive(worldVisible);
-            items.Add(id,new WorldItem{Id=id,Kind=kind,View=go,InitialPosition=position});return true;
+            var go=Instantiate(asset.Template);go.name=id;go.transform.SetParent(content,false);go.transform.position=position;bool culled=!Ashfall.Integration.Playable.World.Loot.R26PickupCulling.Within(position,Ashfall.Integration.Playable.World.Loot.R26PickupCulling.ShowRange);go.SetActive(worldVisible&&!culled);
+            items.Add(id,new WorldItem{Id=id,Kind=kind,View=go,InitialPosition=position,Culled=culled});return true;
         }
         public void SetWorldVisible(bool visible){worldVisible=visible;if(state!=null)SyncViews();}
         public bool SetWorldItemVisible(string id,bool visible)
-        {WorldItem item;if(id==null||!items.TryGetValue(id,out item))return false;if(item.WorldVisible==visible)return true;item.WorldVisible=visible;SyncViews();return true;}
+        {WorldItem item;if(id==null||!items.TryGetValue(id,out item))return false;if(item.WorldVisible==visible)return true;item.WorldVisible=visible;SyncView(item);return true;}
         public bool RetireUnownedWorldItem(string id)
         {
             WorldItem item;if(id==null||!items.TryGetValue(id,out item)||!state.RetireUnownedWorldItem(id))return false;
-            items.Remove(id);sourceSettleResults.Remove(id);item.View.SetActive(false);Destroy(item.View);
+            items.Remove(id);RetireSharedFood(id);sourceSettleResults.Remove(id);item.View.SetActive(false);Destroy(item.View);
             if(item.RingMesh!=null)Destroy(item.RingMesh);if(item.PeelMesh!=null)Destroy(item.PeelMesh);return true;
         }
         public bool SettleWorldItem(string id,Func<bool> collisionReady,Func<bool> stillCurrent)
@@ -146,8 +146,11 @@ namespace Ashfall.Integration.Playable.Consumables
         public bool RepositionWorldItem(string id,Vector3 position){return RepositionWorldItem(id,position,Quaternion.identity);}
         public bool RepositionWorldItem(string id,Vector3 position,Quaternion rotation)
         {
-            WorldItem item;if(String.IsNullOrEmpty(id)||!items.TryGetValue(id,out item)||!F(new Vector3(rotation.x,rotation.y,rotation.z)).IsFinite||Single.IsNaN(rotation.w)||Single.IsInfinity(rotation.w)||Quaternion.Dot(rotation,rotation)<.5f||!state.RepositionWorldItem(id,F(position)))return false;
-            item.InitialPosition=position;item.InitialRotation=rotation.normalized;item.View.transform.SetPositionAndRotation(position,item.InitialRotation);SyncViews();if(WorldItemMoved!=null)WorldItemMoved(id,position);return true;
+            WorldItem item;if(String.IsNullOrEmpty(id)||!items.TryGetValue(id,out item)||!F(new Vector3(rotation.x,rotation.y,rotation.z)).IsFinite||Single.IsNaN(rotation.w)||Single.IsInfinity(rotation.w)||Quaternion.Dot(rotation,rotation)<.5f)return false;
+            // The session re-sends every shared prop each frame: an unmoved prop is already placed, shown and published.
+            rotation=rotation.normalized;if((item.InitialPosition-position).sqrMagnitude<.0000001f&&Mathf.Abs(Quaternion.Dot(item.InitialRotation,rotation))>.999999f&&(item.View.transform.position-position).sqrMagnitude<.0000001f){var placed=state.Inspect(id);if(placed!=null&&!placed.Removed&&placed.Owner==null&&placed.ReservedBy==null&&placed.Position.X==position.x&&placed.Position.Y==position.y&&placed.Position.Z==position.z)return true;}
+            if(!state.RepositionWorldItem(id,F(position)))return false;
+            item.InitialPosition=position;item.InitialRotation=rotation;item.View.transform.SetPositionAndRotation(position,item.InitialRotation);SyncView(item);if(WorldItemMoved!=null)WorldItemMoved(id,position);return true;
         }
         // Idempotent checkpoint composition: no Reset, removal, owned mutation or
         // consumed-item resurrection. Explicit ResetRound remains caller-owned.
@@ -174,18 +177,24 @@ namespace Ashfall.Integration.Playable.Consumables
         // Explicit new-round operation only: restores registered world starters, grants
         // no owned item or effect. Map selection must not call this as a reward path.
         public bool ResetActorLife(){if(state==null||!state.ResetActorLife())return false;heldHand=0;visualHeld=null;haveShake=false;shakeProgress=0;previousLeft=previousRight=true;if(audio!=null)audio.ResetRound();SyncViews();return true;}
+        internal void ClearCarriedForRespawn()
+        {
+            ResetActorLife();
+            foreach(var item in OwnedItems)state.RetireOwned(item.Id);
+            SyncViews();
+        }
         public void ResetRound()
         {
             if(state==null)return;sourceLayoutGeneration++;foreach(string id in new List<string>(sourceSettleResults.Keys)){var pending=sourceSettleResults[id];if(pending.Outcome==R24PickupSettleOutcome.Pending)sourceSettleResults[id]=new R24PickupSettleResult(id,R24PickupSettleOutcome.Cancelled,pending.RequestedPosition,pending.Position);}state.Reset();heldHand=0;visualHeld=null;haveShake=false;shakeProgress=0;previousLeft=previousRight=true;
             if(audio!=null)audio.ResetRound();
-            foreach(string id in new List<string>(items.Keys))if(state.Inspect(id)==null){var expired=items[id];items.Remove(id);expired.View.SetActive(false);Destroy(expired.View);if(expired.RingMesh!=null)Destroy(expired.RingMesh);if(expired.PeelMesh!=null)Destroy(expired.PeelMesh);}
+            foreach(string id in new List<string>(items.Keys))if(state.Inspect(id)==null){var expired=items[id];items.Remove(id);RetireSharedFood(id);expired.View.SetActive(false);Destroy(expired.View);if(expired.RingMesh!=null)Destroy(expired.RingMesh);if(expired.PeelMesh!=null)Destroy(expired.PeelMesh);}
             foreach(var item in items.Values)item.View.transform.SetPositionAndRotation(item.InitialPosition,item.InitialRotation);
             SyncViews();Status="Grip a supply with a free hand";
         }
         // Explicit fresh map/world lifecycle. Caller places its new map's world props.
         public void ClearItems()
         {
-            if(state==null)return;sourceLayoutGeneration++;sourceSettleResults.Clear();state.Reset(false);foreach(var item in items.Values){item.View.SetActive(false);Destroy(item.View);if(item.RingMesh!=null)Destroy(item.RingMesh);if(item.PeelMesh!=null)Destroy(item.PeelMesh);}items.Clear();heldHand=0;visualHeld=null;haveShake=false;shakeProgress=0;previousLeft=previousRight=true;
+            if(state==null)return;sourceLayoutGeneration++;sourceSettleResults.Clear();state.Reset(false);foreach(var item in items.Values){RetireSharedFood(item.Id);item.View.SetActive(false);Destroy(item.View);if(item.RingMesh!=null)Destroy(item.RingMesh);if(item.PeelMesh!=null)Destroy(item.PeelMesh);}items.Clear();heldHand=0;visualHeld=null;haveShake=false;shakeProgress=0;previousLeft=previousRight=true;
             if(audio!=null)audio.ResetRound();
         }
         bool Allowed {get{return Ready&&sample.Enabled&&effects.ReadVitals().Alive&&isActiveAndEnabled;}}
@@ -203,7 +212,7 @@ namespace Ashfall.Integration.Playable.Consumables
         public bool TryHostFoodFrame(string kind,int hand,Ashfall.Integration.Playable.Networking.R24LanRawTracking raw,out ActorFrame frame){frame=null;Asset asset;if(raw==null||hand<0||hand>1||!assets.TryGetValue(kind,out asset))return false;var h=hand==0?raw.Left:raw.Right;var other=hand==0?raw.Right:raw.Left;Quaternion rotation=new Quaternion(h.Rotation.X,h.Rotation.Y,h.Rotation.Z,h.Rotation.W)*R23TrackedGripPose.LocalRotation;Vector3 at=new Vector3(h.Position.X,h.Position.Y,h.Position.Z),prop=at+rotation*asset.Offset,anchor=prop+rotation*asset.Anchor;Quaternion rootRotation=new Quaternion(raw.Root.Rotation.X,raw.Root.Rotation.Y,raw.Root.Rotation.Z,raw.Root.Rotation.W),headRotation=new Quaternion(raw.Head.Rotation.X,raw.Head.Rotation.Y,raw.Head.Rotation.Z,raw.Head.Rotation.W);Vector3 headAt=new Vector3(raw.Head.Position.X,raw.Head.Position.Y,raw.Head.Position.Z),otherAt=new Vector3(other.Position.X,other.Position.Y,other.Position.Z);frame=new ActorFrame{Allowed=true,HandEligible=(raw.Flags&(hand==0?2:4))!=0,OtherHandEligible=(raw.Flags&(hand==0?4:2))!=0,TransferSafe=true,OtherGrip=(hand==0?raw.RightGrip:raw.LeftGrip)>.55f,Head=raw.Head.Position,Hand=h.Position,Forward=F(rotation*Vector3.forward),LocalHand=F(Quaternion.Inverse(rootRotation)*(at-new Vector3(raw.Root.Position.X,raw.Root.Position.Y,raw.Root.Position.Z))),OtherLocal=F(Quaternion.Inverse(rotation)*(otherAt-prop)),Anchor=F(anchor),HeadLocalAnchor=F(Quaternion.Inverse(headRotation)*(anchor-headAt)),ItemUpDot=Vector3.Dot(rotation*Vector3.up,Vector3.up)};return true;}
         public bool TryPickup(string id,int hand)
         {
-            WorldItem item;if(String.IsNullOrEmpty(id)||!Allowed||!HandReady(hand)||!HandFree(hand)||!ObjectiveAllowed("pickup:"+id,hand)||!items.TryGetValue(id,out item))return false;
+            WorldItem item;if(String.IsNullOrEmpty(id)||!Allowed||!HandReady(hand)||!HandFree(hand)||!CanClaimWorldFood(id)||!items.TryGetValue(id,out item)||!ObjectiveAllowed("pickup:"+id,hand))return false;
             state.SetFrame(Frame(hand));
             if(!state.Execute(PickupAction.Reserve,id).Accepted)return false;
             if(!state.CanStore(item.Kind)&&MakeRoomForWorldItem!=null&&!MakeRoomForWorldItem(item.Kind,hand)){state.Execute(PickupAction.Release,id);Status="No reachable place to drop the selected slot";return false;}
@@ -228,7 +237,7 @@ namespace Ashfall.Integration.Playable.Consumables
                 foreach(var collider in Physics.OverlapBox(positions[i]+q*bounds.center,bounds.extents,q,Ashfall.Integration.Playable.Bots.R24RagdollRules.GameplayQueryMask,QueryTriggerInteraction.Ignore))if(!Excluded(collider))return false;
                 points[i]=F(positions[i]);orientations[i]=q;
             }
-            if(SharedDrop!=null)for(int i=0;i<members.Count;i++)if(!SharedDrop(members[i].Id,positions[i]))return false;
+            if(SharedDrop!=null){bool accepted=true;for(int i=0;i<members.Count;i++)if(!SharedDrop(members[i].Id,positions[i]))accepted=false;if(!accepted)return false;}
             WorldItem heldBefore=null;if(HeldId!=null)items.TryGetValue(HeldId,out heldBefore);
             state.SetFrame(Frame(hand));var result=state.DropSlot(slot,points);if(!result.Accepted){Status=result.Reason;return false;}
             if(heldBefore!=null&&state.HeldId==null)Cue(R23ConsumableAudioEvent.Stow,heldBefore);
@@ -398,12 +407,7 @@ namespace Ashfall.Integration.Playable.Consumables
         }
         void SyncViews()
         {
-            foreach(var item in items.Values)
-            {
-                if(item.View==null)continue;
-                var snapshot=state.Inspect(item.Id);bool visible=snapshot!=null&&!snapshot.Removed&&(snapshot.Owner==null?worldVisible&&item.WorldVisible:item.Id==HeldId);item.View.SetActive(visible);
-                if(item.Id!=HeldId){foreach(Transform part in item.View.transform)if(part.name=="Cap")part.gameObject.SetActive(true);if(item.Ring!=null)item.Ring.gameObject.SetActive(false);if(item.Peels!=null)item.Peels.gameObject.SetActive(false);var label=item.View.GetComponentInChildren<TextMesh>(true);if(label!=null)label.gameObject.SetActive(false);}
-            }
+            foreach(var item in items.Values)SyncView(item);
             if(HeldId!=visualHeld){visualHeld=HeldId;haveShake=false;shakeProgress=shakeDistance=shakeSeconds=0;}UpdateHeldPose();
         }
         bool Excluded(Collider collider){return collider==null||collider.gameObject.layer==19||collider.gameObject.layer==20||collider.gameObject.layer==21||collider.transform.IsChildOf(root)||collider.transform.IsChildOf(content);}

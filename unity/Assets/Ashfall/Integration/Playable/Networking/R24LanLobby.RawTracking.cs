@@ -19,7 +19,8 @@ namespace Ashfall.Integration.Playable.Networking
         }
         public bool PublishRawTracking(R24LanRawTracking pose)
         {
-            Check();if((State!=R24LanLobbyState.Hosting&&State!=R24LanLobbyState.Connected)||pose==null||!pose.BodyValid||!RawTrackingMapReady(OwnActor,pose.MapHash))return false;
+            Check();if((State!=R24LanLobbyState.Hosting&&State!=R24LanLobbyState.Connected)||pose==null||!pose.BodyValid||!RoomGrapple&&!RawTrackingMapReady(OwnActor,pose.MapHash))return false;
+            if(RoomGrapple){if(!roomPullEnabled)return false;long roomSequence=checked(++rawSequence);if(State==R24LanLobbyState.Hosting)return StoreRoomPullTracking(OwnActor,roomSequence,pose);pendingRawTracking=Packet(PacketKind.Delta,RawTrackingFeature,OwnActor,pose.Encode(),roomSequence);return true;}
             R24LanSpawn current;if(!TryReadSpawn(OwnActor,out current)||pose.SpawnRevision!=current.Revision)return false;
             long sequence=checked(++rawSequence);
             if(State==R24LanLobbyState.Hosting)return StoreRawTracking(OwnActor,sequence,pose);
@@ -27,6 +28,7 @@ namespace Ashfall.Integration.Playable.Networking
         }
         bool StoreRawTracking(string actor,long sequence,R24LanRawTracking pose)
         {
+            if(RoomGrapple)return StoreRoomPullTracking(actor,sequence,pose);
             if(!RawTrackingMapReady(actor,pose.MapHash)){RejectedRawTracking++;LastRawTrackingRejection="map-readiness";return false;}
             if(!AdmitRawArrival(actor)){RejectedRawTracking++;LastRawTrackingRejection="rate";return false;}
             R24LanSpawn current;var member=ReadAuthorityMember(actor);if(!TryReadSpawn(actor,out current)||pose.SpawnRevision!=current.Revision||member==null||!member.Loaded||!member.HasPosition||member.SpawnRevision!=pose.SpawnRevision){RejectedRawTracking++;LastRawTrackingRejection="spawn-revision";return false;}
@@ -38,8 +40,8 @@ namespace Ashfall.Integration.Playable.Networking
             // clears history; the first sample must start at the host's committed root.
             if(match&&history.Latest==null&&!Anchored(member.Position,pose.Root.Position)){RejectedRawTracking++;LastRawTrackingRejection="spawn-anchor";RecoverRejectedRawTracking(actor,history,"spawn-anchor");return false;}
             if(!VehicleTrackAllowed(actor,pose.Root.Position)){RejectedRawTracking++;LastRawTrackingRejection="vehicle-ceiling";return false;}
-            multiplier=PullMotionMultiplier(actor,multiplier);
-            if(history.Accept(sequence,clock.Now,pose,match,multiplier,rawWorldClear)){rawPoseFaults.Remove(actor);StoreInventoryTracking(actor,sequence,pose,member.Position,multiplier);SampleCombatPose(actor,history.Latest);if(roundRules!=null)SampleMeleePose(actor,history.Latest);else{R24LanRawTrackingSample checkedMelee;if(TryReadInventoryTracking(actor,clock.Now,out checkedMelee)&&checkedMelee.Sequence==sequence)SampleMeleePose(actor,checkedMelee);}if(roundRules!=null)SampleFoodPose(actor,history.Latest);else{R24LanRawTrackingSample checkedFood;if(TryReadInventoryTracking(actor,clock.Now,out checkedFood)&&checkedFood.Sequence==sequence)SampleFoodPose(actor,checkedFood);}return true;}
+            float slack;multiplier=PullMotionMultiplier(actor,multiplier,out slack);
+            if(history.Accept(sequence,clock.Now,pose,match,multiplier,rawWorldClear,slack)){rawPoseFaults.Remove(actor);StoreInventoryTracking(actor,sequence,pose,member.Position,multiplier,slack);SampleCombatPose(actor,history.Latest);if(roundRules!=null)SampleMeleePose(actor,history.Latest);else{R24LanRawTrackingSample checkedMelee;if(TryReadInventoryTracking(actor,clock.Now,out checkedMelee)&&checkedMelee.Sequence==sequence)SampleMeleePose(actor,checkedMelee);}if(roundRules!=null)SampleFoodPose(actor,history.Latest);else{R24LanRawTrackingSample checkedFood;if(TryReadInventoryTracking(actor,clock.Now,out checkedFood)&&checkedFood.Sequence==sequence)SampleFoodPose(actor,checkedFood);}return true;}
             RejectedRawTracking++;LastRawTrackingRejection=history.Rejection;RecoverRejectedRawTracking(actor,history,history.Rejection);return false;
         }
         void ReadRawTracking(Peer peer,Packet packet)
@@ -59,7 +61,7 @@ namespace Ashfall.Integration.Playable.Networking
             Check();sample=null;R24LanRawTrackingHistory history;R24LanSpawn current;
             return State==R24LanLobbyState.Hosting&&actor!=null&&rawTracking.TryGetValue(actor,out history)&&history.Latest!=null&&TryReadSpawn(actor,out current)&&history.Latest.Pose.SpawnRevision==current.Revision&&clock.Now-history.Latest.Time<=1&&RawTrackingMapReady(actor,history.Latest.Pose.MapHash)&&history.TryNearest(at,out sample);
         }
-        void StoreInventoryTracking(string actor,long sequence,R24LanRawTracking pose,Float3 placement,float multiplier){if(roundRules!=null)return;R24LanRawTrackingHistory history;if(!inventoryTracking.TryGetValue(actor,out history)){history=new R24LanRawTrackingHistory();inventoryTracking[actor]=history;}if(history.Latest==null&&!Anchored(placement,pose.Root.Position))return;history.Accept(sequence,clock.Now,pose,true,multiplier,rawWorldClear);}
+        void StoreInventoryTracking(string actor,long sequence,R24LanRawTracking pose,Float3 placement,float multiplier,float slack){if(roundRules!=null)return;R24LanRawTrackingHistory history;if(!inventoryTracking.TryGetValue(actor,out history)){history=new R24LanRawTrackingHistory();inventoryTracking[actor]=history;}if(history.Latest==null&&!Anchored(placement,pose.Root.Position))return;history.Accept(sequence,clock.Now,pose,true,multiplier,rawWorldClear,slack);}
         bool TryReadInventoryTracking(string actor,double at,out R24LanRawTrackingSample sample){sample=null;R24LanRawTrackingHistory history;R24LanSpawn spawn;return actor!=null&&inventoryTracking.TryGetValue(actor,out history)&&history.Latest!=null&&clock.Now-history.Latest.Time<=1&&TryReadSpawn(actor,out spawn)&&spawn.Revision==history.Latest.Pose.SpawnRevision&&history.TryNearest(at,out sample);}
         void ClearRawTracking(){ClearVehicles();ClearWeb();inventoryTracking.Clear();rawArrivals.Clear();rawPoseFaults.Clear();rawTracking.Clear();pendingRawTracking=null;nextRawTracking=0;}
         public const float SpawnAnchorHorizontal=3,SpawnAnchorVertical=3;

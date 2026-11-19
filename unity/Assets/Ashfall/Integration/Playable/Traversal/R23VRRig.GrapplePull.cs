@@ -28,7 +28,7 @@ namespace Ashfall.Integration.Playable
             if(!BeingGrappled)return false;
             if(CarrierActive||Riding||SourceGhostMotion||GameplayBlocked||MenuLocomotion||!frame.Tracked||frame.Paused||HeadCollision==null||!HeadCollision.Ready||!UseSourceHeadHull){ClearGrapplePull();return false;}
             CancelTraversal();if(Climbing!=null)Climbing.ResetMotion();
-            delta=U(grapplePull.Propose(F(Head.transform.position-Vector3.up*.45f),dt));
+            delta=U(grapplePull.Propose(R25GrapplePull.Chest(F(Head.transform.position)),dt));
             velocity=delta/dt;return true;
         }
         Vector3 SweptPullMotion(Vector3 requested)

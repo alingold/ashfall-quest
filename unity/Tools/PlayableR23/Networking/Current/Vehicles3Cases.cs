@@ -19,7 +19,7 @@ partial class LobbyCases
         motor.Reset(0,new Float3());motor.Step(.1f,0,0,true,.55f,new Float3(0,.5f,-1));Need(motor.Velocity.Y<0,"Steep slope gravity");
         var prior=motor.Velocity;motor.Step(float.NaN,1,0,true,.55f,up);Need(motor.Displacement.Equals(new Float3())&&prior.Equals(motor.Velocity),"Malformed motor inert");
         Need(R25VehicleKinds.LargeMap("valley",100,100)&&!R25VehicleKinds.LargeMap("paintball",1000,1000)&&!R25VehicleKinds.LargeMap("indoor",1000,1000)&&!R25VehicleKinds.LargeMap("small",99,500),"Large-map exclusion policy");
-        Need(R24PlayableMatchRules.ForPreset("practice").With("helicopters",true).Helicopters,"Completed helicopter rule enables");
+        Need(R24PlayableMatchRules.ForPreset("free_for_all").With("helicopters",true).Helicopters,"Completed helicopter rule enables");
         using(var pair=new Pair()){
             pair.Host.BindVehicleRuntime();pair.Host.VehicleTankSite=delegate(string id){return true;};pair.Host.VehicleTankClear=delegate(Float3 p){return true;};pair.Host.BindSupplyDropWorld(new DropWorld());var world=new ProjectileWorld();pair.Host.BindProjectileWorld(world);
             string hash=new string('b',64);StartRound(pair,new HazardWorld(),R24PlayableMatchRules.ForPreset("free_for_all","range").With("zone_enabled",false).With("protection",0f),hash);

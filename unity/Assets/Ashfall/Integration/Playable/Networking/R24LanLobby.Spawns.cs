@@ -9,9 +9,9 @@ namespace Ashfall.Integration.Playable.Networking
         public static Float3 Warmup(Float3 origin,int index,bool archive)
         {Check(origin,index);return new Float3(origin.X+(index%4-1.5f)*(archive?.9f:1.5f),origin.Y+(archive?0:.1f),origin.Z+(archive?.65f-(index/4)*1.3f:-2-(index/4)*2));}
         public static Float3 BuiltinArena(Float3 origin,int index)
-        {Check(origin,index);return new Float3(origin.X-15+(index%4)*10,origin.Y+2,origin.Z+6+(index/4)*30);}
+        {Check(origin,index);return new Float3(origin.X-15+(index%4)*10,origin.Y+2,origin.Z+6+((index/4)%2)*30+(index/8)*1.5f);}
         public static Float3 CyberArena(Float3 representedOrigin,int index)
-        {Check(representedOrigin,index);return new Float3(representedOrigin.X-55+(index%4)*35,representedOrigin.Y+1,representedOrigin.Z-330+(index/4)*660);}
+        {Check(representedOrigin,index);return new Float3(representedOrigin.X-55+(index%4)*35,representedOrigin.Y+1,representedOrigin.Z-330+((index/4)%2)*660+(index/8)*1.5f);}
     }
     public interface IR24LanSpawnWorld:ISpawnWorld
     {bool ReadyForSpawn(string map,bool warmup);}
@@ -25,6 +25,7 @@ namespace Ashfall.Integration.Playable.Networking
         const string SpawnRequestFeature="playable.spawn.request/1",SpawnStateFeature="playable.spawn.state/1",SpawnRejectedFeature="playable.spawn.rejected/1";
         readonly SpawnWorld spawnWorld=new SpawnWorld();readonly Dictionary<string,R24LanSpawn> spawnStates=new Dictionary<string,R24LanSpawn>(StringComparer.Ordinal);
         byte[] pendingSpawnRequest;long spawnCommand,spawnStateSequence;double nextSpawnRequest;
+        internal bool SpawnRequestOutstanding{get;private set;}
         public string SpawnStatus{get;private set;}public string SpawnFailure{get;private set;}internal string SpawnActorInFlight{get{return spawnWorld.Actor;}}
         // Session places revive-mode late joiners in WaitingRound/Spectator and
         // refuses Spawn with "spectator". That is "join next round", not a fault.
@@ -48,16 +49,36 @@ namespace Ashfall.Integration.Playable.Networking
         {Check();if(State!=R24LanLobbyState.Hosting||world==null||spawnWorld.Bound!=null)throw new InvalidOperationException("One host-owned spawn world required");spawnWorld.Bound=world;}
         bool SpawnReady(string actor)
         {return RawTrackingMapReady(actor,MapManifestHash)&&RoundCountdown<=0;}
+        // Results retire tracking/commands, but the committed placement still witnesses Health.
+        bool SpawnReceiptMapReady(string actor)
+        {
+            if(SelectedMap==null||!SelectedMap.Results)return RawTrackingMapReady(actor,MapManifestHash);
+            if(!SelectedMap.Active||SelectedMap.Cancelled||SelectedMap.Epoch!=Epoch||SelectedMap.ManifestHash!=MapManifestHash)return false;
+            foreach(var member in members)if(member.Actor==actor)return member.WorldLoaded;
+            return false;
+        }
         // Read-only composition signal; actual spawn still runs every existing Session/safety gate.
         public bool HostSpawnWorldReady{get{Check();return State==R24LanLobbyState.Hosting&&SelectedMap!=null&&SpawnWorldReady();}}
         bool SpawnWorldReady()
         {var ready=spawnWorld.Bound as IR24LanSpawnWorld;return spawnWorld.Bound!=null&&(ready==null||ready.ReadyForSpawn(MapId,SelectedMap.Rules==null));}
+        internal bool WarmupPlayersPlaced
+        {
+            get{
+                if(State!=R24LanLobbyState.Hosting||SelectedMap==null||!SelectedMap.Active||SelectedMap.Rules!=null)return false;
+                foreach(var member in members){
+                    if(spawnStates.ContainsKey(member.Actor))continue;
+                    var actual=sessions.Get(member.Actor);
+                    if(actual==null||actual.Life!=SessionLife.Spectator)return false;
+                }
+                return true;
+            }
+        }
         public bool RequestSpawn()
         {
-            Check();if((State!=R24LanLobbyState.Hosting&&State!=R24LanLobbyState.Connected)||!SpawnReady(OwnActor)||pendingSpawnRequest!=null)return false;
+            Check();if((State!=R24LanLobbyState.Hosting&&State!=R24LanLobbyState.Connected)||!SpawnReady(OwnActor)||pendingSpawnRequest!=null||SpawnRequestOutstanding)return false;
             if(clock.Now<nextSpawnRequest)return false;nextSpawnRequest=clock.Now+.2;SpawnFailure=null;SpawnWaitingForNextRound=false;
             long sequence=checked(++spawnCommand+1);if(State==R24LanLobbyState.Hosting)return ApplySpawn("local-host",OwnActor,sequence);
-            pendingSpawnRequest=Packet(PacketKind.Command,SpawnRequestFeature,OwnActor,new byte[0],sequence);SpawnStatus="Awaiting host-approved spawn";return true;
+            SpawnRequestOutstanding=!spawnStates.ContainsKey(OwnActor);pendingSpawnRequest=Packet(PacketKind.Command,SpawnRequestFeature,OwnActor,new byte[0],sequence);SpawnStatus="Awaiting host-approved spawn";return true;
         }
         void ReadSpawnRequest(string connection,Packet packet)
         {
@@ -65,7 +86,7 @@ namespace Ashfall.Integration.Playable.Networking
             Peer peer;if(!peers.TryGetValue(connection,out peer)||!peer.Admitted)return;
             if(clock.Now-peer.SpawnBudgetAt>1){peer.SpawnBudgetAt=clock.Now;peer.SpawnBudget=0;}peer.SpawnBudget=Math.Min(121,peer.SpawnBudget+1);if(peer.SpawnBudget>120){RejectedFrames++;return;}
             if(peer.PendingSpawnSequence!=0)return;
-            if(SpawnReady(peer.Actor)&&spawnWorld.Bound!=null&&!SpawnWorldReady()){
+            if(RawTrackingMapReady(peer.Actor,MapManifestHash)&&(RoundCountdown>0||spawnWorld.Bound!=null&&!SpawnWorldReady())){
                 if(peer.PendingSpawnSequence==0){peer.PendingSpawnSequence=packet.Sequence;peer.PendingSpawnUntil=clock.Now+Session.LoadingTimeoutSeconds;}return;
             }
             ApplySpawn(connection,packet.ActorId,packet.Sequence);
@@ -89,7 +110,7 @@ namespace Ashfall.Integration.Playable.Networking
         void ReadSpawnRejected(Packet packet)
         {
             if(packet.Sequence<1||packet.BaseSequence!=-1){Reject(serverPeer);return;}
-            try{using(var s=new MemoryStream(packet.Payload,false))using(var r=new BinaryReader(s,Utf8)){if(r.ReadByte()!=1)throw new InvalidDataException();string actor=Read(r,64),reason=Read(r,128);if(s.Position!=s.Length)throw new InvalidDataException();if(actor==OwnActor){SpawnFailure=SpawnStatus="Spawn refused: "+reason;pendingSpawnRequest=null;SpawnWaitingForNextRound=reason==WaitingRoundRefusal&&SelectedMap!=null&&SelectedMap.Rules!=null;if(SpawnWaitingForNextRound)Dirty("Round in progress: you join the next round");}}}
+            try{using(var s=new MemoryStream(packet.Payload,false))using(var r=new BinaryReader(s,Utf8)){if(r.ReadByte()!=1)throw new InvalidDataException();string actor=Read(r,64),reason=Read(r,128);if(s.Position!=s.Length)throw new InvalidDataException();if(actor==OwnActor){SpawnFailure=SpawnStatus="Spawn refused: "+reason;SpawnRequestOutstanding=false;pendingSpawnRequest=null;SpawnWaitingForNextRound=reason==WaitingRoundRefusal&&SelectedMap!=null&&SelectedMap.Rules!=null;if(SpawnWaitingForNextRound)Dirty("Round in progress: you join the next round");}}}
             catch(InvalidDataException){Reject(serverPeer);}catch(IOException){Reject(serverPeer);}catch(ArgumentException){Reject(serverPeer);}
         }
         void PublishSpawn(string actor,long epoch,MemberSnapshot member)
@@ -113,10 +134,10 @@ namespace Ashfall.Integration.Playable.Networking
             // The host already applied its countdown gate; each placement is sent
             // once, so never drop it on this guest's own clock estimate (reads
             // still apply SpawnReady through TryReadSpawn).
-            if(!RawTrackingMapReady(state.Actor,MapManifestHash)||state.MapHash!=MapManifestHash)return;
+            if(state.MapHash!=MapManifestHash||!SpawnReceiptMapReady(state.Actor))return;
             foreach(var member in members)if(member.Actor==state.Actor&&member.Team!=state.Team){Reject(serverPeer);return;}
             R24LanSpawn prior;if(spawnStates.TryGetValue(state.Actor,out prior)&&state.Revision<=prior.Revision)return;
-            spawnStates[state.Actor]=state;ForgetRawTracking(state.Actor);if(state.Actor==OwnActor){pendingRawTracking=null;pendingSpawnRequest=null;SpawnStatus="Actual host Session placement received";}
+            spawnStates[state.Actor]=state;ForgetRawTracking(state.Actor);if(state.Actor==OwnActor){pendingRawTracking=null;SpawnRequestOutstanding=false;pendingSpawnRequest=null;SpawnStatus="Actual host Session placement received";}
         }
         void FlushSpawns(string connection,Peer peer)
         {
@@ -132,12 +153,12 @@ namespace Ashfall.Integration.Playable.Networking
             }
         }
         public bool TryReadSpawn(string actor,out R24LanSpawn state)
-        {Check();state=null;return actor!=null&&SpawnReady(actor)&&spawnStates.TryGetValue(actor,out state)&&state.Epoch==Epoch&&state.MapHash==MapManifestHash;}
+        {Check();state=null;return actor!=null&&RoundCountdown<=0&&SpawnReceiptMapReady(actor)&&spawnStates.TryGetValue(actor,out state)&&state.Epoch==Epoch&&state.MapHash==MapManifestHash;}
         public bool OwnsSpawn(R24LanSpawn state)
         {Check();R24LanSpawn current;return state!=null&&TryReadSpawn(state.Actor,out current)&&Object.ReferenceEquals(state,current);}
         public MemberSnapshot ReadAuthorityMember(string actor)
         {Check();return State==R24LanLobbyState.Hosting&&actor!=null?sessions.Get(actor):null;}
-        void ClearSpawns(){spawnStates.Clear();pendingSpawnRequest=null;nextSpawnRequest=0;spawnCommand=0;foreach(var p in peers.Values){p.Spawns.Clear();p.PendingSpawnSequence=0;p.PendingSpawnUntil=0;p.SpawnBudget=0;p.SpawnBudgetAt=0;}SpawnStatus=SpawnFailure=null;SpawnWaitingForNextRound=false;}
+        void ClearSpawns(){SpawnRequestOutstanding=false;spawnStates.Clear();pendingSpawnRequest=null;nextSpawnRequest=0;spawnCommand=0;foreach(var p in peers.Values){p.Spawns.Clear();p.PendingSpawnSequence=0;p.PendingSpawnUntil=0;p.SpawnBudget=0;p.SpawnBudgetAt=0;}SpawnStatus=SpawnFailure=null;SpawnWaitingForNextRound=false;}
         void RemoveSpawn(string actor){RemoveHealth(actor);spawnStates.Remove(actor);foreach(var p in peers.Values)p.Spawns.Remove(actor);}
     }
 }

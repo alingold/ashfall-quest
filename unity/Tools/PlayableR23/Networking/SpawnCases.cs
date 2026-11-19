@@ -19,7 +19,7 @@ partial class LobbyCases
    var warm=R24LanSpawnCoordinates.Warmup(new Float3(10,2,20),i,true);Need(Math.Abs(warm.X-(10+(i%4-1.5f)*.9f))<.00001&&warm.Y==2&&Math.Abs(warm.Z-(-(-20-.65f+(i/4)*1.3f)))<.00001,"Archive warmup source two rows reflected once around approved hub");
    warm=R24LanSpawnCoordinates.Warmup(new Float3(0,0,-600),i,false);Need(warm.X==(i%4-1.5f)*1.5f&&warm.Y==.1f&&warm.Z==-602-(i/4)*2,"Builtin warmup preserves represented source origin");
   }
-  bool invalid=false;try{R24LanSpawnCoordinates.CyberArena(new Float3(0,0,0),8);}catch(ArgumentException){invalid=true;}Need(invalid,"No candidate outside actual bounded roster/source eight-site contract");
+  bool invalid=false;try{R24LanSpawnCoordinates.CyberArena(new Float3(0,0,0),24);}catch(ArgumentException){invalid=true;}Need(invalid,"No candidate outside actual bounded roster/source 24-site contract");
   using(var pair=new Pair()){
    for(int i=0;i<5;i++)pair.Tick();Need(!pair.Host.RequestSpawn()&&!pair.Client.RequestSpawn(),"Membership alone never grants Session placement");
    var pending=pair.Host.ReadAuthorityMember(pair.Client.OwnActor);Need(pending.Life==SessionLife.Pending&&!pending.HasPosition&&!pending.Loaded&&pair.Client.ReadAuthorityMember(pair.Client.OwnActor)==null,"Actual Session remains pending without world/load/placement proof");

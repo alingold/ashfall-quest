@@ -19,12 +19,12 @@ namespace Ashfall.Integration.Playable.Networking
     {
         public readonly string Scene;public readonly int Style;public readonly byte Flags;
         public readonly R24LanTransform Root,Head,Left,Right;public readonly Float3 Velocity;public readonly float LeftGrip,RightGrip;
-        public bool Riding{get{return (Flags&64)!=0;}}public bool Jetting{get{return (Flags&32)!=0;}}public bool Tracked{get{return (Flags&1)!=0;}}public bool Supported{get{return (Flags&8)!=0;}}public bool Gliding{get{return (Flags&16)!=0;}}
+        public bool Diving{get{return (Flags&128)!=0;}}public bool Riding{get{return (Flags&64)!=0;}}public bool Jetting{get{return (Flags&32)!=0;}}public bool Tracked{get{return (Flags&1)!=0;}}public bool Supported{get{return (Flags&8)!=0;}}public bool Gliding{get{return (Flags&16)!=0;}}
         public R24LanPose(string scene,int style,byte flags,R24LanTransform root,R24LanTransform head,R24LanTransform left,R24LanTransform right,Float3 velocity,float leftGrip,float rightGrip)
         {Scene=scene;Style=style;Flags=flags;Root=root;Head=head;Left=left;Right=right;Velocity=velocity;LeftGrip=leftGrip;RightGrip=rightGrip;}
         static float Distance2(Float3 a,Float3 b){float x=a.X-b.X,y=a.Y-b.Y,z=a.Z-b.Z;return x*x+y*y+z*z;}
         static bool Grip(float v){return !Single.IsNaN(v)&&v>=0&&v<=1;}
-        public bool Valid{get{return (Scene=="menu"||Scene!=null&&Scene.StartsWith("map:",StringComparison.Ordinal)&&Wire.IsHash(Scene.Substring(4)))&&Style>=0&&Style<139&&(Flags&~127)==0&&Root.Valid&&Head.Valid&&Left.Valid&&Right.Valid&&Distance2(Root.Position,Head.Position)<=25&&Distance2(Root.Position,Left.Position)<=25&&Distance2(Root.Position,Right.Position)<=25&&Velocity.IsFinite&&Math.Abs(Velocity.X)<=500&&Math.Abs(Velocity.Y)<=500&&Math.Abs(Velocity.Z)<=500&&Grip(LeftGrip)&&Grip(RightGrip);}}
+        public bool Valid{get{return (Scene=="menu"||Scene!=null&&Scene.StartsWith("map:",StringComparison.Ordinal)&&Wire.IsHash(Scene.Substring(4)))&&Style>=0&&Style<139&&!(Gliding&&Diving)&&Root.Valid&&Head.Valid&&Left.Valid&&Right.Valid&&Distance2(Root.Position,Head.Position)<=25&&Distance2(Root.Position,Left.Position)<=25&&Distance2(Root.Position,Right.Position)<=25&&Velocity.IsFinite&&Math.Abs(Velocity.X)<=500&&Math.Abs(Velocity.Y)<=500&&Math.Abs(Velocity.Z)<=500&&Grip(LeftGrip)&&Grip(RightGrip);}}
         static void Vector(BinaryWriter w,Float3 p){w.Write(p.X);w.Write(p.Y);w.Write(p.Z);}
         static Float3 Vector(BinaryReader r){return new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());}
         static void Transform(BinaryWriter w,R24LanTransform t){Vector(w,t.Position);w.Write(t.Rotation.X);w.Write(t.Rotation.Y);w.Write(t.Rotation.Z);w.Write(t.Rotation.W);}

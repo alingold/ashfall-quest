@@ -17,13 +17,14 @@ namespace Ashfall.Integration.Playable.Input
     {
         R23PlayableLoop root;
         Transform board,canvas;
+        Vector3 locomotionAnchor;Quaternion bodyRotation;
         Material flat,letters,imageMaterial,previewMaterial;
         Mesh drawing,imageMesh,previewMesh;
         Font font;
         readonly List<TextMesh> texts=new List<TextMesh>();
-        readonly List<Vector3> vertices=new List<Vector3>();
-        readonly List<Color> colors=new List<Color>();
-        readonly List<int> indices=new List<int>();
+        readonly List<Vector3> vertices=new List<Vector3>(1024);
+        readonly List<Color> colors=new List<Color>(1024);
+        readonly List<int> indices=new List<int>(2048);
         readonly List<Texture2D> pingIcons=new List<Texture2D>();
         Material pingMaterial;Mesh pingMesh;Transform pingView;
         int textCount,captureGeneration;float nextDraw;
@@ -49,7 +50,7 @@ namespace Ashfall.Integration.Playable.Input
             var imageShader=Resources.Load<Shader>("R24TacticalImage");if(imageShader==null)throw new InvalidOperationException("Retained opaque tactical image shader");
             imageMaterial=new Material(imageShader);imageMaterial.renderQueue=4111;previewMaterial=new Material(shader);previewMaterial.renderQueue=4113;
             pingMaterial=new Material(shader);pingMaterial.renderQueue=4114;
-            board=new GameObject("Source tactical board 1.65x1m").transform;board.SetParent(transform,false);
+            board=new GameObject("Source tactical board 1.65x1m").transform;
             canvas=new GameObject("Source map 1400x850 coordinates").transform;canvas.SetParent(board,false);canvas.localPosition=new Vector3(-.825f,.5f,0);canvas.localScale=new Vector3(1.65f/1400,1f/850,1);
             drawing=Part("Source grid / players / zone",flat,out _);
             imageMesh=Part("Actual north-up map image",imageMaterial,out _);previewMesh=Part("Source map screenshot",previewMaterial,out _);pingMesh=Part("Actual current ping",pingMaterial,out pingView);
@@ -67,12 +68,12 @@ namespace Ashfall.Integration.Playable.Input
             bool open=pressed&&eligible&&isActiveAndEnabled;
             if(open&&(!root.LaunchMapCatalog.Ready||!root.LaunchMapCatalog.TryRead(root.Map.MapId,out info)))open=false;
             if(open&&(boundMap!=root.Map.MapId||boundHash!=root.Map.ManifestSha256))BindMap();
-            Opened=open;board.gameObject.SetActive(open);if(open){Follow();if(Time.unscaledTime>=nextDraw){nextDraw=Time.unscaledTime+.1f;Draw();}}
+            if(open&&!Opened){Anchor();nextDraw=0;rosterDirty=true;}else if(open)FollowBody();Opened=open;board.gameObject.SetActive(open);if(open&&Time.unscaledTime>=nextDraw){nextDraw=Time.unscaledTime+.1f;Draw();}
         }
         public void Close(){Opened=false;if(board!=null)board.gameObject.SetActive(false);}
         void BindMap()
         {
-            ReleaseOverview();boundMap=root.Map.MapId;boundHash=root.Map.ManifestSha256;
+            ReleaseOverview();boundMap=root.Map.MapId;boundHash=root.Map.ManifestSha256;presenceScene="map:"+boundHash;
             var origin=root.Map.transform.TransformPoint(V(info.RepresentedOriginUnity));
             projection=new TacticalProjection(F(origin),info.CatalogMinX,info.CatalogMinZ,info.CatalogMaxX,info.CatalogMaxZ);
             imageMaterial.mainTexture=null;
@@ -127,16 +128,30 @@ namespace Ashfall.Integration.Playable.Input
             catch(Exception e){Failure=e.ToString();Debug.LogError("Tactical map overview failed: "+e);}
             finally{if(go!=null)Destroy(go);if(target!=null){target.Release();Destroy(target);}if(snapshot!=null)Destroy(snapshot);capture=null;}
         }
-        void Follow()
+        void Anchor()
         {
-            Vector3 forward=root.Rig.Head.transform.forward;forward.y=0;if(forward.sqrMagnitude<.00001f)forward=board.forward;forward.Normalize();
-            board.SetPositionAndRotation(root.Rig.Head.transform.position+forward*1.7f,Quaternion.LookRotation(forward,Vector3.up));
+            // Snapshot the headset in world space on open. A near-vertical gaze still has a usable right axis.
+            var head=root.Rig.Head.transform;var forward=Vector3.ProjectOnPlane(head.forward,Vector3.up);
+            if(forward.sqrMagnitude<.0001f)forward=Vector3.Cross(head.right,Vector3.up);
+            forward.Normalize();var yaw=Quaternion.LookRotation(forward,Vector3.up);
+            locomotionAnchor=root.Rig.LocomotionAnchorPosition;bodyRotation=root.Rig.transform.rotation;
+            board.localScale=Vector3.one*.48f;
+            board.SetPositionAndRotation(head.position+forward*.8f-Vector3.up*.25f,yaw*Quaternion.Euler(18,0,0));
         }
-        [BeforeRenderOrder(1350)]void RefreshLate(){if(Opened)Follow();}
-        void OnEnable(){Application.onBeforeRender+=RefreshLate;}
-        void OnDisable(){Application.onBeforeRender-=RefreshLate;Close();}
+        void FollowBody()
+        {
+            // HUD19 TACMAP-ORBIT: walking moves the board with the locomotion anchor, but the rig turns about the HEAD
+            // (R23VRRig.ApplyMotorTurn), so body yaw must rotate the board about the head, not about the anchor. Pivoting about the
+            // anchor made the board orbit the player on an oval (distance varied by up to twice the head-to-anchor offset).
+            var anchor=root.Rig.LocomotionAnchorPosition;var rotation=root.Rig.transform.rotation;
+            float yaw=Mathf.DeltaAngle(0,(rotation*Quaternion.Inverse(bodyRotation)).eulerAngles.y);var head=root.Rig.Head.transform.position;var step=anchor-locomotionAnchor;var at=board.position;
+            R26TacticalMapFollow.Step(ref at.x,ref at.y,ref at.z,step.x,step.y,step.z,head.x,head.z,yaw);
+            board.SetPositionAndRotation(at,Quaternion.AngleAxis(yaw,Vector3.up)*board.rotation);
+            locomotionAnchor=anchor;bodyRotation=rotation;
+        }
+        void OnDisable(){UnbindRoster();Close();}
         void ReleaseOverview(){captureGeneration++;if(capture!=null){StopCoroutine(capture);capture=null;}if(overview!=null){Destroy(overview);overview=null;}if(imageMaterial!=null)imageMaterial.mainTexture=null;}
-        void OnDestroy(){Application.onBeforeRender-=RefreshLate;ReleaseOverview();foreach(var t in pingIcons)if(t!=null)Destroy(t);foreach(var m in new[]{flat,letters,imageMaterial,previewMaterial,pingMaterial,backgroundMaterial})if(m!=null)Destroy(m);foreach(var mesh in new[]{drawing,imageMesh,previewMesh,pingMesh,background})if(mesh!=null)Destroy(mesh);if(board!=null)Destroy(board.gameObject);}
+        void OnDestroy(){UnbindRoster();ReleaseOverview();foreach(var t in pingIcons)if(t!=null)Destroy(t);foreach(var m in new[]{flat,letters,imageMaterial,previewMaterial,pingMaterial,backgroundMaterial})if(m!=null)Destroy(m);foreach(var mesh in new[]{drawing,imageMesh,previewMesh,pingMesh,background})if(mesh!=null)Destroy(mesh);if(board!=null)Destroy(board.gameObject);}
         static Vector3 V(Float3 v){return new Vector3(v.X,v.Y,v.Z);}static Float3 F(Vector3 v){return new Float3(v.x,v.y,v.z);}
     }
 }

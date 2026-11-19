@@ -14,6 +14,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
         Transform reloadSymbol;readonly Dictionary<int,Mesh> bracketMeshes=new Dictionary<int,Mesh>();
         readonly Transform[] arms=new Transform[8],impacts=new Transform[8];readonly float[] impactTimes=new float[8];
         readonly Material loadedFont,reserveFont;readonly Mesh quad,cube;int impactCursor;string lastText="";float width=.033f;
+        internal static bool PlayerDamageOff; // Actual shared-map warmup; reset by the session every frame.
         public string AmmoText {get{return lastText;}}public Vector3 PanelPosition {get{return panel.position;}}
         public bool PanelVisible {get{return panel.gameObject.activeInHierarchy;}}
         public bool FlashVisible {get{return flash.gameObject.activeSelf;}}public bool ReticleVisible {get{return reticle.gameObject.activeSelf;}}
@@ -50,7 +51,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
             reticle.SetPositionAndRotation(point-boreDirection*.015f,Quaternion.LookRotation(head.transform.forward,up));float size=Mathf.Clamp(Vector3.Distance(head.transform.position,point)*.010f,.010f,.60f)*4;reticle.localScale=Vector3.one*size;
             const float unit=1/(1147.17f*.04f);
             if(sourceReload){if(reloadSymbol==null){var glyph=SourceReloadMesh();owned.Add(glyph);reloadSymbol=Part("source circular reload glyph",reticle,glyph,Material(new Color(1,.88f,0),true));}reloadSymbol.gameObject.SetActive(true);reloadSymbol.localPosition=new Vector3(0,0,-.01f/size);}
-            arms[4].GetComponent<Renderer>().sharedMaterial.SetColor("_Color",sourceReload||yellowUnsupported&&!supported?new Color(1,.88f,0):magnum&&!supported?new Color(1,.86f,.08f):new Color(1,.045f,.025f));
+            arms[4].GetComponent<Renderer>().sharedMaterial.SetColor("_Color",PlayerDamageOff?new Color(.72f,.76f,.78f):sourceReload||yellowUnsupported&&!supported?new Color(1,.88f,0):magnum&&!supported?new Color(1,.86f,.08f):new Color(1,.045f,.025f));
             for(int i=0;i<8;i++){
                 int n=i%4;float stroke=i<4?5:3;arms[i].localRotation=Quaternion.identity;arms[i].GetComponent<MeshFilter>().sharedMesh=quad;
                 if(bracket){

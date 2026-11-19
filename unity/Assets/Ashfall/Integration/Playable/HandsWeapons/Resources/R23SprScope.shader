@@ -16,6 +16,7 @@ Shader "Ashfall/R23SprScope"
             TEXTURE2D(_OpticalLeft); SAMPLER(sampler_OpticalLeft);
             TEXTURE2D(_OpticalRight); SAMPLER(sampler_OpticalRight);
             CBUFFER_START(UnityPerMaterial)
+                float _Magnification;
                 float4 _OpticRight,_OpticUp,_OpticForward,_ReticleCenter,_ReticleHalfExtent;
                 float4 _TangentLeft,_TangentRight,_AimLeft,_AimRight;
                 float4 _OpticalLeft_TexelSize,_OpticalRight_TexelSize;
@@ -39,7 +40,7 @@ Shader "Ashfall/R23SprScope"
                 float3 virtualRay=_ReticleCenter.xyz-eye;
                 float2 reticleAngle=float2(dot(virtualRay,_OpticRight.xyz),dot(virtualRay,_OpticUp.xyz))/max(.0001,dot(virtualRay,_OpticForward.xyz));
                 float2 targetAngle=index==1?_AimRight.xy:_AimLeft.xy;
-                float2 p=((angular-reticleAngle)/2+targetAngle)/extent;
+                float2 p=((angular-reticleAngle)/_Magnification+targetAngle)/extent;
                 float2 uv=p*.5+.5;
                 // Unity render targets can invert Y on top-origin graphics APIs.
                 // Use the actual camera texture sign, not a guessed platform rotation.
@@ -53,7 +54,7 @@ Shader "Ashfall/R23SprScope"
                 float2 aim=float2(dot(offset,_OpticRight.xyz),dot(offset,_OpticUp.xyz))/_ReticleHalfExtent.xy;
                 float radius=length(aim*float2(520.0/307.0,1));
                 float ring=1-smoothstep(.004,.009,abs(radius-.14));float dotMark=1-smoothstep(.006,.011,radius);
-                float edge=1-smoothstep(.64,1,max(abs(input.uv.x*2-1),abs(input.uv.y*2-1)));
+                float edge=1-smoothstep(.82,1,max(abs(input.uv.x*2-1),abs(input.uv.y*2-1)));
                 return half4(lerp(picture*edge,half3(.94,.055,.10),max(ring,dotMark)*edge),1);
             }
             ENDHLSL

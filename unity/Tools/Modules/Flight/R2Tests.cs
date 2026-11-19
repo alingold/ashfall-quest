@@ -52,8 +52,9 @@ sealed class R2Tests : IAuthorityGate,IFlightWorld,ICapsuleRouteValidation
         Check(!m.Step(ctx,f).Accepted&&m.Velocity.X==old.X&&m.Mode==FlightMode.Launch&&gates==calls,"review overflow rejects without state or gate mutation");
         f=F();f.Velocity=old;Check(m.Step(C("a","overflow",1),f).Accepted&&m.Mode==FlightMode.Launch&&m.Velocity.X==old.X,"overflow rejection preserves fence and launch clearance");
         m=M();f=F();f.Velocity=new Float3(0,-10000,0);ctx=C("a","derived",99);calls=gates;
-        Check(!m.Step(ctx,f).Accepted&&m.Velocity.Y==0&&gates==calls,"derived bound rejects before state and authority");
-        f=F();Check(m.Step(C("a","derived",1),f).Accepted,"derived rejection leaves command and clock unchanged");
+        // FLIGHT-DIVE r12: quadratic drag can no longer push a bound-edge descent past the derived bound.
+        Check(m.Step(ctx,f).Accepted&&m.Velocity.Y> -10000&&m.Velocity.Y< -R26FreefallTuning.BellyTerminalSpeed&&gates==calls+1,"bound-edge descent decelerates inside the derived bound");
+        f=F();Check(!m.Step(C("a","derived",100),f).Accepted&&m.Step(C("a","derived-next",100),f).Accepted,"accepted bound-edge step commits its command id");
         for(int i=0;i<6;i++)
         {
             m=M();f=F();switch(i){case 0:f.Velocity=new Float3(10001,0,0);break;case 1:f.WalkTarget=new Float3(1001,0,0);break;case 2:f.Forward=new Float3(3,0,0);break;case 3:f.MoveDirection=new Float3(0,float.MaxValue,0);break;case 4:f.LeftHand=new Float3(11,0,0);break;default:f.RightHand=new Float3(float.NaN,0,0);break;}

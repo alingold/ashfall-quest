@@ -13,7 +13,7 @@ namespace Ashfall.Integration.Playable.Consumables
     // No slots, stored ammo shadow counter, held item or pose/movement writer.
     public sealed partial class R24VRSupplies:MonoBehaviour
     {
-        sealed class Box{internal string Id,Family;internal Vector3 Position,Home;internal Quaternion Rotation;internal GameObject View;internal bool Visible=true;}
+        sealed class Box{internal string Id,Family;internal Vector3 Position,Home;internal Quaternion Rotation;internal GameObject View;internal bool Visible=true,Culled;}
         [Serializable]sealed class GlyphManifest{public string glyph=null;public float[] glyphPosition=null,glyphSize=null;}
         Transform actor,head,left,right,content;R24SupplyState state;R24SupplyInputFrame frame;AudioSource audio;AudioClip ammoSound,buildSound;float sfx=1,audioGain=.19952623f;long dropSerial,sourceLayoutGeneration;
         readonly Dictionary<string,Box> boxes=new Dictionary<string,Box>(StringComparer.Ordinal);readonly Dictionary<string,R23VRConsumables.Asset> assets=new Dictionary<string,R23VRConsumables.Asset>();readonly List<UnityEngine.Object> resources=new List<UnityEngine.Object>();bool visible=true;
@@ -52,7 +52,7 @@ namespace Ashfall.Integration.Playable.Consumables
         void CreateView(Box box){if(box.View!=null||!Ready)return;box.View=Instantiate(assets[box.Family].Template);box.View.name=box.Id;box.View.transform.SetParent(content,false);box.View.transform.SetPositionAndRotation(box.Position,box.Rotation);Refresh(box);}
         public bool Spawn(string id,string family,Vector3 position,int amount=-1){return Spawn(id,family,position,Quaternion.identity,amount);}
         public bool Spawn(string id,string family,Vector3 position,Quaternion rotation,int amount=-1)
-        {if(state==null||!Finite(position)||!Valid(rotation)||!state.Register(id,family,amount))return false;var box=new Box{Id=id,Family=family,Position=position,Home=position,Rotation=rotation.normalized};boxes.Add(id,box);CreateView(box);return true;}
+        {if(state==null||!Finite(position)||!Valid(rotation)||!state.Register(id,family,amount))return false;var box=new Box{Id=id,Family=family,Position=position,Home=position,Rotation=rotation.normalized,Culled=!Ashfall.Integration.Playable.World.Loot.R26PickupCulling.Within(position,Ashfall.Integration.Playable.World.Loot.R26PickupCulling.ShowRange)};boxes.Add(id,box);CreateView(box);return true;}
         public R24PickupLayoutResult EnsureSourceCheckpointLayout(Vector3 checkpointUnity,Func<bool> mapCollisionReady)
         {
             if(!Finite(checkpointUnity)||mapCollisionReady==null)throw new ArgumentException("Actual checkpoint and map collision readiness required");
@@ -103,13 +103,13 @@ namespace Ashfall.Integration.Playable.Consumables
         }
         public Bounds GetDropBounds(string family){R23VRConsumables.Asset a;return assets.TryGetValue(family,out a)?a.Bounds:new Bounds();}
         public event Action<string,Vector3> WorldItemMoved;
-        public bool RepositionWorldItem(string id,Vector3 position){Box box;R24SupplyItem s;if(!Finite(position)||id==null||!boxes.TryGetValue(id,out box)||!state.TryRead(id,out s)||s.Collected)return false;box.Position=box.Home=position;if(box.View!=null)box.View.transform.position=position;if(WorldItemMoved!=null)WorldItemMoved(id,position);return true;}
-        public bool SetWorldItemVisible(string id,bool value){Box box;if(id==null||!boxes.TryGetValue(id,out box))return false;box.Visible=value;Refresh(box);return true;}
+        public bool RepositionWorldItem(string id,Vector3 position){Box box;R24SupplyItem s;if(!Finite(position)||id==null||!boxes.TryGetValue(id,out box)||!state.TryRead(id,out s)||s.Collected)return false;if((box.Position-position).sqrMagnitude<.0000001f&&(box.Home-position).sqrMagnitude<.0000001f)return true;box.Position=box.Home=position;if(box.View!=null)box.View.transform.position=position;if(WorldItemMoved!=null)WorldItemMoved(id,position);return true;}
+        public bool SetWorldItemVisible(string id,bool value){Box box;if(id==null||!boxes.TryGetValue(id,out box))return false;if(box.Visible==value)return true;box.Visible=value;Refresh(box);return true;}
         public void SetWorldVisible(bool value){visible=value;foreach(var box in boxes.Values)Refresh(box);}
         public void ResetRound(){if(state==null)return;sourceLayoutGeneration++;foreach(string id in new List<string>(sourceSettleResults.Keys)){var pending=sourceSettleResults[id];if(pending.Outcome==R24PickupSettleOutcome.Pending)sourceSettleResults[id]=new R24PickupSettleResult(id,R24PickupSettleOutcome.Cancelled,pending.RequestedPosition,pending.Position);}state.ResetRound();foreach(var box in boxes.Values){box.Position=box.Home;if(box.View!=null)box.View.transform.position=box.Position;Refresh(box);}if(audio!=null)audio.Stop();}
         public void Suspend(){frame=new R24SupplyInputFrame();if(audio!=null)audio.Stop();}
         public void SetSfxVolume(float value){sfx=float.IsNaN(value)?0:Mathf.Clamp01(value);if(audio!=null)audio.volume=audioGain*sfx;}
-        void Refresh(Box box){R24SupplyItem s;if(box.View!=null&&state.TryRead(box.Id,out s))box.View.SetActive(visible&&box.Visible&&!s.Collected);}
+        void Refresh(Box box){R24SupplyItem s;if(box.View!=null&&state.TryRead(box.Id,out s))box.View.SetActive(visible&&box.Visible&&!box.Culled&&!s.Collected);}
         static bool Finite(Vector3 p){return new Ashfall.Core.Float3(p.x,p.y,p.z).IsFinite;}static bool Valid(Quaternion q){return new Ashfall.Core.Float3(q.x,q.y,q.z).IsFinite&&!float.IsNaN(q.w)&&!float.IsInfinity(q.w)&&Quaternion.Dot(q,q)>.5f;}
         void OnDisable(){Suspend();}void OnApplicationPause(bool paused){if(paused)Suspend();}void OnApplicationFocus(bool focused){if(!focused)Suspend();}
         void OnDestroy(){StopAllCoroutines();if(content!=null)Destroy(content.gameObject);foreach(var asset in assets.Values)asset.Dispose();foreach(var o in resources)if(o!=null)Destroy(o);}

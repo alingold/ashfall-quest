@@ -18,9 +18,9 @@ namespace Ashfall.Integration.Playable.Networking
         public bool PublishWeb(R25WebState state,int shotHand=-1)
         {
             Check();if(state==null||!state.Valid||State!=R24LanLobbyState.Hosting&&State!=R24LanLobbyState.Connected)return false;
-            if(shotHand< -1||shotHand>2)return false;
+            if(shotHand< -1||shotHand>5)return false;
             if(shotHand>=0){
-                if(State==R24LanLobbyState.Hosting){if(shotHand==2){EndPull(OwnActor);return true;}if(TryStartPull(OwnActor,shotHand))return true;}
+                if(State==R24LanLobbyState.Hosting){if(shotHand==2){EndPull(OwnActor);return true;}if(shotHand==3){ReleaseWeb(OwnActor,state);return true;}if(TryStartPull(OwnActor,shotHand))return true;}
                 else if(grappleShotFrames.Count<64){byte[] bytes=new byte[26];Array.Copy(state.Encode(),bytes,25);bytes[25]=(byte)shotHand;grappleShotFrames.Enqueue(Packet(PacketKind.Command,WebFeature,OwnActor,bytes,++webSequence));sentWeb=state;return true;}else return false;
             }
             if(state.Same(sentWeb))return true;
@@ -53,10 +53,10 @@ namespace Ashfall.Integration.Playable.Networking
                 if(p.BaseSequence!=-1||p.Sequence<1)return;
                 long prior;if(grappleShots.TryGetValue(p.ActorId,out prior)&&p.Sequence<=prior)return;
                 R25WebState state;byte[] bytes=p.Payload;int hand=-1;
-                if(bytes.Length==26){hand=bytes[25];if(hand>2)return;bytes=new byte[25];Array.Copy(p.Payload,bytes,25);}
+                if(bytes.Length==26){hand=bytes[25];if(hand>5)return;bytes=new byte[25];Array.Copy(p.Payload,bytes,25);}
                 if(!R25WebState.Decode(bytes,out state))return;
                 grappleShots[p.ActorId]=p.Sequence;
-                if(hand==2){EndPull(p.ActorId);return;}
+                if(hand==2){EndPull(p.ActorId);return;}if(hand==3){ReleaseWeb(p.ActorId,state);return;}
                 if(hand<0||!TryStartPull(p.ActorId,hand))AcceptWeb(p.ActorId,state);return;
             }
             try{using(var s=new MemoryStream(p.Payload))using(var r=new BinaryReader(s,Utf8)){string actor=Read(r,64);R25WebState state;if(R25WebState.Decode(r.ReadBytes((int)(s.Length-s.Position)),out state)&&HasMember(actor)){if(state.LeftAttached||state.RightAttached)webStates[actor]=state;else webStates.Remove(actor);}}}
@@ -72,6 +72,12 @@ namespace Ashfall.Integration.Playable.Networking
                 if(!HasMember(actor)||rules==null||!rules.GrappleGun||healthStates.TryGetValue(actor,out health)&&health.Life!=LifeState.Alive)RemoveWeb(actor);
             }
             foreach(var peer in new List<string>(webPending.Keys)){if(!peers.ContainsKey(peer)){webPending.Remove(peer);continue;}var rows=webPending[peer];foreach(var actor in new List<string>(rows.Keys))if(Send(peer,rows[actor]))rows.Remove(actor);if(rows.Count==0)webPending.Remove(peer);}
+        }
+        void ReleaseWeb(string actor,R25WebState state)
+        {
+            ReleaseShooterPull(actor);
+            // A guest coalesces this snapshot with its release command.
+            if(!state.LeftAttached&&!state.RightAttached){RemoveWeb(actor);if(actor==OwnActor)sentWeb=state;}
         }
         void RemoveWeb(string actor){if(!webStates.ContainsKey(actor))return;QueueWeb(actor,new R25WebState(false,new Float3(),false,new Float3()));webStates.Remove(actor);}
         void ClearWeb(){ClearPulls();grappleShotFrames.Clear();webStates.Clear();webPending.Clear();clientWeb=null;sentWeb=null;}

@@ -64,26 +64,42 @@ namespace Ashfall.Integration.Playable.Networking
     public sealed class R24LanRawTrackingHistory
     {
         readonly R24LanRawTrackingSample[] samples=new R24LanRawTrackingSample[20];int next,count,budget;double budgetAt=-1;
+        internal double OldestTime{get{return count==0?0:samples[(next-count+20)%20].Time;}}
         public int Count{get{return count;}}public int SanitizedHands{get;private set;}public string Rejection{get;private set;}
         public R24LanRawTrackingSample Latest{get{return count==0?null:samples[(next+19)%20];}}
         static bool Finite(double value){return !Double.IsNaN(value)&&!Double.IsInfinity(value);}
         bool Reject(string reason){Rejection=reason;return false;}
-        public bool Accept(long sequence,double now,R24LanRawTracking pose,bool match,float motionMultiplier,Func<Float3,Float3,bool> worldClear)
+        public bool Accept(long sequence,double now,R24LanRawTracking pose,bool match,float motionMultiplier,Func<Float3,Float3,bool> worldClear,float motionSlack=0)
         {
             Rejection=null;var previous=Latest;
             if(!Finite(now)||now<0||previous!=null&&now<previous.Time)return Reject("clock");
             if(budgetAt<0||now-budgetAt>1){budgetAt=now;budget=0;}budget=Math.Min(46,budget+1);if(budget>45)return Reject("rate");
             if(sequence<=0||previous!=null&&sequence<=previous.Sequence)return Reject("sequence");
-            if(pose==null||!pose.BodyValid||!Finite(motionMultiplier)||motionMultiplier<1)return Reject("body");
+            if(pose==null||!pose.BodyValid||!Finite(motionMultiplier)||motionMultiplier<1||!Finite(motionSlack)||motionSlack<0)return Reject("body");
             if(previous!=null&&previous.Pose.MapHash!=pose.MapHash)return Reject("map");
             if(previous!=null&&previous.Pose.SpawnRevision!=pose.SpawnRevision)return Reject("spawn-revision");
             if(previous!=null&&match){
-                double dt=Math.Max(.001,Math.Min(.5,now-previous.Time)),allowance=Math.Max(3,55*dt*motionMultiplier);
+                double dt=Math.Max(.001,Math.Min(.5,now-previous.Time)),floor=3+motionSlack,allowance=Math.Max(floor,55*dt*motionMultiplier);
                 Float3 a=previous.Pose.Root.Position,b=pose.Root.Position;double x=(double)b.X-a.X,y=(double)b.Y-a.Y,z=(double)b.Z-a.Z;
-                if(Math.Sqrt(x*x+z*z)>allowance||y>Math.Max(allowance,120*dt)||-y>Math.Max(3,360*dt))return Reject("speed");
+                if(Math.Sqrt(x*x+z*z)>allowance||y>Math.Max(allowance,120*dt)||-y>Math.Max(floor,360*dt))return Reject("speed");
                 if(R24LanRawTracking.Distance2(previous.Pose.Head.Position,pose.Head.Position)>=.0001&&(worldClear==null||!worldClear(previous.Pose.Head.Position,pose.Head.Position)))return Reject("world-sweep");
             }
             int sanitized;var accepted=pose.Sanitize(out sanitized);SanitizedHands+=sanitized;samples[next]=new R24LanRawTrackingSample(sequence,now,accepted);next=(next+1)%20;count=Math.Min(20,count+1);return true;
+        }
+        public bool HeadAt(double time,out Float3 head)
+        {
+            head=new Float3();if(count==0)return false;
+            var previous=samples[(next-count+20)%20];if(time<previous.Time-.000001)return false;
+            for(int i=1;i<count;i++){
+                var following=samples[(next-count+i+20)%20];
+                if(time<following.Time){
+                    float t=(float)((time-previous.Time)/(following.Time-previous.Time));
+                    var a=previous.Pose.Head.Position;var b=following.Pose.Head.Position;
+                    head=new Float3(a.X+(b.X-a.X)*t,a.Y+(b.Y-a.Y)*t,a.Z+(b.Z-a.Z)*t);return true;
+                }
+                previous=following;
+            }
+            head=previous.Pose.Head.Position;return true;
         }
         public bool TryNearest(double time,out R24LanRawTrackingSample sample)
         {

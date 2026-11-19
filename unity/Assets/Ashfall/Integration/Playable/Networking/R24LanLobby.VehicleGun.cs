@@ -6,25 +6,17 @@ using Ashfall.Modules.Networking;
 using Ashfall.Integration.Playable.Vehicles;
 namespace Ashfall.Integration.Playable.Networking
 {
-    // R5 (playtest 4, lobby-v18): tank aimed by the rider's right hand (yaw and
-    // pitch) and mounted machine guns on the helicopter and hover bike. Both
-    // ride the existing ordered vehicle.fire/1 command with a mode byte after
-    // the vehicle id; an id-only payload is still a plain tank shot.
     public sealed partial class R24LanLobby
     {
         const byte VehicleModeAim=1,VehicleModeAimFire=2,VehicleModeGun=3;
-        public const float TankPitchMinimum=-10,TankPitchMaximum=35,VehicleGunInterval=.1f,VehicleGunRange=150;
-        sealed class TankAim{internal float Yaw,Pitch,Hull;internal double At;}
-        readonly Dictionary<string,TankAim> tankAims=new Dictionary<string,TankAim>(StringComparer.Ordinal);
+        public const float TankPitchMinimum=-10,TankPitchMaximum=35,VehicleGunInterval=.1f,VehicleGunRange=R24LanBallisticProfile.MaximumRange;
+        const float VehicleShellSeconds=8;
         readonly Dictionary<string,double> vehicleGunShots=new Dictionary<string,double>(StringComparer.Ordinal);
         public int AcceptedVehicleGunShots{get;private set;}
         public string LastVehicleGunRejection{get;private set;}
         public static float ClampTankPitch(float pitch){return Single.IsNaN(pitch)||Single.IsInfinity(pitch)?0:Math.Max(TankPitchMinimum,Math.Min(TankPitchMaximum,pitch));}
         public static Float3 TankShellDirection(float yaw,float pitch)
-        {
-            double a=yaw*Math.PI/180,p=ClampTankPitch(pitch)*Math.PI/180;
-            return new Float3((float)(Math.Sin(a)*Math.Cos(p)),(float)Math.Sin(p),(float)(Math.Cos(a)*Math.Cos(p)));
-        }
+        {return R25VehicleKinds.AimDirection(yaw,ClampTankPitch(pitch));}
         bool SendVehicleMode(string id,byte mode,float[] values)
         {
             Check();if(!Wire.IsText(id,32,false))return false;
@@ -32,14 +24,14 @@ namespace Ashfall.Integration.Playable.Networking
             if(State!=R24LanLobbyState.Connected)return false;
             using(var s=new MemoryStream())using(var w=new BinaryWriter(s,Utf8)){Write(w,id,32);w.Write(mode);foreach(float v in values)w.Write(v);return QueueGameCommand(VehicleFire,s.ToArray());}
         }
-        public bool RequestTankAim(string id,float yaw,float pitch,float hull)
+        public bool RequestVehicleAim(string id,float yaw,float pitch,float hull)
         {
-            if(State==R24LanLobbyState.Hosting)return ApplyTankAim(OwnActor,id,yaw,pitch,hull);
+            if(State==R24LanLobbyState.Hosting)return ApplyVehicleAim(OwnActor,id,yaw,pitch,hull,false);
             return SendVehicleMode(id,VehicleModeAim,new[]{yaw,pitch,hull});
         }
         public bool RequestTankFireAimed(string id,float yaw,float pitch,float hull)
         {
-            if(State==R24LanLobbyState.Hosting){ApplyTankAim(OwnActor,id,yaw,pitch,hull);return ApplyTankFire(OwnActor,id);}
+            if(State==R24LanLobbyState.Hosting)return ApplyVehicleAim(OwnActor,id,yaw,pitch,hull,true)&&ApplyTankFire(OwnActor,id);
             return SendVehicleMode(id,VehicleModeAimFire,new[]{yaw,pitch,hull});
         }
         public bool RequestVehicleGun(string id,Float3 origin,Float3 direction)
@@ -52,21 +44,33 @@ namespace Ashfall.Integration.Playable.Networking
             byte mode=r.ReadByte();
             if(mode==VehicleModeAim||mode==VehicleModeAimFire){
                 float yaw=r.ReadSingle(),pitch=r.ReadSingle(),hull=r.ReadSingle();if(s.Position!=s.Length)return;
-                if(ApplyTankAim(actor,id,yaw,pitch,hull)&&mode==VehicleModeAimFire)ApplyTankFire(actor,id);
+                if(ApplyVehicleAim(actor,id,yaw,pitch,hull,mode==VehicleModeAimFire)&&mode==VehicleModeAimFire)ApplyTankFire(actor,id);
             }else if(mode==VehicleModeGun){
                 var origin=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());var direction=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());
                 if(s.Position==s.Length)ApplyVehicleGun(actor,id,origin,direction);
             }
         }
-        bool ApplyTankAim(string actor,string id,float yaw,float pitch,float hull)
+        bool ApplyVehicleAim(string actor,string id,float yaw,float pitch,float hull,bool tankOnly)
         {
-            R25VehicleState row;
-            if(Single.IsNaN(yaw)||Single.IsInfinity(yaw)||Math.Abs(yaw)>720||Single.IsNaN(pitch)||Single.IsInfinity(pitch)||Single.IsNaN(hull)||Single.IsInfinity(hull)||Math.Abs(hull)>720||!vehicles.TryGetValue(id,out row)||row.Kind!="tank"||row.Destroyed||row.Rider!=actor)return false;
-            TankAim aim;if(!tankAims.TryGetValue(id,out aim)){aim=new TankAim();tankAims.Add(id,aim);}
-            aim.Yaw=((yaw%360)+360)%360;aim.Pitch=ClampTankPitch(pitch);aim.Hull=((hull%360)+360)%360;aim.At=clock.Now;return true;
+            R25VehicleState row;R24LanRawTrackingSample raw;
+            if(!Finite(yaw)||Math.Abs(yaw)>720||!Finite(pitch)||!Finite(hull)||Math.Abs(hull)>720||
+                ControlsBlocked(actor)||!VehicleRiderReady(actor,out raw)||!vehicles.TryGetValue(id,out row)||row.Destroyed||row.Rider!=actor)return false;
+            if(row.Kind=="tank"){
+                if(!GameplayRules.Tanks)return false;
+                yaw=((yaw%360)+360)%360;pitch=ClampTankPitch(pitch);hull=((hull%360)+360)%360;
+            }else{
+                // Machine gun aim snapshots are relative to the hull. Shot rays are world-space.
+                if(tankOnly||row.Kind=="helicopter"&&!GameplayRules.Helicopters||
+                    Math.Abs(yaw)>R25VehicleKinds.GunTraverseDegrees+.001f||Math.Abs(pitch)>R25VehicleKinds.GunTraverseDegrees+.001f||
+                    !R25VehicleKinds.GunDirectionAllowed(R25VehicleKinds.AimDirection(yaw,pitch),0))return false;
+                hull=row.Yaw;
+            }
+            if(row.TurretYaw!=yaw||row.GunPitch!=pitch||row.Yaw!=hull)
+                PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,hull,row.Health,actor,0,++vehicleSequence,row.Kind,yaw,row.FiredAt,pitch));
+            return true;
         }
-        bool FreshTankAim(R25VehicleState row,out TankAim aim)
-        {return tankAims.TryGetValue(row.Id,out aim)&&clock.Now-aim.At<1.5;}
+        // The sandbox can practice on builds even when room warm-up protects players.
+        bool VehicleBuildDamageLive{get{return CombatLive||VehiclesLive&&MapId=="range";}}
         bool RejectVehicleGun(string why){LastVehicleGunRejection=why;return false;}
         bool ApplyVehicleGun(string actor,string id,Float3 origin,Float3 direction)
         {
@@ -76,22 +80,13 @@ namespace Ashfall.Integration.Playable.Networking
             if(!origin.IsFinite||!direction.IsFinite||!VehicleRiderReady(actor,out raw))return RejectVehicleGun("tracking");
             if(Distance2(raw.Pose.Root.Position,origin)>25)return RejectVehicleGun("origin");
             double length=Math.Sqrt((double)direction.X*direction.X+(double)direction.Y*direction.Y+(double)direction.Z*direction.Z);if(length<.5||length>1.5)return RejectVehicleGun("direction");
+            var d=Normalize(direction);
+            if(!R25VehicleKinds.GunDirectionAllowed(d,VehicleYaw(row)))return RejectVehicleGun("mount-angle");
             double now=clock.Now,last;if(vehicleGunShots.TryGetValue(actor,out last)&&now-last<VehicleGunInterval*.75)return RejectVehicleGun("cadence");
             vehicleGunShots[actor]=now;AcceptedVehicleGunShots++;LastVehicleGunRejection=null;
-            if(!CombatLive||ballisticTrace==null||!R24LanBallisticProfile.TryRead("m60",out profile))return true;
+            if(!VehicleBuildDamageLive||ballisticTrace==null||!R24LanBallisticProfile.TryRead("m60",out profile))return true;
             if(rawWorldClear==null||!rawWorldClear(raw.Pose.Head.Position,origin))return true;
-            var d=Normalize(direction);float nearest=ballisticTrace(origin,d,VehicleGunRange);if(Single.IsNaN(nearest)||nearest<0||nearest>VehicleGunRange)nearest=0;
-            nearest=GuardDistance(actor,origin,d,nearest);float panelDistance;string panel=NearestSharedPanel(origin,d,nearest,out panelDistance);if(panel!=null)nearest=panelDistance;
-            float vehicleDistance;string hitVehicle=NearestVehicleExcept(origin,d,nearest,id,out vehicleDistance);if(hitVehicle!=null){nearest=vehicleDistance;panel=null;}
-            string target=null;bool headshot=false;double sampleAt=Math.Max(now-.20,now);
-            foreach(var other in sessions.CaptureMembers()){
-                if(other.ActorId==actor||!other.Loaded||!other.HasPosition)continue;var oh=hostHealth.Read(other.CanonicalActorId);if(oh==null||!oh.Connected||oh.Life!=Ashfall.Modules.HealthStates.LifeState.Alive)continue;
-                R24LanRawTrackingSample pose;if(!Fresh(other.ActorId,sampleAt,out pose))continue;var head=pose.Pose.Head.Position;
-                float h=SphereRay(origin,d,head,.17f),c=SphereRay(origin,d,new Float3(head.X,head.Y-.45f,head.Z),.29f),hip=SphereRay(origin,d,new Float3(head.X,head.Y-.92f,head.Z),.27f),t=Math.Min(h,Math.Min(c,hip));
-                if(t<nearest){nearest=t;target=other.ActorId;headshot=h<=Math.Min(c,hip);}
-            }
-            if(target==null){if(hitVehicle!=null)DamageVehicle(hitVehicle,profile.Damage(1,false,nearest),true);else if(panel!=null)DamageSharedPanel(panel,profile.Damage(1,false,nearest)*GameplayRules.BuildDamage);return true;}
-            ApplyCombatDamage(actor,target,profile.Damage(1,headshot,nearest)*(headshot?roundRules.Headshots:1),false);
+            LaunchMountedBullet(actor,id,origin,d,profile);
             return true;
         }
         string NearestVehicleExcept(Float3 origin,Float3 direction,float range,string except,out float distance)

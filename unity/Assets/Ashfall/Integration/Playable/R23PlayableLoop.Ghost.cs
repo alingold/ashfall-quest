@@ -10,7 +10,7 @@ namespace Ashfall.Integration.Playable
         LifeState ActualLocalLife{get{return Gameplay==null||Gameplay.LocalMatchHealth==null?LifeState.Spectator:Gameplay.LocalMatchHealth.Life;}}
         public bool MatchLocalGhost{get{return R24GhostLifePolicy.Ghost(ActualMatchRules!=null,ActualLocalLife);}}
         public bool MatchLocalMotionAllowed{get{return R24GhostLifePolicy.Motion(ActualMatchRules!=null,MatchActive,ActualLocalLife);}}
-        public bool MatchLocalItemsAllowed{get{return R24GhostLifePolicy.Items(ActualMatchRules!=null,MatchActive,ActualLocalLife);}}
+        public bool MatchLocalItemsAllowed{get{return !PlatformUnarmed&&R24GhostLifePolicy.Items(ActualMatchRules!=null,MatchActive,ActualLocalLife);}}
         public R24GhostAppearance LocalGhostAppearance{get{return localGhostAppearance;}}
         void SyncMatchGhost()
         {

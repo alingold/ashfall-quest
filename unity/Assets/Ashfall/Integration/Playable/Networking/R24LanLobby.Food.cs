@@ -7,6 +7,11 @@ namespace Ashfall.Integration.Playable.Networking {
   sealed class SodaDose{internal float Left;internal double At;internal long Life;}
   readonly Dictionary<string,SodaDose> sodas=new Dictionary<string,SodaDose>(StringComparer.Ordinal);
   public R24LanFoodState[] SharedFoods{get{return CopySnapshot(foods.Values);}}
+  Func<string,bool> foodAvailability;
+  public void BindFoodAvailability(Func<string,bool> available){Check();foodAvailability=available;}
+  // Reuse the consumed tombstone for an unowned source withdrawn by the host.
+  // Keep its ID/revision until the epoch ends so full sweeps cannot resurrect it.
+  public bool RetireWorldFood(string id){Check();R24LanFoodState food;if(State!=R24LanLobbyState.Hosting||id==null||!foods.TryGetValue(id,out food)||food.Owner!=""||food.Consumed)return false;PublishFood(new R24LanFoodState(id,food.Kind,"",food.Position,true,checked(++foodSequence)));return true;}
   static bool FoodKind(string kind){return kind=="banana"||kind=="soda"||kind=="shaker";}
   void ClearFood(){ownFoodReset=null;foreach(var peer in peers.Values)peer.FoodReset=null;foodPreparations.Clear();foods.Clear();foodOwnedAt.Clear();sodas.Clear();foreach(var p in peers.Values)p.Foods.Clear();}
   int FoodSlots(string actor){var counts=new Dictionary<string,int>(StringComparer.Ordinal);foreach(var f in foods.Values)if(f.Owner==actor&&!f.Consumed){int count;counts.TryGetValue(f.Kind,out count);counts[f.Kind]=count+1;}int slots=0;foreach(var count in counts)slots+=count.Key=="banana"?count.Value:(count.Value+1)/2;return slots;}
@@ -21,7 +26,7 @@ namespace Ashfall.Integration.Playable.Networking {
   bool ApplyFood(string actor,string id,int hand,int action,Float3 at){R24LanFoodState f;CombatActor c;R24LanRawTrackingSample raw;var member=sessions.Get(actor);
    if(!InventoryLive||!LootAllowed(id)||member==null||member.Life!=SessionLife.Alive||hand<0||hand>1||!at.IsFinite||!foods.TryGetValue(id,out f)||f.Consumed||!combat.TryGetValue(actor,out c)||!Fresh(actor,clock.Now,out raw)||(raw.Pose.Flags&(hand==0?2:4))==0)return false;
    var handAt=hand==0?raw.Pose.Left.Position:raw.Pose.Right.Position;
-   if(action==0){if(f.Owner!=""||Distance2(handAt,f.Position)>4||Distance2(raw.Pose.Root.Position,f.Position)>20.25||rawWorldClear==null||!rawWorldClear(raw.Pose.Head.Position,f.Position))return false;
+   if(action==0){if(f.Owner!=""||foodAvailability!=null&&!foodAvailability(id)||Distance2(handAt,f.Position)>4||Distance2(raw.Pose.Root.Position,f.Position)>20.25||rawWorldClear==null||!rawWorldClear(raw.Pose.Head.Position,f.Position))return false;
     int same=0;foreach(var x in foods.Values)if(x.Owner==actor&&!x.Consumed&&x.Kind==f.Kind)same++;if(WeaponSlots(c)+GrenadeSlots(actor)+FoodSlots(actor)+(f.Kind=="banana"||same%2==0?1:0)>c.Capacity)return false;foodOwnedAt[id]=clock.Now;PublishFood(new R24LanFoodState(id,f.Kind,actor,f.Position,false,checked(++foodSequence)));return true;}
    if(f.Owner!=actor)return false;
    if(action==3)return EquipFood(actor,f,hand,raw.Pose);if(action==4){foodPreparations.Remove(actor);return true;}

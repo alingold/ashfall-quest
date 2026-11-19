@@ -16,7 +16,7 @@ namespace Ashfall.Integration.Playable.UI
         public string CompactOtherScore {get{return compactRightText==null?"":compactRightText.text;}}
         public string CompactPersonalScore {get{return compactPersonalText==null?"":compactPersonalText.text;}}
         public void SetCompactMatchState(R24WorldScoreState state,string ownActor,int ownTeam)
-        {compactOwnTeam=ownTeam;compactMatchState=new R24CompactMatchHudState(state,ownActor,ownTeam);RefreshCompactMatchHud();}
+        {survivalResultsState=state;RefreshSurvivalResults();compactOwnTeam=ownTeam;compactMatchState=new R24CompactMatchHudState(state,ownActor,ownTeam);RefreshCompactMatchHud();}
         void ClearCompactMatchHudReferences()
         {compactMatchHud=compactLeftFill=compactRightFill=null;compactLeftText=compactRightText=compactCapText=compactClockText=compactPersonalText=null;compactClockLabel=null;}
         TextMesh CompactLabel(string caption,Vector3 at,float em,float width)
@@ -38,12 +38,28 @@ namespace Ashfall.Integration.Playable.UI
             compactPersonalText=CompactLabel("",new Vector3(-.02f,-.4185f,.797f),.0085f,.29f);compactPersonalText.gameObject.SetActive(false);
             RefreshCompactMatchHud();
         }
+        void PositionCompactMatchHud()
+        {
+            if(compactMatchHud==null)return;
+            // Shield owns the row above health when enabled; otherwise close that gap too.
+            float offset=compactMatchState!=null&&compactMatchState.TeamRevive?(snapshot!=null&&snapshot.Shield>=0?-.021f:-.044f):0;
+            compactMatchHud.localPosition=new Vector3(0,offset,0);
+        }
+        static readonly string[] CompactTeamColors={R25Theme.Team2,R25Theme.Team1,"54E39A","D99CFF","FFE16A","5CE5EB","FF89BB","D4DCE6"};
+        static Color CompactTeamColor(int team){return Hex(CompactTeamColors[team>=0&&team<8?team:0]);}
+        static Color CompactTeamDim(int team){if(team<=1)return Hex(team==1?R25Theme.Team1Dim:R25Theme.Team2Dim);var c=CompactTeamColor(team)*.4f;c.a=1;return c;}
         void RefreshCompactMatchHud()
         {
             if(compactMatchHud==null)return;bool show=compactMatchState!=null&&compactMatchState.Visible&&Page==R23UiPage.Playing;compactMatchHud.gameObject.SetActive(show);if(!show)return;
-            SetRendererColor(compactLeftFill.GetComponent<Renderer>(),Hex(compactOwnTeam==1?R25Theme.Team1:R25Theme.Team2));SetRendererColor(compactRightFill.GetComponent<Renderer>(),Hex(compactOwnTeam==1?R25Theme.Team2:R25Theme.Team1));
-            SetRendererColor(compactOwnPlate.GetComponent<Renderer>(),Hex(compactOwnTeam==1?R25Theme.Team1Dim:R25Theme.Team2Dim));SetRendererColor(compactOtherPlate.GetComponent<Renderer>(),Hex(compactOwnTeam==1?R25Theme.Team2Dim:R25Theme.Team1Dim));
-            var s=compactMatchState;compactLeftText.text=s.Left;compactRightText.text=s.Right;compactCapText.text=s.Cap;compactClockText.text=string.IsNullOrEmpty(s.Clock)?s.Personal:s.Clock+"   "+s.Personal;compactPersonalText.text=s.Personal;FitText(compactClockLabel);
+            SetRendererColor(compactLeftFill.GetComponent<Renderer>(),CompactTeamColor(compactOwnTeam));SetRendererColor(compactRightFill.GetComponent<Renderer>(),CompactTeamColor(compactMatchState.OtherTeam<0?(compactOwnTeam==1?0:1):compactMatchState.OtherTeam));
+            SetRendererColor(compactOwnPlate.GetComponent<Renderer>(),CompactTeamDim(compactOwnTeam));SetRendererColor(compactOtherPlate.GetComponent<Renderer>(),CompactTeamDim(compactMatchState.OtherTeam<0?(compactOwnTeam==1?0:1):compactMatchState.OtherTeam));
+            var s=compactMatchState;
+            compactLeftFill.gameObject.SetActive(!s.TeamRevive);compactRightFill.gameObject.SetActive(!s.TeamRevive);
+            // Revive counts already live at the ends; use the free centre for the clock.
+            compactClockLabel.TargetY=s.TeamRevive?-.389f:-.367f;
+            compactClockLabel.MaxWidth=s.TeamRevive?.20f:.29f;
+            PositionCompactMatchHud();
+            compactLeftText.text=s.Left;compactRightText.text=s.Right;compactCapText.text=s.Cap;compactClockText.text=string.IsNullOrEmpty(s.Clock)?s.Personal:s.Clock+"   "+s.Personal;if(s.Matchup.Length>0)compactClockText.text=s.Matchup+"   "+compactClockText.text;compactPersonalText.text=s.Personal;FitText(compactClockLabel);
             compactLeftFill.localScale=new Vector3(Mathf.Max(.0001f,s.LeftRatio),1,1);compactRightFill.localScale=new Vector3(Mathf.Max(.0001f,s.RightRatio),1,1);
             var left=compactLeftFill.localPosition;left.x=-.127f+.0435f*s.LeftRatio;compactLeftFill.localPosition=left;
             var right=compactRightFill.localPosition;right.x=.087f-.0435f*s.RightRatio;compactRightFill.localPosition=right;

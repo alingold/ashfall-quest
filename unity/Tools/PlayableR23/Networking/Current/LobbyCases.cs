@@ -7,7 +7,7 @@ partial class LobbyCases
  {
   internal readonly Dictionary<string,Link> Links=new Dictionary<string,Link>();internal readonly Queue<Frame> Inbox=new Queue<Frame>();internal readonly List<Frame> Held=new List<Frame>();internal bool HoldRoster;internal int Pressure;internal Action<string> Lost;internal int Sent,Disposed;
   public void Pump(){}
-  public void Send(string peer,byte[] bytes,bool reliable){if(Pressure>0){Pressure--;throw new InvalidOperationException("send-backpressure");}Link link;if(!Links.TryGetValue(peer,out link))throw new InvalidOperationException("unknown-peer");Packet p;if(!Wire.TryDecode(bytes,out p))throw new Exception("Malformed production send");if(!reliable&&p.FeatureId!="playable.presence/1"&&p.FeatureId!="playable.clock/1"&&p.FeatureId!="playable.tracking/2")throw new Exception("Unexpected unreliable feature");Sent++;var frame=new Frame{Peer=link.Back,Bytes=(byte[])bytes.Clone()};if(HoldRoster&&p.FeatureId=="playable.lobby.roster/1")Held.Add(new Frame{Peer=peer,Bytes=frame.Bytes});else link.Remote.Inbox.Enqueue(frame);}
+  public void Send(string peer,byte[] bytes,bool reliable){if(Pressure>0){Pressure--;throw new InvalidOperationException("send-backpressure");}Link link;if(!Links.TryGetValue(peer,out link))throw new InvalidOperationException("unknown-peer");Packet p;if(!Wire.TryDecode(bytes,out p))throw new Exception("Malformed production send");if(!reliable&&p.FeatureId!="playable.presence/1"&&p.FeatureId!="playable.clock/1"&&p.FeatureId!="playable.tracking/2")throw new Exception("Unexpected unreliable feature");MaxFrame(p,bytes.Length);Sent++;var frame=new Frame{Peer=link.Back,Bytes=(byte[])bytes.Clone()};if(HoldRoster&&p.FeatureId=="playable.lobby.roster/1")Held.Add(new Frame{Peer=peer,Bytes=frame.Bytes});else link.Remote.Inbox.Enqueue(frame);}
   public bool TryReceive(out string peer,out byte[] bytes){if(Inbox.Count==0){peer=null;bytes=null;return false;}var f=Inbox.Dequeue();peer=f.Peer;bytes=f.Bytes;return true;}
   internal void Release(int index){var f=Held[index];var link=Links[f.Peer];link.Remote.Inbox.Enqueue(new Frame{Peer=link.Back,Bytes=f.Bytes});Held.RemoveAt(index);}
   internal void Close(string peer){Link link;if(!Links.TryGetValue(peer,out link))return;Links.Remove(peer);link.Remote.Links.Remove(link.Back);if(Lost!=null)Lost(peer);if(link.Remote.Lost!=null)link.Remote.Lost(link.Back);}
@@ -23,9 +23,14 @@ partial class LobbyCases
   public void Dispose(){Client.Dispose();Host.Dispose();ClientPipe.Dispose();HostPipe.Dispose();}
  }
  static int checks;static void Need(bool ok,string why){checks++;if(!ok)throw new Exception(why);}
+ // Legacy LAN scenarios pin the standard kit (CX4/PX4/M1014) and 1x damage.
+ // MatchChecks exercises the live r18 defaults without this fixture override.
+ static void LegacyFixtureDefaults(){var d=(Dictionary<string,object>)typeof(Ashfall.Integration.Playable.Match.R24PlayableMatchRules).GetField("Defaults",System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Static).GetValue(null);d["loadout"]="standard";d["damage"]=1.0f;d["npc_damage"]=1.0f;d["build_damage"]=1.0f;}
  static void Main()
  {
+  LegacyFixtureDefaults();
   PendingHealthCases();
+  R19Main();RunVehicleSeatChecks();RunHudChecks();
   using(var pair=new Pair()){
    for(int i=0;i<5;i++)pair.Tick();Need(pair.Host.State==R24LanLobbyState.Hosting&&pair.Client.State==R24LanLobbyState.Connected,"Actual Session-backed lobby handshake");Need(pair.Host.Members.Length==2&&pair.Client.Members.Length==2,"Both committed rosters contain2");
    foreach(var m in pair.Host.Members)Need(!m.WorldLoaded,"No fabricated map-ready/grant from lobby membership");Need(pair.Client.SessionId==pair.Host.SessionId&&pair.Client.OwnActor!=pair.Host.OwnActor,"Host assigned distinct actor/session");
@@ -49,10 +54,10 @@ partial class LobbyCases
   // same production coordinator, not a stand-in count in the test.
   var hostPipe=new Pipe();int serial=0;var host=new R24LanLobby(hostPipe,hostPipe.Close,delegate{return "cap-"+(++serial);},new string('a',64));hostPipe.Lost=host.TransportDisconnected;host.StartHost("CAPACITY","Host","range",new string('b',64));var clients=new List<R24LanLobby>();var pipes=new List<Pipe>();
   try{
-   for(int n=0;n<7;n++){var pipe=new Pipe();var client=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));string key="peer"+n;hostPipe.Links.Add(key,new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=hostPipe,Back=key});pipe.Lost=client.TransportDisconnected;client.StartClient("server","Guest"+n,n);host.TransportConnected(key);clients.Add(client);pipes.Add(pipe);for(int frame=0;frame<4;frame++){double now=n+frame*.05;host.Tick(now);foreach(var c in clients)c.Tick(now);}}
-   Need(host.Members.Length==8,"Eight actual Session members including host");foreach(var c in clients)Need(c.State==R24LanLobbyState.Connected&&c.Members.Length==8,"All clients have latest complete roster");
-   var extra=new Pipe();hostPipe.Links.Add("extra",new Link{Remote=extra,Back="server"});extra.Links.Add("server",new Link{Remote=hostPipe,Back="extra"});host.TransportConnected("extra");Need(!hostPipe.Links.ContainsKey("extra")&&host.Members.Length==8,"Ninth connection refused without evicting active roster");extra.Dispose();
+   for(int n=0;n<23;n++){var pipe=new Pipe();var client=new R24LanLobby(pipe,pipe.Close,delegate{return "unused";},new string('a',64));string key="peer"+n;hostPipe.Links.Add(key,new Link{Remote=pipe,Back="server"});pipe.Links.Add("server",new Link{Remote=hostPipe,Back=key});pipe.Lost=client.TransportDisconnected;client.StartClient("server","Guest"+n,n);host.TransportConnected(key);clients.Add(client);pipes.Add(pipe);for(int frame=0;frame<4;frame++){double now=n+frame*.05;host.Tick(now);foreach(var c in clients)c.Tick(now);}}
+   Need(host.Members.Length==24,"Twenty-four actual Session members including host");foreach(var c in clients)Need(c.State==R24LanLobbyState.Connected&&c.Members.Length==24,"All clients have latest complete roster");
+   var extra=new Pipe();hostPipe.Links.Add("extra",new Link{Remote=extra,Back="server"});extra.Links.Add("server",new Link{Remote=hostPipe,Back="extra"});host.TransportConnected("extra");Need(!hostPipe.Links.ContainsKey("extra")&&host.Members.Length==24,"Twenty-fifth connection refused without evicting active roster");extra.Dispose();
   }finally{foreach(var c in clients)c.Dispose();foreach(var p in pipes)p.Dispose();host.Dispose();hostPipe.Dispose();}
-  PresenceCases();MapCases();RoundCases();RawTrackingCases();SpawnCases();RawRevisionCases();RawRecoveryCases();HostHealthCases();RootHealthViewCases();HomeBoundaryCases();WarmupHealthCases();WarmupRecoveryCases();MatchHealthCases.RunOffline();RegressionCases();Console.WriteLine("PASS "+checks+" production Session-backed LAN lobby/presence/map/round/raw-tracking/spawn observations; transport simulation only, native UTP/UI unrun.");
+  MaxPlayerCases();PresenceCases();MapCases();RoundCases();RawTrackingCases();SpawnCases();RawRevisionCases();RawRecoveryCases();HostHealthCases();RootHealthViewCases();HomeBoundaryCases();WarmupHealthCases();WarmupRecoveryCases();MatchHealthCases.RunOffline();RegressionCases();SwordMain();ReviveRules(false);Console.WriteLine("PASS "+checks+" production Session-backed LAN lobby/presence/map/round/raw-tracking/spawn observations; transport simulation only, native UTP/UI unrun.");
  }
 }

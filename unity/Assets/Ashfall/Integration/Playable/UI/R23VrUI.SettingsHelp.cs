@@ -22,18 +22,20 @@ namespace Ashfall.Integration.Playable.UI
             default:return "Point and hold the trigger to drag the handle.";}
         }
         internal static string PersonalChoice(string key)
-        {switch(key){case "forward":return "Walking follows your head or left-controller heading.";case "turning":return "SNAP turns in steps. SMOOTH turns continuously.";case "grip_toggle":return "ON: tap grip to latch weapon support.\nOFF: hold grip to keep supporting the weapon.";case "dominant_hand":return "Chooses your main hand.\nHeld guns switch when a safe transfer is possible.";default:return "Point and release the trigger to change this setting.";}}
+        {switch(key){case "player_name":return "Choose the name other players see.\nName change applies next room.";case "forward":return "Walking follows your head or left-controller heading.";case "turning":return "SNAP turns in steps. SMOOTH turns continuously.";case "grip_toggle":return "ON: tap grip to latch weapon support.\nOFF: hold grip to keep supporting the weapon.";case "dominant_hand":return "Chooses your main hand.\nHeld guns switch when a safe transfer is possible.";default:return "Point and release the trigger to change this setting.";}}
         internal static string PersonalMenu(string icon)
         {switch(icon){case "settings_0":return "Personal movement and turning preferences.";case "settings_1":return "Set full player height from the current headset pose.\nSeated and standing both work.";case "settings_2":return "Grip style, handedness and carried weapon aim tuning.";case "settings_3":return "Master, SFX, music and world ambience.\nPlayer voice is not connected.";default:return "Point at a setting for help.";}}
         internal static string Match(string key,bool available)
         {
-            if(!available){switch(key){case "retain_inventory":return "Keep carried items and ammo after respawning.\nLocked ON in this local build.";case "starting_builds":return "Starting-build selection is locked at 999.\nCustom starting amounts are not supported here.";case "score_limit":return "Unavailable: no multiplayer score tracking.\nTime and round limits still work.";case "headshots":return "Weapon headshot damage stays unchanged.\nThis match multiplier is not connected.";case "build_damage":return "Damage to structures keeps its current behavior.\nThis match multiplier is not connected.";case "friendly_fire":return "Unavailable: there are no remote teammates here.";case "run":case "flight":case "stamina":return "This match multiplier is unavailable here.\nPersonal movement behavior is unchanged.";default:return "Unavailable in this local build.\nThis control cannot change gameplay.";}}
+            if(!available){switch(key){case "starting_builds":return "Starting-build selection is locked at 999.\nCustom starting amounts are not supported here.";case "score_limit":return "Unavailable: no multiplayer score tracking.\nTime and round limits still work.";case "headshots":return "Weapon headshot damage stays unchanged.\nThis match multiplier is not connected.";case "build_damage":return "Damage to structures keeps its current behavior.\nThis match multiplier is not connected.";case "friendly_fire":return "Unavailable: there are no remote teammates here.";case "run":case "flight":case "stamina":return "This match multiplier is unavailable here.\nPersonal movement behavior is unchanged.";default:return "Unavailable in this local build.\nThis control cannot change gameplay.";}}
             switch(key){
             case "teams":return "0 means no teams.\nFREE-FOR-ALL uses no-team respawn rules.";
             case "mode":return "REVIVE uses downed and bleed-out rules.\nDEATHMATCH allows automatic respawning.";
-            case "time_limit":return "Match time limit in seconds.\n0 means untimed.";
+            case "time_limit":return "Match time cap for Team Deathmatch and Free-for-all.\nTeam Revive has no time cap: it ends when one team is eliminated.";
             case "rounds":return "Number of rounds before local match results.";
             case "damage":return "Incoming damage multiplier.\nZone damage uses its own setting.";
+            case "headshots":return "Multiplier on headshot damage from guns.\n0% makes head hits do no damage; body hits are unchanged.";
+            case "build_damage":return "Multiplier on damage to build pieces.\nApplies to guns, explosives, melee and vehicle guns.";
             case "starting_health":return "Health when you spawn into the match.";
             case "starting_shield":return "Shield when you spawn into the match.";
             case "walk":return "Walking-speed multiplier for this match.";
@@ -44,7 +46,6 @@ namespace Ashfall.Integration.Playable.UI
             case "builds":return "Allow placing structures during the match.";
             case "infinite_builds":return "Build placement does not spend build resources.";
             case "infinite_ammo":return "Reserve ammunition does not run out.\nReloading and physical handling still apply.";
-            case "retain_inventory":return "Keep carried items and ammo after respawning.";
             case "respawn_delay":return "Wait after elimination before respawning.\nUsed by respawn rules.";
             case "protection":return "Spawn/revive protection time against damage.\nFatal falls are still possible.";
             case "downed_seconds":return "Time before a downed player bleeds out.\nUsed by revive rules.";
@@ -55,7 +56,7 @@ namespace Ashfall.Integration.Playable.UI
             default:return "This rule is applied by START MATCH.";}
         }
         internal static string Preset(string id)
-        {switch(id){case "free_for_all":return "Free-for-all: respawn rules with no teams.\nThis local build has one player.";case "practice":return "Untimed training: no zone, infinite ammo/builds.\nPhysical reloads still apply.";case "team_revive":return "Downed/bleed-out rules and team deployment.\nNo remote teammate is connected.";case "team_respawn":return "Team rules with automatic respawning.\nNo remote teammate is connected.";default:return "Select rules for your next match.";}}
+        {switch(id){case "free_for_all":return "Free-for-all: respawn rules with no teams.\nThis local build has one player.";case "team_revive":return "Downed/bleed-out rules and team deployment.\nNo remote teammate is connected.";case "team_respawn":return "Team rules with automatic respawning.\nNo remote teammate is connected.";default:return "Select rules for your next match.";}}
         internal static string MatchTab(int tab)
         {switch(tab){case 0:return "Host or join on the same local network.\nThe host selects maps and starts rounds.";case 1:return "Teams, respawn mode, time limit and rounds.";case 2:return "Starting health, shield and damage rules.";case 3:return "Movement settings for your next match.";case 4:return "Starting gear, world loot, catalog and resources.";case 5:return "Respawn wait, protection and downed time.";case 6:return "Safe-area shrinking and outside-zone damage.";default:return "Point at a rule for help.";}}
     }
@@ -92,8 +93,15 @@ namespace Ashfall.Integration.Playable.UI
             if(String.IsNullOrEmpty(copy))copy=pointedSettingsHelp[1]??pointedSettingsHelp[0]??settingsHelpDefault;
             if(settingsHelpText.text!=copy)settingsHelpText.text=copy;
         }
+        // Called by BuildSettingsHelp on GENERAL, below AMBIENCE VOLUME.
+        void BuildPlayerNameRow()
+        {
+            var button=AddButton(panel,"NAME    "+R26PlayerName.Current,0,-.205f,.90f,.085f,OpenNameKeyboard,.03f);PreparePersonalChoice(button,"player_name");
+            Text(panel,"Other players see this name.\nName change applies next room.",new UnityEngine.Vector3(0,-.31f,-.025f),.019f,1.12f,Hex(R25Theme.TextDim));
+        }
         void BuildSettingsHelp(bool match,bool root,string fallback)
         {
+            if(!match&&!root&&settingsPage==GeneralSettingsPage)BuildPlayerNameRow();
             if(!match){settingsHelpDefault=fallback;if(root&&!String.IsNullOrEmpty(fallback))settingsHelpText=Text(panel,fallback,new UnityEngine.Vector3(0,-.51f,-.025f),.019f,.90f,Hex(R25Theme.Text));return;}
             settingsHelpDefault=fallback??"Point at a setting for help.\nDrag bright handles with the trigger; dimmed values are locked.";
             UnityEngine.Vector3 at=match?FrontPoint(640,605):new UnityEngine.Vector3(0,root?-.51f:-.39f,-.025f);

@@ -74,6 +74,7 @@ namespace Ashfall.Integration.Playable.JumpPads
         [Serializable]sealed class Manifest {public int version=0;public Map[] maps=null;}
         [Serializable]sealed class Map {public string mapId="",sourceSha256="",cacheFingerprint="";public Row[] stations=null;}
         [Serializable]sealed class Row {public int sourceIndex=0;public float[] center=null,normal=null;public double radius=0;public float healthPerSecond=0;}
+        public Func<int,double> SharedCooldown;
         Transform actorRoot,mapRoot;Func<bool> restore,eligibility;Manifest data;R23HealthStationRecharge recharge;R23HealthStationVisuals visuals;float pollClock,sfxVolume=1;
         R23SourceHealthStation[] authored=new R23SourceHealthStation[0];
         public bool Ready {get;private set;}public bool Loading {get;private set;}
@@ -85,7 +86,7 @@ namespace Ashfall.Integration.Playable.JumpPads
         public bool RestoreBound {get{return restore!=null;}}
         public bool RestoreAudioReady {get{return visuals!=null&&visuals.AudioReady;}}
         public void SetSfxVolume(float value){sfxVolume=float.IsNaN(value)||float.IsInfinity(value)?0:Mathf.Clamp01(value);if(visuals!=null)visuals.SetSfxVolume(sfxVolume);}
-        public double CooldownRemaining(int stationIndex){return recharge==null?0:recharge.Remaining(stationIndex,Time.realtimeSinceStartupAsDouble);}
+        public double CooldownRemaining(int stationIndex){return SharedCooldown!=null?SharedCooldown(stationIndex):recharge==null?0:recharge.Remaining(stationIndex,Time.realtimeSinceStartupAsDouble);}
         public void BindRestore(Func<bool> actualRestore,Func<bool> eligible=null){restore=actualRestore;eligibility=eligible;}
         public R23SourceHealthStation[] AuthoredStations {get{return (R23SourceHealthStation[])authored.Clone();}}
         // Compatibility signature: never silently restore health alone. Root must
@@ -148,6 +149,7 @@ namespace Ashfall.Integration.Playable.JumpPads
         {
             ResetContact();if(!Ready||!isActiveAndEnabled||recharge==null)return false;
             double now=Time.realtimeSinceStartupAsDouble;
+            if(SharedCooldown!=null){if(visuals!=null)visuals.RefreshShared(SharedCooldown);return false;}
             if(visuals!=null)visuals.Refresh(now,recharge);
             if(Single.IsNaN(seconds)||Single.IsInfinity(seconds)||seconds<0)return false;
             pollClock+=seconds;if(pollClock<.1f)return false;pollClock=0;
@@ -164,7 +166,7 @@ namespace Ashfall.Integration.Playable.JumpPads
             }
             return false;
         }
-        bool ClearContact(Float3 from,Float3 to)
+        public bool ClearContact(Float3 from,Float3 to)
         {
             Vector3 start=U(from),end=U(to),motion=end-start;float length=motion.magnitude;if(length<.000001f)return true;
             // Source query mask 1: native world bit-1 geometry maps to Unity layer 0,

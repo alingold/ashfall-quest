@@ -22,10 +22,10 @@ sealed class FlightTests : IAuthorityGate,IFlightWorld,ICapsuleRouteValidation
         f.Supported=true;Check(m.Step(C(),f).Accepted&&m.Mode==FlightMode.Ground,"landing cancels glide");
         f.Supported=false;f.XR=true;f.HandsReady=true;f.LeftHand=new Float3(-.6f,.4f,0);f.RightHand=new Float3(.6f,0,0);
         Check(m.Step(C(),f).Accepted&&m.Velocity.X>0,"reflected hand bank turns right");
-        f.LeftHand=new Float3(-.3f,0,0);f.RightHand=new Float3(.3f,0,0);m.Step(C(),f);Check(m.Mode==FlightMode.Air,"arms below spread threshold retract");
+        f.LeftHand=new Float3(-.3f,0,0);f.RightHand=new Float3(.3f,0,0);m.Step(C(),f);Check(m.Mode==FlightMode.Air,"one measured low frame releases glide");m.Step(C(),f);Check(m.Mode==FlightMode.Air,"sustained arms below spread threshold retract");
         f=Frame();m=Machine();for(int i=0;i<9;i++){f.Velocity=m.Velocity.Y<0?m.Velocity:f.Velocity;m.Step(C(),f);}Check(m.Mode==FlightMode.Air,"dive unavailable before one second");
         f.DiveForward=true;f.DesktopGlide=true;f.Velocity=m.Velocity;m.Step(C(),f);Check(m.Mode==FlightMode.Dive,"forward fall becomes dive over glide");
-        for(int i=0;i<200;i++){f.Velocity=m.Velocity;m.Step(C(),f);}Check(m.Velocity.Y<=-150,"dive maintains accelerating gravity beyond target");
+        for(int i=0;i<400;i++){f.Velocity=m.Velocity;m.Step(C(),f);}Check(Math.Abs(m.Velocity.Y+R26FreefallTuning.DiveTerminalSpeed)<.05f,"held dive approaches drag terminal");
         f.InventoryOpen=true;f.Velocity=m.Velocity;m.Step(C(),f);Check(m.Mode==FlightMode.Air,"inventory prevents dive and glide");
         f.Tracked=false;Check(m.Step(C(),f).Accepted&&m.Mode==FlightMode.Suspended,"tracking loss releases flight");
         f=Frame();f.DeltaSeconds=float.NaN;Check(!m.Step(C(),f).Accepted,"invalid delta rejected");

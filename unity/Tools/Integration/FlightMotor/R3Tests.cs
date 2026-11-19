@@ -62,7 +62,7 @@ sealed class R3Tests : IAuthorityGate,IFlightWorld,ICapsuleRouteValidation,IFlig
         var env=new MotionEnvironment();var obs=new FlightFrame{DeltaSeconds=.1f,InputEnabled=true,Forward=new Float3(0,0,1)};MotionStep motion;
         var c=C("m");var input=new InputFrame{Tick=c.Tick,Sequence=1,Tracked=true};
         Check(motor.Step(c,input,env,obs,out motion).Accepted&&motion.OwnsMotion,"air owns one returned movement");
-        Near(motion.Velocity.Y,-1.62f,"single gravity in air");Near(motion.Displacement.Y,-.162f,"single displacement");
+        Near(motion.Velocity.Y,R26Freefall.Fall(0,0,.1f),"single gravity in air");Near(motion.Displacement.Y,R26Freefall.Fall(0,0,.1f)*.1f,"single displacement");
         Check(!motor.Step(c,input,env,obs,out motion).Accepted,"composed replay denied");
         var pad=new LaunchPad("p",new Float3(),new Float3(1,1,0),1,45);
         Check(motor.LaunchPad(C("m"),pad,this,new Float3(),new Float3(),false,0,true,false,false,false).Accepted,"composed tilted launch");

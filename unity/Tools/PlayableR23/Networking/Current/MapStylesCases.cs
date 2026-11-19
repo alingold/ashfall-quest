@@ -44,6 +44,6 @@ partial class LobbyCases
         Need(path!=null,"Find real shipped styles.json from harness working directory");
         var data=R25MapStyles.Parse(File.ReadAllText(path));Need(data!=null,"Real shipped file parses");int count=0;
         foreach(string id in data.MapIds){var p=data.Resolve(id);Need(p!=null && p.SkyZenith!=null && p.SkyHorizon!=null && p.SkyNadir!=null,"Resolve real map "+id);count++;}
-        Need(count==64,"All 64 retained style metadata IDs resolve (61 active, three retired)");
+        Need(count>=82,"All "+count+" style metadata IDs resolve (r19 MAPKIT: 64 retained + 18 new maps = 82, three retired)");foreach(string retired in new[]{"archive:bamboo-gods-pitdevil","archive:battlefield-paintball-gods-pitdevil","archive:dark-carnival-gods-pitdevil"})Need(data.Resolve(retired)!=null,"Retired map keeps its style "+retired);
     }
 }

@@ -10,7 +10,8 @@ namespace Ashfall.Integration.Playable.Vehicles
         Transform airframe,rotor,blades,disc,tail,cone;Renderer accentRenderer;
         Material paint,dark,metal,red,green,white,transparent,accent;R24ItemAudio audioBank;AudioSource engine;
         float rotorSpeed,angle,fallSpeed;bool wasMounted,shown,falling;
-        public static Vector3 GunMuzzle {get{return new Vector3(0,-.28f,1.65f);}}
+        Transform gunPivot;
+        public void SetGunAim(float yaw,float pitch){gunPivot.localRotation=Quaternion.Euler(-pitch,yaw,0);}
         Transform mountHandles;
         public void Initialize()
         {
@@ -44,8 +45,10 @@ namespace Ashfall.Integration.Playable.Vehicles
             var starboard=new R25VehicleMesh();starboard.Loft(new Vector3(.72f,.3f,0),Quaternion.identity,new[]{-.08f,.08f},new[]{.07f,.07f},new[]{.06f,.06f},2);starboard.Attach(airframe,"Green starboard light",green);
             var lamp=new R25VehicleMesh();lamp.Loft(new Vector3(0,-.16f,1.1f),Quaternion.identity,new[]{0f,.1f},new[]{.13f,.13f},new[]{.1f,.1f},2);lamp.Attach(airframe,"Searchlight lens",white);
             var beam=new R25VehicleMesh();beam.Loft(Vector3.zero,Quaternion.Euler(65,0,0),new[]{0f,8f},new[]{.08f,1.6f},new[]{.08f,1.6f},2,24);cone=beam.Attach(airframe,"Faint night searchlight cone",transparent).transform;cone.localPosition=new Vector3(0,-.2f,1.1f);
-            // Hull-stable chin gun shares its muzzle with the gameplay ray.
-            var gun=new R25VehicleMesh();gun.Tube(new[]{GunMuzzle-Quaternion.Euler(5,0,0)*Vector3.forward*.55f,GunMuzzle},.055f,10);gun.Attach(transform,"Chin machine gun",dark);
+            var pivot=R25VehicleKinds.GunPivot("helicopter");
+            gunPivot=new GameObject("Gun gimbal").transform;gunPivot.SetParent(transform,false);gunPivot.localPosition=new Vector3(pivot.X,pivot.Y,pivot.Z);
+            var gun=new R25VehicleMesh();gun.Tube(new[]{Vector3.zero,Vector3.forward*R25VehicleKinds.GunBarrelLength("helicopter")},.055f,10);gun.Attach(gunPivot,"Chin machine gun",dark);
+            SetGunAim(0,R25VehicleKinds.RestGunPitch("helicopter"));
             audioBank=new R24ItemAudio();engine=audioBank.Voice(transform,"Helicopter rotor",-25,70,true);StartCoroutine(Load());
             mountHandles=R25VehicleMountPresentation.Create(transform,"helicopter",green);
         }

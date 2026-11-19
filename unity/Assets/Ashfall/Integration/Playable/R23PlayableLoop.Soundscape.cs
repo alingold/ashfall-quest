@@ -9,6 +9,9 @@ namespace Ashfall.Integration.Playable
         public R24SourceSoundscape Soundscape {get;private set;}
         void InitializeSoundscape()
         {
+            gameObject.AddComponent<R26MatchStartAudio>().Initialize(this);
+            gameObject.AddComponent<Ashfall.Integration.Playable.UI.R26MatchEndCelebration>().Initialize(this);
+            if(R25NetBot.Requested&&R25NetBot.Arg("-ashfallMatchEndEvidence")=="true")gameObject.AddComponent<R26MatchEndEvidence>().Initialize(this);
             Soundscape=new GameObject("Original music and environmental ambience").AddComponent<R24SourceSoundscape>();Soundscape.transform.SetParent(transform,false);Soundscape.Initialize(Rig);Soundscape.SetVolumes(UI.Settings.MusicVolume,UI.Settings.AmbienceVolume);
         }
         public void StepSoundscape(float dt,bool hardware)

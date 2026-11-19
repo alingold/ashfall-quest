@@ -14,7 +14,7 @@ namespace Ashfall.Integration.Playable.Explosives {
   // excludes Frag26/Zone28 from tiered rarity: effective level1, fixed blast rules.
   public bool SpawnWorldItem(string id,string kind,int sourceStars,Vector3 position,Quaternion rotation,bool visible=true){
    if(!Allowed(kind)||actor==null||!Finite(position)||!Finite(rotation)||items.ContainsKey(id??"")||!state.RegisterWorldCopy(id,kind,sourceStars))return false;
-   var item=new Item{Id=id,Kind=kind,Position=position,InitialPosition=position,Rotation=rotation.normalized,InitialRotation=rotation.normalized,Visible=visible};items.Add(id,item);if(Ready&&visible)CreateView(item);return true;
+   var item=new Item{Id=id,Kind=kind,Position=position,InitialPosition=position,Rotation=rotation.normalized,InitialRotation=rotation.normalized,Visible=visible,Culled=!Ashfall.Integration.Playable.World.Loot.R26PickupCulling.Within(position,Ashfall.Integration.Playable.World.Loot.R26PickupCulling.ShowRange)};items.Add(id,item);if(Ready&&visible)CreateView(item);return true;
   }
   public bool RetireUnownedWorldItem(string id){
    Item item;if(id==null||!items.TryGetValue(id,out item)||!state.RetireUnowned(id))return false;

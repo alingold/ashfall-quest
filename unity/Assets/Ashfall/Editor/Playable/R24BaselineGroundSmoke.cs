@@ -68,7 +68,7 @@ namespace Ashfall.Editor.Playable
         {
             loop.ReturnToLobby();loop.SelectMap(id,true);float end=Mathf.Min(deadline,Time.realtimeSinceStartup+65);
             while((!loop.Ready||loop.Map.MapId!=id)&&loop.Failure==null&&Time.realtimeSinceStartup<end){Bound();yield return null;}
-            Need(loop.Ready&&loop.Map.MapId==id,"Actual map load failed: "+id+" / "+loop.Failure);loop.UI.ClearMatchSelection();loop.StartPlaying();Neutral();Need(loop.ActualMatchRules==null,"Baseline Explore must not activate a match");
+            Need(loop.Ready&&loop.Map.MapId==id,"Actual map load failed: "+id+" / "+loop.Failure);loop.UI.ClearMatchSelection();loop.StartPlaying();Neutral();Need(loop.ActualMatchRules==null,"Baseline warm-up must leave the match inactive");
             end=Mathf.Min(deadline,Time.realtimeSinceStartup+65);
             while(Time.realtimeSinceStartup<end){Pump();if(loop.WorldLoot.BaselineSpawnedCount==28&&(!id.StartsWith("archive:",StringComparison.Ordinal)||loop.ArchiveWorldReady&&!loop.WorldLoot.PreparationPending&&loop.WorldLoot.CacheSourceGeneration==loop.ArchiveWorldGeneration))break;Need(loop.WorldLoot.Failure==null&&loop.ArchiveWorldFailure==null,"Actual source preparation: "+loop.WorldLoot.Failure+" / "+loop.ArchiveWorldFailure);yield return null;}
             Need(loop.WorldLoot.BaselineSpawnedCount==28,"Exactly one28-item baseline kit required: "+loop.WorldLoot.BaselineSpawnedCount);

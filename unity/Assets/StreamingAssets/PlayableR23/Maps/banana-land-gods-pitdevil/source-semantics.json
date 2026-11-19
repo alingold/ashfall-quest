@@ -1,0 +1,596 @@
+{
+ "mapId": "archive:banana-land-gods-pitdevil",
+ "coordinates": "original unreflected Godot local; runtime must reflect Z once",
+ "metadata": {
+  "map_id": "archive:banana-land-gods-pitdevil",
+  "title": "BANANA LAND",
+  "creator": "GODS_PITDEVIL",
+  "template": "MapEditorSnow",
+  "center": [
+   -15.79302464991008,
+   58.92401836746007,
+   -38.293023662976026
+  ],
+  "recorded_spawns": [
+   [
+    -200.26,
+    58.19,
+    -319.67
+   ],
+   [
+    -207.58,
+    58.19,
+    -310.56
+   ],
+   [
+    -206.28,
+    58.19,
+    -312.17
+   ],
+   [
+    -205.03,
+    58.19,
+    -313.73
+   ],
+   [
+    -203.49,
+    58.19,
+    -315.64
+   ],
+   [
+    -201.84,
+    58.19,
+    -317.7
+   ],
+   [
+    -201.31,
+    58.19,
+    -321.65
+   ],
+   [
+    -202.89,
+    58.19,
+    -319.68
+   ],
+   [
+    -204.55,
+    58.19,
+    -317.62
+   ],
+   [
+    -206.08,
+    58.19,
+    -315.71
+   ],
+   [
+    -207.34,
+    58.19,
+    -314.15
+   ],
+   [
+    -208.63,
+    58.19,
+    -312.54
+   ],
+   [
+    148.5,
+    58.19,
+    238.22
+   ],
+   [
+    141.72,
+    58.19,
+    245.0
+   ],
+   [
+    143.06,
+    58.19,
+    243.66
+   ],
+   [
+    144.51,
+    58.19,
+    242.22
+   ],
+   [
+    146.01,
+    58.19,
+    240.72
+   ],
+   [
+    147.16,
+    58.19,
+    239.56
+   ],
+   [
+    149.56,
+    58.19,
+    240.28
+   ],
+   [
+    148.22,
+    58.19,
+    241.62
+   ],
+   [
+    147.07,
+    58.19,
+    242.78
+   ],
+   [
+    145.57,
+    58.19,
+    244.28
+   ],
+   [
+    144.13,
+    58.19,
+    245.72
+   ],
+   [
+    142.78,
+    58.19,
+    247.06
+   ]
+  ],
+  "bounds_min": [
+   -384.25604248046875,
+   -76.85621643066406,
+   -427.3999938964844
+  ],
+  "bounds_max": [
+   375.3955078125,
+   422.32916259765625,
+   382.4475402832031
+  ],
+  "solid_min": [
+   -591.9595336914062,
+   -76.85621643066406,
+   -603.391845703125
+  ],
+  "solid_max": [
+   608.0418090820312,
+   422.32916259765625,
+   596.609375
+  ],
+  "source": "https://maps.deliciouswines.org/maps/banana-land-gods-pitdevil/",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map."
+ },
+ "sourceEnvironment": {
+  "background": "9db6c6",
+  "ambientColor": "c5d5e2",
+  "ambientEnergy": 0.8,
+  "sunEulerGodot": [
+   -53,
+   -28,
+   0
+  ],
+  "sunEnergy": 1,
+  "shadows": false,
+  "toneMapper": "Filmic",
+  "source": "scripts/archive_map1003.gd:70-77"
+ },
+ "semantics": {
+  "source_sha256": "a6e833cadf6025b53ef186084662264f75ed6874d0878930f04192c63594108a",
+  "cache_fingerprint": "c955da6bd6dd9eea4d63535104188e37d3671a46982019ce269a76489b39ccf1",
+  "warmup": [
+   {
+    "center": [
+     382.97791,
+     306.28238,
+     -86.63465
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     378.82294,
+     306.28238,
+     -86.76434
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     378.82294,
+     306.28238,
+     -85.35538
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     380.77548,
+     306.28238,
+     -85.35538
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     380.77548,
+     306.28238,
+     -86.65228
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     380.77548,
+     306.28238,
+     -83.93394
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     378.74323,
+     306.28238,
+     -83.93394
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     378.74323,
+     306.28238,
+     -82.44638
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     380.85641,
+     306.28238,
+     -82.44638
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     382.97791,
+     306.28238,
+     -82.44638
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     382.97791,
+     306.28238,
+     -83.85011
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   },
+   {
+    "center": [
+     382.97791,
+     306.28238,
+     -85.28899
+    ],
+    "normal": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0,
+     -0.0
+    ],
+    "evidence": "104-triangle white annulus +6-triangle direction arrow"
+   }
+  ],
+  "deathmatch": [],
+  "jump": [],
+  "health": [],
+  "marker_parts": [],
+  "decorative_collision_parts": [],
+  "source_tags_present": false,
+  "coverage": {
+   "warmup": 12,
+   "deathmatch": 0,
+   "jump": 0,
+   "health": 0,
+   "detector": "MAPKIT r26_map_treatments.py"
+  }
+ },
+ "caches": {
+  "cache_fingerprint": "c955da6bd6dd9eea4d63535104188e37d3671a46982019ce269a76489b39ccf1",
+  "sites": [
+   [
+    -239.67197,
+    58.94795,
+    236.77121
+   ],
+   [
+    -240.96945,
+    58.76444,
+    -260.75842
+   ],
+   [
+    -65.74158,
+    58.76444,
+    240.53055
+   ],
+   [
+    -0.76656,
+    58.54044,
+    246.22023
+   ],
+   [
+    -175.80235,
+    58.76705,
+    -1.10927
+   ],
+   [
+    -135.96945,
+    58.76444,
+    0.24158
+   ],
+   [
+    -0.3932,
+    61.40419,
+    231.89079
+   ],
+   [
+    -9.9992,
+    61.37306,
+    0.7845
+   ],
+   [
+    -0.24158,
+    58.76444,
+    -149.96945
+   ],
+   [
+    1.25178,
+    58.74905,
+    -192.50989
+   ],
+   [
+    -2.96946,
+    58.76444,
+    -240.46378
+   ],
+   [
+    0.25842,
+    58.76444,
+    -260.53055
+   ],
+   [
+    123.13319,
+    58.79169,
+    239.24188
+   ],
+   [
+    143.83871,
+    58.84248,
+    238.87686
+   ],
+   [
+    134.96945,
+    58.76444,
+    239.24158
+   ],
+   [
+    193.96945,
+    58.76444,
+    239.75842
+   ],
+   [
+    181.6917,
+    58.76444,
+    240.24158
+   ],
+   [
+    94.75842,
+    58.76444,
+    -0.03055
+   ],
+   [
+    179.74158,
+    58.76444,
+    0.46945
+   ],
+   [
+    225.46945,
+    58.76444,
+    -0.25842
+   ],
+   [
+    240.46945,
+    58.76444,
+    28.75842
+   ],
+   [
+    240.25842,
+    58.76444,
+    -51.96946
+   ],
+   [
+    240.75842,
+    58.76444,
+    -36.96946
+   ],
+   [
+    239.75842,
+    58.76444,
+    -16.96945
+   ],
+   [
+    240.25842,
+    58.76444,
+    -7.46945
+   ],
+   [
+    239.03055,
+    58.76444,
+    -179.74158
+   ],
+   [
+    210.25842,
+    58.76444,
+    -240.96945
+   ],
+   [
+    203.03055,
+    58.76444,
+    -239.74158
+   ],
+   [
+    240.96945,
+    58.76444,
+    -233.25842
+   ],
+   [
+    239.96945,
+    58.30108,
+    -225.75842
+   ],
+   [
+    239.96945,
+    58.76444,
+    -198.24158
+   ],
+   [
+    240.25842,
+    58.76444,
+    -249.53055
+   ],
+   [
+    261.74158,
+    58.76444,
+    -0.96945
+   ]
+  ],
+  "marker_parts": []
+ },
+ "metadataVolumes": [
+  {
+   "role": "playfield",
+   "sourceNode": "playfield",
+   "boundsMin": [
+    -41.49127197265625,
+    39.99854278564453,
+    -58.46179962158203
+   ],
+   "boundsMax": [
+    54.199554443359375,
+    50.974998474121094,
+    48.89283752441406
+   ],
+   "triangles": 12
+  }
+ ]
+}

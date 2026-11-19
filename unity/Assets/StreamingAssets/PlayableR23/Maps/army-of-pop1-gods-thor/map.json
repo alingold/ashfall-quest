@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "mapId": "archive:army-of-pop1-gods-thor",
+  "title": "ARMY OF POP1",
+  "sourceSha256": "c3a9088c4fdcd151be99fd2e8a0da294b9ac8aef9794b96d88d6c0bfdb697c0b",
+  "spawn": [
+    24.999607235214675,
+    100.12001525878907,
+    9.795693705833969
+  ],
+  "gameSpawn": [
+    24.999607235214675,
+    100.12001525878907,
+    9.795693705833969
+  ],
+  "warmupSpawn": [
+    24.999607235214675,
+    100.12001525878907,
+    9.795693705833969
+  ],
+  "boundsMin": [
+    -285.99998182369467,
+    -76.85621643066406,
+    -301.2038953530754
+  ],
+  "boundsMax": [
+    300.87799072265625,
+    173.14378356933594,
+    300.10260009765625
+  ],
+  "materials": [
+    {
+      "name": "pb8a19331",
+      "color": "pb8a19331_c.png",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": true,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 1
+    },
+    {
+      "name": "sg",
+      "color": "sg_c.jpg",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t124",
+      "color": "t124_c.jpg",
+      "normal": "t124_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t22",
+      "color": "t22_c.jpg",
+      "normal": "t22_n.jpg",
+      "metallic": 0.35,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t51",
+      "color": "t51_c.jpg",
+      "normal": "t51_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t52",
+      "color": "t52_c.jpg",
+      "normal": "t52_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "t53",
+      "color": "t53_c.jpg",
+      "normal": "t53_n.jpg",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "vc",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 0.72,
+      "alpha": false,
+      "vertexColor": true,
+      "normalScale": 0.6,
+      "cull": 2,
+      "transparency": 0
+    },
+    {
+      "name": "source-walkthrough",
+      "color": "",
+      "normal": "",
+      "metallic": 0,
+      "roughness": 1,
+      "alpha": false,
+      "vertexColor": true,
+      "cull": 2
+    }
+  ],
+  "chunks": 68,
+  "cameraFarDistance": 2000
+}

@@ -8,10 +8,13 @@ namespace Ashfall.Integration.Playable.HandsWeapons
     {
         public const string Id="m1014",AmmoFamily="shells";
         public const int Capacity=6,Pellets=8;
-        public const float Interval=.29071666666667395f,PelletDamage=9.625f,Range=40,ModelScale=1;
+        public const float Interval=.29071666666667395f,PelletDamage=9.625f,Range=SourceRifleDefinition.FirearmRange,ModelScale=1;
         public static readonly Float3 Muzzle=new Float3(0,.045f,.77f),Offer=new Float3(0,-.25f,.14f),Socket=new Float3(0,-.10f,.14f),Handle=new Float3(.06f,.045f,.10f),Foregrip=new Float3(0,-.025f,.36f);
-        public static float DamageAtDistance(float distance)
-        {if(Single.IsNaN(distance)||Single.IsInfinity(distance)||distance<0||distance>Range)return 0;return PelletDamage*(1-.75f*Math.Max(0,Math.Min(1,(distance-8)/17)));}
+        // Shared by every local and host shotgun: full to 8 m, linear to 25% at 25 m, then 25% within firearm reach.
+        public const float FalloffStart=8,FalloffEnd=25,MinimumDamageScale=.25f;
+        public static float DamageScaleAtDistance(float distance)
+        {if(Single.IsNaN(distance)||Single.IsInfinity(distance)||distance<0||distance>Range)return 0;return 1-(1-MinimumDamageScale)*Math.Max(0,Math.Min(1,(distance-FalloffStart)/(FalloffEnd-FalloffStart)));}
+        public static float DamageAtDistance(float distance){return PelletDamage*DamageScaleAtDistance(distance);}
     }
     public struct R23M1014Pose
     {

@@ -1,0 +1,153 @@
+{
+  "mapId": "archive:spherical-war-swt-estephen08",
+  "title": "SPHERICAL WAR",
+  "creator": "SWT_Estephen08",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "bb450e13e8854573966edf9fe7a4e51df6aa09c490876cddcf88fa54a755965d",
+    "cached live map.glb": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/spherical-war-swt-estephen08/map.glb": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+    "https://maps.deliciouswines.org/maps/spherical-war-swt-estephen08/map.json": "bb450e13e8854573966edf9fe7a4e51df6aa09c490876cddcf88fa54a755965d"
+  },
+  "sourceGlbSha256": "9950329647002e17455b7fbaff28e9f1d4d90f1f776f8c7c18cb1f34a9c08c06",
+  "cacheFingerprint": "27405806ef37646d200ee1adb12e4f638ec8280e27893734974c5484f536366a",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 38296,
+  "sourceRoles": {
+    "world": 38296,
+    "boundary": 16,
+    "killzone": 32,
+    "playfield": 12
+  },
+  "renderTriangles": 38296,
+  "collisionTriangles": 38312,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 32,
+  "materials": 11,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "p8ad59c41_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/42ca2d72a4c099ba57959d3a263a99d2ae65edb3e03099ca437f875b41bbef8c.jpg",
+      "sha256": "5d5ff7ffe8ee01ea2c771f15c5d3e0e4471dee8b58eff291b65bf8e3985751b7",
+      "bytes": 19014
+    },
+    "p8ad59c41_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a1c47938f08e7231cf50cec7c867705c9fd3873fea0f7756d686ef1bb5643ebf.jpg",
+      "sha256": "54bc3b7ea1910a1fa89c4cb81b5e661fe839b3b1dda87f4e37eec66db47a64db",
+      "bytes": 31523
+    },
+    "p95447a31_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/5377d634497fa19017e3f88653ddbfb8f4ea1f0e1eea2486502b6ea1beedd5cf.jpg",
+      "sha256": "148f6b0ab55317b41779f507ac5870def8a45315ec75db36489c83880f59cb50",
+      "bytes": 44323
+    },
+    "p95447a31_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/c5be8d3388202d279c893d49d7879263c795bb74b1e432eead69883769279839.jpg",
+      "sha256": "53409ca799eeac4f6199c6835f7a511e1cb325a41057011f6d8d4ab88d977e96",
+      "bytes": 58806
+    },
+    "pb8a19331_c.png": {
+      "source": "authoring/textures-v1/out/by-sha/5eeee96ff19132d155c270af67cd64b1ef4c20627f363ade1cfaeb4e5aed913f.png",
+      "sha256": "c3f48b86ec7e938b587fc4109d0bfb4e22e0063ed59e73538bea0070691dd87e",
+      "bytes": 12129
+    },
+    "pd959969c_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/10ea7ab836cd8286ca05426ae286cc32da8bbe99ad547bf27fc3d95f3801ebde.jpg",
+      "sha256": "e6f87f1a80398a15a556ae59a6e6a5b369706eb6e65a23554365ca0d826f821d",
+      "bytes": 39563
+    },
+    "pd959969c_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/042f2a3cf1581114d253d4abb579700232c7cbaac50b53e5b39a10f9c2780fde.jpg",
+      "sha256": "5d61bb162dc09aad7e95cd6c06af834c764b072702ad7c72b2cc14749fd610bb",
+      "bytes": 59240
+    },
+    "pee49fa59_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/dec5f7da6a585990fd9f09cb4007ea530d510ed795042b0a316d5d191ad87faf.jpg",
+      "sha256": "fe105cd3800fd4203fb9c962907cde02c9693f7b6d6d4ac19758d6ac4975bfce",
+      "bytes": 46484
+    },
+    "pee49fa59_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/e16febf33b5a4a18c8b2805cf36d57db97b34137b1adbcd56e12ab4a398c0b69.jpg",
+      "sha256": "bfa5a23a117b61d49aadeeebf7a0764d1565b492f35ac9ab952fcb634fd03943",
+      "bytes": 59955
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/55db55e0a047fba34146515d0a8cb9d0435a78aec8a382165b57d186ae884d38.jpg",
+      "sha256": "23c2ad365d91f1ebd3711d455068a5ec700590cadc9954fe5a7b6b7eefd6a541",
+      "bytes": 541884
+    },
+    "t33_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/98c11bd40bc9c85ec9625f41238b45cb125f9691ce14c8633bcb11d3f1f38261.jpg",
+      "sha256": "3db2aa8e8262adf12ed3424becefddde98f710df73b72f1ee14bcf02068b842f",
+      "bytes": 63963
+    },
+    "t33_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/a1ed66cda44c18308a50f5ca978036b22d7aa8a1c7010cb8480480f40cdc3f2d.jpg",
+      "sha256": "4528fafc8c4ec6a029e0c9e0ce1bc6a03e99da2b78616f988223cdf00665dbb3",
+      "bytes": 104850
+    },
+    "t83_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/63b8510a310ca8a044081c9a732cc91e7db92aae6f57f851260dd19323310edc.jpg",
+      "sha256": "8b145f52f33491ad66d7b19e46946639f5c3aec7a2ec4b33c3057247e1d09af1",
+      "bytes": 58033
+    },
+    "t83_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/4906fad9a8b4d300ddd2906522e76633a2ddb62ac1f19dd764a342b1828edab5.jpg",
+      "sha256": "f4589fe1ef4aaeaa3b3369a502f81f646a114103c80fe32983c9f8519b3ae7ad",
+      "bytes": 24909
+    }
+  },
+  "spawn": [
+    -8.09,
+    64.04491013212785,
+    74.41
+  ],
+  "warmupSpawn": [
+    11.09,
+    64.10856151746754,
+    74.91
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "acf5fd77bd690f1763cf48065c5978d0ce540e72a9f626b396edfc98a951b33c",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 0.314,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "14a9758ca8fb348d64212c5b59275c5aa7535935886d1da49b12e50a0aaa4d7b",
+  "sourceRetainedCollisionAttributesSha256": "87f12f8d6ae07e850c162e30cb68e885356b0eedd2dc1181ae2421927bd081a5",
+  "payloadBytes": 2947472,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/spherical-war-swt-estephen08/",
+  "archivePage": "https://maps.deliciouswines.org/m/spherical-war-swt-estephen08/",
+  "sourceFirst": "2026-11-09",
+  "sourceLast": "2026-11-09",
+  "archiveCaptureId": "cc91757a-9e37-4b04-87d0-c6ebb559d5f2",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "bb450e13e8854573966edf9fe7a4e51df6aa09c490876cddcf88fa54a755965d",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "339f62617f8df0b49a664ebd5da9d079e7ae9e8be2af9de4f4d0a3f24505e8ad"
+}

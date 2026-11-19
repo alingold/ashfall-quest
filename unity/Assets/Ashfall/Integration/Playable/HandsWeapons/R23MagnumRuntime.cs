@@ -18,7 +18,7 @@ namespace Ashfall.Integration.Playable.HandsWeapons
     {
         public const string Id="magnum",DisplayName="MAGNUM",AmmoFamily="pistol";
         public const int Capacity=7,InitialPistolReserve=1200;
-        public const float Interval=1f/3f,BodyDamage=63,HeadDamage=81,ModelScale=.84f,MaximumRange=180;
+        public const float Interval=1f/3f,BodyDamage=63,HeadDamage=81,ModelScale=.84f,MaximumRange=SourceRifleDefinition.FirearmRange;
         public static readonly Float3 SourceMuzzle=new Float3(0,.065f,.392f);
         readonly string instanceId;readonly IRevisionedAmmoReserve reserve;readonly WeaponHandling owner;readonly int starter;readonly R23RarityStats rarity;
         long tick,sequence;bool retired,previousClick=true,stickDown=true,previousDesktop=true,pendingShot;
@@ -77,12 +77,12 @@ public string InstanceId {get{return instanceId;}}
         // Same owner-side health operation as the existing local practice lane. Caller
         // supplies its real HealthService and world-occluded hit; never a second HP pool.
         // The caller drains health transitions after the operation, including rejection.
-        public bool TryApplyHit(HealthService health,CommandContext command,IInteractionQuery query,string target,Float3 origin,Float3 point,bool headshot,out DamageReceipt receipt)
+        public bool TryApplyHit(HealthService health,CommandContext command,IInteractionQuery query,string target,Float3 origin,Float3 point,bool headshot,out DamageReceipt receipt,float headshotMultiplier=1)
         {
             receipt=null;if(!pendingShot||retired)return false;pendingShot=false;
             if(health==null||query==null||string.IsNullOrEmpty(target)||!origin.IsFinite||!point.IsFinite)return false;
             float x=point.X-origin.X,y=point.Y-origin.Y,z=point.Z-origin.Z;if(x*x+y*y+z*z>MaximumRange*MaximumRange||!query.HasLineOfSight(command.ActorId,target,origin,point,MaximumRange))return false;
-            var before=health.Read(target);if(before==null||before.Life!=LifeState.Alive)return false;float amount=headshot?rarity.HeadDamage:rarity.BodyDamage,shield=Math.Min(before.Shield,amount),loss=Math.Min(before.Health,amount-shield);
+            var before=health.Read(target);if(before==null||before.Life!=LifeState.Alive)return false;float amount=headshot?rarity.HeadDamage*(float.IsNaN(headshotMultiplier)||float.IsInfinity(headshotMultiplier)||headshotMultiplier<0?1:headshotMultiplier):rarity.BodyDamage,shield=Math.Min(before.Shield,amount),loss=Math.Min(before.Health,amount-shield);
             receipt=health.ApplyDamage(command,command.CommandId,target,before.Revision,loss,shield,false);return receipt.Result.Accepted;
         }
     }

@@ -201,13 +201,19 @@ namespace Ashfall.Integration.Sessions
             }
             finally { Finish(); }
         }
-        public RuleResult Lifecycle(CommandContext context,LifecycleAction action,SessionRules next,string mapHash,bool match)
+        public RuleResult Lifecycle(CommandContext context,LifecycleAction action,SessionRules next,string mapHash,bool match,bool externalLoadingTimeout=false)
         {
             if(System.Threading.Thread.CurrentThread.ManagedThreadId!=hostThread || admitting || applying || dispatching)return RuleResult.Reject("reentry");
             RuleResult r=lifecycleAuthority.Validate(context); if(!r.Accepted)return r;
             Start(context);
-            try { return session.Lifecycle(context,action,next,mapHash,match); }
+            try { return session.Lifecycle(context,action,next,mapHash,match,externalLoadingTimeout); }
             finally { Finish(); }
+        }
+        public RuleResult SetLobbyTeams(CommandContext context,int count,string actor,int team)
+        {
+            if(System.Threading.Thread.CurrentThread.ManagedThreadId!=hostThread||admitting||applying||dispatching)return RuleResult.Reject("reentry");
+            RuleResult r=lifecycleAuthority.Validate(context);if(!r.Accepted)return r;
+            Start(context);try{return session.SetLobbyTeams(context,count,actor,team);}finally{Finish();}
         }
         // Trusted authoritative health event; deliberately absent from client feature dispatch.
         public RuleResult Eliminate(CommandContext context)

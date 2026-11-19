@@ -3,11 +3,11 @@ namespace Ashfall.Integration.Playable.HandsWeapons
 {
     public static class R24Dt11Definition
     {
-        public const string Id="dt11",Family="shells";public const int Capacity=2,Pellets=8;public const float Interval=.2f,Scale=1.6f,Range=40,PelletDamage=12,ChamberFit=.4269203092f;
+        public const string Id="dt11",Family="shells";public const int Capacity=2,Pellets=8;public const float Interval=.2f,Scale=1.6f,Range=R23M1014Definition.Range,PelletDamage=12,ChamberFit=.4269203092f;
         public static readonly Float3 Muzzle=new Float3(0,.04f,.65f),Hinge=new Float3(0,-.135f,.13f),Foregrip=new Float3(0,-.025f,.36f);
         static Float3 Moving(Float3 p,float angle){float c=(float)Math.Cos(angle),s=(float)Math.Sin(angle);return new Float3(p.X,Hinge.Y+p.Y*c-p.Z*s,Hinge.Z+p.Y*s+p.Z*c);}
         public static Float3 Chamber(float angle){return Moving(new Float3(0,.175f,-.017f),angle);}public static Float3 Offer(float angle){var a=Chamber(angle);return new Float3(a.X,a.Y+.11f-.0127f/Scale,a.Z);}public static Float3 CloseGrip(float angle){var a=Moving(new Float3(0,.09f,.27f),angle);return new Float3(a.X,a.Y,a.Z-.06f);}
-        public static float DamageAtDistance(float distance){return float.IsNaN(distance)||float.IsInfinity(distance)||distance<0||distance>Range?0:PelletDamage*(1-.75f*Math.Max(0,Math.Min(1,(distance-8)/17)));}
+        public static float DamageAtDistance(float distance){return PelletDamage*R23M1014Definition.DamageScaleAtDistance(distance);}
         public static bool Reach(Float3 point,Float3 centre,float radius){float x=(point.X-centre.X)*Scale,y=(point.Y-centre.Y)*Scale,z=(point.Z-centre.Z)*Scale;if(!point.IsFinite||!centre.IsFinite||x*x+y*y+z*z>.34f*.34f)return false;x=Math.Max(0,Math.Abs(x)-.035f);if(z>0)z=Math.Max(0,z-.04f);return x*x+y*y+z*z<Math.Pow(Math.Min(radius+.055f,.30f),2);}
     }
     public sealed class R24Dt11Volley

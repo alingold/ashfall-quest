@@ -50,6 +50,7 @@ namespace Ashfall.Integration.Playable
         {
             if (!R25Features.HeadOverlapRecovery || !UseSourceHeadHull || !Tracking || Head == null || HeadCollision == null || !HeadCollision.Ready) return;
             bool carrier = CarrierActive || carrierWroteRoot;
+            HeadCollision.ObserveEyeLag();
             Vector3 head = Head.transform.position;
             // R5 (playtest 4 wall vibration): with the 12 cm eye sphere, rubbing
             // along a wall kept the eye inside the walking margin, so "stuck"
@@ -156,16 +157,16 @@ namespace Ashfall.Integration.Playable
             return requested;
         }
 
-        // Walking may step up at most bodyColumn.StepHeight. A taller rise found
-        // under the eye during a walk step undoes this frame's walk instead (the
-        // previous position was supported), so the player is never popped on top
-        // of a table or railing and never loses the floor beneath them.
-        bool RefuseWalkStep(bool walked, float rise, Vector3 before)
+        // Support may step up to the chin of the stance before any clearance crouch.
+        // A taller rise undoes this frame's walk to its previous supported position.
+        bool RefuseWalkStep(bool walked, float rise, Vector3 before, float eyeHeight)
         {
             // R4: the chin limit applies to every ordinary support step-up (walk
             // or physical lean); only a walk is also undone to its last support.
-            float eyeHeight = Head.transform.position.y - transform.position.y;
+            // Use the stance before support resolution crouches under a window header.
+            // Testing the lowered eye rejects a valid sill against the crouched chin.
             if (!bodyColumn.RefuseWalkStep(true, rise, eyeHeight)) return false;
+            TraceNote("step-over-chin", rise, eyeHeight);
             if (walked)
             {
                 body.enabled = false;

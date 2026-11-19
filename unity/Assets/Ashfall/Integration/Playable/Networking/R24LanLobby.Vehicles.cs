@@ -12,15 +12,23 @@ namespace Ashfall.Integration.Playable.Networking
     {
         public readonly string Id, Rider;
         public readonly string Kind;
-        public readonly float TurretYaw;public readonly double FiredAt;
+        // TurretYaw is absolute for the tank and hull-local for the fixed mounts.
+        public readonly float TurretYaw,GunPitch;public readonly double FiredAt;
+        // r19: the rider's pulled eject-handle travel (m) and helicopter collective (-1..1), replicated for remote views.
+        public readonly float HandlePull,Collective;
         public readonly Float3 Home, Rest;
         public readonly float HomeYaw, Yaw, Health;
         public readonly double RespawnAt;
         public readonly long Revision;
+        internal R25VehicleState WithSeat(float pull,float collective,long revision=-1)
+        {return new R25VehicleState(Id,Home,HomeYaw,Rest,Yaw,Health,Rider,RespawnAt,revision<0?Revision:revision,Kind,TurretYaw,FiredAt,GunPitch,pull,collective);}
         public bool Destroyed { get { return Health<=0; } }
         internal R25VehicleState(string id,Float3 home,float homeYaw,Float3 rest,float yaw,
             float health,string rider,double respawn,long revision,string kind="hoverbike",float turretYaw=0,double firedAt=0)
-        {Kind=kind;TurretYaw=turretYaw;FiredAt=firedAt;Id=id;Home=home;HomeYaw=homeYaw;Rest=rest;Yaw=yaw;Health=health;Rider=rider;RespawnAt=respawn;Revision=revision;}
+            :this(id,home,homeYaw,rest,yaw,health,rider,respawn,revision,kind,turretYaw,firedAt,R25VehicleKinds.RestGunPitch(kind)){}
+        internal R25VehicleState(string id,Float3 home,float homeYaw,Float3 rest,float yaw,
+            float health,string rider,double respawn,long revision,string kind,float turretYaw,double firedAt,float gunPitch,float handlePull=0,float collective=0)
+        {HandlePull=handlePull;Collective=collective;Kind=kind;TurretYaw=turretYaw;GunPitch=gunPitch;FiredAt=firedAt;Id=id;Home=home;HomeYaw=homeYaw;Rest=rest;Yaw=yaw;Health=health;Rider=rider;RespawnAt=respawn;Revision=revision;}
     }
     public sealed partial class R24LanLobby
     {
@@ -146,14 +154,18 @@ namespace Ashfall.Integration.Playable.Networking
             if(!vehiclePending.TryGetValue(peer,out rows)){rows=new Dictionary<string,byte[]>(StringComparer.Ordinal);vehiclePending[peer]=rows;}
             rows[id]=frame;
         }
-        void PublishVehicle(R25VehicleState row)
-        {vehicles[row.Id]=row;byte[] frame=VehicleFrame(row);foreach(var p in peers)if(p.Value.Admitted)PendingVehicle(p.Key,row.Id,frame);}
+        void PublishVehicle(R25VehicleState row,bool seatExplicit=false)
+        {
+            // Republishes by other commands (aim, damage, mount) keep the current rider's seat state.
+            R25VehicleState old;
+            if(!seatExplicit&&row.Rider!=""&&row.HandlePull==0&&row.Collective==0&&vehicles.TryGetValue(row.Id,out old)&&old.Rider==row.Rider&&(old.HandlePull!=0||old.Collective!=0))row=row.WithSeat(old.HandlePull,old.Collective);
+            vehicles[row.Id]=row;byte[] frame=VehicleFrame(row);foreach(var p in peers)if(p.Value.Admitted)PendingVehicle(p.Key,row.Id,frame);}
         byte[] VehicleFrame(R25VehicleState row)
         {
             using(var s=new MemoryStream())using(var w=new BinaryWriter(s,Utf8)){
                 Write(w,row.Id,32);Write(w,row.Kind,10);if(row.Rider=="")w.Write((ushort)0);else Write(w,row.Rider,64);
                 foreach(var v in new[]{row.Home,row.Rest}){w.Write(v.X);w.Write(v.Y);w.Write(v.Z);}
-                w.Write(row.HomeYaw);w.Write(row.Yaw);w.Write(row.Health);w.Write(row.RespawnAt);w.Write(row.TurretYaw);w.Write(row.FiredAt);
+                w.Write(row.HomeYaw);w.Write(row.Yaw);w.Write(row.Health);w.Write(row.RespawnAt);w.Write(row.TurretYaw);w.Write(row.FiredAt);w.Write(row.GunPitch);w.Write(row.HandlePull);w.Write(row.Collective);
                 return Packet(PacketKind.Snapshot,VehicleFeature,OwnActor,s.ToArray(),row.Revision);
             }
         }
@@ -166,14 +178,17 @@ namespace Ashfall.Integration.Playable.Networking
                 string id=Read(r,32),kind=Read(r,10),rider=ReadVehicleRider(r);
                 var home=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());
                 var rest=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());
-                float hy=r.ReadSingle(),yaw=r.ReadSingle(),health=r.ReadSingle();double respawn=r.ReadDouble();float turret=r.ReadSingle();double fired=r.ReadDouble();
+                float hy=r.ReadSingle(),yaw=r.ReadSingle(),health=r.ReadSingle();double respawn=r.ReadDouble();float turret=r.ReadSingle();double fired=r.ReadDouble();float pitch=r.ReadSingle();float seatPull=r.ReadSingle(),seatCollective=r.ReadSingle();
                 if(s.Position!=s.Length||!R25VehicleKinds.Valid(kind)||!VehiclePoint(home)||!VehiclePoint(rest)||
                     !Finite(hy)||!Finite(yaw)||Math.Abs(hy)>360||Math.Abs(yaw)>360||!Finite(health)||health<0||health>R25VehicleKinds.Health(kind)||!Finite(turret)||Math.Abs(turret)>360||!Finite(fired)||fired<0||
+                    !Finite(seatPull)||seatPull<0||seatPull>R26VehicleSeat.MaxPull+.001f||!Finite(seatCollective)||Math.Abs(seatCollective)>1.001f||rider==""&&(seatPull!=0||seatCollective!=0)||
+                    !Finite(pitch)||(kind=="tank"?pitch<TankPitchMinimum||pitch>TankPitchMaximum:
+                        !R25VehicleKinds.GunDirectionAllowed(R25VehicleKinds.AimDirection(turret,pitch),0))||
                     !Finite(respawn)||respawn<0||health==0&&rider!=""||health>0&&respawn!=0||
                     !vehicles.ContainsKey(id)&&vehicles.Count>=16)return;
                 foreach(var row in vehicles.Values)if(rider!=""&&row.Id!=id&&row.Rider==rider)return;
                 R25VehicleState prior;if(vehicles.TryGetValue(id,out prior)&&prior.Revision>=packet.Sequence)return;
-                vehicles[id]=new R25VehicleState(id,home,hy,rest,yaw,health,rider,respawn,packet.Sequence,kind,turret,fired);
+                vehicles[id]=new R25VehicleState(id,home,hy,rest,yaw,health,rider,respawn,packet.Sequence,kind,turret,fired,pitch,seatPull,seatCollective);
             }}catch(IOException){}catch(ArgumentException){}
         }
         // Lobby.Read requires nonempty text; rider intentionally permits an empty seat.
@@ -209,7 +224,7 @@ namespace Ashfall.Integration.Playable.Networking
                 rawWorldClear==null||!rawWorldClear(raw.Pose.Head.Position,VehicleMountMarker(row,hand==0?raw.Pose.Left.Position:raw.Pose.Right.Position)))return false;
             foreach(var bike in vehicles.Values)if(bike.Rider==actor)return false;
             RemoveWeb(actor);
-            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,actor,0,++vehicleSequence,row.Kind,row.TurretYaw,row.FiredAt));return true;
+            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Rest,row.Yaw,row.Health,actor,0,++vehicleSequence,row.Kind,row.Kind=="tank"?row.TurretYaw:0,row.FiredAt));return true;
         }
         public bool RequestVehicleDismount(string id,Float3 rest,float yaw)
         {
@@ -234,36 +249,38 @@ namespace Ashfall.Integration.Playable.Networking
             }
             return row.Yaw;
         }
-        bool ApplyVehicleDismount(string actor,string id,Float3 rest,float yaw)
+        // handlePull is NaN-free and negative for the legacy exits (fallback hold, recovery, cancel); a handle exit must match the pull the host recorded.
+        bool ApplyVehicleDismount(string actor,string id,Float3 rest,float yaw,float handlePull=-1)
         {
             R25VehicleState row;
             if(!VehiclesLive||!vehicles.TryGetValue(id,out row)||row.Rider!=actor)return false;
+            if(Single.IsNaN(handlePull)||Single.IsInfinity(handlePull)||handlePull>=0&&(!R26VehicleSeat.PullEjects(handlePull)||!R26VehicleSeat.PullEjects(row.HandlePull)))return false;
             var root=VehicleRoot(row);
             // Aircraft may park directly below an airborne rider, on clear supported ground.
             bool below=row.Kind=="helicopter"&&VehiclePoint(rest)&&Math.Abs(root.X-rest.X)<.05f&&Math.Abs(root.Z-rest.Z)<.05f&&rest.Y<=root.Y+.1f&&root.Y-rest.Y<=2000&&rawWorldClear!=null&&rawWorldClear(root,rest)&&!rawWorldClear(rest,new Float3(rest.X,rest.Y-.7f,rest.Z));
             if(!below&&(!VehiclePoint(rest)||Distance2(root,rest)>9||rawWorldClear==null||!rawWorldClear(root,rest)))rest=root;
             if(!Finite(yaw)||Math.Abs(yaw)>360)yaw=row.Yaw;
-            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,rest,yaw,row.Health,"",0,++vehicleSequence,row.Kind,row.TurretYaw,row.FiredAt));return true;
+            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,rest,yaw,row.Health,"",0,++vehicleSequence,row.Kind,row.Kind=="tank"?row.TurretYaw:0,row.FiredAt));return true;
         }
         void ReadVehicleCommand(string actor,string feature,byte[] bytes)
         {
             try{using(var s=new MemoryStream(bytes))using(var r=new BinaryReader(s,Utf8)){
                 string id=Read(r,32);
-                if(feature==VehicleFire){if(s.Position==s.Length)ApplyTankFire(actor,id);else ReadVehicleMode(actor,id,r,s);}
+                if(feature==VehicleFire){if(s.Position==s.Length)ApplyTankFire(actor,id);else if(!ReadVehicleSeatMode(actor,id,r,s))ReadVehicleMode(actor,id,r,s);}
                 else if(feature==VehicleMount){int hand=r.ReadByte();if(s.Position==s.Length)ApplyVehicleMount(actor,id,hand);}
-                else{var rest=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());float yaw=r.ReadSingle();if(s.Position==s.Length)ApplyVehicleDismount(actor,id,rest,yaw);}
+                else{var rest=new Float3(r.ReadSingle(),r.ReadSingle(),r.ReadSingle());float yaw=r.ReadSingle(),pull=-1;if(s.Position!=s.Length)pull=r.ReadSingle();if(s.Position==s.Length)ApplyVehicleDismount(actor,id,rest,yaw,pull);}
             }}catch(IOException){}catch(ArgumentException){}
         }
         void EjectVehicleRider(string actor)
         {
             foreach(var row in new List<R25VehicleState>(vehicles.Values))if(row.Rider==actor)
-                PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,VehicleRoot(row),VehicleYaw(row),row.Health,"",0,++vehicleSequence,row.Kind,row.TurretYaw,row.FiredAt));
+                PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,VehicleRoot(row),VehicleYaw(row),row.Health,"",0,++vehicleSequence,row.Kind,row.Kind=="tank"?row.TurretYaw:0,row.FiredAt));
         }
         internal bool DamageVehicle(string id,float amount,bool bullet=false)
         {
             R25VehicleState row;if(!VehiclesLive||!Finite(amount)||amount<=0||!vehicles.TryGetValue(id,out row)||row.Destroyed)return false;
             float health=Math.Max(0,row.Health-amount*(bullet?R25VehicleKinds.BulletScale(row.Kind):1));
-            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,VehicleRoot(row),VehicleYaw(row),health,health==0?"":row.Rider,health==0?clock.Now+20:0,++vehicleSequence,row.Kind,row.TurretYaw,row.FiredAt));return true;
+            PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,VehicleRoot(row),VehicleYaw(row),health,health==0?"":row.Rider,health==0?clock.Now+20:0,++vehicleSequence,row.Kind,row.TurretYaw,row.FiredAt,row.GunPitch));return true;
         }
         // Chassis OBB, centered on hover root; no rider impact/contact damage.
         internal static float VehicleBoxRay(Float3 origin,Float3 direction,Float3 center,float yaw,float range,float margin=0,string kind="hoverbike")
@@ -305,14 +322,13 @@ namespace Ashfall.Integration.Playable.Networking
         {
             if(State==R24LanLobbyState.Hosting){
                 SpawnVehicles();SpawnTank();SpawnHelicopter();
-                TickTankTurrets();
                 foreach(var row in new List<R25VehicleState>(vehicles.Values)){
                     R24LanRawTrackingSample raw;
                     TickHelicopterContact(row);
-                    if(row.Rider!=""&&row.Kind=="helicopter"&&!GameplayRules.Helicopters)EjectVehicleRider(row.Rider);
+                    if(row.Rider!=""&&(row.Kind=="helicopter"&&!GameplayRules.Helicopters||row.Kind=="tank"&&!GameplayRules.Tanks)){EjectVehicleRider(row.Rider);continue;}
                     if(row.Rider!=""&&!VehicleRiderReady(row.Rider,out raw))EjectVehicleRider(row.Rider);
                     if(VehiclesLive&&row.Destroyed&&clock.Now>=row.RespawnAt)
-                        PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Home,row.HomeYaw,R25VehicleKinds.Health(row.Kind),"",0,++vehicleSequence,row.Kind,row.HomeYaw,0));
+                        PublishVehicle(new R25VehicleState(row.Id,row.Home,row.HomeYaw,row.Home,row.HomeYaw,R25VehicleKinds.Health(row.Kind),"",0,++vehicleSequence,row.Kind,row.Kind=="tank"?row.HomeYaw:0,0));
                 }
                 vehicleTick=clock.Now;
                 foreach(var peer in new List<string>(vehiclePending.Keys)){
@@ -321,6 +337,42 @@ namespace Ashfall.Integration.Playable.Networking
                     if(rows.Count==0)vehiclePending.Remove(peer);
                 }
             }
+        }
+        // r19 VEHICLES19: seat state (eject-handle pull, helicopter collective) rides vehicle.fire/1 mode 4 and the host's vehicle.state/1.
+        const byte VehicleModeSeat=4;
+        public int AcceptedVehicleSeatUpdates{get;private set;}
+        public string LastVehicleSeatRejection{get;private set;}
+        public bool RequestVehicleSeat(string id,float pull,float collective)
+        {
+            Check();if(!Wire.IsText(id,32,false)||Single.IsNaN(pull)||Single.IsInfinity(pull)||Single.IsNaN(collective)||Single.IsInfinity(collective))return false;
+            if(State==R24LanLobbyState.Hosting)return ApplyVehicleSeat(OwnActor,id,pull,collective);
+            return SendVehicleMode(id,VehicleModeSeat,new[]{pull,collective});
+        }
+        // Handle exit: the dismount carries the pull; the host accepts it only if it also recorded a pull past the threshold.
+        public bool RequestVehicleDismountHandle(string id,Float3 rest,float yaw,float pull)
+        {
+            Check();if(!Wire.IsText(id,32,false)||Single.IsNaN(pull)||Single.IsInfinity(pull)||pull<0)return false;
+            if(State==R24LanLobbyState.Hosting)return ApplyVehicleDismount(OwnActor,id,rest,yaw,pull);
+            if(State!=R24LanLobbyState.Connected)return false;
+            using(var s=new MemoryStream())using(var w=new BinaryWriter(s,Utf8)){Write(w,id,32);w.Write(rest.X);w.Write(rest.Y);w.Write(rest.Z);w.Write(yaw);w.Write(pull);return QueueGameCommand(VehicleDismount,s.ToArray());}
+        }
+        bool ReadVehicleSeatMode(string actor,string id,BinaryReader r,Stream s)
+        {
+            long start=s.Position;byte mode=r.ReadByte();
+            if(mode!=VehicleModeSeat){s.Position=start;return false;}
+            float pull=r.ReadSingle(),collective=r.ReadSingle();if(s.Position==s.Length)ApplyVehicleSeat(actor,id,pull,collective);
+            return true;
+        }
+        bool RejectVehicleSeat(string why){LastVehicleSeatRejection=why;return false;}
+        bool ApplyVehicleSeat(string actor,string id,float pull,float collective)
+        {
+            R25VehicleState row;R24LanRawTrackingSample raw;
+            if(!Finite(pull)||pull<0||pull>R26VehicleSeat.MaxPull+.001f||!Finite(collective)||Math.Abs(collective)>1.001f)return RejectVehicleSeat("range");
+            if(ControlsBlocked(actor)||!VehicleRiderReady(actor,out raw)||!vehicles.TryGetValue(id,out row)||row.Destroyed||row.Rider!=actor)return RejectVehicleSeat("rider");
+            pull=Math.Min(R26VehicleSeat.MaxPull,pull);collective=row.Kind=="helicopter"?Math.Max(-1,Math.Min(1,collective)):0;
+            AcceptedVehicleSeatUpdates++;
+            if(Math.Abs(row.HandlePull-pull)<.0005f&&Math.Abs(row.Collective-collective)<.0005f)return true;
+            PublishVehicle(row.WithSeat(pull,collective,++vehicleSequence),true);return true;
         }
     }
 }

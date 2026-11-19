@@ -12,7 +12,7 @@ using Ashfall.Integration.Playable.HandsWeapons;
 namespace Ashfall.Integration.Playable.World
 {
     /// <summary>Actual R23 local map payloads; frame-yielding load on desktop and Android.</summary>
-    public sealed class R23PlayableMap : MonoBehaviour
+    public sealed partial class R23PlayableMap : MonoBehaviour
     {
         public Vector3 Spawn { get { return transform.TransformPoint(localSpawn); } }
         public Vector3 WarmupSpawn { get { return transform.TransformPoint(localWarmupSpawn); } }
@@ -54,6 +54,10 @@ namespace Ashfall.Integration.Playable.World
                 return b;
             }
         }
+        const float FallFailsafeDepth=100f;
+        public float FallFailsafeY { get; private set; }
+        public bool IsBelowFallFailsafe(float feetY)
+        {return IsLoaded&&!Single.IsNegativeInfinity(feetY)&&feetY<FallFailsafeY;}
         public bool IsLoaded { get; private set; }
         public bool IsLoading { get; private set; }
         public string LoadError { get; private set; }
@@ -333,6 +337,7 @@ namespace Ashfall.Integration.Playable.World
             }
 
             yield return null;
+            BeginAuthoringMarkers();
             for(int chunk=0;chunk<manifest.chunks;chunk++)
             {
                 try{BuildChunk(geometryReader,chunk);}catch(Exception e){Fail(e);}
@@ -362,10 +367,12 @@ namespace Ashfall.Integration.Playable.World
             localWarmupSpawn=manifest.warmupSpawn==null?localSpawn:Vec(manifest.warmupSpawn);
             localGameSpawn=manifest.gameSpawn==null?localSpawn:Vec(manifest.gameSpawn);
             localRecordedSpawn=manifest.recordedSpawn==null?localSpawn:Vec(manifest.recordedSpawn);
+            ApplyReviewedSpawnDefaults();
             Title=manifest.title;
             if(Single.IsNaN(manifest.cameraFarDistance)||Single.IsInfinity(manifest.cameraFarDistance)||manifest.cameraFarDistance<0||manifest.cameraFarDistance>20000)throw new InvalidDataException("Invalid map camera distance");
             CameraFarDistance=manifest.cameraFarDistance>0?manifest.cameraFarDistance:2500;
             localBounds.SetMinMax(Vec(manifest.boundsMin), Vec(manifest.boundsMax));
+            CameraFarDistance=Mathf.Max(CameraFarDistance,localBounds.size.magnitude);
             if(manifest.version==1&&MapId.StartsWith("archive:",StringComparison.Ordinal)){archiveEnvironment=new R24ArchiveEnvironment(transform);archiveEnvironment.BindCamera(viewCamera);}
             geometryRoot = new GameObject(manifest.title);
             geometryRoot.transform.SetParent(transform, false);
@@ -432,8 +439,11 @@ namespace Ashfall.Integration.Playable.World
                 if(manifest.version==2){ConfigureSourceMaterial(mat,row);continue;}
                 mat.SetFloat("_Metallic", row.metallic); mat.SetFloat("_Roughness", row.roughness);
                 mat.SetFloat("_Cutoff", row.alpha ? .4f : 0f);
+                // r15 GRASS: the soft-patch grass that replaced the stamped t3 texture spans 4x4 source tiles per image, so it
+                // repeats 4x less often; it is flat, so its (flat) normal map is not bound.
+                bool grass=row.color=="t3_c.jpg"||row.color=="pe8ebb6fa_c.jpg";if(grass)mat.SetFloat("_R26UvScale",.25f);
                 if (!String.IsNullOrEmpty(row.color)) mat.SetTexture("_BaseMap", textures[row.color]);
-                if (!String.IsNullOrEmpty(row.normal)) { mat.SetTexture("_NormalMap", textures[row.normal]); mat.SetFloat("_NormalStrength", .6f); }
+                if (!grass&&!String.IsNullOrEmpty(row.normal)) { mat.SetTexture("_NormalMap", textures[row.normal]); mat.SetFloat("_NormalStrength", .6f); }
             }
         }
         static Color Color4(float[] a,Color fallback)
@@ -494,7 +504,9 @@ namespace Ashfall.Integration.Playable.World
                     if(sourceArt!=null&&sourceArt.Plan!=null)sourceArt.Plan.VerifyChunk(chunk,r.BaseStream,vertexStart,indexStart,r.BaseStream.Position,nv,ni);
                     bool cuts=sourceCuts!=null&&sourceCuts.VerifyChunk(chunk,r.BaseStream,vertexStart,indexStart,r.BaseStream.Position,material,collisionFlags,visible,nv,ni);
                     int[] cutStatic=cuts?sourceCuts.KeepStatic(chunk,indices,patch==null?null:patch.staticTriangleRanges):null;
-                    if(patch==null)BuildOwnerPart(chunk,material,collisionFlags,visible,positions,normals,uv,colors,indices,cutStatic??indices,sourcePositions,sourceNormals,-1,false);
+                    if(patch==null&&!cuts&&HideAuthoringMarker(chunk,material,collisionFlags,visible,ni/3))return;
+                    int[] colliderIndices=null;if(patch==null&&!cuts){int[] keptIndices;if(FilterAuthoringMarkerTriangles(chunk,material,indices,out keptIndices,out colliderIndices)&&keptIndices!=null){if(keptIndices.Length==0)return;indices=keptIndices;}}
+                    if(patch==null)BuildOwnerPart(chunk,material,collisionFlags,visible,positions,normals,uv,colors,indices,cutStatic??indices,sourcePositions,sourceNormals,-1,false,colliderIndices);
                     else
                     {
                         var partitions=R24TowerFixtures.Partition(patch,indices,towerFixtures.OwnerCount);
@@ -510,7 +522,7 @@ namespace Ashfall.Integration.Playable.World
                         foreach(var part in sourceCuts.Assemble(chunk,original,indices))BuildSourceCutPart(chunk,material,collisionFlags,visible,indices,part);
                     }
         }
-        void BuildOwnerPart(int chunk,int material,int collisionFlags,bool visible,Vector3[] positions,Vector3[] normals,Vector2[] uv,Color[] colors,int[] full,int[] owner,List<Vector3> sourcePositions,List<Vector3> sourceNormals,int fixtureOwner,bool compact)
+        void BuildOwnerPart(int chunk,int material,int collisionFlags,bool visible,Vector3[] positions,Vector3[] normals,Vector2[] uv,Color[] colors,int[] full,int[] owner,List<Vector3> sourcePositions,List<Vector3> sourceNormals,int fixtureOwner,bool compact,int[] colliderOnly=null)
         {
             int[] render=owner;var draws=new List<ArtDraw>();R24SourceArtPart[] details;
             if(visible&&sourceArt!=null&&sourceArt.Plan!=null&&sourceArt.Plan.Select(chunk,full,owner,out render,out details))foreach(var part in details)
@@ -524,7 +536,7 @@ namespace Ashfall.Integration.Playable.World
                 var keep=new int[render.Length];for(int i=0;i<keep.Length;i++)keep[i]=remap[render[i]];
                 BuildMeshPart(chunk,material,collisionFlags,visible,p.ToArray(),n.ToArray(),u.ToArray(),c.ToArray(),collider,sourcePositions,sourceNormals,fixtureOwner,kinds,keep,draws.ToArray(),fragments);
             }
-            else BuildMeshPart(chunk,material,collisionFlags,visible,positions,normals,uv,colors,owner,sourcePositions,sourceNormals,fixtureOwner,kinds,render,draws.ToArray(),fragments);
+            else BuildMeshPart(chunk,material,colliderOnly!=null&&colliderOnly.Length==0?0:collisionFlags,visible,positions,normals,uv,colors,colliderOnly!=null&&colliderOnly.Length>0?colliderOnly:owner,sourcePositions,sourceNormals,fixtureOwner,kinds,render,draws.ToArray(),fragments); // r19: colliderOnly = collision without the decorative marker triangles
         }
         void BuildSourceCutPart(int chunk,int material,int flags,bool visible,int[] original,R24SourceCutMesh part)
         {
@@ -571,7 +583,7 @@ namespace Ashfall.Integration.Playable.World
                         var collisionNode=go;
                         int role=manifest.version==1?gameObject.layer:SourceLayer(manifest.chunkSourceLayers[chunk]);
                         if(role==BallisticOnlyLayer||role==PlayerOnlyLayer||role==FootProbeOnlyLayer){collisionNode=new GameObject(mesh.name+" source collision role "+role);collisionNode.layer=role;collisionNode.transform.SetParent(go.transform,false);}
-                        var collider = collisionNode.AddComponent<MeshCollider>();collider.convex=convex;if(sourceCut!=null)collider.cookingOptions=MeshColliderCookingOptions.CookForFasterSimulation|MeshColliderCookingOptions.UseFastMidphase;collider.sharedMesh = colliderMesh;if(sourceCut!=null)SourceCutColliderCount++;
+                        var collider = collisionNode.AddComponent<MeshCollider>();collider.convex=convex;if(sourceCut!=null)collider.cookingOptions=MeshColliderCookingOptions.CookForFasterSimulation|MeshColliderCookingOptions.UseFastMidphase;collider.sharedMesh = colliderMesh;RegisterSpawnShell(collider,material,positions,indices);if(sourceCut!=null)SourceCutColliderCount++;
                         if(manifest.chunkBallisticExclusionFlags!=null)BindBallisticFlags(collisionNode,manifest.chunkBallisticExclusionFlags[chunk]);
                         if(destructibles!=null){if(fixtureOwner>=0)destructibles.RegisterOwner(fixtureOwner,go,collider);else destructibles.Register(chunk,go,collider);}
                         // Runtime concave cooking can occur when this inactive chunk
@@ -591,6 +603,7 @@ namespace Ashfall.Integration.Playable.World
         }
         private void Complete()
         {
+            WorldScores.R26WorldScoreboardFrames.BuildCollision(this,geometryRoot.transform);
             if(solidVolumes!=null)solidVolumes.Build(geometryRoot.transform,owned);
             if(towerFixtures!=null)towerFixtures.Complete();
             if(sourceCuts!=null)sourceCuts.Complete();
@@ -610,12 +623,26 @@ namespace Ashfall.Integration.Playable.World
             var colliders=geometryRoot.GetComponentsInChildren<MeshCollider>(true);
             int total=geometryRoot.GetComponentsInChildren<Collider>(true).Length;
             if(total==0)throw new InvalidDataException("R23 map has no collision shapes");
-            foreach(var c in colliders)if(c.sharedMesh==null||!c.sharedMesh.isReadable)throw new InvalidDataException("Runtime map collision mesh must remain CPU-readable");
+            float lowest=float.PositiveInfinity;
+            foreach(var c in colliders)
+            {
+                if(c.sharedMesh==null||!c.sharedMesh.isReadable)throw new InvalidDataException("Runtime map collision mesh must remain CPU-readable");
+                lowest=Mathf.Min(lowest,GeometryBottom(c.transform,c.sharedMesh.bounds));
+            }
+            foreach(var c in geometryRoot.GetComponentsInChildren<BoxCollider>(true))lowest=Mathf.Min(lowest,GeometryBottom(c.transform,new Bounds(c.center,c.size)));
+            foreach(var renderer in geometryRoot.GetComponentsInChildren<MeshRenderer>(true))lowest=Mathf.Min(lowest,renderer.bounds.min.y);
+            FallFailsafeY=lowest-FallFailsafeDepth;
             geometryRoot.SetActive(presentationEnabled);Physics.SyncTransforms();IsLoaded=true;IsLoading=false;
             if(environment!=null)environment.SetActiveEnvironment(presentationEnabled);
             if(archiveEnvironment!=null)archiveEnvironment.SetActive(presentationEnabled);
             if(cyberEnvironment!=null)cyberEnvironment.SetActive(presentationEnabled);
             Debug.Log("R23 native collision ready: "+colliders.Length+" readable meshes / "+total+" total source shapes for "+MapId);
+        }
+        // Collider.bounds is empty while the map is hidden. Transform the source shape bounds directly.
+        static float GeometryBottom(Transform node,Bounds bounds)
+        {
+            var matrix=node.localToWorldMatrix;var extent=bounds.extents;
+            return matrix.MultiplyPoint3x4(bounds.center).y-Mathf.Abs(matrix.m10)*extent.x-Mathf.Abs(matrix.m11)*extent.y-Mathf.Abs(matrix.m12)*extent.z;
         }
         static int SourceLayer(int bits){return (bits&1)!=0?0:(bits&8)!=0?BallisticOnlyLayer:(bits&4)!=0?PlayerOnlyLayer:(bits&16)!=0?FootProbeOnlyLayer:0;}
         private void Fail(Exception e)

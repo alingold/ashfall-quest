@@ -39,6 +39,7 @@ namespace Ashfall.Integration.Playable
         public Quaternion RightAimRotation {get{return Right==null?Quaternion.identity:Right.rotation*rightAimRotationInGrip;}private set{rightAimRotationInGrip=Right==null?Quaternion.identity:Quaternion.Inverse(Right.rotation)*value;}}
         public bool LeftAimTracked {get;private set;}public bool RightAimTracked {get;private set;}
         public bool GameplayBlocked;
+        R23PlayableLoop playableOwner;
         // Menu walking keeps gameplay blocked; only the existing walk/turn and
         // source collision/support path may advance in the standalone lobby.
         public bool MenuLocomotion;
@@ -100,6 +101,7 @@ namespace Ashfall.Integration.Playable
         }
         public void Initialize(Vector3 location,Vector3 lookAt)
         {
+            playableOwner=GetComponentInParent<R23PlayableLoop>();
             spawn=location;Vector3 facing=lookAt-location;facing.y=0;spawnRotation=facing.sqrMagnitude>.01f?Quaternion.LookRotation(facing):Quaternion.identity;
             body=gameObject.AddComponent<CharacterController>();body.height=1.75f;body.radius=.25f;body.center=new Vector3(0,.875f,0);body.skinWidth=.025f;body.stepOffset=.25f;body.minMoveDistance=0;body.slopeLimit=65;
             gameObject.layer=10;
@@ -118,7 +120,7 @@ namespace Ashfall.Integration.Playable
         // Fresh render-time tracking can arrive after Update's safe head sweep.
         // Reuse the same source constraint before hands/UI/body render callbacks;
         // never tick locomotion/input or alter any raw tracked local pose here.
-        void TrackLatePoses(){if(!isActiveAndEnabled)return;TrackPoses();SynchronizeLateSourceHead();}
+        void TrackLatePoses(){if(!isActiveAndEnabled)return;TrackPoses();TickMenuPlacement();SynchronizeLateSourceHead();}
         void SynchronizeLateSourceHead()
         {
             if(!Tracking||!UseSourceHeadHull||CarrierActive||Head==null||HeadCollision==null||!HeadCollision.Ready||!haveSourceHead)return;
@@ -164,7 +166,7 @@ namespace Ashfall.Integration.Playable
             if(body==null)return;
             displays.Clear();SubsystemManager.GetSubsystems(displays);DisplayRunning=false;foreach(var d in displays)DisplayRunning|=d.running;
             if(!floorRequested&&DisplayRunning){inputs.Clear();SubsystemManager.GetSubsystems(inputs);foreach(var i in inputs)floorRequested|=i.TrySetTrackingOriginMode(TrackingOriginModeFlags.Floor);}
-            TrackPoses();
+            TrackPoses();TickMenuPlacement();
             if(UseSourceHeadHull&&Tracking&&!CarrierActive)SynchronizeSourceHead();
             if(Climbing!=null)Climbing.HeadCollision=UseSourceHeadHull?HeadCollision:null;
             if(Calibration!=null)Calibration.HeadCollision=UseSourceHeadHull?HeadCollision:null;
@@ -195,10 +197,23 @@ namespace Ashfall.Integration.Playable
                 Debug.LogFormat(LogType.Log,LogOption.NoStacktrace,this,"R23 XR input {0} | aim {1}/{2} | armed {3}/{4} | menu {5} | move {6},{7} | root {8} rawhead {9} origin {10} bodycenter {11} grounded {12} collisions {13}",InputStatus,LeftAimTracked,RightAimTracked,input.LeftReady,input.RightReady,GameplayBlocked,LastFrame.MoveX.ToString("F2"),LastFrame.MoveY.ToString("F2"),transform.position,Head.transform.localPosition,TrackingOrigin.localPosition,body.center,grounded,body.detectCollisions);
             }
         }
+        void ApplyMotorTurn(MotionStep step,bool heldClimb=false)
+        {
+            if(!step.OwnsYaw||step.YawRadians==0)return;
+            Vector3 prior=transform.position;Quaternion priorRotation=transform.rotation;
+            Vector3 pivot=Head.transform.position;transform.RotateAround(pivot,Vector3.up,step.YawRadians*Mathf.Rad2Deg);
+            // Yaw about the already-swept spherical eye cannot introduce a new head overlap.
+            bool stationaryEye=heldClimb&&UseSourceHeadHull&&R23HeadCollision.FullEyeSafety&&(Head.transform.position-pivot).sqrMagnitude<.000001f;
+            if(!stationaryEye&&Ashfall.Integration.Playable.Expansion.R25Features.HeadClearance&&!HeadCollision.HeadClear(Head.transform.position))
+            {transform.SetPositionAndRotation(prior,priorRotation);LogClearance("turn-refused",.001f);}
+            artificialOriginOffset+=transform.position-prior;
+        }
         void Advance(DeviceSample sample,float seconds)
         {
             if(seconds<=0||float.IsNaN(seconds)||float.IsInfinity(seconds))return;
             if(Climbing!=null)Climbing.HeadCollision=UseSourceHeadHull?HeadCollision:null;
+            var hands=playableOwner==null?null:playableOwner.Gameplay;
+            input.PreserveWalkOnHandReacquire=hands!=null&&hands.HasWeapon&&hands.ActiveWeaponId=="spr";
             var frame=input.Read(++tick,seconds,sample);
             if(MenuLocomotion)frame.Jump=frame.Sprint=frame.GripLeft=frame.GripRight=frame.TriggerLeft=frame.TriggerRight=frame.Reload=frame.Ping=false;
             LastFrame=frame;
@@ -213,7 +228,9 @@ namespace Ashfall.Integration.Playable
             Vector3 bikeDisplacement,bikeVelocity;bool vehicle=EvaluateVehicle(frame,seconds,out bikeDisplacement,out bikeVelocity);
             if(vehicle){displacement=bikeDisplacement;proposedVelocity=bikeVelocity;}
             Vector3 pullDelta=Vector3.zero,pullVelocity=Vector3.zero;bool pull=!vehicle&&EvaluateGrapplePull(frame,seconds,out pullDelta,out pullVelocity);if(pull){displacement=pullDelta;proposedVelocity=pullVelocity;}
-            var climb=new R23ClimbMotion();bool exclusionFlight=false, exclusionFlightOwnsSupport=false;bool evaluatedClimb=!pull&&!vehicle&&Climbing!=null&&sample.IsXr&&!MenuLocomotion;
+            var climb=new R23ClimbMotion();bool exclusionFlight=false, exclusionFlightOwnsSupport=false, gliding=false;bool evaluatedClimb=!pull&&!vehicle&&Climbing!=null&&sample.IsXr&&!MenuLocomotion;
+            bool continuingGrip=evaluatedClimb&&!Climbing.Mantling&&((Climbing.LeftAnchored&&frame.GripLeft&&sample.Left.Tracked)||(Climbing.RightAnchored&&frame.GripRight&&sample.Right.Tracked));
+            if(continuingGrip)ApplyMotorTurn(step,true);
             if(evaluatedClimb)
             {
                 climb=Climbing.Evaluate(frame,seconds,sample.Left.Tracked,sample.Right.Tracked,!LeftHandOccupied&&!LeftObjectiveGripReserved,!RightHandOccupied&&!RightObjectiveGripReserved,U(previousVelocity));
@@ -223,9 +240,9 @@ namespace Ashfall.Integration.Playable
             if(Activities!=null&&sample.IsXr&&!MenuLocomotion)
             {
                 // Source applies this tick's turn before resolving both walking and glide heading.
-                var travel=R23TravelHeading.Resolve(heading,step.OwnsYaw?step.YawRadians:0,frame.MoveX,frame.MoveY);
-                var flight=Activities.EvaluateMotion(frame,seconds,grounded,ceiling,U(previousVelocity),U(step.Velocity),U(travel.Direction),input.LeftReady&&input.RightReady,climb.OwnsMotion||traversal||vehicle||pull,climb.Mantling,U(travel.Forward));
-                exclusionFlight=flight.OwnsMotion;exclusionFlightOwnsSupport=flight.OwnsMotion&&flight.Mode!=Ashfall.Modules.Flight.FlightMode.Air;if(flight.OwnsMotion&&!climb.OwnsMotion&&!traversal&&!vehicle&&!pull){displacement=flight.Displacement;proposedVelocity=flight.Velocity;}
+                var travel=R23TravelHeading.Resolve(heading,step.OwnsYaw?step.YawRadians:0,frame.MoveX,frame.MoveY);GlideEntryFacts(ref frame,U(travel.Direction));
+                var flight=Activities.EvaluateMotion(frame,seconds,grounded,ceiling,U(previousVelocity),U(step.Velocity),U(travel.Direction),input.LeftReady&&input.RightReady,climb.OwnsMotion||traversal||vehicle||pull,climb.Mantling,U(travel.Forward),step.OwnsYaw&&step.YawRadians!=0);
+                gliding=flight.Mode==Ashfall.Modules.Flight.FlightMode.Glide;exclusionFlight=flight.OwnsMotion;exclusionFlightOwnsSupport=flight.OwnsMotion&&flight.Mode!=Ashfall.Modules.Flight.FlightMode.Air;if(flight.OwnsMotion&&!climb.OwnsMotion&&!traversal&&!vehicle&&!pull){displacement=flight.Displacement;proposedVelocity=flight.Velocity;}
                 var constructionFrame=frame;
                 // Building uses the source .55 trigger threshold, independently of
                 // the locomotion InputFrame's .5 projection. No tracked pose changes.
@@ -243,7 +260,7 @@ namespace Ashfall.Integration.Playable
             float height=Mathf.Clamp(headLocal.y+.18f,.6f,2.5f);body.height=height;body.center=new Vector3(headLocal.x,height*.5f,headLocal.z);
             if(!step.OwnsMotion&&!pull){PresentTraversal();if(Tracking&&!UseSourceHeadHull)body.Move(Vector3.zero);if(evaluatedClimb)Climbing.AcceptMotion(Vector3.zero,seconds,grounded,ceiling);return;}
             // Turn around the measured head, leaving all tracked local poses intact.
-            if(step.OwnsYaw&&step.YawRadians!=0&&!climb.Climbing&&!climb.Mantling){Vector3 prior=transform.position;Quaternion priorRotation=transform.rotation;transform.RotateAround(Head.transform.position,Vector3.up,step.YawRadians*Mathf.Rad2Deg);if(Ashfall.Integration.Playable.Expansion.R25Features.HeadClearance&&!HeadCollision.HeadClear(Head.transform.position)){transform.SetPositionAndRotation(prior,priorRotation);LogClearance("turn-refused",.001f);}artificialOriginOffset+=transform.position-prior;}
+            if(!continuingGrip&&!climb.Mantling)ApplyMotorTurn(step);
             Vector3 before=transform.position,supportCorrection=Vector3.zero;
             if(UseSourceHeadHull)
             {
@@ -254,17 +271,17 @@ namespace Ashfall.Integration.Playable
                 if(CrouchFloorValid)CrouchFloorY=crouchFloor.point.y;
                 Vector3 requested=climb.OwnsMotion||traversal||vehicle||pull?displacement:HeadCollision.LandingMotion(transform.position,Head.transform.position,displacement);
                 if(climb.Climbing&&!climb.Mantling&&CrouchFloorValid)requested.y=R23GrabCrouchLimit.DownwardMotion(Head.transform.position.y,CrouchFloorY,R23CalibrationState.TargetEye,requested.y);bool exclusionWalk=ExclusionWalkFrame(climb.OwnsMotion||traversal||vehicle||pull||exclusionFlight,requested);if(exclusionWalk){requested=CrouchWalk(requested);requested=WalkBodyColumn(requested);}
-                bool standingWalk=grounded&&!climb.OwnsMotion&&!traversal&&!vehicle&&!pull&&requested.y<=0&&(MenuLocomotion||Activities==null||!Activities.PadLaunchActive);
+                bool standingWalk=grounded&&!climb.OwnsMotion&&!traversal&&!vehicle&&!pull&&requested.y<=0&&!gliding&&(MenuLocomotion||Activities==null||!Activities.PadLaunchActive);
                 if(vehicle)requested=VehicleChassisMotion(requested);
                 Vector3 safe=pull?SweptPullMotion(requested):traversal?SweptTraversalMotion(requested,out ceiling):VerifiedHeadMotion(Head.transform.position,requested,true,standingWalk,out ceiling,true);
-                bool feetHeld=false;if(!vehicle)safe=KeepFeetOnFloor(transform.position,safe,out feetHeld);
+                bool feetHeld=false;if(!vehicle&&!climb.Climbing)safe=KeepFeetOnFloor(transform.position,safe,out feetHeld);
                 body.enabled=false;transform.position+=safe;body.enabled=true;TraceLocomotion("motor-sweep");
 #if UNITY_EDITOR
                 if(CaptureAdvanceTrace)AdvanceTrace="before="+before.ToString("F3")+" requested="+requested.ToString("F3")+" safe="+safe.ToString("F3")+" afterSafe="+transform.position.ToString("F3")+" walk="+exclusionWalk+" standing="+standingWalk;
 #endif
-                Vector3 correction;grounded=false;
-                if(!climb.OwnsMotion&&!traversal&&!vehicle&&!pull&&(MenuLocomotion||Activities==null||!Activities.PadLaunchActive)&&displacement.y<=0&&ResolveVerifiedSupport(transform.position,Head.transform.position,proposedVelocity,seconds,Mathf.Clamp(Head.transform.position.y-transform.position.y-bodyColumn.ChinBelowEye,.45f,2.2f)+.0025f,false,out correction))
-                {if(RefuseWalkStep(exclusionWalk,correction.y,before))correction=Vector3.zero;else{body.enabled=false;transform.position+=correction;body.enabled=true;}grounded=true;supportCorrection=correction;TraceLocomotion("support");}
+                float supportEyeHeight=Head.transform.position.y-transform.position.y;Vector3 correction;grounded=false;
+                if(!climb.OwnsMotion&&!traversal&&!vehicle&&!pull&&(MenuLocomotion||Activities==null||!Activities.PadLaunchActive)&&displacement.y<=0&&ResolveVerifiedSupport(transform.position,Head.transform.position,proposedVelocity,seconds,Mathf.Clamp(Head.transform.position.y-transform.position.y-bodyColumn.ChinBelowEye,.45f,2.2f)+.0025f,false,out correction,gliding))
+                {if(RefuseWalkStep(exclusionWalk,correction.y,before,supportEyeHeight))correction=Vector3.zero;else{body.enabled=false;transform.position+=correction;body.enabled=true;}grounded=true;supportCorrection=correction;TraceLocomotion("support");}
                 else{RefuseBlockedSupport(exclusionWalk,before);if(feetHeld&&!climb.OwnsMotion&&!traversal&&!pull)grounded=true;}
             }
             else
@@ -330,6 +347,7 @@ namespace Ashfall.Integration.Playable
 #endif
         public void ResetPose()
         {
+            if(menuSpawnActive&&MenuWorld!=null&&MenuWorld.Visible){EnterMenuPlacement();return;}
             ClearGrapplePull();if(body==null)return;ResetRampCrouch();body.enabled=false;transform.SetPositionAndRotation(spawn,spawnRotation);body.enabled=true;
             // Map spawns name physical feet. Stage-space HMD X/Z can be nonzero
             // even while standing still: move the origin, never raw tracked poses.
@@ -339,12 +357,12 @@ namespace Ashfall.Integration.Playable
             artificialOriginOffset=Vector3.zero;
         }
         public void SetSpawn(Vector3 location,Vector3 lookAt)
-        {spawn=location;Vector3 forward=lookAt-location;forward.y=0;spawnRotation=forward.sqrMagnitude>.01f?Quaternion.LookRotation(forward):Quaternion.identity;ResetPose();}
+        {if(TryEnterMenuSpawn(location))return;menuSpawnActive=false;spawn=location;Vector3 forward=lookAt-location;forward.y=0;spawnRotation=forward.sqrMagnitude>.01f?Quaternion.LookRotation(forward):Quaternion.identity;ResetPose();}
         public void DisarmMotion(){ClearGrapplePull();CancelVehicle();CancelTraversal();if(motor!=null)motor.ResetMotion();input.Disarm();movementHeading.Reset();}
         // player.initialize_vertical_combat_system sets _last_head AFTER origin
         // translation: do not resweep calibration as physical room-scale motion.
         public void AcceptCalibratedTrackingOrigin()
-        {DisarmMotion();if(Head!=null&&CrouchOwnsHeight)ApplyCrouchOrigin(StandingOriginY());if(Head!=null){if(Ashfall.Integration.Playable.Expansion.R25Features.HeadClearance&&haveSourceHead){bool hit;Vector3 desired=Head.transform.position;Vector3 safe=VerifiedHeadMotion(previousSourceHead,desired-previousSourceHead,false,false,out hit);TrackingOrigin.position+=previousSourceHead+safe-desired;}previousSourceHead=Head.transform.position;haveSourceHead=true;}RequestHeadRecovery(Ashfall.Integration.Playable.Exclusion.R25RecoveryReason.Calibration,false);}
+        {if(menuSpawnActive&&MenuWorld!=null&&MenuWorld.Visible){EnterMenuPlacement();return;}DisarmMotion();if(Head!=null&&CrouchOwnsHeight)ApplyCrouchOrigin(StandingOriginY());if(Head!=null){if(Ashfall.Integration.Playable.Expansion.R25Features.HeadClearance&&haveSourceHead){bool hit;Vector3 desired=Head.transform.position;Vector3 safe=VerifiedHeadMotion(previousSourceHead,desired-previousSourceHead,false,false,out hit);TrackingOrigin.position+=previousSourceHead+safe-desired;}previousSourceHead=Head.transform.position;haveSourceHead=true;}RequestHeadRecovery(Ashfall.Integration.Playable.Exclusion.R25RecoveryReason.Calibration,false);}
 
         public void ApplySettings(R23UiSettings value)
         {
@@ -391,8 +409,8 @@ namespace Ashfall.Integration.Playable
             var config=UnityEngine.AudioSettings.GetConfiguration();
             Debug.LogFormat(LogType.Log,LogOption.NoStacktrace,this,"R27 audio {0} dsp={1:F3} rate={2} buffer={3} listenerVolume={4:F2} listenerPaused={5} focused={6}",reason,UnityEngine.AudioSettings.dspTime,config.sampleRate,config.dspBufferSize,AudioListener.volume,AudioListener.pause,SessionFocused);
         }
-        void OnDisable(){ClearGrapplePull();CancelVehicle();CancelTraversal();input.Disarm();movementHeading.Reset();}
-        void OnDestroy(){Application.onBeforeRender-=TrackLatePoses;}
+        void OnDisable(){DisposeMenuPlacement();ClearGrapplePull();CancelVehicle();CancelTraversal();input.Disarm();movementHeading.Reset();}
+        void OnDestroy(){DisposeMenuPlacement();Application.onBeforeRender-=TrackLatePoses;}
         static Float3 F(Vector3 p){return new Float3(p.x,p.y,p.z);}static Vector3 U(Float3 p){return new Vector3(p.X,p.Y,p.Z);}
     }
 }

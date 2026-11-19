@@ -276,7 +276,7 @@ partial class LobbyCases
             for (int i = 0; i < 5; i++) pair.Tick();
             pair.Host.BindProjectileWorld(new ProjectileWorld { Contact = true });
             string hash = new string('b', 64);
-            StartRound(pair, new HazardWorld(), R24PlayableMatchRules.ForPreset("practice", "range").With("loot", false).With("flashbangs", false), hash);
+            StartRound(pair, new HazardWorld(), R24PlayableMatchRules.ForPreset("free_for_all", "range").With("catalog", true).With("loot", false).With("flashbangs", false), hash);
             for (int i = 0; i < 4; i++) KeepRaw(pair, hash, 0, 8);
             Need(!pair.Host.RegisterSharedGrenade("off/flash", "flash", new Float3(0, 1.2f, .2f)), "flashbangs OFF: host refuses a flash payload");
             Need(pair.Host.RegisterSharedGrenade("on/smoke", "smoke", new Float3(0, 1.2f, .2f)), "smoke_grenades ON: smoke still allowed");

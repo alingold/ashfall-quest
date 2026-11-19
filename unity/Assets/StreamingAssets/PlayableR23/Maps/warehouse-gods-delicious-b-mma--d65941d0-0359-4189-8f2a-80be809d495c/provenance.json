@@ -1,0 +1,97 @@
+{
+  "mapId": "archive:warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c",
+  "title": "WAREHOUSE",
+  "creator": "GODS_Delicious.B_MMA",
+  "sourceContentId": "23951bcc4c358a38a0fd1ad59fa24cef0171f5df6c6c2cc2e38dca5a095f5520",
+  "sourceInputs": {
+    "cached live map.json": "d1619cd64e8320c7cb2405a7ed41be839f4277796d0f7ccaf13de0610e36b702",
+    "cached live map.glb": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+    "archived R6 converter": "fe63fce8a2abe4c4e1ef7befd8cfc8f1cf07eaa74fb6848e249b8ada6e27050a"
+  },
+  "archiveInputs": {
+    "https://maps.deliciouswines.org/maps/warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c/map.glb": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+    "https://maps.deliciouswines.org/maps/warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c/map.json": "d1619cd64e8320c7cb2405a7ed41be839f4277796d0f7ccaf13de0610e36b702"
+  },
+  "sourceGlbSha256": "9ba0aa6ceef504f9587f3fbc280b0fd64a018771a6feea45b0048f77bdec1632",
+  "cacheFingerprint": "45d280d0d741a40ed17eb75d128834c3256435efb1cbdfeb602703d9542aa401",
+  "preparedAdapterSha256": null,
+  "sourceSolidTriangles": 33922,
+  "sourceRoles": {
+    "world": 33922,
+    "boundary": 16,
+    "playfield": 12
+  },
+  "renderTriangles": 33922,
+  "collisionTriangles": 33938,
+  "sourceMarkerTrianglesRemoved": {},
+  "leafCollisionExcluded": [],
+  "sourceZeroNormalsRepaired": 0,
+  "clockwiseNormalAgreement": 1.0,
+  "chunks": 21,
+  "materials": 5,
+  "textureInputs": {
+    "p054b1b60_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/517f7f72848197a09d2a11a78c722415cf85b9752b1656d1e634d268bfb3c0c4.jpg",
+      "sha256": "d5dbefb98e20726809955d6578ffc42d908222470d86e1d9b8ce4aa829e9f724",
+      "bytes": 3356
+    },
+    "p054b1b60_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ede1f7ff3215f8c906d6da28b9ac45917ba1520e6761aeaeef26c8775ccbd214.jpg",
+      "sha256": "febb4ae4df02feeb8377b554d12b8d48c4dee6cb288646f8cab7b6b3cfb2edbd",
+      "bytes": 3360
+    },
+    "sg_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/65284fc5db79b92f87f1f5cd3cb4d7594e1c2b353d433ccff2114f12ba80d83a.jpg",
+      "sha256": "9aa86f21ec1445cd69b0af98b279f236803e8b8cde03baaffccda7f26d2998df",
+      "bytes": 509522
+    },
+    "t22_c.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/3adacee8ba00578cca7ca2dfd4cd8e6ae9d97173365edcf0ad1746acae87f781.jpg",
+      "sha256": "9c65c58fda105486638098ebdd72a97be85dc6979a549d088e351e081b4fa6db",
+      "bytes": 25860
+    },
+    "t22_n.jpg": {
+      "source": "authoring/textures-v1/out/by-sha/ad5bea5810bf2f3dc6e7d693161ca0a5ef63d6e1f652a7762331eadef5730cbb.jpg",
+      "sha256": "1b93f53e6374fd00dc4553326786a3a209b1598dccb4806c34a93b3ef2261f80",
+      "bytes": 36797
+    }
+  },
+  "spawn": [
+    -3.03,
+    40.12,
+    9.39
+  ],
+  "warmupSpawn": [
+    15.5,
+    40.12,
+    1.49
+  ],
+  "preview": {
+    "file": ""
+  },
+  "geometrySha256": "9f85629718161dc852fb5dd248ebaa7fae3c8779fbedfd1aa8b9955a2e4d314e",
+  "engineRun": false,
+  "renderRun": false,
+  "deviceRun": false,
+  "limits": [
+    "Native mesh cooking/render/entry have not run.",
+    "Raw archive geometry and source StandardMaterial overrides are ported; prepared adapter dynamic panels/aperture repair, spawn-floor reconstruction, fixtures, hazards and art repairs remain unported for this map. Static source panels are retained, not deleted.",
+    "Source foliage collision exclusion is applied; distant foliage LOD is not ported.",
+    "Source local support and capsule queries run against decoded original geometry, not Godot physics. No support geometry is invented.",
+    "Current v1 source shader retains its existing alpha-cutout lighting approximation; R6 architecture shader flags are a separate root-owned integration."
+  ],
+  "elapsedSeconds": 0.139,
+  "converterVersion": 2,
+  "sourceRetainedRenderAttributesSha256": "f85cd2499a6754ff22566be650345d3661fd2cc291fa934a3154bd1f7e6b732d",
+  "sourceRetainedCollisionAttributesSha256": "d6cea1a7f8d20e4bd66239efbd8a3ce7814e770b805199e4771a9037959ac289",
+  "payloadBytes": 2071041,
+  "sourceUrl": "https://maps.deliciouswines.org/maps/warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c/",
+  "archivePage": "https://maps.deliciouswines.org/m/warehouse-gods-delicious-b-mma--d65941d0-0359-4189-8f2a-80be809d495c/",
+  "sourceFirst": "2026-11-13",
+  "sourceLast": "2026-11-13",
+  "archiveCaptureId": "d65941d0-0359-4189-8f2a-80be809d495c",
+  "license": "Community map from the public Population: ONE archive. The creator and other rights holders retain their rights. The ASHFALL MIT license and CC0 1.0 dedication do not cover this map.",
+  "upstreamMapJsonSha256": "d1619cd64e8320c7cb2405a7ed41be839f4277796d0f7ccaf13de0610e36b702",
+  "texturePolicy": "ASHFALL original/CC0 replacement kit, same archive texture URI",
+  "finalManifestSha256": "092906e2f83ac7bf998b0924c53df4bb5187a845fb8560ef3be1e4fab6919481"
+}

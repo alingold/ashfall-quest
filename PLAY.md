@@ -9,7 +9,7 @@
 - Click the download arrow at the top of the Google Drive page.
 - Google says it "can't scan this file for viruses" because the file is big. Click **Download anyway**.
 - Download it to your computer (Windows, Mac or Linux), not to the headset.
-- No Google account is needed. All versions are in the [ASHFALL Drive folder](https://drive.google.com/drive/folders/1QeGxet4-fbRLOVT6Gc7maXNHUxReXewm).
+- No Google account is needed. The [ASHFALL Drive folder](https://drive.google.com/drive/folders/1QeGxet4-fbRLOVT6Gc7maXNHUxReXewm) also has this guide as a text file and older versions in `older-versions`.
 
 ## 2. One-time setup (about 10 minutes)
 
